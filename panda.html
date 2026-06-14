@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dunia Panda Raksasa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bamboo: '#2C5E3B',
+                        bambooLight: '#A3B899',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Gaya tambahan untuk efek Glassmorphism yang halus */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased selection:bg-bamboo selection:text-white">
+
+    <header class="relative bg-bamboo text-white py-20 px-6 text-center overflow-hidden shadow-md">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="relative z-10 max-w-3xl mx-auto">
+            <span class="text-xs font-bold tracking-widest uppercase bg-white/20 px-3 py-1 rounded-full">Ensiklopedia Digital</span>
+            <h1 class="text-4xl md:text-5xl font-black mt-3 tracking-tight">Panda Raksasa</h1>
+            <p class="text-bambooLight mt-2 text-lg font-medium">Sang Duta Bambu yang Menggemaskan dan Berpengaruh di Dunia</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <section class="md:col-span-2 glass-card p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between transition-all hover:shadow-md">
+            <div>
+                <h2 class="text-2xl font-bold text-bamboo mb-4 flex items-center gap-2">
+                    <span>🐼</span> Apa itu Panda?
+                </h2>
+                <p class="leading-relaxed text-gray-600 mb-6">
+                    <strong>Panda Raksasa</strong> (<em>Ailuropoda melanoleuca</em>) adalah spesies beruang yang berasal dari wilayah Tiongkok bagian tengah. Dikenal luas karena corak bulunya yang ikonik—hitam di bagian mata, telinga, dan kaki, serta putih di sekujur tubuhnya—panda telah menjadi salah satu hewan paling dicintai sekaligus menjadi simbol global untuk konservasi satwa liar yang terancam punah.
+                </p>
+            </div>
+            <div class="overflow-hidden rounded-xl h-64 md:h-72 shadow-inner group">
+                <img src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?auto=format&fit=crop&w=1200&q=80" 
+                     alt="Panda raksasa sedang memakan bambu" 
+                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            </div>
+        </section>
+
+        <section class="glass-card p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between transition-all hover:shadow-md bg-gradient-to-br from-white to-gray-50">
+            <div>
+                <h2 class="text-2xl font-bold text-bamboo mb-4 flex items-center gap-2">
+                    <span>💡</span> Fakta Interaktif
+                </h2>
+                <p class="text-sm text-gray-500 mb-6">Klik tombol di bawah untuk mempelajari keunikan tubuh dan kebiasaan panda secara acak.</p>
+                
+                <div class="bg-white p-5 rounded-xl border border-gray-200 min-h-[120px] flex items-center justify-center text-center shadow-sm" id="fact-box">
+                    <p class="text-gray-700 font-medium" id="fact-text">Panda menghabiskan hingga 12-16 jam sehari hanya untuk makan bambu!</p>
+                </div>
+            </div>
+
+            <button onclick="changeFact()" class="mt-6 w-full bg-bamboo hover:bg-emerald-800 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-bamboo focus:ring-offset-2">
+                Eksplor Fakta Lain
+            </button>
+        </section>
+
+        <section class="glass-card p-8 rounded-2xl shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <h2 class="text-2xl font-bold text-bamboo mb-4 flex items-center gap-2">
+                <span>🎋</span> Cara Hidup Panda
+            </h2>
+            <p class="leading-relaxed text-gray-600 mb-4">
+                Meskipun secara sistem pencernaan mereka termasuk karnivora, sistem diet panda berubah secara radikal di mana <strong class="text-bamboo">99% makanan utamanya adalah bambu</strong>. Karena kandungan nutrisi bambu yang sangat rendah, mereka harus mengonsumsi belasan kilogram bambu setiap hari untuk menjaga energi.
+            </p>
+            <p class="leading-relaxed text-gray-600">
+                Panda adalah makhluk soliter (menyendiri) yang sangat menghargai wilayah teritorial mereka. Mereka berkomunikasi melalui penandaan bau, cakar pada pohon, dan sesekali melalui suara vokal yang unik.
+            </p>
+        </section>
+
+        <section class="glass-card p-8 rounded-2xl shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <h2 class="text-2xl font-bold text-bamboo mb-4 flex items-center gap-2">
+                <span>📍</span> Habitat & Penyebaran
+            </h2>
+            <p class="leading-relaxed text-gray-600 mb-4">
+                Panda liar saat ini hanya dapat ditemukan di wilayah pegunungan terpencil di Tiongkok barat daya, terutama di provinsi <strong>Sichuan</strong>, serta sebagian kecil di wilayah tetangga seperti Shaanxi dan Gansu.
+            </p>
+            <div class="p-4 bg-emerald-50 rounded-xl border border-emerald-100 text-sm text-emerald-900">
+                <span class="font-bold block mb-1">Kondisi Lingkungan:</span>
+                Mereka hidup di hutan bambu berdaun lebar yang lebat, basah, dan diselimuti kabut tebal pada ketinggian antara 1.200 hingga 3.100 meter di atas permukaan laut.
+            </div>
+        </section>
+
+        <section class="glass-card p-8 rounded-2xl shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <h2 class="text-2xl font-bold text-bamboo mb-4 flex items-center gap-2">
+                <span>🌏</span> Diplomasi Panda
+            </h2>
+            <p class="leading-relaxed text-gray-600">
+                Dalam kancah politik global, panda memegang peranan yang sangat unik melalui istilah <strong class="text-bamboo">"Diplomasi Panda"</strong>. Pemerintah Tiongkok kerap meminjamkan panda raksasa ke kebun binatang di berbagai negara asing sebagai simbol persahabatan, kerja sama bilateral, dan pelunakan citra politik luar negeri. 
+            </p>
+            <p class="leading-relaxed text-gray-600 mt-3 text-sm italic border-l-4 border-bamboo pl-3 bg-gray-50 py-1">
+                Kehadiran mereka di luar negeri menandakan hubungan diplomatik yang erat dan harmonis antar kedua negara.
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 mt-20 py-8 px-6 text-center text-xs text-gray-400 tracking-wide">
+        <p>Dibuat oleh: Ariel Usman 2026</p>
+    </footer>
+
+    <script>
+        const facts = [
+            "Panda menghabiskan hingga 12-16 jam sehari hanya untuk makan bambu!",
+            "Panda raksasa memiliki 'jempol semu' yang sebenarnya merupakan tulang pergelangan tangan yang membesar untuk membantu mereka memegang batang bambu.",
+            "Bayi panda lahir dalam kondisi sangat kecil, buta, merah muda, dan beratnya hanya sekitar 100 gram (1/900 dari berat ibunya).",
+            "Meskipun tubuhnya terlihat besar dan gemuk, panda adalah pemanjat pohon yang sangat mahir dan juga bisa berenang.",
+            "Corak hitam-putih pada tubuh panda berfungsi sebagai kamuflase alami di lingkungan hutan berbatu dan bersalju."
+        ];
+
+        let lastIndex = 0;
+
+        function changeFact() {
+            const factText = document.getElementById('fact-text');
+            const factBox = document.getElementById('fact-box');
+            
+            // Mencari indeks acak yang tidak sama dengan indeks sebelumnya
+            let newIndex;
+            do {
+                newIndex = Math.floor(Math.random() * facts.length);
+            } while (newIndex === lastIndex);
+            
+            lastIndex = newIndex;
+
+            // Animasi transisi sederhana menggunakan opasitas
+            factText.style.opacity = '0';
+            
+            setTimeout(() => {
+                factText.innerText = facts[newIndex];
+                factText.style.opacity = '1';
+            }, 150);
+        }
+        
+        // Setup transisi css bawaan untuk teks fakta
+        document.getElementById('fact-text').style.transition = 'opacity 0.15s ease-in-out';
+    </script>
+</body>
+</html>
