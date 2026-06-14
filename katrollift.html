@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi Katrol & Lift Cucian Rumah</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        /* Custom Glassmorphism style */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 min-h-screen text-slate-800 font-sans flex flex-col justify-between selection:bg-blue-200">
+
+    <header class="glass-nav sticky top-0 z-50 px-4 py-3 md:px-8 flex justify-between items-center shadow-xs">
+        <div class="flex items-center gap-2">
+            <span class="text-xl font-extrabold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Pulleys.io</span>
+        </div>
+        <nav class="flex gap-2 sm:gap-4 text-xs sm:text-sm font-medium">
+            <button onclick="switchTab('teori')" id="btn-teori" class="nav-btn px-3 py-1.5 rounded-full bg-blue-600 text-white shadow-xs transition-all">Teori Katrol</button>
+            <button onclick="switchTab('diy')" id="btn-diy" class="nav-btn px-3 py-1.5 rounded-full hover:bg-slate-200/60 text-slate-600 transition-all">DIY Lift Jemuran</button>
+            <button onclick="switchTab('simulasi')" id="btn-simulasi" class="nav-btn px-3 py-1.5 rounded-full hover:bg-slate-200/60 text-slate-600 transition-all">Simulasi Interaktif</button>
+        </nav>
+    </header>
+
+    <main class="container mx-auto max-w-6xl p-4 md:p-8 flex-grow">
+
+        <section id="tab-teori" class="tab-content space-y-6 animate-fadeIn">
+            <div class="glass-card rounded-2xl p-6 md:p-8 shadow-sm">
+                <h1 class="text-2xl md:text-3xl font-bold bg-gradient-to-r from-slate-800 to-slate-900 bg-clip-text text-transparent mb-2">Mekanisme Kerja Katrol</h1>
+                <p class="text-slate-600 leading-relaxed max-w-3xl">Katrol adalah pesawat sederhana berupa roda beralur yang dikelilingi oleh tali. Prinsip utamanya adalah **mengubah arah gaya** atau **menggandakan keuntungan mekanis (KM)** sehingga mengangkat beban berat terasa jauh lebih ringan.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card rounded-2xl p-6 shadow-xs flex flex-col justify-between transition-transform hover:scale-[1.01]">
+                    <div>
+                        <span class="inline-block px-2.5 py-1 text-xs font-semibold bg-blue-100 text-blue-700 rounded-md mb-3">KM = 1</span>
+                        <h3 class="text-lg font-bold mb-2">1. Katrol Tetap</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Posisi katrol tidak berpindah tempat saat digunakan. Tidak memperkecil gaya yang diperlukan, melainkan hanya **mengubah arah tarikan** (menarik ke bawah biasanya lebih mudah karena dibantu berat badan kita).</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-200/50 text-xs text-slate-500 font-mono">Contoh: Katrol sumur timba, tiang bendera.</div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 shadow-xs flex flex-col justify-between transition-transform hover:scale-[1.01]">
+                    <div>
+                        <span class="inline-block px-2.5 py-1 text-xs font-semibold bg-emerald-100 text-emerald-700 rounded-md mb-3">KM = 2</span>
+                        <h3 class="text-lg font-bold mb-2">2. Katrol Bebas / Bergerak</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Katrol ikut bergerak naik-turun bersama beban. Salah satu ujung tali diikat mati di langit-langit. Gaya yang kamu butuhkan untuk mengangkat beban dipotong setengahnya!</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-200/50 text-xs text-slate-500 font-mono">Gaya ($F$) = $\frac{1}{2}$ Berat Beban ($W$)</div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 shadow-xs flex flex-col justify-between transition-transform hover:scale-[1.01]">
+                    <div>
+                        <span class="inline-block px-2.5 py-1 text-xs font-semibold bg-purple-100 text-purple-700 rounded-md mb-3">KM = Jumlah Tali (n)</span>
+                        <h3 class="text-lg font-bold mb-2">3. Katrol Majemuk (Sistem Takal)</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Kombinasi dari katrol tetap dan katrol bebas yang dipasang bersamaan. Semakin banyak jumlah roda katrol atau tali yang menahan beban, semakin ringan gaya tariknya.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-200/50 text-xs text-slate-500 font-mono">Sangat ideal untuk lift rumahan.</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tab-diy" class="tab-content space-y-6 hidden animate-fadeIn">
+            <div class="glass-card rounded-2xl p-6 md:p-8 shadow-sm">
+                <h1 class="text-2xl md:text-3xl font-bold text-slate-800 mb-2">DIY Lift Cucian Baju Sederhana</h1>
+                <p class="text-slate-600 leading-relaxed">Solusi cerdas memanfaatkan ruang vertikal di dalam rumah (ruang cuci/laundry area) agar baju yang dijemur tidak memenuhi lantai dan mendapatkan sirkulasi udara hangat di dekat langit-langit.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass-card rounded-2xl p-6 shadow-xs">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                        <span class="w-2 h-5 bg-blue-600 rounded-xs"></span> Alat & Bahan yang Dibutuhkan
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-600 font-bold">✔</span>
+                            <span><strong>Roda Katrol Kecil (2-3 Pcs):</strong> Bisa gunakan katrol berbahan nilon atau besi cor ukuran 1-2 inci.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-600 font-bold">✔</span>
+                            <span><strong>Tali Paracord / Nilon (10-15 meter):</strong> Pilih yang permukaannya halus agar tidak seret.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-600 font-bold">✔</span>
+                            <span><strong>Keranjang / Pipa Jemuran:</strong> Rak jemuran aluminium ringan atau pipa PVC sebagai palang pakaian.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-600 font-bold">✔</span>
+                            <span><strong>Cleat Kait Dinding (Wall Hook):</strong> Tempat melilitkan ujung tali di dinding agar posisi lift terkunci rapat.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-600 font-bold">✔</span>
+                            <span><strong>Dynabolt / Sekrup & Fisher:</strong> Untuk menambatkan katrol dengan kokoh ke langit-langit beton/kusen.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 shadow-xs">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                        <span class="w-2 h-5 bg-indigo-600 rounded-xs"></span> Langkah-Langkah Pemasangan
+                    </h3>
+                    <ol class="space-y-3 text-sm text-slate-600 list-decimal pl-4">
+                        <li><strong>Penentuan Titik:</strong> Tandai dua titik sejajar di plafon rumah sesuai panjang pipa jemuran kamu.</li>
+                        <li><strong>Pasang Katrol Atas:</strong> Bor plafon dan pasang katrol tetap menggunakan fisher/dynabolt. Satu sisi dipasang katrol ganda (double pulley) untuk mengarahkan tali ke bawah menuju dinding.</li>
+                        <li><strong>Ikat Beban:</strong> Hubungkan ujung tali nilon ke ujung-ujung pipa jemuran atau keranjang cucian.</li>
+                        <li><strong>Alurkan Tali:</strong> Masukkan tali melewati katrol tunggal, lalu satukan kedua ujung tali melewati katrol ganda menuju ke bawah dinding.</li>
+                        <li><strong>Uji Coba:</strong> Tarik tali untuk menaikkan jemuran ke atas, dan lilitkan tali pada *wall hook* di dinding untuk mengunci posisi ketinggiannya.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="tab-simulasi" class="tab-content hidden space-y-6 animate-fadeIn">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                
+                <div class="lg:col-span-4 glass-card rounded-2xl p-6 shadow-xs flex flex-col justify-between gap-6">
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-1">Kontrol Lift Cucian</h3>
+                        <p class="text-xs text-slate-500 mb-4">Ubah jenis mekanika katrol dan berat pakaian untuk melihat perbedaan beban tarik.</p>
+                        
+                        <div class="mb-4">
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Jenis Sistem Katrol</label>
+                            <select id="pulley-type" onchange="updateSimulation()" class="w-full bg-white/80 border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+                                <option value="1">Katrol Tetap Tunggal (KM = 1)</option>
+                                <option value="2">Katrol Sistem DIY (KM = 2)</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-6">
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="font-medium text-slate-600">Berat Cucian Basah:</span>
+                                <span class="font-bold text-blue-600" id="weight-val">5 Kg</span>
+                            </div>
+                            <input type="range" id="weight-slider" min="2" max="15" value="5" oninput="updateSimulation()" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                        </div>
+
+                        <div class="p-4 bg-slate-50/60 rounded-xl border border-slate-200/50 space-y-2.5 font-mono text-xs">
+                            <div class="flex justify-between">
+                                <span class="text-slate-500">Gaya Berat Nyata ($W$):</span>
+                                <span class="font-bold text-slate-700" id="real-weight">50 N</span>
+                            </div>
+                            <div class="flex justify-between items-center pt-1 border-t border-dashed border-slate-200">
+                                <span class="text-slate-500 font-sans font-semibold">Gaya Tarik Diperlukan ($F$):</span>
+                                <span class="font-extrabold text-base text-indigo-600" id="pull-force">50 N</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <button onclick="moveLift('up')" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-xl shadow-xs hover:shadow-md transition-all active:scale-95 text-sm flex justify-center items-center gap-1">
+                            🔼 Tarik Naik
+                        </button>
+                        <button onclick="moveLift('down')" class="bg-slate-700 hover:bg-slate-800 text-white font-medium py-3 rounded-xl shadow-xs hover:shadow-md transition-all active:scale-95 text-sm flex justify-center items-center gap-1">
+                            🔽 Turunkan
+                        </button>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-8 glass-card rounded-2xl p-6 shadow-xs flex flex-col items-center justify-center min-h-[400px]">
+                    <div class="w-full flex justify-between items-center mb-4">
+                        <span class="text-sm font-bold text-slate-700 flex items-center gap-2">
+                            <span class="w-2 h-2 bg-green-500 rounded-full animate-ping"></span> Live Canvas View
+                        </span>
+                        <span class="text-xs text-slate-400 bg-white/60 px-2.5 py-1 rounded-md border border-slate-100" id="height-indicator">Tinggi Jemuran: 10%</span>
+                    </div>
+
+                    <div class="relative w-full max-w-[450px] h-[320px] bg-gradient-to-b from-slate-900 to-slate-800 rounded-xl overflow-hidden shadow-inner border border-slate-700">
+                        <div class="absolute top-0 left-0 w-full h-4 bg-amber-800 border-b-2 border-amber-900 shadow-md"></div>
+                        
+                        <div class="absolute top-4 left-1/4 -translate-x-1/2 w-8 h-8 rounded-full border-4 border-slate-400 bg-slate-300 flex items-center justify-center shadow-xs">
+                            <div class="w-2 h-2 bg-slate-600 rounded-full"></div>
+                        </div>
+
+                        <div class="absolute top-4 left-2/3 -translate-x-1/2 w-8 h-8 rounded-full border-4 border-slate-400 bg-slate-300 flex items-center justify-center shadow-xs">
+                            <div class="w-2 h-2 bg-slate-600 rounded-full"></div>
+                        </div>
+
+                        <div id="rope-left" class="absolute bg-amber-400 w-[2px] left-1/4 transition-all duration-300 ease-out" style="top: 20px; height: 180px;"></div>
+                        <div class="absolute bg-amber-400 h-[2px] top-[20px] left-1/4 transition-all" style="width: 42%;"></div>
+                        <div id="rope-pull" class="absolute bg-amber-400 w-[2px] left-[68%] transition-all duration-300 ease-out" style="top: 20px; height: 100px;"></div>
+
+                        <div id="laundry-lift" class="absolute left-1/4 -translate-x-1/2 w-28 transition-all duration-300 ease-out flex flex-col items-center" style="top: 190px;">
+                            <div class="w-0 h-0 border-l-[14px] border-l-transparent border-r-[14px] border-r-transparent border-b-[20px] border-b-sky-400"></div>
+                            <div class="w-full h-4 bg-sky-400 rounded-md relative flex justify-around items-end px-1 shadow-sm">
+                                <div class="w-3 h-5 bg-red-400 rounded-xs transform translate-y-3 shadow-xs"></div>
+                                <div class="w-3 h-5 bg-emerald-400 rounded-xs transform translate-y-4 shadow-xs"></div>
+                                <div class="w-3 h-5 bg-yellow-400 rounded-xs transform translate-y-2 shadow-xs"></div>
+                            </div>
+                        </div>
+
+                        <div id="hand-anchor" class="absolute left-[68%] -translate-x-1/2 bg-amber-600 text-[10px] text-white px-1.5 py-0.5 rounded-sm font-bold shadow-xs transition-all duration-300 ease-out" style="top: 110px;">
+                            Tali Kait
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="w-full text-center py-4 text-xs text-slate-500 bg-white/40 border-t border-slate-200/50 backdrop-blur-xs font-mono">
+        Dibuat oleh: Artriel Ariel &copy; 2026
+    </footer>
+
+    <script>
+        // State Manajemen SPA Ketinggian Jemuran (0% bawah sampai 80% atas plafon)
+        let liftHeight = 20; 
+
+        // Fungsi Perpindahan Tab (SPA Pattern)
+        function switchTab(tabId) {
+            // Sembunyikan semua tab content
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
+            // Tampilkan tab terpilih
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+
+            // Reset gaya tombol navigasi
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white', 'shadow-xs');
+                btn.classList.add('hover:bg-slate-200/60', 'text-slate-600');
+            });
+            // Aktifkan gaya tombol aktif
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.add('bg-blue-600', 'text-white', 'shadow-xs');
+            activeBtn.classList.remove('hover:bg-slate-200/60', 'text-slate-600');
+        }
+
+        // Fungsi Perhitungan & Update Parameter Simulasi
+        function updateSimulation() {
+            const weightKg = parseFloat(document.getElementById('weight-slider').value);
+            const pulleyType = parseInt(document.getElementById('pulley-type').value);
+            
+            // Konversi Kg ke Newton sederhana (g = 10 m/s^2)
+            const weightN = weightKg * 10;
+            // Hitung gaya tarik berdasarkan Keuntungan Mekanis (KM)
+            const pullForceN = weightN / pulleyType;
+
+            // Update UI Teks
+            document.getElementById('weight-val').innerText = weightKg + " Kg";
+            document.getElementById('real-weight').innerText = weightN + " N";
+            document.getElementById('pull-force').innerText = pullForceN + " N";
+
+            renderLiftPosition();
+        }
+
+        // Fungsi Menggerakkan Ketinggian Lift Jemuran
+        function moveLift(direction) {
+            if (direction === 'up' && liftHeight < 80) {
+                liftHeight += 10;
+            } else if (direction === 'down' && liftHeight > 10) {
+                liftHeight -= 10;
+            }
+            renderLiftPosition();
+        }
+
+        // Sinkronisasi Data State ke Visualisasi DOM CSS
+        function renderLiftPosition() {
+            const liftEl = document.getElementById('laundry-lift');
+            const ropeLeftEl = document.getElementById('rope-left');
+            const ropePullEl = document.getElementById('rope-pull');
+            const handAnchorEl = document.getElementById('hand-anchor');
+            const indicator = document.getElementById('height-indicator');
+
+            // Hitung pixel top berdasarkan persentase state tinggi
+            // 0% tinggi jemuran = top berada di bawah (~240px)
+            // 100% tinggi jemuran = top mepet plafon (~40px)
+            const baseTop = 250;
+            const computedTop = baseTop - (liftHeight * 2.3);
+
+            // Terapkan perubahan style CSS secara realtime
+            liftEl.style.top = computedTop + "px";
+            ropeLeftEl.style.height = computedTop + "px";
+            
+            // Logika gerak tali penarik (kebalikan dari arah gerakan lift)
+            const computedPullRopeHeight = 80 + (liftHeight * 1.5);
+            ropePullEl.style.height = computedPullRopeHeight + "px";
+            handAnchorEl.style.top = (20 + computedPullRopeHeight) + "px";
+
+            // Update info persentase teks ketinggian
+            indicator.innerText = `Tinggi Jemuran: ${liftHeight}%`;
+        }
+
+        // Inisialisasi awal kalkulasi saat halaman pertama kali dimuat
+        window.onload = function() {
+            updateSimulation();
+        };
+    </script>
+</body>
+</html>
