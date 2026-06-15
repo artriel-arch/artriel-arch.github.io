@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edukasi & Simulasi Pembuatan Sabun Sederhana</title>
+    
+    <meta name="description" content="Pelajari apa itu sabun, kimia di balik proses saponifikasi, dan coba simulasi interaktif pembuatan sabun sederhana secara virtual.">
+    <meta name="keywords" content="sabun, saponifikasi, simulasi sabun, cara membuat sabun, edukasi kimia, bento box ui">
+    <meta name="author" content="Ariel Usman">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sabun-edukasi.madeai.app/">
+    <meta property="og:title" content="Edukasi & Simulasi Pembuatan Sabun Sederhana">
+    <meta property="og:description" content="Pelajari proses kimia sabun dan simulasikan pembuatannya secara interaktif dengan formula yang aman.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1607006342456-ba275cd3475f?q=80&w=1200&auto=format&fit=crop">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Edukasi & Simulasi Pembuatan Sabun Sederhana">
+    <meta property="twitter:description" content="Pelajari proses kimia sabun dan simulasikan pembuatannya secara interaktif.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1607006342456-ba275cd3475f?q=80&w=1200&auto=format&fit=crop">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22 width=%22100%22 height=%22100%22><text y=%220.9em%22 font-size=%2290%22>🧼</text></svg>">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        soapBlue: '#e0f2fe',
+                        soapPurple: '#f3e8ff',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 50%, #f3e8ff 100%);
+            background-attachment: fixed;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.05);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(148, 163, 184, 0.5);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="text-slate-800 min-h-screen flex flex-col antialiased">
+
+    <nav class="glass sticky top-0 z-50 transition-all duration-300 dynamic-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <span class="text-2xl">🧼</span>
+                    <span class="font-bold text-lg tracking-tight bg-gradient-to-r align-middle from-blue-600 to-indigo-600 bg-clip-text text-transparent">SapoCraft</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                    <a href="#edukasi" class="hover:text-blue-600 transition-colors">Apa Itu Sabun</a>
+                    <a href="#simulasi" class="hover:text-blue-600 transition-colors">Simulasi Pembuatan</a>
+                    <a href="#manfaat" class="hover:text-blue-600 transition-colors">Manfaat</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="p-2 text-slate-600 hover:text-blue-600 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/40 bg-white/80 backdrop-blur-lg">
+            <div class="px-4 pt-2 pb-4 space-y-2 text-base font-medium">
+                <a href="#edukasi" class="block px-3 py-2 rounded-lg hover:bg-white/60 text-slate-700">Apa Itu Sabun</a>
+                <a href="#simulasi" class="block px-3 py-2 rounded-lg hover:bg-white/60 text-slate-700">Simulasi Pembuatan</a>
+                <a href="#manfaat" class="block px-3 py-2 rounded-lg hover:bg-white/60 text-slate-700">Manfaat</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4 w-full">
+        <div class="glass rounded-3xl p-8 md:p-16 text-center relative overflow-hidden shadow-xl shadow-slate-200/50">
+            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            <div class="relative z-10 max-w-3xl mx-auto">
+                <span class="px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-blue-700 bg-blue-100/80 rounded-full inline-block mb-4">Sains Populer Interaktif</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4 leading-tight">
+                    Keajaiban di Balik <span class="bg-gradient-to-r from-blue-600 to-teal-500 bg-clip-text text-transparent">Sebongkah Sabun</span>
+                </h1>
+                <p class="text-base md:text-lg text-slate-600 mb-8 leading-relaxed">
+                    Lebih dari sekadar pembersih, sabun adalah hasil dari harmoni reaksi kimia antara lemak dan basa. Mari pelajari sainsnya dan racik sabun pertamamu secara aman!
+                </p>
+                <a href="#simulasi" class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-lg shadow-blue-500/30 hover:opacity-95 transition-all transform hover:-translate-y-0.5">
+                    Mulai Simulasi <i class="fa-solid fa-flask ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full flex-grow grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <div class="lg:col-span-2 space-y-6">
+            
+            <section id="edukasi" class="glass rounded-3xl p-6 md:p-8 shadow-sm">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-microscope text-blue-600"></i> Apa Itu Sabun?
+                </h2>
+                <div class="prose text-slate-600 leading-relaxed space-y-4">
+                    <p>
+                        Secara kimia, <strong>sabun</strong> adalah garam alkali dari asam lemak berrantai panjang. Sabun diproduksi melalui proses hidrolisis kimia yang dikenal sebagai <strong>Saponifikasi</strong> (reaksi penyabunan).
+                    </p>
+                    <div class="p-4 rounded-2xl bg-white/50 border border-white/60 my-4 text-center font-mono text-sm overflow-x-auto text-indigo-950">
+                        <span class="font-semibold text-blue-600">Minyak/Lemak (Trigliserida)</span> + <span class="font-semibold text-red-600">Alkali (NaOH/KOH)</span> <br class="md:hidden"> 
+                        <i class="fa-solid fa-arrow-right mx-2 text-slate-400"></i> <br class="md:hidden">
+                        <span class="font-semibold text-green-600">Sabun (Garam Gliseril)</span> + <span class="font-semibold text-amber-600">Gliserin</span>
+                    </div>
+                    <p>
+                        Molekul sabun memiliki struktur yang unik seperti kecebong: kepala bersifat <strong>hidrofilik</strong> (suka air) dan ekor bersifat <strong>hidrofobik</strong> (takut air/suka minyak). Desain molekul ganda inilah yang memungkinkannya mengikat kotoran berminyak pada kulit dan melarutkannya bersama aliran air.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                    <div class="p-4 rounded-2xl bg-gradient-to-br from-blue-500/5 to-cyan-500/5 border border-white/60">
+                        <h3 class="font-semibold text-slate-800 mb-1"><i class="fa-solid fa-droplet text-blue-500 mr-1"></i> Hidrofilik</h3>
+                        <p class="text-xs text-slate-500">Bagian kepala molekul yang berikatan kuat dengan air saat dibilas.</p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-gradient-to-br from-amber-500/5 to-orange-500/5 border border-white/60">
+                        <h3 class="font-semibold text-slate-800 mb-1"><i class="fa-solid fa-shield-cat text-amber-500 mr-1"></i> Hidrofobik</h3>
+                        <p class="text-xs text-slate-500">Bagian ekor yang mengikat minyak, kotoran, dan dinding lipid bakteri.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="simulasi" class="glass rounded-3xl p-6 md:p-8 shadow-sm">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-2">
+                        <i class="fa-solid fa-mortar-pestle text-teal-600"></i> Lab Virtual: Buat Sabun Sendiri
+                    </h2>
+                    <p class="text-sm text-slate-500 mt-1">Gunakan kontrol di bawah untuk mencampur formula sabun batangan dasar (Cold Process).</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">1. Pilih Basis Minyak utama:</label>
+                            <select id="oil-select" class="w-full p-3 rounded-xl border border-slate-200 bg-white/80 focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                                <option value="coconut" data-hardness="80" data-lather="90" data-moisture="20">Minyak Kelapa (Busa Melimpah, Keras)</option>
+                                <option value="olive" data-hardness="40" data-lather="20" data-moisture="90">Minyak Zaitun (Sangat Lembap, Lembut)</option>
+                                <option value="palm" data-hardness="70" data-lather="50" data-moisture="35">Minyak Sawit (Padat, Stabilizer Busa)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">2. Tambahan Aromaterapi / Warna:</label>
+                            <div class="grid grid-cols-2 gap-2">
+                                <button type="button" onclick="setAdditive('Lavender', '#a78bfa')" class="additive-btn p-2 rounded-xl border border-slate-200 bg-white hover:bg-purple-50 text-xs font-medium text-slate-600 transition flex items-center justify-center gap-1">
+                                    🪻 Lavender
+                                </button>
+                                <button type="button" onclick="setAdditive('Jeruk', '#fb923c')" class="additive-btn p-2 rounded-xl border border-slate-200 bg-white hover:bg-orange-50 text-xs font-medium text-slate-600 transition flex items-center justify-center gap-1">
+                                    🍊 Jeruk Esensial
+                                </button>
+                                <button type="button" onclick="setAdditive('Mint', '#2dd4bf')" class="additive-btn p-2 rounded-xl border border-slate-200 bg-white hover:bg-teal-50 text-xs font-medium text-slate-600 transition flex items-center justify-center gap-1">
+                                    🌱 Ekstrak Mint
+                                </button>
+                                <button type="button" onclick="setAdditive('Madu', '#fbbf24')" class="additive-btn p-2 rounded-xl border border-slate-200 bg-white hover:bg-amber-50 text-xs font-medium text-slate-600 transition flex items-center justify-center gap-1">
+                                    🍯 Madu Murni
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <button id="btn-mix" onclick="runSimulation()" class="w-full py-3.5 bg-gradient-to-r from-teal-500 to-blue-600 hover:opacity-95 text-white font-bold rounded-xl shadow-md transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-blender"></i> Proses Saponifikasi!
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="glass-dark rounded-2xl p-4 flex flex-col justify-between min-h-[220px]">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-2">Beaker Glass Reaksi</span>
+                        
+                        <div class="relative w-32 h-32 mx-auto my-auto flex items-end justify-center border-4 border-slate-400/60 rounded-b-3xl rounded-t-md overflow-hidden bg-white/30">
+                            <div id="liquid-display" class="w-full h-1/4 bg-amber-200 transition-all duration-1000 ease-in-out relative">
+                                <div id="bubbles" class="absolute -top-3 inset-x-0 hidden flex-wrap justify-around opacity-70">
+                                    <span class="w-2 h-2 rounded-full bg-white block animate-ping"></span>
+                                    <span class="w-3 h-3 rounded-full bg-white block animate-pulse"></span>
+                                    <span class="w-1.5 h-1.5 rounded-full bg-white block animate-bounce"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="status-text" class="text-center text-sm font-medium text-slate-500 mt-2">
+                            Siap mencampur bahan...
+                        </div>
+                    </div>
+                </div>
+
+                <div id="result-box" class="hidden border-t border-slate-200/60 pt-6 animate-fadeIn">
+                    <h3 class="text-md font-bold text-slate-800 mb-4 flex items-center gap-1.5">
+                        <i class="fa-solid fa-square-poll-horizontal text-indigo-600"></i> Hasil Analisis Sabun Anda
+                    </h3>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between text-xs font-medium text-slate-600 mb-1">
+                                <span>Kekerasan Batangan (Hardness)</span>
+                                <span id="val-hardness">0%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                                <div id="bar-hardness" class="bg-blue-500 h-full transition-all duration-500" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-medium text-slate-600 mb-1">
+                                <span>Kuantitas Busa (Lather)</span>
+                                <span id="val-lather">0%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                                <div id="bar-lather" class="bg-teal-500 h-full transition-all duration-500" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-medium text-slate-600 mb-1">
+                                <span>Kelembapan Kulit (Moisture)</span>
+                                <span id="val-moisture">0%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                                <div id="bar-moisture" class="bg-purple-500 h-full transition-all duration-500" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="recipe-summary" class="mt-4 p-3 rounded-xl bg-white/60 text-xs text-slate-600 border border-white">
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <aside class="space-y-6">
+            <div class="glass rounded-3xl p-6 shadow-sm">
+                <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-list-check text-indigo-600"></i> Alur Pembuatan Nyata
+                </h3>
+                <ol class="space-y-4 text-xs text-slate-600">
+                    <li class="flex gap-3">
+                        <span class="w-5 h-5 rounded-full bg-blue-100 text-blue-600 font-bold flex items-center justify-center shrink-0">1</span>
+                        <p><strong>Larutan Lye:</strong> Melarutkan NaOH ke dalam air murni (selalu tuang NaOH ke air, bukan sebaliknya!). Tunggu hingga suhu turun.</p>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="w-5 h-5 rounded-full bg-blue-100 text-blue-600 font-bold flex items-center justify-center shrink-0">2</span>
+                        <p><strong>Pencampuran:</strong> Tuang larutan lye secara perlahan ke dalam wadah minyak nabati pilihan Anda.</p>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="w-5 h-5 rounded-full bg-blue-100 text-blue-600 font-bold flex items-center justify-center shrink-0">3</span>
+                        <p><strong>Tracing:</strong> Aduk konstan menggunakan <em>stick blender</em> hingga adonan mengental seperti konsistensi mayones ringan.</p>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="w-5 h-5 rounded-full bg-blue-100 text-blue-600 font-bold flex items-center justify-center shrink-0">4</span>
+                        <p><strong>Curing:</strong> Tuang ke cetakan, simpan 24 jam. Potong sabun, lalu diamkan (curing) selama 4-6 minggu agar reaksi selesai sempurna.</p>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="glass rounded-3xl p-6 border-l-4 border-amber-500/70 shadow-sm bg-gradient-to-br from-amber-500/5 to-transparent">
+                <h3 class="text-base font-bold text-slate-900 mb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-triangle-exclamation text-amber-600"></i> Peringatan Keamanan Lab
+                </h3>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Senyawa alkali seperti Natrium Hidroksida (NaOH) bersifat korosif dan dapat menyebabkan luka bakar kimiawi. Dalam praktik nyata, <strong>Wajib</strong> menggunakan sarung tangan karet, masker, serta kacamata pelindung sepanjang pengerjaan.
+                </p>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="glass mt-auto border-t border-white/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+            <div>
+                &copy; 2026 <span class="font-semibold text-slate-700">Ariel Usman</span>. Seluruh Hak Cipta Dilindungi.
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="text-slate-400">Hubungi saya:</span>
+                <a href="https://instagram.com/arielrcun" target="_blank" class="flex items-center gap-1 hover:text-pink-600 transition-colors text-sm font-medium">
+                    <i class="fa-brands fa-instagram text-base"></i> @arielrcun
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // DOM Elements
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const oilSelect = document.getElementById('oil-select');
+        const liquidDisplay = document.getElementById('liquid-display');
+        const bubbles = document.getElementById('bubbles');
+        const statusText = document.getElementById('status-text');
+        const btnMix = document.getElementById('btn-mix');
+        
+        const resultBox = document.getElementById('result-box');
+        const valHardness = document.getElementById('val-hardness');
+        const valLather = document.getElementById('val-lather');
+        const valMoisture = document.getElementById('val-moisture');
+        const barHardness = document.getElementById('bar-hardness');
+        const barLather = document.getElementById('bar-lather');
+        const barMoisture = document.getElementById('bar-moisture');
+        const recipeSummary = document.getElementById('recipe-summary');
+
+        // State Management
+        let selectedAdditiveName = 'Tanpa Tambahan';
+        let selectedAdditiveColor = '#fbbf24';
+
+        // Mobile Menu Toggle
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Additive Selector Action
+        function setAdditive(name, color) {
+            selectedAdditiveName = name;
+            selectedAdditiveColor = color;
+            
+            // Highlight selected button UI
+            document.querySelectorAll('.additive-btn').forEach(btn => {
+                btn.classList.remove('ring-2', 'ring-blue-500', 'border-transparent');
+            });
+            event.currentTarget.classList.add('ring-2', 'ring-blue-500', 'border-transparent');
+            
+            statusText.innerText = `Bahan tambahan dipilih: ${name}`;
+        }
+
+        // Run Simulation Reaksi Saponifikasi
+        function runSimulation() {
+            // Disable button during animation
+            btnMix.disabled = true;
+            btnMix.innerText = "Mereaksikan...";
+            
+            // Reset visual dan result box
+            resultBox.classList.add('hidden');
+            bubbles.classList.remove('hidden');
+            statusText.innerText = "Sedang mengaduk adonan minyak & lye alkali...";
+            
+            // Ambil data atribut dari opsi minyak terpilih
+            const activeOption = oilSelect.options[oilSelect.selectedIndex];
+            const baseHardness = activeOption.getAttribute('data-hardness');
+            const baseLather = activeOption.getAttribute('data-lather');
+            const baseMoisture = activeOption.getAttribute('data-moisture');
+
+            // Jalankan animasi pengisian cairan beaker glass
+            liquidDisplay.style.height = "85%";
+            liquidDisplay.style.backgroundColor = selectedAdditiveColor;
+
+            setTimeout(() => {
+                // Reaksi Selesai (Simulasi penundaan 1.8 detik)
+                bubbles.classList.add('hidden');
+                statusText.innerText = "Saponifikasi Sukses! Adonan mengental (Trace).";
+                btnMix.disabled = false;
+                btnMix.innerHTML = '<i class="fa-solid fa-blender"></i> Proses Saponifikasi!';
+
+                // Update teks angka metrik
+                valHardness.innerText = baseHardness + "%";
+                valLather.innerText = baseLather + "%";
+                valMoisture.innerText = baseMoisture + "%";
+
+                // Update grafik batangan metrik
+                barHardness.style.width = baseHardness + "%";
+                barLather.style.width = baseLather + "%";
+                barMoisture.style.width = baseMoisture + "%";
+
+                // Update ringkasan teks resep rancangan
+                recipeSummary.innerHTML = `
+                    <p class="font-semibold text-slate-700 mb-1">Rekomendasi Formula Fisik:</p>
+                    <ul class="list-disc list-inside space-y-0.5">
+                        <li>Minyak Utama: 70% ${activeOption.text.split(' (')[0]}</li>
+                        <li>Cairan Alkali (Lye): 30% Rasio Air-NaOH Kristal</li>
+                        <li>Aditif Aromatik: 2% Minyak Atsiri Scent ${selectedAdditiveName}</li>
+                    </ul>
+                `;
+
+                // Tampilkan bento panel hasil analisis
+                resultBox.classList.remove('hidden');
+                
+                // Efek scroll halus ke hasil analisis untuk kenyamanan layar HP
+                resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            }, 1800);
+        }
+
+        // Navbar Scroll Styling Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.dynamic-nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md', 'bg-white/95');
+            } else {
+                nav.classList.remove('shadow-md', 'bg-white/45');
+            }
+        });
+    </script>
+</body>
+</html>
