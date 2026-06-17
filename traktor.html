@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>HeavyTech - Solusi Traktor & Alat Berat Modern</title>
+    <meta name="description" content="Penyedia informasi, edukasi, dan katalog alat berat serta traktor modern untuk kebutuhan konstruksi dan agrikultur.">
+    <meta name="keywords" content="traktor, alat berat, ekskavator, buldozer, konstruksi, pertanian, HeavyTech">
+    <meta name="author" content="Ariel Usman">
+
+    <!-- Open Graph / Facebook / WhatsApp SEO Link Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://heavytech-demo.pages.dev/">
+    <meta property="og:title" content="HeavyTech - Solusi Traktor & Alat Berat Modern">
+    <meta property="og:description" content="Eksplorasi lini traktor dan armada alat berat masa kini dengan teknologi mutakhir.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=1200&h=630&q=80">
+
+    <!-- Twitter SEO Link Preview -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="HeavyTech - Solusi Traktor & Alat Berat Modern">
+    <meta property="twitter:description" content="Eksplorasi lini traktor dan armada alat berat masa kini dengan teknologi mutakhir.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=1200&h=630&q=80">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2318/2318184.png">
+
+    <!-- Tailwind CSS (Tailwhip Style) & Font -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #f8fafc;
+        }
+        /* Custom Glassmorphism Utility */
+        .glass {
+            background: rgba(30, 41, 59, 0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+
+    <!-- NAVBAR -->
+    <nav class="glass fixed top-0 left-0 right-0 z-50 px-4 py-3 md:px-8 flex justify-between items-center transition-all duration-300">
+        <div class="flex items-center gap-2 font-bold text-xl tracking-wide text-amber-500">
+            <i class="fa-solid fa-tractor text-2xl"></i>
+            <span>HeavyTech</span>
+        </div>
+        
+        <!-- Desktop & Tablet Menu -->
+        <div class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-300">
+            <a href="#home" class="hover:text-amber-500 transition-colors">Home</a>
+            <a href="#katalog" class="hover:text-amber-500 transition-colors">Katalog Alat</a>
+            <a href="#fitur" class="hover:text-amber-500 transition-colors">Fitur Utama</a>
+            <a href="#edukasi" class="hover:text-amber-500 transition-colors">Edukasi</a>
+        </div>
+
+        <!-- Mobile Burger Button -->
+        <button id="menu-btn" class="md:hidden text-slate-200 focus:outline-none text-xl p-1">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 glass flex flex-col p-4 gap-3 text-center font-medium border-t border-slate-700/50">
+            <a href="#home" class="py-2 hover:bg-slate-800/50 rounded-lg text-amber-500">Home</a>
+            <a href="#katalog" class="py-2 hover:bg-slate-800/50 rounded-lg">Katalog Alat</a>
+            <a href="#fitur" class="py-2 hover:bg-slate-800/50 rounded-lg">Fitur Utama</a>
+            <a href="#edukasi" class="py-2 hover:bg-slate-800/50 rounded-lg">Edukasi</a>
+        </div>
+    </nav>
+
+    <!-- HEADER / HERO SECTION -->
+    <header id="home" class="relative pt-24 min-h-[85vh] flex items-center justify-center bg-cover bg-center px-4" style="background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=1600&q=80');">
+        <!-- Glassmorphism Hero Card -->
+        <div class="glass max-w-3xl w-full p-8 md:p-12 rounded-2xl text-center shadow-2xl mx-2 my-8 transform transition duration-500 hover:scale-[1.01]">
+            <span class="inline-block bg-amber-500/20 text-amber-400 text-xs px-3 py-1.5 rounded-full font-bold uppercase tracking-wider mb-4 border border-amber-500/30">
+                Teknologi Alat Berat Klas Dunia
+            </span>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+                Eksplorasi Performa Kekuatan Tanpa Batas
+            </h1>
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed mb-8 max-w-xl mx-auto">
+                Temukan lini unit traktor tangguh dan peralatan berat modular terintegrasi untuk hasil kerja konstruksi dan agrikultur yang presisi.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#katalog" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-6 py-3 rounded-xl shadow-lg transition-all text-sm flex items-center gap-2">
+                     Lihat Armada <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <button onclick="playWelcomeAlert()" class="glass hover:bg-white/10 text-white font-semibold px-6 py-3 rounded-xl transition-all text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-circle-info"></i> Konsultasi Cepat
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN INTERACTIVE LAYOUT (BODY & SIDEBAR) -->
+    <div class="max-w-7xl w-full mx-auto px-4 md:px-8 py-12 flex flex-col lg:flex-row gap-8 flex-grow">
+        
+        <!-- BODY CONTENT (Kiri di Desktop) -->
+        <main class="w-full lg:w-3/4 space-y-12">
+            
+            <!-- KATALOG SEKSYEN -->
+            <section id="katalog">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="h-8 w-2 bg-amber-500 rounded-full"></div>
+                    <h2 class="text-2xl font-bold tracking-tight text-white">Katalog Unit Unggulan</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Unit 1 -->
+                    <div class="glass rounded-xl overflow-hidden shadow-md group">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1586165368581-131efda0ab9a?auto=format&fit=crop&w=600&q=80" alt="Crawler Excavator" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-lg text-amber-400 mb-1">Excavator Series X-300</h3>
+                            <p class="text-xs text-slate-400 mb-3">Kategori: Earthmoving & Konstruksi</p>
+                            <p class="text-sm text-slate-300 mb-4 line-clamp-2">Didesain khusus untuk efisiensi pengerukan maksimal dengan mesin bertenaga tinggi dan konsumsi bahan bakar yang optimal.</p>
+                            <button onclick="openModal('Excavator Series X-300', 'Excavator kelas berat ini dilengkapi dengan bucket berkapasitas 1.8 meter kubik, kontrol kabin ergonomis, pintar berbasis AI, dan sistem hidrolik pintar generasi terbaru.')" class="w-full bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 text-xs font-semibold py-2.5 rounded-lg transition-all">
+                                Detail Spesifikasi
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Unit 2 -->
+                    <div class="glass rounded-xl overflow-hidden shadow-md group">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1530263202315-52b82643a14e?auto=format&fit=crop&w=600&q=80" alt="Agri Tractor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-lg text-amber-400 mb-1">AgriMax Tractor T-80</h3>
+                            <p class="text-xs text-slate-400 mb-3">Kategori: Agrikultur Modern</p>
+                            <p class="text-sm text-slate-300 mb-4 line-clamp-2">Solusi terbaik pengolahan lahan pertanian skala luas. Kompatibel dengan berbagai attachment bajak modern.</p>
+                            <button onclick="openModal('AgriMax Tractor T-80', 'Traktor agrikultur roda empat dengan tenaga 120 HP, dibekali sistem kemudi otomatis berbasis GPS untuk pemetaan lahan pertanian yang presisi tinggi.')" class="w-full bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 text-xs font-semibold py-2.5 rounded-lg transition-all">
+                                Detail Spesifikasi
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FITUR UTAMA -->
+            <section id="fitur" class="glass rounded-2xl p-6 md:p-8">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="h-8 w-2 bg-amber-500 rounded-full"></div>
+                    <h2 class="text-2xl font-bold tracking-tight text-white">Fitur Sistem & Layanan</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div class="text-center p-4 rounded-xl bg-slate-800/40 border border-slate-700/30">
+                        <i class="fa-solid fa-gears text-3xl text-amber-500 mb-3"></i>
+                        <h4 class="font-semibold mb-1 text-slate-200">Kustomisasi Unit</h4>
+                        <p class="text-xs text-slate-400">Pilihan variasi attachment modular sesuai kebutuhan lapangan kerja Anda.</p>
+                    </div>
+                    <div class="text-center p-4 rounded-xl bg-slate-800/40 border border-slate-700/30">
+                        <i class="fa-solid fa-satellite text-3xl text-amber-500 mb-3"></i>
+                        <h4 class="font-semibold mb-1 text-slate-200">Telematika GPS</h4>
+                        <p class="text-xs text-slate-400">Pantau lokasi, konsumsi bahan bakar, dan kesehatan mesin secara realtime.</p>
+                    </div>
+                    <div class="text-center p-4 rounded-xl bg-slate-800/40 border border-slate-700/30">
+                        <i class="fa-solid fa-screwdriver-wrench text-3xl text-amber-500 mb-3"></i>
+                        <h4 class="font-semibold mb-1 text-slate-200">Maintenance Rutin</h4>
+                        <p class="text-xs text-slate-400">Dukungan mekanik ahli bersertifikasi standby langsung ke lokasi Anda.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- SIDEBAR (Kanan di Desktop) -->
+        <aside class="w-full lg:w-1/4 space-y-6">
+            <!-- Widget Pencarian / Interaktif Mini -->
+            <div class="glass rounded-xl p-5 shadow-md">
+                <h3 class="font-bold text-slate-200 text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-magnifying-glass text-amber-500"></i> Cari Informasi Unit
+                </h3>
+                <div class="relative">
+                    <input type="text" id="sidebar-search" placeholder="Ketik jenis alat berat..." class="w-full bg-slate-900/60 border border-slate-700 rounded-lg py-2 px-3 pl-9 text-xs text-slate-200 focus:outline-none focus:border-amber-500">
+                    <i class="fa-solid fa-search absolute left-3 top-3 text-slate-500 text-xs"></i>
+                </div>
+                <button onclick="searchAlert()" class="w-full mt-2 bg-amber-500 text-slate-950 font-bold text-xs py-2 rounded-lg hover:bg-amber-600 transition-all">
+                    Cari Sekarang
+                </button>
+            </div>
+
+            <!-- Widget Informasi Terkait -->
+            <div id="edukasi" class="glass rounded-xl p-5 shadow-md">
+                <h3 class="font-bold text-slate-200 text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-book-open text-amber-500"></i> Artikel & Edukasi
+                </h3>
+                <div class="space-y-3 text-xs">
+                    <div class="p-3 rounded-lg bg-slate-800/50 hover:bg-slate-800 transition-colors cursor-pointer" onclick="openModal('Panduan Keselamatan Kerja', 'Selalu lakukan pengecekan visual cairan mesin, tekanan hidrolik, dan sistem pengereman sebelum menyalakan unit alat berat.')">
+                        <h4 class="font-semibold text-slate-300 mb-1 hover:text-amber-400">Panduan Keselamatan Kerja Alat Berat</h4>
+                        <span class="text-[10px] text-slate-500">Dibaca 5 Menit yang lalu</span>
+                    </div>
+                    <div class="p-3 rounded-lg bg-slate-800/50 hover:bg-slate-800 transition-colors cursor-pointer" onclick="openModal('Efisensi BioSolar B35', 'Penerapan pencampuran bahan bakar ramah lingkungan pada mesin diesel common-rail generasi terbaru tanpa menurunkan torsi mekanikal.')">
+                        <h4 class="font-semibold text-slate-300 mb-1 hover:text-amber-400">Mengenal Efisiensi Penggunaan BioSolar</h4>
+                        <span class="text-[10px] text-slate-500">Hari ini</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="glass mt-auto border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 py-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+            <div class="text-xs text-slate-400">
+                &copy; 2026 <span class="text-slate-200 font-semibold">HeavyTech</span>. Developed by <span class="text-amber-400 font-medium">Ariel Usman</span>. All Rights Reserved.
+            </div>
+            <!-- Instagram Social Link -->
+            <div class="flex items-center gap-2">
+                <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="glass h-9 w-9 rounded-full flex items-center justify-center text-slate-300 hover:text-amber-500 hover:border-amber-500/50 transition-all text-sm" title="Instagram Ariel Usman">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <span class="text-xs text-slate-400 font-medium">@arielrcun</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- DYNAMIC INTERACTIVE INTERNET MODAL DIALOG -->
+    <div id="info-modal" class="hidden fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="glass max-w-md w-full rounded-xl p-6 shadow-2xl relative animate-fade-in">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 id="modal-title" class="font-bold text-xl text-amber-400 mb-2"></h3>
+            <p id="modal-desc" class="text-slate-300 text-sm leading-relaxed mb-6"></p>
+            <div class="text-right">
+                <button onclick="closeModal()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold px-4 py-2 rounded-lg border border-slate-700 transition-all">
+                    Tutup Informasi
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT INTERAKTIF NATIVE -->
+    <script>
+        // 1. Mobile Menu Toggle Responsiveness
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu if link clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 2. Interactive Modal Functions
+        function openModal(title, description) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-desc').innerText = description;
+            document.getElementById('info-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('info-modal').classList.add('hidden');
+        }
+
+        // 3. Interactive Alerts UI 
+        function playWelcomeAlert() {
+            openModal("Sistem Konsultasi HeavyTech", "Terima kasih telah tertarik! Layanan konsultasi penyesuaian armada traktor dan alat berat dapat Anda hubungi via kontak representatif resmi kami.");
+        }
+
+        function searchAlert() {
+            const query = document.getElementById('sidebar-search').value;
+            if(query.trim() === "") {
+                openModal("Pencarian", "Silakan ketik kata kunci unit yang ingin dicari terlebih dahulu.");
+            } else {
+                openModal("Hasil Pencarian", `Informasi mendalam mengenai "${query}" sedang disiapkan dari database katalog alat berat.`);
+            }
+        }
+
+        // Close modal when hitting 'Escape' key
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
+</body>
+</html>
