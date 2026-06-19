@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Optimization -->
+    <title>Power Law: Semesta Belajar, Membaca, & Bercerita</title>
+    <meta name="description" content="Mengaplikasikan filosofi Power Law dan kurva eksponensial dalam metode belajar, membaca cepat, dan seni bercerita untuk melahirkan 100 BJ Habibie Masa Depan.">
+    <meta name="keywords" content="Power Law, Belajar, Membaca, Bercerita, M-Shape Skill, Pendidikan, Indonesia Emas">
+    <meta name="author" content="Ariel Usman">
+    
+    <!-- Open Graph / Facebook / WhatsApp Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://artriel.madeai.app/">
+    <meta property="og:title" content="Power Law: Semesta Belajar, Membaca, & Bercerita">
+    <meta property="og:description" content="Bagaimana taruhan kecil yang cerdas dan persistensi mengubah kurva hidup rata-rata menjadi pertumbuhan eksponensial.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Power Law: Semesta Belajar, Membaca, & Bercerita">
+    <meta name="twitter:description" content="Menggeser paradigma distribusi normal menuju persistensi tanpa batas.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/infinity.png">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: radial-gradient(circle at top right, #f8fafc, #f1f5f9);
+        }
+        /* Custom Light Glassmorphism CSS */
+        .glass {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(15, 23, 42, 0.06);
+        }
+        .glass-premium {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+        }
+        /* Hide scrollbar but keep functional */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="text-slate-800 min-h-screen selection:bg-indigo-100 selection:text-indigo-900">
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 glass border-b border-slate-200/60 px-4 py-3 md:px-8">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-2 cursor-pointer">
+                <img src="https://img.icons8.com/fluency/48/infinity.png" class="w-7 h-7" alt="Logo">
+                <span class="text-lg font-bold tracking-tight bg-gradient-to-r from-indigo-600 to-cyan-600 bg-clip-text text-transparent">
+                    MadeAI.Artriel
+                </span>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-6 text-sm font-semibold text-slate-600">
+                <a href="#filosofi" class="hover:text-indigo-600 transition-colors">Filosofi</a>
+                <a href="#belajar" class="hover:text-indigo-600 transition-colors">Belajar & Membaca</a>
+                <a href="#bercerita" class="hover:text-indigo-600 transition-colors">Seni Bercerita</a>
+                <a href="#simulator" class="px-3 py-1.5 rounded-lg bg-indigo-50 text-indigo-600 hover:bg-indigo-100 border border-indigo-200 transition-all">
+                    Kurva Simulator
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-btn" class="md:hidden p-1 text-slate-600 hover:text-slate-900">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden mt-3 p-4 rounded-xl glass border border-slate-200 space-y-3 flex flex-col text-sm font-medium">
+            <a href="#filosofi" class="block py-2 text-slate-600 hover:text-indigo-600">Filosofi</a>
+            <a href="#belajar" class="block py-2 text-slate-600 hover:text-indigo-600">Belajar & Membaca</a>
+            <a href="#bercerita" class="block py-2 text-slate-600 hover:text-indigo-600">Seni Bercerita</a>
+            <a href="#simulator" class="block py-2.5 text-center rounded-lg bg-indigo-600 text-white font-semibold">Kurva Simulator</a>
+        </div>
+    </nav>
+
+    <!-- HEADER / HERO (Light Glassmorphism) -->
+    <header class="relative px-4 py-16 md:py-24 max-w-7xl mx-auto overflow-hidden">
+        <div class="absolute -top-10 -left-10 w-72 h-72 bg-indigo-300/20 rounded-full blur-3xl"></div>
+        <div class="absolute top-40 right-10 w-80 h-80 bg-cyan-300/20 rounded-full blur-3xl"></div>
+        
+        <div class="glass-premium rounded-3xl p-8 md:p-16 text-center relative z-10 max-w-4xl mx-auto shadow-xl border border-white">
+            <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-indigo-100 text-indigo-700 border border-indigo-200">
+                Penerapan Tahap Awal
+            </span>
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold mt-6 tracking-tight leading-tight text-slate-900">
+                Coba Banyak Hal dengan Baik,<br>
+                <span class="bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
+                    Satu Akan Mendarat Terpilih
+                </span>
+            </h1>
+            <p class="mt-6 text-slate-600 md:text-lg max-w-2xl mx-auto leading-relaxed font-medium">
+                Menggeser paradigma distribusi normal menuju ekosistem tanpa batas (*uncapped*). Jangan menghindar dari kegagalan kecil, melainkan lakukan taruhan cerdas yang konsisten dan persisten.
+            </p>
+            <div class="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#simulator" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 text-white font-semibold shadow-lg shadow-indigo-600/20 hover:opacity-95 transition-opacity">
+                    Mulai Eksperimen Kurva
+                </a>
+                <a href="#filosofi" class="w-full sm:w-auto px-6 py-3 rounded-xl glass text-slate-700 font-semibold hover:bg-white/80 transition-all border border-slate-200">
+                    Pelajari Filosofi
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- BODY CONTENT (2/3 Kolom) -->
+        <div class="lg:col-span-2 space-y-12">
+            
+            <!-- SECTION 1: FILOSOFI POWER LAW -->
+            <section id="filosofi" class="scroll-mt-24">
+                <div class="flex items-center space-x-3 mb-6">
+                    <div class="p-2.5 rounded-xl bg-indigo-100 text-indigo-600 border border-indigo-200">
+                        <i class="fa-solid fa-square-root-variable text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold tracking-tight text-slate-900">Filosofi Berpikir: Memecah Batas Atas</h2>
+                </div>
+                
+                <!-- Bento Box Layout -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="glass p-5 rounded-2xl border border-slate-200 hover:shadow-md transition-all bg-white/70">
+                        <span class="text-xs font-bold text-indigo-600 uppercase tracking-widest">Aturan Dasar</span>
+                        <h3 class="text-lg font-bold text-slate-900 mt-1">Distribusi Normal vs Power Law</h3>
+                        <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                            Jika dunia memiliki batas (*ceiling*) dan tanpa kelipatan, Distribusi Normal bekerja (Fokus pada Konsistensi / Keteraturan). Namun, jika sistem tak terbatas dan berakumulasi, **Power Law** mengambil alih (Fokus pada Persistensi / Kegigihan).
+                        </p>
+                    </div>
+                    
+                    <div class="glass p-5 rounded-2xl border border-slate-200 hover:shadow-md transition-all bg-white/70">
+                        <span class="text-xs font-bold text-cyan-600 uppercase tracking-widest">Manajemen Risiko</span>
+                        <h3 class="text-lg font-bold text-slate-900 mt-1">Jangan Over-Commit ke Low Ceiling</h3>
+                        <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                            Hindari menghabiskan energi masif pada ekosistem yang memiliki batas pendapatan, dampak, atau ilmu yang rendah. Lebih baik lakukan banyak eksperimen cerdas yang *scalable*.
+                        </p>
+                    </div>
+
+                    <div class="glass p-5 rounded-2xl border border-slate-200 hover:shadow-md transition-all bg-white/70 md:col-span-2">
+                        <span class="text-xs font-bold text-purple-600 uppercase tracking-widest">Sistem Keahlian</span>
+                        <h3 class="text-lg font-bold text-slate-900 mt-1">Mengembangkan Kemampuan M-Shape</h3>
+                        <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                            Bukan sekadar *T-Shape* yang melebar dengan satu keahlian dalam. **M-Shape** menuntutmu menguasai minimal **dua keahlian mendalam yang terukur**, kemudian letkatkan dirimu di titik temu kedua keahlian tersebut untuk menghasilkan daya ungkit eksponensial.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: BELAJAR & MEMBACA -->
+            <section id="belajar" class="scroll-mt-24">
+                <div class="flex items-center space-x-3 mb-6">
+                    <div class="p-2.5 rounded-xl bg-cyan-100 text-cyan-600 border border-cyan-200">
+                        <i class="fa-solid fa-book-open text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold tracking-tight text-slate-900">Semesta Membaca & Belajar</h2>
+                </div>
+                
+                <div class="glass rounded-2xl overflow-hidden border border-slate-200 bg-white/70 shadow-sm">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover opacity-80 hover:scale-105 transition-transform duration-700" alt="Membaca Buku">
+                        <div class="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent"></div>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3 class="text-xl font-bold text-slate-900">Menggunakan Prinsip 80/20 untuk Membuka Gerbang Ilmu</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Dalam lautan literatur semesta, informasi tersebar mengikuti aturan Power Law. 20% dari intisari buku memberikan 80% pemahaman radikal. Terapkan strategi *speed reading* (chunking, minimalisasi subvokalisasi) dan aktifkan *Memory Palace* untuk menyimpan struktur penting.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs font-semibold text-slate-700">
+                            <div class="flex items-center space-x-2 bg-slate-100 p-2.5 rounded-xl border border-slate-200"><i class="fa-solid fa-bolt text-amber-500"></i> <span>Taruhan Modul Fisik (Bebas Distraksi)</span></div>
+                            <div class="flex items-center space-x-2 bg-slate-100 p-2.5 rounded-xl border border-slate-200"><i class="fa-solid fa-brain text-purple-600"></i> <span>Sistem Mnemonic & Retensi Aktif</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: SENI BERCERITA -->
+            <section id="bercerita" class="scroll-mt-24">
+                <div class="flex items-center space-x-3 mb-6">
+                    <div class="p-2.5 rounded-xl bg-purple-100 text-purple-600 border border-purple-200">
+                        <i class="fa-solid fa-masks-theater text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold tracking-tight text-slate-900">Seni Bercerita (Ariel Story Formula)</h2>
+                </div>
+                
+                <div class="glass p-6 rounded-2xl border border-slate-200 bg-white/70 space-y-4 shadow-sm">
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Mengapa cerita tertentu viral atau melegenda sepanjang masa, sementara ribuan lainnya hilang? Cerita mengikuti kurva Power Law. Formula yang kuat menggabungkan **Logika Keilmuan (80%)** dan **Ketajaman Keterampilan Penyampaian (20%)**.
+                    </p>
+                    <div class="border-l-4 border-indigo-500 pl-4 my-4 italic text-slate-700 font-medium text-sm">
+                        "Lahir dari rahim para pendidik, dikelilingi pendidik, misi utama kita bukanlah menanti satu Habibie turun dari langit, melainkan menggunakan struktur bercerita dan mendidik untuk mencetak 100 BJ Habibie Masa Depan."
+                    </div>
+                    <div class="bg-indigo-50/50 border border-indigo-100 rounded-xl p-4 text-xs space-y-2 text-slate-600">
+                        <div class="font-bold text-indigo-900">Metrik Pemicu Skala Lipat Ganda:</div>
+                        <p>💡 <strong>Keterhubungan:</strong> Satu cerita memicu koneksi emosional mendalam.</p>
+                        <p>📈 <strong>Skala:</strong> Konten digital/tulisan portofolio yang dapat direplikasi tanpa biaya marginal tambahan.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- INTERACTIVE SIMULATOR FUNCTION -->
+            <section id="simulator" class="scroll-mt-24">
+                <div class="flex items-center space-x-3 mb-6">
+                    <div class="p-2.5 rounded-xl bg-emerald-100 text-emerald-600 border border-emerald-200">
+                        <i class="fa-solid fa-chart-line text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold tracking-tight text-slate-900">Simulator Taruhan Cerdas (Power Law)</h2>
+                </div>
+                
+                <div class="glass p-6 rounded-2xl border border-slate-200 bg-white/70 space-y-6 shadow-sm">
+                    <p class="text-sm text-slate-600">
+                        Simulasikan bagaimana 10 taruhan kecil yang kamu lakukan (misal: belajar skill baru, menulis modul, membangun jejaring) bekerja di ekosistem Power Law. Mayoritas akan gagal, namun lihat efek ledakan dari *outlier* tunggal!
+                    </p>
+                    
+                    <button onclick="runSimulation()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-2.5 px-4 rounded-xl shadow-md shadow-emerald-600/10 transition-colors text-sm">
+                        Simulasikan 10 Taruhan Hidup
+                    </button>
+
+                    <div id="simulation-box" class="hidden space-y-4">
+                        <div class="grid grid-cols-5 gap-2" id="grid-taruhan">
+                            <!-- JS Inject Card disini -->
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-1 text-slate-600" id="simulation-result">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- SIDEBAR (1/3 Kolom) -->
+        <div class="space-y-6">
+            
+            <!-- SIDEBAR ITEM 1: PROFIL PENULIS -->
+            <div class="glass p-5 rounded-2xl border border-slate-200 bg-white/70 space-y-4 shadow-sm">
+                <div class="flex items-center space-x-3">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80" class="w-11 h-11 rounded-full object-cover border-2 border-indigo-500/20" alt="Avatar Author">
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-900">Ariel Usman</h4>
+                        <p class="text-xs text-indigo-600 font-semibold">MadeAI Prompt Engineer</p>
+                    </div>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                    Seorang pendidik dan *web coder* yang fokus pada optimalisasi sistem pembelajaran masa depan di era Indonesia Emas.
+                </p>
+            </div>
+
+            <!-- SIDEBAR ITEM 2: KONTROL SISI GELAP (CAUTION) -->
+            <div class="glass p-5 rounded-2xl border border-slate-200 bg-white/70 space-y-3 shadow-sm">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-rose-600 flex items-center">
+                    <i class="fa-solid fa-triangle-exclamation mr-1.5"></i> Tiga Sisi Gelap Power Law
+                </h4>
+                <ul class="text-xs space-y-2.5 text-slate-600 font-medium">
+                    <li class="flex items-start space-x-2">
+                        <span class="text-rose-500 mt-0.5">•</span>
+                        <span><strong>Survivorship Bias:</strong> Terlalu silau melihat 1 pemenang utama, mengabaikan luka kegagalan di dasar kurva.</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <span class="text-rose-500 mt-0.5">•</span>
+                        <span><strong>Inequality & Moral:</strong> Distribusi timpang ekstrem yang memicu tantangan empati sosial.</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <span class="text-rose-500 mt-0.5">•</span>
+                        <span><strong>Salah Pengaplikasian:</strong> Memaksa sistem jaminan yang stabil diatur menggunakan variabel liar eksponensial.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- SIDEBAR ITEM 3: PRINSIP UTAMA (STICKY) -->
+            <div class="glass p-5 rounded-2xl border border-slate-200 bg-white/70 sticky top-24 space-y-3 shadow-sm">
+                <h4 class="text-sm font-bold text-slate-900">Aksi Nyata Hari Ini</h4>
+                <div class="space-y-2 text-xs font-semibold">
+                    <div class="p-2 rounded-lg bg-slate-50 border border-slate-200 border-l-4 border-l-indigo-500 flex items-center justify-between text-slate-700">
+                        <span>1. Taruhan Cerdas Terkalkulasi</span>
+                        <i class="fa-solid fa-check text-indigo-600"></i>
+                    </div>
+                    <div class="p-2 rounded-lg bg-slate-50 border border-slate-200 border-l-4 border-l-cyan-500 flex items-center justify-between text-slate-700">
+                        <span>2. Bangun Portofolio Digital</span>
+                        <i class="fa-solid fa-check text-cyan-600"></i>
+                    </div>
+                    <div class="p-2 rounded-lg bg-slate-50 border border-slate-200 border-l-4 border-l-purple-500 flex items-center justify-between text-slate-700">
+                        <span>3. Posisikan di Pusat Jejaring</span>
+                        <i class="fa-solid fa-check text-purple-600"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-20 border-t border-slate-200 glass bg-white/90 px-4 py-8">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-medium">
+            <div>
+                <p>&copy; 2026 Oleh Ariel Usman. Hak Cipta Dilindungi.</p>
+                <p class="text-slate-400 mt-1">Didesain dengan pendekatan Estetika Bento-Light Glassmorphism</p>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="https://instagram.com/arielrcun" target="_blank" class="flex items-center space-x-1.5 text-slate-600 hover:text-pink-600 transition-colors">
+                    <i class="fa-brands fa-instagram text-base text-pink-500"></i>
+                    <span>@arielrcun</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        // Toggle Mobile Menu Navbar
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu when navigation item clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Power Law Simulation Logic
+        function runSimulation() {
+            const container = document.getElementById('grid-taruhan');
+            const resultBox = document.getElementById('simulation-result');
+            const mainBox = document.getElementById('simulation-box');
+            
+            container.innerHTML = ''; // Reset UI
+            mainBox.classList.remove('hidden');
+
+            let totalValue = 0;
+            let outcomes = [];
+
+            // Generate 10 bets based on Power Law Distribution
+            for (let i = 1; i <= 10; i++) {
+                let value;
+                if (i === 10) {
+                    // Outlier Terkuat
+                    value = Math.floor(Math.random() * 500) + 400; 
+                } else if (i >= 7) {
+                    // Taruhan menengah yang lumayan berhasil
+                    value = Math.floor(Math.random() * 40) + 15;
+                } else {
+                    // Taruhan bernilai rendah
+                    value = Math.floor(Math.random() * 5) + 1;
+                }
+                outcomes.push(value);
+            }
+
+            // Shuffle data agar posisi outlier acak
+            outcomes.sort(() => Math.random() - 0.5);
+
+            outcomes.forEach((val, idx) => {
+                totalValue += val;
+                let isOutlier = val > 100;
+                let isMedium = val >= 15 && val <= 100;
+                
+                let bgColor = 'bg-slate-50 border-slate-200 text-slate-500';
+                if (isOutlier) bgColor = 'bg-emerald-50 border-emerald-500 text-emerald-700 font-bold scale-105 shadow-sm';
+                if (isMedium) bgColor = 'bg-cyan-50 border-cyan-300 text-cyan-700';
+
+                container.innerHTML += `
+                    <div class="border p-2.5 rounded-xl text-center ${bgColor} transition-transform duration-300">
+                        <div class="text-[10px] text-slate-400">#${idx+1}</div>
+                        <div class="text-sm mt-0.5">${val}x</div>
+                    </div>
+                `;
+            });
+
+            // Temukan nilai tertinggi
+            const maxVal = Math.max(...outcomes);
+            const percentage = ((maxVal / totalValue) * 100).toFixed(1);
+
+            resultBox.innerHTML = `
+                <p class="text-slate-900 font-bold"><i class="fa-solid fa-square-poll-vertical text-emerald-600 mr-1"></i> Hasil Analisis Distribusi:</p>
+                <p class="mt-1 text-slate-600">Total Daya Ungkit Terkumpul: <span class="text-slate-900 font-bold">${totalValue} Poin Impact</span>.</p>
+                <p class="text-slate-600">Taruhan Terbaik Tunggal menghasilkan <span class="text-emerald-600 font-bold">${maxVal} Poin</span>, menguasai <span class="text-slate-900 font-bold">${percentage}%</span> dari seluruh keberhasilan hidupmu.</p>
+                <p class="text-[11px] text-slate-400 italic mt-2">*Ini membuktikan bahwa kesiapan mental mengeksekusi banyak opsi jauh lebih kritis dibanding mendamba kesempurnaan pada satu titik tunggal.</p>
+            `;
+        }
+    </script>
+</body>
+</html>
