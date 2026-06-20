@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sibling Guide: Menjadi Kakak Keren di Era Gen Alpha</title>
+    <style>
+        /* --- RESET & VARIABLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-highlight: rgba(255, 255, 255, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-neon: #a855f7; /* Purple */
+            --accent-cyan: #06b6d4; /* Cyan */
+            --accent-rose: #f43f5e; /* Rose */
+        }
+
+        body {
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* --- CONTAINER UTAMA --- */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* --- HEADER --- */
+        header {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #fff, var(--accent-cyan), var(--accent-neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* --- BENTO BOX GRID LAYOUT --- */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: minmax(160px, auto);
+            gap: 1.5rem;
+        }
+
+        /* --- BASE CARD STYLES (GLASSMORPHISM) --- */
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--glass-highlight);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* --- VARIATION SPANS FOR BENTO LAYOUT --- */
+        .col-2 { grid-column: span 2; }
+        .col-3 { grid-column: span 3; }
+        .row-2 { grid-row: span 2; }
+
+        /* Custom Card Themes */
+        .card.hero {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(6, 182, 212, 0.15));
+            border-color: rgba(168, 85, 247, 0.3);
+        }
+
+        .card.hero h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        /* --- INTERACTIVE TABS (SPA SIMULATION) --- */
+        .tab-navigation {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .tab-btn:hover, .tab-btn.active {
+            background: var(--accent-cyan);
+            color: #0f172a;
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+        }
+
+        .dynamic-content {
+            margin-top: 1rem;
+            min-height: 120px;
+        }
+
+        /* --- QUICK TIPS / LISTS --- */
+        .tip-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .tip-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .tip-list li::before {
+            content: "✦";
+            color: var(--accent-neon);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        /* --- RESPONSIVE RESPONSIVENESS --- */
+        @media (max-width: 900px) {
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .col-3, .col-2 { grid-column: span 2; }
+        }
+
+        @media (max-width: 600px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+            .col-3, .col-2, .row-2 { grid-column: span 1; grid-row: span 1; }
+            body { padding: 1rem 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- HEADER SECTION -->
+        <header>
+            <h1>THE SIBLING GUIDE</h1>
+            <p>Navigasi Parenting Remaja Gen Alpha dari Sudut Pandang Kakak</p>
+        </header>
+
+        <!-- BENTO BOX GRID -->
+        <main class="bento-grid">
+            
+            <!-- CARD 1: HERO / CORE PHILOSOPHY (Col: 2, Row: 2) -->
+            <div class="card col-2 row-2 hero">
+                <div>
+                    <h2 style="color: var(--accent-cyan);">Bukan Polisi, Tapi safehouse.</h2>
+                    <p>Gen Alpha (lahir 2010+) tumbuh di era AI, algoritma, dan digital penuh. Di saat orang tua buntu menghadapi 'screen time' mereka, peran kita sebagai kakak bukan menambah aturan ketat, melainkan menjadi jembatan penerjemah antar-generasi.</p>
+                </div>
+                <div style="margin-top: 2rem;">
+                    <p style="font-style: italic; color: #fff; font-size: 0.9rem;">"Orang tua menuntut pemahaman, kakak memberikan ruang aman."</p>
+                </div>
+            </div>
+
+            <!-- CARD 2: DYNAMIC SPA ZONE (Col: 2, Row: 2) -->
+            <div class="card col-2 row-2">
+                <div>
+                    <h3 style="color: var(--accent-neon);">⚡ Sibling Playbook</h3>
+                    <p>Pilih pendekatan taktis sesuai situasi yang sedang dihadapi si adek:</p>
+                    
+                    <div class="tab-navigation">
+                        <button class="tab-btn active" onclick="switchTab('tech')">Gadget</button>
+                        <button class="tab-btn" onclick="switchTab('com')">Bahasa</button>
+                        <button class="tab-btn" onclick="switchTab('emot')">Validasi</button>
+                    </div>
+
+                    <div id="tab-display" class="dynamic-content">
+                        <!-- Konten diisi via JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 3: THE RULES (Col: 1, Row: 2) -->
+            <div class="card row-2">
+                <h3>📜 Sibling Code</h3>
+                <ul class="tip-list">
+                    <li><strong>Jangan 'Cepu':</strong> Jaga rahasia mereka selagi tidak membahayakan nyawa/masa depan. Trust adalah segalanya.</li>
+                    <li><strong>Filter FOMO:</strong> Bantu mereka sadar bahwa apa yang ada di TikTok/Shorts bukan realita seutuhnya.</li>
+                    <li><strong>Ganti Khotbah:</strong> Daripada bilang "Kamu malas banget," ganti dengan "Lagi burnout ya? Mabar yuk."</li>
+                </ul>
+            </div>
+
+            <!-- CARD 4: MENTAL HEALTH CHECK (Col: 2, Row: 1) -->
+            <div class="card col-2">
+                <h3 style="color: var(--accent-rose);">🧠 Validasi Emosi, Bukan Kritik</h3>
+                <p>Gen Alpha terpapar informasi terlalu cepat, memicu kecemasan dini. Ketika adek remaja mengeluh stres, posisi kita adalah mendengarkan tanpa langsung menghakimi atau membandingkan dengan zaman kita sekolah dulu.</p>
+            </div>
+
+            <!-- CARD 5: CLOSING INSIGHT (Col: 1, Row: 1) -->
+            <div class="card">
+                <h3>🎮 Koneksi Lewat Kultur</h3>
+                <p>Ikuti apa yang mereka sukai. Masuk ke dunianya dulu (game, tren musik, meme), baru arahkan logikanya.</p>
+            </div>
+
+        </main>
+
+        <!-- FOOTER SECTION -->
+        <footer>
+            Dibuat oleh: Artriel Ariel
+        </footer>
+
+    </div>
+
+    <!-- VANILLA JAVASCRIPT FOR SPA INTERACTION -->
+    <script>
+        // Data konten untuk simulasi SPA
+        const playbookData = {
+            tech: {
+                title: "Menghadapi Screen Time",
+                desc: "Jangan langsung menyita handphone-nya. Ajak mereka diskusi tentang algoritma, atau gunakan waktu screen time untuk bonding bersama. Main game bareng atau bikin konten seru berdua lebih efektif daripada sekadar melarang."
+            },
+            com: {
+                title: "Bahasa & Tren Slang",
+                desc: "Gen Alpha punya kamus bahasanya sendiri (Skibidi, Rizz, Gyatt). Jangan mencela cara mereka bicara. Mengerti bahasa mereka membuat adek merasa kamu adalah orang dewasa yang 'relatable' dan asyik diajak ngobrol."
+            },
+            emot: {
+                title: "Validasi Perasaan",
+                desc: "Ketika mereka curhat masalah pertemanan di siber, jangan dianggap sepele. Bagi mereka dunia digital adalah nyata. Katakan: 'Kakak paham kok rasanya ga diajak main di grup chat, itu emang ngeselin banget.'"
+            }
+        };
+
+        // Fungsi Handler Tab SPA
+        function switchTab(key) {
+            // Update Active Class pada Button
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Cari button yang memicu event
+            const eventTarget = window.event ? window.event.target : null;
+            if(eventTarget) {
+                eventTarget.classList.add('active');
+            } else {
+                // Fallback pencarian manual jika target event kosong
+                const btnArray = Array.from(buttons);
+                const targetBtn = btnArray.find(b => b.getAttribute('onclick').includes(key));
+                if(targetBtn) targetBtn.classList.add('active');
+            }
+
+            // Update Konten secara Dinamis dengan Efek Transisi Sederhana
+            const displayZone = document.getElementById('tab-display');
+            displayZone.style.opacity = 0;
+            
+            setTimeout(() => {
+                displayZone.innerHTML = `
+                    <h4 style="margin-bottom: 0.4rem; color: #fff; font-size: 1rem;">${playbookData[key].title}</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.5;">${playbookData[key].desc}</p>
+                `;
+                displayZone.style.transition = "opacity 0.3s ease";
+                displayZone.style.opacity = 1;
+            }, 150);
+        }
+
+        // Inisialisasi Tab Pertama kali saat load
+        document.addEventListener("DOMContentLoaded", () => {
+            switchTab('tech');
+        });
+    </script>
+</body>
+</html>
