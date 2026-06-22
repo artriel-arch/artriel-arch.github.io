@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Misteri Kotak Mainan: Belajar Melihat Kebenaran Tanpa Ikut-ikutan</title>
+    <meta name="description" content="Mengungkap realita framing kasus hukum melalui analogi sederhana tingkat anak TK tentang kejujuran, media, dan bukti nyata.">
+    <meta name="keywords" content="framing media, keadilan, analisis kasus, edukasi berpikir kritis, ariel usman">
+    <meta name="author" content="Ariel Usman">
+    
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://keadilan-misteri.vercel.app/">
+    <meta property="og:title" content="Misteri Kotak Mainan: Belajar Melihat Kebenaran Tanpa Ikut-ikutan">
+    <meta property="og:description" content="Gimana jadinya kalau seseorang dituduh nakal padahal gurunya sendiri nggak punya bukti foto atau video? Yuk belajar kritis!">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Misteri Kotak Mainan: Belajar Melihat Kebenaran Tanpa Ikut-ikutan">
+    <meta property="twitter:description" content="Gimana jadinya kalau seseorang dituduh nakal padahal gurunya sendiri nggak punya bukti foto atau video? Yuk belajar kritis!">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Tailwind CSS (Tailwhip Style) & FontAwesome Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Plus+Jakarta+Sans:wght@300..800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: radial-gradient(circle at top right, #1a1c2e, #0b0c16);
+        }
+        .kids-mode {
+            font-family: 'Fredoka', sans-serif;
+        }
+        /* Glassmorphism Classes */
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-header {
+            background: rgba(11, 12, 22, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="text-slate-200 min-h-screen antialiased selection:bg-amber-500 selection:text-black">
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-header border-b border-white/5 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Brand -->
+                <div class="flex items-center space-x-2 cursor-pointer">
+                    <span class="p-2 bg-gradient-to-tr from-amber-500 to-red-600 rounded-xl text-white text-xl">
+                        <i class="fa-solid fa-scale-unbalanced-flip animate-pulse"></i>
+                    </span>
+                    <span class="font-bold text-lg tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-amber-300">
+                        NalarKritis.id
+                    </span>
+                </div>
+                <!-- Menu -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#hero" class="text-white hover:text-amber-400 transition-colors">Utama</a>
+                    <a href="#cerita" class="text-slate-300 hover:text-amber-400 transition-colors">Analogi Kelas</a>
+                    <a href="#realita" class="text-slate-300 hover:text-amber-400 transition-colors">Fakta Framing</a>
+                    <a href="#bahaya" class="text-slate-300 hover:text-amber-400 transition-colors">Bahaya Rumor</a>
+                </div>
+                <!-- Interactive Mode Toggle Button -->
+                <div>
+                    <button id="modeToggle" class="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-full text-xs font-bold tracking-wide shadow-lg shadow-amber-500/20 transition-transform active:scale-95">
+                        <i class="fa-solid fa-child mr-1"></i> Mode Berpikir: <span id="modeStatus">Anak TK</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header id="hero" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden px-4">
+        <!-- Blur Backgrounds -->
+        <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-amber-600/10 rounded-full filter blur-[100px] pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-red-600/10 rounded-full filter blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full glass text-xs text-amber-400 mb-6 shadow-sm">
+                <i class="fa-solid fa-bullhorn text-red-400 animate-bounce"></i>
+                <span>Membongkar Rekayasa Cerita Tanpa Bukti Nyata</span>
+            </div>
+            
+            <!-- Glassmorphic Hero Card -->
+            <div class="glass p-8 md:p-12 rounded-3xl border border-white/10 shadow-2xl backdrop-blur-md">
+                <h1 id="heroTitle" class="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white leading-tight transition-all duration-300">
+                    Ketika <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-amber-300"> Speaker Kelas </span> Terus Menuduh Tante J
+                </h1>
+                <p id="heroDesc" class="mt-6 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed transition-all duration-300">
+                    Pernahkah kamu melihat anak yang dituduh menumpahkan susu hanya karena dia duduk paling dekat dengan meja, padahal tidak ada satu pun orang yang melihatnya melakukan itu?
+                </p>
+                <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#cerita" class="px-6 py-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold rounded-xl shadow-lg transition-all text-center">
+                        Buka Cerita <i class="fa-solid fa-book-open ml-2 text-sm"></i>
+                    </a>
+                    <a href="https://youtu.be/fBsMihk8eS0?si=cZF-9mrtxmr_fiHR" target="_blank" class="px-6 py-3 glass hover:bg-white/10 text-white font-semibold rounded-xl transition-all text-center">
+                        <i class="fa-brands fa-youtube text-red-500 mr-2"></i>Analisis Sumber Asli
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- BODY / MAIN CONTENT -->
+            <section class="lg:col-span-2 space-y-8">
+                
+                <!-- Analogi Cerita Anak TK -->
+                <div id="cerita" class="glass p-6 md:p-8 rounded-2xl border border-white/5 scroll-mt-20">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400">
+                            <i class="fa-solid fa-masks-theater text-xl"></i>
+                        </div>
+                        <h2 class="text-xl md:text-2xl font-bold">1. Sandiwara Pengeras Suara di Sekolah</h2>
+                    </div>
+                    
+                    <div class="aspect-video w-full rounded-xl overflow-hidden mb-6 border border-white/5 bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop" alt="Media massa berteriak" class="w-full h-full object-cover grayscale opacity-80">
+                    </div>
+
+                    <div id="storyBox" class="space-y-4 text-slate-300 leading-relaxed text-sm sm:text-base">
+                        <p>Bayangkan ada sebuah ruang kelas TK yang sangat besar. Tiba-tiba, ada gelas susu yang tumpah di meja. Kebetulan, ada seorang anak bernama <strong>Tante J</strong> yang sedang duduk tenang di dekat meja itu.</p>
+                        <p class="p-4 bg-red-950/30 rounded-xl border-l-4 border-red-500 text-red-200">
+                            <i class="fa-solid fa-triangle-exclamation mr-2 text-red-400"></i><strong>Tiba-tiba pengeras suara sekolah (Media) berbunyi:</strong> "Anak-anak! Tante J yang menumpahkan susu! Lihat itu, dia duduk paling dekat! Dia pasti anak yang nakal!" Berita itu diulang-ulang setiap jam sampai seluruh sekolah percaya.
+                        </p>
+                        <p>Lalu, Kepala Sekolah dan para Penjaga (Pihak Berwenang) yang malas mencari tahu fakta sebenarnya, ikut mengangguk dan berkata, "Iya betul, karena pengeras suara sudah bilang begitu, kita hukum saja Tante J!"</p>
+                        <p>Padahal, saat semua tas diperiksa, dan kamera mainan kelas diputar, <strong>tidak ada satu pun bukti</strong> atau tetesan susu di baju Tante J. Mereka menghukum Tante J hanya berdasarkan dongeng karangan yang mereka buat bersama-sama agar masalahnya cepat selesai.</p>
+                    </div>
+                </div>
+
+                <!-- Pembongkaran Realita Fakta -->
+                <div id="realita" class="glass p-6 md:p-8 rounded-2xl border border-white/5 scroll-mt-20">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-400">
+                            <i class="fa-solid fa-eye text-xl"></i>
+                        </div>
+                        <h2 class="text-xl md:text-2xl font-bold">2. Realita di Balik Layar Teater Kasus</h2>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 transition-all">
+                            <h3 class="font-bold text-red-400 mb-2 flex items-center"><i class="fa-solid fa-handshake-angle mr-2"></i>Kerja Sama Narasi</h3>
+                            <p class="text-xs sm:text-sm text-slate-400">Oknum penguasa hukum dan industri media bekerja sama membuat panggung cerita menarik demi rating televisi, meskipun mengorbankan nasib seseorang tanpa bukti sains kuat.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 transition-all">
+                            <h3 class="font-bold text-amber-300 mb-2 flex items-center"><i class="fa-solid fa-ban-smoking mr-2"></i>Menghilangkan Bukti Lain</h3>
+                            <p class="text-xs sm:text-sm text-slate-400">Opini publik sengaja diarahkan ke gerak-gerik tubuh yang dicurigai (framing), sementara fakta otopsi asli yang meragukan keberadaan racun justru disembunyikan.</p>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Nalar Test -->
+                    <div class="mt-6 p-4 rounded-xl bg-gradient-to-r from-amber-950/20 to-slate-900/50 border border-amber-500/20">
+                        <p class="text-xs font-semibold uppercase tracking-wider text-amber-400 mb-2"><i class="fa-solid fa-brain mr-1"></i> Uji Kelogisan Detektif Cilik</p>
+                        <p class="text-sm font-medium mb-3">Jika TV dan Polisi bilang seseorang bersalah tetapi tidak punya bukti rekaman atau sains yang valid, apa tindakan kita?</p>
+                        <div class="flex flex-col sm:flex-row gap-2 text-xs">
+                            <button onclick="checkAnswer(false)" class="px-4 py-2 bg-white/5 hover:bg-red-500/20 text-left rounded-lg transition-all border border-white/5">A. Ikut menyalahkan karena beritanya ramai di TV.</button>
+                            <button onclick="checkAnswer(true)" class="px-4 py-2 bg-white/5 hover:bg-emerald-500/20 text-left rounded-lg transition-all border border-white/5">B. Tolak percaya sebelum ada bukti nyata yang kelihatan.</button>
+                        </div>
+                        <p id="quizFeedback" class="mt-3 text-xs hidden font-medium"></p>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- SIDEBAR -->
+            <aside class="space-y-6">
+                <!-- Sumber Konten -->
+                <div class="glass p-6 rounded-2xl border border-white/5">
+                    <h3 class="font-bold text-xs text-slate-400 uppercase tracking-wider mb-3"><i class="fa-solid fa-link mr-2"></i>Analisis Video</h3>
+                    <p class="text-xs text-slate-300 mb-4">Situs ini merangkum narasi pembongkaran manipulasi opini publik yang dibahas secara mendalam dalam tautan berikut:</p>
+                    <a href="https://youtu.be/fBsMihk8eS0?si=cZF-9mrtxmr_fiHR" target="_blank" class="block group">
+                        <div class="p-3 bg-slate-950 rounded-xl border border-white/5 group-hover:border-amber-500/30 transition-all">
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-brands fa-youtube text-2xl text-red-500"></i>
+                                <div class="truncate">
+                                    <p class="text-xs font-bold text-white truncate">Nonton Eksplanasi YouTube</p>
+                                    <p class="text-[10px] text-slate-500">Klik untuk melihat detail rekayasa</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Sidebar Fitur: Bahaya Hoaks Penguasa -->
+                <div id="bahaya" class="glass p-6 rounded-2xl border border-white/5 scroll-mt-20">
+                    <h3 class="font-bold text-xs text-red-400 uppercase tracking-wider mb-4"><i class="fa-solid fa-triangle-exclamation mr-2"></i>Mengapa Ini Berbahaya?</h3>
+                    <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+                        <li class="flex items-start space-x-2">
+                            <i class="fa-solid fa-circle-xmark text-red-500 mt-1"></i>
+                            <span><strong>Hukum Berdasarkan Gosip:</strong> Seseorang bisa dipenjara seumur hidup hanya karena skenario fiksi buatan televisi.</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fa-solid fa-circle-xmark text-red-500 mt-1"></i>
+                            <span><strong>Kebohongan Terstruktur:</strong> Ketika penegak hukum dan media bersatu, kebohongan bisa diubah tampak seperti kebenaran.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Quotes Edukatif -->
+                <div class="glass p-6 rounded-2xl border border-white/5 bg-gradient-to-br from-amber-950/10 to-transparent">
+                    <h4 class="font-bold text-xs text-amber-400 uppercase tracking-wider mb-2">Pesan Untuk Hari Ini</h4>
+                    <p class="text-xs text-slate-400 italic leading-relaxed">"Jangan biarkan jutaan suara di televisi mematikan satu kebenaran kecil yang jujur di dalam kepalamu."</p>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="w-full glass border-t border-white/5 mt-auto py-8 text-center text-sm text-slate-400">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                <p>&copy; 2026 Copyright. Dibuat oleh: <strong>Ariel Usman</strong></p>
+            </div>
+            <div>
+                <a href="https://instagram.com/arielrcun" target="_blank" class="inline-flex items-center space-x-2 px-3 py-1.5 bg-white/5 rounded-xl border border-white/5 hover:bg-white/10 hover:text-amber-400 transition-all text-xs">
+                    <i class="fa-brands fa-instagram text-base"></i>
+                    <span>@arielrcun</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        const modeToggleBtn = document.getElementById('modeToggle');
+        const modeStatus = document.getElementById('modeStatus');
+        const bodyElement = document.body;
+        
+        const heroTitle = document.getElementById('heroTitle');
+        const heroDesc = document.getElementById('heroDesc');
+        const storyBox = document.getElementById('storyBox');
+
+        // Data teks peralihan 2 pola berpikir berbeda
+        const textContent = {
+            tk: {
+                title: 'Ketika <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-amber-300"> Speaker Kelas </span> Terus Menuduh Tante J',
+                desc: 'Pernahkah kamu melihat anak yang dituduh menumpahkan susu hanya karena dia duduk paling dekat dengan meja, padahal tidak ada satu pun orang yang melihatnya melakukan itu?',
+                story: `
+                    <p>Bayangkan ada sebuah ruang kelas TK yang sangat besar. Tiba-tiba, ada gelas susu yang tumpah di meja. Kebetulan, ada seorang anak bernama <strong>Tante J</strong> yang sedang duduk tenang di dekat meja itu.</p>
+                    <p class="p-4 bg-red-950/30 rounded-xl border-l-4 border-red-500 text-red-200">
+                        <i class="fa-solid fa-triangle-exclamation mr-2 text-red-400"></i><strong>Tiba-tiba pengeras suara sekolah (Media) berbunyi:</strong> "Anak-anak! Tante J yang menumpahkan susu! Lihat itu, dia duduk paling dekat! Dia pasti anak yang nakal!" Berita itu diulang-ulang setiap jam sampai seluruh sekolah percaya.
+                    </p>
+                    <p>Lalu, Kepala Sekolah dan para Penjaga (Pihak Berwenang) yang malas mencari tahu fakta sebenarnya, ikut mengangguk dan berkata, "Iya betul, karena pengeras suara sudah billing begitu, kita hukum saja Tante J!"</p>
+                    <p>Padahal, saat semua tas diperiksa, dan kamera mainan kelas diputar, <strong>tidak ada satu pun bukti</strong> atau tetesan susu di baju Tante J. Mereka menghukum Tante J hanya berdasarkan dongeng karangan yang mereka buat bersama-sama agar masalahnya cepat selesai.</p>
+                `
+            },
+            dewasa: {
+                title: 'Dekonstruksi <span class="bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-red-400">Konspirasi Institusional</span> & Peradilan Opini Publik',
+                desc: 'Analisis kritis mengenai persekongkolan antara pemegang otoritas hukum dengan konglomerasi media dalam memproduksi kebohongan publik terstruktur.',
+                story: `
+                    <p>Dalam realitas kasus ini, kita menyaksikan fenomena <strong>Trial by the Media</strong> yang masif. Media massa tidak lagi berfungsi sebagai pilar informasi objektif, melainkan alat propaganda untuk memvonis Jessica sebelum sidang pengadilan resmi dimulai.</p>
+                    <p class="p-4 bg-slate-900 rounded-xl border-l-4 border-amber-500 text-slate-300">
+                        <i class="fa-solid fa-handshake-slash mr-2 text-amber-500"></i><strong>Kongkalingkong Sektoral:</strong> Pihak berwenang memanfaatkan tekanan gelombang opini publik ciptaan media untuk menutupi kelemahan investigasi ilmiah (*scientific crime investigation*) mereka yang tidak memiliki bukti konkret/langsung (*direct evidence*).
+                    </p>
+                    <p>Asumsi psikologis subjektif seperti 'wajah tenang' atau 'posisi paperbag' dieksploitasi terus-menerus guna mengalihkan perhatian publik dari fakta bahwa jumlah konsentrasi sianida dalam sampel otopsi tidak konsisten dan tidak mencukupi untuk dinyatakan sebagai penyebab kematian utama.</p>
+                `
+            }
+        };
+
+        let currentMode = 'tk';
+
+        // Logika Penggantian Mode Bahasa Interaktif
+        modeToggleBtn.addEventListener('click', () => {
+            if (currentMode === 'tk') {
+                currentMode = 'dewasa';
+                modeStatus.innerText = 'Detektif Dewasa';
+                bodyElement.classList.remove('kids-mode');
+                modeToggleBtn.classList.replace('bg-amber-500', 'bg-red-600');
+                modeToggleBtn.classList.replace('text-slate-950', 'text-white');
+                
+                heroTitle.innerHTML = textContent.dewasa.title;
+                heroDesc.innerText = textContent.dewasa.desc;
+                storyBox.innerHTML = textContent.dewasa.story;
+            } else {
+                currentMode = 'tk';
+                modeStatus.innerText = 'Anak TK';
+                bodyElement.classList.add('kids-mode');
+                modeToggleBtn.classList.replace('bg-red-600', 'bg-amber-500');
+                modeToggleBtn.classList.replace('text-white', 'text-slate-950');
+                
+                heroTitle.innerHTML = textContent.tk.title;
+                heroDesc.innerText = textContent.tk.desc;
+                storyBox.innerHTML = textContent.tk.story;
+            }
+        });
+
+        // Setelan Awal Font Ramah Anak
+        if(currentMode === 'tk') {
+            bodyElement.classList.add('kids-mode');
+        }
+
+        // Fungsi Kuis Edukatif
+        function checkAnswer(isCorrect) {
+            const feedback = document.getElementById('quizFeedback');
+            feedback.classList.remove('hidden', 'text-emerald-400', 'text-red-400');
+            
+            if (isCorrect) {
+                feedback.innerHTML = '<i class="fa-solid fa-square-check mr-1"></i> Luar biasa pintar! Jangan mau dibohongi hanya karena beritanya ramai di TV ya. Selalu cari bukti aslinya!';
+                feedback.classList.add('text-emerald-400');
+            } else {
+                feedback.innerHTML = '<i class="fa-solid fa-circle-xmark mr-1"></i> Oh tidak! Kamu terjebak perangkap pengeras suara kelas. Yuk, baca ulang kisah di atas agar tidak mudah ikut-ikutan menuduh.';
+                feedback.classList.add('text-red-400');
+            }
+        }
+
+        // Animasi Navbar Mengecil saat Gulir Layar
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-1', 'shadow-2xl');
+            } else {
+                nav.classList.remove('py-1', 'shadow-2xl');
+            }
+        });
+    </script>
+</body>
+</html>
