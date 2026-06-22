@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Mencuri Layaknya Seniman - Austin Kleon | Seni Amati & Modifikasi</title>
+    <meta name="description" content="Pelajari bagaimana cara mencuri karya dengan baik layaknya seorang seniman sejati berdasarkan gagasan Austin Kleon. Temukan simulasi interaktif mencuri baik vs buruk di sini.">
+    <meta name="keywords" content="Austin Kleon, Steal Like An Artist, Mencuri Layaknya Seniman, Kreativitas, Desain Web, Belajar Coder">
+    <meta name="author" content="Ariel Usman">
+    
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://artriel.mencuri-layaknya-seniman.pages.dev/">
+    <meta property="og:title" content="Mencuri Layaknya Seniman - Austin Kleon">
+    <meta property="og:description" content="Ubah tiruan menjadi kreasi orisinal. Simak panduan dan simulasi interaktifnya di web ini.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Mencuri Layaknya Seniman - Austin Kleon">
+    <meta property="twitter:description" content="Ubah tiruan menjadi kreasi orisinal. Simak panduan dan simulasi interaktifnya di web ini.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/png" href="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&w=32&q=80">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+            background-attachment: fixed;
+        }
+        /* Custom Glassmorphism Utility */
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-header {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="text-slate-200 min-h-screen flex flex-col antialiased selection:bg-purple-500 selection:text-white">
+
+    <!-- NAVBAR -->
+    <nav class="glass-header sticky top-0 z-50 w-full transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Kiri: Nama Project -->
+                <div class="flex-shrink-0 flex items-center space-x-2">
+                    <i class="fa-solid fa-paint-brush text-purple-400 text-xl"></i>
+                    <span class="font-bold text-lg tracking-wider bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                        Artriel Steal
+                    </span>
+                </div>
+                <!-- Kanan: Menu items -->
+                <div class="hidden md:flex space-x-8 text-sm font-medium">
+                    <a href="#konsep" class="text-slate-300 hover:text-purple-400 transition-colors">Konsep Dasar</a>
+                    <meta-link href="#panduan" class="text-slate-300 hover:text-purple-400 transition-colors cursor-pointer" onclick="document.getElementById('panduan').scrollIntoView({behavior: 'smooth'})">Cara Mencuri</meta-link>
+                    <a href="#simulasi" class="text-slate-300 hover:text-purple-400 transition-colors">Simulasi Analogi</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-400 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass px-4 pt-2 pb-4 space-y-2">
+            <a href="#konsep" class="block py-2 text-slate-300 hover:text-purple-400">Konsep Dasar</a>
+            <a href="#panduan" class="block py-2 text-slate-300 hover:text-purple-400">Cara Mencuri</a>
+            <a href="#simulasi" class="block py-2 text-slate-300 hover:text-purple-400">Simulasi Analogi</a>
+        </div>
+    </nav>
+
+    <!-- HEADER / HERO SECTION (Glassmorphism Modern) -->
+    <header class="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8 flex items-center justify-center min-h-[60vh]">
+        <!-- Dekorasi Background Bulatan Cahaya -->
+        <div class="absolute top-10 left-1/4 w-72 h-72 bg-purple-600/20 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="absolute bottom-10 right-1/4 w-80 h-80 bg-pink-600/15 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="glass max-w-4xl w-full rounded-3xl p-8 sm:p-12 text-center relative z-10 shadow-2xl">
+            <span class="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-purple-500/10 text-purple-300 border border-purple-500/20 mb-6 uppercase tracking-widest">
+                Austin Kleon Framework
+            </span>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                Mencuri Layaknya <br class="hidden sm:inline">
+                <span class="bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 bg-clip-text text-transparent">Seniman Sejati</span>
+            </h1>
+            <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed">
+                "Tidak ada yang benar-benar orisinal. Semua karya kreatif dibangun di atas apa yang sudah ada sebelumnya." SImak bagaimana mengubah pengaruh menjadi sebuah karya autentik baru.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#simulasi" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-medium rounded-xl transition shadow-lg shadow-purple-900/30 text-center">
+                    Coba Simulasi Interaktif
+                </a>
+                <a href="#konsep" class="px-6 py-3 glass hover:bg-white/5 text-slate-200 font-medium rounded-xl transition text-center">
+                    Pelajari Teori
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER (Body + Sidebar) -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- BODY CONTENT (2 Kolom di PC) -->
+            <div class="lg:col-span-2 space-y-12">
+                
+                <!-- Section 1: Konsep Dasar -->
+                <section id="konsep" class="glass rounded-2xl p-6 sm:p-8 space-y-6">
+                    <div class="flex items-center space-x-3 border-b border-slate-800 pb-4">
+                        <div class="p-2 bg-purple-500/10 rounded-lg text-purple-400">
+                            <i class="fa-solid fa-book-open text-xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold">Steal Like an Artist</h2>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed">
+                        Buku manifesto dari <strong class="text-slate-200">Austin Kleon</strong> menekankan bahwa esensi kreativitas sejati bukanlah menciptakan sesuatu dari ketiadaan absolut, melainkan kecakapan dalam memilih referensi, mengumpulkan pengaruh, lalu menyusunnya kembali dengan sentuhan personal yang unik.
+                    </p>
+                    <blockquote class="border-l-4 border-pink-500 bg-white/5 p-4 rounded-r-xl italic text-slate-300">
+                        "Jika kamu mencuri dari satu orang, itu plagiat. Jika kamu mencuri dari seratus orang, itu adalah riset."
+                    </blockquote>
+                </section>
+
+                <!-- Section 2: Bagaimana Mencuri Karya Dengan Baik -->
+                <section id="panduan" class="glass rounded-2xl p-6 sm:p-8 space-y-6">
+                    <div class="flex items-center space-x-3 border-b border-slate-800 pb-4">
+                        <div class="p-2 bg-pink-500/10 rounded-lg text-pink-400">
+                            <i class="fa-solid fa-graduation-cap text-xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold">Bagaimana Mencuri Karya dengan Baik?</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-5 rounded-xl bg-white/5 border border-slate-800 hover:border-purple-500/30 transition">
+                            <h3 class="font-semibold text-purple-300 mb-2">1. Pahami Struktur Internal</h3>
+                            <p class="text-sm text-slate-400">Jangan hanya meniru tampilan luarnya saja. Pahami alasan mengapa karya tersebut dibuat dan logika di balik eksekusinya.</p>
+                        </div>
+                        <div class="p-5 rounded-xl bg-white/5 border border-slate-800 hover:border-purple-500/30 transition">
+                            <h3 class="font-semibold text-purple-300 mb-2">2. Ambil dari Banyak Sumber</h3>
+                            <p class="text-sm text-slate-400">Kombinasikan potongan ide dari berbagai disiplin ilmu, era, dan kreator agar melahirkan sintesis baru yang segar.</p>
+                        </div>
+                        <div class="p-5 rounded-xl bg-white/5 border border-slate-800 hover:border-purple-500/30 transition">
+                            <h3 class="font-semibold text-purple-300 mb-2">3. Lakukan Modifikasi Esensial</h3>
+                            <p class="text-sm text-slate-400">Berikan sentuhan orisinalitas lewat interpretasi baru, perbaikan kekurangan referensi, atau perubahan konteks.</p>
+                        </div>
+                        <div class="p-5 rounded-xl bg-white/5 border border-slate-800 hover:border-purple-500/30 transition">
+                            <h3 class="font-semibold text-purple-300 mb-2">4. Berikan Atribusi / Kredit</h3>
+                            <p class="text-sm text-slate-400">Menghargai seniman terdahulu yang menginspirasimu justru akan membangun reputasi kreatif yang solid.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 3: FITUR INTERAKTIF SIMULASI -->
+                <section id="simulasi" class="glass rounded-2xl p-6 sm:p-8 space-y-6 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl"></div>
+                    
+                    <div class="flex items-center space-x-3 border-b border-slate-800 pb-4">
+                        <div class="p-2 bg-indigo-500/10 rounded-lg text-indigo-400">
+                            <i class="fa-solid fa-vial text-xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold">Simulasi Analogi Interaktif</h2>
+                    </div>
+                    <p class="text-sm text-slate-400">
+                        Klik tombol di bawah untuk melihat perbedaan nyata antara metode mencuri secara destruktif (Buruk) dan mencuri secara produktif (Baik).
+                    </p>
+
+                    <!-- Kontrol Simulasi -->
+                    <div class="flex flex-wrap gap-3">
+                        <button onclick="jalankanSimulasi('baik')" class="px-5 py-2.5 bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/40 text-emerald-300 font-medium rounded-xl text-sm transition flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check"></i> Simulasi: Mencuri Baik
+                        </button>
+                        <button onclick="jalankanSimulasi('buruk')" class="px-5 py-2.5 bg-rose-600/20 hover:bg-rose-600/30 border border-rose-500/40 text-rose-300 font-medium rounded-xl text-sm transition flex items-center gap-2">
+                            <i class="fa-solid fa-circle-xmark"></i> Simulasi: Mencuri Buruk
+                        </button>
+                        <button onclick="resetSimulasi()" class="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium rounded-xl text-sm transition">
+                            Reset
+                        </button>
+                    </div>
+
+                    <!-- Output Box Screen Simulasi -->
+                    <div class="p-6 rounded-xl bg-slate-950/80 border border-slate-800 min-h-[160px] flex flex-col justify-center relative">
+                        <div id="simulasi-placeholder" class="text-center text-slate-500 text-sm">
+                            <i class="fa-solid fa-terminal text-2xl mb-2 block"></i>
+                            Pilih salah satu jenis simulasi di atas untuk melihat visualisasi logika analisa.
+                        </div>
+                        
+                        <!-- Konten Dinamis -->
+                        <div id="simulasi-result" class="hidden space-y-3">
+                            <div class="flex items-center gap-3">
+                                <span id="simulasi-badge" class="px-3 py-0.5 rounded-full text-xs font-bold"></span>
+                                <h4 id="simulasi-title" class="font-bold text-lg text-white"></h4>
+                            </div>
+                            <p id="simulasi-desc" class="text-slate-300 text-sm leading-relaxed"></p>
+                            <div class="p-3 bg-white/5 rounded-lg border border-white/5 text-xs font-mono text-slate-400" id="simulasi-analogi"></div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- SIDEBAR (1 Kolom di PC) -->
+            <aside class="space-y-6">
+                <!-- Widget 1: Tabel Matriks Austin Kleon -->
+                <div class="glass rounded-2xl p-6 space-y-4">
+                    <h3 class="font-bold text-base text-slate-100 tracking-wide flex items-center gap-2">
+                        <i class="fa-solid fa-table-cells text-purple-400"></i> Matriks Komparasi
+                    </h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs text-slate-400">
+                            <thead>
+                                <tr class="border-b border-slate-800 text-slate-200">
+                                    <th class="pb-2 font-semibold">Mencuri Baik ✅</th>
+                                    <th class="pb-2 font-semibold">Mencuri Buruk ❌</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-slate-800/50">
+                                    <td class="py-2.5 pr-2 text-emerald-400">Menghormati karya</td>
+                                    <td class="py-2.5 text-rose-400">Meremehkan karya</td>
+                                </tr>
+                                <tr class="border-b border-slate-800/50">
+                                    <td class="py-2.5 pr-2 text-emerald-400">Mempelajari esensi</td>
+                                    <td class="py-2.5 text-rose-400">Menjiplak kulit luar</td>
+                                </tr>
+                                <tr class="border-b border-slate-800/50">
+                                    <td class="py-2.5 pr-2 text-emerald-400">Mencuri dari banyak</td>
+                                    <td class="py-2.5 text-rose-400">Mencuri dari satu saja</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2.5 pr-2 text-emerald-400">Mentransformasi</td>
+                                    <td class="py-2.5 text-rose-400">Meniru mentah-mentah</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Widget 2: Quotes Tambahan Gambar Ilustrasi -->
+                <div class="glass rounded-2xl p-4 overflow-hidden relative group">
+                    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=500&q=80" alt="Creative Space" class="w-full h-40 object-cover rounded-xl brightness-50 group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <p class="text-xs italic text-slate-200">"Isi folder arsip idemu secara konstan. Kumpulkan semua bentuk keindahan."</p>
+                    </div>
+                </div>
+
+                <!-- Widget 3: Link Rekomendasi Terkait -->
+                <div class="glass rounded-2xl p-6 space-y-3">
+                    <h3 class="font-bold text-sm text-slate-200 tracking-wide">Rekomendasi Bacaan</h3>
+                    <ul class="space-y-2 text-xs">
+                        <li>
+                            <a href="https://austinkleon.com/steal/" target="_blank" rel="noopener noreferrer" class="block p-2 rounded-lg bg-white/5 hover:bg-purple-500/10 text-slate-400 hover:text-purple-300 transition flex justify-between items-center">
+                                <span>Official Austin Kleon Blog</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="p-2 rounded-lg bg-white/5 text-slate-500 flex justify-between items-center cursor-not-allowed">
+                                <span>Koleksi Buku Seni & Kreativitas</span>
+                                <i class="fa-solid fa-lock text-[10px]"></i>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="w-full glass-header mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-slate-400">
+            <div>
+                &copy; 2026 <span class="text-slate-200 font-medium">Ariel Usman</span>. All Rights Reserved.
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-pink-600/20 hover:text-pink-400 transition border border-white/5">
+                    <i class="fa-brands fa-instagram text-base"></i>
+                    <span>@arielrcun</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERAKTIF JAVASCRIPT VANILLA -->
+    <script>
+        // Logika Responsif Toggle Menu Mobile
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Menutup menu mobile otomatis jika link diklik
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Logika Fitur Simulasi Analogi
+        function jalankanSimulasi(tipe) {
+            const placeholder = document.getElementById('simulasi-placeholder');
+            const resultBox = document.getElementById('simulasi-result');
+            const badge = document.getElementById('simulasi-badge');
+            const title = document.getElementById('simulasi-title');
+            const desc = document.getElementById('simulasi-desc');
+            const analogi = document.getElementById('simulasi-analogi');
+
+            // Sembunyikan instruksi default awal
+            placeholder.classList.add('hidden');
+            resultBox.classList.remove('hidden');
+
+            if (tipe === 'baik') {
+                badge.className = "px-3 py-0.5 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30";
+                badge.innerText = "PRODUKTIF";
+                title.innerText = "Mencuri dengan Baik (Steal Like an Artist)";
+                desc.innerText = "Anda mengamati struktur kode dan tata letak Bento Grid dari 5 website portfolio global, lalu memodifikasi skema warnanya menjadi Glassmorphism gelap, merapikan struktur semantiknya, menambahkan fungsionalitas JavaScript baru, serta mencantumkan nama inspirator di catatan dokumentasi.";
+                analogi.innerText = "LOGIKA PROSES: Referensi (A, B, C) ➔ Dekonstruksi Esensi ➔ Filter Orisinalitas Diri ➔ Output Baru (Autentik)";
+            } else if (tipe === 'buruk') {
+                badge.className = "px-3 py-0.5 rounded-full text-xs font-bold bg-rose-500/20 text-rose-400 border border-rose-500/30";
+                badge.innerText = "DESTRUKTIF";
+                title.innerText = "Mencuri dengan Buruk (Plagiarisme)";
+                desc.innerText = "Anda membuka fitur Inspect Element pada satu buah website kompetitor lokal, menyalin (Ctrl+C) seluruh baris kode HTML/CSS mentah-mentah, mengganti logo nama mereka dengan nama Anda secara paksa tanpa mengubah pixel atau layout apa pun, lalu mengklaimnya 100% buatan sendiri.";
+                analogi.innerText = "LOGIKA PROSES: Referensi Tunggal (A) ➔ Duplikasi Instan (Ctrl+C ➔ Ctrl+V) ➔ Klaim Palsu ➔ Plagiat";
+            }
+        }
+
+        function resetSimulasi() {
+            document.getElementById('simulasi-placeholder').classList.remove('hidden');
+            document.getElementById('simulasi-result').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
