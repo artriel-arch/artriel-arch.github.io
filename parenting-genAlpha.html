@@ -3,339 +3,379 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sibling Guide: Menjadi Kakak Keren di Era Gen Alpha</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Youth to Youth: Panduan Kakak Mendampingi Gen Alpha | Alpha Guide</title>
+    <meta name="description" content="Panduan praktis dari generasi muda untuk generasi muda (Youth to Youth) dalam memahami, mendidik, dan membesarkan adik-adik generasi Alpha tanpa gap komunikasi.">
+    <meta name="keywords" content="Gen Alpha, Parenting Youth to Youth, Generasi Alpha, Panduan Kakak, Kakak Adik, Edukasi Anak, Ariel Usman">
+    <meta name="author" content="Ariel Usman">
+    
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://artriel-arch.github.io/parenting-alpha-youth.html">
+    <meta property="og:title" content="Parenting From Youth to Youth: Panduan Gen Alpha untuk Para Kakak">
+    <meta property="og:description" content="Jadilah kakak keren yang paham dunia digital adikmu. Temukan tips, kamus istilah, dan checklist interaktif di sini.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Parenting From Youth to Youth: Panduan Gen Alpha untuk Para Kakak">
+    <meta property="twitter:description" content="Jadilah kakak keren yang paham dunia digital adikmu. Temukan tips, kamus istilah, dan checklist interaktif di sini.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/png" href="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=32&q=80">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
-        /* --- RESET & VARIABLES --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        :root {
-            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
-            --glass-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --glass-highlight: rgba(255, 255, 255, 0.15);
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --accent-neon: #a855f7; /* Purple */
-            --accent-cyan: #06b6d4; /* Cyan */
-            --accent-rose: #f43f5e; /* Rose */
-        }
-
         body {
-            background: var(--bg-gradient);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e0f2fe 100%);
             background-attachment: fixed;
-            color: var(--text-primary);
-            min-height: 100vh;
-            padding: 2rem 1rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
-
-        /* --- CONTAINER UTAMA --- */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        /* --- HEADER --- */
-        header {
-            text-align: center;
-            padding: 1.5rem;
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-        }
-
-        header h1 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            background: linear-gradient(to right, #fff, var(--accent-cyan), var(--accent-neon));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 0.5rem;
-        }
-
-        header p {
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-
-        /* --- BENTO BOX GRID LAYOUT --- */
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-auto-rows: minmax(160px, auto);
-            gap: 1.5rem;
-        }
-
-        /* --- BASE CARD STYLES (GLASSMORPHISM) --- */
-        .card {
-            background: var(--glass-bg);
+        /* Custom Light Glassmorphism Styles */
+        .glass {
+            background: rgba(255, 255, 255, 0.45);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 1.5rem;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            border: 1px solid rgba(255, 255, 255, 0.7);
         }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--glass-highlight);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* --- VARIATION SPANS FOR BENTO LAYOUT --- */
-        .col-2 { grid-column: span 2; }
-        .col-3 { grid-column: span 3; }
-        .row-2 { grid-row: span 2; }
-
-        /* Custom Card Themes */
-        .card.hero {
-            background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(6, 182, 212, 0.15));
-            border-color: rgba(168, 85, 247, 0.3);
-        }
-
-        .card.hero h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-
-        /* --- INTERACTIVE TABS (SPA SIMULATION) --- */
-        .tab-navigation {
-            display: flex;
-            gap: 0.75rem;
-            margin-top: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .tab-btn {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--glass-border);
-            color: var(--text-primary);
-            padding: 0.6rem 1.2rem;
-            border-radius: 12px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .tab-btn:hover, .tab-btn.active {
-            background: var(--accent-cyan);
-            color: #0f172a;
-            border-color: var(--accent-cyan);
-            box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
-        }
-
-        .dynamic-content {
-            margin-top: 1rem;
-            min-height: 120px;
-        }
-
-        /* --- QUICK TIPS / LISTS --- */
-        .tip-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .tip-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .tip-list li::before {
-            content: "✦";
-            color: var(--accent-neon);
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            text-align: center;
-            padding: 1rem;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-        }
-
-        /* --- RESPONSIVE RESPONSIVENESS --- */
-        @media (max-width: 900px) {
-            .bento-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .col-3, .col-2 { grid-column: span 2; }
-        }
-
-        @media (max-width: 600px) {
-            .bento-grid {
-                grid-template-columns: 1fr;
-            }
-            .col-3, .col-2, .row-2 { grid-column: span 1; grid-row: span 1; }
-            body { padding: 1rem 0.5rem; }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(241, 245, 249, 1);
         }
     </style>
 </head>
-<body>
+<body class="text-slate-800 min-h-screen flex flex-col antialiased selection:bg-cyan-500 selection:text-white">
 
-    <div class="container">
-        
-        <!-- HEADER SECTION -->
-        <header>
-            <h1>THE SIBLING GUIDE</h1>
-            <p>Navigasi Parenting Remaja Gen Alpha dari Sudut Pandang Kakak</p>
-        </header>
-
-        <!-- BENTO BOX GRID -->
-        <main class="bento-grid">
-            
-            <!-- CARD 1: HERO / CORE PHILOSOPHY (Col: 2, Row: 2) -->
-            <div class="card col-2 row-2 hero">
-                <div>
-                    <h2 style="color: var(--accent-cyan);">Bukan Polisi, Tapi safehouse.</h2>
-                    <p>Gen Alpha (lahir 2010+) tumbuh di era AI, algoritma, dan digital penuh. Di saat orang tua buntu menghadapi 'screen time' mereka, peran kita sebagai kakak bukan menambah aturan ketat, melainkan menjadi jembatan penerjemah antar-generasi.</p>
+    <!-- NAVBAR -->
+    <nav class="glass-header sticky top-0 z-50 w-full shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Kiri: Nama Project -->
+                <div class="flex-shrink-0 flex items-center space-x-2">
+                    <i class="fa-solid fa-users-rectangle text-cyan-600 text-xl"></i>
+                    <span class="font-bold text-lg tracking-wide bg-gradient-to-r from-cyan-600 to-indigo-600 bg-clip-text text-transparent">
+                        AlphaSiblings
+                    </span>
                 </div>
-                <div style="margin-top: 2rem;">
-                    <p style="font-style: italic; color: #fff; font-size: 0.9rem;">"Orang tua menuntut pemahaman, kakak memberikan ruang aman."</p>
+                <!-- Kanan: Menu Navigasi -->
+                <div class="hidden md:flex space-x-8 text-sm font-medium">
+                    <a href="#karakteristik" class="text-slate-600 hover:text-cyan-600 transition-colors">Karakter Alpha</a>
+                    <a href="#tips-kakak" class="text-slate-600 hover:text-cyan-600 transition-colors">Tips Komunikasi</a>
+                    <a href="#fitur-interaktif" class="text-slate-600 hover:text-cyan-600 transition-colors">Kamus & Checklist</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
                 </div>
             </div>
+        </div>
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass px-4 pt-2 pb-4 space-y-2 mx-4 rounded-xl shadow-md mt-1">
+            <a href="#karakteristik" class="block py-2 text-slate-600 hover:text-cyan-600">Karakter Alpha</a>
+            <a href="#tips-kakak" class="block py-2 text-slate-600 hover:text-cyan-600">Tips Komunikasi</a>
+            <a href="#fitur-interaktif" class="block py-2 text-slate-600 hover:text-cyan-600">Kamus & Checklist</a>
+        </div>
+    </nav>
 
-            <!-- CARD 2: DYNAMIC SPA ZONE (Col: 2, Row: 2) -->
-            <div class="card col-2 row-2">
-                <div>
-                    <h3 style="color: var(--accent-neon);">⚡ Sibling Playbook</h3>
-                    <p>Pilih pendekatan taktis sesuai situasi yang sedang dihadapi si adek:</p>
+    <!-- HEADER / HERO SECTION -->
+    <header class="relative overflow-hidden py-16 px-4 sm:px-6 lg:px-8 flex items-center justify-center min-h-[50vh]">
+        <!-- Background Light Orbs Pastel -->
+        <div class="absolute top-10 left-10 w-64 h-64 bg-cyan-300/30 rounded-full blur-[80px] pointer-events-none"></div>
+        <div class="absolute bottom-5 right-10 w-72 h-72 bg-indigo-200/40 rounded-full blur-[90px] pointer-events-none"></div>
+
+        <div class="glass max-w-4xl w-full rounded-3xl p-8 sm:p-12 text-center relative z-10 shadow-xl shadow-slate-200/50">
+            <span class="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-cyan-50 text-cyan-700 border border-cyan-200 mb-6 uppercase tracking-wider">
+                Youth to Youth Movement
+            </span>
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6 leading-tight text-slate-900">
+                Parenting Asik Buat Kakak:<br class="hidden sm:inline">
+                <span class="bg-gradient-to-r from-cyan-600 via-sky-600 to-indigo-600 bg-clip-text text-transparent">Membesarkan Gen Alpha</span>
+            </h1>
+            <p class="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto mb-8 leading-relaxed">
+                Adikmu lahir setelah tahun 2010? Berarti mereka adalah <strong>Generasi Alpha</strong>—native digital murni. Di sini, kita sebagai sesama anak muda akan belajar cara menjadi jembatan edukasi, mentor, sekaligus sahabat terbaik mereka tanpa terkesan kaku.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#fitur-interaktif" class="px-6 py-3 bg-gradient-to-r from-cyan-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white font-medium rounded-xl transition shadow-lg shadow-cyan-600/20 text-center text-sm">
+                    Coba Kamus & Checklist
+                </a>
+                <a href="#karakteristik" class="px-6 py-3 bg-white hover:bg-slate-5.0 text-slate-700 font-medium rounded-xl transition border border-slate-200 shadow-sm text-center text-sm">
+                    Pahami Karakter Mereka
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER (Body + Sidebar) -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- BODY CONTENT -->
+            <div class="lg:col-span-2 space-y-10">
+                
+                <!-- Section 1: Karakteristik Gen Alpha -->
+                <section id="karakteristik" class="glass rounded-2xl p-6 sm:p-8 space-y-6 shadow-sm shadow-slate-200/60">
+                    <div class="flex items-center space-x-3 border-b border-slate-200 pb-4">
+                        <div class="p-2 bg-cyan-50 rounded-lg text-cyan-600">
+                            <i class="fa-solid fa-child text-xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-900">Siapa Sebenarnya Gen Alpha?</h2>
+                    </div>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        Gen Alpha adalah anak-anak yang lahir dari tahun <strong class="text-slate-900">2010 hingga 2025</strong>. Mereka tumbuh berdampingan dengan kecerdasan buatan (AI), algoritma video pendek, dan perangkat layar sentuh sejak bayi. Pendekatan parenting konvensional yang kaku sering kali tidak lagi efektif untuk mereka.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-2">
+                        <div class="p-4 rounded-xl bg-white/60 border border-slate-200 text-center shadow-sm">
+                            <i class="fa-solid fa-wand-magic-sparkles text-cyan-600 text-lg mb-2"></i>
+                            <h4 class="font-semibold text-xs text-slate-900 mb-1">AI Integrated</h4>
+                            <p class="text-[11px] text-slate-500">Menganggap teknologi pintar adalah asisten alami kehidupan.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/60 border border-slate-200 text-center shadow-sm">
+                            <i class="fa-solid fa-bolt text-amber-500 text-lg mb-2"></i>
+                            <h4 class="font-semibold text-xs text-slate-900 mb-1">Visual Learners</h4>
+                            <p class="text-[11px] text-slate-500">Lebih cepat menangkap informasi lewat video pendek interaktif.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/60 border border-slate-200 text-center shadow-sm">
+                            <i class="fa-solid fa-heart-pulse text-rose-500 text-lg mb-2"></i>
+                            <h4 class="font-semibold text-xs text-slate-900 mb-1">Highly Empathetic</h4>
+                            <p class="text-[11px] text-slate-500">Sangat peduli pada isu inklusivitas dan ekspresi diri.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 2: Panduan Kakak Ke Adik (Youth to Youth) -->
+                <section id="tips-kakak" class="glass rounded-2xl p-6 sm:p-8 space-y-6 shadow-sm shadow-slate-200/60">
+                    <div class="flex items-center space-x-3 border-b border-slate-200 pb-4">
+                        <div class="p-2 bg-indigo-50 rounded-lg text-indigo-600">
+                            <i class="fa-solid fa-handshake-angle text-xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-900">3 Pilar Mengasuh ala Kakak Keren</h2>
+                    </div>
                     
-                    <div class="tab-navigation">
-                        <button class="tab-btn active" onclick="switchTab('tech')">Gadget</button>
-                        <button class="tab-btn" onclick="switchTab('com')">Bahasa</button>
-                        <button class="tab-btn" onclick="switchTab('emot')">Validasi</button>
+                    <div class="space-y-4">
+                        <div class="flex gap-4 p-4 rounded-xl bg-white/60 border border-slate-200 shadow-sm">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-cyan-100 text-cyan-700 font-bold flex items-center justify-center text-xs">1</span>
+                            <div>
+                                <h3 class="font-semibold text-sm text-slate-900 mb-1">Bukan Menggurui, Tapi Co-Pilot</h3>
+                                <p class="text-xs text-slate-600 leading-relaxed">Jangan melarang mereka menggunakan gadget secara otoriter. Duduklah di samping mereka, jadilah teman mabar atau teman nonton yang mengarahkan algoritma tontonan mereka ke arah yang mendidik.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 p-4 rounded-xl bg-white/60 border border-slate-200 shadow-sm">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 font-bold flex items-center justify-center text-xs">2</span>
+                            <div>
+                                <h3 class="font-semibold text-sm text-slate-900 mb-1">Validasi Emosi Instan Mereka</h3>
+                                <p class="text-xs text-slate-600 leading-relaxed">Gen Alpha terbiasa dengan kepuasan instan karena teknologi. Jika mereka tantrum akibat delay atau bosan, bantu mereka meregulasi emosi secara verbal tanpa kekerasan fisik.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 p-4 rounded-xl bg-white/60 border border-slate-200 shadow-sm">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-purple-100 text-purple-700 font-bold flex items-center justify-center text-xs">3</span>
+                            <div>
+                                <h3 class="font-semibold text-sm text-slate-900 mb-1">Tawarkan Aktivitas Fisik Eksploratif</h3>
+                                <p class="text-xs text-slate-600 leading-relaxed">Bawa mereka keluar untuk menyeimbangkan paparan layar. Mengajarkan alat musik portabel yang menyenangkan atau bermain game strategi fisik bisa mengasah fokus sensorik motorik mereka.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 3: FITUR INTERAKTIF -->
+                <section id="fitur-interaktif" class="glass rounded-2xl p-6 sm:p-8 space-y-6 shadow-sm shadow-slate-200/60">
+                    <div class="flex items-center space-x-3 border-b border-slate-200 pb-4">
+                        <div class="p-2 bg-teal-50 rounded-lg text-teal-600">
+                            <i class="fa-solid fa-laptop-code text-xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-900">Interactive Tools</h2>
                     </div>
 
-                    <div id="tab-display" class="dynamic-content">
-                        <!-- Konten diisi via JS -->
+                    <!-- Pilihan Sub-Fitur -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        
+                        <!-- Tool 1: Penerjemah Bahasa Gen Alpha -->
+                        <div class="space-y-3">
+                            <h3 class="text-sm font-bold text-cyan-700"><i class="fa-solid fa-language"></i> Alpha Slang Translator</h3>
+                            <p class="text-[11px] text-slate-500">Sering dengar adikmu bicara kata-kata aneh? Pilih kata di bawah untuk tahu artinya!</p>
+                            
+                            <select id="slang-select" onchange="translateSlang()" class="w-full text-xs p-2.5 rounded-lg bg-white border border-slate-200 text-slate-700 focus:outline-none focus:border-cyan-500 shadow-sm">
+                                <option value="">-- Pilih Istilah/Slang --</option>
+                                <option value="skibidi">Skibidi</option>
+                                <option value="rizz">Rizz</option>
+                                <option value="gyatt">Gyatt</option>
+                                <option value="sigma">Sigma</option>
+                            </select>
+
+                            <div id="translator-result" class="p-3 rounded-lg bg-slate-50 border border-slate-200 hidden text-xs">
+                                <strong class="text-slate-900 block mb-1">Arti Istilah:</strong>
+                                <span id="translator-text" class="text-slate-600"></span>
+                            </div>
+                        </div>
+
+                        <!-- Tool 2: Checklist Pengasuhan Harian -->
+                        <div class="space-y-3">
+                            <h3 class="text-sm font-bold text-indigo-700"><i class="fa-solid fa-list-check"></i> Sibling Bond Checklist</h3>
+                            <p class="text-[11px] text-slate-500">Pantau kualitas kedekatanmu dengan adik Alpha hari ini:</p>
+                            
+                            <div class="space-y-2 text-xs">
+                                <label class="flex items-center gap-2 cursor-pointer p-1.5 hover:bg-white/60 rounded-lg transition text-slate-700">
+                                    <input type="checkbox" class="rounded accent-indigo-600" onclick="updateProgress()">
+                                    <span>Nonton/mabar bareng minimal 15 menit</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer p-1.5 hover:bg-white/60 rounded-lg transition text-slate-700">
+                                    <input type="checkbox" class="rounded accent-indigo-600" onclick="updateProgress()">
+                                    <span>Validasi/dengar cerita random mereka</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer p-1.5 hover:bg-white/60 rounded-lg transition text-slate-700">
+                                    <input type="checkbox" class="rounded accent-indigo-600" onclick="updateProgress()">
+                                    <span>Ajak aktivitas tanpa layar (buku/fisik)</span>
+                                </label>
+                            </div>
+
+                            <div class="pt-2">
+                                <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                                    <div id="progress-bar" class="bg-gradient-to-r from-cyan-500 to-indigo-600 h-full w-0 transition-all duration-300"></div>
+                                </div>
+                                <span id="progress-status" class="text-[10px] text-slate-500 mt-1 block text-right">0% Terselesaikan</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- SIDEBAR -->
+            <aside class="space-y-6">
+                <!-- Widget 1: Info Singkat Gap Generasi -->
+                <div class="glass rounded-2xl p-6 space-y-4 shadow-sm shadow-slate-200/60">
+                    <h3 class="font-bold text-sm text-slate-900 flex items-center gap-2">
+                        <i class="fa-solid fa-arrow-up-1-9 text-cyan-600"></i> Data Karakteristik
+                    </h3>
+                    <div class="space-y-3 text-xs text-slate-600">
+                        <div class="p-2.5 rounded-xl bg-white/60 border border-slate-200 shadow-sm">
+                            <span class="text-slate-900 font-semibold block mb-0.5">Rentang Tahun Lahir</span>
+                            2010 sampai dengan 2025/2026.
+                        </div>
+                        <div class="p-2.5 rounded-xl bg-white/60 border border-slate-200 shadow-sm">
+                            <span class="text-slate-900 font-semibold block mb-0.5">Media Utama Informasi</span>
+                            TikTok, YouTube Shorts, Roblox, Minecraft.
+                        </div>
+                        <div class="p-2.5 rounded-xl bg-white/60 border border-slate-200 shadow-sm">
+                            <span class="text-slate-900 font-semibold block mb-0.5">Tantangan Terbesar Kakak</span>
+                            Menjaga *attention span* (durasi fokus) adik agar tidak terlalu pendek.
+                        </div>
                     </div>
                 </div>
+
+                <!-- Widget 2: Kampanye Visual Sibling Quote -->
+                <div class="glass rounded-2xl p-4 overflow-hidden relative group shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1471286174243-e7a4d9afb3de?auto=format&fit=crop&w=500&q=80" alt="Kakak dan Adik" class="w-full h-44 object-cover rounded-xl brightness-[0.65] group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 p-5 flex flex-col justify-end bg-gradient-to-t from-slate-950/50 via-slate-950/20 to-transparent rounded-xl">
+                        <span class="text-[10px] uppercase font-bold text-cyan-300 mb-1">Quotes Of The Day</span>
+                        <p class="text-xs italic text-white font-medium leading-relaxed">"Orang tua mungkin menyediakan fasilitas, namun kakaklah yang mengajarkan cara berselancar di realita digital."</p>
+                    </div>
+                </div>
+
+                <!-- Widget 3: Referensi Komunitas Kakak Asuh -->
+                <div class="glass rounded-2xl p-6 space-y-3 shadow-sm shadow-slate-200/60">
+                    <h3 class="font-bold text-xs text-slate-900 tracking-wide uppercase">Tautan Edukasi Tambahan</h3>
+                    <ul class="space-y-2 text-xs">
+                        <li>
+                            <div class="p-2 rounded-lg bg-slate-100/80 text-slate-400 flex justify-between items-center cursor-not-allowed border border-slate-200/60">
+                                <span>E-Book: E-Parenting Dasar AI</span>
+                                <i class="fa-solid fa-lock text-[10px]"></i>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="w-full glass-header mt-auto shadow-inner">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-slate-600">
+            <div>
+                &copy; 2026 <span class="text-slate-900 font-medium">Ariel Usman</span>. All Rights Reserved.
             </div>
-
-            <!-- CARD 3: THE RULES (Col: 1, Row: 2) -->
-            <div class="card row-2">
-                <h3>📜 Sibling Code</h3>
-                <ul class="tip-list">
-                    <li><strong>Jangan 'Cepu':</strong> Jaga rahasia mereka selagi tidak membahayakan nyawa/masa depan. Trust adalah segalanya.</li>
-                    <li><strong>Filter FOMO:</strong> Bantu mereka sadar bahwa apa yang ada di TikTok/Shorts bukan realita seutuhnya.</li>
-                    <li><strong>Ganti Khotbah:</strong> Daripada bilang "Kamu malas banget," ganti dengan "Lagi burnout ya? Mabar yuk."</li>
-                </ul>
+            <div class="flex items-center space-x-4">
+                <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white hover:bg-slate-50 hover:text-pink-600 transition border border-slate-200 shadow-sm">
+                    <i class="fa-brands fa-instagram text-base text-pink-500"></i>
+                    <span class="text-slate-700">@arielrcun</span>
+                </a>
             </div>
+        </div>
+    </footer>
 
-            <!-- CARD 4: MENTAL HEALTH CHECK (Col: 2, Row: 1) -->
-            <div class="card col-2">
-                <h3 style="color: var(--accent-rose);">🧠 Validasi Emosi, Bukan Kritik</h3>
-                <p>Gen Alpha terpapar informasi terlalu cepat, memicu kecemasan dini. Ketika adek remaja mengeluh stres, posisi kita adalah mendengarkan tanpa langsung menghakimi atau membandingkan dengan zaman kita sekolah dulu.</p>
-            </div>
-
-            <!-- CARD 5: CLOSING INSIGHT (Col: 1, Row: 1) -->
-            <div class="card">
-                <h3>🎮 Koneksi Lewat Kultur</h3>
-                <p>Ikuti apa yang mereka sukai. Masuk ke dunianya dulu (game, tren musik, meme), baru arahkan logikanya.</p>
-            </div>
-
-        </main>
-
-        <!-- FOOTER SECTION -->
-        <footer>
-            Dibuat oleh: Artriel Ariel
-        </footer>
-
-    </div>
-
-    <!-- VANILLA JAVASCRIPT FOR SPA INTERACTION -->
+    <!-- INTERAKTIF JAVASCRIPT VANILLA -->
     <script>
-        // Data konten untuk simulasi SPA
-        const playbookData = {
-            tech: {
-                title: "Menghadapi Screen Time",
-                desc: "Jangan langsung menyita handphone-nya. Ajak mereka diskusi tentang algoritma, atau gunakan waktu screen time untuk bonding bersama. Main game bareng atau bikin konten seru berdua lebih efektif daripada sekadar melarang."
-            },
-            com: {
-                title: "Bahasa & Tren Slang",
-                desc: "Gen Alpha punya kamus bahasanya sendiri (Skibidi, Rizz, Gyatt). Jangan mencela cara mereka bicara. Mengerti bahasa mereka membuat adek merasa kamu adalah orang dewasa yang 'relatable' dan asyik diajak ngobrol."
-            },
-            emot: {
-                title: "Validasi Perasaan",
-                desc: "Ketika mereka curhat masalah pertemanan di siber, jangan dianggap sepele. Bagi mereka dunia digital adalah nyata. Katakan: 'Kakak paham kok rasanya ga diajak main di grup chat, itu emang ngeselin banget.'"
-            }
-        };
+        // Logika Responsif Toggle Menu Mobile
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-        // Fungsi Handler Tab SPA
-        function switchTab(key) {
-            // Update Active Class pada Button
-            const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            
-            // Cari button yang memicu event
-            const eventTarget = window.event ? window.event.target : null;
-            if(eventTarget) {
-                eventTarget.classList.add('active');
-            } else {
-                // Fallback pencarian manual jika target event kosong
-                const btnArray = Array.from(buttons);
-                const targetBtn = btnArray.find(b => b.getAttribute('onclick').includes(key));
-                if(targetBtn) targetBtn.classList.add('active');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Menutup menu mobile otomatis saat tautan navigasi ditekan
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Fitur 1: Slang Translator Gen Alpha
+        function translateSlang() {
+            const selectValue = document.getElementById('slang-select').value;
+            const resultBox = document.getElementById('translator-result');
+            const resultText = document.getElementById('translator-text');
+
+            if (!selectValue) {
+                resultBox.classList.add('hidden');
+                return;
             }
 
-            // Update Konten secara Dinamis dengan Efek Transisi Sederhana
-            const displayZone = document.getElementById('tab-display');
-            displayZone.style.opacity = 0;
-            
-            setTimeout(() => {
-                displayZone.innerHTML = `
-                    <h4 style="margin-bottom: 0.4rem; color: #fff; font-size: 1rem;">${playbookData[key].title}</h4>
-                    <p style="font-size: 0.9rem; line-height: 1.5;">${playbookData[key].desc}</p>
-                `;
-                displayZone.style.transition = "opacity 0.3s ease";
-                displayZone.style.opacity = 1;
-            }, 150);
+            resultBox.classList.remove('hidden');
+
+            const dictionary = {
+                skibidi: "Bisa berarti buruk/aneh, atau sebaliknya bermakna sangat keren/keren ekstrem tergantung intonasi kalimat kontekstual.",
+                rizz: "Kemampuan karisma tingkat tinggi untuk memikat atau memikat hati orang lain secara instan (berasal dari kata 'charisma').",
+                gyatt: "Seruan ekspresi kekaguman mendalam atau keterkejutan spontan melihat sesuatu yang sangat mencolok secara visual.",
+                sigma: "Sosok pemimpin yang mandiri, keren, percaya diri, bergerak dalam senyap tanpa butuh pengakuan kelompok sosial umum."
+            };
+
+            resultText.innerText = dictionary[selectValue] || "Istilah tidak ditemukan.";
         }
 
-        // Inisialisasi Tab Pertama kali saat load
-        document.addEventListener("DOMContentLoaded", () => {
-            switchTab('tech');
-        });
+        // Fitur 2: Hitung Progres Checklist Pengasuhan Kakak
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('#fitur-interaktif input[type="checkbox"]');
+            const checkedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
+            
+            const percentage = Math.round((checkedCount / checkboxes.length) * 100);
+            
+            const progressBar = document.getElementById('progress-bar');
+            const progressStatus = document.getElementById('progress-status');
+            
+            progressBar.style.width = percentage + '%';
+            progressStatus.innerText = percentage + '% Terselesaikan';
+        }
     </script>
 </body>
 </html>
