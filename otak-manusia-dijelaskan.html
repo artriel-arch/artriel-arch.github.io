@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petualangan Otak Supermu - Kenali Rahasia Di Dalam Kepalamu</title>
+    
+    <meta name="description" content="Jelajahi keajaiban otak manusia dengan cara yang seru dan mudah dipahami. Temukan rahasia bagaimana caramu berpikir, bergerak, dan merasakan sesuatu!">
+    <meta name="keywords" content="otak manusia, fungsi otak, belajar otak seru, biologi mudah">
+    <meta name="author" content="Ariel Usman">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://otak-super.vercel.app/">
+    <meta property="og:title" content="Petualangan Otak Supermu - Kenali Rahasia Di Dalam Kepalamu">
+    <meta property="og:description" content="Jelajahi keajaiban otak manusia dengan cara yang seru dan mudah dipahami. Temukan rahasia bagaimana caramu berpikir, bergerak, dan merasakan sesuatu!">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=1200&q=80">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Petualangan Otak Supermu - Kenali Rahasia Di Dalam Kepalamu">
+    <meta property="twitter:description" content="Jelajahi keajaiban otak manusia dengan cara yang seru dan mudah dipahami.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=1200&q=80">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0fdf4 100%);
+        }
+        .heading-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col">
+
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm border-b border-amber-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <div class="bg-amber-400 p-2 rounded-xl text-white shadow-md animate-bounce">
+                        <i class="fa-solid fa-brain text-xl"></i>
+                    </div>
+                    <span class="heading-font text-2xl font-bold tracking-wide text-indigo-600">OtakSuper</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#hero" class="text-slate-600 hover:text-indigo-600 font-semibold transition-colors">Beranda</a>
+                    <a href="#jelajah" class="text-slate-600 hover:text-indigo-600 font-semibold transition-colors">Bagian Otak</a>
+                    <a href="#game" class="text-slate-600 hover:text-indigo-600 font-semibold transition-colors">Misi Seru</a>
+                </div>
+                <div class="md:hidden">
+                    <button onclick="toggleSidebar()" class="text-slate-600 hover:text-indigo-600 focus:outline-none p-2 text-xl">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col lg:flex-row gap-8">
+        
+        <aside id="sidebar" class="fixed inset-y-0 left-0 z-50 w-64 bg-white p-6 shadow-xl transform -translate-x-full lg:translate-x-0 lg:relative lg:inset-y-0 lg:z-0 lg:w-1/4 lg:bg-transparent lg:shadow-none lg:p-0 transition-transform duration-300 ease-in-out">
+            <div class="flex justify-between items-center lg:hidden mb-6">
+                <span class="heading-font text-xl font-bold text-indigo-600">Menu Petualangan</span>
+                <button onclick="toggleSidebar()" class="text-slate-500 text-xl"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="lg:sticky lg:top-24 space-y-4">
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
+                    <h3 class="heading-font text-lg font-bold text-indigo-600 mb-3"><i class="fa-solid fa-compass mr-2"></i>Peta Navigasi</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#hero" onclick="closeSidebar()" class="block p-2.5 rounded-xl hover:bg-indigo-50 font-medium transition-colors text-slate-700 hover:text-indigo-600">🚀 Mulai Petualangan</a></li>
+                        <li><a href="#jelajah" onclick="closeSidebar()" class="block p-2.5 rounded-xl hover:bg-emerald-50 font-medium transition-colors text-slate-700 hover:text-emerald-600">🧠 Jelajahi Bagian Otak</a></li>
+                        <li><a href="#game" onclick="closeSidebar()" class="block p-2.5 rounded-xl hover:bg-amber-50 font-medium transition-colors text-slate-700 hover:text-amber-600">🎮 Misi Tebak Otak</a></li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-500 to-indigo-600 p-5 rounded-2xl text-white shadow-md">
+                    <h4 class="heading-font font-bold text-base mb-1">💡 Tahukah Kamu?</h4>
+                    <p class="text-xs text-purple-100 leading-relaxed">Otak kita menghasilkan listrik yang cukup untuk menyalakan sebuah lampu bohlam kecil saat kita sedang bangun! Keren, kan?</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="flex-1 space-y-12">
+            
+            <section id="hero" class="relative rounded-3xl overflow-hidden bg-cover bg-center h-[350px] sm:h-[400px] flex items-center justify-center p-6 sm:p-12 shadow-lg" style="background-image: url('https://images.unsplash.com/photo-1617791160505-6f006e121980?auto=format&fit=crop&w=1000&q=80');">
+                <div class="absolute inset-0 bg-gradient-to-r from-indigo-900/40 to-teal-900/40"></div>
+                <div class="glass w-full max-w-2xl p-6 sm:p-8 rounded-2xl text-center text-slate-900 shadow-2xl space-y-4">
+                    <span class="bg-amber-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider heading-font shadow-sm inline-block">Selamat Datang di Markas Besar</span>
+                    <h1 class="heading-font text-3xl sm:text-5xl font-extrabold text-white drop-shadow">Selamat Datang di Otak Supermu!</h1>
+                    <p class="text-sm sm:text-base font-semibold text-slate-100 max-w-lg mx-auto leading-relaxed">
+                        Di dalam kepalamu ada sebuah "komputer super" yang bekerja tanpa henti. Yuk, cari tahu bagaimana cara kerjanya mengendalikan seluruh tubuhmu!
+                    </p>
+                    <a href="#jelajah" class="inline-block bg-emerald-400 hover:bg-emerald-500 text-slate-900 font-bold heading-font px-6 py-3 rounded-xl shadow-md transform hover:-translate-y-0.5 transition-all">Mulai Jelajah! <i class="fa-solid fa-arrow-right ml-2"></i></a>
+                </div>
+            </section>
+
+            <section id="jelajah" class="space-y-6">
+                <div class="text-center max-w-md mx-auto">
+                    <h2 class="heading-font text-2xl sm:text-4xl font-bold text-slate-900">Kenali 3 Bagian Utama Otak</h2>
+                    <p class="text-sm text-slate-600 mt-2">Klik tombol di bawah setiap kartu untuk melihat bagaimana kehebatannya bekerja!</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-pink-100 text-pink-500 flex items-center justify-center text-2xl mb-4 shadow-inner"><i class="fa-solid fa-lightbulb"></i></div>
+                            <h3 class="heading-font text-xl font-bold text-slate-900 mb-2">Otak Besar (Serebrum)</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed"><strong>Si Komputer Pintar.</strong> Ini adalah bagian terbesar. Dia bertugas membantumu berpikir, mengingat nama teman, menggambar ide kreatif, dan merasakan senang atau sedih.</p>
+                        </div>
+                        <button onclick="tampilDetail('otak-besar')" class="mt-4 w-full bg-pink-50 hover:bg-pink-100 text-pink-600 font-semibold py-2.5 px-4 rounded-xl text-sm transition-colors flex items-center justify-center gap-2">💡 Lihat Kekuatan <i class="fa-solid fa-chevron-right text-xs"></i></button>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-500 flex items-center justify-center text-2xl mb-4 shadow-inner"><i class="fa-solid fa-bicycle"></i></div>
+                            <h3 class="heading-font text-xl font-bold text-slate-900 mb-2">Otak Kecil (Serebelum)</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed"><strong>Si Penjaga Keseimbangan.</strong> Meskipun posisinya di belakang bawah dan ukurannya kecil, dia membuatmu bisa berdiri tegak, naik sepeda tanpa jatuh, dan menari dengan lincah!</p>
+                        </div>
+                        <button onclick="tampilDetail('otak-kecil')" class="mt-4 w-full bg-emerald-50 hover:bg-emerald-100 text-emerald-600 font-semibold py-2.5 px-4 rounded-xl text-sm transition-colors flex items-center justify-center gap-2">🤸 Lihat Kekuatan <i class="fa-solid fa-chevron-right text-xs"></i></button>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-sky-100 text-sky-500 flex items-center justify-center text-2xl mb-4 shadow-inner"><i class="fa-solid fa-heart-pulse"></i></div>
+                            <h3 class="heading-font text-xl font-bold text-slate-900 mb-2">Batang Otak (Brainstem)</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed"><strong>Si Penjaga Otomatis.</strong> Dia menghubungkan otak ke tubuhmu. Dia yang menyuruh jantungmu terus berdegup dan paru-parumu bernapas secara otomatis, bahkan saat kamu tertidur lelap.</p>
+                        </div>
+                        <button onclick="tampilDetail('batang-otak')" class="mt-4 w-full bg-sky-50 hover:bg-sky-100 text-sky-600 font-semibold py-2.5 px-4 rounded-xl text-sm transition-colors flex items-center justify-center gap-2">🤖 Lihat Kekuatan <i class="fa-solid fa-chevron-right text-xs"></i></button>
+                    </div>
+                </div>
+
+                <div id="kotak-detail" class="hidden bg-indigo-900 text-white p-6 rounded-2xl shadow-inner animate-fadeIn space-y-2">
+                    <h4 id="judul-detail" class="heading-font text-xl font-bold text-amber-300"></h4>
+                    <p id="isi-detail" class="text-sm sm:text-base text-indigo-100 leading-relaxed"></p>
+                </div>
+            </section>
+
+            <section id="game" class="bg-gradient-to-br from-amber-400 to-orange-400 rounded-3xl p-6 sm:p-8 text-slate-900 shadow-md space-y-6">
+                <div class="text-center max-w-md mx-auto space-y-2">
+                    <span class="bg-white/30 text-xs font-bold px-3 py-1 rounded-full uppercase heading-font shadow-sm inline-block">Misi Rahasia</span>
+                    <h2 class="heading-font text-2xl sm:text-3xl font-bold">Uji Kehebatan Otakmu!</h2>
+                    <p class="text-xs sm:text-sm font-medium opacity-90">Selesaikan tantangan skenario ini dengan memilih bagian otak yang tepat!</p>
+                </div>
+
+                <div class="bg-white/90 p-5 sm:p-6 rounded-2xl shadow-sm space-y-4">
+                    <div class="p-4 bg-amber-50 rounded-xl border-l-4 border-amber-500">
+                        <p class="text-sm font-semibold text-slate-700">Skenario Misi:</p>
+                        <p class="heading-font text-base sm:text-lg font-bold mt-1">"Kamu sedang belajar mengendarai sepeda roda dua dan menjaga keseimbangan tubuh agar tidak terjatuh. Siapa yang membantumu?"</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <button onclick="cekJawaban(false, 'Otak Besar')" class="p-3 bg-slate-100 hover:bg-pink-100 rounded-xl font-semibold text-sm transition-colors border border-slate-200">💡 Otak Besar</button>
+                        <button onclick="cekJawaban(true, 'Otak Kecil')" class="p-3 bg-slate-100 hover:bg-emerald-100 rounded-xl font-semibold text-sm transition-colors border border-slate-200">🤸 Otak Kecil</button>
+                        <button onclick="cekJawaban(false, 'Batang Otak')" class="p-3 bg-slate-100 hover:bg-sky-100 rounded-xl font-semibold text-sm transition-colors border border-slate-200">🤖 Batang Otak</button>
+                    </div>
+
+                    <div id="umpan-balik" class="hidden p-3 rounded-xl text-center font-bold text-sm"></div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <footer class="bg-slate-900 text-slate-400 text-sm mt-12 py-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                <p class="font-medium text-slate-300">&copy; 2026 Dibuat oleh: <span class="text-white font-bold">Ariel Usman</span></p>
+                <p class="text-xs text-slate-500 mt-1">Hak Cipta Dilindungi.</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://instagram.com/arielrcun" target="_blank" class="flex items-center gap-2 bg-slate-800 hover:bg-gradient-to-tr hover:from-amber-500 hover:to-pink-500 px-4 py-2 rounded-xl text-slate-300 hover:text-white transition-all shadow-sm">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                    <span class="font-semibold text-xs">@arielrcun</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fungsi Sidebar Responsif
+        const sidebar = document.getElementById('sidebar');
+        function toggleSidebar() {
+            sidebar.classList.toggle('-translate-x-full');
+        }
+        function closeSidebar() {
+            if(!sidebar.classList.contains('-translate-x-full')) {
+                sidebar.classList.add('-translate-x-full');
+            }
+        }
+
+        // Fungsi Detail Bagian Otak
+        const dataDetail = {
+            'otak-besar': {
+                judul: '🚀 Kehebatan Otak Besar (Serebrum)',
+                isi: 'Saat kamu berhitung 1+1, mengingat warna buah stroberi, atau sedang merencanakan petualangan esok hari, Otak Besar menyalakan miliaran sel kecil untuk mencatat dan memproses hal tersebut. Dia adalah perpustakaan memori sekaligus studio seni di dalam kepalamu!'
+            },
+            'otak-kecil': {
+                judul: '🤸 Kehebatan Otak Kecil (Serebelum)',
+                isi: 'Otak Kecil menerima laporan kilat dari matamu dan otot kakimu. Dia bekerja seperti pelatih olahraga pribadi yang memastikan langkahmu mantap saat berjalan di atas papan titian, melompat, atau menangkap bola yang meluncur ke arahmu.'
+            },
+            'otak-init': { /* fallback/reset */ },
+            'batang-otak': {
+                judul: '🤖 Kehebatan Batang Otak (Brainstem)',
+                isi: 'Batang Otak adalah kapten kapal yang siaga 24 jam penuh. Tanpa perlu kamu perintah, dia menjaga napasmu tetap teratur, menyaring debu lewat bersin, dan memompa darah ke seluruh bagian tubuhmu bahkan saat kamu bermimpi indah.'
+            }
+        };
+
+        function tampilDetail(kunci) {
+            const kotak = document.getElementById('kotak-detail');
+            const judul = document.getElementById('judul-detail');
+            const isi = document.getElementById('isi-detail');
+
+            judul.innerText = dataDetail[kunci].judul;
+            isi.innerText = dataDetail[kunci].isi;
+            kotak.classList.remove('hidden');
+            kotak.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Fungsi Evaluasi Misi Game
+        function cekJawaban(apakahBenar, namaPilihan) {
+            const umpanBalik = document.getElementById('umpan-balik');
+            umpanBalik.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-700', 'bg-rose-100', 'text-rose-700');
+            
+            if (apakahBenar) {
+                umpanBalik.className = "p-3 rounded-xl text-center font-bold text-sm bg-emerald-100 text-emerald-700 animate-bounce shadow-sm";
+                umpanBalik.innerHTML = "🎉 Hebat! Pilihanmu Tepat. Otak Kecil memang pengendali keseimbangan tubuh!";
+            } else {
+                umpanBalik.className = "p-3 rounded-xl text-center font-bold text-sm bg-rose-100 text-rose-700 shadow-sm";
+                umpanBalik.innerHTML = `❌ Hmm, ${namaPilihan} kurang tepat. Ayo coba bagian otak yang fokus pada keseimbangan gerak!`;
+            }
+        }
+    </script>
+</body>
+</html>
