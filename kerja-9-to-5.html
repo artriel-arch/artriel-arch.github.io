@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>9-to-5 Boredom | Sisi Lain Rutinitas Pekerja Kantoran</title>
+    <meta name="description" content="Eksplorasi interaktif mengenai realitas kejenuhan kerja 9-to-5, siklus monster korporat, dan bagaimana bertahan di dalamnya dengan sedikit humor.">
+    <meta name="keywords" content="kerja 9 to 5, burnout kantor, rutinitas membosankan, korporat, karier, produktivitas">
+    <meta name="author" content="Ariel Usman">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arielusman.dev/9to5-boredom">
+    <meta property="og:title" content="9-to-5 Boredom | Sisi Lain Rutinitas Pekerja Kantoran">
+    <meta property="og:description" content="Sebuah refleksi interaktif dan satir tentang kejenuhan dunia kerja modern dengan visual yang cerah dan memikat.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&h=630&q=80">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="9-to-5 Boredom | Sisi Lain Rutinitas Pekerja Kantoran">
+    <meta property="twitter:description" content="Sebuah refleksi interaktif tentang kejenuhan dunia kerja modern.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&h=630&q=80">
+
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/briefcase.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            yellow: '#FFDE4D',
+                            orange: '#FFB22C',
+                            coral: '#FF4C4C',
+                            dark: '#1E201E',
+                            light: '#F8F9FA'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        /* Custom Glassmorphism Blur CSS */
+        .glass {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+        .glass-dark {
+            background: rgba(30, 32, 30, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-brand-dark antialiased selection:bg-brand-orange selection:text-white">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 glass shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 flex items-center space-x-2">
+                    <span class="text-2xl animate-bounce">☕</span>
+                    <span class="font-extrabold text-xl tracking-tight bg-gradient-to-r from-brand-coral via-brand-orange to-brand-dark bg-clip-text text-transparent">
+                        9to5_Boredom.
+                    </span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8 font-medium text-sm">
+                    <a href="#hero" class="hover:text-brand-orange transition-colors">Home</a>
+                    <a href="#reality" class="hover:text-brand-orange transition-colors">Realita</a>
+                    <a href="#simulator" class="hover:text-brand-orange transition-colors">Simulator Kejenuhan</a>
+                    <a href="#escape" class="hover:text-brand-orange transition-colors">Solusi</a>
+                    <button onclick="toggleSidebar()" class="text-brand-coral hover:text-brand-orange transition-colors text-lg">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                    </button>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleSidebar()" class="text-brand-dark focus:outline-none text-2xl">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="sidebar" class="fixed inset-y-0 right-0 w-80 glass-dark text-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out p-6 shadow-2xl flex flex-col justify-between">
+        <div>
+            <div class="flex items-center justify-between mb-8 border-b border-gray-700 pb-4">
+                <h3 class="text-xl font-bold text-brand-yellow"><i class="fa-solid fa-compass mr-2"></i>Eksplorasi</h3>
+                <button onclick="toggleSidebar()" class="text-white hover:text-brand-coral text-2xl">&times;</button>
+            </div>
+            <ul class="space-y-4 font-medium text-lg">
+                <li><a href="#hero" onclick="toggleSidebar()" class="block py-2 px-4 rounded hover:bg-white/10 transition-colors"><i class="fa-solid fa-house mr-3 text-brand-orange"></i>Home</a></li>
+                <li><a href="#reality" onclick="toggleSidebar()" class="block py-2 px-4 rounded hover:bg-white/10 transition-colors"><i class="fa-solid fa-circle-exclamation mr-3 text-brand-orange"></i>Siklus Realita</a></li>
+                <li><a href="#simulator" onclick="toggleSidebar()" class="block py-2 px-4 rounded hover:bg-white/10 transition-colors"><i class="fa-solid fa-gamepad mr-3 text-brand-orange"></i>Game Simulator</a></li>
+                <li><a href="#escape" onclick="toggleSidebar()" class="block py-2 px-4 rounded hover:bg-white/10 transition-colors"><i class="fa-solid fa-lightbulb mr-3 text-brand-orange"></i>Kunci Pelarian</a></li>
+            </ul>
+        </div>
+        
+        <div class="border-t border-gray-700 pt-4">
+            <p class="text-xs text-gray-400 mb-2">Butuh teman mengobrol kala bosan?</p>
+            <a href="https://instagram.com/arielrcun" target="_blank" class="flex items-center space-x-2 text-brand-yellow hover:underline">
+                <i class="fa-brands fa-instagram text-lg"></i>
+                <span>@arielrcun</span>
+            </a>
+        </div>
+    </div>
+
+    <header id="hero" class="relative min-h-screen flex items-center justify-center pt-16 bg-cover bg-center overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80');">
+        <div class="absolute inset-0 bg-gradient-to-tr from-brand-orange/40 via-brand-yellow/30 to-brand-coral/20 backdrop-blur-[2px]"></div>
+
+        <div class="relative max-w-4xl mx-auto mx-4 sm:mx-6 lg:mx-8 p-8 md:p-12 rounded-3xl glass shadow-2xl text-center space-y-6 border border-white/40">
+            <span class="inline-block bg-brand-coral text-white text-xs uppercase tracking-widest font-extrabold px-4 py-1.5 rounded-full shadow-sm animate-pulse">
+                🚨 Realita Dunia Kerja Modern
+            </span>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-brand-dark leading-tight">
+                Bangun. Kerja. <br class="hidden sm:inline">
+                <span class="bg-gradient-to-r from-brand-coral to-brand-orange px-4 py-1 rounded-xl text-white inline-block mt-2">Tidur. Ulangi.</span>
+            </h1>
+            <p class="text-base sm:text-xl text-gray-800 font-medium max-w-2xl mx-auto">
+                Apakah hidup Anda terasa seperti naskah komedi yang diputar berulang-ulang? Selamat datang di zona aman kenyamanan korporat yang membosankan.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
+                <a href="#simulator" class="w-full sm:w-auto px-8 py-4 bg-brand-dark text-white font-bold rounded-xl shadow-lg hover:bg-black transition-all transform hover:-translate-y-1 text-center">
+                    Coba Simulator Bosan
+                </a>
+                <a href="#reality" class="w-full sm:w-auto px-8 py-4 bg-white/80 text-brand-dark font-bold rounded-xl shadow-md hover:bg-white transition-all text-center border border-gray-300">
+                    Pelajari Siklusnya
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-24">
+        
+        <section id="reality" class="space-y-12">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark">Monster Kronis Bernama 09.00 - 17.00</h2>
+                <div class="h-1.5 w-24 bg-brand-orange mx-auto mt-4 rounded-full"></div>
+                <p class="text-gray-600 mt-4">Ini bukan sekadar jam kerja, ini adalah lingkaran waktu konstan yang dihadapi jutaan kaum urban urban harian.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-brand-orange hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-brand-yellow/30 flex items-center justify-center text-brand-orange text-2xl mb-4">
+                        <i class="fa-solid fa-mug-hot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">08.30 - Kafein Palsu</h3>
+                    <p class="text-gray-600 text-sm">Meminum kopi instan murah demi memicu adrenalin buatan agar tidak tertidur saat rapat evaluasi bulanan yang tidak krusial.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-brand-coral hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-brand-coral/20 flex items-center justify-center text-brand-coral text-2xl mb-4">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">14.00 - Email Tak Berujung</h3>
+                    <p class="text-gray-600 text-sm">Membalas email "As per my previous email..." dari kolega yang sebenarnya mejanya hanya berjarak dua langkah dari Anda.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-brand-dark hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-gray-200 flex items-center justify-center text-brand-dark text-2xl mb-4">
+                        <i class="fa-solid fa-face-rolling-eyes"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">17.00 - Kebebasan Semu</h3>
+                    <p class="text-gray-600 text-sm">Menatap jam dinding, bersiap *clock out*, hanya untuk terjebak kemacetan jalan raya selama 2 jam menuju rumah.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="simulator" class="bg-gradient-to-br from-brand-yellow via-brand-orange to-brand-coral p-8 md:p-12 rounded-3xl shadow-xl text-brand-dark">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-black leading-tight">Uji Tingkat Kebosanan Anda Sekarang!</h2>
+                    <p class="font-medium text-brand-dark/80">
+                        Klik tombol di bawah ini untuk mensimulasikan apa yang otak Anda lakukan saat sedang menghadap layar monitor di kantor.
+                    </p>
+                    <div class="bg-white/40 p-4 rounded-xl border border-white/20">
+                        <p class="text-sm font-bold"><i class="fa-solid fa-quote-left mr-2"></i>Status Anda Hari Ini:</p>
+                        <p id="status-text" class="text-lg font-extrabold text-red-700 italic mt-1">Belum Menekan Tombol Absen...</p>
+                    </div>
+                    <button onclick="simulasikanBosan()" class="bg-brand-dark text-white hover:bg-black px-6 py-3.5 rounded-xl font-bold shadow-md transition-transform transform active:scale-95">
+                        <i class="fa-solid fa-spinner animate-spin mr-2 hidden" id="loading-icon"></i> Kerjakan Tugas Random
+                    </button>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-inner flex flex-col justify-between h-64 border border-black/10">
+                    <div class="flex items-center justify-between border-b pb-2">
+                        <span class="text-xs font-bold text-gray-400 tracking-wider">MONITOR KARYAWAN v1.0</span>
+                        <div class="flex space-x-1">
+                            <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                        </div>
+                    </div>
+                    <div class="my-auto text-center space-y-2">
+                        <p id="activity-log" class="text-2xl font-black text-brand-dark tracking-wide">💤 LAYAR STANDBY</p>
+                        <p id="counter-click" class="text-xs text-gray-500 font-medium">Klik tombol untuk memulai aktivitas korporat nirfaedah.</p>
+                    </div>
+                    <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+                        <div id="progress-bar" class="bg-brand-coral h-full w-0 transition-all duration-300"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="escape" class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="rounded-3xl overflow-hidden shadow-lg order-2 lg:order-1">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="Melarikan diri dari kebosanan kantor" class="w-full object-cover h-96 hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="space-y-6 order-1 lg:order-2">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark">Cara Waras Menghadapi Dunia Kerja Modern</h2>
+                <div class="h-1.5 w-16 bg-brand-coral rounded-full"></div>
+                <p class="text-gray-600">
+                    Jangan resign dulu sebelum tabungan aman! Kamu bisa memanipulasi rasa bosan menjadi sesuatu yang produktif dan menyenangkan dengan langkah taktis berikut:
+                </p>
+                <ul class="space-y-3 font-medium">
+                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-brand-orange mt-1 mr-3 flex-shrink-0"></i> <span>Aktivitas Berpindah Mikro: Regangkan otot setiap 45 menit sekali.</span></li>
+                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-brand-orange mt-1 mr-3 flex-shrink-0"></i> <span>Side-Project Rahasia: Gunakan waktu luang pasca tugas selesai untuk belajar coding atau hal baru.</span></li>
+                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-brand-orange mt-1 mr-3 flex-shrink-0"></i> <span>Gunakan Earphone: Bangun gerbang konsentrasi melingkar lewat ketukan musik instrumen lo-fi.</span></li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-brand-dark text-white pt-12 pb-6 border-t-8 border-brand-orange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+            <div class="text-center md:text-left">
+                <p class="text-sm font-semibold tracking-wide text-gray-400">PROJECT OUTCOME</p>
+                <p class="text-lg font-bold text-brand-yellow mt-1">Esensi Kehidupan Kantor Satir</p>
+            </div>
+
+            <div class="flex flex-col items-center space-y-2">
+                <a href="https://instagram.com/arielrcun" target="_blank" class="w-12 h-12 rounded-full bg-white/10 hover:bg-brand-orange text-white flex items-center justify-center text-xl transition-all shadow-md transform hover:scale-110">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <span class="text-xs text-gray-400 font-medium">@arielrcun</span>
+            </div>
+
+            <div class="text-center md:text-right text-xs text-gray-400 space-y-1">
+                <p class="font-bold text-sm text-white">&copy; 2026 Ariel Usman. All Rights Reserved.</p>
+                <p>Didesain dengan ❤️ menggunakan HTML Native & Tailwind CSS.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Sidebar Functionality
+        const sidebar = document.getElementById('sidebar');
+        function toggleSidebar() {
+            if (sidebar.classList.contains('translate-x-full')) {
+                sidebar.classList.remove('translate-x-full');
+                sidebar.classList.add('translate-x-0');
+            } else {
+                sidebar.classList.remove('translate-x-0');
+                sidebar.classList.add('translate-x-full');
+            }
+        }
+
+        // Navbar scroll glassmorphism logic
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md', 'bg-white/70');
+            } else {
+                nav.classList.remove('shadow-md', 'bg-white/70');
+            }
+        });
+
+        // 2. Interactive Simulator Logic
+        let clickCount = 0;
+        const statusTexts = [
+            "Membuka Ms. Excel Kosong agar terlihat sibuk...",
+            "Membalas 'Ok baik Pak' di grup WhatsApp kantor.",
+            "Pura-pura berpikir keras padahal mikirin menu makan siang.",
+            "Scrolling berkas PDF lama demi menghindari eye-contact bos.",
+            "Menghitung mundur jam pulang kantor (3 jam lagi)...",
+            "Sukses mengabaikan telepon dari divisi keuangan!"
+        ];
+
+        const activityLogs = [
+            "📊 EXCEL EDITING",
+            "💬 CHAT WA: ACTIVE",
+            "🤔 THINKING PROCESS",
+            "📄 SCROLLING PDF",
+            "⏰ CLOCK WATCHING",
+            "🚫 CALL IGNORED"
+        ];
+
+        function simulasikanBosan() {
+            const loadingIcon = document.getElementById('loading-icon');
+            const statusText = document.getElementById('status-text');
+            const activityLog = document.getElementById('activity-log');
+            const counterClick = document.getElementById('counter-click');
+            const progressBar = document.getElementById('progress-bar');
+
+            // Aktifkan Efek Loading Singkat
+            loadingIcon.classList.remove('hidden');
+            
+            setTimeout(() => {
+                loadingIcon.classList.add('hidden');
+                
+                // Acak Text Realita
+                const randomIndex = Math.floor(Math.random() * statusTexts.length);
+                statusText.innerText = statusTexts[randomIndex];
+                activityLog.innerText = activityLogs[randomIndex];
+                
+                // Tambah Counter Klik
+                clickCount++;
+                counterClick.innerText = `Anda telah melakukan ${clickCount} simulasi gerakan menghindar kerja hari ini.`;
+                
+                // Update Progress Bar Secara Acak Berkelanjutan
+                let randomProgress = Math.floor(Math.random() * 60) + 40; // 40% - 100%
+                progressBar.style.width = `${randomProgress}%`;
+                
+                // Ganti warna progress jika menyentuh titik kritis bosan
+                if(randomProgress > 80) {
+                    progressBar.className = "bg-brand-coral h-full transition-all duration-300";
+                } else {
+                    progressBar.className = "bg-brand-dark h-full transition-all duration-300";
+                }
+
+            }, 400); // Simulasi lag korporat 400 milidetik
+        }
+    </script>
+</body>
+</html>
