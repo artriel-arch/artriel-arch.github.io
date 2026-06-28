@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fenomena Kanibalisme Pasar: Mengapa Bisnis Sejenis Saling Berdekatan?</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Analisis mendalam fenomena kedai sejenis yang saling berdekatan. Dari Subway di Amerika, Mixue di China, hingga Yotta di Makassar. Apakah untung atau rugi?">
+    <meta name="keywords" content="Subway Amerika, Mixue China, Yotta Makassar, Aglomerasi Bisnis, Teori Hotelling, Strategi Lokasi Bisnis">
+    <meta name="author" content="Ariel Usman">
+    
+    <!-- Open Graph / Facebook / WhatsApp Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/">
+    <meta property="og:title" content="Fenomena Kedai Sejenis yang Saling Berdekatan: Untung atau Rugi?">
+    <meta property="og:description" content="Mengapa Subway, Mixue, dan Yotta sering buka cabang berdekatan? Temukan jawabannya lewat analisis Teori Lokasi Hotelling di sini.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&h=630&q=80">
+
+    <!-- Twitter Meta Tags -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Fenomena Kedai Sejenis yang Saling Berdekatan: Untung atau Rugi?">
+    <meta property="twitter:description" content="Mengapa Subway, Mixue, dan Yotta sering buka cabang berdekatan? Temukan jawabannya lewat analisis Teori Lokasi Hotelling di sini.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&h=630&q=80">
+
+    <!-- Tailwind CSS & FontAwesome Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-amber-50 via-orange-50 to-emerald-50 text-slate-800 min-h-screen flex flex-col antialiased">
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-orange-100 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Brand Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <div class="bg-gradient-to-r from-orange-500 to-amber-500 p-2 rounded-xl text-white shadow-md shadow-orange-200">
+                        <i class="fa-solid fa-store text-lg"></i>
+                    </div>
+                    <span class="font-extrabold text-xl tracking-tight bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
+                        ProximityParadox
+                    </span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 font-medium text-sm text-slate-600">
+                    <a href="#hero" class="hover:text-orange-600 transition-colors">Home</a>
+                    <a href="#studi-kasus" class="hover:text-orange-600 transition-colors">Studi Kasus</a>
+                    <a href="#analisis" class="hover:text-orange-600 transition-colors">Analisis Profit</a>
+                    <a href="#simulator" class="hover:text-orange-600 transition-colors bg-orange-500 text-white px-4 py-2 rounded-full hover:bg-orange-600 shadow-md shadow-orange-100 transition-all">Interactive Sim</a>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-orange-600 focus:outline-none p-2 rounded-lg hover:bg-slate-50">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-4 space-y-1 shadow-inner">
+            <a href="#hero" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-orange-50 hover:text-orange-600">Home</a>
+            <a href="#studi-kasus" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-orange-50 hover:text-orange-600">Studi Kasus</a>
+            <a href="#analisis" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-orange-50 hover:text-orange-600">Analisis Profit</a>
+            <a href="#simulator" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-orange-500 shadow-sm text-center">Interactive Sim</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (Glassmorphism) -->
+    <header id="hero" class="relative overflow-hidden py-20 lg:py-32 flex items-center justify-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1920&q=80');">
+        <!-- Overlay Gelap Transparan -->
+        <div class="absolute inset-0 bg-gradient-to-tr from-slate-900/70 via-slate-800/50 to-orange-900/40"></div>
+        
+        <!-- Konten Hero dengan Glassmorphism -->
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+            <div class="glass-effect p-8 md:p-12 rounded-3xl shadow-2xl text-white max-w-3xl mx-auto border border-white/20">
+                <span class="inline-block bg-amber-400 text-slate-900 text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full mb-4 shadow-sm animate-pulse">
+                    Spasial Ekonomi & Strategi Bisnis
+                </span>
+                <h1 class="text-3xl md:text-5xl font-black tracking-tight leading-tight mb-6">
+                    Mengapa Kedai yang Sama Malah Saling Berdekatan?
+                </h1>
+                <p class="text-base md:text-lg text-slate-100 mb-8 max-w-2xl mx-auto leading-relaxed">
+                    Mulai dari gerai <strong class="text-amber-300">Subway</strong> di jalanan Amerika, ekspansi masif <strong class="text-red-300">Mixue</strong> di China, hingga gurita outlet <strong class="text-emerald-300">Yotta</strong> di Makassar. Apakah ini keputusan blunder atau justru taktik jenius peraup untung?
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#studi-kasus" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold rounded-xl shadow-lg shadow-orange-900/30 transform hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
+                        Pelajari Fenomena <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="https://youtu.be/jILgxeNBK_8?si=rHREOx__z5QoRH0l" target="_blank" class="w-full sm:w-auto px-6 py-4 bg-white/10 hover:bg-white/20 text-white font-medium rounded-xl border border-white/30 backdrop-blur-sm transition-all flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-youtube text-red-400"></i> Tonton Referensi Video
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- WRAPPER UTAMA (BODY + SIDEBAR) -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+            
+            <!-- MAIN CONTENT BLOCK -->
+            <main class="lg:col-span-2 space-y-12">
+                
+                <!-- SECTION 1: STUDI KASUS -->
+                <section id="studi-kasus" class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-2.5 bg-amber-100 text-amber-600 rounded-xl"><i class="fa-solid fa-earth-americas text-xl"></i></div>
+                        <h2 class="text-2xl font-bold tracking-tight text-slate-950">Tiga Realita Global & Lokal</h2>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed mb-8">
+                        Kita sering menjumpai situasi aneh di mana sebuah waralaba membuka gerai baru yang jaraknya hanya sepelemparan batu dari gerai mereka yang sudah ada. Mengapa fenomena ini terjadi secara global maupun lokal?
+                    </p>
+
+                    <!-- Cards Tiga Merek -->
+                    <div class="space-y-6">
+                        <!-- Subway -->
+                        <div class="flex flex-col md:flex-row gap-4 p-4 rounded-xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100">
+                            <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=400&q=80" alt="Subway" class="w-full md:w-40 h-32 object-cover rounded-lg shadow-sm bg-slate-100">
+                            <div>
+                                <h3 class="font-bold text-lg text-emerald-700 flex items-center gap-2">Subway <span class="text-xs bg-emerald-50 text-emerald-600 font-semibold px-2 py-0.5 rounded">Amerika Serikat</span></h3>
+                                <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                                    Subway terkenal dengan strategi penetrasi pasar yang sangat padat. Di perkotaan AS, Anda dapat menemukan outlet Subway di ujung blok jalan, dan melihat outlet lainnya tepat di seberang persimpangan jalan. Mereka membanjiri pasar agar kompetitor tidak mendapat celah lokasi strategis.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Mixue -->
+                        <div class="flex flex-col md:flex-row gap-4 p-4 rounded-xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100">
+                            <img src="https://images.unsplash.com/photo-1541658016709-82535e94bc69?auto=format&fit=crop&w=400&q=80" alt="Mixue" class="w-full md:w-40 h-32 object-cover rounded-lg shadow-sm bg-slate-100">
+                            <div>
+                                <h3 class="font-bold text-lg text-red-600 flex items-center gap-2">Mixue Bingcheng <span class="text-xs bg-red-50 text-red-600 font-semibold px-2 py-0.5 rounded">China</span></h3>
+                                <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                                    Sebagai raja es krim dan teh segar asal China, Mixue menerapkan strategi rantai pasok masif yang memaksa toko-tokonya berdekatan. Jarak yang dekat menekan ongkos logistik bahan baku dan menciptakan domino efek visual branding yang luar biasa dominan di area keramaian.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Yotta -->
+                        <div class="flex flex-col md:flex-row gap-4 p-4 rounded-xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100">
+                            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=400&q=80" alt="Yotta" class="w-full md:w-40 h-32 object-cover rounded-lg shadow-sm bg-slate-100">
+                            <div>
+                                <h3 class="font-bold text-lg text-amber-600 flex items-center gap-2">Yotta <span class="text-xs bg-amber-50 text-amber-600 font-semibold px-2 py-0.5 rounded">Makassar, Indonesia</span></h3>
+                                <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                                    Di kancah lokal Makassar, brand minuman lokal kebanggaan ini mengadopsi model serupa. Kita bisa menemui cabang Yotta di jalan utama yang hanya berjarak beberapa ratus meter saja. Strategi ini ditujukan untuk meredam antrean yang membeludak sekaligus mengamankan dominasi loyalitas konsumen lokal dari gempuran brand nasional.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 2: TEORI HOTELLING & ANALISIS PROFIT -->
+                <section id="analisis" class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 bg-orange-100 text-orange-600 rounded-xl"><i class="fa-solid fa-chart-line text-xl"></i></div>
+                        <h2 class="text-2xl font-bold tracking-tight text-slate-950">Makin Untung atau Makin Rugi?</h2>
+                    </div>
+
+                    <p class="text-slate-600 leading-relaxed">
+                        Secara sekilas, menempatkan gerai berdekatan terkesan merugikan karena memicu **Kanibalisme Pasar** (cabang baru memakan omset cabang lama). Namun, dunia bisnis bergerak berdasarkan hukum keseimbangan ekonomi spasial yang dikenal sebagai <strong>Teori Lokasi Hotelling (Nash Equilibrium)</strong>.
+                    </p>
+
+                    <!-- Alert Box Profit Penjelasan -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+                        <div class="p-5 bg-emerald-50 border border-emerald-100 rounded-xl">
+                            <h4 class="font-bold text-emerald-900 flex items-center gap-2 mb-2">
+                                <i class="fa-solid fa-circle-check"></i> Mengapa Makin Untung?
+                            </h4>
+                            <ul class="text-sm text-emerald-800 space-y-2 list-disc pl-4">
+                                <li><strong>Efisiensi Logistik:</strong> Pengiriman pasokan bahan baku dari gudang pusat menjadi jauh lebih murah karena rutenya searah dan pendek.</li>
+                                <li><strong>Dominasi Visibilitas:</strong> Menutup ruang bagi kompetitor baru untuk masuk ke wilayah strategis tersebut.</li>
+                                <li><strong>Manajemen Antrean:</strong> Mengalihkan limpahan konsumen yang malas mengantre panjang di gerai utama agar tidak kabur ke brand lain.</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 bg-red-50 border border-red-100 rounded-xl">
+                            <h4 class="font-bold text-red-900 flex items-center gap-2 mb-2">
+                                <i class="fa-solid fa-circle-xmark"></i> Kapan Menjadi Rugi?
+                            </h4>
+                            <ul class="text-sm text-red-800 space-y-2 list-disc pl-4">
+                                <li><strong>Kanibalisme Brutal:</strong> Terjadi jika total pertumbuhan jumlah pembeli baru di area tersebut konstan/stagnan.</li>
+                                <li><strong>Overhead Cost Bengkak:</strong> Biaya sewa tempat dan gaji karyawan menjadi ganda tanpa adanya lonjakan total penjualan secara agregat.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <p class="text-sm text-slate-500 italic bg-slate-50 p-4 rounded-xl border-l-4 border-orange-500">
+                        "Kesimpulannya: Strategi ini mendatangkan keuntungan maksimal jika wilayah tersebut memiliki kepadatan lalu lintas konsumen tinggi yang belum sepenuhnya terlayani (Unsaturated Market)."
+                    </p>
+                </section>
+
+                <!-- SECTION 3: INTERACTIVE SIMULATOR (JS INTERAKTIF) -->
+                <section id="simulator" class="bg-gradient-to-br from-slate-900 to-slate-800 p-6 md:p-8 rounded-2xl shadow-xl text-white space-y-6">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Interactive Feature</span>
+                        <h2 class="text-2xl font-bold tracking-tight mt-1">Simulasi Lokasi Bisnis Berdekatan</h2>
+                        <p class="text-xs md:text-sm text-slate-300 mt-2">
+                            Geser jarak antar gerai untuk memprediksi status profitabilitas bisnis berdasarkan Teori Hotelling.
+                        </p>
+                    </div>
+
+                    <!-- Simulator Control Card -->
+                    <div class="bg-white/10 p-6 rounded-xl border border-white/10 space-y-6">
+                        <div>
+                            <label for="distance-range" class="block text-sm font-medium text-slate-200 mb-2 flex justify-between">
+                                <span>Jarak Antar Gerai:</span>
+                                <span id="distance-value" class="font-bold text-amber-400">150 Meter</span>
+                            </label>
+                            <input type="range" id="distance-range" min="10" max="1000" value="150" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-orange-500">
+                            <div class="flex justify-between text-xs text-slate-400 mt-1">
+                                <span>Sangat Dekat (10m)</span>
+                                <span>Jauh (1000m)</span>
+                            </div>
+                        </div>
+
+                        <!-- Output Hasil Simulasi Dinamis -->
+                        <div class="p-4 rounded-xl bg-slate-900/50 border border-white/5 flex items-start gap-4">
+                            <div id="status-icon" class="text-3xl text-amber-400 p-2 bg-white/5 rounded-lg">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-200">Status Dampak Ekonomi:</h4>
+                                <p id="status-text" class="text-xs md:text-sm text-slate-300 mt-1 leading-relaxed">
+                                    Memuat analisis jarak...
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- SIDEBAR BLOCK -->
+            <aside class="space-y-6">
+                <!-- WIDGET 1: TEORI PENDUKUNG -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <h3 class="font-bold text-lg text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
+                        <i class="fa-solid fa-graduation-cap text-orange-500"></i> Teori Pendukung
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="group cursor-pointer" onclick="alert('Teori Hotelling menjelaskan bahwa kompetitor cenderung menempatkan diri di tengah ruang pasar untuk memaksimalkan pangsa pasar mereka.')">
+                            <h4 class="text-sm font-bold text-slate-800 group-hover:text-orange-600 transition-colors">1. Teori Lokasi Hotelling</h4>
+                            <p class="text-xs text-slate-500 mt-1 line-clamp-2">Mengapa penjual es krim di pantai selalu berakhir berjualan berdampingan di tengah garis pantai.</p>
+                        </div>
+                        <div class="group cursor-pointer" onclick="alert('Keseimbangan Nash tercapai ketika tidak ada satu pun pelaku usaha yang dapat untung lebih besar dengan mengubah lokasinya sendiri secara sepihak.')">
+                            <h4 class="text-sm font-bold text-slate-800 group-hover:text-orange-600 transition-colors">2. Nash Equilibrium</h4>
+                            <p class="text-xs text-slate-500 mt-1 line-clamp-2">Kondisi optimum stabil di mana semua gerai sejenis terjebak di area klaster yang sama.</p>
+                        </div>
+                        <div class="group cursor-pointer" onclick="alert('Aglomerasi adalah pengelompokan industri atau bisnis di satu lokasi untuk memanfaatkan efisiensi infrastruktur dan basis pasar bersama.')">
+                            <h4 class="text-sm font-bold text-slate-800 group-hover:text-orange-600 transition-colors">3. Ekonomi Aglomerasi</h4>
+                            <p class="text-xs text-slate-500 mt-1 line-clamp-2">Kecenderungan pasar membentuk klaster retail guna menarik volume total pembeli yang jauh lebih besar.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WIDGET 2: JELAJAHI SUMBER -->
+                <div class="bg-gradient-to-br from-orange-500 to-amber-500 p-6 rounded-2xl shadow-md text-white">
+                    <h3 class="font-bold text-lg mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-lightbulb"></i> Butuh Visualisasi?
+                    </h3>
+                    <p class="text-xs text-orange-50/90 leading-relaxed mb-4">
+                        Penjelasan infografis interaktif dan pemetaan spasial dibahas mendalam lewat video referensi utama ini.
+                    </p>
+                    <a href="https://youtu.be/jILgxeNBK_8?si=rHREOx__z5QoRH0l" target="_blank" class="inline-flex items-center justify-center w-full py-2.5 px-4 bg-white text-orange-600 rounded-xl font-bold text-sm shadow-sm hover:bg-orange-50 transition-colors gap-2">
+                        <i class="fa-brands fa-youtube"></i> Tonton di YouTube
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 border-t border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <!-- Kiri: Copyright -->
+                <p class="text-sm text-center sm:text-left">
+                    &copy; 2026 Oleh <span class="text-white font-semibold">Ariel Usman</span>. All rights reserved.
+                </p>
+                
+                <!-- Kanan: Social Handle -->
+                <div class="flex items-center gap-2">
+                    <a href="https://instagram.com/arielrcun" target="_blank" class="inline-flex items-center gap-2 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 hover:text-white rounded-lg transition-colors text-sm text-slate-300">
+                        <i class="fa-brands fa-instagram text-pink-500 text-base"></i> @arielrcun
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        // 1. Logika Toggle Mobile Hamburger Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Menutup menu mobile saat tautan di dalamnya diklik
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+
+        // 2. Logika Simulator Interaktif (Teori Spasial)
+        const distanceRange = document.getElementById('distance-range');
+        const distanceValue = document.getElementById('distance-value');
+        const statusIcon = document.getElementById('status-icon');
+        const statusText = document.getElementById('status-text');
+
+        function updateSimulation(distance) {
+            distanceValue.textContent = `${distance} Meter`;
+            
+            if (distance <= 50) {
+                // Sangat dekat
+                statusIcon.innerHTML = '<i class="fa-solid fa-skull-crossbones text-red-500"></i>';
+                statusText.innerHTML = '<strong class="text-red-400">Rugi (Kanibalisme Tinggi):</strong> Jarak terlampau dekat! Konsumen tidak bertambah, melainkan hanya terbagi dua secara merata. Biaya operasional membesar tanpa adanya lonjakan profit agregat.';
+            } else if (distance > 50 && distance <= 300) {
+                // Jarak Optimal (Hotelling Equilibrium)
+                statusIcon.innerHTML = '<i class="fa-solid fa-money-bill-trend-up text-emerald-400"></i>';
+                statusText.innerHTML = '<strong class="text-emerald-400">Sangat Untung (Optimal):</strong> Sesuai Teori Hotelling! Gerai mendominasi visual area, menekan ongkos kirim logistik, memotong antrean, sekaligus memblokir kesempatan kompetitor luar untuk masuk.';
+            } else {
+                // Terlalu Jauh
+                statusIcon.innerHTML = '<i class="fa-solid fa-circle-info text-blue-400"></i>';
+                statusText.innerHTML = '<strong class="text-blue-400">Netral / Celah Terbuka:</strong> Jarak terlalu renggang. Gerai aman dari kanibalisme internal, tetapi area kosong di antara kedua toko berisiko tinggi direbut oleh kompetitor baru.';
+            }
+        }
+
+        // Jalankan fungsi saat slider digeser
+        distanceRange.addEventListener('input', (e) => {
+            updateSimulation(e.target.value);
+        });
+
+        // Inisialisasi awal saat halaman dimuat
+        updateSimulation(distanceRange.value);
+    </script>
+</body>
+</html>
