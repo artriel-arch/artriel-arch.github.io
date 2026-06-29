@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animify - Simulasi 12 Prinsip Animasi Interaktif</title>
+    
+    <meta name="description" content="Pelajari dan simulasikan 12 Prinsip Dasar Animasi secara interaktif langsung dari browser Anda. Dibuat dengan HTML, Tailwind CSS, dan JavaScript.">
+    <meta name="keywords" content="12 Principles of Animation, Simulasi Animasi, Web Animasi Interaktif, Belajar Animasi, Ariel Usman">
+    <meta name="author" content="Ariel Usman">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://animify.arielusman.com/">
+    <meta property="og:title" content="Animify - Simulasi 12 Prinsip Animasi Interaktif">
+    <meta property="og:description" content="Platform edukasi interaktif untuk memahami 12 prinsip dasar animasi ciptaan maestro Disney.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1551269901-5c5e14c25df7?q=80&w=1200&auto=format&fit=crop">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Animify - Simulasi 12 Prinsip Animasi Interaktif">
+    <meta property="twitter:description" content="Platform edukasi interaktif untuk memahami 12 prinsip dasar animasi.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1551269901-5c5e14c25df7?q=80&w=1200&auto=format&fit=crop">
+
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluent/48/000000/animation.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+        }
+        /* Custom Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+        /* Animation Canvas Keyframes */
+        @keyframes squash-stretch {
+            0%, 100% { transform: scale(1, 1) translateY(0); }
+            40% { transform: scale(0.8, 1.2) translateY(-100px); }
+            50% { transform: scale(1.05, 0.95) translateY(-100px); }
+            90% { transform: scale(1.2, 0.7) translateY(0); }
+        }
+        @keyframes anticipation {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(20px) scaleX(0.9); }
+            40% { transform: translateX(-120px); }
+        }
+        @keyframes slow-in-out {
+            0%, 100% { transform: translateX(-100px); animation-timing-function: ease-in; }
+            50% { transform: translateX(100px); animation-timing-function: ease-out; }
+        }
+        @keyframes arcs {
+            0% { transform: translate(-100px, 0); }
+            50% { transform: translate(0, -80px); }
+            100% { transform: translate(100px, 0); }
+        }
+        .anim-squash { animation: squash-stretch 1.5s infinite; }
+        .anim-anticipation { animation: anticipation 2s infinite; }
+        .anim-slow { animation: slow-in-out 2s infinite; }
+        .anim-arcs { animation: arcs 1.5s infinite alternate ease-in-out; }
+    </style>
+</head>
+<body class="text-slate-800 min-h-screen flex flex-col justify-between overflow-x-hidden">
+
+    <nav class="sticky top-0 z-50 glass shadow-sm px-4 py-3 lg:px-8 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <span class="text-2xl text-amber-500"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+            <span class="font-bold text-xl tracking-tight bg-gradient-to-r from-emerald-600 to-sky-600 bg-clip-text text-transparent">Animify.</span>
+        </div>
+        
+        <div class="hidden md:flex items-center gap-6 font-medium text-slate-600">
+            <a href="#hero" class="hover:text-emerald-500 transition">Beranda</a>
+            <a href="#simulator" class="hover:text-emerald-500 transition">Simulator</a>
+            <a href="#principles-list" class="hover:text-emerald-500 transition">12 Prinsip</a>
+        </div>
+
+        <button id="menu-btn" class="md:hidden text-2xl text-slate-700 focus:outline-none">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
+
+    <div id="mobile-menu" class="hidden md:hidden glass fixed top-[56px] left-0 w-full z-40 flex flex-col gap-4 p-4 font-semibold shadow-lg">
+        <a href="#hero" class="p-2 hover:bg-emerald-50 rounded-lg">Beranda</a>
+        <a href="#simulator" class="p-2 hover:bg-emerald-50 rounded-lg">Simulator</a>
+        <a href="#principles-list" class="p-2 hover:bg-emerald-50 rounded-lg">12 Prinsip</a>
+    </div>
+
+    <header id="hero" class="relative px-4 py-16 md:py-24 flex flex-col items-center text-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1920&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-white/40 backdrop-blur-sm"></div>
+        
+        <div class="relative z-10 glass max-w-3xl p-8 md:p-12 rounded-3xl shadow-xl mx-auto border border-white/60">
+            <span class="bg-amber-400 text-amber-950 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">Interactive Guide</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold mt-4 mb-6 leading-tight bg-gradient-to-r from-slate-900 via-emerald-800 to-slate-900 bg-clip-text text-transparent">
+                Kuasai Dunia Animasi Lewat <span class="text-sky-600">12 Prinsip Dasar</span>
+            </h1>
+            <p class="text-base md:text-lg text-slate-700 mb-8 leading-relaxed">
+                Ubah gambar statis menjadi hidup dan bernyawa. Dikembangkan langsung berdasarkan standar maestro animasi Disney untuk membantu para kreator masa kini.
+            </p>
+            <a href="#simulator" class="bg-gradient-to-r from-emerald-500 to-sky-500 text-white font-bold px-8 py-3.5 rounded-full shadow-lg hover:shadow-emerald-500/20 transition-all transform hover:-translate-y-0.5">
+                Mulai Simulasi <i class="fa-solid fa-play ml-2"></i>
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto w-full px-4 py-12 grid grid-cols-1 lg:grid-cols-4 gap-8 flex-grow">
+        
+        <aside class="lg:col-span-1 flex flex-col gap-6 order-2 lg:order-1">
+            <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
+                <h3 class="font-bold text-lg text-slate-900 mb-4 flex items-center gap-2 text-emerald-600">
+                    <i class="fa-solid fa-list-ol"></i> Navigasi Prinsip
+                </h3>
+                <div class="flex flex-col gap-1 max-h-[320px] overflow-y-auto pr-1" id="sidebar-links">
+                    </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-sky-500 to-emerald-500 text-white p-5 rounded-2xl shadow-md">
+                <h3 class="font-bold text-lg mb-2"><i class="fa-solid fa-lightbulb"></i> Tips Belajar</h3>
+                <p class="text-sm text-sky-50 opacity-90 leading-relaxed">
+                    Klik tombol di setiap prinsip pada bagian Simulator di sebelah kanan untuk melihat perbedaan real-time bagaimana objek merespon gaya fisika tiruan.
+                </p>
+            </div>
+        </aside>
+
+        <section class="lg:col-span-3 flex flex-col gap-8 order-1 lg:order-2">
+            
+            <div id="simulator" class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100 flex flex-col gap-6">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b pb-4">
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900">Interactive Canvas</h2>
+                        <p class="text-sm text-slate-500">Pilih prinsip di bawah untuk mengaktifkan animasi sandbox.</p>
+                    </div>
+                    <div id="active-badge" class="bg-emerald-100 text-emerald-800 text-sm font-semibold px-4 py-1.5 rounded-full self-start md:self-auto flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                        Squash and Stretch
+                    </div>
+                </div>
+
+                <div class="w-full h-64 bg-slate-900 rounded-2xl relative flex items-center justify-center overflow-hidden shadow-inner border border-slate-800">
+                    <div class="absolute bottom-0 w-full h-12 bg-slate-800/50 border-t border-slate-700 flex items-center justify-center text-xs text-slate-500 tracking-widest font-mono">GROUND LEVEL</div>
+                    
+                    <div id="anim-object" class="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full shadow-lg shadow-orange-500/40 anim-squash"></div>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    <button onclick="changeSim('squash', 'Squash and Stretch')" class="sim-btn bg-emerald-500 text-white font-medium p-3 rounded-xl transition text-sm shadow-sm">Squash & Stretch</button>
+                    <button onclick="changeSim('anticipation', 'Anticipation')" class="sim-btn bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium p-3 rounded-xl transition text-sm">Anticipation</button>
+                    <button onclick="changeSim('slow', 'Slow In and Slow Out')" class="sim-btn bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium p-3 rounded-xl transition text-sm">Slow In & Out</button>
+                    <button onclick="changeSim('arcs', 'Arcs')" class="sim-btn bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium p-3 rounded-xl transition text-sm">Arcs</button>
+                </div>
+            </div>
+
+            <div id="principles-list" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                </div>
+
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 text-sm py-8 px-4 mt-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <p class="font-semibold text-white text-base">Animify Project</p>
+                <p class="text-xs text-slate-500 mt-1">&copy; 2026 Ariel Usman. All Rights Reserved.</p>
+            </div>
+            
+            <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-gradient-to-r from-pink-600 to-amber-500 text-white px-4 py-2 rounded-full font-medium hover:opacity-90 transition shadow-md">
+                <i class="fa-brands fa-instagram text-lg"></i>
+                <span>@arielrcun</span>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Data 12 Prinsip Animasi
+        const principles = [
+            { id: "squash", title: "1. Squash and Stretch", desc: "Memberikan kesan berat dan fleksibilitas pada objek yang bergerak. Contoh: bola yang memantul memipih saat menyentuh tanah." },
+            { id: "anticipation", title: "2. Anticipation", desc: "Gerakan persiapan sebelum aksi utama dimulai, membantu audiens mengantisipasi apa yang akan terjadi. Contoh: menekuk lutut sebelum melompat." },
+            { id: "staging", title: "3. Staging", desc: "Pengaturan tata letak, kamera, dan karakter agar fokus utama cerita tersampaikan dengan jelas kepada penonton." },
+            { id: "straight", title: "4. Straight Ahead & Pose to Pose", desc: "Dua metode menggambar: menggambar berurutan frame-by-frame (Straight Ahead) atau menggambar keyframe utama dahulu (Pose to Pose)." },
+            { id: "follow", title: "5. Follow Through & Overlapping", desc: "Bagian tubuh/baju yang tetap bergerak saat karakter utama sudah berhenti (Follow), atau bagian tubuh bergerak dengan ritme berbeda (Overlapping)." },
+            { id: "slow", title: "6. Slow In and Slow Out", desc: "Percepatan alami di mana gerakan dimulai lambat, cepat di tengah, lalu melambat kembali sebelum berhenti sepenuhnya." },
+            { id: "arcs", title: "7. Arcs", desc: "Hampir semua gerakan alami makhluk hidup mengikuti jalur melengkung (busur), bukan garis lurus linear yang kaku." },
+            { id: "secondary", title: "8. Secondary Action", desc: "Gerakan tambahan yang mendukung gerakan utama untuk memberikan karakterisasi lebih mendalam. Contoh: bersiul saat berjalan." },
+            { id: "timing", title: "9. Timing and Spacing", desc: "Timing menentukan jumlah frame/waktu gerakan (menentukan berat objek), Spacing mengatur penempatan antar frame." },
+            { id: "exaggeration", title: "10. Exaggeration", desc: "Melebih-lebihkan gerakan atau ekspresi wajah melampaui realita agar terlihat lebih dramatis, lucu, atau bermakna." },
+            { id: "solid", title: "11. Solid Drawing", desc: "Kemampuan menggambar objek dengan memperhatikan volume, berat, dan keseimbangan dalam ruang 3 dimensi." },
+            { id: "appeal", title: "12. Appeal", desc: "Karismatik dan daya tarik visual dari karakter yang membuat penonton merasa tertarik dan terhubung secara emosional." }
+        ];
+
+        // 2. Render content secara dinamis
+        const sidebar = document.getElementById('sidebar-links');
+        const listContainer = document.getElementById('principles-list');
+
+        principles.forEach((p, idx) => {
+            // Sidebar links
+            sidebar.innerHTML += `
+                <a href="#p-${p.id}" class="text-xs md:text-sm py-2 px-3 hover:bg-emerald-50 hover:text-emerald-600 rounded-xl transition flex items-center justify-between text-slate-600">
+                    <span class="truncate">${p.title}</span>
+                    <i class="fa-solid fa-chevron-right text-[10px] opacity-50"></i>
+                </a>
+            `;
+
+            // Cards Detail
+            listContainer.innerHTML += `
+                <div id="p-${p.id}" class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-lg mb-2">${p.title}</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">${p.desc}</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-50 flex justify-between items-center text-xs text-emerald-600 font-medium">
+                        <span>Core Standard</span>
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                </div>
+            `;
+        });
+
+        // 3. Logika Mengubah Animasi di Sandbox Simulator
+        const animObject = document.getElementById('anim-object');
+        const activeBadge = document.getElementById('active-badge');
+
+        function changeSim(type, label) {
+            // Reset classes
+            animObject.className = "w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full shadow-lg shadow-orange-500/40";
+            
+            // Apply new class animation
+            if(type === 'squash') animObject.classList.add('anim-squash');
+            if(type === 'anticipation') animObject.classList.add('anim-anticipation');
+            if(type === 'slow') animObject.classList.add('anim-slow');
+            if(type === 'arcs') animObject.classList.add('anim-arcs');
+
+            // Update badge text
+            activeBadge.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span> ${label}`;
+
+            // Update button styles
+            const buttons = document.querySelectorAll('.sim-btn');
+            buttons.forEach(btn => {
+                btn.className = "sim-btn bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium p-3 rounded-xl transition text-sm";
+            });
+            event.target.className = "sim-btn bg-emerald-500 text-white font-medium p-3 rounded-xl transition text-sm shadow-sm";
+        }
+
+        // 4. Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
