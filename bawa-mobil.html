@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveSim POV - Belajar Menyetir Interaktif</title>
+    
+    <meta name="description" content="Simulasi belajar mengendarai mobil dari sudut pandang orang pertama (POV) langsung di browser Anda. Responsif untuk Android, iPad, dan Windows.">
+    <meta name="keywords" content="game menyetir, simulasi mobil POV, belajar mobil html5, game html native, artriel, ariel usman">
+    <meta name="author" content="Ariel Usman">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://artriel.com/drivesim">
+    <meta property="og:title" content="DriveSim POV - Belajar Menyetir Interaktif">
+    <meta property="og:description" content="Game simulasi menyetir mobil POV seru dengan HTML5 Canvas dan Tailwind CSS.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=500&auto=format&fit=crop&q=60">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="DriveSim POV - Belajar Menyetir Interaktif">
+    <meta property="twitter:description" content="Game simulasi menyetir mobil POV seru dengan HTML5 Canvas dan Tailwind CSS.">
+
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/steering-wheel.png">
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Custom Glassmorphism Utility */
+        .glass {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+        /* Hide scrollbar for clean arcade feel */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900 text-white font-sans min-h-screen flex flex-col justify-between overflow-x-hidden">
+
+    <nav class="glass sticky top-0 z-50 px-6 py-4 flex justify-between items-center shadow-lg transition-all duration-300">
+        <div class="flex items-center space-x-2">
+            <i class="fa-solid fa-steering-wheel text-emerald-400 text-2xl animate-spin-slow"></i>
+            <span class="text-xl font-black tracking-wider bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">DriveSim POV</span>
+        </div>
+        <div class="hidden md:flex space-x-8 font-medium">
+            <a href="#home" class="hover:text-cyan-400 transition-colors">Home</a>
+            <a href="#simulator" class="hover:text-cyan-400 transition-colors">Simulator</a>
+            <a href="#fitur" class="hover:text-cyan-400 transition-colors">Fitur</a>
+            <a href="#panduan" class="hover:text-cyan-400 transition-colors">Panduan</a>
+        </div>
+        <div class="md:hidden">
+            <i class="fa-solid fa-bars text-xl cursor-pointer hover:text-cyan-400"></i>
+        </div>
+    </nav>
+
+    <header id="home" class="relative px-6 py-12 md:py-20 flex flex-col items-center text-center max-w-5xl mx-auto">
+        <div class="glass p-8 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden max-w-3xl transform hover:scale-[1.01] transition-transform duration-300">
+            <div class="absolute -top-10 -left-10 w-40 h-40 bg-cyan-500 rounded-full blur-[80px] opacity-50"></div>
+            <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-emerald-500 rounded-full blur-[80px] opacity-50"></div>
+            
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+                Kuasai Jalanan dari <span class="bg-gradient-to-r from-cyan-400 via-emerald-400 to-yellow-400 bg-clip-text text-transparent">Sudut Pandang Utama</span>
+            </h1>
+            <p class="text-slate-300 text-base md:text-lg mb-8 max-w-xl mx-auto">
+                Latih respons menyetir Anda, hindari rintangan, dan pertahankan kecepatan ideal dalam simulator berbasis web native yang super ringan.
+            </p>
+            <a href="#simulator" class="inline-block bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-900 font-bold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/20 transform active:scale-95 transition-all">
+                Mulai Belajar Sekarang <i class="fa-solid fa-circle-play ml-2"></i>
+            </a>
+        </div>
+    </header>
+
+    <main class="w-full max-w-5xl mx-auto px-4 md:px-6 flex-grow space-y-16">
+        
+        <section id="simulator" class="flex flex-col items-center">
+            <div class="w-full glass rounded-3xl p-4 md:p-6 shadow-2xl flex flex-col items-center">
+                <div class="w-full flex justify-between items-center mb-4 px-2 font-mono text-sm md:text-lg">
+                    <div class="flex items-center space-x-2 bg-slate-900/60 px-4 py-2 rounded-xl border border-slate-700">
+                        <span class="text-slate-400">SKOR:</span>
+                        <span id="scoreBoard" class="text-yellow-400 font-bold">0</span>
+                    </div>
+                    <div class="flex items-center space-x-2 bg-slate-900/60 px-4 py-2 rounded-xl border border-slate-700">
+                        <span class="text-slate-400">KECEPATAN:</span>
+                        <span id="speedBoard" class="text-cyan-400 font-bold">0</span> <span class="text-xs text-slate-400">KM/H</span>
+                    </div>
+                    <div class="flex items-center space-x-2 bg-slate-900/60 px-4 py-2 rounded-xl border border-slate-700">
+                        <span class="text-slate-400">STATUS:</span>
+                        <span id="statusBoard" class="text-emerald-400 font-bold">READY</span>
+                    </div>
+                </div>
+
+                <div class="relative w-full aspect-[16/9] max-h-[500px] bg-slate-950 rounded-2xl overflow-hidden border-2 border-slate-700 shadow-inner">
+                    <canvas id="gameCanvas" class="w-full h-full block"></canvas>
+                    
+                    <div id="gameOverScreen" class="absolute inset-0 bg-slate-950/80 flex flex-col items-center justify-center space-y-4 hidden z-20">
+                        <h2 class="text-3xl md:text-5xl font-black text-rose-500 tracking-wider">CRASHED!</h2>
+                        <p class="text-slate-300">Anda menabrak pembatas jalan atau mobil lain.</p>
+                        <button onclick="resetGame()" class="bg-gradient-to-r from-yellow-400 to-orange-500 text-slate-950 font-bold px-6 py-3 rounded-xl hover:scale-105 transition-transform">
+                            Coba Lagi <i class="fa-solid fa-arrow-rotate-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="w-full grid grid-cols-3 gap-4 mt-6 max-w-md md:hidden">
+                    <button id="btnLeft" class="bg-slate-800/80 active:bg-cyan-500/50 border border-slate-600 h-16 rounded-xl flex items-center justify-center text-2xl select-none touch-none">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <div class="grid grid-rows-2 gap-2">
+                        <button id="btnGas" class="bg-emerald-600/80 active:bg-emerald-500 h-10 rounded-lg text-xs font-bold uppercase tracking-wider select-none touch-none">GAS</button>
+                        <button id="btnBrake" class="bg-rose-600/80 active:bg-rose-500 h-10 rounded-lg text-xs font-bold uppercase tracking-wider select-none touch-none">REM</button>
+                    </div>
+                    <button id="btnRight" class="bg-slate-800/80 active:bg-cyan-500/50 border border-slate-600 h-16 rounded-xl flex items-center justify-center text-2xl select-none touch-none">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="fitur" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass p-6 rounded-2xl border-l-4 border-cyan-400">
+                <i class="fa-solid fa-eye text-3xl text-cyan-400 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">POV Orang Pertama</h3>
+                <p class="text-sm text-slate-300">Merasakan langsung sensasi di balik kemudi setir mobil dengan visual dinamis pergerakan jalan raya.</p>
+            </div>
+            <div class="glass p-6 rounded-2xl border-l-4 border-emerald-400">
+                <i class="fa-solid fa-gamepad text-3xl text-emerald-400 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Multiplatform Ready</h3>
+                <p class="text-sm text-slate-300">Gunakan <kbd class="bg-slate-800 px-1 rounded text-xs">A</kbd> / <kbd class="bg-slate-800 px-1 rounded text-xs">D</kbd> atau <kbd class="bg-slate-800 px-1 rounded text-xs">←</kbd> / <kbd class="bg-slate-800 px-1 rounded text-xs">→</kbd> di PC, atau tombol UI responsif pada layar sentuh gajet Anda.</p>
+            </div>
+            <div class="glass p-6 rounded-2xl border-l-4 border-yellow-400">
+                <i class="fa-solid fa-bolt text-3xl text-yellow-400 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Simulasi Kecepatan</h3>
+                <p class="text-sm text-slate-300">Menguji fokus berkendara seiring bertambah tingginya kecepatan laju kendaraan dan rintangan objek di jalan.</p>
+            </div>
+        </section>
+
+        <section id="panduan" class="glass p-6 md:p-8 rounded-3xl space-y-4">
+            <h3 class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">
+                <i class="fa-solid fa-circle-info mr-2"></i>Panduan Edukasi Menyetir
+            </h3>
+            <ul class="space-y-3 text-sm md:text-base text-slate-300 list-disc list-inside">
+                <li><strong class="text-white">Pertahankan Posisi Lajur:</strong> Tetaplah berada di tengah-tengah marka jalan untuk menghindari senggolan pembatas luar kiri/kanan.</li>
+                <li><strong class="text-white">Kontrol Kecepatan:</strong> Gunakan rem saat melihat kendaraan lain mendekat terlalu cepat di depan Anda.</li>
+                <li><strong class="text-white">Manajemen Jarak Aman:</strong> Fokus utama mengemudi adalah keselamatan, bukan kecepatan maksimal yang ugal-ugalan.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="w-full glass mt-16 px-6 py-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
+        <div>
+            <p>&copy; 2026 <span class="text-white font-bold">Oleh Ariel Usman</span>. All Rights Reserved.</p>
+        </div>
+        <div class="flex items-center space-x-6">
+            <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener" class="hover:text-pink-500 text-xl transition-colors flex items-center space-x-2">
+                <i class="fa-brands fa-instagram"></i>
+                <span class="text-xs font-mono">@arielrcun</span>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Layout sizing adjustments
+        function resizeCanvas() {
+            canvas.width = 800;
+            canvas.height = 450;
+        }
+        resizeCanvas();
+
+        // Game state variables
+        let score = 0;
+        let speed = 0;
+        let maxSpeed = 140;
+        let isGameOver = false;
+        let roadHorizon = 180; // Titik hilang perspektif jalan
+
+        // Player configuration (Setir & Dashboard Mobil POV)
+        let player = {
+            x: canvas.width / 2,
+            targetX: canvas.width / 2,
+            steerAngle: 0
+        };
+
+        // Obstacles array (Kendaraan lain / Rintangan)
+        let obstacles = [];
+        let spawnTimer = 0;
+
+        // Controls tracking
+        let keys = {
+            Left: false,
+            Right: false,
+            Gas: true, // Auto-gas perlahan pada PC jika tidak ditekan manual
+            Brake: false
+        };
+
+        // Keyboard event listeners (Untuk PC / Windows / Linux)
+        window.addEventListener('keydown', (e) => {
+            if (isGameOver) return;
+            if (e.key === 'ArrowLeft' || e.key.toLowerCase() === 'a') keys.Left = true;
+            if (e.key === 'ArrowRight' || e.key.toLowerCase() === 'd') keys.Right = true;
+            if (e.key === 'ArrowUp' || e.key.toLowerCase() === 'w') keys.Gas = true;
+            if (e.key === 'ArrowDown' || e.key.toLowerCase() === 's') keys.Brake = true;
+        });
+
+        window.addEventListener('keyup', (e) => {
+            if (e.key === 'ArrowLeft' || e.key.toLowerCase() === 'a') keys.Left = false;
+            if (e.key === 'ArrowRight' || e.key.toLowerCase() === 'd') keys.Right = false;
+            if (e.key === 'ArrowUp' || e.key.toLowerCase() === 'w') keys.Gas = true; // Tetap default pelan
+            if (e.key === 'ArrowDown' || e.key.toLowerCase() === 's') keys.Brake = false;
+        });
+
+        // Touch Control Listeners (Untuk HP Android & iPad Tablet)
+        const setupTouchBtn = (id, keyName) => {
+            const btn = document.getElementById(id);
+            if (!btn) return;
+            btn.addEventListener('touchstart', (e) => { e.preventDefault(); keys[keyName] = true; });
+            btn.addEventListener('touchend', (e) => { e.preventDefault(); keys[keyName] = false; });
+            btn.addEventListener('mousedown', () => { keys[keyName] = true; });
+            btn.addEventListener('mouseup', () => { keys[keyName] = false; });
+        };
+        setupTouchBtn('btnLeft', 'Left');
+        setupTouchBtn('btnRight', 'Right');
+        setupTouchBtn('btnGas', 'Gas');
+        setupTouchBtn('btnBrake', 'Brake');
+
+        // Object Obstacle Builder Factory
+        function spawnObstacle() {
+            let sides = [280, 380, 480]; // Lajur perspektif kiri, tengah, kanan
+            let chosenLane = sides[Math.floor(Math.random() * sides.length)];
+            obstacles.push({
+                scale: 0.1,
+                x: chosenLane,
+                y: roadHorizon,
+                speedModifier: Math.random() * 2 + 2,
+                color: `hsl(${Math.random() * 360}, 80%, 60%)`,
+                width: 30,
+                height: 20
+            });
+        }
+
+        // Core Game Loop
+        let roadAnimOffset = 0;
+        function update() {
+            if (isGameOver) return;
+
+            // 1. Logika Kecepatan Mobil
+            if (keys.Gas && !keys.Brake) {
+                if (speed < maxSpeed) speed += 0.8;
+            } else if (keys.Brake) {
+                if (speed > 0) speed -= 2.5;
+                if (speed < 0) speed = 0;
+            } else {
+                if (speed > 30) speed -= 0.3; // Deselerasi alami
+            }
+
+            // 2. Logika Pergerakan Setir & Posisi Mobil (Efek Belok)
+            let currentTurnSpeed = (speed / 100) * 5 + 2; 
+            if (keys.Left) {
+                player.targetX -= currentTurnSpeed;
+                player.steerAngle = Math.max(player.steerAngle - 0.05, -0.6);
+            } else if (keys.Right) {
+                player.targetX += currentTurnSpeed;
+                player.steerAngle = Math.min(player.steerAngle + 0.05, 0.6);
+            } else {
+                // Setir kembali lurus perlahan
+                player.steerAngle *= 0.8;
+            }
+            
+            // Interpolasi mulus perpindahan layar (efek inersia mobil)
+            player.x += (player.targetX - player.x) * 0.1;
+
+            // Batasan keluar jalan (Crash jika menabrak pembatas ekstrem)
+            if (player.x < 120 || player.x > 680) {
+                triggerGameOver();
+            }
+
+            // 3. Efek Bergerak Jalan Raya
+            roadAnimOffset += speed * 0.15;
+            if (roadAnimOffset > 40) roadAnimOffset = 0;
+
+            // 4. Update Posisi Rintangan/Mobil Lain (Skala Perspektif 3D Palsu)
+            spawnTimer++;
+            if (spawnTimer > Math.max(30, 100 - speed * 0.4)) {
+                spawnObstacle();
+                spawnTimer = 0;
+            }
+
+            for (let i = obstacles.length - 1; i >= 0; i--) {
+                let obs = obstacles[i];
+                
+                // Bergerak mendekat ke arah layar terbawa laju perspektif bawah
+                obs.scale += (speed * 0.00015) * obs.speedModifier;
+                obs.y += (speed * 0.03) * obs.speedModifier;
+                
+                // Menghitung pergeseran posisi X berdasarkan pelebaran perspektif jalan raya
+                let targetCenterX = canvas.width / 2;
+                let currentOffset = obs.x - targetCenterX;
+                let visualX = targetCenterX + currentOffset * (obs.scale * 4);
+
+                let visualWidth = obs.width * (obs.scale * 6);
+                let visualHeight = obs.height * (obs.scale * 6);
+
+                // Hapus objek jika sudah lewat layar bawah
+                if (obs.y > canvas.height + 50) {
+                    obstacles.splice(i, 1);
+                    score += 10;
+                    document.getElementById('scoreBoard').innerText = score;
+                    continue;
+                }
+
+                // Hitung Deteksi Tabrakan (POV Box Hitbox di dasar layar)
+                if (obs.y > 320 && obs.y < 420) {
+                    // Cek kedekatan jarak horizontal dengan mobil pemain
+                    let playerVirtualWidth = 140;
+                    if (Math.abs(visualX - player.x) < (visualWidth / 2 + playerVirtualWidth / 2)) {
+                        triggerGameOver();
+                    }
+                }
+            }
+
+            // Update UI teks papan informasi
+            document.getElementById('speedBoard').innerText = Math.round(speed);
+        }
+
+        function draw() {
+            // 1. Bersihkan Canvas & Gambar Langit Luar Kota (Sore Hari Cerah)
+            let skyGrad = ctx.createLinearGradient(0, 0, 0, roadHorizon);
+            skyGrad.addColorStop(0, '#1e1b4b'); // Deep indigo
+            skyGrad.addColorStop(0.7, '#4c1d95'); // Purple
+            skyGrad.addColorStop(1, '#f59e0b'); // Sunset yellow
+            ctx.fillStyle = skyGrad;
+            ctx.fillRect(0, 0, canvas.width, roadHorizon);
+
+            // Elemen Gunung Hiasan Background
+            ctx.fillStyle = '#311066';
+            ctx.beginPath();
+            ctx.moveTo(100, roadHorizon); ctx.lineTo(250, 100); ctx.lineTo(400, roadHorizon);
+            ctx.moveTo(350, roadHorizon); ctx.lineTo(550, 80); ctx.lineTo(750, roadHorizon);
+            ctx.fill();
+
+            // 2. Gambar Area Tanah/Grumput Samping Jalan
+            ctx.fillStyle = '#065f46'; // Emerald tua
+            ctx.fillRect(0, roadHorizon, canvas.width, canvas.height - roadHorizon);
+
+            // 3. Gambar Badan Jalan Raya Perspektif (Trapesium 3D Semu)
+            ctx.fillStyle = '#334155'; // Slate jalanan abu-abu
+            ctx.beginPath();
+            ctx.moveTo(canvas.width / 2 - 40, roadHorizon);
+            ctx.lineTo(canvas.width / 2 + 40, roadHorizon);
+            ctx.lineTo(canvas.width + 200, canvas.height);
+            ctx.lineTo(-200, canvas.height);
+            ctx.fill();
+
+            // 4. Gambar Pembatas Jalan Merah Putih (Sisi Luar Kiri & Kanan)
+            ctx.strokeStyle = '#e11d48'; // Red neon accent
+            ctx.lineWidth = 6;
+            ctx.beginPath();
+            ctx.moveTo(canvas.width / 2 - 40, roadHorizon);
+            ctx.lineTo(-200, canvas.height);
+            ctx.moveTo(canvas.width / 2 + 40, roadHorizon);
+            ctx.lineTo(canvas.width + 200, canvas.height);
+            ctx.stroke();
+
+            // 5. Gambar Garis Marka Putih Putus-putus (Ilusi Bergerak)
+            ctx.save();
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 4;
+            ctx.setLineDash([20, 30]);
+            ctx.lineDashOffset = -roadAnimOffset * 2;
+            
+            // Lajur Tengah Kiri
+            ctx.beginPath();
+            ctx.moveTo(canvas.width / 2 - 15, roadHorizon);
+            ctx.lineTo(canvas.width * 0.2, canvas.height);
+            // Lajur Tengah Kanan
+            ctx.moveTo(canvas.width / 2 + 15, roadHorizon);
+            ctx.lineTo(canvas.width * 0.8, canvas.height);
+            ctx.stroke();
+            ctx.restore();
+
+            // 6. Merender Rintangan Mobil Lain
+            obstacles.forEach(obs => {
+                let targetCenterX = canvas.width / 2;
+                let currentOffset = obs.x - targetCenterX;
+                let visualX = targetCenterX + currentOffset * (obs.scale * 4);
+                
+                let visualWidth = obs.width * (obs.scale * 6);
+                let visualHeight = obs.height * (obs.scale * 6);
+
+                // Gambar Badan Mobil Depan Lain (POV Belakang Mobil mereka)
+                ctx.fillStyle = obs.color;
+                ctx.fillRect(visualX - visualWidth / 2, obs.y - visualHeight, visualWidth, visualHeight);
+
+                // Lampu Rem Belakang Mobil Rintangan
+                ctx.fillStyle = '#ff0000';
+                ctx.fillRect(visualX - visualWidth / 2 + 2, obs.y - visualHeight + 2, visualWidth * 0.2, visualHeight * 0.2);
+                ctx.fillRect(visualX + visualWidth / 2 - (visualWidth * 0.2) - 2, obs.y - visualHeight + 2, visualWidth * 0.2, visualHeight * 0.2);
+                
+                // Kaca Belakang Mobil Rintangan
+                ctx.fillStyle = '#1e293b';
+                ctx.fillRect(visualX - visualWidth * 0.3, obs.y - visualHeight * 0.8, visualWidth * 0.6, visualHeight * 0.3);
+            });
+
+            // 7. RENDERING DASHBOARD INTERIOR MOBIL PEMAIN (POV UTAMA)
+            // Efek kamera ikut bergeser secara dinamis berlawanan arah setir
+            let camOffset = (canvas.width / 2 - player.x) * 0.25;
+
+            // Gambar Kaca Depan / Frame Interior Utama
+            ctx.fillStyle = 'rgba(15, 23, 42, 0.9)'; // Frame dashboard gelap mantap
+            ctx.beginPath();
+            // Bagian bawah dashboard penutup screen dasar
+            ctx.moveTo(0, canvas.height);
+            ctx.lineTo(canvas.width, canvas.height);
+            ctx.lineTo(canvas.width, canvas.height - 80);
+            ctx.quadraticCurveTo(canvas.width / 2 + camOffset, canvas.height - 110, 0, canvas.height - 80);
+            ctx.fill();
+
+            // Gambar Setir Mengemudi (Steering Wheel) Tradisional Dibuat Interaktif Mengikuti Derajat Putar Setir
+            ctx.save();
+            ctx.translate(canvas.width / 2 - camOffset, canvas.height - 70);
+            ctx.rotate(player.steerAngle * 2.5); // Kalibrasi rotasi setir fisik visual
+
+            // Ring luar kemudi setir
+            ctx.strokeStyle = '#334155';
+            ctx.lineWidth = 14;
+            ctx.beginPath();
+            ctx.arc(0, 0, 65, 0, Math.PI * 2);
+            ctx.stroke();
+
+            // Garis Aksen Grip Setir (Gaya Sporty Neon)
+            ctx.strokeStyle = '#06b6d4'; // Cyan neon grip aksen
+            ctx.lineWidth = 4;
+            ctx.beginPath();
+            ctx.arc(0, 0, 65, -0.2, 0.2);
+            ctx.arc(0, 0, 65, Math.PI - 0.2, Math.PI + 0.2);
+            ctx.stroke();
+
+            // Palang Tengah Setir
+            ctx.fillStyle = '#1e293b';
+            ctx.fillRect(-55, -8, 110, 16);
+            ctx.fillRect(-10, -10, 20, 60);
+
+            // Klakson Logo Pusat
+            ctx.fillStyle = '#0f172a';
+            ctx.beginPath();
+            ctx.arc(0, 0, 18, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
+
+            // 8. Efek HUD Kaca Speedometer Digital Tambahan di Samping Kanan Kaca Dashboard
+            ctx.fillStyle = '#020617';
+            ctx.fillRect(canvas.width - 150, canvas.height - 65, 120, 45);
+            ctx.strokeStyle = '#10b981';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(canvas.width - 150, canvas.height - 65, 120, 45);
+            
+            ctx.fillStyle = '#10b981';
+            ctx.font = 'bold 11px monospace';
+            ctx.fillText("ECO DRIVE MOD", canvas.width - 142, canvas.height - 52);
+            ctx.fillStyle = '#f59e0b';
+            ctx.fillText(`GEAR: ${Math.ceil(speed/35) || 1}`, canvas.width - 142, canvas.height - 32);
+        }
+
+        // Jalur Utama Pemrosesan Frame Engine Per Detik (60 FPS Engine Loop)
+        function loop() {
+            update();
+            draw();
+            requestAnimationFrame(loop);
+        }
+
+        function triggerGameOver() {
+            isGameOver = true;
+            document.getElementById('statusBoard').innerText = "CRASHED";
+            document.getElementById('statusBoard').className = "text-rose-500 font-bold";
+            document.getElementById('gameOverScreen').classList.remove('hidden');
+        }
+
+        function resetGame() {
+            score = 0;
+            speed = 0;
+            obstacles = [];
+            spawnTimer = 0;
+            player.x = canvas.width / 2;
+            player.targetX = canvas.width / 2;
+            player.steerAngle = 0;
+            isGameOver = false;
+            
+            document.getElementById('scoreBoard').innerText = score;
+            document.getElementById('statusBoard').innerText = "DRIVING";
+            document.getElementById('statusBoard').className = "text-emerald-400 font-bold";
+            document.getElementById('gameOverScreen').addClassName = document.getElementById('gameOverScreen').classList.add('hidden');
+        }
+
+        // Jalankan game otomatis setelah seluruh resource termuat bersih
+        window.onload = () => {
+            loop();
+        };
+    </script>
+</body>
+</html>
