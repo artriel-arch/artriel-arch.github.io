@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Simulasi Desain 3D untuk Pemula | Artriel 3D</title>
+    <meta name="description" content="Belajar dan simulasikan dasar-dasar desain 3D secara interaktif langsung dari browser Anda. Cocok untuk pemula dengan tampilan modern dan mudah dipahami.">
+    <meta name="keywords" content="desain 3d, belajar 3d, simulasi 3d pemula, web 3d interaktif, tailwind css, ariel usman">
+    <meta name="author" content="Ariel Usman">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://artriel-3d-simulation.pages.dev/">
+    <meta property="og:title" content="Simulasi Desain 3D untuk Pemula | Artriel 3D">
+    <meta property="og:description" content="Platform belajar simulasi objek 3D interaktif yang ramah pemula dengan UI Glassmorphism yang memukau.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Simulasi Desain 3D untuk Pemula | Artriel 3D">
+    <meta property="twitter:description" content="Platform belajar simulasi objek 3D interaktif yang ramah pemula dengan UI Glassmorphism yang memukau.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop">
+
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/3d-scale.png">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+        }
+        /* Glassmorphism utility tambahan untuk Tailwind */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        /* Custom 3D Viewport CSS */
+        .cube-container {
+            perspective: 800px;
+        }
+        .cube {
+            width: 120px;
+            height: 120px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.1s ease;
+        }
+        .face {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body class="text-slate-100 min-h-screen flex flex-col antialiased overflow-x-hidden">
+
+    <nav class="sticky top-0 z-50 glass-effect px-4 py-3 md:px-8 flex justify-between items-center shadow-lg transition-all duration-300">
+        <div class="flex items-center gap-2">
+            <div class="p-2 bg-gradient-to-tr from-cyan-400 to-fuchsia-500 rounded-xl shadow-md shadow-cyan-500/20">
+                <i class="fa-solid from-cyan-400 to-fuchsia-500 fa-cubes text-xl text-white"></i>
+            </div>
+            <span class="font-bold text-xl tracking-tight bg-gradient-to-r from-cyan-400 via-pink-400 to-fuchsia-500 bg-clip-text text-transparent">Artriel 3D</span>
+        </div>
+        
+        <ul class="hidden md:flex items-center gap-6 text-sm font-medium">
+            <li><a href="#hero" class="hover:text-cyan-400 transition-colors duration-200">Home</a></li>
+            <li><a href="#simulasi" class="hover:text-cyan-400 transition-colors duration-200">Simulasi</a></li>
+            <li><a href="#materi" class="hover:text-cyan-400 transition-colors duration-200">Materi Dasar</a></li>
+            <li><a href="#fitur" class="hover:text-cyan-400 transition-colors duration-200">Fitur</a></li>
+        </ul>
+
+        <button id="menu-btn" class="md:hidden text-2xl text-slate-200 focus:outline-none p-1">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full glass-effect flex flex-col p-4 gap-4 border-t border-white/10 shadow-xl transition-all duration-300">
+            <a href="#hero" class="mobile-link py-2 px-4 rounded-lg hover:bg-white/10 text-slate-200">Home</a>
+            <a href="#simulasi" class="mobile-link py-2 px-4 rounded-lg hover:bg-white/10 text-slate-200">Simulasi</a>
+            <a href="#materi" class="mobile-link py-2 px-4 rounded-lg hover:bg-white/10 text-slate-200">Materi Dasar</a>
+            <a href="#fitur" class="mobile-link py-2 px-4 rounded-lg hover:bg-white/10 text-slate-200">Fitur</a>
+        </div>
+    </nav>
+
+    <header id="hero" class="relative px-4 py-16 md:py-24 max-w-7xl mx-auto w-full flex flex-col items-center text-center justify-center min-h-[70vh]">
+        <div class="absolute top-1/4 left-1/4 -z-10 w-72 h-72 bg-cyan-500/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/4 right-1/4 -z-10 w-80 h-80 bg-fuchsia-500/20 rounded-full blur-3xl"></div>
+
+        <div class="glass-effect rounded-3xl p-8 md:p-12 max-w-4xl shadow-2xl border border-white/20 relative overflow-hidden backdrop-blur-xl">
+            <span class="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-wider text-cyan-300 uppercase bg-cyan-500/10 rounded-full border border-cyan-500/20">
+                ✨ Ruang Belajar 3D Interaktif
+            </span>
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
+                Kuasai Dimensi Ketiga dengan <span class="bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">Mudah & Menyenangkan</span>
+            </h1>
+            <p class="text-base md:text-xl text-slate-300 max-w-2xl mx-auto mb-8 leading-relaxed">
+                Platform simulasi ringkas untuk memahami konsep dasar sumbu XYZ, rotasi, skala, dan pewarnaan objek 3D langsung dari perangkat Anda tanpa aplikasi berat.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#simulasi" class="px-8 py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 rounded-xl font-semibold text-white shadow-lg shadow-cyan-500/25 transition-all duration-300 transform hover:-translate-y-0.5">
+                    Mulai Simulasi <i class="fa-solid fa-play ml-2 text-sm"></i>
+                </a>
+                <a href="#materi" class="px-8 py-3.5 glass-card hover:bg-white/10 rounded-xl font-semibold border border-white/10 transition-all duration-300">
+                    Pelajari Teori
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto w-full px-4 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8 flex-grow">
+        
+        <section class="lg:col-span-3 space-y-12">
+            
+            <div id="simulasi" class="glass-card rounded-2xl p-6 shadow-xl border border-white/5">
+                <div class="border-b border-white/10 pb-4 mb-6 flex flex-wrap justify-between items-center gap-4">
+                    <div>
+                        <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-cube text-cyan-400"></i> Ruang Simulasi Objek 3D
+                        </h2>
+                        <p class="text-sm text-slate-400 mt-1">Ubah nilai kontrol di bawah untuk memanipulasi objek secara real-time</p>
+                    </div>
+                    <button id="reset-btn" class="px-3 py-1.5 bg-white/10 hover:bg-white/20 text-xs font-semibold rounded-lg transition-colors border border-white/10">
+                        <i class="fa-solid fa-rotate-left mr-1"></i> Reset
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="h-64 md:h-auto min-h-[260px] bg-slate-950/80 rounded-xl border border-white/10 flex items-center justify-center relative overflow-hidden shadow-inner">
+                        <span class="absolute top-3 left-3 text-[10px] uppercase font-mono tracking-widest text-slate-500 bg-slate-900/60 px-2 py-0.5 rounded border border-white/5">
+                            Viewport: Orthographic
+                        </span>
+                        
+                        <div class="cube-container">
+                            <div id="target-cube" class="cube">
+                                <div class="face front bg-cyan-500/40" style="transform: translateZ(60px);">Depan</div>
+                                <div class="face back bg-fuchsia-500/40" style="transform: rotateY(180deg) translateZ(60px);">Belakang</div>
+                                <div class="face left bg-purple-500/40" style="transform: rotateY(-90deg) translateZ(60px);">Kiri</div>
+                                <div class="face right bg-blue-500/40" style="transform: rotateY(90deg) translateZ(60px);">Kanan</div>
+                                <div class="face top bg-emerald-500/40" style="transform: rotateX(90deg) translateZ(60px);">Atas</div>
+                                <div class="face bottom bg-amber-500/40" style="transform: rotateX(-90deg) translateZ(60px);">Bawah</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-5 bg-white/5 p-5 rounded-xl border border-white/5">
+                        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 border-b border-white/5 pb-2">Kontrol Transformasi</h3>
+                        
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between text-xs font-mono">
+                                <span class="text-slate-300">Rotasi X (Pitch)</span>
+                                <span id="val-rotX" class="text-cyan-400">45°</span>
+                            </div>
+                            <input id="slider-rotX" type="range" min="-180" max="180" value="45" class="w-full accent-cyan-400 cursor-pointer bg-slate-800 rounded-lg appearance-none h-2">
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between text-xs font-mono">
+                                <span class="text-slate-300">Rotasi Y (Yaw)</span>
+                                <span id="val-rotY" class="text-fuchsia-400">-45°</span>
+                            </div>
+                            <input id="slider-rotY" type="range" min="-180" max="180" value="-45" class="w-full accent-fuchsia-400 cursor-pointer bg-slate-800 rounded-lg appearance-none h-2">
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between text-xs font-mono">
+                                <span class="text-slate-300">Skala Objek (Size)</span>
+                                <span id="val-scale" class="text-emerald-400">1.0x</span>
+                            </div>
+                            <input id="slider-scale" type="range" min="0.5" max="1.5" step="0.1" value="1.0" class="w-full accent-emerald-400 cursor-pointer bg-slate-800 rounded-lg appearance-none h-2">
+                        </div>
+
+                        <div class="space-y-2 pt-2 border-t border-white/5">
+                            <span class="text-xs font-mono text-slate-300 block">Tema Material Objek:</span>
+                            <div class="flex gap-2">
+                                <button onclick="changeMaterial('neon')" class="flex-1 py-1.5 rounded bg-cyan-600/30 border border-cyan-400/50 text-xs font-medium hover:bg-cyan-600/40">Neon Spark</button>
+                                <button onclick="changeMaterial('pastel')" class="flex-1 py-1.5 rounded bg-fuchsia-600/30 border border-fuchsia-400/50 text-xs font-medium hover:bg-fuchsia-600/40">Retro Wave</button>
+                                <button onclick="changeMaterial('solid')" class="flex-1 py-1.5 rounded bg-slate-600/30 border border-slate-400/50 text-xs font-medium hover:bg-slate-600/40">Mono Clay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="materi" class="space-y-6">
+                <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-graduation-cap text-fuchsia-400"></i> Mengenal Ruang 3 Dimensi
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="glass-card rounded-xl p-5 border border-white/5 hover:border-cyan-500/30 transition-all duration-300">
+                        <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center mb-4 text-cyan-400 font-bold border border-cyan-500/20">X</div>
+                        <h3 class="text-lg font-bold mb-2 text-slate-100">Sumbu Horizontal (X)</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Mewakili dimensi lebar atau pergerakan ke arah kanan dan kiri dalam ruang viewport virtual.</p>
+                    </div>
+
+                    <div class="glass-card rounded-xl p-5 border border-white/5 hover:border-fuchsia-500/30 transition-all duration-300">
+                        <div class="w-10 h-10 rounded-lg bg-fuchsia-500/10 flex items-center justify-center mb-4 text-fuchsia-400 font-bold border border-fuchsia-500/20">Y</div>
+                        <h3 class="text-lg font-bold mb-2 text-slate-100">Sumbu Vertikal (Y)</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Mengontrol tinggi rendah objek atau mengatur pergerakan vertikal ke atas dan ke bawah.</p>
+                    </div>
+
+                    <div class="glass-card rounded-xl p-5 border border-white/5 hover:border-emerald-500/30 transition-all duration-300">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-4 text-emerald-400 font-bold border border-emerald-500/20">Z</div>
+                        <h3 class="text-lg font-bold mb-2 text-slate-100">Sumbu Kedalaman (Z)</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Faktor pembeda utama dengan 2D. Mewakili kedalaman ruang (maju mundur mendekati atau menjauhi kamera).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="fitur" class="glass-card rounded-2xl p-6 border border-white/5 space-y-6">
+                <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-star text-amber-400"></i> Fitur Utama Web Simulasi
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
+                        <div class="text-cyan-400 text-xl pt-1"><i class="fa-solid fa-bolt"></i></div>
+                        <div>
+                            <h4 class="font-semibold text-sm mb-1">Tanpa Instalasi</h4>
+                            <p class="text-xs text-slate-400">Akses langsung lewat browser HP atau PC tanpa beban komputasi kartu grafis berat.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
+                        <div class="text-fuchsia-400 text-xl pt-1"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                        <div>
+                            <h4 class="font-semibold text-sm mb-1">Optimasi Multiperangkat</h4>
+                            <p class="text-xs text-slate-400">Tata letak adaptif khusus kenyamanan layar sentuh iPad/Android maupun mouse Windows.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
+                        <div class="text-emerald-400 text-xl pt-1"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <div>
+                            <h4 class="font-semibold text-sm mb-1">Visualisasi Real-time</h4>
+                            <p class="text-xs text-slate-400">Setiap pergeseran slider langsung terlihat reaksinya pada model objek tanpa jeda rendering.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
+                        <div class="text-purple-400 text-xl pt-1"><i class="fa-solid fa-seedling"></i></div>
+                        <div>
+                            <h4 class="font-semibold text-sm mb-1">Kurikulum Ringkas</h4>
+                            <p class="text-xs text-slate-400">Cocok untuk pemula yang ingin memahami terminologi pemodelan 3D dasar dengan cepat.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <aside class="space-y-6">
+            <div class="glass-card rounded-xl p-5 border border-white/5 space-y-4">
+                <h3 class="text-md font-bold text-slate-200 border-b border-white/10 pb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-laptop-code text-cyan-400"></i> Langkah Lanjutan
+                </h3>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Jika sudah memahami dasar simulasi dari web ini, kamu bisa mencoba software industri berikut:
+                </p>
+                <ul class="space-y-3 text-xs">
+                    <li class="flex items-center gap-2 bg-slate-900/60 p-2 rounded-lg border border-white/5">
+                        <img src="https://img.icons8.com/color/48/blender-3d.png" class="w-6 h-6" alt="Blender">
+                        <div>
+                            <p class="font-bold">Blender 3D</p>
+                            <p class="text-[10px] text-slate-500">Gratis & Open Source</p>
+                        </div>
+                    </li>
+                    <li class="flex items-center gap-2 bg-slate-900/60 p-2 rounded-lg border border-white/5">
+                        <img src="https://img.icons8.com/color/48/autodesk-tinkercad.png" class="w-6 h-6" alt="Tinkercad">
+                        <div>
+                            <p class="font-bold">Tinkercad</p>
+                            <p class="text-[10px] text-slate-500">Berbasis Web (Mudah)</p>
+                        </div>
+                    </li>
+                    <li class="flex items-center gap-2 bg-slate-900/60 p-2 rounded-lg border border-white/5">
+                        <img src="https://img.icons8.com/color/48/spline.png" class="w-6 h-6" alt="Spline">
+                        <div>
+                            <p class="font-bold">Spline 3D</p>
+                            <p class="text-[10px] text-slate-500">Desain Web UI 3D Modern</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card rounded-xl p-5 border border-white/5 bg-gradient-to-br from-fuchsia-900/20 to-indigo-950/40 text-xs space-y-3">
+                <h4 class="font-bold text-fuchsia-300 flex items-center gap-1.5">
+                    <i class="fa-solid fa-lightbulb"></i> Tips Eksperimen
+                </h4>
+                <p class="text-slate-300 leading-relaxed">
+                    Cobalah kombinasikan <strong>Rotasi X di 90°</strong> dan ubah slider <strong>Rotasi Y</strong> untuk melihat bagaimana proyeksi perspektif kubus bergeser menyerupai tampilan 2 dimensi datar!
+                </p>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="mt-auto border-t border-white/10 bg-slate-950/60 backdrop-blur-md py-6 px-4 text-center space-y-3">
+        <p class="text-xs text-slate-400 tracking-wide">
+            &copy; 2026 <span class="text-slate-200 font-semibold">Ariel Usman</span>. All Rights Reserved.
+        </p>
+        <div class="flex justify-center">
+            <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium bg-gradient-to-r from-purple-600/30 to-pink-600/30 border border-pink-500/30 hover:from-purple-600/50 hover:to-pink-600/50 text-pink-300 shadow-sm transition-all duration-300">
+                <i class="fa-brands fa-instagram text-sm"></i> @arielrcun
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // DOM Elements
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        
+        const targetCube = document.getElementById('target-cube');
+        const sliderRotX = document.getElementById('slider-rotX');
+        const sliderRotY = document.getElementById('slider-rotY');
+        const sliderScale = document.getElementById('slider-scale');
+        
+        const valRotX = document.getElementById('val-rotX');
+        const valRotY = document.getElementById('val-rotY');
+        const valScale = document.getElementById('val-scale');
+        const resetBtn = document.getElementById('reset-btn');
+
+        // Mobile Navigation Toggle
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuBtn.querySelector('i');
+            if(mobileMenu.classList.contains('hidden')) {
+                icon.className = 'fa-solid fa-bars';
+            } else {
+                icon.className = 'fa-solid fa-xmark';
+            }
+        });
+
+        // Close mobile menu when link clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuBtn.querySelector('i').className = 'fa-solid fa-bars';
+            });
+        });
+
+        // 3D Rendering Live Transform Engine
+        function update3DObject() {
+            const rotX = sliderRotX.value;
+            const rotY = sliderRotY.value;
+            const scale = sliderScale.value;
+
+            // Update Label status nilai angka
+            valRotX.textContent = `${rotX}°`;
+            valRotY.textContent = `${rotY}°`;
+            valScale.textContent = `${scale}x`;
+
+            // Transformasikan object menggunakan String Template CSS 3D
+            targetCube.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg) scale3d(${scale}, ${scale}, ${scale})`;
+        }
+
+        // Event listener pasang pada input slider kontrol
+        sliderRotX.addEventListener('input', update3DObject);
+        sliderRotY.addEventListener('input', update3DObject);
+        sliderScale.addEventListener('input', update3DObject);
+
+        // Reset Handler
+        resetBtn.addEventListener('click', () => {
+            sliderRotX.value = 45;
+            sliderRotY.value = -45;
+            sliderScale.value = 1.0;
+            update3DObject();
+        });
+
+        // Material Theme Switcher Utility
+        function changeMaterial(theme) {
+            const faces = document.querySelectorAll('.face');
+            
+            const colorThemes = {
+                neon: [
+                    'bg-cyan-500/40 border-cyan-400', 'bg-fuchsia-500/40 border-fuchsia-400',
+                    'bg-purple-500/40 border-purple-400', 'bg-blue-500/40 border-blue-400',
+                    'bg-emerald-500/40 border-emerald-400', 'bg-amber-500/40 border-amber-400'
+                ],
+                pastel: [
+                    'bg-rose-400/40 border-rose-300', 'bg-indigo-400/40 border-indigo-300',
+                    'bg-violet-400/40 border-violet-300', 'bg-sky-400/40 border-sky-300',
+                    'bg-teal-400/40 border-teal-300', 'bg-orange-400/40 border-orange-300'
+                ],
+                solid: [
+                    'bg-slate-600/50 border-slate-400', 'bg-slate-600/50 border-slate-400',
+                    'bg-slate-600/50 border-slate-400', 'bg-slate-600/50 border-slate-400',
+                    'bg-slate-600/50 border-slate-400', 'bg-slate-600/50 border-slate-400'
+                ]
+            };
+
+            faces.forEach((face, index) => {
+                // Hapus kelas background & border bawaan/sebelumnya
+                face.className = 'face flex items-center justify-center font-bold text-white text-face-custom';
+                
+                // Masukkan kelas tema warna yang baru dipilih
+                const selectedClasses = colorThemes[theme][index].split(' ');
+                selectedClasses.forEach(cls => face.classList.add(cls));
+            });
+        }
+
+        // Initialize state awal objek ketika web di-load pertama kali
+        update3DObject();
+    </script>
+</body>
+</html>
