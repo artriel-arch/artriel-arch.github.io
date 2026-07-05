@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KasirBangun - Simulasi Kasir Toko Bangunan Modern</title>
+    
+    <meta name="description" content="Aplikasi simulasi kasir toko bangunan modern yang cepat, interaktif, dan mudah digunakan. Kelola transaksi material dengan instan.">
+    <meta name="keywords" content="simulasi kasir, toko bangunan, kasir online, aplikasi kasir, material bangunan">
+    <meta name="author" content="Ariel Usman">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kasirbangun.example.com/">
+    <meta property="og:title" content="KasirBangun - Simulasi Kasir Toko Bangunan Modern">
+    <meta property="og:description" content="Aplikasi simulasi kasir toko bangunan modern yang cepat, interaktif, dan mudah digunakan.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=1200&h=630&q=80">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="KasirBangun - Simulasi Kasir Toko Bangunan Modern">
+    <meta property="twitter:description" content="Aplikasi simulasi kasir toko bangunan modern yang cepat, interaktif, dan mudah digunakan.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=1200&h=630&q=80">
+
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/9428/9428231.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0fdf4 100%);
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col text-slate-800 antialiased">
+
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm border-b border-slate-200/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <div class="bg-amber-500 text-white p-2 rounded-lg shadow-md shadow-amber-500/20">
+                        <i class="fa-solid fa-trowel-bricks text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-amber-600 to-orange-500 bg-clip-text text-transparent">
+                        KasirBangun
+                    </span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8 font-medium text-sm text-slate-600">
+                    <a href="#simulasi" class="hover:text-amber-600 transition-colors"><i class="fa-solid fa-calculator mr-1"></i> Simulasi Kasir</a>
+                    <a href="#fitur" class="hover:text-amber-600 transition-colors"><i class="fa-solid fa-star mr-1"></i> Fitur Utama</a>
+                    <a href="#panduan" class="hover:text-amber-600 transition-colors"><i class="fa-solid fa-book mr-1"></i> Panduan</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-amber-600 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-2">
+            <a href="#simulasi" class="block py-2 text-slate-600 hover:text-amber-600 font-medium"><i class="fa-solid fa-calculator mr-2"></i>Simulasi Kasir</a>
+            <a href="#fitur" class="block py-2 text-slate-600 hover:text-amber-600 font-medium"><i class="fa-solid fa-star mr-2"></i>Fitur Utama</a>
+            <a href="#panduan" class="block py-2 text-slate-600 hover:text-amber-600 font-medium"><i class="fa-solid fa-book mr-2"></i>Panduan</a>
+        </div>
+    </nav>
+
+    <header class="relative overflow-hidden py-12 lg:py-20 px-4 sm:px-6 lg:px-8">
+        <div class="absolute top-10 left-1/4 w-72 h-72 bg-amber-300/40 rounded-full filter blur-3xl -z-10 animate-pulse"></div>
+        <div class="absolute bottom-10 right-1/4 w-96 h-96 bg-sky-300/40 rounded-full filter blur-3xl -z-10"></div>
+        
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <div class="glass p-8 md:p-12 rounded-3xl shadow-xl max-w-4xl mx-auto border border-white/40">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 mb-4 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
+                    Versi Digital Eksklusif 2026
+                </span>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                    Kelola Transaksi Toko Bangunan <br class="hidden sm:inline">
+                    <span class="bg-gradient-to-r from-amber-600 via-orange-500 to-amber-500 bg-clip-text text-transparent">Lebih Cepat & Interaktif</span>
+                </h1>
+                <p class="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">
+                    Aplikasi simulasi kasir POS modern berbasis web. Didesain khusus untuk mempermudah perhitungan pembelian material semen, besi, cat, hingga perkakas secara instan.
+                </p>
+                <div class="mt-8 flex flex-wrap justify-center gap-4">
+                    <a href="#simulasi" class="px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/20 hover:opacity-95 transition-all transform hover:-translate-y-0.5">
+                        Mulai Simulasi <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#fitur" class="px-6 py-3 bg-white/80 text-slate-700 font-semibold rounded-xl shadow-md border border-slate-200 hover:bg-white transition-all">
+                        Pelajari Fitur
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-16">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            
+            <aside class="lg:col-span-1 space-y-6">
+                <div id="panduan" class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <h3 class="font-bold text-lg text-slate-900 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-circle-info text-amber-500"></i> Informasi Toko
+                    </h3>
+                    <div class="space-y-4 text-sm text-slate-600">
+                        <div class="p-3 bg-amber-50 rounded-xl border border-amber-100">
+                            <p class="font-semibold text-amber-800"><i class="fa-solid fa-store mr-1"></i> Toko Bangunan Utama</p>
+                            <p class="text-xs text-amber-700/80 mt-0.5">Simulasi ini menggunakan daftar harga grosir material standar terbaru 2026.</p>
+                        </div>
+                        <hr class="border-slate-100">
+                        <div>
+                            <h4 class="font-medium text-slate-800 mb-1">Cara Menggunakan:</h4>
+                            <ul class="list-decimal list-inside space-y-1.5 text-xs text-slate-500">
+                                <li>Pilih item di menu kasir</li>
+                                <li>Tentukan jumlah kuantitas</li>
+                                <li>Klik <strong>Tambah ke Keranjang</strong></li>
+                                <li>Masukkan nominal bayar</li>
+                                <li>Tekan <strong>Bayar Sekarang</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative rounded-2xl overflow-hidden shadow-md h-48 group">
+                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" alt="Material Bangunan" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+                    <div class="absolute bottom-0 p-4 text-white">
+                        <span class="text-[10px] font-bold uppercase tracking-wider bg-orange-500 px-2 py-0.5 rounded">Promo Kontraktor</span>
+                        <h4 class="font-bold text-sm mt-1">Diskon Semen & Besi Ulir</h4>
+                        <p class="text-xs text-slate-300 mt-0.5">Hubungi admin untuk potongan s.d 10%</p>
+                    </div>
+                </div>
+            </aside>
+
+            <section id="simulasi" class="lg:col-span-3 space-y-8">
+                
+                <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden">
+                    <div class="p-6 sm:p-8 bg-gradient-to-r from-slate-900 to-slate-800 text-white flex flex-wrap items-center justify-between gap-4">
+                        <div>
+                            <h2 class="text-xl font-bold flex items-center gap-2">
+                                <i class="fa-solid fa-desktop text-amber-400"></i> Monitor Kasir Interaktif
+                            </h2>
+                            <p class="text-xs text-slate-400 mt-1">Tambahkan produk dan kelola tagihan pelanggan secara *real-time*.</p>
+                        </div>
+                        <div class="bg-white/10 px-4 py-2 rounded-xl backdrop-blur-sm text-right">
+                            <span class="text-[10px] uppercase text-slate-400 block font-semibold tracking-wider">No. Invoice</span>
+                            <span class="font-mono font-bold text-sm text-amber-400">INV-202607-001</span>
+                        </div>
+                    </div>
+
+                    <div class="p-4 sm:p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        
+                        <div class="space-y-4">
+                            <h3 class="font-bold text-sm text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
+                                <i class="fa-solid fa-plus-circle text-sky-500"></i> Input Barang
+                            </h3>
+                            
+                            <div>
+                                <label for="produk-select" class="block text-xs font-semibold text-slate-600 mb-1">Pilih Material / Barang</label>
+                                <select id="produk-select" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 transition-all">
+                                    <option value="" data-harga="0">-- Pilih Produk --</option>
+                                    <option value="Semen Tiga Roda (50kg)" data-harga="68000">Semen Tiga Roda (50kg) - Rp 68.000</option>
+                                    <option value="Besi Beton 10mm" data-harga="85000">Besi Beton 10mm - Rp 85.000</option>
+                                    <option value="Cat Tembok Dulux 5kg" data-harga="245000">Cat Tembok Dulux 5kg - Rp 245.000</option>
+                                    <option value="Pipa PVC Rucika 3 Inch" data-harga="92000">Pipa PVC Rucika 3" - Rp 92.000</option>
+                                    <option value="Paku Kayu 5cm (Per Kg)" data-harga="22000">Paku Kayu 5cm (Kg) - Rp 22.000</option>
+                                    <option value="Baja Ringan C75" data-harga="78000">Baja Ringan C75 - Rp 78.000</option>
+                                </select>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-3">
+                                <div class="col-span-1">
+                                    <label for="produk-qty" class="block text-xs font-semibold text-slate-600 mb-1">Jumlah</label>
+                                    <input type="number" id="produk-qty" min="1" value="1" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-sm text-center font-bold focus:outline-none focus:ring-2 focus:ring-amber-500">
+                                </div>
+                                <div class="col-span-2 flex items-end">
+                                    <button id="add-to-cart-btn" class="w-full bg-sky-500 hover:bg-sky-600 text-white font-semibold text-sm py-2.5 px-4 rounded-xl transition-colors shadow-sm flex items-center justify-center gap-2">
+                                        <i class="fa-solid fa-cart-plus"></i> Tambah
+                                    </button>
+                                </div>
+                            </div>
+
+                            <hr class="border-slate-100 my-4">
+
+                            <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 space-y-3">
+                                <h4 class="font-bold text-xs text-slate-500 uppercase tracking-wider"><i class="fa-solid fa-wallet text-emerald-500"></i> Proses Pembayaran</h4>
+                                <div>
+                                    <label for="bayar-input" class="block text-xs font-semibold text-slate-600 mb-1">Nominal Uang Bayar (Rp)</label>
+                                    <input type="number" id="bayar-input" placeholder="Masukkan jumlah uang" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-mono font-bold text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                                </div>
+                                <button id="checkout-btn" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm py-3 px-4 rounded-xl transition-colors shadow-md shadow-emerald-500/10 flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-cash-register"></i> Bayar Sekarang
+                                </button>
+                                <button id="reset-btn" class="w-full bg-rose-50 hover:bg-rose-100 text-rose-600 font-semibold text-xs py-2 px-4 rounded-lg transition-colors border border-rose-100">
+                                    Reset Simulasi
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col border border-slate-200/60 rounded-2xl overflow-hidden bg-slate-50/50">
+                            <div class="bg-slate-200/50 px-4 py-3 border-b border-slate-200 flex justify-between items-center">
+                                <span class="text-xs font-bold text-slate-600 uppercase tracking-wider"><i class="fa-solid fa-shopping-basket mr-1"></i> Daftar Keranjang</span>
+                                <span id="cart-count" class="bg-amber-500 text-white text-[10px] px-2 py-0.5 rounded-full font-bold">0 Item</span>
+                            </div>
+                            
+                            <div id="cart-items" class="p-4 flex-grow overflow-y-auto max-h-60 space-y-3 text-sm">
+                                <div id="cart-placeholder" class="text-center py-12 text-slate-400 space-y-2">
+                                    <i class="fa-solid fa-basket-shopping text-3xl opacity-40"></i>
+                                    <p class="text-xs">Keranjang masih kosong.<br>Silakan pilih material terlebih dahulu.</p>
+                                </div>
+                            </div>
+
+                            <div class="p-4 bg-white border-t border-slate-200 space-y-2">
+                                <div class="flex justify-between text-xs text-slate-500 font-medium">
+                                    <span>Total Item</span>
+                                    <span id="summary-qty">0</span>
+                                </div>
+                                <div class="flex justify-between items-center pt-2 border-t border-dashed border-slate-200">
+                                    <span class="text-sm font-bold text-slate-900">Total Belanja</span>
+                                    <span id="summary-total" class="text-lg font-extrabold text-amber-600 font-mono">Rp 0</span>
+                                </div>
+                                <div id="change-container" class="hidden flex justify-between items-center pt-2 border-t border-slate-200">
+                                    <span class="text-xs font-bold text-emerald-600">Kembalian</span>
+                                    <span id="summary-change" class="text-base font-bold text-emerald-600 font-mono">Rp 0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <section id="fitur" class="space-y-4">
+                    <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2 px-1">
+                        <i class="fa-solid fa-star text-amber-500"></i> Fitur Ekstra & Keunggulan Web
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex items-start gap-3.5">
+                            <div class="p-3 bg-sky-50 text-sky-500 rounded-xl text-lg"><i class="fa-solid fa-bolt"></i></div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-900">Hitung Otomatis</h4>
+                                <p class="text-xs text-slate-500 mt-1">Sistem langsung mengalkulasi total belanja dan sisa kembalian secara real-time tanpa delay.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex items-start gap-3.5">
+                            <div class="p-3 bg-emerald-50 text-emerald-500 rounded-xl text-lg"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-900">Multi-Device Ready</h4>
+                                <p class="text-xs text-slate-500 mt-1">Tampilan adaptif dan nyaman digunakan baik di layar HP Android, tablet iPad, maupun monitor PC.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex items-start gap-3.5">
+                            <div class="p-3 bg-amber-50 text-amber-500 rounded-xl text-lg"><i class="fa-solid fa-shield-halved"></i></div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-900">Aman & Ringan</h4>
+                                <p class="text-xs text-slate-500 mt-1">Dibangun dengan script native modern yang aman, bebas dari kerentanan eksternal yang kompleks.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 text-sm mt-auto border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                <p class="font-medium text-slate-300">Oleh Ariel Usman &copy; 2026</p>
+                <p class="text-xs text-slate-500 mt-0.5">Project simulasi kasir tangguh berbasi HTML, Tailwind CSS, & JS.</p>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-slate-800 text-slate-300 hover:text-white px-3 py-1.5 rounded-xl border border-slate-700/60 transition-colors text-xs">
+                    <i class="fa-brands fa-instagram text-base text-pink-500"></i> @arielrcun
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // DOM Elements
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        const produkSelect = document.getElementById('produk-select');
+        const produkQty = document.getElementById('produk-qty');
+        const addToCartBtn = document.getElementById('add-to-cart-btn');
+        
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartPlaceholder = document.getElementById('cart-placeholder');
+        const cartCountBadge = document.getElementById('cart-count');
+        
+        const summaryQty = document.getElementById('summary-qty');
+        const summaryTotal = document.getElementById('summary-total');
+        
+        const bayarInput = document.getElementById('bayar-input');
+        const checkoutBtn = document.getElementById('checkout-btn');
+        const changeContainer = document.getElementById('change-container');
+        const summaryChange = document.getElementById('summary-change');
+        const resetBtn = document.getElementById('reset-btn');
+
+        // State / Data Keranjang
+        let keranjang = [];
+        let totalBelanja = 0;
+
+        // Format Rupiah Helper
+        function formatRupiah(angka) {
+            return 'Rp ' + angka.toLocaleString('id-ID');
+        }
+
+        // Mobile Menu Toggle
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Add to Cart Logic
+        addToCartBtn.addEventListener('click', () => {
+            const selectedOption = produkSelect.options[produkSelect.selectedIndex];
+            const namaProduk = selectedOption.value;
+            const hargaProduk = parseInt(selectedOption.getAttribute('data-harga')) || 0;
+            const qty = parseInt(produkQty.value) || 0;
+
+            if (!namaProduk || qty <= 0) {
+                alert('Silakan pilih produk valid dan masukkan jumlah minimal 1!');
+                return;
+            }
+
+            // Cek jika produk sudah ada di keranjang
+            const existingItem = keranjang.find(item => item.nama === namaProduk);
+            if (existingItem) {
+                existingItem.qty += qty;
+                existingItem.subtotal = existingItem.qty * existingItem.harga;
+            } else {
+                keranjang.push({
+                    nama: namaProduk,
+                    harga: hargaProduk,
+                    qty: qty,
+                    subtotal: hargaProduk * qty
+                });
+            }
+
+            // Reset input field
+            produkSelect.selectedIndex = 0;
+            produkQty.value = 1;
+
+            updateCartUI();
+        });
+
+        // Update UI Keranjang & Hitung Total
+        function updateCartUI() {
+            if (keranjang.length === 0) {
+                cartPlaceholder.classList.remove('hidden');
+                // Bersihkan list item selain placeholder
+                Array.from(cartItemsContainer.children).forEach(child => {
+                    if(child !== cartPlaceholder) child.remove();
+                });
+                cartCountBadge.textContent = "0 Item";
+                summaryQty.textContent = "0";
+                summaryTotal.textContent = "Rp 0";
+                totalBelanja = 0;
+                return;
+            }
+
+            cartPlaceholder.classList.add('hidden');
+            
+            // Bersihkan item lama
+            Array.from(cartItemsContainer.children).forEach(child => {
+                if(child !== cartPlaceholder) child.remove();
+            });
+
+            let totalQty = 0;
+            totalBelanja = 0;
+
+            keranjang.forEach((item, index) => {
+                totalQty += item.qty;
+                totalBelanja += item.subtotal;
+
+                const itemRow = document.createElement('div');
+                itemRow.className = "flex items-center justify-between p-3 bg-white border border-slate-200 rounded-xl shadow-sm animate-fadeIn";
+                itemRow.innerHTML = `
+                    <div class="space-y-0.5">
+                        <h4 class="font-bold text-slate-800 text-xs sm:text-sm">${item.nama}</h4>
+                        <p class="text-xs text-slate-500">${item.qty} x ${formatRupiah(item.harga)}</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="font-mono font-bold text-xs sm:text-sm text-slate-900">${formatRupiah(item.subtotal)}</span>
+                        <button onclick="hapusItem(${index})" class="text-rose-500 hover:text-rose-700 p-1 transition-colors">
+                            <i class="fa-solid fa-trash-can text-xs"></i>
+                        </button>
+                    </div>
+                `;
+                cartItemsContainer.appendChild(itemRow);
+            });
+
+            // Update badge dan rangkuman info harga
+            cartCountBadge.textContent = `${keranjang.length} Item`;
+            summaryQty.textContent = totalQty;
+            summaryTotal.textContent = formatRupiah(totalBelanja);
+            
+            // Sembunyikan kembalian jika isi keranjang berubah
+            changeContainer.classList.add('hidden');
+        }
+
+        // Hapus Item Tertentu dari Keranjang
+        window.hapusItem = function(index) {
+            keranjang.splice(index, 1);
+            updateCartUI();
+        };
+
+        // Checkout / Proses Pembayaran
+        checkoutBtn.addEventListener('click', () => {
+            if (keranjang.length === 0) {
+                alert('Keranjang belanja Anda masih kosong!');
+                return;
+            }
+
+            const uangBayar = parseInt(bayarInput.value) || 0;
+
+            if (uangBayar < totalBelanja) {
+                alert(`Uang bayar kurang! Total belanja adalah ${formatRupiah(totalBelanja)}. Uang yang dimasukkan baru ${formatRupiah(uangBayar)}.`);
+                return;
+            }
+
+            const kembalian = uangBayar - totalBelanja;
+            
+            // Tampilkan kembalian
+            summaryChange.textContent = formatRupiah(kembalian);
+            changeContainer.classList.remove('hidden');
+
+            alert(`Transaksi Berhasil!\nTotal: ${formatRupiah(totalBelanja)}\nBayar: ${formatRupiah(uangBayar)}\nKembalian: ${formatRupiah(kembalian)}\n\nTerima kasih telah berbelanja.`);
+        });
+
+        // Reset All Simulation States
+        resetBtn.addEventListener('click', () => {
+            if (confirm('Apakah Anda yakin ingin mengosongkan simulasi transaksi ini?')) {
+                keranjang = [];
+                totalBelanja = 0;
+                bayarInput.value = '';
+                updateCartUI();
+            }
+        });
+    </script>
+</body>
+</html>
