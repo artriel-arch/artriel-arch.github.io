@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Meta Tags -->
+    <title>Mind Palace | Seni Mengingat Segalanya</title>
+    <meta name="description" content="Pelajari teknik Mind Palace (Method of Loci) untuk meningkatkan daya ingat. Temukan cara mengingat sesuatu dengan lebih cepat dan permanen.">
+    <meta name="keywords" content="Mind Palace, Method of Loci, Cara Mengingat, Daya Ingat, Belajar">
+    
+    <!-- Open Graph untuk Link Preview (WhatsApp, Telegram, dll) -->
+    <meta property="og:title" content="Mind Palace | Seni Mengingat Segalanya">
+    <meta property="og:description" content="Panduan interaktif membangun Istana Pikiran untuk mengingat informasi kompleks dengan mudah.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1559757175-5700dd6f8b9e?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2043/2043102.png" type="image/png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Config & Custom CSS -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Outfit', 'sans-serif'] },
+                    colors: {
+                        primary: '#FF6B6B',
+                        secondary: '#4ECDC4',
+                        accent: '#FFE66D'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            /* Palet Cerah dengan Background Abstract */
+            background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+            background-attachment: fixed;
+        }
+        /* Efek Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <nav class="glass-nav sticky top-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Kiri: Nama Project -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <i class="fa-solid fa-brain text-primary text-2xl"></i>
+                    <span class="font-bold text-xl tracking-tight text-gray-900">Istana<span class="text-primary">Minda</span></span>
+                </div>
+                <!-- Kanan: Menu Desktop -->
+                <div class="hidden md:flex space-x-8 items-center font-semibold">
+                    <a href="#konsep" class="text-gray-700 hover:text-primary transition">Konsep</a>
+                    <a href="#cara-kerja" class="text-gray-700 hover:text-primary transition">Cara Kerja</a>
+                    <a href="#latihan" class="text-gray-700 hover:text-primary transition">Latihan Interaktif</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/40">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-semibold text-center">
+                <a href="#konsep" class="block px-3 py-2 rounded-md hover:bg-white/50">Konsep</a>
+                <a href="#cara-kerja" class="block px-3 py-2 rounded-md hover:bg-white/50">Cara Kerja</a>
+                <a href="#latihan" class="block px-3 py-2 rounded-md hover:bg-white/50">Latihan Interaktif</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header / Hero Section -->
+    <header class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div class="glass rounded-3xl p-8 md:p-16 flex flex-col md:flex-row items-center gap-10">
+            <div class="w-full md:w-1/2 space-y-6">
+                <span class="bg-accent text-gray-800 px-4 py-1 rounded-full text-sm font-bold shadow-sm">Teknik Memori Kuno</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-gray-900">
+                    Bangun <span class="text-primary">Mind Palace</span> Anda Sendiri.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-700 font-medium">
+                    Ubah cara Anda memproses dan mengingat informasi. Gunakan imajinasi spasial untuk menyimpan ribuan data di dalam kepala Anda secara terstruktur.
+                </p>
+                <a href="#latihan" class="inline-block bg-gray-900 text-white font-semibold px-8 py-3 rounded-xl hover:bg-primary transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    Mulai Berlatih <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <div class="w-full md:w-1/2">
+                <img src="https://images.unsplash.com/photo-1633613286848-e6f43bbafb84?auto=format&fit=crop&w=800&q=80" alt="Abstract Brain" class="rounded-2xl shadow-2xl border-4 border-white/50 w-full object-cover h-64 md:h-96">
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content & Sidebar -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
+        <div class="flex flex-col lg:flex-row gap-8">
+            
+            <!-- Body Content (Kiri/Utama) -->
+            <main class="w-full lg:w-3/4 space-y-8">
+                
+                <!-- Section 1: Konsep -->
+                <section id="konsep" class="glass rounded-2xl p-8">
+                    <h2 class="text-3xl font-bold mb-4 flex items-center gap-3">
+                        <i class="fa-solid fa-lightbulb text-accent"></i> Apa itu Mind Palace?
+                    </h2>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Dikenal juga sebagai <strong>Method of Loci</strong>, teknik ini berakar dari zaman Yunani dan Romawi kuno. Teknik ini memanfaatkan fakta bahwa otak manusia sangat luar biasa dalam mengingat ruang dan lokasi (memori spasial) dibandingkan dengan deretan kata atau angka.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Anda membayangkan sebuah bangunan fisik yang Anda kenal baik (seperti rumah Anda), lalu Anda menaruh objek atau informasi yang ingin diingat di sepanjang rute yang ada di dalam bangunan tersebut.
+                    </p>
+                </section>
+
+                <!-- Section 2: Cara Kerja -->
+                <section id="cara-kerja" class="glass rounded-2xl p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-900">Langkah Membangun Istana</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white/40 p-6 rounded-xl hover:bg-white/60 transition">
+                            <div class="text-3xl text-secondary mb-3"><i class="fa-solid fa-house-chimney"></i></div>
+                            <h3 class="text-xl font-bold mb-2">1. Pilih Lokasi</h3>
+                            <p class="text-gray-700">Pilih tempat yang sangat Anda kenal. Rumah, kampus, atau rute perjalanan ke kantor.</p>
+                        </div>
+                        <div class="bg-white/40 p-6 rounded-xl hover:bg-white/60 transition">
+                            <div class="text-3xl text-secondary mb-3"><i class="fa-solid fa-route"></i></div>
+                            <h3 class="text-xl font-bold mb-2">2. Tentukan Rute</h3>
+                            <p class="text-gray-700">Tetapkan jalur spesifik (misal: dari pintu depan, ke ruang tamu, lalu ke dapur).</p>
+                        </div>
+                        <div class="bg-white/40 p-6 rounded-xl hover:bg-white/60 transition">
+                            <div class="text-3xl text-secondary mb-3"><i class="fa-solid fa-boxes-packing"></i></div>
+                            <h3 class="text-xl font-bold mb-2">3. Pilih Penyimpanan</h3>
+                            <p class="text-gray-700">Tentukan titik persinggahan (Loci) seperti sofa, TV, meja makan, atau kulkas.</p>
+                        </div>
+                        <div class="bg-white/40 p-6 rounded-xl hover:bg-white/60 transition">
+                            <div class="text-3xl text-secondary mb-3"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                            <h3 class="text-xl font-bold mb-2">4. Asosiasi Ekstrem</h3>
+                            <p class="text-gray-700">Letakkan visualisasi informasi yang ingin diingat di titik tersebut. Buat seliar dan seaneh mungkin agar melekat.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 3: Fitur Interaktif JS -->
+                <section id="latihan" class="glass rounded-2xl p-8 border-l-8 border-l-primary">
+                    <h2 class="text-3xl font-bold mb-2">Simulator Ruang Tamu</h2>
+                    <p class="text-gray-700 mb-6">Coba letakkan barang yang ingin Anda ingat ke dalam perabotan imajiner di bawah ini.</p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                        <input type="text" id="itemInput" placeholder="Ketik apa yang ingin diingat..." class="flex-grow px-4 py-3 rounded-xl bg-white/70 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary font-medium">
+                        <select id="locationSelect" class="px-4 py-3 rounded-xl bg-white/70 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary font-medium cursor-pointer">
+                            <option value="Sofa">Di atas Sofa</option>
+                            <option value="TV">Di layar TV</option>
+                            <option value="Meja">Di bawah Meja</option>
+                            <option value="Jendela">Tergantung di Jendela</option>
+                        </select>
+                        <button onclick="simpanKeIstana()" class="bg-secondary text-white font-bold px-6 py-3 rounded-xl hover:bg-teal-500 transition shadow-md">
+                            Simpan <i class="fa-solid fa-plus ml-1"></i>
+                        </button>
+                    </div>
+
+                    <!-- Tempat Hasil -->
+                    <div class="bg-white/30 rounded-xl p-4 min-h-[150px]">
+                        <h4 class="font-bold text-gray-800 mb-3 border-b border-gray-400/30 pb-2">Isi Istana Mindamu:</h4>
+                        <ul id="palaceList" class="space-y-3">
+                            <li class="text-gray-500 italic text-sm" id="emptyState">Belum ada ingatan yang disimpan.</li>
+                        </ul>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- Sidebar (Kanan) -->
+            <aside class="w-full lg:w-1/4">
+                <div class="glass rounded-2xl p-6 sticky top-24">
+                    <h3 class="text-xl font-bold mb-4 text-gray-900 border-b border-gray-400/30 pb-2">Teknik Terkait</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#" class="group block p-3 rounded-lg bg-white/40 hover:bg-white/70 transition">
+                                <h4 class="font-bold text-gray-800 group-hover:text-primary transition">Spaced Repetition</h4>
+                                <p class="text-sm text-gray-600 mt-1">Sistem interval pengulangan.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="group block p-3 rounded-lg bg-white/40 hover:bg-white/70 transition">
+                                <h4 class="font-bold text-gray-800 group-hover:text-primary transition">Feynman Technique</h4>
+                                <p class="text-sm text-gray-600 mt-1">Belajar dengan cara mengajarkan.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="group block p-3 rounded-lg bg-white/40 hover:bg-white/70 transition">
+                                <h4 class="font-bold text-gray-800 group-hover:text-primary transition">Mnemonic Peg</h4>
+                                <p class="text-sm text-gray-600 mt-1">Mengaitkan angka dengan objek visual.</p>
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-8 p-4 bg-gradient-to-r from-accent to-yellow-200 rounded-xl shadow-sm text-center">
+                        <i class="fa-solid fa-bolt text-2xl text-yellow-600 mb-2"></i>
+                        <p class="font-bold text-gray-800 text-sm">"Otak bekerja lebih baik dengan visual dan emosi, bukan sekadar logika."</p>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="glass mt-auto border-t border-white/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-gray-800 font-semibold text-center md:text-left">
+                Oleh Ariel Usman Copyright 2026
+            </div>
+            <div>
+                <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-gray-800 hover:text-pink-600 transition font-bold text-lg px-4 py-2 bg-white/40 rounded-full">
+                    <i class="fa-brands fa-instagram text-2xl"></i> @arielrcun
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interaktif -->
+    <script>
+        // Toggle Mobile Menu
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Fitur Latihan Mind Palace
+        const itemInput = document.getElementById('itemInput');
+        const locationSelect = document.getElementById('locationSelect');
+        const palaceList = document.getElementById('palaceList');
+        const emptyState = document.getElementById('emptyState');
+
+        // Allow 'Enter' key to trigger button
+        itemInput.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') simpanKeIstana();
+        });
+
+        function simpanKeIstana() {
+            const item = itemInput.value.trim();
+            const location = locationSelect.value;
+            
+            if(item === '') {
+                alert('Tuliskan sesuatu yang ingin diingat terlebih dahulu!');
+                return;
+            }
+
+            // Hapus status kosong jika ada
+            if(emptyState) {
+                emptyState.style.display = 'none';
+            }
+
+            // Buat Elemen List Baru
+            const li = document.createElement('li');
+            li.className = 'flex items-center bg-white/60 p-3 rounded-lg shadow-sm border border-white/50 animate-fade-in transition-all';
+            
+            // Generate icon berdasarkan lokasi
+            let iconClass = 'fa-box';
+            if(location === 'Sofa') iconClass = 'fa-couch';
+            else if(location === 'TV') iconClass = 'fa-tv';
+            else if(location === 'Meja') iconClass = 'fa-table';
+            else if(location === 'Jendela') iconClass = 'fa-border-all';
+
+            li.innerHTML = `
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-pink-500 text-white flex items-center justify-center mr-4 flex-shrink-0 shadow-sm">
+                    <i class="fa-solid ${iconClass}"></i>
+                </div>
+                <div class="flex-grow">
+                    <p class="text-sm text-gray-500 font-medium">Lokasi: ${location}</p>
+                    <p class="text-lg font-bold text-gray-800">${item}</p>
+                </div>
+                <button onclick="this.parentElement.remove(); checkEmpty();" class="text-gray-400 hover:text-red-500 p-2 transition">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
+            `;
+
+            palaceList.appendChild(li);
+            itemInput.value = ''; // Reset input
+            itemInput.focus();
+        }
+
+        // Cek jika list kosong, kembalikan tulisan default
+        function checkEmpty() {
+            if(palaceList.children.length === 1 && emptyState) { // Hanya ada elemen emptyState tersisa
+                emptyState.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
