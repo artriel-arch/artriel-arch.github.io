@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delulu is Solulu — Mengarungi The Dip Menuju Kosmik</title>
+    
+    <meta name="description" content="Mengubah Mixed Anxiety menjadi Ambisi Multiverse. Lewati titik berat kegagalan simulasi hidup dengan prinsip Power Law, Game Theory Tit-for-Tat, Ilmu SE Gunung, dan Paham SE Samudra.">
+    <meta name="keywords" content="Delulu is Solulu, Ariel Usman, The Dip, Game Theory, Power Law, Mixed Anxiety, Simulasi Pesawat WWI, Takdir Multiverse">
+    <meta name="author" content="Ariel Usman">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Delulu is Solulu — Mengarungi The Dip Menuju Kosmik">
+    <meta property="og:description" content="Bermimpilah setinggi semesta untuk melewati titik berat gagal. Refleksi filosofis aviasi, matematika takdir, dan kekuatan titipan Allah SWT.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1518364538800-6bcb3f25da49?auto=format&fit=crop&w=1200&q=80">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Delulu is Solulu — Mengarungi The Dip Menuju Kosmik">
+    <meta property="twitter:description" content="Bermimpilah setinggi semesta untuk melewati titik berat gagal.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1518364538800-6bcb3f25da49?auto=format&fit=crop&w=1200&q=80">
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e0f2fe 50%, #f0fdf4 100%);
+            color: #1e293b;
+            scroll-behavior: smooth;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #0284c7 0%, #16a34a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-emerald-200 selection:text-emerald-900">
+
+    <nav class="sticky top-0 z-50 glass shadow-xs border-b border-slate-200/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateTo('home')">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-emerald-500 flex items-center justify-center text-white font-black text-xl shadow-md">
+                        Ω
+                    </div>
+                    <span class="font-extrabold text-xl tracking-tight text-slate-800">
+                        SOLULU<span class="text-emerald-600">.</span>
+                    </span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-1">
+                    <button onclick="navigateTo('home')" class="px-4 py-2 rounded-lg text-sm font-semibold text-slate-600 hover:text-sky-600 hover:bg-sky-50/50 transition">Beranda</button>
+                    <button onclick="navigateTo('manifesto')" class="px-4 py-2 rounded-lg text-sm font-semibold text-slate-600 hover:text-sky-600 hover:bg-sky-50/50 transition">Manifesto</button>
+                    <button onclick="navigateTo('framework')" class="px-4 py-2 rounded-lg text-sm font-semibold text-slate-600 hover:text-sky-600 hover:bg-sky-50/50 transition">Framework Strategi</button>
+                    <button onclick="navigateTo('thedip')" class="px-4 py-2 rounded-lg text-sm font-semibold text-slate-600 hover:text-sky-600 hover:bg-sky-50/50 transition">The Dip</button>
+                    <button onclick="openSidebar()" class="ml-2 px-4 py-2 rounded-lg bg-sky-600 hover:bg-sky-700 text-white text-sm font-medium shadow-xs hover:shadow-md transition flex items-center space-x-2">
+                        <i class="fa-solid fa-compass"></i>
+                        <span>Kosmos Referensi</span>
+                    </button>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button onclick="openSidebar()" class="p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <div id="sec-home" class="spa-section transition-all duration-500 transform opacity-100 scale-100">
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-white/60 mb-12">
+                <div class="absolute -top-24 -left-24 w-96 h-96 bg-sky-400/20 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-emerald-400/20 rounded-full blur-3xl"></div>
+                <div class="absolute inset-0 z-0 bg-cover bg-center opacity-30 mix-blend-overlay" style="background-image: url('https://images.unsplash.com/photo-1518364538800-6bcb3f25da49?auto=format&fit=crop&w=1200&q=80');"></div>
+                
+                <div class="relative z-10 glass p-8 sm:p-16 text-center max-w-4xl mx-auto my-6 sm:my-12 rounded-2xl shadow-inner">
+                    <span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-sky-100 text-sky-800 tracking-wide uppercase mb-6 shadow-xs border border-sky-200">
+                        <i class="fa-solid fa-jet-fighter-up mr-2"></i> Paradigma Aviasi Kosmik
+                    </span>
+                    <h1 class="text-4xl sm:text-6xl font-black tracking-tight text-slate-900 leading-none mb-6">
+                        Delulu is <span class="text-gradient">Solulu</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-slate-600 font-medium max-w-2xl mx-auto mb-8 leading-relaxed">
+                        "Bermimpilah setinggi-tingginya semesta untuk melewati titik berat paling kelam dari sebuah kegagalan rill."
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <button onclick="navigateTo('manifesto')" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900 text-white font-bold shadow-lg hover:bg-slate-800 transform hover:-translate-y-0.5 transition duration-150 flex items-center justify-center space-x-3">
+                            <span>Baca Manifesto Saya</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <button onclick="navigateTo('framework')" class="w-full sm:w-auto px-8 py-4 rounded-xl glass text-slate-800 font-bold border border-slate-300 shadow-sm hover:bg-white/80 transform hover:-translate-y-0.5 transition duration-150 flex items-center justify-center space-x-3">
+                            <i class="fa-solid fa-calculator text-emerald-600"></i>
+                            <span>10.000 Rules Framework</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="glass p-6 rounded-2xl hover:shadow-xl transition-all border-l-4 border-sky-500">
+                    <div class="w-12 h-12 rounded-xl bg-sky-100 flex items-center justify-center text-sky-600 text-xl font-bold mb-4">
+                        <i class="fa-solid fa-wind-warning"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Simulasi Realitas WWI</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Menghadapi kenyataan mesin mati, kegagalan mekanik rumit, navigasi buta, dan kontrol kaku yang melatih daya tahan.</p>
+                </div>
+                <div class="glass p-6 rounded-2xl hover:shadow-xl transition-all border-l-4 border-emerald-500">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600 text-xl font-bold mb-4">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Anxiety Re-engineering</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Melompat dari belenggu <em>mixed anxiety</em> masa lalu. Menghapus limitasi berfikir agar hasil tidak berakhir biasa saja.</p>
+                </div>
+                <div class="glass p-6 rounded-2xl hover:shadow-xl transition-all border-l-4 border-amber-500">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600 text-xl font-bold mb-4">
+                        <i class="fa-solid fa-cubes"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Struktur Takdir Makro</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Memaksa semesta, linimasa, dan dimensi bergerak menuju realitas multiverse terbaik melalui ketetapan Allah SWT.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="sec-manifesto" class="spa-section hidden transition-all duration-500 transform opacity-0 scale-95">
+            <div class="glass p-8 sm:p-12 rounded-3xl shadow-xl border border-white mb-12">
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="text-3xl font-extrabold text-slate-900 mb-6 flex items-center space-x-3">
+                        <span class="w-2 h-8 bg-sky-600 rounded-full"></span>
+                        <span>Catatan Jiwa: Melampaui Batas Diri</span>
+                    </h2>
+                    <div class="prose prose-slate text-slate-700 space-y-6 leading-relaxed">
+                        <div class="p-6 bg-slate-900 text-slate-100 rounded-2xl border border-slate-700 italic my-6 shadow-md relative overflow-hidden">
+                            <i class="fa-solid fa-quote-left absolute -top-4 -left-2 text-7xl text-slate-800/40 pointer-events-none"></i>
+                            "Saat saya gagal terus di simulasi yang sangat Ril untuk pesawat terbang perang dunia 1—pesawat tidak nyala atau sangat lama nyala, sulit navigasi, susah kontrol dan tidak bisa mendarat—satu hal yang paling saya catat: tujuan saya masuk ke sini adalah hanya mencoba apakah saya bisa menerbangkan pesawat, dan kurang lebih saya bisa, namun dengan mekanisme sulit."
+                        </div>
+                        <p>
+                            Jika ini adalah diri saya yang dulu, yang masih terbelenggu oleh <strong>mixed anxiety</strong>, saya pasti sudah memilih untuk menyerah. Namun roda berpikir telah berputar mendobrak limitasi purba tersebut. Jika kita menaruh batas aman di sini, maka selamanya hasil hidup kita akan biasa-biasa saja.
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                            <div class="bg-gradient-to-br from-sky-500/10 to-transparent p-5 rounded-xl border border-sky-200/50">
+                                <h4 class="font-bold text-sky-900 mb-1"><i class="fa-solid fa-mountain mr-2"></i> Ilmu SE Gunung</h4>
+                                <p class="text-xs text-slate-600">Kokoh menjulang tinggi menembus langit, menetapkan puncak tujuan mutlak yang tidak dapat diganggu gugat oleh badai kegagalan harian.</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-emerald-500/10 to-transparent p-5 rounded-xl border border-emerald-200/50">
+                                <h4 class="font-bold text-emerald-900 mb-1"><i class="fa-solid fa-water mr-2"></i> Paham SE Samudra</h4>
+                                <p class="text-xs text-slate-600">Luas mendalam tak bertepi, menyerap segala jenis gelombang cara, taktik, dan adaptasi tanpa kehilangan esensi kemurnian arah.</p>
+                            </div>
+                        </div>
+                        <p>
+                            Saat menyadari betapa kerdilnya kita jika dibandingkan dengan megahnya gunung, dalamnya samudra, tatanan atom, tak berujungnya semesta, dan kompleksitas konsep dimensional; di situlah kita memahami satu hal spiritual yang mutlak: <strong>Kekuatan titipan Allah SWT ini sangat tidak pelit.</strong> Energi-Nya mengalir deras, memfasilitasi setiap hamba yang berani membentuk dirinya dalam struktur atom terbaik untuk meluncurkan jangkauan mimpi hingga ujung terjauh kosmik.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="sec-framework" class="spa-section hidden transition-all duration-500 transform opacity-0 scale-95">
+            <div class="glass p-8 sm:p-12 rounded-3xl shadow-xl border border-white mb-12">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <h2 class="text-3xl font-extrabold text-slate-900 mb-3">Arsitektur Kuantum Keberhasilan</h2>
+                    <p class="text-slate-600 text-sm font-medium">Menarik napas sedalam semesta, merumuskan ulang aturan main matematika takdir melalui perhitungan matang.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="bg-white/60 rounded-2xl p-6 border border-slate-200/60 shadow-xs flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-sky-500 text-white flex items-center justify-center shadow-md mb-6 font-bold text-lg">01</div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3">Power Law Distribution</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                Kesuksesan tidak terdistribusi secara linear. Satu kemenangan besar di masa depan akan menutup dan menjustifikasi ribuan kegagalan kecil hari ini. Kegagalan kecil harian sangatlah kecil untuk cita-cita besar itu.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 text-xs font-semibold text-sky-600 flex items-center justify-between">
+                            <span>Efek Nonlinearitas</span>
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/60 rounded-2xl p-6 border border-slate-200/60 shadow-xs flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500 text-white flex items-center justify-center shadow-md mb-6 font-bold text-lg">02</div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3">Tit-for-Tat Game Theory</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                Merespons tantangan dari lingkungan dengan aksi adaptasi proporsional. Jika simulasi memberi tingkat kesulitan ekstrem, balas dengan kalkulasi iterasi baru, konsisten bergerak maju secara taktis.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 text-xs font-semibold text-emerald-600 flex items-center justify-between">
+                            <span>Ekuilibrium Resiprokal</span>
+                            <i class="fa-solid fa-gamepad"></i>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/60 rounded-2xl p-6 border border-slate-200/60 shadow-xs flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-amber-500 text-white flex items-center justify-center shadow-md mb-6 font-bold text-lg">03</div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3">Grand Target Blueprint</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                Membangun struktur target absolut baru untuk menguasai simulasi pesawat secara mutlak tanpa kompromi.
+                            </p>
+                            <div class="mt-4 space-y-2 bg-slate-900 text-slate-200 p-3 rounded-xl font-mono text-xs shadow-inner">
+                                <div class="flex justify-between"><span>TAKE-OFFS:</span><span class="text-sky-400 font-bold" id="counter-takeoff">0 / 10.000</span></div>
+                                <div class="flex justify-between"><span>LANDINGS:</span><span class="text-emerald-400 font-bold" id="counter-landing">0 / 10.000</span></div>
+                                <div class="flex justify-between"><span>AIRCRAFTS:</span><span class="text-amber-400 font-bold" id="counter-aircraft">1 / 1.000</span></div>
+                            </div>
+                        </div>
+                        <button onclick="simulateProgress()" class="mt-4 w-full py-2 bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold rounded-lg transition shadow-xs flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-bolt text-amber-400"></i>
+                            <span>Simulasikan Iterasi Terbang</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-slate-900 text-slate-100 rounded-2xl p-6 sm:p-8 relative overflow-hidden shadow-lg border border-slate-800">
+                    <div class="absolute inset-0 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:16px_16px] opacity-30"></div>
+                    <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+                        <div>
+                            <h3 class="text-xl font-extrabold text-white mb-2 flex items-center"><i class="fa-solid fa-circle-nodes text-emerald-400 mr-2"></i> Mengarahkan Takdir Multiverse</h3>
+                            <p class="text-xs sm:text-sm text-slate-400 max-w-xl">
+                                "Meninggikan tujuan dan memperbanyak arah. Buatlah takdir mengarahkan ke multiverse, dimensi, dan timeline terbaik untukku."
+                            </p>
+                        </div>
+                        <div class="flex space-x-2">
+                            <span class="px-3 py-1.5 rounded-md bg-slate-800 border border-slate-700 font-mono text-xs text-emerald-400">Timeline #Alpha-7</span>
+                            <span class="px-3 py-1.5 rounded-md bg-slate-800 border border-slate-700 font-mono text-xs text-sky-400">Dimensi 11D</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="sec-thedip" class="spa-section hidden transition-all duration-500 transform opacity-0 scale-95">
+            <div class="glass p-8 sm:p-12 rounded-3xl shadow-xl border border-white mb-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7">
+                        <span class="px-3 py-1 bg-amber-100 text-amber-900 text-xs font-bold rounded-full border border-amber-200"><i class="fa-solid fa-book-open mr-1"></i> Bedah Referensi Tambahan</span>
+                        <h2 class="text-3xl font-extrabold text-slate-900 mt-3 mb-4">Memahami "The Dip" — Seth Godin</h2>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
+                            Berdasarkan ulasan video dari channel <strong>Baca Suara</strong>, <em>The Dip</em> merupakan fase penurunan motivasi atau jalan buntu sementara yang pasti dialami setiap orang saat berupaya menjadi yang terbaik di bidangnya.
+                        </p>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+                            Kuncinya adalah membedakan antara <strong>The Dip</strong> (tantangan berharga yang mendatangkan kelangkaan/value tinggi jika dilewati) dengan <strong>Cul-de-Sac</strong> (jalan buntu stagnan yang harus ditinggalkan). Hambatan kontrol simulasi aviasi Anda harian saat ini bukanlah sebuah jalan buntu, melainkan kurva tajam <em>The Dip</em> yang menuntut <strong>Rededication</strong> untuk melompat menjadi versi terbaik diri Anda.
+                        </p>
+                        <a href="https://youtu.be/cMAkgNEuo0E?si=fIwF7hLMt0YGgzmC" target="_blank" class="inline-flex items-center space-x-2 text-sm font-bold text-rose-600 hover:text-rose-700 transition">
+                            <i class="fa-brands fa-youtube text-lg"></i>
+                            <span>Tonton Video Referensi Asli YouTube</span>
+                        </a>
+                    </div>
+                    <div class="lg:col-span-5">
+                        <div class="relative aspect-video rounded-2xl overflow-hidden shadow-md group border border-slate-200">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="The Dip Representation" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-slate-900/60 flex flex-col items-center justify-center p-4 text-center">
+                                <a href="https://youtu.be/cMAkgNEuo0E?si=fIwF7hLMt0YGgzmC" target="_blank" class="w-16 h-16 rounded-full bg-rose-600 text-white flex items-center justify-center text-xl shadow-lg hover:bg-rose-700 transition mb-3 transform hover:scale-110">
+                                    <i class="fa-solid fa-play ml-1"></i>
+                                </a>
+                                <span class="text-xs font-bold tracking-widest text-white uppercase">BACA SUARA THE DIP</span>
+                                <span class="text-[10px] text-slate-300 mt-1">Klik untuk membuka tautan YouTube</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <div id="sidebar-drawer" class="fixed inset-y-0 right-0 z-50 w-80 sm:w-96 glass-dark text-slate-100 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out border-l border-slate-700">
+        <div class="p-6 h-full flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between border-b border-slate-700 pb-4 mb-6">
+                    <h3 class="text-lg font-bold text-white flex items-center"><i class="fa-solid fa-layer-group text-sky-400 mr-2"></i> Kosmos Referensi</h3>
+                    <button onclick="closeSidebar()" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+                
+                <div class="space-y-4 overflow-y-auto max-h-[70vh]">
+                    <div class="p-4 bg-slate-800/60 border border-slate-700/50 rounded-xl hover:border-sky-500/50 transition cursor-pointer" onclick="navigateTo('thedip'); closeSidebar();">
+                        <span class="text-[10px] uppercase font-bold tracking-wider text-amber-400">Ringkasan Buku</span>
+                        <h4 class="font-bold text-white text-sm mt-0.5">The Dip oleh Seth Godin</h4>
+                        <p class="text-xs text-slate-400 mt-1">Membantu kalkulasi kapan waktu terbaik untuk bertahan melawan badai rintangan atau beralih arah.</p>
+                    </div>
+                    <div class="p-4 bg-slate-800/60 border border-slate-700/50 rounded-xl hover:border-emerald-500/50 transition">
+                        <span class="text-[10px] uppercase font-bold tracking-wider text-emerald-400">Game Theory</span>
+                        <h4 class="font-bold text-white text-sm mt-0.5">Tit-for-Tat Strategy</h4>
+                        <p class="text-xs text-slate-400 mt-1">Aturan ekuilibrium kerja: Merespons tantangan mekanis aviasi secara proporsional dan taktis.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-700 text-xs text-slate-400 flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-white font-bold">AU</div>
+                <div>
+                    <p class="font-bold text-slate-200">Ariel Usman</p>
+                    <p class="text-[10px]">Quantum Multiverse Weaver</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sidebar-backdrop" onclick="closeSidebar()" class="fixed inset-0 z-40 bg-slate-900/40 backdrop-blur-xs opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+    <footer class="glass border-t border-slate-200/60 mt-auto py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm font-medium text-slate-600">
+            <div>
+                &copy; 2026 <span class="font-bold text-slate-800">Oleh Ariel Usman</span>.
+            </div>
+            <a href="https://instagram.com/arielrcun" target="_blank" class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200/80 transition text-slate-700 hover:text-rose-600">
+                <i class="fa-brands fa-instagram text-base"></i>
+                <span class="text-xs font-semibold">@arielrcun</span>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        function navigateTo(sectionId) {
+            const sections = document.querySelectorAll('.spa-section');
+            sections.forEach(section => {
+                const targetId = 'sec-' + sectionId;
+                if (section.id === targetId) {
+                    section.classList.remove('hidden');
+                    setTimeout(() => {
+                        section.classList.remove('opacity-0', 'scale-95');
+                        section.classList.add('opacity-100', 'scale-100');
+                    }, 50);
+                } else {
+                    section.classList.add('hidden', 'opacity-0', 'scale-95');
+                    section.classList.remove('opacity-100', 'scale-100');
+                }
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function openSidebar() {
+            document.getElementById('sidebar-drawer').classList.remove('translate-x-full');
+            const backdrop = document.getElementById('sidebar-backdrop');
+            backdrop.classList.remove('pointer-events-none', 'opacity-0');
+            backdrop.classList.add('opacity-100');
+        }
+
+        function closeSidebar() {
+            document.getElementById('sidebar-drawer').classList.add('translate-x-full');
+            const backdrop = document.getElementById('sidebar-backdrop');
+            backdrop.classList.remove('opacity-100');
+            backdrop.classList.add('pointer-events-none', 'opacity-0');
+        }
+
+        // Framework Counter Engine Simulation 
+        let takeoffVal = 0, landingVal = 0, aircraftVal = 1;
+        function simulateProgress() {
+            takeoffVal += Math.floor(Math.random() * 25) + 10;
+            landingVal += Math.floor(Math.random() * 20) + 8;
+            if(Math.random() > 0.7 && aircraftVal < 1000) aircraftVal += 1;
+            
+            if(takeoffVal > 10000) takeoffVal = 10000;
+            if(landingVal > 10000) landingVal = 10000;
+
+            document.getElementById('counter-takeoff').innerText = takeoffVal.toLocaleString('id-ID') + " / 10.000";
+            document.getElementById('counter-landing').innerText = landingVal.toLocaleString('id-ID') + " / 10.000";
+            document.getElementById('counter-aircraft').innerText = aircraftVal.toLocaleString('id-ID') + " / 1.000";
+        }
+    </script>
+</body>
+</html>
