@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Memahami Anxious & Avoidant Attachment dalam Hubungan</title>
+    <meta name="description" content="Pelajari bagaimana Anxious dan Avoidant Attachment Style memengaruhi cara kita memilih, mencintai, dan berinteraksi dengan pasangan dalam hubungan asmara.">
+    <meta name="keywords" content="attachment style, anxious attachment, avoidant attachment, psikologi hubungan, hubungan sehat, teori kelekatan">
+    <meta name="author" content="Ariel Usman">
+    
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arielusman.github.io/attachment-theory">
+    <meta property="og:title" content="Anxious & Avoidant Attachment: Dinamika Cara Kita Berpasangan">
+    <meta property="og:description" content="Temukan cara memutus siklus cemas dan menghindar untuk membangun hubungan yang lebih aman (Secure).">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Anxious & Avoidant Attachment: Dinamika Cara Kita Berpasangan">
+    <meta property="twitter:description" content="Temukan cara memutus siklus cemas dan menghindar untuk membangun hubungan yang lebih aman.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/hearts.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #fef08a 0%, #f472b6 50%, #38bdf8 100%);
+            background-attachment: fixed;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.05);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- NAVBAR -->
+    <nav class="glass fixed top-0 left-0 right-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i class="fa-solid fa-heart-pulse text-pink-600 text-xl"></i>
+                    <span class="font-bold text-lg tracking-tight bg-gradient-to-r content-box from-pink-600 to-indigo-600 bg-clip-text text-transparent">AttachmentProject</span>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-6 font-medium text-slate-700">
+                        <a href="#home" class="hover:text-pink-600 transition-colors">Home</a>
+                        <a href="#edukasi" class="hover:text-pink-600 transition-colors">Teori Dasar</a>
+                        <a href="#dinamika" class="hover:text-pink-600 transition-colors">Dinamika Hubungan</a>
+                        <a href="#simulasi" class="hover:text-pink-600 transition-colors">Simulasi</a>
+                    </div>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-slate-700 hover:text-pink-600 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/20">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-medium text-center">
+                <a href="#home" class="block px-3 py-2 rounded-md hover:bg-white/40">Home</a>
+                <a href="#edukasi" class="block px-3 py-2 rounded-md hover:bg-white/40">Teori Dasar</a>
+                <a href="#dinamika" class="block px-3 py-2 rounded-md hover:bg-white/40">Dinamika Hubungan</a>
+                <a href="#simulasi" class="block px-3 py-2 rounded-md hover:bg-white/40">Simulasi</a>
+            </div>
+        </nav>
+
+    <!-- HERO SECTION -->
+    <header id="home" class="pt-28 pb-12 px-4 max-w-7xl mx-auto w-full">
+        <div class="glass rounded-3xl p-6 md:p-12 shadow-xl flex flex-col lg:flex-row items-center gap-8 overflow-hidden relative">
+            <div class="absolute -top-10 -right-10 w-40 h-40 bg-yellow-300 rounded-full blur-3xl opacity-50"></div>
+            <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-300 rounded-full blur-3xl opacity-50"></div>
+            
+            <div class="flex-1 space-y-6 relative z-10 text-center lg:text-left">
+                <span class="bg-white/60 px-4 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase text-indigo-700 shadow-sm inline-block">Psikologi Relasional</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                    Mengapa Kita Terlalu <span class="text-pink-600">Mengejar</span> atau Justru <span class="text-blue-600">Menghindar</span>?
+                </h1>
+                <p class="text-base md:text-lg text-slate-700 font-medium">
+                    Cara kita mencintai berakar dari masa lalu. Kenali bagaimana pola <strong>Anxious</strong> (Cemas) dan <strong>Avoidant</strong> (Menghindar) bekerja menciptakan lingkaran setan dalam hubungan pasang surutmu.
+                </p>
+                <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                    <a href="#simulasi" class="bg-gradient-to-r from-pink-500 to-indigo-600 text-white font-semibold px-6 py-3 rounded-2xl shadow-md hover:opacity-90 transition transform hover:-translate-y-0.5">
+                        Mulai Simulasi Interaktif
+                    </a>
+                    <a href="https://youtu.be/SfPxLLOoNig?si=aDOudVnqYNGtJYGF" target="_blank" class="bg-white/80 text-slate-800 font-semibold px-6 py-3 rounded-2xl shadow-sm hover:bg-white transition flex items-center gap-2">
+                        <i class="fa-brands fa-youtube text-red-500"></i> Tonton Referensi
+                    </a>
+                </div>
+            </div>
+            <div class="flex-1 w-full max-w-md lg:max-w-none relative z-10">
+                <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=800&auto=format&fit=crop" 
+                     alt="Dinamika Hubungan" 
+                     class="rounded-2xl shadow-lg w-full object-cover h-64 md:h-80 lg:h-96 transform hover:scale-[1.02] transition duration-300">
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER (BENTO STYLE & SIDEBAR) -->
+    <main class="max-w-7xl mx-auto px-4 w-full grid grid-cols-1 lg:grid-cols-3 gap-8 pb-16">
+        
+        <!-- BODY CONTENT (2 Columns) -->
+        <div class="lg:col-span-2 space-y-8">
+            
+            <!-- SECTION 1: BENTO BOX TEORI DASAR -->
+            <section id="edukasi" class="scroll-mt-20">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <i class="fa-solid fa-layer-group text-pink-600"></i> Mengenal Dua Pola Utama
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Bento Card 1: Anxious -->
+                    <div class="glass p-6 rounded-2xl shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-pink-100 flex items-center justify-center text-pink-600 text-xl mb-4 shadow-inner">
+                                <i class="fa-solid fa-heart-crack"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Anxious Attachment Style</h3>
+                            <p class="text-sm text-slate-700 leading-relaxed">
+                                Individu dengan gaya ini memiliki ketakutan yang mendalam akan penolakan dan ditinggalkan. Mereka membutuhkan validasi konstan dan kedekatan yang intens dari pasangan mereka.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-white/20 text-xs font-semibold text-pink-700 bg-pink-50/50 p-2 rounded-lg">
+                            <i class="fa-solid fa-bolt mr-1"></i> Core Wound: "Aku tidak berharga dan akan ditinggalkan."
+                        </div>
+                    </div>
+
+                    <!-- Bento Card 2: Avoidant -->
+                    <div class="glass p-6 rounded-2xl shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 text-xl mb-4 shadow-inner">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Avoidant Attachment Style</h3>
+                            <p class="text-sm text-slate-700 leading-relaxed">
+                                Menghargai kemandirian di atas segalanya. Ketika hubungan terasa terlalu intim secara emosional, mereka cenderung menarik diri, membangun dinding pertahanan, atau merasa "tercekik".
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-white/20 text-xs font-semibold text-blue-700 bg-blue-50/50 p-2 rounded-lg">
+                            <i class="fa-solid fa-bolt mr-1"></i> Core Wound: "Mengandalkan orang lain itu berbahaya."
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: DINAMIKA HUBUNGAN -->
+            <section id="dinamika" class="glass p-6 md:p-8 rounded-2xl shadow-sm scroll-mt-20">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-infinity text-indigo-600"></i> Perilaku Saat Berpasangan: Anxious-Avoidant Trap
+                </h2>
+                <p class="text-sm md:text-base text-slate-700 mb-6 leading-relaxed">
+                    Ironisnya, tipe cemas dan tipe penghindar sering kali saling menarik satu sama lain. Pertemuan ini memicu sebuah siklus beracun yang dikenal sebagai <strong>"Anxious-Avoidant Trap"</strong> (Jebakan Cemas-Menghindar):
+                </p>
+                <div class="space-y-4 text-sm md:text-base">
+                    <div class="flex gap-4 p-3 rounded-xl glass-dark">
+                        <span class="font-bold text-pink-600 text-lg">1</span>
+                        <p><strong>Pemicu:</strong> Si Penghindar (Avoidant) mulai menarik diri karena butuh ruang pribadi.</p>
+                    </div>
+                    <div class="flex gap-4 p-3 rounded-xl glass-dark">
+                        <span class="font-bold text-pink-600 text-lg">2</span>
+                        <p><strong>Reaksi Cemas:</strong> Si Cemas (Anxious) merasakan jarak tersebut sebagai ancaman dan mulai mengejar, menuntut kejelasan secara agresif.</p>
+                    </div>
+                    <div class="flex gap-4 p-3 rounded-xl glass-dark">
+                        <span class="font-bold text-pink-600 text-lg">3</span>
+                        <p><strong>Eskalasi:</strong> Merasa diserang, Si Penghindar semakin menjauh dan menutup diri demi proteksi mandiri.</p>
+                    </div>
+                    <div class="flex gap-4 p-3 rounded-xl glass-dark">
+                        <span class="font-bold text-pink-600 text-lg">4</span>
+                        <p><strong>Krisis & Damai Sementara:</strong> Setelah Si Cemas lelah dan menyerah, Si Penghindar kembali mendekat karena merasa aman dari kejaran. Siklus pun berulang.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: FITUR INTERAKTIF (SIMULASI DINAMIKA) -->
+            <section id="simulasi" class="glass p-6 md:p-8 rounded-2xl shadow-md border-2 border-indigo-200/50 scroll-mt-20">
+                <h2 class="text-2xl font-bold text-slate-900 mb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-gamepad text-emerald-600"></i> Simulator Respon Hubungan
+                </h2>
+                <p class="text-xs md:text-sm text-slate-600 mb-6">
+                    Pilih sebuah pemicu konflik di bawah ini dan lihat bagaimana masing-masing tipe bereaksi secara otomatis.
+                </p>
+
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold text-slate-700 mb-2">Pilih Skenario Konflik:</label>
+                    <select id="scenario-select" class="w-full p-3 rounded-xl border border-white/40 bg-white/60 focus:ring-2 focus:ring-indigo-500 font-medium text-sm md:text-base">
+                        <option value="chat">Pasangan tidak membalas chat selama 6 jam</option>
+                        <option value="argumen">Terjadi perbedaan pendapat yang sengit</option>
+                        <option value="future">Membahas komitmen jangka panjang/pernikahan</option>
+                    </select>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 rounded-xl bg-pink-50/70 border border-pink-200">
+                        <h4 class="font-bold text-pink-700 flex items-center gap-2 text-sm md:text-base mb-2">
+                            <i class="fa-solid fa-comment-dots"></i> Respon Tipe Anxious
+                        </h4>
+                        <p id="anxious-response" class="text-xs md:text-sm text-slate-700 italic">Memuat respon...</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-blue-50/70 border border-blue-200">
+                        <h4 class="font-bold text-blue-700 flex items-center gap-2 text-sm md:text-base mb-2">
+                            <i class="fa-solid fa-comment-slash"></i> Respon Tipe Avoidant
+                        </h4>
+                        <p id="avoidant-response" class="text-xs md:text-sm text-slate-700 italic">Memuat respon...</p>
+                    </div>
+                </div>
+                <div class="mt-6 p-4 rounded-xl bg-emerald-50/80 border border-emerald-200 text-center text-xs md:text-sm text-emerald-900 font-medium">
+                    <i class="fa-solid fa-circle-check text-emerald-600 mr-1"></i> 
+                    <strong>Solusi Menuju Secure (Aman):</strong> Komunikasikan kebutuhan secara asertif tanpa menyalahkan, dan berikan ruang tanpa mengabaikan.
+                </div>
+            </section>
+
+        </div>
+
+        <!-- SIDEBAR CONTAINER (1 Column) -->
+        <aside class="space-y-6">
+            <!-- Sidebar Card 1: Fakta Kilat -->
+            <div class="glass p-6 rounded-2xl shadow-sm">
+                <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-lightbulb text-yellow-600"></i> Fakta Penting
+                </h3>
+                <ul class="space-y-3 text-xs md:text-sm text-slate-700 font-medium">
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-caret-right text-indigo-600 mt-1"></i>
+                        <span>Pola ini terbentuk dari pola asuh orang tua di 18 bulan pertama kehidupan.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-caret-right text-indigo-600 mt-1"></i>
+                        <span>Attachment style tidak permanen; bisa diubah menjadi <strong>Secure</strong> dengan terapi diri.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Sidebar Card 2: Indikator Penilaian Mandiri -->
+            <div class="glass p-6 rounded-2xl shadow-sm">
+                <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-clipboard-list text-pink-600"></i> Gejala Umum
+                </h3>
+                <div class="space-y-4">
+                    <div>
+                        <span class="text-xs font-bold text-pink-700 uppercase bg-pink-100 px-2 py-0.5 rounded">Tanda Anxious</span>
+                        <p class="text-xs text-slate-700 mt-1">Sering berasumsi pasangan kehilangan ketertarikan, membalas chat terlalu cepat, *overthinking* mendalam.</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-blue-700 uppercase bg-blue-100 px-2 py-0.5 rounded">Tanda Avoidant</span>
+                        <p class="text-xs text-slate-700 mt-1">Menganggap pasangan terlalu "menuntut", menyibukkan diri dengan kerjaan saat ada masalah emosional.</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="glass mt-auto border-t border-white/30">
+        <div class="max-w-7xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-sm font-medium text-slate-700">
+            <div>
+                <p>&copy; 2026 <strong>Ariel Usman</strong>. All Rights Reserved.</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://instagram.com/arielrcun" target="_blank" class="hover:text-pink-600 flex items-center gap-1.5 transition">
+                    <i class="fa-brands fa-instagram text-lg text-pink-600"></i> @arielrcun
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR INTERACTIVITY -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when link clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Interactive Simulation Data
+        const scenarios = {
+            chat: {
+                anxious: "Mulai panik, mengirim pesan berulang-ulang (spamming), memeriksa status online pasangan, dan yakin bahwa mereka melakukan kesalahan atau pasangan berselingkuh.",
+                avoidant: "Melihat notifikasi namun sengaja mengabaikannya karena merasa tertekan oleh intensitas pesan, memilih mematikan HP untuk menikmati ruang sendiri."
+            },
+            argumen: {
+                anxious: "Ingin langsung menyelesaikan masalah saat itu juga, menangis atau berteriak agar didengarkan, cemas jika tidur dalam keadaan marah berarti hubungan berakhir.",
+                avoidant: "Melakukan 'Stonewalling' (diam seribu bahasa), pergi meninggalkan ruangan, atau mengalihkan pembicaraan karena kewalahan secara emosional."
+            },
+            future: {
+                anxious: "Sangat bersemangat namun juga mendesak pasangan untuk memberikan kepastian tanggal cepat guna meredakan kecemasan internalnya.",
+                avoidant: "Merasa terjebak dan kehilangan kebebasan secara mendadak. Biasanya merespon dengan dalih 'ingin fokus karir dulu' untuk menunda komitmen."
+            }
+        };
+
+        const scenarioSelect = document.getElementById('scenario-select');
+        const anxiousResponse = document.getElementById('anxious-response');
+        const avoidantResponse = document.getElementById('avoidant-response');
+
+        function updateSimulation() {
+            const current = scenarioSelect.value;
+            anxiousResponse.textContent = scenarios[current].anxious;
+            avoidantResponse.textContent = scenarios[current].avoidant;
+        }
+
+        // Event listener & Initial Trigger
+        scenarioSelect.addEventListener('change', updateSimulation);
+        updateSimulation();
+    </script>
+</body>
+</html>
