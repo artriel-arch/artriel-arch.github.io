@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bongkar Rahasia Cari Jodoh - Biar Ga Salah Pilih Pasangan</title>
+    
+    <!-- SEO & Metadata -->
+    <meta name="description" content="Cara gampang nyari jodoh pake rumus matematika sederhana. Biar ga capek hati dan ga salah pilih orang.">
+    <meta name="author" content="Ariel Usman">
+    
+    <!-- Tailwind CSS & FontAwesome Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            cyan: '#06B6D4',
+                            rose: '#F43F5E',
+                            amber: '#F59E0B',
+                            dark: '#0F172A'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 via-cyan-50 to-rose-50 min-h-screen text-slate-800 font-sans antialiased">
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 glass shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <span class="bg-gradient-to-r from-rose-500 to-amber-500 text-transparent bg-clip-text font-black text-lg tracking-tight">
+                        <i class="fa-solid fa-heart-pulse mr-1"></i> Rumus Cari Jodoh
+                    </span>
+                </div>
+                <div class="hidden md:flex space-x-6 font-bold text-xs uppercase tracking-wider">
+                    <a href="#power-law" class="text-slate-600 hover:text-rose-500 transition">Hukum Ketersediaan</a>
+                    <a href="#pareto" class="text-slate-600 hover:text-rose-500 transition">Bagi Tugas 80/20</a>
+                    <a href="#game-theory" class="bg-gradient-to-r from-rose-500 to-amber-500 text-white px-4 py-2 rounded-full shadow hover:opacity-90 transition">Main Game Sifat</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="py-10 px-4 max-w-7xl mx-auto text-center">
+        <div class="glass rounded-3xl p-8 md:p-12 shadow-xl max-w-4xl mx-auto border border-white/60">
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-rose-100 text-rose-600 uppercase tracking-widest mb-4 inline-block">Bocoran Pola Pikir Ariel</span>
+            <h1 class="text-2xl md:text-4xl font-black text-slate-900 tracking-tight mb-4 leading-snug">
+                Kenapa Cari Jodoh Itu Susah? <br><span class="bg-gradient-to-r from-cyan-500 via-rose-500 to-amber-500 text-transparent bg-clip-text">Ini Rahasia Logikanya!</span>
+            </h1>
+            <p class="text-slate-600 max-w-2xl mx-auto text-sm">
+                Nggak usah pusing pake rumus ribet. Di sini kita bahas pakai bahasa sehari-hari: Kenapa orang cakep/mapan itu jumlahnya dikit banget, gimana cara bagi tugas biar gak berantem, dan tes sifat calon pasanganmu di game bawah!
+            </p>
+        </div>
+    </header>
+
+    <!-- MAIN BODY AND SIDEBAR CONTAINER -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- MAIN CONTENT (Left 2 Columns) -->
+            <div class="lg:col-span-2 space-y-8">
+                
+                <!-- 1. POWER LAW DISTRO SIMULATOR -->
+                <section id="power-law" class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-500 text-white flex items-center justify-center text-lg shadow">
+                            <i class="fa-solid fa-users-viewfinder"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-bold text-slate-900">1. Hukum Ketersediaan Orang (Fakta Lapangan)</h2>
+                            <p class="text-xs text-slate-500">Makin tinggi kualitasnya, makin langka dan sedikit jumlah orangnya</p>
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-slate-650 mb-4 leading-relaxed">
+                        Lihat grafik di bawah. Semakin rendah nilai kualitas seseorang (kiri), jumlah orangnya melimpah sampai 1.000 jiwa. Tapi begitu target kualitas digeser naik mendekati 100% sempurna (kanan), jumlah orang yang tersedia langsung anjlok drastis menuju angka 0. Makanya yang paket lengkap itu selalu jadi rebutan sengit!
+                    </p>
+
+                    <div class="bg-slate-50 p-4 rounded-2xl mb-4">
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Tingkat Kesulitan Pasar (Geser Tombol):</label>
+                        <input type="range" id="power-alpha" min="1.1" max="3.0" step="0.1" value="1.6" oninput="updatePowerLawChart()" class="w-full accent-cyan-500 cursor-pointer">
+                        <div class="text-xs font-bold mt-1 text-cyan-600">Level Kelangkaan: <span id="alpha-val" class="font-mono">1.6</span></div>
+                    </div>
+
+                    <div class="relative w-full h-56">
+                        <canvas id="powerLawChart"></canvas>
+                    </div>
+                </section>
+
+                <!-- 2. PARETO 80/20 VS 50/50 SIMULATOR -->
+                <section id="pareto" class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-rose-500 text-white flex items-center justify-center text-lg shadow">
+                            <i class="fa-solid fa-scale-unbalanced-flip"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-bold text-slate-900">2. Cara Bagi Tugas: Aturan 80/20 vs Sok Rata 50/50</h2>
+                            <p class="text-xs text-slate-500">Gimana bagi peran biar rumah tangga gak hancur dan capek hati</p>
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-slate-655 mb-4 leading-relaxed">
+                        Banyak orang mikir tugas pacaran atau nikah itu harus 50/50 (semua disama-ratain). Padahal itu bikin gampang berantem! Yang bener itu harus ada porsi yang pas sesuai kelebihan masing-masing. Coba klik dua pilihan di bawah buat liat bedanya:
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                        <!-- Mode 80/20 -->
+                        <div onclick="setParetoMode('8020')" id="btn-p8020" class="cursor-pointer p-4 rounded-2xl border-2 border-rose-500 bg-rose-50/50 transition">
+                            <div class="text-sm font-bold text-slate-950 mb-1">Aturan Pas 80/20 (Saling Tahu Diri)</div>
+                            <p class="text-xs text-slate-600">Satu orang fokus jadi penentu arah & nafkah (kerja otak 80%), yang satu lagi fokus dukung urusan rumah (20%). Rumah tangga tenang dan berjalan lancar.</p>
+                        </div>
+                        <!-- Mode 50/50 -->
+                        <div onclick="setParetoMode('5050')" id="btn-p5050" class="cursor-pointer p-4 rounded-2xl border-2 border-slate-200 hover:border-slate-300 transition">
+                            <div class="text-sm font-bold text-slate-950 mb-1">Sok Rata 50/50 (Bakal Sering Ribut)</div>
+                            <p class="text-xs text-slate-600">Semua hal harus dibagi dua sama rata sampai perkara sepele. Akibatnya capek hati, gengsi-gengsian, dan akhirnya gampang bubar.</p>
+                        </div>
+                    </div>
+
+                    <!-- Visual Progress Comparison -->
+                    <div class="space-y-3 bg-slate-50 p-4 rounded-2xl text-xs">
+                        <div>
+                            <div class="flex justify-between font-bold mb-1">
+                                <span>Tingkat Keharmonisan & Lancarnya Hubungan:</span>
+                                <span id="pareto-eff-text" class="text-rose-600">80%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden">
+                                <div id="pareto-eff-bar" class="bg-rose-500 h-full rounded-full transition-all duration-500" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between font-bold mb-1">
+                                <span>Risiko Berantem / Gagal Paham:</span>
+                                <span id="pareto-err-text" class="text-amber-600">20%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden">
+                                <div id="pareto-err-bar" class="bg-amber-400 h-full rounded-full transition-all duration-500" style="width: 20%"></div>
+                            </div>
+                        </div>
+                        <div id="pareto-alert" class="p-3 bg-emerald-50 text-emerald-900 rounded-xl flex gap-2 border border-emerald-200 transition-all">
+                            <i class="fa-solid fa-circle-check mt-0.5 text-emerald-600"></i>
+                            <span id="pareto-status-desc">Hubungan berjalan aman. Masing-masing tahu porsi tugasnya dan gak saling ganggu kerjaan pasangan.</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. GAME THEORY ARENA -->
+                <section id="game-theory" class="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white rounded-3xl p-6 shadow-xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-rose-500/10 rounded-full filter blur-xl"></div>
+                    
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-4">
+                        <div>
+                            <span class="px-2 py-0.5 bg-cyan-400/20 text-cyan-400 border border-cyan-400/30 rounded-full text-[10px] font-mono uppercase tracking-wider">Simulasi Sifat Pasangan</span>
+                            <h2 class="text-xl font-black mt-1 text-white">Game Uji Sifat Calon Jodoh</h2>
+                        </div>
+                        <div class="bg-white/10 px-3 py-1 rounded-xl border border-white/10">
+                            <span class="text-[9px] text-slate-400 block uppercase font-mono">Pilih Tipe Sifat Bot:</span>
+                            <select id="bot-type" onchange="resetGame()" class="bg-transparent text-xs font-bold text-cyan-400 focus:outline-none cursor-pointer">
+                                <option value="tft" class="bg-slate-900 text-white">Tipe Si Peniru (Tit for Tat)</option>
+                                <option value="wsls" class="bg-slate-900 text-white">Tipe Nyari Untung (Win Stay Lose Shift)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Game Info Card -->
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-4 mb-4 text-xs text-slate-300 space-y-2">
+                        <p class="font-bold text-white"><i class="fa-solid fa-star text-amber-400 mr-1"></i> Skor Poin Yang Didapat:</p>
+                        <ul class="list-disc list-inside space-y-1 text-slate-300">
+                            <li>Sama-sama <span class="text-emerald-400 font-bold">Setia</span> = Masing-masing dapet <span class="text-white font-bold">3 Poin</span> (Bahagia bareng)</li>
+                            <li>Sama-sama <span class="text-rose-400 font-bold">Curang</span> = Masing-masing cuma dapet <span class="text-white font-bold">1 Poin</span> (Sama-sama rugi)</li>
+                            <li>Anda <span class="text-rose-400 font-bold">Curang</span> tapi Bot <span class="text-emerald-400 font-bold">Setia</span> = Anda dapet <span class="text-white font-bold">5 Poin</span>, Bot <span class="text-white font-bold">0 Poin</span></li>
+                            <li>Anda <span class="text-emerald-400 font-bold">Setia</span> tapi Bot <span class="text-rose-400 font-bold">Curang</span> = Anda dapet <span class="text-white font-bold">0 Poin</span>, Bot <span class="text-white font-bold">5 Poin</span></li>
+                        </ul>
+                        <p class="text-[11px] text-amber-400 italic font-medium pt-1">
+                            *Catatan: Jumlah ronde dirahasiakan komputer antara 10 sampai 15 kali jalan. Jadi klik terus sampai game selesai sendiri!
+                        </p>
+                    </div>
+
+                    <!-- Main Arena Dashboard -->
+                    <div class="grid grid-cols-3 gap-4 text-center mb-4">
+                        <div class="bg-white/5 border border-white/10 p-3 rounded-2xl">
+                            <span class="text-[10px] text-slate-400">Poin Kebaikan Anda</span>
+                            <div class="text-2xl font-black text-white mt-0.5" id="score-player">0</div>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 p-3 rounded-2xl flex flex-col justify-center items-center">
+                            <span class="text-[10px] text-slate-400">Jalan Ke-</span>
+                            <div class="text-sm font-mono font-bold text-cyan-400 mt-0.5" id="current-round">1 / ??</div>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 p-3 rounded-2xl">
+                            <span class="text-[10px] text-slate-400">Poin Sifat Bot</span>
+                            <div class="text-2xl font-black text-white mt-0.5" id="score-bot">0</div>
+                        </div>
+                    </div>
+
+                    <!-- Action Interface -->
+                    <div id="game-controls" class="flex gap-4">
+                        <button onclick="playTurn('cooperate')" class="flex-1 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold rounded-xl hover:opacity-90 shadow transition active:scale-[0.98]">
+                            🤝 PILIH SETIA
+                        </button>
+                        <button onclick="playTurn('defect')" class="flex-1 py-3 bg-gradient-to-r from-rose-500 to-pink-600 text-white font-bold rounded-xl hover:opacity-90 shadow transition active:scale-[0.98]">
+                            😈 PILIH CURANG
+                        </button>
+                    </div>
+
+                    <!-- Game Log/History -->
+                    <div class="mt-4">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-[11px] font-bold text-slate-400 uppercase">Riwayat Pilihan Kamu & Bot:</span>
+                            <button onclick="resetGame()" class="text-[11px] text-cyan-400 hover:underline"><i class="fa-solid fa-arrow-rotate-left mr-1"></i>Ulang Dari Awal</button>
+                        </div>
+                        <div id="game-log" class="max-h-32 overflow-y-auto space-y-1 pr-2 font-mono text-xs text-slate-300">
+                            <div class="text-cyan-400/70 py-0.5">Permainan siap. Coba klik tombol Setia atau Curang di atas!</div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- SIDEBAR AREA (Right 1 Column) -->
+            <div class="space-y-6">
+                
+                <!-- CORE ADVICE CARD -->
+                <div class="glass rounded-3xl p-5 shadow-sm border border-white/50">
+                    <h3 class="text-xs font-bold text-slate-900 mb-2 uppercase tracking-wider flex items-center gap-1">
+                        <i class="fa-solid fa-face-smile text-amber-500"></i> Penjelasan Sifat Bot
+                    </h3>
+                    <div class="text-xs text-slate-650 space-y-3 leading-relaxed">
+                        <div class="p-3 bg-white/60 rounded-xl border border-slate-100">
+                            <strong class="text-slate-900 block mb-0.5">Tipe Si Peniru:</strong>
+                            Dia bakal ngikutin apa yang kamu lakuin sebelumnya. Kalau kamu setia, dia ikutan setia. Kalau kamu jahat/curang, ronde berikutnya dia bakal bales curang juga!
+                        </div>
+                        <div class="p-3 bg-white/60 rounded-xl border border-slate-100">
+                            <strong class="text-slate-900 block mb-0.5">Tipe Nyari Untung:</strong>
+                            Dia bakal bertahan kalau ngerasa untung (dapet poin gede). Tapi kalau dia ngerasa rugi atau kamu curangin, dia langsung buru-buru ganti sifatnya di ronde depan.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BRAND MOTTO CARD -->
+                <div class="bg-gradient-to-br from-rose-500 to-amber-500 text-white rounded-3xl p-5 shadow-md text-center">
+                    <p class="italic text-sm font-bold mb-1">"Solusi... Cari 20% yang Benar-Benar Pas Buat Kamu!"</p>
+                    <span class="text-[9px] font-mono tracking-wider opacity-95 block">- Ide Asli dari Ariel Usman</span>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="glass border-t border-white/50 mt-12 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-slate-500">
+            <p>&copy; 2026. Oleh <strong class="text-slate-800">Ariel Usman</strong>. Gak Boleh Copas Tanpa Izin.</p>
+            <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 px-3 py-1.5 rounded-xl bg-white/60 hover:bg-white text-slate-700 hover:text-rose-500 transition shadow-sm font-bold">
+                <i class="fa-brands fa-instagram text-sm text-rose-500"></i> @arielrcun
+            </a>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE ENGINE JAVASCRIPT -->
+    <script>
+        let powerLawChartInstance = null;
+
+        function initPowerLawChart() {
+            const ctx = document.getElementById('powerLawChart').getContext('2d');
+            const dataPoints = calculatePowerLawData(1.6);
+
+            powerLawChartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: dataPoints.labels,
+                    datasets: [{
+                        data: dataPoints.values,
+                        borderColor: '#06B6D4',
+                        backgroundColor: 'rgba(6, 182, 212, 0.08)',
+                        fill: true,
+                        tension: 0.2,
+                        borderWidth: 3,
+                        pointRadius: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { 
+                            beginAtZero: true, 
+                            max: 1000,
+                            title: { display: true, text: 'Kuantitas Jumlah Orang (Jiwa)', font: { size: 10, weight: 'bold' } } 
+                        },
+                        x: { 
+                            title: { display: true, text: 'Tingkat Kualitas Pasangan (%)', font: { size: 10, weight: 'bold' } } 
+                        }
+                    }
+                }
+            });
+        }
+
+        function calculatePowerLawData(alpha) {
+            let labels = [];
+            let values = [];
+            // Sumbu X: Persentase Kualitas (10% sampai 100%)
+            for (let q = 10; q <= 100; q += 10) {
+                labels.push(q + "%");
+                // Rumus Power Law terbalik: Kuantitas orang banyak di kualitas rendah, makin dikit di kualitas tinggi
+                // Kuantitas = 1000 / ((q/10)^alpha)
+                let quantity = Math.round(1000 / Math.pow((q / 10), alpha));
+                values.push(quantity);
+            }
+            return { labels, values };
+        }
+
+        function updatePowerLawChart() {
+            const alpha = parseFloat(document.getElementById('power-alpha').value);
+            document.getElementById('alpha-val').innerText = alpha.toFixed(1);
+            const newData = calculatePowerLawData(alpha);
+            powerLawChartInstance.data.datasets[0].data = newData.values;
+            powerLawChartInstance.update();
+        }
+
+        // 2. PARETO ENGINE CONTROLLER
+        function setParetoMode(mode) {
+            const btn8020 = document.getElementById('btn-p8020');
+            const btn5050 = document.getElementById('btn-p5050');
+            const effText = document.getElementById('pareto-eff-text');
+            const effBar = document.getElementById('pareto-eff-bar');
+            const errText = document.getElementById('pareto-err-text');
+            const errBar = document.getElementById('pareto-err-bar');
+            const alertBox = document.getElementById('pareto-alert');
+            const statusDesc = document.getElementById('pareto-status-desc');
+
+            if (mode === '8020') {
+                btn8020.className = "cursor-pointer p-4 rounded-2xl border-2 border-rose-500 bg-rose-50/50 transition";
+                btn5050.className = "cursor-pointer p-4 rounded-2xl border-2 border-slate-200 hover:border-slate-300 transition";
+                effText.innerText = "80%";
+                effBar.style.width = "80%";
+                effBar.className = "bg-rose-500 h-full rounded-full transition-all";
+                errText.innerText = "20%";
+                errBar.style.width = "20%";
+                alertBox.className = "p-3 bg-emerald-50 text-emerald-900 rounded-xl flex gap-2 border border-emerald-200";
+                statusDesc.innerHTML = "<strong>Hubungan berjalan aman:</strong> Masing-masing tahu porsi tugasnya dan gak saling ganggu atau rebutan gengsi.";
+            } else {
+                btn5050.className = "cursor-pointer p-4 rounded-2xl border-2 border-amber-500 bg-amber-50/50 transition";
+                btn8020.className = "cursor-pointer p-4 rounded-2xl border-2 border-slate-200 hover:border-slate-300 transition";
+                effText.innerText = "30%";
+                effBar.style.width = "30%";
+                effBar.className = "bg-slate-400 h-full rounded-full transition-all";
+                errText.innerText = "85%";
+                errBar.style.width = "85%";
+                alertBox.className = "p-3 bg-rose-50 text-rose-900 rounded-xl flex gap-2 border border-rose-200";
+                statusDesc.innerHTML = "<strong>Sistem Error / Capek Hati:</strong> Karena semua hal sekecil apapun kudu dibagi rata 50/50, jadinya malah sering hitung-hitungan, capek bawaan, terus gampang putus.";
+            }
+        }
+
+        // 3. GAME THEORY SYSTEM ENGINE
+        let playerScore = 0;
+        let botScore = 0;
+        let currentRound = 1;
+        let maxRounds = 12;
+        let gameActive = true;
+        let historyPlayer = [];
+        let historyBot = [];
+
+        function resetGame() {
+            playerScore = 0;
+            botScore = 0;
+            currentRound = 1;
+            maxRounds = Math.floor(Math.random() * (15 - 10 + 1)) + 10;
+            gameActive = true;
+            historyPlayer = [];
+            historyBot = [];
+
+            document.getElementById('score-player').innerText = "0";
+            document.getElementById('score-bot').innerText = "0";
+            document.getElementById('current-round').innerText = "1 / ??";
+            document.getElementById('game-controls').style.opacity = "1";
+            document.getElementById('game-controls').querySelectorAll('button').forEach(b => b.removeAttribute('disabled'));
+            
+            const botLabel = document.getElementById('bot-type').value === 'tft' ? 'Tipe Si Peniru' : 'Tipe Nyari Untung';
+            document.getElementById('game-log').innerHTML = `<div class="text-cyan-400/70 py-0.5">Game dimulai! Lawan kamu punya karakter: **${botLabel}**. Tentukan pilihan pertamamu!</div>`;
+        }
+
+        function getBotChoice() {
+            const botType = document.getElementById('bot-type').value;
+            if (botType === 'tft') {
+                if (historyPlayer.length === 0) return 'cooperate';
+                return historyPlayer[historyPlayer.length - 1];
+            } else {
+                if (historyBot.length === 0) return 'cooperate';
+                let lastBotMove = historyBot[historyBot.length - 1];
+                let lastPlayerMove = historyPlayer[historyPlayer.length - 1];
+                
+                let winCondition = false;
+                if (lastBotMove === 'cooperate' && lastPlayerMove === 'cooperate') winCondition = true;
+                if (lastBotMove === 'defect' && lastPlayerMove === 'cooperate') winCondition = true;
+                
+                if (winCondition) return lastBotMove;
+                return lastBotMove === 'cooperate' ? 'defect' : 'cooperate';
+            }
+        }
+
+        function playTurn(playerChoice) {
+            if (!gameActive) return;
+
+            const botChoice = getBotChoice();
+            let pRoundScore = 0;
+            let bRoundScore = 0;
+
+            if (playerChoice === 'cooperate' && botChoice === 'cooperate') {
+                pRoundScore = 3; bRoundScore = 3;
+            } else if (playerChoice === 'defect' && botChoice === 'defect') {
+                pRoundScore = 1; bRoundScore = 1;
+            } else if (playerChoice === 'defect' && botChoice === 'cooperate') {
+                pRoundScore = 5; bRoundScore = 0;
+            } else if (playerChoice === 'cooperate' && botChoice === 'defect') {
+                pRoundScore = 0; bRoundScore = 5;
+            }
+
+            historyPlayer.push(playerChoice);
+            historyBot.push(botChoice);
+
+            playerScore += pRoundScore;
+            botScore += bRoundScore;
+
+            document.getElementById('score-player').innerText = playerScore;
+            document.getElementById('score-bot').innerText = botScore;
+
+            const logBox = document.getElementById('game-log');
+            const pSymbol = playerChoice === 'cooperate' ? 'Setia' : 'Curang';
+            const bSymbol = botChoice === 'cooperate' ? 'Setia' : 'Curang';
+            
+            let roundLog = document.createElement('div');
+            roundLog.className = "py-0.5 border-b border-white/5 flex justify-between";
+            roundLog.innerHTML = `<span>Jalan ${currentRound}: Kamu (${pSymbol}) vs Bot (${bSymbol})</span> <span class="text-amber-400 font-bold">+${pRoundScore} / +${bRoundScore}</span>`;
+            logBox.insertBefore(roundLog, logBox.firstChild);
+
+            if (currentRound >= maxRounds) {
+                gameActive = false;
+                document.getElementById('current-round').innerText = `${currentRound} (Selesai)`;
+                document.getElementById('game-controls').style.opacity = "0.4";
+                document.getElementById('game-controls').querySelectorAll('button').forEach(b => b.setAttribute('disabled', 'true'));
+                
+                let finalStatus = "";
+                if (playerScore > botScore) finalStatus = "🎉 Keren, Kamu Menang! Kamu pintar baca taktik sifat dia.";
+                else if (playerScore < botScore) finalStatus = "😢 Kamu Kalah. Hati-hati, kamu gampang dimanfaatin sama tipe orang kayak gini.";
+                else finalStatus = "⚖️ Hasil Seri. Kamu dan dia sama-sama kuat.";
+
+                let finalLog = document.createElement('div');
+                finalLog.className = "p-2 my-2 rounded bg-cyan-500/20 text-cyan-300 font-bold text-center";
+                finalLog.innerText = `GAME SELESAI PADA JALAN KE-${currentRound}! ${finalStatus}`;
+                logBox.insertBefore(finalLog, logBox.firstChild);
+            } else {
+                currentRound++;
+                document.getElementById('current-round').innerText = `${currentRound} / ??`;
+            }
+        }
+
+        window.onload = function() {
+            initPowerLawChart();
+            resetGame();
+        };
+    </script>
+</body>
+</html>
