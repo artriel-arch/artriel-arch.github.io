@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>IF Anak Kos | Strategi Intermittent Fasting Tanpa Kulkas</title>
+    <meta name="description" content="Panduan sukses Intermittent Fasting (IF) khusus anak kos tanpa kulkas. Tips food prep hemat, list bahan makanan awet, dan tracker waktu puasa interaktif.">
+    <meta name="keywords" content="intermittent fasting, anak kos, diet tanpa kulkas, food prep hemat, diet sehat, tracker puasa">
+    <meta name="author" content="Ariel Usman">
+    
+    <!-- Open Graph / Facebook / WhatsApp Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://if-anakkos.example.com/">
+    <meta property="og:title" content="IF Anak Kos - Diet Sukses Tanpa Kulkas">
+    <meta property="og:description" content="Strategi cerdas Intermittent Fasting di kosan. Hemat, praktis, dan tanpa perlu kulkas!">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="IF Anak Kos - Diet Sukses Tanpa Kulkas">
+    <meta name="twitter:description" content="Strategi cerdas Intermittent Fasting di kosan. Hemat, praktis, dan tanpa perlu kulkas!">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/apple.png">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Style for Utilities & Smooth Scroll -->
+    <style>
+        html { scroll-behavior: smooth; }
+        .glass {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-amber-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-lime-100 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Left: Project Name -->
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <span class="p-2 bg-lime-500 rounded-lg text-white text-xl shadow-md"><i class="fa-solid fa-bolt"></i></span>
+                    <span class="text-xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-lime-600 to-emerald-600">IF Anak Kos</span>
+                </div>
+                <!-- Right: Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#hero" class="text-slate-600 hover:text-lime-600 font-medium transition-colors">Home</a>
+                    <a href="#strategi" class="text-slate-600 hover:text-lime-600 font-medium transition-colors">Strategi</a>
+                    <a href="#bahan" class="text-slate-600 hover:text-lime-600 font-medium transition-colors">Bahan Awet</a>
+                    <a href="#tracker" class="text-slate-600 hover:text-lime-600 font-medium transition-colors">Fasting Tracker</a>
+                    <button onclick="toggleSidebar()" class="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white font-medium rounded-xl shadow-sm transition-all text-sm cursor-pointer">
+                        <i class="fa-solid fa-circle-info mr-1"></i> Info Tambahan
+                    </button>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center gap-2">
+                    <button onclick="toggleSidebar()" class="p-2 text-slate-600 hover:text-lime-600 cursor-pointer text-lg" title="Buka Sidebar">
+                        <i class="fa-solid fa-circle-info"></i>
+                    </button>
+                    <button onclick="toggleMobileMenu()" class="p-2 text-slate-600 hover:text-lime-600 focus:outline-none cursor-pointer text-xl" id="menu-btn">
+                        <i class="fa-solid fa-bars" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Dropdown Links -->
+        <div class="hidden md:hidden bg-white border-t border-slate-100 px-4 pt-2 pb-4 space-y-2 shadow-inner" id="mobile-menu">
+            <a href="#hero" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-700 hover:bg-lime-50 hover:text-lime-600 font-medium">Home</a>
+            <a href="#strategi" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-700 hover:bg-lime-50 hover:text-lime-600 font-medium">Strategi</a>
+            <a href="#bahan" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-700 hover:bg-lime-50 hover:text-lime-600 font-medium">Bahan Awet</a>
+            <a href="#tracker" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-700 hover:bg-lime-50 hover:text-lime-600 font-medium">Fasting Tracker</a>
+        </div>
+    </nav>
+
+    <!-- HEADER / HERO SECTION -->
+    <header id="hero" class="relative min-h-[500px] md:min-h-[600px] flex items-center justify-center bg-cover bg-center bg-no-repeat transition-all" style="background-image: url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=1600&auto=format&fit=crop');">
+        <!-- Overlay Jingga-Hijau Cerah -->
+        <div class="absolute inset-0 bg-gradient-to-tr from-lime-600/80 via-emerald-600/70 to-amber-500/60 mix-blend-multiply"></div>
+        
+        <!-- Glassmorphism Container -->
+        <div class="relative glass max-w-3xl mx-4 p-6 md:p-12 rounded-3xl text-center text-white shadow-2xl border border-white/40 max-w-[90%] sm:max-w-xl md:max-w-2xl lg:max-w-3xl">
+            <span class="inline-block px-4 py-1.5 mb-4 bg-amber-400 text-slate-900 font-bold text-xs uppercase tracking-widest rounded-full shadow-sm">
+                Solusi Sehat Anak Kos
+            </span>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight mb-4 drop-shadow-md">
+                Intermittent Fasting Sukses, <br class="hidden sm:inline"><span class="text-amber-300">Walau Kosan Tanpa Kulkas!</span>
+            </h1>
+            <p class="text-sm sm:text-base md:text-lg font-light text-white/90 max-w-xl mx-auto mb-8 drop-shadow-sm">
+                Tidak punya kulkas bukan alasan untuk gagal diet. Pelajari strategi mengatur jendela makan, trik food prep kering, dan pemilihan bahan makanan yang awet di suhu ruang.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#strategi" class="px-6 py-3 bg-white text-emerald-700 hover:bg-amber-50 font-bold rounded-xl shadow-lg transition-all text-center">
+                    Pelajari Strategi
+                </a>
+                <a href="#tracker" class="px-6 py-3 bg-lime-500 hover:bg-lime-600 text-white font-bold rounded-xl shadow-lg transition-all border border-lime-400/50 text-center">
+                    Mulai Tracker Puasa
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER (BODY + SIDEBAR) -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow w-full flex flex-col lg:flex-row gap-8 relative">
+        
+        <!-- MAIN CONTENT AREA (BODY) -->
+        <main class="w-full lg:w-3/4 space-y-12">
+            
+            <!-- SECTION 1: CORE STRATEGY -->
+            <section id="strategi" class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="p-3 bg-amber-100 text-amber-600 rounded-xl text-xl"><i class="fa-solid fa-chess-knight"></i></span>
+                    <h2 class="text-2xl font-extrabold text-slate-800">Strategi Eksekusi IF Tanpa Kulkas</h2>
+                </div>
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                    Tantangan terbesar Intermittent Fasting di kosan tanpa kulkas adalah menyimpan makanan sisa untuk jendela makan berikutnya. Gunakan pendekatan taktis berikut agar nutrisi tetap terjaga tanpa pembusukan:
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 bg-lime-50/50 rounded-xl border border-lime-100">
+                        <h3 class="font-bold text-lime-800 mb-2"><i class="fa-solid fa-clock-rotate-left mr-2"></i>Pilih Jendela Makan Singkat (16:8 atau 20:4)</h3>
+                        <p class="text-xs sm:text-sm text-slate-600">Pilih jendela makan di sore/malam hari di mana Anda bisa langsung membeli atau memasak makanan porsi sekali habis. Ini meminimalisir kebutuhan penyimpanan.</p>
+                    </div>
+                    <div class="p-4 bg-amber-50/50 rounded-xl border border-amber-100">
+                        <h3 class="font-bold text-amber-800 mb-2"><i class="fa-solid fa-store mr-2"></i>Strategi 'Warung Selisih Waktu'</h3>
+                        <p class="text-xs sm:text-sm text-slate-600">Jadikan warung makan atau minimarket terdekat sebagai "kulkas eksternal" Anda. Beli bahan segar atau lauk matang sesaat sebelum jendela makan dibuka.</p>
+                    </div>
+                    <div class="p-4 bg-emerald-50/50 rounded-xl border border-emerald-100">
+                        <h3 class="font-bold text-emerald-800 mb-2"><i class="fa-solid fa-bottle-water mr-2"></i>Hidrasi Maksimal Saat Puasa</h3>
+                        <p class="text-xs sm:text-sm text-slate-600">Siapkan stok air mineral galon, teh hijau, atau kopi hitam tanpa gula di kosan. Minuman ini menjaga energi Anda selama jendela puasa tanpa perlu pendingin.</p>
+                    </div>
+                    <div class="p-4 bg-blue-50/50 rounded-xl border border-blue-100">
+                        <h3 class="font-bold text-blue-800 mb-2"><i class="fa-solid fa-utensils mr-2"></i>Metode Sekali Habis (Single-Serve)</h3>
+                        <p class="text-xs sm:text-sm text-slate-600">Jika memasak sendiri menggunakan *rice cooker*, ukur porsi bahan secara pas hanya untuk satu kali makan agar tidak ada surplus makanan matang.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: FOOD LIST TABLE -->
+            <section id="bahan" class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="p-3 bg-emerald-100 text-emerald-600 rounded-xl text-xl"><i class="fa-solid fa-basket-shopping"></i></span>
+                    <h2 class="text-2xl font-extrabold text-slate-800">Bahan Makanan Tinggi Nutrisi & Awet Suhu Ruang</h2>
+                </div>
+                <p class="text-slate-600 mb-4 leading-relaxed">
+                    Berikut tabel rekomendasi bahan makronutrisi esensial yang kuat bertahan berhari-hari bahkan berminggu-minggu tanpa pendingin:
+                </p>
+                <div class="overflow-x-auto rounded-xl border border-slate-100">
+                    <table class="w-full text-left text-sm">
+                        <thead class="bg-slate-50 text-slate-700 uppercase font-bold text-xs tracking-wider">
+                            <tr>
+                                <th class="p-4">Bahan Makanan</th>
+                                <th class="p-4">Kategori Nutrisi</th>
+                                <th class="p-4">Estimasi Ketahanan</th>
+                                <th class="p-4">Tips Penyimpanan</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 text-slate-600">
+                            <tr class="hover:bg-slate-50/80 transition-colors">
+                                <td class="p-4 font-bold text-slate-800 flex items-center gap-2">
+                                    <span class="text-amber-500"><i class="fa-solid fa-egg"></i></span> Telur Ayam Negeri
+                                </td>
+                                <td class="p-4"><span class="px-2 py-1 bg-amber-100 text-amber-800 rounded text-xs font-semibold">Protein & Lemak</span></td>
+                                <td class="p-4">10 - 14 Hari</td>
+                                <td class="p-4">Simpan di wadah terbuka berventilasi baik, jangan dicuci sebelum disimpan.</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50/80 transition-colors">
+                                <td class="p-4 font-bold text-slate-800 flex items-center gap-2">
+                                    <span class="text-orange-500"><i class="fa-solid fa-cubes-nut"></i></span> Oatmeal & Kacang-kacangan
+                                </td>
+                                <td class="p-4"><span class="px-2 py-1 bg-lime-100 text-lime-800 rounded text-xs font-semibold">Karbohidrat & Serat</span></td>
+                                <td class="p-4">Bulan / Tahunan</td>
+                                <td class="p-4">Tutup rapat dalam stoples kedap udara agar tidak melempem atau dikerubungi semut.</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50/80 transition-colors">
+                                <td class="p-4 font-bold text-slate-800 flex items-center gap-2">
+                                    <span class="text-red-400"><i class="fa-solid fa-fish"></i></span> Sarden / Tuna Kaleng
+                                </td>
+                                <td class="p-4"><span class="px-2 py-1 bg-amber-100 text-amber-800 rounded text-xs font-semibold">Protein Tinggi</span></td>
+                                <td class="p-4">Mengikuti Expired</td>
+                                <td class="p-4">Praktis, langsung habiskan begitu kaleng dibuka. Jangan disisakan.</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50/80 transition-colors">
+                                <td class="p-4 font-bold text-slate-800 flex items-center gap-2">
+                                    <span class="text-yellow-500"><i class="fa-solid fa-apple-whole"></i></span> Pisang & Apel
+                                </td>
+                                <td class="p-4"><span class="px-2 py-1 bg-emerald-100 text-emerald-800 rounded text-xs font-semibold">Vitamin & Serat</span></td>
+                                <td class="p-4">3 - 7 Hari</td>
+                                <td class="p-4">Gantung pisang; pisahkan apel dari buah lain karena mengeluarkan gas etilen.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- SECTION 3: INTERACTIVE FASTING TRACKER -->
+            <section id="tracker" class="bg-gradient-to-br from-lime-500 to-emerald-600 p-6 md:p-8 rounded-2xl shadow-lg text-white">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="p-3 bg-white/20 text-white rounded-xl text-xl"><i class="fa-solid fa-stopwatch"></i></span>
+                    <h2 class="text-2xl font-extrabold">Interaktif Fasting Tracker</h2>
+                </div>
+                <p class="text-white/95 mb-6 text-sm sm:text-base">
+                    Pilih tipe jendela puasa Anda dan pantau sisa waktu puasa secara langsung untuk menjaga kedisiplinan diet harian Anda.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                    <!-- Control Settings -->
+                    <div class="space-y-4 bg-white/10 p-4 rounded-xl backdrop-blur-sm border border-white/10">
+                        <div>
+                            <label class="block text-xs uppercase font-bold tracking-wider mb-2 text-lime-100">Metode IF</label>
+                            <select id="if-method" class="w-full bg-white text-slate-800 p-2.5 rounded-lg font-medium outline-none shadow-inner" onchange="updateMethod()">
+                                <option value="16">Metode Leangains (16 Jam Puasa)</option>
+                                <option value="20">Metode The Warrior (20 Jam Puasa)</option>
+                                <option value="12">Metode Pemula (12 Jam Puasa)</option>
+                            </select>
+                        </div>
+                        <button id="tracker-btn" onclick="toggleTracker()" class="w-full py-3 bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold rounded-lg shadow transition-all cursor-pointer">
+                            Mulai Puasa
+                        </button>
+                    </div>
+
+                    <!-- Display Timer -->
+                    <div class="md:col-span-2 text-center p-6 bg-white rounded-xl text-slate-800 shadow-md">
+                        <div id="status-badge" class="inline-block px-3 py-1 bg-slate-100 text-slate-600 rounded-full font-bold text-xs uppercase tracking-widest mb-2">
+                            Belum Dimulai
+                        </div>
+                        <div id="timer-display" class="text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-lime-600 tracking-mono my-2">
+                            00:00:00
+                        </div>
+                        <p id="timer-info" class="text-xs text-slate-400 mt-1 font-medium">
+                            Pilih metode lalu klik tombol untuk memulai hitung mundur puasa Anda.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- SIDEBAR (RESPONSIVE DRAWER / ASIDE SECTION) -->
+        <aside id="sidebar" class="w-full lg:w-1/4 fixed lg:relative inset-y-0 right-0 z-40 lg:z-auto bg-amber-100/95 lg:bg-amber-100/50 backdrop-blur-md lg:backdrop-blur-none p-6 rounded-l-2xl lg:rounded-2xl border-l lg:border-l-0 border-amber-200 transform translate-x-full lg:translate-x-0 transition-transform duration-300 shadow-xl lg:shadow-none max-w-sm lg:max-w-none flex flex-col justify-between lg:justify-start gap-6 overflow-y-auto">
+            
+            <div class="space-y-6">
+                <!-- Sidebar Close Button for Mobile -->
+                <div class="flex items-center justify-between lg:hidden border-b border-amber-200 pb-3">
+                    <span class="font-extrabold text-amber-900">Informasi Tambahan</span>
+                    <button onclick="toggleSidebar()" class="p-2 text-amber-900 cursor-pointer" title="Tutup Sidebar">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Info Box 1 -->
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-amber-200/60">
+                    <h4 class="font-bold text-amber-900 flex items-center gap-2 mb-2 text-sm sm:text-base">
+                        <i class="fa-solid fa-triangle-exclamation text-amber-500"></i> Gejala Awal Puasa
+                    </h4>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        Minggu pertama puasa biasanya memicu pusing ringan atau lemas. Jangan panik, cukup konsumsi air mineral hangat ditambah sejumput garam dapur untuk menyeimbangkan elektrolit tubuh.
+                    </p>
+                </div>
+
+                <!-- Info Box 2 -->
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-amber-200/60">
+                    <h4 class="font-bold text-emerald-900 flex items-center gap-2 mb-2 text-sm sm:text-base">
+                        <i class="fa-solid fa-money-bill-wave text-emerald-500"></i> Kalkulasi Kehematan
+                    </h4>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        Dengan memangkas porsi makan pagi (sarapan) dan berfokus pada bahan awet non-kulkas, rata-rata anak kos dapat menghemat anggaran makan harian hingga 35-40%.
+                    </p>
+                </div>
+
+                <!-- Quick Tips List -->
+                <div class="p-2">
+                    <h4 class="font-bold text-slate-800 text-xs uppercase tracking-wider mb-3">Trik Cepat Higienis</h4>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-lime-500 mt-1"></i> Gunakan sistem ventilasi jaring untuk wadah telur.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-lime-500 mt-1"></i> Beli sayur segar kol/kubis karena tahan 4 hari di luar kulkas.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-lime-500 mt-1"></i> Hindari menyimpan lauk santan/basah lebih dari 6 jam.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Decorative widget for mobile inside sidebar footer area -->
+            <div class="lg:hidden bg-gradient-to-r from-amber-500 to-orange-500 p-4 rounded-xl text-white text-center shadow-sm">
+                <span class="text-xs font-bold block mb-1">Motto Hari Ini:</span>
+                <span class="italic text-sm">"Disiplin Mengalahkan Fasilitas!"</span>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 border-t border-slate-800 py-8 mt-auto transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <!-- Left: Copyright info -->
+            <div class="text-center sm:text-left text-xs sm:text-sm">
+                <p>&copy; 2026 <span class="text-white font-semibold">Oleh Ariel Usman</span>. Hak Cipta Dilindungi.</p>
+                <p class="text-slate-500 mt-0.5 text-[11px]">Didesain untuk keandalan tampilan mobile, tablet, dan desktop.</p>
+            </div>
+            <!-- Right: Social Media Links -->
+            <div class="flex items-center gap-4">
+                <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 hover:text-white rounded-xl text-xs sm:text-sm font-medium transition-all text-slate-300" title="Kunjungi Instagram Ariel Usman">
+                    <i class="fa-brands fa-instagram text-base"></i> @arielrcun
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        // Toggle Mobile Navigation Dropdown
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.classList.replace('fa-bars', 'fa-xmark');
+            } else {
+                menu.classList.add('hidden');
+                icon.classList.replace('fa-xmark', 'fa-bars');
+            }
+        }
+
+        // Toggle Right Sidebar (Drawer Mode on Mobile)
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('translate-x-full');
+        }
+
+        // FASTING TIMER CONTROLS
+        let timerInterval = null;
+        let isFasting = false;
+        let targetTime = null;
+
+        function updateMethod() {
+            if (!isFasting) {
+                const hours = document.getElementById('if-method').value;
+                document.getElementById('timer-display').innerText = `${String(hours).padStart(2, '0')}:00:00`;
+            }
+        }
+
+        function toggleTracker() {
+            const btn = document.getElementById('tracker-btn');
+            const badge = document.getElementById('status-badge');
+            const info = document.getElementById('timer-info');
+            const hoursSelect = document.getElementById('if-method');
+
+            if (!isFasting) {
+                // Start Fasting Mode
+                isFasting = true;
+                hoursSelect.disabled = true;
+                btn.innerText = "Hentikan Puasa";
+                btn.classList.replace('bg-amber-400', 'bg-red-500');
+                btn.classList.replace('hover:bg-amber-300', 'hover:bg-red-600');
+                btn.classList.add('text-white');
+
+                badge.innerText = "Sedang Berpuasa";
+                badge.classList.replace('bg-slate-100', 'bg-red-100');
+                badge.classList.replace('text-slate-600', 'text-red-700');
+
+                // Set End Target Time
+                const fastHours = parseInt(hoursSelect.value);
+                targetTime = new Date().getTime() + (fastHours * 60 * 60 * 1000);
+
+                // Run interval immediately and tick every second
+                runTimer();
+                timerInterval = setInterval(runTimer, 1000);
+            } else {
+                // Stop Fasting Mode / Reset
+                stopTracker("Puasa Dibatalkan");
+            }
+        }
+
+        function runTimer() {
+            const now = new Date().getTime();
+            const distance = targetTime - now;
+
+            if (distance < 0) {
+                stopTracker("Puasa Selesai! Selamat Berbuka");
+                return;
+            }
+
+            // Time calculations for hours, minutes and seconds
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in the element
+            document.getElementById('timer-display').innerText = 
+                `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            
+            document.getElementById('timer-info').innerText = "Tetap konsumsi air mineral, jaga fokus Anda!";
+        }
+
+        function stopTracker(statusText) {
+            clearInterval(timerInterval);
+            isFasting = false;
+            
+            const btn = document.getElementById('tracker-btn');
+            const badge = document.getElementById('status-badge');
+            const hoursSelect = document.getElementById('if-method');
+
+            hoursSelect.disabled = false;
+            btn.innerText = "Mulai Puasa";
+            btn.classList.replace('bg-red-500', 'bg-amber-400');
+            btn.classList.replace('hover:bg-red-600', 'hover:bg-amber-300');
+            btn.classList.remove('text-white');
+
+            badge.innerText = statusText;
+            badge.classList.remove('bg-red-100', 'text-red-700');
+            badge.classList.add('bg-slate-100', 'text-slate-600');
+            
+            document.getElementById('timer-info').innerText = "Pilih metode lalu klik tombol untuk memulai hitung mundur puasa Anda.";
+            updateMethod();
+        }
+
+        // Initialize display state on load
+        window.onload = function() {
+            updateMethod();
+        }
+    </script>
+</body>
+</html>
