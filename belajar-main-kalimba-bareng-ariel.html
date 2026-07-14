@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalimba Pintar - Main Musik Jadi Mudah</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Main kalimba online dengan mudah. Ayo belajar sejarah kalimba dan dengarkan lagu Ibu Kita Kartini di sini.">
+    <meta name="keywords" content="kalimba anak, main kalimba virtual, belajar musik sd, lagu ibu kita kartini">
+    <meta name="author" content="Ariel Usman">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kalimba Pintar - Main Musik Jadi Mudah">
+    <meta property="og:description" content="Ayo main kalimba virtual 17 nada dengan lagu Ibu Kita Kartini.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1618609378039-b572f64c5b42?w=500&auto=format&fit=crop&q=60">
+
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/marimba.png">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #fef08a 0%, #d9f99d 50%, #a7f3d0 100%);
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col text-slate-800 antialiased">
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 glass px-6 py-4 flex justify-between items-center shadow-xs">
+        <div class="flex items-center gap-2 font-bold text-xl text-emerald-800">
+            <i class="fa-solid fa-music text-emerald-600"></i>
+            <span>Kalimba Pintar</span>
+        </div>
+        <div class="hidden md:flex items-center gap-6 font-semibold text-sm text-slate-700">
+            <a href="#home" class="hover:text-emerald-600 transition-colors">Beranda</a>
+            <a href="#simulasi" class="hover:text-emerald-600 transition-colors">Main Game</a>
+            <a href="#edukasi" class="hover:text-emerald-600 transition-colors">Cerita Kalimba</a>
+        </div>
+        <button onclick="toggleSidebar()" class="md:hidden p-2 text-slate-700 hover:text-emerald-600">
+            <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+    </nav>
+
+    <!-- CONTAINER UTAMA -->
+    <div class="flex-1 max-w-7xl w-full mx-auto px-4 md:px-6 py-6 flex flex-col lg:flex-row gap-6">
+        
+        <!-- ISI UTAMA -->
+        <main class="flex-grow w-full lg:w-3/4 flex flex-col gap-6">
+            
+            <!-- HERO SECTION (GLASSMORPH) -->
+            <header id="home" class="glass rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 shadow-xs relative overflow-hidden">
+                <div class="flex-1 z-10 text-center md:text-left">
+                    <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
+                        Ayo Main Musik <span class="text-emerald-600">Kalimba Bersama!</span>
+                    </h1>
+                    <p class="mt-3 text-slate-700 text-sm md:text-base leading-relaxed">
+                        Kamu bisa meniup pianika? Sekarang, kita coba mainkan pianika jempol yang lucu ini. Suaranya sangat merdu seperti suara lonceng kecil yang indah!
+                    </p>
+                    <div class="mt-5 flex flex-wrap justify-center md:justify-start gap-3">
+                        <a href="#simulasi" class="px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-bold text-sm shadow-md hover:bg-emerald-700 transition-all">
+                            Mulai Main
+                        </a>
+                        <a href="#edukasi" class="px-5 py-2.5 rounded-xl bg-white/60 text-slate-700 font-bold text-sm border border-white/40 hover:bg-white/80 transition-all">
+                            Baca Cerita
+                        </a>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3 flex justify-center z-10">
+                    <div class="w-28 h-28 bg-gradient-to-tr from-emerald-500 to-yellow-400 rounded-full flex items-center justify-center shadow-md">
+                        <i class="fa-solid fa-face-smile text-white text-5xl"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- SIMULASI KALIMBA 17 NADA -->
+            <section id="simulasi" class="glass rounded-3xl p-4 md:p-6 shadow-xs flex flex-col gap-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/40 pb-4">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-gamepad text-yellow-600 text-xl"></i>
+                        <div>
+                            <h2 class="text-lg font-bold text-slate-950">Alat Musik Kalimba Asli</h2>
+                            <p class="text-xs text-slate-600">Tekan bilah besi di bawah untuk membunyikan suara musik.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Pilihan Lagu & Tombol Autoplay -->
+                    <div class="flex items-center gap-2 bg-white/70 p-1.5 rounded-xl border border-white/50">
+                        <select id="songSelect" class="bg-transparent text-xs font-bold px-2 py-1 focus:outline-none text-slate-700 cursor-pointer">
+                            <option value="ibuKitaKartini">Ibu Kita Kartini</option>
+                        </select>
+                        <button id="btnAutoplay" onclick="toggleAutoplay()" class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-lg transition-all flex items-center gap-1">
+                            <i class="fa-solid fa-circle-play" id="playIcon"></i> <span id="btnPlayText">Putar Lagu</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="statusIndicator" class="text-center text-xs font-semibold text-emerald-800 h-4">
+                    Klik menggunakan jari atau mouse kamu ya!
+                </div>
+
+                <!-- WADAH PAPAN KALIMBA (Skala V-Shape 17 Bilah Seusai Gambar Asli) -->
+                <div class="overflow-x-auto no-scrollbar py-4 bg-slate-800/10 rounded-2xl border border-white/20">
+                    <div class="flex justify-center items-start gap-1 min-w-[640px] h-72 pt-4 px-4 select-none">
+                        <!-- Susunan Akurat Kalimba Asli -->
+                        <div data-note="D6" class="kalimba-key bg-linear-to-b from-slate-50 to-slate-200 w-8 h-44 rounded-b-xl border shadow-md flex flex-col justify-end items-center pb-3 cursor-pointer"><span class="text-[10px] font-bold">D6</span><span class="text-[9px] text-slate-500">2̇̇</span></div>
+                        <div data-note="B5" class="kalimba-key bg-linear-to-b from-slate-50 to-slate-200 w-8 h-48 rounded-b-xl border shadow-md flex flex-col justify-end items-center pb-3 cursor-pointer"><span class="text-[10px] font-bold">B5</span><span class="text-[9px] text-slate-500">7̇</span></div>
+                        <div data-note="G5" class="kalimba-key bg-linear-to-b from-slate-50 to-slate-200 w-8 h-52 rounded-b-xl border shadow-md flex flex-col justify-end items-center pb-3 cursor-pointer"><span class="text-[10px] font-bold">G5</span><span class="text-[9px] text-slate-500">5̇</span></div>
+                        <div data-note="E5" class="kalimba-key bg-linear-to-b from-slate-50 to-slate-200 w-8 h-56 rounded-b-xl border shadow-md flex flex-col justify-end items-center pb-3 cursor-pointer"><span class="text-[10px] font-bold">E5</span><span class="text-[9px] text-slate-500">3̇</span></div>
+                        <div data-note="C5" class="kalimba-key bg-linear-to-b from-slate-50 to-slate-200 w-8 h-60 rounded-b-xl border shadow-md flex flex-col justify-end items-center pb-3 cursor-pointer"><span class="text-[10px] font-bold">C5</span><span class="text-[9px] text-slate-500">1̇</span></div>
+                        <div data-note="A4" class="kalimba-key bg-linear-to-b from-slate-50 to-slate-200 w-8 h-64 rounded-b-xl border shadow-md flex flex-col justify-end items-center pb-3 cursor-pointer"><span class="text-[10px] font-bold">A4</span><span class="text-[9px] text-slate-500">6</span></div>
+                        <div data-note="F4" class="kalimba-key bg-linear-to-b from-slate-50 to-slate-200 w-8 h-68 rounded-b-xl border shadow-md flex flex-col justify-end items-center pb-3 cursor-pointer"><span class="text-[10px] font-bold">F4</span><span class="text-[9px] text-slate-500">4</span></div>
+                        <div data-note="D4" class="kalimba-key bg-linear-to-b from-slate-50 to-slate-200 w-8 h-72 rounded-b-xl border shadow-md flex flex-col justify-end items-center pb-3 cursor-pointer"><span class="text-[10px] font-bold">D4</span><span class="text-[9px] text-slate-500">2</span></div>
+                        
+                        <!-- PUSAT TENGAH -->
+                        <div data-note="C4" class="kalimba-key bg-linear-to-b from-slate-100 to-slate-300 w-9 h-76 rounded-b-xl border-2 border-t-0 border-emerald-400 shadow-md flex flex-col justify-end items-center pb-3 cursor-pointer"><span class="text-[11px] font-extrabold text-emerald-800">C4</span><span class="text-[10px] font-bold text-emerald-700">1</span></div>
+                        
+                        <div data-note="E4" class="kalimba-key bg-linear-to-b from-slate-50 to-slate-200 w-8 h-72 rounded-b-xl border shadow-md flex flex-col justify-end items-center pb-3 cursor-pointer"><span class="text-[10px] font-bold">E4</span><span class="text-[9px] text-slate-500">3</span></div>
+                        <div data-note="G4" class="kalimba-key bg-linear-to-b from-slate-50 to-slate-200 w-8 h-68 rounded-b-xl border shadow-md flex flex-col justify-end items-center pb-3 cursor-pointer"><span class="text-[10px] font-bold">G4</span><span class="text-[9px] text-slate-500">5</span></div>
+                        <div data-note="B4" class="kalimba-key bg-linear-to-b from-slate-50 to-slate-200 w-8 h-64 rounded-b-xl border shadow-md flex flex-col justify-end items-center pb-3 cursor-pointer"><span class="text-[10px] font-bold">B4</span><span class="text-[9px] text-slate-500">7</span></div>
+                        <div data-note="D5" class="kalimba-key bg-linear-to-b from-slate-50 to-slate-200 w-8 h-60 rounded-b-xl border shadow-md flex flex-col justify-end items-center pb-3 cursor-pointer"><span class="text-[10px] font-bold">D5</span><span class="text-[9px] text-slate-500">2̇</span></div>
+                        <div data-note="F5" class="kalimba-key bg-linear-to-b from-slate-50 to-slate-200 w-8 h-56 rounded-b-xl border shadow-md flex flex-col justify-end items-center pb-3 cursor-pointer"><span class="text-[10px] font-bold">F5</span><span class="text-[9px] text-slate-500">4̇</span></div>
+                        <div data-note="A5" class="kalimba-key bg-linear-to-b from-slate-50 to-slate-200 w-8 h-52 rounded-b-xl border shadow-md flex flex-col justify-end items-center pb-3 cursor-pointer"><span class="text-[10px] font-bold">A5</span><span class="text-[9px] text-slate-500">6̇</span></div>
+                        <div data-note="C6" class="kalimba-key bg-linear-to-b from-slate-50 to-slate-200 w-8 h-48 rounded-b-xl border shadow-md flex flex-col justify-end items-center pb-3 cursor-pointer"><span class="text-[10px] font-bold">C6</span><span class="text-[9px] text-slate-500">1̇̇</span></div>
+                        <div data-note="E6" class="kalimba-key bg-linear-to-b from-slate-50 to-slate-200 w-8 h-44 rounded-b-xl border shadow-md flex flex-col justify-end items-center pb-3 cursor-pointer"><span class="text-[10px] font-bold">E6</span><span class="text-[9px] text-slate-500">3̇̇</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TENTANG KALIMBA -->
+            <section id="edukasi" class="glass rounded-3xl p-6 shadow-xs flex flex-col gap-4">
+                <div class="flex items-center gap-2 border-b border-white/40 pb-2">
+                    <i class="fa-solid fa-book-open text-emerald-600 text-lg"></i>
+                    <h2 class="text-lg font-bold text-slate-950">Apa itu Kalimba?</h2>
+                </div>
+
+                <div class="space-y-4 text-sm text-slate-700 leading-relaxed">
+                    <p>
+                        Kalimba adalah <strong>alat musik tradisional</strong> yang sangat unik. Alat musik ini lahir di benua Afrika yang sangat jauh. Orang-orang di sana suka memainkan alat ini untuk menghibur diri.
+                    </p>
+                    <p>
+                        Kalimba memiliki kotak kayu kecil dan banyak bilah besi di atasnya. Kita memainkannya menggunakan <strong>dua jempol tangan</strong> kita. Ibu jari bertugas menekan besi itu sampai bergetar. Getaran besi itulah yang menghasilkan suara musik yang sangat merdu.
+                    </p>
+                    <p>
+                        Mendengarkan suara kalimba bisa membuat hati kita menjadi senang. Pikiran kita yang lelah setelah belajar juga bisa menjadi tenang kembali.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <!-- SIDEBAR -->
+        <aside id="sidebarMenu" class="w-full lg:w-1/4 flex flex-col gap-4 fixed inset-y-0 right-0 z-50 translate-x-full lg:translate-x-0 lg:static transition-transform duration-300 glass lg:bg-transparent lg:border-0 p-6 lg:p-0 max-w-sm lg:max-w-none shadow-lg lg:shadow-none">
+            
+            <div class="flex lg:hidden justify-end">
+                <button onclick="toggleSidebar()" class="p-2 text-slate-700 hover:text-emerald-600">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Daftar Musik Anak -->
+            <div class="glass rounded-2xl p-4 flex flex-col gap-3 shadow-xs">
+                <h3 class="font-bold text-xs text-slate-900 tracking-wide uppercase flex items-center gap-1.5">
+                    <i class="fa-solid fa-list-music text-emerald-600"></i> Pilihan Lagu Anak
+                </h3>
+                <div class="flex flex-col gap-2">
+                    <button onclick="playSpecificSong('ibuKitaKartini')" class="w-full text-left p-2.5 rounded-xl bg-white/60 hover:bg-emerald-50 text-xs font-bold text-slate-700 flex justify-between items-center group transition-all">
+                        <span>Ibu Kita Kartini</span>
+                        <i class="fa-solid fa-circle-play text-emerald-600"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Panduan Main Singkat -->
+            <div class="glass rounded-2xl p-4 flex flex-col gap-2 shadow-xs text-xs text-slate-700">
+                <h3 class="font-bold text-slate-900 uppercase flex items-center gap-1.5">
+                    <i class="fa-solid fa-star text-yellow-500"></i> Cara Bermain
+                </h3>
+                <p>1. Tekan besi kalimba di layar komputer atau HP kamu.</p>
+                <p>2. Besi yang panjang menghasilkan suara yang rendah.</p>
+                <p>3. Besi yang pendek menghasilkan suara yang tinggi.</p>
+            </div>
+        </aside>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="mt-8 glass border-t border-white/40 py-4 text-center text-xs font-bold text-slate-700 flex flex-col sm:flex-row justify-between items-center px-6 gap-3 max-w-7xl w-full mx-auto rounded-t-3xl shadow-xs">
+        <div>
+            Oleh Ariel Usman Copyright 2026
+        </div>
+        <div>
+            <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 hover:text-pink-600 bg-white/60 px-3 py-1.5 rounded-xl transition-colors">
+                <i class="fa-brands fa-instagram text-sm"></i>
+                <span>@arielrcun</span>
+            </a>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        
+        // Pemetaan Frekuensi 17 Nada Kalimba Standard C Major Akurat
+        const frequencies = {
+            'C4': 261.63, 'D4': 293.66, 'E4': 329.63, 'F4': 349.23, 'G4': 392.00, 'A4': 440.00, 'B4': 493.88,
+            'C5': 523.25, 'D5': 587.33, 'E5': 659.25, 'F5': 698.46, 'G5': 783.99, 'A5': 880.00, 'B5': 987.77,
+            'C6': 1046.50, 'D6': 1174.66, 'E6': 1318.51
+        };
+
+        // Data lagu terupdate hanya berisi Ibu Kita Kartini
+        const songs = {
+            ibuKitaKartini: [
+                // Ibu kita Kartini
+                ['C5', 400], ['D5', 400], ['E5', 400], ['F5', 400], ['G5', 500], ['E5', 300], ['C5', 600], 
+                // Putri sejati
+                ['A5', 400], ['C6', 400], ['B5', 400], ['A5', 400], ['G5', 600], 
+                // Putri Indonesia
+                ['F5', 400], ['A5', 400], ['G5', 400], ['F5', 400], ['E5', 500], ['C5', 300], 
+                // Harum namanya
+                ['D5', 400], ['F5', 400], ['E5', 400], ['D5', 400], ['C5', 600], 
+                
+                // Ibu kita Kartini
+                ['C5', 400], ['D5', 400], ['E5', 400], ['F5', 400], ['G5', 500], ['E5', 300], ['C5', 600], 
+                // Pendekar bangsa
+                ['A5', 400], ['C6', 400], ['B5', 400], ['A5', 400], ['G5', 600], 
+                // Pendekar kaumnya
+                ['F5', 400], ['A5', 400], ['G5', 400], ['F5', 400], ['E5', 500], ['C5', 300], 
+                // Untuk merdeka
+                ['D5', 400], ['F5', 400], ['E5', 400], ['D5', 400], ['C5', 600], 
+                
+                // Wahai ibu kita Kartini
+                ['F5', 400], ['E5', 300], ['F5', 300], ['A5', 400], ['G5', 300], ['A5', 300], ['G5', 400], ['E5', 300], ['C5', 500], 
+                // Putri yang mulia
+                ['E5', 400], ['D5', 400], ['E5', 300], ['F5', 300], ['G5', 400], ['E5', 600], 
+                // Sungguh besar cita-citanya
+                ['F5', 400], ['E5', 300], ['F5', 300], ['A5', 400], ['G5', 300], ['A5', 300], ['G5', 400], ['E5', 300], ['C5', 500], 
+                // Bagi Indonesia
+                ['D5', 400], ['D5', 400], ['F5', 400], ['B4', 400], ['D5', 400], ['C5', 600],
+                
+                // Ibu kita Kartini
+                ['C5', 400], ['D5', 400], ['E5', 400], ['F5', 400], ['G5', 500], ['E5', 300], ['C5', 600], 
+                // Putri sejati
+                ['A5', 400], ['C6', 400], ['B5', 400], ['A5', 400], ['G5', 600], 
+                // Putri Indonesia
+                ['F5', 400], ['A5', 400], ['G5', 400], ['F5', 400], ['E5', 500], ['C5', 300], 
+                // Harum namanya
+                ['D5', 400], ['F5', 400], ['E5', 400], ['D5', 400], ['C5', 600], 
+                
+                // Ibu kita Kartini
+                ['C5', 400], ['D5', 400], ['E5', 400], ['F5', 400], ['G5', 500], ['E5', 300], ['C5', 600], 
+                // Wahai ibu kita Kartini
+                ['F5', 400], ['E5', 300], ['F5', 300], ['A5', 400], ['G5', 300], ['A5', 300], ['G5', 400], ['E5', 300], ['C5', 500], 
+                // Putri yang mulia
+                ['E5', 400], ['D5', 400], ['E5', 300], ['F5', 300], ['G5', 400], ['E5', 600], 
+                // Sungguh besar cita-citanya
+                ['F5', 400], ['E5', 300], ['F5', 300], ['A5', 400], ['G5', 300], ['A5', 300], ['G5', 400], ['E5', 300], ['C5', 500], 
+                // Bagi Indonesia
+                ['D5', 400], ['D5', 400], ['F5', 400], ['B4', 400], ['D5', 400], ['C5', 600]
+            ]
+        };
+
+        let autoplayInterval = null;
+        let isPlaying = false;
+
+        function playNote(note) {
+            if (!frequencies[note]) return;
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+
+            const osc = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(frequencies[note], audioCtx.currentTime);
+            
+            gainNode.gain.setValueAtTime(0.4, audioCtx.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 1.0);
+            
+            osc.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            
+            osc.start();
+            osc.stop(audioCtx.currentTime + 1.0);
+
+            const element = document.querySelector(`[data-note="${note}"]`);
+            if (element) {
+                element.classList.remove('from-slate-50', 'to-slate-200', 'from-slate-100', 'to-slate-300');
+                element.classList.add('from-emerald-300', 'to-emerald-500', 'translate-y-1');
+                setTimeout(() => {
+                    element.classList.remove('from-emerald-300', 'to-emerald-500', 'translate-y-1');
+                    if(note === 'C4') {
+                        element.classList.add('from-slate-100', 'to-slate-300');
+                    } else {
+                        element.classList.add('from-slate-50', 'to-slate-200');
+                    }
+                }, 150);
+            }
+        }
+
+        document.querySelectorAll('.kalimba-key').forEach(key => {
+            const clickStart = (e) => {
+                e.preventDefault();
+                const note = key.getAttribute('data-note');
+                playNote(note);
+                document.getElementById('statusIndicator').innerText = `Kamu membunyikan nada: ${note}`;
+            };
+            key.addEventListener('mousedown', clickStart);
+            key.addEventListener('touchstart', clickStart);
+        });
+
+        function toggleAutoplay() {
+            if (isPlaying) {
+                stopAutoplay();
+            } else {
+                startAutoplay(songs.ibuKitaKartini);
+            }
+        }
+
+        function playSpecificSong(songKey) {
+            stopAutoplay();
+            if(songKey === 'ibuKitaKartini') {
+                startAutoplay(songs.ibuKitaKartini);
+            }
+        }
+
+        function startAutoplay(songNotes) {
+            isPlaying = true;
+            document.getElementById('playIcon').className = "fa-solid fa-circle-stop";
+            document.getElementById('btnPlayText').innerText = "Berhenti";
+            
+            let index = 0;
+            function playNext() {
+                if (!isPlaying || index >= songNotes.length) {
+                    stopAutoplay();
+                    return;
+                }
+                const [note, duration] = songNotes[index];
+                playNote(note);
+                index++;
+                autoplayInterval = setTimeout(playNext, duration + 100); 
+            }
+            playNext();
+        }
+
+        function stopAutoplay() {
+            isPlaying = false;
+            clearTimeout(autoplayInterval);
+            document.getElementById('playIcon').className = "fa-solid fa-circle-play";
+            document.getElementById('btnPlayText').innerText = "Putar Lagu";
+            document.getElementById('statusIndicator').innerText = "Lagu sudah berhenti.";
+        }
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebarMenu');
+            sidebar.classList.toggle('translate-x-full');
+        }
+    </script>
+</body>
+</html>
