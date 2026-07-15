@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Optimization -->
+    <title>Ayo Simulasikan Disiplin Bareng-Bareng | MadeAI by Ariel</title>
+    <meta name="description" content="Simulasi interaktif melatih disiplin berbasis neurosains tanpa ketergantungan penuh pada willpower. Kelola strategi Temptation Bundling, Q-Routine, dan Identity Goals.">
+    <meta name="keywords" content="Simulasi Disiplin, Neurosains, Tailwind CSS, Glassmorphism, Ariel Usman, MadeAI">
+    <meta name="author" content="Ariel Usman">
+    
+    <!-- Open Graph / Facebook / WhatsApp / Telegram Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://artriel.madeai.io/disiplin-bareng">
+    <meta property="og:title" content="Ayo Simulasikan Disiplin Bareng-Bareng | Neuro-Discipline Web App">
+    <meta property="og:description" content="Ubah cara kerja otakmu. Coba simulator interaktif taktik disiplin modern di sini!">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Tailwind CSS & Lucide Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #fef3c7 0%, #chefff 50%, #e0f2fe 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+<body class="min-h-screen text-slate-800 antialiased flex flex-col pt-16 selection:bg-amber-200">
+
+    <!-- NAVBAR -->
+    <nav class="glass-nav fixed top-0 left-0 right-0 z-50 h-16 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
+            <div class="flex items-center gap-2 font-bold text-xl tracking-tight bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
+                <i data-lucide="brain-circuit" class="text-orange-500 w-6 h-6"></i>
+                <span>DisiplinLab.</span>
+            </div>
+            <!-- Menu Desktop -->
+            <div class="hidden md:flex items-center gap-6 font-medium text-sm text-slate-600">
+                <a href="#hero" class="hover:text-amber-600 transition-colors">Home</a>
+                <a href="#edukasi" class="hover:text-amber-600 transition-colors">Sains</a>
+                <a href="#simulator" class="hover:text-amber-600 transition-colors">Simulator</a>
+                <a href="#panduan" class="hover:text-amber-600 transition-colors">Panduan</a>
+            </div>
+            <!-- Tombol Aksi Mobile Menu Dummy -->
+            <div class="md:hidden">
+                <button id="menu-btn" class="p-2 text-slate-600 focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN WRAPPER (BODY & SIDEBAR GRID) -->
+    <div class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 my-8 flex-grow grid grid-cols-1 lg:grid-cols-4 gap-8">
+        
+        <!-- MAIN CONTENT AREA (3 Columns on Large Screens) -->
+        <main class="lg:col-span-3 space-y-12">
+            
+            <!-- HEADER / HERO SECTION -->
+            <header id="hero" class="glass-card rounded-3xl p-6 sm:p-10 shadow-xl shadow-amber-100/40 relative overflow-hidden transition-all duration-300">
+                <div class="absolute -right-16 -top-16 w-48 h-48 bg-amber-300/30 rounded-full blur-2xl pointer-events-none"></div>
+                <div class="absolute -left-16 -bottom-16 w-48 h-48 bg-cyan-300/30 rounded-full blur-2xl pointer-events-none"></div>
+                
+                <div class="relative z-10 max-w-2xl space-y-4">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 border border-amber-200">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Berdasarkan Neurosains Terbaru
+                    </span>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
+                        Trick Otakmu Menjadi <span class="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">Disiplin Mutlak</span>
+                    </h1>
+                    <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
+                        Kebanyakan orang mengira disiplin adalah soal menahan derita menggunakan <span class="font-semibold text-orange-600">Willpower</span>. Salah besar! Willpower itu mahal secara kognitif. Mari simulasikan cara menyingkirkan ketergantungan tersebut secara interaktif.
+                    </p>
+                    <div class="pt-2 flex flex-wrap gap-4">
+                        <a href="#simulator" class="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold text-sm shadow-lg shadow-orange-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all">
+                            Mulai Simulasi
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=DzfF5SEzpWE" target="_blank" class="px-5 py-3 rounded-xl border border-slate-300 bg-white/50 text-slate-700 font-medium text-sm inline-flex items-center gap-2 hover:bg-white transition-all">
+                            <i data-lucide="youtube" class="text-red-500 w-4 h-4"></i> Lihat Sumber Referensi
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- CORE BENCHMARK & EDUCATION -->
+            <section id="edukasi" class="space-y-6">
+                <div class="flex items-center gap-2">
+                    <div class="p-2 rounded-lg bg-orange-100 text-orange-600"><i data-lucide="layers" class="w-5 h-5"></i></div>
+                    <h2 class="text-2xl font-bold text-slate-900">Mengapa Disiplin Terasa Berat?</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="glass-card p-6 rounded-2xl border-l-4 border-l-rose-500 shadow-sm">
+                        <h3 class="font-bold text-lg text-slate-900 mb-2">Temporal Discounting</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Otak kita secara biologis sangat bias pada masa kini (*present-biased*). Biaya penderitaan (seperti lelah olahraga atau pusing belajar) langsung terasa *sekarang*, sementara hadiahnya (tubuh ideal atau kelulusan) berada di *masa depan*. Akibatnya, sistem dopamin mendiskon nilai hadiah masa depan itu secara ekstrem.
+                        </p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl border-l-4 border-l-emerald-500 shadow-sm">
+                        <h3 class="font-bold text-lg text-slate-900 mb-2">Solusi Tanpa Willpower</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Orang paling disiplin di dunia bukan orang dengan willpower terkuat, melainkan mereka yang berhasil **mengotomatisasi sistem** sehingga tidak membutuhkan willpower sama sekali dalam keputusan sehari-hari mereka.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- INTERACTIVE SIMULATOR WIDGET -->
+            <section id="simulator" class="glass-card rounded-3xl p-6 sm:p-8 shadow-xl border-amber-200/50 space-y-8">
+                <div class="border-b border-slate-200/60 pb-4">
+                    <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-2">
+                        <i data-lucide="sliders" class="text-amber-600 w-6 h-6"></i>
+                        Simulator Lab Disiplin Mandiri
+                    </h2>
+                    <p class="text-xs text-slate-500 mt-1">Sesuaikan strategi penataan perilakumu dan lihat efek estimasi tingkat keberhasilannya secara visual.</p>
+                </div>
+
+                <!-- FORM INPUT SIMULASI -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Kiri: Input Strategi -->
+                    <div class="space-y-5">
+                        <!-- Taktik 1: Temptation Bundling -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2 flex items-center justify-between">
+                                <span class="flex items-center gap-2"><i data-lucide="package-plus" class="w-4 h-4 text-amber-500"></i> 1. Temptation Bundling</span>
+                                <span id="val-bundling" class="text-xs font-mono px-2 py-0.5 bg-amber-100 text-amber-800 rounded">Mati</span>
+                            </label>
+                            <input type="range" id="input-bundling" min="0" max="2" value="0" class="w-full accent-amber-500 cursor-pointer h-2 bg-slate-200 rounded-lg appearance-none">
+                            <span class="text-[11px] text-slate-500 block mt-1">Gabungkan aktivitas berat dengan hadiah instan (cth: Hanya dengar playlist favorit saat lari pagi).</span>
+                        </div>
+
+                        <!-- Taktik 2: Automation (Q-Routine Loop) -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2 flex items-center justify-between">
+                                <span class="flex items-center gap-2"><i data-lucide="refresh-cw" class="w-4 h-4 text-cyan-500"></i> 2. Q-Routine Automation</span>
+                                <span id="val-automation" class="text-xs font-mono px-2 py-0.5 bg-cyan-100 text-cyan-800 rounded">Tidak Ada</span>
+                            </label>
+                            <input type="range" id="input-automation" min="0" max="2" value="0" class="w-full accent-cyan-500 cursor-pointer h-2 bg-slate-200 rounded-lg appearance-none">
+                            <span class="text-[11px] text-slate-500 block mt-1">Membangun pemicu otomatis bawah sadar (cth: Membuat es kopi segar tanda mutlak sesi belajar dimulai).</span>
+                        </div>
+
+                        <!-- Taktik 3: Identity-Led Goals -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2 flex items-center justify-between">
+                                <span class="flex items-center gap-2"><i data-lucide="user-check" class="w-4 h-4 text-emerald-500"></i> 3. Identity Alignment</span>
+                                <span id="val-identity" class="text-xs font-mono px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded">Outcome-Based</span>
+                            </label>
+                            <input type="range" id="input-identity" min="0" max="2" value="0" class="w-full accent-emerald-500 cursor-pointer h-2 bg-slate-200 rounded-lg appearance-none">
+                            <span class="text-[11px] text-slate-500 block mt-1">Mengubah fokus target dari "Saya ingin belajar 30 menit" menjadi "Saya adalah seorang pelajar teladan".</span>
+                        </div>
+
+                        <!-- Taktik 4: Friction Reduction -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2 flex items-center justify-between">
+                                <span class="flex items-center gap-2"><i data-lucide="layout-template" class="w-4 h-4 text-orange-500"></i> 4. Environment Design</span>
+                                <span id="val-friction" class="text-xs font-mono px-2 py-0.5 bg-orange-100 text-orange-800 rounded">Berantakan</span>
+                            </label>
+                            <input type="range" id="input-friction" min="0" max="2" value="0" class="w-full accent-orange-500 cursor-pointer h-2 bg-slate-200 rounded-lg appearance-none">
+                            <span class="text-[11px] text-slate-500 block mt-1">Mengurangi gesekan lingkungan (cth: Meletakkan sepatu lari persis di samping kasur sebelum tidur).</span>
+                        </div>
+                    </div>
+
+                    <!-- Kanan: Output Skor Realtime & Grafik Mini -->
+                    <div class="bg-white/60 rounded-2xl p-6 border border-white/80 flex flex-col justify-between space-y-4">
+                        <div class="text-center space-y-1">
+                            <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Prediksi Tingkat Keberhasilan</span>
+                            <div id="sim-score" class="text-6xl font-black text-slate-900 transition-all duration-300">10%</div>
+                            <p id="sim-verdict" class="text-sm text-slate-500 font-medium px-4 py-1 rounded-full bg-slate-100 inline-block mt-2">Willpower saja tidak akan bertahan lama.</p>
+                        </div>
+
+                        <!-- Mini Visual Gauge Bar -->
+                        <div class="space-y-2">
+                            <div class="w-full bg-slate-200/70 rounded-full h-3 overflow-hidden">
+                                <div id="gauge-bar" class="bg-gradient-to-r from-red-500 via-amber-400 to-emerald-500 h-full w-[10%] transition-all duration-500"></div>
+                            </div>
+                            <div class="flex justify-between text-[10px] font-bold text-slate-400">
+                                <span>RENTAN GAGAL</span>
+                                <span>DISIPLIN EFFORTLESS</span>
+                            </div>
+                        </div>
+
+                        <!-- Tips Dinamis -->
+                        <div class="p-3 bg-amber-50/80 rounded-xl border border-amber-100 text-xs text-amber-900 flex gap-2">
+                            <i data-lucide="info" class="w-4 h-4 shrink-0 mt-0.5 text-amber-600"></i>
+                            <span id="dynamic-tips">Coba naikkan slider 'Temptation Bundling' untuk melihat bagaimana otak merespon insentif instan!</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 5 STRATEGIES GUIDE -->
+            <section id="panduan" class="space-y-6">
+                <div class="flex items-center gap-2">
+                    <div class="p-2 rounded-lg bg-cyan-100 text-cyan-600"><i data-lucide="check-square" class="w-5 h-5"></i></div>
+                    <h2 class="text-2xl font-bold text-slate-900">5 Langkah Kongkret Bangun Disiplin</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="glass-card p-5 rounded-xl flex gap-4 items-start">
+                        <div class="w-8 h-8 rounded-full bg-amber-500 text-white font-bold text-sm flex items-center justify-center shrink-0 shadow">1</div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">Majukan Reward ke Masa Sekarang</h4>
+                            <p class="text-xs text-slate-600 mt-1">Jangan biarkan otak menunggu hasil berbulan-bulan. Bundling pekerjaan berat dengan kesenangan instan yang sehat agar dopamin langsung terpicu.</p>
+                        </div>
+                    </div>
+                    <div class="glass-card p-5 rounded-xl flex gap-4 items-start">
+                        <div class="w-8 h-8 rounded-full bg-orange-500 text-white font-bold text-sm flex items-center justify-center shrink-0 shadow">2</div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">Pecah Tugas Menjadi Satuan Terkecil</h4>
+                            <p class="text-xs text-slate-600 mt-1">Ganti target masif dengan 5 sub-tugas kecil. Tiap kali kamu mencoret satu check-list kecil, otak mendapat cipratan dopamin penyulut motivasi berikutnya.</p>
+                        </div>
+                    </div>
+                    <div class="glass-card p-5 rounded-xl flex gap-4 items-start">
+                        <div class="w-8 h-8 rounded-full bg-rose-500 text-white font-bold text-sm flex items-center justify-center shrink-0 shadow">3</div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">Otomatisasi Pemicu Lingkungan (Q-Routine)</h4>
+                            <p class="text-xs text-slate-600 mt-1">Kondisikan otak seperti eksperimen anjing Pavlov. Tentukan isyarat fisik tertentu yang secara berulang menandai bahwa sesi produktif resmi berjalan.</p>
+                        </div>
+                    </div>
+                    <div class="glass-card p-5 rounded-xl flex gap-4 items-start">
+                        <div class="w-8 h-8 rounded-full bg-cyan-500 text-white font-bold text-sm flex items-center justify-center shrink-0 shadow">4</div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">Ubah Kerangka Target Berbasis Identitas</h4>
+                            <p class="text-xs text-slate-600 mt-1">Tanamkan diri ke dalam target tersebut. Otak merespon jauh lebih kokoh pada komitmen yang melibatkan pembentukan integritas personal dirimu.</p>
+                        </div>
+                    </div>
+                    <div class="glass-card p-5 rounded-xl flex gap-4 items-start">
+                        <div class="w-8 h-8 rounded-full bg-emerald-500 text-white font-bold text-sm flex items-center justify-center shrink-0 shadow">5</div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">Rancang Ruang Bebas Hambatan</h4>
+                            <p class="text-xs text-slate-600 mt-1">Meja berantakan menyedot kapasitas memori kerja kognitifmu. Bersihkan meja malam sebelumnya dan siapkan berkas kerja agar esok pagi tinggal eksekusi.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- SIDEBAR SECTION (1 Column on Large Screens) -->
+        <aside class="space-y-6">
+            
+            <!-- Widget Info Pembuat -->
+            <div class="glass-card rounded-2xl p-5 shadow-sm space-y-4">
+                <h3 class="font-bold text-slate-900 text-sm border-b border-slate-200 pb-2 flex items-center gap-2">
+                    <i data-lucide="user" class="w-4 h-4 text-amber-600"></i> Informasi Pembuat
+                </h3>
+                <div class="flex items-center gap-3">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Avatar Ariel" class="w-12 h-12 rounded-full object-cover border-2 border-amber-400">
+                    <div>
+                        <h4 class="font-bold text-xs text-slate-900">Ariel Usman</h4>
+                        <p class="text-[10px] text-slate-500">IT Front-End Web Engineer</p>
+                    </div>
+                </div>
+                <p class="text-[11px] text-slate-600 leading-relaxed">
+                    Mengintegrasikan pemahaman dasar rekayasa sistem komputer jaringan dengan seni desain antarmuka modular interaktif.
+                </p>
+            </div>
+
+            <!-- Widget Catatan Neuro -->
+            <div class="glass-card rounded-2xl p-5 shadow-sm space-y-3">
+                <h3 class="font-bold text-slate-900 text-sm border-b border-slate-200 pb-2 flex items-center gap-2">
+                    <i data-lucide="brain" class="w-4 h-4 text-orange-500"></i> Fakta Prefrontal Cortex
+                </h3>
+                <ul class="space-y-2 text-xs text-slate-600">
+                    <li class="flex items-start gap-1.5">
+                        <i data-lucide="alert-circle" class="w-3.5 h-3.5 text-orange-500 shrink-0 mt-0.5"></i>
+                        <span>Willpower diatur oleh area Prefrontal Cortex yang sangat boros energi kognitif.</span>
+                    </li>
+                    <li class="flex items-start gap-1.5">
+                        <i data-lucide="alert-circle" class="w-3.5 h-3.5 text-orange-500 shrink-0 mt-0.5"></i>
+                        <span>Kekuatan tekad ini menurun drastis saat tubuh mengalami stres, kelelahan, atau lapar.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Widget Quick Action / Eksternal Link -->
+            <div class="glass-card rounded-2xl p-5 shadow-sm space-y-3">
+                <h3 class="font-bold text-slate-900 text-sm border-b border-slate-200 pb-2">Aksi Cepat</h3>
+                <div class="flex flex-col gap-2">
+                    <button onclick="alert('Link Komunitas Bersama MadeAI Segera Hadir!')" class="w-full py-2 px-3 bg-white/70 hover:bg-white text-slate-700 rounded-xl text-xs font-semibold border border-slate-200 text-left flex items-center justify-between transition-all">
+                        <span>Gabung Grup Disiplin</span>
+                        <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                    <button onclick="window.scrollTo({top: document.getElementById('simulator').offsetTop - 80, behavior: 'smooth'})" class="w-full py-2 px-3 bg-white/70 hover:bg-white text-slate-700 rounded-xl text-xs font-semibold border border-slate-200 text-left flex items-center justify-between transition-all">
+                        <span>Reset Parameter Lab</span>
+                        <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="mt-auto bg-slate-900 text-slate-400 py-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+            <div class="text-center sm:text-left">
+                <p class="font-semibold text-slate-200">Dibuat oleh: Ariel Usman</p>
+                <p class="mt-0.5 text-slate-500">&copy; Copyright 2026. Seluruh hak cipta dilindungi.</p>
+            </div>
+            
+            <!-- Sosmed dengan Icon Lucide -->
+            <div class="flex items-center gap-4">
+                <a href="https://instagram.com/arielrcun" target="_blank" class="flex items-center gap-1.5 py-1.5 px-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 transition-colors">
+                    <i data-lucide="instagram" class="w-4 h-4 text-pink-400"></i>
+                    <span>@arielrcun</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        // Inisialisasi Icon Lucide
+        lucide.createIcons();
+
+        // Elemen Kontrol Simulator
+        const inputBundling = document.getElementById('input-bundling');
+        const inputAutomation = document.getElementById('input-automation');
+        const inputIdentity = document.getElementById('input-identity');
+        const inputFriction = document.getElementById('input-friction');
+
+        // Elemen Output Teks Parameter
+        const valBundling = document.getElementById('val-bundling');
+        const valAutomation = document.getElementById('val-automation');
+        const valIdentity = document.getElementById('val-identity');
+        const valFriction = document.getElementById('val-friction');
+
+        // Elemen Hasil Skor
+        const simScore = document.getElementById('sim-score');
+        const simVerdict = document.getElementById('sim-verdict');
+        const gaugeBar = document.getElementById('gauge-bar');
+        const dynamicTips = document.getElementById('dynamic-tips');
+
+        // Label Kamus Mapping Array Slider
+        const txtBundling = ["Mati", "Sedang (Kopi/Musik)", "Kuat (Temptation Bundle Penuh)"];
+        const txtAutomation = ["Tidak Ada", "Sederhana (Set Waktu)", "Kuat (Q-Routine Terkondisi)"];
+        const txtIdentity = ["Outcome-Based", "Habit-Based", "Identity-Led (Kokoh)"];
+        const txtFriction = ["Berantakan", "Bersih", "Optimal Bebas Hambatan"];
+
+        // Fungsi Perhitungan Skor Simulasi
+        function updateSimulation() {
+            const b = parseInt(inputBundling.value);
+            const a = parseInt(inputAutomation.value);
+            const i = parseInt(inputIdentity.value);
+            const f = parseInt(inputFriction.value);
+
+            // Update Teks Label Parameter di UI
+            valBundling.textContent = txtBundling[b];
+            valAutomation.textContent = txtAutomation[a];
+            valIdentity.textContent = txtIdentity[i];
+            valFriction.textContent = txtFriction[f];
+
+            // Hitung kalkulasi total bobot nilai (Skor Maksimal = 8, Dasar awal = 0.8)
+            const totalPoints = b + a + i + f;
+            let scorePercentage = Math.round(((totalPoints + 0.8) / 8.8) * 100);
+            if(scorePercentage > 100) scorePercentage = 100;
+
+            // Update UI Skor & Bar Grafik
+            simScore.textContent = `${scorePercentage}%`;
+            gaugeBar.style.width = `${scorePercentage}%`;
+
+            // Logika Penentuan Status Hasil Keputusan Eksperimen Otak
+            let verdict = "";
+            let tips = "";
+
+            if (scorePercentage < 30) {
+                verdict = "Rentan Gagal. Kamu terlalu mengandalkan Willpower kognitif.";
+                tips = "Otak membenci penderitaan instan. Coba naikkan 'Temptation Bundling' untuk memberi umpan kesenangan langsung ketika kamu beraktivitas!";
+            } else if (scorePercentage < 65) {
+                verdict = "Cukup Stabil. Kebiasaan mulai terbentuk dengan bantuan eksternal.";
+                tips = "Bagus! Sekarang, gunakan 'Identity Alignment'. Ubah fokus kalimat targetmu dari tindakan menjadi pembentukan karakter esensial dirimu.";
+            } else if (scorePercentage < 90) {
+                verdict = "Sangat Kuat! Sistem proteksi disiplin berjalan dengan efisiensi energi.";
+                tips = "Luar biasa. Sedikit lagi menuju otomatisasi mutlak! Maksimalkan tata ruang kerja untuk menghilangkan semua hambatan mikro di pagi hari.";
+            } else {
+                verdict = "Disiplin Effortless! Selamat, kamu telah meretas cara kerja sistem neurosains.";
+                tips = "Luar biasa! Kombinasi otomatisasi rutinitas, adaptasi identitas, dan manajemen hambatan ini membuat disiplin mengalir natural tanpa paksaan.";
+            }
+
+            simVerdict.textContent = verdict;
+            dynamicTips.textContent = tips;
+        }
+
+        // Event Listener Perubahan Input Slider
+        inputBundling.addEventListener('input', updateSimulation);
+        inputAutomation.addEventListener('input', updateSimulation);
+        inputIdentity.addEventListener('input', updateSimulation);
+        inputFriction.addEventListener('input', updateSimulation);
+
+        // Jalankan Kalkulasi Awal Saat Halaman Pertama Kali Dimuat
+        updateSimulation();
+    </script>
+</body>
+</html>
