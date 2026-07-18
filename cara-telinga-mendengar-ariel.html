@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petualangan Suara: Bagaimana Telinga Kita Mendengar? 🎧</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Belajar cara kerja telinga dengan seru dan mudah dipahami anak-anak! Dilengkapi simulasi interaktif suara masuk ke dalam telinga.">
+    <meta name="author" content="Ariel Usman">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook / WhatsApp / Telegram -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Petualangan Suara: Bagaimana Telinga Kita Mendengar? 🎧">
+    <meta property="og:description" content="Yuk, cari tahu bagaimana cara telinga kita menangkap suara lewat simulasi seru yang gampang dimengerti!">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1200&auto=format&fit=crop">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Petualangan Suara: Bagaimana Telinga Kita Mendengar? 🎧">
+    <meta property="twitter:description" content="Yuk, cari tahu bagaimana cara telinga kita menangkap suara lewat simulasi seru yang gampang dimengerti!">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0fdf4 50%, #fef9c3 100%);
+        }
+        .kids-title {
+            font-family: 'Fredoka', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+<body class="min-h-screen text-slate-800 antialiased">
+
+    <!-- NAVBAR -->
+    <nav class="glass-nav fixed top-0 left-0 right-0 z-50 px-4 py-3 md:px-8 shadow-sm">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="text-2xl">🎧</span>
+                <span class="kids-title text-xl font-bold tracking-wide bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent">Dunia Bunyi</span>
+            </div>
+            <div class="flex items-center gap-4 md:gap-6 text-sm font-semibold text-slate-600">
+                <a href="#simulasi" class="hover:text-blue-600 transition-colors">🎮 Simulasi</a>
+                <a href="#cara-kerja" class="hover:text-emerald-600 transition-colors">📖 Cerita Telinga</a>
+                <a href="#tips" class="hover:text-amber-600 transition-colors">✨ Tips Sehat</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER / HERO SECTION -->
+    <header class="pt-24 pb-12 px-4 max-w-7xl mx-auto">
+        <div class="glass-card rounded-3xl p-6 md:p-12 shadow-xl border border-white/50 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden">
+            <div class="absolute -top-10 -right-10 w-40 h-40 bg-pink-300 rounded-full blur-3xl opacity-40 pointer-events-none"></div>
+            <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-300 rounded-full blur-3xl opacity-40 pointer-events-none"></div>
+            
+            <div class="flex-1 space-y-4 text-center md:text-left z-10">
+                <span class="inline-block bg-blue-100 text-blue-700 font-bold text-xs px-3 py-1.5 rounded-full uppercase tracking-wider">Seru dan Mudah! ✨</span>
+                <h1 class="kids-title text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight">
+                    Bagaimana Sih <br>
+                    <span class="text-blue-600">Telinga Kita</span> Mendengar?
+                </h1>
+                <p class="text-base md:text-lg text-slate-600 font-medium max-w-xl">
+                    Pernah bingung tidak, kenapa kamu bisa mendengar suara kucing mengeong atau musik yang ceria? Yuk, kita intip rahasia ajaib di dalam telingamu!
+                </p>
+                <div class="pt-2">
+                    <a href="#simulasi" class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-emerald-500 text-white font-bold px-6 py-3 rounded-full shadow-md hover:scale-105 active:scale-95 transition-all">
+                        <i class="fa-solid fa-play"></i> Mulai Main Simulasi
+                    </a>
+                </div>
+            </div>
+            
+            <div class="flex-1 w-full max-w-md z-10">
+                <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=600&auto=format&fit=crop" 
+                     alt="Anak mendengarkan suara dengan ceria" 
+                     class="rounded-2xl shadow-lg border-4 border-white object-cover w-full h-64 md:h-80">
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN BODY & SIDEBAR -->
+    <main class="px-4 max-w-7xl mx-auto pb-16 grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- BODY CONTENT -->
+        <div class="lg:col-span-2 space-y-6">
+            
+            <!-- SIMULASI INTERAKTIF -->
+            <section id="simulasi" class="glass-card rounded-3xl p-6 shadow-md border border-white/40">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-blue-500 text-white flex items-center justify-center text-lg shadow-md"><i class="fa-solid fa-gamepad"></i></div>
+                    <div>
+                        <h2 class="kids-title text-xl font-bold text-slate-900">Mainkan Jalannya Suara!</h2>
+                        <p class="text-xs text-slate-500 font-medium">Klik tombol main di bawah untuk melihat suara berjalan masuk</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/5 rounded-2xl p-4 border border-slate-200 min-h-[220px] flex flex-col justify-between relative overflow-hidden">
+                    <div class="flex justify-between items-center my-auto relative z-10 px-4">
+                        <div id="sim-source" class="flex flex-col items-center gap-1 transition-all duration-300">
+                            <span class="text-3xl animate-bounce">📢</span>
+                            <span class="text-[10px] font-bold bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">Sumber</span>
+                        </div>
+                        
+                        <div class="flex-1 flex justify-around px-2">
+                            <span id="dot1" class="w-3 h-3 rounded-full bg-slate-300 transition-colors duration-200"></span>
+                            <span id="dot2" class="w-3 h-3 rounded-full bg-slate-300 transition-colors duration-200"></span>
+                            <span id="dot3" class="w-3 h-3 rounded-full bg-slate-300 transition-colors duration-200"></span>
+                        </div>
+
+                        <div id="sim-outer" class="flex flex-col items-center gap-1 transition-all duration-300">
+                            <span class="text-3xl">👂</span>
+                            <span class="text-[10px] font-bold bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full">Daun luar</span>
+                        </div>
+
+                        <div class="flex-1 flex justify-around px-2">
+                            <span id="dot4" class="w-3 h-3 rounded-full bg-slate-300 transition-colors duration-200"></span>
+                            <span id="dot5" class="w-3 h-3 rounded-full bg-slate-300 transition-colors duration-200"></span>
+                        </div>
+
+                        <div id="sim-drum" class="flex flex-col items-center gap-1 transition-all duration-300">
+                            <span class="text-3xl">🥁</span>
+                            <span class="text-[10px] font-bold bg-pink-100 text-pink-700 px-2 py-0.5 rounded-full">Gendang</span>
+                        </div>
+
+                        <div class="flex-1 flex justify-around px-2">
+                            <span id="dot6" class="w-3 h-3 rounded-full bg-slate-300 transition-colors duration-200"></span>
+                        </div>
+
+                        <div id="sim-inner" class="flex flex-col items-center gap-1 transition-all duration-300">
+                            <span class="text-3xl">🐌</span>
+                            <span class="text-[10px] font-bold bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full">Siput</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/80 backdrop-blur-sm p-3 rounded-xl border border-white text-center shadow-sm min-h-[50px] flex items-center justify-center">
+                        <p id="sim-text" class="text-xs md:text-sm font-semibold text-slate-700">
+                            Klik tombol hijau di bawah untuk membunyikan suara! 🎺
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-4 flex gap-2 justify-center">
+                    <button onclick="startSimulation()" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm px-5 py-2.5 rounded-xl shadow-md transition-all active:scale-95 flex items-center gap-2">
+                        <i class="fa-solid fa-volume-high"></i> Bunyikan Suara!
+                    </button>
+                    <button onclick="resetSimulation()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-sm px-4 py-2.5 rounded-xl transition-all active:scale-95">
+                        Ulangi
+                    </button>
+                </div>
+            </section>
+
+            <!-- 3 LANGKAH CARA KERJA TELINGA -->
+            <section id="cara-kerja" class="space-y-4">
+                <h2 class="kids-title text-2xl font-bold text-slate-900 px-2">3 Langkah Hebat Telinga Mendengar 🚀</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    
+                    <!-- Langkah 1 -->
+                    <div class="glass-card rounded-2xl p-5 border border-white/50 space-y-3 shadow-sm">
+                        <div class="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center text-2xl">🤟</div>
+                        <h3 class="kids-title font-bold text-lg text-amber-800">1. Ditangkap Corong</h3>
+                        <p class="text-xs text-slate-600 font-medium leading-relaxed">
+                            Daun telingamu yang lebar itu gunanya mirip corong mainan. Dia bertugas menangkap suara yang beterbangan di udara lalu menyalurkannya masuk ke dalam lubang telinga.
+                        </p>
+                    </div>
+
+                    <!-- Langkah 2 -->
+                    <div class="glass-card rounded-2xl p-5 border border-white/50 space-y-3 shadow-sm">
+                        <div class="w-12 h-12 rounded-full bg-pink-100 flex items-center justify-center text-2xl">🥁</div>
+                        <h3 class="kids-title font-bold text-lg text-pink-800">2. Mengetuk Gendang</h3>
+                        <p class="text-xs text-slate-600 font-medium leading-relaxed">
+                            Di dalam lubang, ada kulit tipis yang namanya Gendang Telinga. Saat suara menabrak kulit ini, kulitnya akan bergetar seperti alat musik gendang yang sedang dipukul!
+                        </p>
+                    </div>
+
+                    <!-- Langkah 3 -->
+                    <div class="glass-card rounded-2xl p-5 border border-white/50 space-y-3 shadow-sm">
+                        <div class="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-2xl">🐌</div>
+                        <h3 class="kids-title font-bold text-lg text-emerald-800">3. Rumah Siput Ajaib</h3>
+                        <p class="text-xs text-slate-600 font-medium leading-relaxed">
+                            Getaran tadi jalan lagi ke dalam tulang berbentuk cangkang siput. Di dalamnya ada air dan rambut halus yang mengubah getaran menjadi pesan rahasia untuk dikirim ke otak. Otak pun tahu jika itu suara musik!
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="space-y-4">
+            
+            <!-- FUN FACT -->
+            <div class="glass-card rounded-3xl p-5 border border-white/50 space-y-3 shadow-sm">
+                <div class="flex items-center gap-2 text-amber-600">
+                    <i class="fa-solid fa-lightbulb text-lg animate-pulse"></i>
+                    <h3 class="kids-title font-bold text-base text-slate-900">Tahukah Kamu? 🤔</h3>
+                </div>
+                <div class="text-xs text-slate-600 font-medium space-y-3 leading-relaxed">
+                    <div class="p-2.5 bg-amber-50 rounded-xl border border-amber-100">
+                        Telinga Tidak Pernah Tidur! Saat kamu tidur lelap, telingamu tetap mendengarkan suara di sekitar. Tapi otakmu memilih untuk mengabaikannya supaya kamu tidak terbangun.
+                    </div>
+                    <div class="p-2.5 bg-blue-50 rounded-xl border border-blue-100">
+                        Bisa Bantu Jaga Keseimbangan! Selain buat mendengar, cairan di dalam rumah siput juga bertugas membantumu agar bisa berdiri tegak dan tidak mudah jatuh saat berlarian!
+                    </div>
+                </div>
+            </div>
+
+            <!-- TIPS -->
+            <div id="tips" class="glass-card rounded-3xl p-5 border border-white/50 space-y-3 shadow-sm">
+                <div class="flex items-center gap-2 text-emerald-600">
+                    <i class="fa-solid fa-shield-heart text-lg"></i>
+                    <h3 class="kids-title font-bold text-base text-slate-900">Sayangi Telingamu! ❤️</h3>
+                </div>
+                <ul class="text-xs text-slate-600 font-medium space-y-2">
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500">✔</span> 
+                        <span>Jangan mendengarkan musik atau menonton video terlalu keras ya!</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500">✔</span> 
+                        <span>Jangan memasukkan benda keras atau tajam seperti lidi ke dalam telinga.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500">✔</span> 
+                        <span>Kalau telingamu terasa sakit, langsung beri tahu Ibu atau Ayah untuk periksa ke dokter.</span>
+                    </li>
+                </ul>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-white pt-10 pb-6 px-4 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div>
+                <p class="kids-title text-lg font-bold tracking-wide bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">Dunia Bunyi Interaktif</p>
+                <p class="text-xs text-slate-400 mt-1">Belajar anatomi indra pendengaran jadi seru bersama teknologi masa kini.</p>
+            </div>
+            
+            <div class="flex flex-col items-center md:items-end gap-2">
+                <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white text-xs font-bold px-4 py-2 rounded-full transition-all shadow-md">
+                    <i class="fa-brands fa-instagram text-sm"></i> @arielrcun
+                </a>
+                <p class="text-xs text-slate-500 mt-1">&copy; 2026 Oleh Ariel Usman. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERAKTIF JAVASCRIPT -->
+    <script>
+        const dots = [
+            document.getElementById('dot1'),
+            document.getElementById('dot2'),
+            document.getElementById('dot3'),
+            document.getElementById('dot4'),
+            document.getElementById('dot5'),
+            document.getElementById('dot6')
+        ];
+        
+        const simSource = document.getElementById('sim-source');
+        const simOuter = document.getElementById('sim-outer');
+        const simDrum = document.getElementById('sim-drum');
+        const simInner = document.getElementById('sim-inner');
+        const simText = document.getElementById('sim-text');
+
+        let isRunning = false;
+
+        function resetSimulation() {
+            dots.forEach(dot => {
+                dot.className = "w-3 h-3 rounded-full bg-slate-300 transition-colors duration-200";
+            });
+            [simSource, simOuter, simDrum, simInner].forEach(el => el.style.transform = "scale(1)");
+            simText.innerHTML = "Klik tombol hijau di bawah untuk membunyikan suara! 🎺";
+            isRunning = false;
+        }
+
+        function startSimulation() {
+            if(isRunning) return; 
+            isRunning = true;
+            resetSimulation();
+
+            simText.innerHTML = "Bunyi terompet tercipta! Suaranya terbang meluncur melewati udara...";
+            simSource.style.transform = "scale(1.3)";
+            
+            setTimeout(() => {
+                dots[0].classList.replace('bg-slate-300', 'bg-blue-500');
+                dots[1].classList.replace('bg-slate-300', 'bg-blue-500');
+                dots[2].classList.replace('bg-slate-300', 'bg-blue-500');
+            }, 600);
+
+            setTimeout(() => {
+                simSource.style.transform = "scale(1)";
+                simOuter.style.transform = "scale(1.3)";
+                simText.innerHTML = "Hore! Daun telinga luarmu berhasil menangkap suara dan memasukkannya ke lubang!";
+                dots[3].classList.replace('bg-slate-300', 'bg-amber-500');
+                dots[4].classList.replace('bg-slate-300', 'bg-amber-500');
+            }, 1800);
+
+            setTimeout(() => {
+                simOuter.style.transform = "scale(1)";
+                simDrum.style.transform = "scale(1.3)";
+                simText.innerHTML = "Suara menabrak kulit Gendang Telingamu hingga ikut bergetar menari!";
+                dots[5].classList.replace('bg-slate-300', 'bg-pink-500');
+            }, 3200);
+
+            setTimeout(() => {
+                simDrum.style.transform = "scale(1)";
+                simInner.style.transform = "scale(1.3)";
+                simText.innerHTML = "Getaran mengalir ke Rumah Siput! Air di dalamnya bergoyang dan mengirim sinyal pesan ke otak. Kamu pun bisa mendengar suaranya dengan jelas! 🎉";
+            }, 4600);
+
+            setTimeout(() => {
+                simInner.style.transform = "scale(1)";
+                isRunning = false;
+            }, 6200);
+        }
+    </script>
+
+</body>
+</html>
