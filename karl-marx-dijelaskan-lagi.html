@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengenal Karl Marx: Pemikir, Filsuf & Teoretikus Ekonomi</title>
+    
+    <!-- Meta SEO -->
+    <meta name="description" content="Eksplorasi kehidupan, pemikiran, dan karya Karl Marx — filsuf abad ke-19 yang mengubah lanskap sosiologi dan ekonomi politik dunia.">
+    <meta name="keywords" content="Karl Marx, Marxisme, Kapitalis, Sosialisme, Dialektika Materialisme, Das Kapital, Manifesto Komunis">
+    <meta name="author" content="Ariel Usman">
+
+    <!-- Open Graph / Sosial Media Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Siapa Itu Karl Marx? - Panduan Pemikiran & Sejarah">
+    <meta property="og:description" content="Pelajari biografi, teori utama, karya monumental, dan dampak pemikiran Karl Marx secara interaktif.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:url" content="https://example.com/karl-marx">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232563eb' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-0.5-5H20'/></svg>">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        },
+                        accent: {
+                            500: '#f43f5e',
+                            600: '#e11d48',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Style Glassmorphism & Custom Scrollbar -->
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-slate-50 to-rose-50 text-slate-800 font-sans min-h-screen flex flex-col selection:bg-brand-500 selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 glass-nav border-b border-slate-200/60 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Brand Left -->
+                <a href="#" class="flex items-center gap-2.5 font-bold text-xl text-slate-900 hover:opacity-80 transition">
+                    <div class="p-2 bg-brand-600 text-white rounded-xl shadow-md shadow-brand-500/20">
+                        <i data-lucide="book-open" class="w-5 h-5"></i>
+                    </div>
+                    <span class="tracking-tight bg-gradient-to-r from-brand-700 to-indigo-600 bg-clip-text text-transparent">Marxology</span>
+                </a>
+
+                <!-- Desktop Menu Right -->
+                <div class="hidden md:flex items-center space-x-1 lg:space-x-2 font-medium text-slate-600">
+                    <a href="#biografi" class="px-3 py-2 rounded-lg hover:text-brand-600 hover:bg-slate-100/80 transition">Biografi</a>
+                    <a href="#pemikiran" class="px-3 py-2 rounded-lg hover:text-brand-600 hover:bg-slate-100/80 transition">Pemikiran Utama</a>
+                    <a href="#karya" class="px-3 py-2 rounded-lg hover:text-brand-600 hover:bg-slate-100/80 transition">Karya Monumental</a>
+                    <a href="#kuis" class="px-3 py-2 rounded-lg text-brand-600 bg-brand-50 hover:bg-brand-100 transition font-semibold">Kuis Ringkas</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none" aria-label="Toggle Menu">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white/95 backdrop-blur-md px-4 pt-2 pb-4 space-y-2">
+            <a href="#biografi" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">Biografi</a>
+            <a href="#pemikiran" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">Pemikiran Utama</a>
+            <a href="#karya" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">Karya Monumental</a>
+            <a href="#kuis" class="block px-3 py-2 rounded-md font-medium text-brand-600 bg-brand-50">Kuis Ringkas</a>
+        </div>
+    </nav>
+
+    <!-- Hero Header (Glassmorphism) -->
+    <header class="relative overflow-hidden py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
+        <!-- Glow Orbs BG -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-72 h-72 bg-rose-400/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 lg:p-16 shadow-xl shadow-slate-200/50 border border-white/80 relative overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-100 text-brand-700 border border-brand-200">
+                            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Profil Tokoh Sejarah
+                        </span>
+                        
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight">
+                            Siapa Itu <span class="bg-gradient-to-r from-brand-600 to-accent-600 bg-clip-text text-transparent">Karl Marx?</span>
+                        </h1>
+                        
+                        <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+                            Karl Marx (1818–1883) adalah filsuf, ekonom, sosiolog, dan jurnalis asal Jerman. Pemikirannya mendobrak peta politik dan ekonomi global, mengkritik struktur kapitalisme, serta menginspirasi gerakan sosial dunia modern.
+                        </p>
+
+                        <div class="flex flex-wrap gap-4 justify-center lg:justify-start pt-2">
+                            <a href="#biografi" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-600 text-white font-medium hover:bg-brand-700 transition shadow-lg shadow-brand-500/25">
+                                Eksplorasi Lebih Lanjut <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                            </a>
+                            <a href="#kuis" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-slate-700 font-medium hover:bg-slate-50 transition border border-slate-200 shadow-sm">
+                                Tes Pengetahuan
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Visual Hero Avatar/Image -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative group">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-brand-600 to-accent-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Buku Filsafat & Sejarah" 
+                                 class="relative rounded-2xl shadow-xl object-cover w-full max-w-sm h-80 sm:h-96 border-2 border-white">
+                            <div class="absolute bottom-4 left-4 right-4 p-3 glass-card rounded-xl text-xs text-slate-700 text-center font-medium shadow-lg">
+                                "Para filsuf hanya menafsirkan dunia; hal terpenting adalah mengubahnya."
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container with Sidebar -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <!-- Body Content Main -->
+            <main class="lg:col-span-8 space-y-12">
+                
+                <!-- Section Biografi -->
+                <section id="biografi" class="scroll-mt-24 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 bg-brand-100 text-brand-600 rounded-xl">
+                            <i data-lucide="user" class="w-6 h-6"></i>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Biografi Singkat</h2>
+                    </div>
+                    
+                    <div class="bg-white/80 backdrop-blur-md rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200/80 space-y-4 text-slate-600 leading-relaxed">
+                        <p>
+                            Lahir di <strong>Trier, Prussia (sekarang Jerman)</strong> pada 5 Mei 1818, Marx tumbuh dalam keluarga kelas menengah. Ia menempuh pendidikan hukum dan filsafat di Universitas Bonn dan Universitas Humboldt Berlin, di mana ia sangat terpengaruh oleh dialektika pemikiran <em>G.W.F. Hegel</em>.
+                        </p>
+                        <p>
+                            Karena pandangan politik radikalnya dalam jurnalisme, Marx sering diasingkan dan berpindah tempat dari Paris, Brussels, hingga akhirnya menetap di London. Di London, dengan dukungan sahabat karib dan kolaboratornya, <strong>Friedrich Engels</strong>, Marx menghabiskan sisa hidupnya meneliti sistem ekonomi kapitalis di British Museum.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Section Pemikiran Utama -->
+                <section id="pemikiran" class="scroll-mt-24 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 bg-rose-100 text-rose-600 rounded-xl">
+                            <i data-lucide="brain" class="w-6 h-6"></i>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Pemikiran & Teori Utama</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Card 1 -->
+                        <div class="bg-white/80 backdrop-blur-md p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition space-y-3">
+                            <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-bold">1</div>
+                            <h3 class="text-lg font-bold text-slate-900">Materialisme Historis</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Pandangan bahwa perkembangan sejarah manusia pada dasarnya didorong oleh kondisi material dan kegiatan ekonomi, bukan sekadar ide-ide abstrak.
+                            </p>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="bg-white/80 backdrop-blur-md p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition space-y-3">
+                            <div class="w-10 h-10 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center font-bold">2</div>
+                            <h3 class="text-lg font-bold text-slate-900">Pertentangan Kelas</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Masyarakat kapitalis terbagi menjadi dua kelompok utama: <strong>Borjuis</strong> (pemilik modal/alat produksi) dan <strong>Proletar</strong> (buruh yang menjual tenaga kerja).
+                            </p>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="bg-white/80 backdrop-blur-md p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition space-y-3">
+                            <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center font-bold">3</div>
+                            <h3 class="text-lg font-bold text-slate-900">Teori Nilai Lebih</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Keuntungan kapitalis diperoleh dari "nilai lebih" — selisih antara nilai hasil kerja pekerja dengan upah minim yang sebenarnya dibayarkan kepada mereka.
+                            </p>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="bg-white/80 backdrop-blur-md p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition space-y-3">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">4</div>
+                            <h3 class="text-lg font-bold text-slate-900">Alienasi Pekerja</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Dalam industrialisasi kapitalis, buruh mengalami keterasingan (alienasi) dari produk buatannya sendiri, proses kerja, sesama manusia, dan potensi dirinya.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section Karya Utama -->
+                <section id="karya" class="scroll-mt-24 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 bg-emerald-100 text-emerald-600 rounded-xl">
+                            <i data-lucide="library" class="w-6 h-6"></i>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Karya Monumental</h2>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="bg-white/80 backdrop-blur-md p-6 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col sm:flex-row gap-4 items-start">
+                            <div class="p-3 bg-rose-50 text-rose-600 rounded-xl font-bold shrink-0">1848</div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900">Manifesto Komunis (The Communist Manifesto)</h3>
+                                <p class="text-sm text-slate-600 mt-1 leading-relaxed">
+                                    Ditulis bersama Friedrich Engels. Risalah politik pendek yang merumuskan prinsip dasar perjuangan kelas dan menjadi salah satu dokumen politik paling berpengaruh di dunia.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white/80 backdrop-blur-md p-6 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col sm:flex-row gap-4 items-start">
+                            <div class="p-3 bg-brand-50 text-brand-600 rounded-xl font-bold shrink-0">1867</div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900">Das Kapital (Capital: Critique of Political Economy)</h3>
+                                <p class="text-sm text-slate-600 mt-1 leading-relaxed">
+                                    Magnum opus Karl Marx yang menganalisis secara mendalam mekanisme internal sistem ekonomi kapitalis, dinamika pasar, serta dampak sosiologisnya.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Fitur Interaktif: Kuis Ringkas -->
+                <section id="kuis" class="scroll-mt-24 space-y-6">
+                    <div class="glass-card rounded-3xl p-6 sm:p-8 border border-brand-200/60 shadow-lg relative overflow-hidden">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-2 bg-brand-600 text-white rounded-lg">
+                                <i data-lucide="help-circle" class="w-5 h-5"></i>
+                            </div>
+                            <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Uji Pemahaman Singkat</h2>
+                        </div>
+                        
+                        <div id="quiz-container" class="space-y-4">
+                            <p class="text-sm sm:text-base font-medium text-slate-700" id="quiz-question">
+                                Menurut Karl Marx, kelompok masyarakat yang memiliki alat produksi dalam sistem kapitalis disebut...
+                            </p>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="quiz-options">
+                                <button onclick="checkAnswer(false, this)" class="p-3 text-left rounded-xl border border-slate-200 hover:bg-brand-50 hover:border-brand-300 transition text-sm font-medium text-slate-700 bg-white/60">
+                                    A. Proletar
+                                </button>
+                                <button onclick="checkAnswer(true, this)" class="p-3 text-left rounded-xl border border-slate-200 hover:bg-brand-50 hover:border-brand-300 transition text-sm font-medium text-slate-700 bg-white/60">
+                                    B. Borjuis
+                                </button>
+                                <button onclick="checkAnswer(false, this)" class="p-3 text-left rounded-xl border border-slate-200 hover:bg-brand-50 hover:border-brand-300 transition text-sm font-medium text-slate-700 bg-white/60">
+                                    C. Feodal
+                                </button>
+                                <button onclick="checkAnswer(false, this)" class="p-3 text-left rounded-xl border border-slate-200 hover:bg-brand-50 hover:border-brand-300 transition text-sm font-medium text-slate-700 bg-white/60">
+                                    D. Bangsawan
+                                </button>
+                            </div>
+
+                            <div id="quiz-feedback" class="hidden p-4 rounded-xl text-sm font-semibold transition"></div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- Sidebar -->
+            <aside class="lg:col-span-4 space-y-6">
+                
+                <!-- Sidebar Box 1: Fakta Cepat -->
+                <div class="bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-sm border border-slate-200/80 space-y-4 sticky top-24">
+                    <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                        <i data-lucide="zap" class="w-5 h-5 text-amber-500"></i> Fakta Cepat
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-600 divide-y divide-slate-100">
+                        <li class="pt-2 flex justify-between">
+                            <span class="text-slate-400">Lahir:</span>
+                            <span class="font-medium text-slate-800">5 Mei 1818</span>
+                        </li>
+                        <li class="pt-2 flex justify-between">
+                            <span class="text-slate-400">Wafat:</span>
+                            <span class="font-medium text-slate-800">14 Maret 1883</span>
+                        </li>
+                        <li class="pt-2 flex justify-between">
+                            <span class="text-slate-400">Mitra Utama:</span>
+                            <span class="font-medium text-slate-800">Friedrich Engels</span>
+                        </li>
+                        <li class="pt-2 flex justify-between">
+                            <span class="text-slate-400">Bidang Utama:</span>
+                            <span class="font-medium text-slate-800">Filsafat, Ekonomi</span>
+                        </li>
+                    </ul>
+
+                    <hr class="border-slate-100">
+
+                    <!-- Sidebar Box 2: Topik Terkait -->
+                    <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider text-xs">Topik Terkait</h4>
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs rounded-full hover:bg-brand-50 hover:text-brand-600 transition cursor-pointer">Sosiologi</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs rounded-full hover:bg-brand-50 hover:text-brand-600 transition cursor-pointer">Revolusi Industri</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs rounded-full hover:bg-brand-50 hover:text-brand-600 transition cursor-pointer">Teori Kritis</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs rounded-full hover:bg-brand-50 hover:text-brand-600 transition cursor-pointer">Ekonomi Politik</span>
+                    </div>
+                </div>
+
+            </aside>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-auto border-t border-slate-200/80 bg-white/70 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+                
+                <div>
+                    <p class="text-sm text-slate-600 font-medium">
+                        Oleh <span class="font-bold text-slate-800">Ariel Usman</span> &copy; 2026
+                    </p>
+                    <p class="text-xs text-slate-400 mt-0.5">Seluruh Hak Cipta Dilindungi.</p>
+                </div>
+
+                <!-- Instagram Link -->
+                <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-medium hover:opacity-90 transition shadow-md shadow-pink-500/20">
+                    <i data-lucide="instagram" class="w-4 h-4"></i>
+                    <span>@arielrcun</span>
+                </a>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interaktif -->
+    <script>
+        // Inisialisasi Lucide Icons
+        lucide.createIcons();
+
+        // Toggle Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Kuis Interaktif
+        function checkAnswer(isCorrect, btn) {
+            const feedback = document.getElementById('quiz-feedback');
+            const buttons = document.querySelectorAll('#quiz-options button');
+            
+            // Disable semua tombol setelah memilih
+            buttons.forEach(b => {
+                b.disabled = true;
+                b.classList.add('opacity-60', 'cursor-not-allowed');
+            });
+
+            feedback.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'bg-rose-100', 'text-rose-800');
+
+            if (isCorrect) {
+                btn.classList.remove('bg-white/60', 'opacity-60');
+                btn.classList.add('bg-emerald-500', 'text-white', 'border-emerald-600', 'opacity-100');
+                feedback.classList.add('bg-emerald-100', 'text-emerald-800');
+                feedback.innerHTML = '<strong>Tepat sekali!</strong> Borjuis adalah sebutan untuk pemilik modal dan alat produksi dalam analisis kelas Marx.';
+            } else {
+                btn.classList.remove('bg-white/60', 'opacity-60');
+                btn.classList.add('bg-rose-500', 'text-white', 'border-rose-600', 'opacity-100');
+                feedback.classList.add('bg-rose-100', 'text-rose-800');
+                feedback.innerHTML = '<strong>Kurang tepat.</strong> Jawaban yang benar adalah <strong>B. Borjuis</strong>.';
+            }
+        }
+    </script>
+</body>
+</html>
