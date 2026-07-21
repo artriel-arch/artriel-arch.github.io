@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check My Health By Ariel - Kalkulator Gizi & Skrining Kesehatan Indonesia</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Aplikasi pemantau kesehatan interaktif khusus orang Indonesia: Kalkulator Gizi Makanan Rumahan, Kalkulator BMI Asia/Indonesia, dan Skrining Laboratorium Mandiri.">
+    <meta name="keywords" content="kalkulator gizi, bmi indonesia, cek gula darah, cek kolesterol, asam urat, tekanan darah, check my health ariel">
+    <meta name="author" content="Ariel Usman">
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Check My Health By Ariel">
+    <meta property="og:description" content="Cek BMI, Gizi Makanan Rumahan, dan Parameter Lab Tubuhmu Secara Instan & Akurat.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Check My Health By Ariel">
+    <meta property="twitter:description" content="Kalkulator Gizi Rumahan & Skrining Kesehatan Mandiri.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23059669' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/></svg>">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col justify-between selection:bg-emerald-200">
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/80 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="p-2 bg-emerald-500 rounded-xl text-white shadow-md shadow-emerald-200 group-hover:scale-105 transition-transform">
+                        <i data-lucide="activity" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="font-bold text-lg leading-none text-slate-900 block">Check My Health</span>
+                        <span class="text-xs text-emerald-600 font-semibold tracking-wider uppercase">By Ariel</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="#fitur" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 transition-colors">Fitur Utama</a>
+                    <a href="#gizi" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 transition-colors">Kalkulator Gizi</a>
+                    <a href="#bmi" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 transition-colors">Kalkulator BMI</a>
+                    <a href="#lab" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 transition-colors">Skrining Lab</a>
+                    <button onclick="toggleSidebar()" class="ml-2 p-2 rounded-lg bg-slate-100 hover:bg-emerald-100 text-slate-700 hover:text-emerald-700 transition-colors flex items-center space-x-1 text-sm font-medium">
+                        <i data-lucide="panel-right" class="w-4 h-4"></i>
+                        <span>Edukasi</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center space-x-2">
+                    <button onclick="toggleSidebar()" class="p-2 text-slate-600 hover:text-emerald-600">
+                        <i data-lucide="book-open" class="w-6 h-6"></i>
+                    </button>
+                    <button onclick="toggleMobileMenu()" class="p-2 text-slate-600 hover:text-emerald-600">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-2 pb-4 space-y-1">
+            <a href="#fitur" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-emerald-50">Fitur Utama</a>
+            <a href="#gizi" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-emerald-50">Kalkulator Gizi</a>
+            <a href="#bmi" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-emerald-50">Kalkulator BMI</a>
+            <a href="#lab" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-emerald-50">Skrining Lab</a>
+        </div>
+    </nav>
+
+    <!-- HERO HEADER (Glassmorphism) -->
+    <header class="relative overflow-hidden bg-gradient-to-br from-emerald-500 via-teal-600 to-cyan-700 text-white py-16 lg:py-24">
+        <!-- Decorative Background Pattern -->
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Text Area -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <span class="inline-flex items-center space-x-2 px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-semibold uppercase tracking-wider text-white">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                        <span>Aplikasi Kesehatan Mandiri</span>
+                    </span>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+                        Pantau Gizi & Kesehatan Tubuhmu Lebih Mudah dan Akurat.
+                    </h1>
+                    <p class="text-emerald-50 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Didesain khusus sesuai standar kondisi fisik masyarakat Indonesia. Hitung porsi makanan rumahan, indeks massa tubuh, hingga evaluasi indikator lab darahmu dalam satu platform terpadu.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start pt-2">
+                        <a href="#gizi" class="px-6 py-3 bg-white text-emerald-700 font-bold rounded-xl shadow-lg hover:bg-emerald-50 hover:shadow-xl transition-all flex items-center space-x-2">
+                            <i data-lucide="calculator" class="w-5 h-5"></i>
+                            <span>Mulai Hitung Gizi</span>
+                        </a>
+                        <a href="#lab" class="px-6 py-3 bg-emerald-800/40 backdrop-blur-md border border-white/30 text-white font-semibold rounded-xl hover:bg-emerald-800/60 transition-all flex items-center space-x-2">
+                            <i data-lucide="heart-pulse" class="w-5 h-5"></i>
+                            <span>Cek Hasil Lab</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Glassmorphism Card -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="w-full max-w-md p-6 sm:p-8 bg-white/15 backdrop-blur-xl border border-white/30 rounded-3xl shadow-2xl text-white space-y-4">
+                        <div class="flex items-center space-x-4 border-b border-white/20 pb-4">
+                            <div class="p-3 bg-emerald-400/20 rounded-2xl">
+                                <i data-lucide="shield-check" class="w-8 h-8 text-emerald-200"></i>
+                            </div>
+                            <div>
+                                <h2 class="font-bold text-lg">Skrining Pintar</h2>
+                                <p class="text-xs text-emerald-100">Menyesuaikan Riwayat Medis Mandiri</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-300 flex-shrink-0"></i>
+                                <span>Kalkulasi Nutrisi Makanan Rumahan</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-300 flex-shrink-0"></i>
+                                <span>BMI Khusus Standar Asia/Indonesia</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-300 flex-shrink-0"></i>
+                                <span>Evaluasi 4 Level Teguran Hasil Lab</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN BODY CONTENT -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16 flex-grow w-full">
+
+        <!-- SECTION FITUR UTAMA -->
+        <section id="fitur" class="space-y-8">
+            <div class="text-center max-w-3xl mx-auto space-y-2">
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Apa Saja Yang Bisa Ditinjau?</h2>
+                <p class="text-slate-600 text-sm sm:text-base">Web ini membantu memberi wawasan dasar gizi dan status klinis harian secara transparan.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Feature 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow space-y-3">
+                    <div class="p-3 bg-emerald-100 text-emerald-600 rounded-xl w-fit">
+                        <i data-lucide="utensils" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900">Gizi Makanan Rumahan</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Menghitung estimasi Kalori, Protein, Lemak, dan Karbohidrat dari menu harian seperti Nasi, Ayam, Telur, Ikan, dan Sayuran.
+                    </p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow space-y-3">
+                    <div class="p-3 bg-cyan-100 text-cyan-600 rounded-xl w-fit">
+                        <i data-lucide="scale" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900">BMI Khusus Indonesia</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Menggunakan standar pengelompokan BMI khusus Asia-Pasifik (Kemenkes RI) untuk akurasi berat badan ideal yang tepat.
+                    </p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow space-y-3">
+                    <div class="p-3 bg-rose-100 text-rose-600 rounded-xl w-fit">
+                        <i data-lucide="stethoscope" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900">Skrining Hasil Lab Datar</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Evaluasi otomatis indikator Gula Darah, Kolesterol, Asam Urat, dan Tekanan Darah berdasarkan riwayat penyakit.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION KALKULATOR GIZI MAKANAN RUMAHAN -->
+        <section id="gizi" class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm space-y-8 scroll-mt-20">
+            <div class="border-b border-slate-100 pb-4">
+                <div class="flex items-center space-x-3">
+                    <div class="p-2 bg-emerald-500 text-white rounded-lg">
+                        <i data-lucide="salad" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Kalkulator Gizi Makanan Rumahan</h2>
+                        <p class="text-xs sm:text-sm text-slate-500">Pilih porsi makan harianmu untuk menghitung asupan nutrisi makro.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Input Controls -->
+                <div class="lg:col-span-7 space-y-4">
+                    <!-- Food Item Input Group -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Nasi -->
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 space-y-2">
+                            <label class="font-semibold text-sm flex justify-between text-slate-700">
+                                <span>Nasi Putih</span>
+                                <span class="text-xs font-normal text-slate-500">(Centong)</span>
+                            </label>
+                            <div class="flex items-center space-x-2">
+                                <button onclick="adjustValue('nasi', -0.5)" class="p-2 bg-white border rounded-lg text-slate-600 hover:bg-slate-100">-</button>
+                                <input type="number" id="input-nasi" value="1" step="0.5" min="0" class="w-full text-center bg-white border border-slate-200 rounded-lg py-1.5 font-semibold text-slate-800">
+                                <button onclick="adjustValue('nasi', 0.5)" class="p-2 bg-white border rounded-lg text-slate-600 hover:bg-slate-100">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Ayam -->
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 space-y-2">
+                            <label class="font-semibold text-sm flex justify-between text-slate-700">
+                                <span>Daging Ayam</span>
+                                <span class="text-xs font-normal text-slate-500">(Potong Sedang)</span>
+                            </label>
+                            <div class="flex items-center space-x-2">
+                                <button onclick="adjustValue('ayam', -1)" class="p-2 bg-white border rounded-lg text-slate-600 hover:bg-slate-100">-</button>
+                                <input type="number" id="input-ayam" value="1" min="0" class="w-full text-center bg-white border border-slate-200 rounded-lg py-1.5 font-semibold text-slate-800">
+                                <button onclick="adjustValue('ayam', 1)" class="p-2 bg-white border rounded-lg text-slate-600 hover:bg-slate-100">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Telur -->
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 space-y-2">
+                            <label class="font-semibold text-sm flex justify-between text-slate-700">
+                                <span>Telur Ayam</span>
+                                <span class="text-xs font-normal text-slate-500">(Butir)</span>
+                            </label>
+                            <div class="flex items-center space-x-2">
+                                <button onclick="adjustValue('telur', -1)" class="p-2 bg-white border rounded-lg text-slate-600 hover:bg-slate-100">-</button>
+                                <input type="number" id="input-telur" value="1" min="0" class="w-full text-center bg-white border border-slate-200 rounded-lg py-1.5 font-semibold text-slate-800">
+                                <button onclick="adjustValue('telur', 1)" class="p-2 bg-white border rounded-lg text-slate-600 hover:bg-slate-100">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Ikan -->
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 space-y-2">
+                            <label class="font-semibold text-sm flex justify-between text-slate-700">
+                                <span>Ikan</span>
+                                <span class="text-xs font-normal text-slate-500">(Potong)</span>
+                            </label>
+                            <div class="flex items-center space-x-2">
+                                <button onclick="adjustValue('ikan', -1)" class="p-2 bg-white border rounded-lg text-slate-600 hover:bg-slate-100">-</button>
+                                <input type="number" id="input-ikan" value="0" min="0" class="w-full text-center bg-white border border-slate-200 rounded-lg py-1.5 font-semibold text-slate-800">
+                                <button onclick="adjustValue('ikan', 1)" class="p-2 bg-white border rounded-lg text-slate-600 hover:bg-slate-100">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Sayur -->
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 space-y-2 sm:col-span-2">
+                            <label class="font-semibold text-sm flex justify-between text-slate-700">
+                                <span>Sayur Matang (Bayam/Tumis/Sup)</span>
+                                <span class="text-xs font-normal text-slate-500">(Mangkuk Sedang)</span>
+                            </label>
+                            <div class="flex items-center space-x-2">
+                                <button onclick="adjustValue('sayur', -0.5)" class="p-2 bg-white border rounded-lg text-slate-600 hover:bg-slate-100">-</button>
+                                <input type="number" id="input-sayur" value="1" step="0.5" min="0" class="w-full text-center bg-white border border-slate-200 rounded-lg py-1.5 font-semibold text-slate-800">
+                                <button onclick="adjustValue('sayur', 0.5)" class="p-2 bg-white border rounded-lg text-slate-600 hover:bg-slate-100">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="hitungGizi()" class="w-full py-3 bg-emerald-600 text-white font-bold rounded-xl hover:bg-emerald-700 transition-colors shadow-md shadow-emerald-100 flex items-center justify-center space-x-2">
+                        <i data-lucide="calculator" class="w-5 h-5"></i>
+                        <span>Hitung Nutrisi</span>
+                    </button>
+                </div>
+
+                <!-- Result Display -->
+                <div class="lg:col-span-5 bg-slate-900 text-white p-6 rounded-3xl flex flex-col justify-between space-y-6">
+                    <div>
+                        <span class="text-xs text-emerald-400 font-semibold tracking-wider uppercase">Ringkasan Nutrisi Sekali Makan</span>
+                        <div class="mt-2 flex items-baseline space-x-2">
+                            <span id="res-kalori" class="text-4xl font-extrabold text-white">0</span>
+                            <span class="text-slate-400 font-medium">Kkal</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-3 pt-4 border-t border-slate-800">
+                        <div class="bg-slate-800/80 p-3 rounded-2xl text-center">
+                            <span class="text-xs text-slate-400 block">Karbo</span>
+                            <span id="res-karbo" class="text-lg font-bold text-amber-400">0g</span>
+                        </div>
+                        <div class="bg-slate-800/80 p-3 rounded-2xl text-center">
+                            <span class="text-xs text-slate-400 block">Protein</span>
+                            <span id="res-protein" class="text-lg font-bold text-emerald-400">0g</span>
+                        </div>
+                        <div class="bg-slate-800/80 p-3 rounded-2xl text-center">
+                            <span class="text-xs text-slate-400 block">Lemak</span>
+                            <span id="res-lemak" class="text-lg font-bold text-rose-400">0g</span>
+                        </div>
+                    </div>
+
+                    <div id="gizi-tips" class="text-xs text-slate-400 italic bg-slate-800/40 p-3 rounded-xl border border-slate-800">
+                        Tekan "Hitung Nutrisi" untuk menampilkan estimasi kebutuhan gizi harianmu.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION KALKULATOR BMI KHUSUS INDONESIA -->
+        <section id="bmi" class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm space-y-8 scroll-mt-20">
+            <div class="border-b border-slate-100 pb-4">
+                <div class="flex items-center space-x-3">
+                    <div class="p-2 bg-cyan-500 text-white rounded-lg">
+                        <i data-lucide="scale" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Kalkulator BMI Khusus Tubuh Indonesia</h2>
+                        <p class="text-xs sm:text-sm text-slate-500">Standar Klasifikasi Kemenkes RI / WHO Asia-Pasifik.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <div class="space-y-4">
+                    <div class="space-y-2">
+                        <label class="block text-sm font-semibold text-slate-700">Berat Badan (kg)</label>
+                        <input type="number" id="bmi-bb" placeholder="Contoh: 65" class="w-full p-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:outline-none">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="block text-sm font-semibold text-slate-700">Tinggi Badan (cm)</label>
+                        <input type="number" id="bmi-tb" placeholder="Contoh: 168" class="w-full p-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:outline-none">
+                    </div>
+                    <button onclick="hitungBMI()" class="w-full py-3 bg-cyan-600 text-white font-bold rounded-xl hover:bg-cyan-700 transition-colors shadow-md shadow-cyan-100 flex items-center justify-center space-x-2">
+                        <i data-lucide="calculator" class="w-5 h-5"></i>
+                        <span>Hitung BMI</span>
+                    </button>
+                </div>
+
+                <!-- Hasil BMI -->
+                <div id="bmi-result-card" class="p-6 bg-slate-50 rounded-2xl border border-slate-200 space-y-4 text-center">
+                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block">Hasil Indeks Massa Tubuh</span>
+                    <div id="bmi-value" class="text-5xl font-black text-slate-700">-</div>
+                    <div id="bmi-status" class="inline-block px-4 py-1.5 rounded-full text-sm font-bold bg-slate-200 text-slate-700">
+                        Belum Diukur
+                    </div>
+                    <p id="bmi-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        Masukkan berat dan tinggi badanmu lalu klik tombol hitung untuk melihat kategori status gizi.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION SKRINING LAB & SISTEMATIKA RIWAYAT -->
+        <section id="lab" class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm space-y-8 scroll-mt-20">
+            <div class="border-b border-slate-100 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div class="flex items-center space-x-3">
+                    <div class="p-2 bg-rose-500 text-white rounded-lg">
+                        <i data-lucide="heart-pulse" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Skrining Hasil Lab Mandiri</h2>
+                        <p class="text-xs sm:text-sm text-slate-500">Gula Darah, Kolesterol, Asam Urat, & Tekanan Darah.</p>
+                    </div>
+                </div>
+
+                <!-- Toggle Switch Riwayat Medis -->
+                <div class="bg-slate-100 p-1.5 rounded-2xl flex items-center self-start sm:self-auto border border-slate-200">
+                    <span class="text-xs font-bold text-slate-600 px-3">Riwayat Medis:</span>
+                    <button id="btn-no-history" onclick="setRiwayat(false)" class="px-3 py-1.5 rounded-xl text-xs font-bold transition-all bg-white text-emerald-600 shadow-sm">
+                        Tidak Ada
+                    </button>
+                    <button id="btn-has-history" onclick="setRiwayat(true)" class="px-3 py-1.5 rounded-xl text-xs font-bold transition-all text-slate-500 hover:text-slate-800">
+                        Ada Riwayat
+                    </button>
+                </div>
+            </div>
+
+            <!-- Warning Notice Mode -->
+            <div id="riwayat-info" class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 flex items-start space-x-3">
+                <i data-lucide="info" class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5"></i>
+                <div>
+                    <span class="font-bold block">Mode Normal (Tanpa Riwayat Medis):</span>
+                    Batas normal menggunakan standar pencegahan primer masyarakat umum.
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Gula Darah -->
+                <div class="p-5 bg-slate-50 rounded-2xl border border-slate-200/80 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <label class="font-bold text-sm text-slate-800">Gula Darah Puasa</label>
+                        <span class="text-xs text-slate-400">mg/dL</span>
+                    </div>
+                    <input type="number" id="input-gula" placeholder="misal: 95" class="w-full p-2.5 border border-slate-200 rounded-xl bg-white text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                    <div id="badge-gula" class="p-2.5 rounded-xl text-xs font-medium text-center bg-slate-200 text-slate-600">
+                        Menunggu Input
+                    </div>
+                </div>
+
+                <!-- Kolesterol Total -->
+                <div class="p-5 bg-slate-50 rounded-2xl border border-slate-200/80 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <label class="font-bold text-sm text-slate-800">Kolesterol Total</label>
+                        <span class="text-xs text-slate-400">mg/dL</span>
+                    </div>
+                    <input type="number" id="input-koles" placeholder="misal: 180" class="w-full p-2.5 border border-slate-200 rounded-xl bg-white text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                    <div id="badge-koles" class="p-2.5 rounded-xl text-xs font-medium text-center bg-slate-200 text-slate-600">
+                        Menunggu Input
+                    </div>
+                </div>
+
+                <!-- Asam Urat -->
+                <div class="p-5 bg-slate-50 rounded-2xl border border-slate-200/80 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <label class="font-bold text-sm text-slate-800">Asam Urat</label>
+                        <span class="text-xs text-slate-400">mg/dL</span>
+                    </div>
+                    <div class="flex space-x-2">
+                        <select id="gender-asam" class="p-2 border border-slate-200 rounded-xl text-xs bg-white">
+                            <option value="L">Pria</option>
+                            <option value="P">Wanita</option>
+                        </select>
+                        <input type="number" step="0.1" id="input-asam" placeholder="misal: 5.5" class="w-full p-2.5 border border-slate-200 rounded-xl bg-white text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                    </div>
+                    <div id="badge-asam" class="p-2.5 rounded-xl text-xs font-medium text-center bg-slate-200 text-slate-600">
+                        Menunggu Input
+                    </div>
+                </div>
+
+                <!-- Tekanan Darah -->
+                <div class="p-5 bg-slate-50 rounded-2xl border border-slate-200/80 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <label class="font-bold text-sm text-slate-800">Tekanan Darah</label>
+                        <span class="text-xs text-slate-400">mmHg</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <input type="number" id="input-sys" placeholder="Sistolik (120)" class="w-full p-2 border border-slate-200 rounded-xl bg-white text-xs focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                        <input type="number" id="input-dia" placeholder="Diastolik (80)" class="w-full p-2 border border-slate-200 rounded-xl bg-white text-xs focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                    </div>
+                    <div id="badge-td" class="p-2.5 rounded-xl text-xs font-medium text-center bg-slate-200 text-slate-600">
+                        Menunggu Input
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="prosesSkriningLab()" class="w-full py-3.5 bg-rose-600 text-white font-bold rounded-xl hover:bg-rose-700 transition-colors shadow-md shadow-rose-100 flex items-center justify-center space-x-2">
+                <i data-lucide="shield-alert" class="w-5 h-5"></i>
+                <span>Evaluasi Hasil Lab</span>
+            </button>
+        </section>
+
+    </main>
+
+    <!-- SIDEBAR / DRAWER (Edukasi & Referensi) -->
+    <div id="sidebar-overlay" onclick="toggleSidebar()" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+    <aside id="sidebar" class="fixed top-0 right-0 h-full w-80 sm:w-96 bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out p-6 overflow-y-auto space-y-6">
+        <div class="flex justify-between items-center border-b border-slate-100 pb-4">
+            <div class="flex items-center space-x-2 text-emerald-600">
+                <i data-lucide="book-open" class="w-5 h-5"></i>
+                <h3 class="font-bold text-slate-900">Edukasi & Rujukan</h3>
+            </div>
+            <button onclick="toggleSidebar()" class="p-1 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+        </div>
+
+        <div class="space-y-4 text-xs text-slate-600">
+            <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-100 space-y-2">
+                <h4 class="font-bold text-emerald-900 text-sm">Level Teguran Evaluasi:</h4>
+                <ul class="space-y-1.5">
+                    <li class="flex items-center space-x-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                        <span class="font-semibold text-emerald-900">Baik:</span> Dalam batas normal optimal.
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+                        <span class="font-semibold text-amber-900">Kurang:</span> Sedikit di bawah target ideal.
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-orange-500"></span>
+                        <span class="font-semibold text-orange-900">Berlebih:</span> Memerlukan perhatian diet/pola hidup.
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-rose-600"></span>
+                        <span class="font-semibold text-rose-900">Bahaya:</span> Perlu konsultasi medis segera.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="space-y-2">
+                <h4 class="font-bold text-slate-800 text-sm">Klasifikasi BMI Indonesia (Kemenkes)</h4>
+                <p>&lt; 18.5 : Kurus / Sangat Ringan</p>
+                <p>18.5 – 22.9 : Normal (Ideal)</p>
+                <p>23.0 – 24.9 : Kelebihan Berat Badan (At-risk)</p>
+                <p>25.0 – 29.9 : Obesitas I</p>
+                <p>&ge; 30.0 : Obesitas II</p>
+            </div>
+
+            <div class="pt-4 border-t border-slate-100 text-slate-400">
+                <p class="italic">*Aplikasi ini berfungsi sebagai alat pemantauan mandiri awal dan tidak menggantikan diagnosis resmi tenaga medis profesional.</p>
+            </div>
+        </div>
+    </aside>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 border-t border-slate-800 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="text-center sm:text-left">
+                <p class="text-sm font-medium text-slate-300">Dibuat oleh: <span class="text-emerald-400 font-bold">Artriel Ariel</span></p>
+                <p class="text-xs text-slate-500 mt-0.5">Oleh Ariel Usman Copyright 2026</p>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex items-center space-x-4">
+                <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs rounded-xl transition-colors border border-slate-700">
+                    <i data-lucide="instagram" class="w-4 h-4 text-rose-400"></i>
+                    <span>@arielrcun</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        // Init Lucide Icons
+        lucide.createIcons();
+
+        // State Global Riwayat
+        let hasMedicalHistory = false;
+
+        // UI Helpers
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            sidebar.classList.toggle('translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function setRiwayat(val) {
+            hasMedicalHistory = val;
+            const btnNo = document.getElementById('btn-no-history');
+            const btnHas = document.getElementById('btn-has-history');
+            const info = document.getElementById('riwayat-info');
+
+            if(val) {
+                btnHas.className = "px-3 py-1.5 rounded-xl text-xs font-bold transition-all bg-rose-500 text-white shadow-sm";
+                btnNo.className = "px-3 py-1.5 rounded-xl text-xs font-bold transition-all text-slate-500 hover:text-slate-800";
+                info.className = "p-4 rounded-2xl bg-rose-50 border border-rose-200 text-xs text-rose-800 flex items-start space-x-3";
+                info.innerHTML = `<i data-lucide="alert-circle" class="w-5 h-5 text-rose-600 flex-shrink-0 mt-0.5"></i>
+                    <div>
+                        <span class="font-bold block">Mode Memiliki Riwayat Medis Aktif:</span>
+                        Target nilai lab disesuaikan dengan toleransi penanganan khusus medis (Target pengetatan batas ketat).
+                    </div>`;
+            } else {
+                btnNo.className = "px-3 py-1.5 rounded-xl text-xs font-bold transition-all bg-white text-emerald-600 shadow-sm";
+                btnHas.className = "px-3 py-1.5 rounded-xl text-xs font-bold transition-all text-slate-500 hover:text-slate-800";
+                info.className = "p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 flex items-start space-x-3";
+                info.innerHTML = `<i data-lucide="info" class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5"></i>
+                    <div>
+                        <span class="font-bold block">Mode Normal (Tanpa Riwayat Medis):</span>
+                        Batas normal menggunakan standar pencegahan primer masyarakat umum.
+                    </div>`;
+            }
+            lucide.createIcons();
+            prosesSkriningLab(); // Refresh evaluasi jika ada input
+        }
+
+        function adjustValue(id, step) {
+            const input = document.getElementById(`input-${id}`);
+            let val = parseFloat(input.value) || 0;
+            val = Math.max(0, val + step);
+            input.value = val;
+            hitungGizi();
+        }
+
+        // KALKULATOR GIZI MAKANAN RUMAHAN
+        function hitungGizi() {
+            const nasi = parseFloat(document.getElementById('input-nasi').value) || 0;
+            const ayam = parseFloat(document.getElementById('input-ayam').value) || 0;
+            const telur = parseFloat(document.getElementById('input-telur').value) || 0;
+            const ikan = parseFloat(document.getElementById('input-ikan').value) || 0;
+            const sayur = parseFloat(document.getElementById('input-sayur').value) || 0;
+
+            // Estimasi Kandungan (Nasi: 175 kkal, 40g K, 3g P, 0.4g L / centong 100g)
+            // Ayam: 165 kkal, 0g K, 25g P, 7g L / potong
+            // Telur: 75 kkal, 0.6g K, 6g P, 5g L / butir
+            // Ikan: 110 kkal, 0g K, 20g P, 2.5g L / potong
+            // Sayur: 40 kkal, 7g K, 2g P, 1g L / mangkuk
+
+            const totalKalori = (nasi * 175) + (ayam * 165) + (telur * 75) + (ikan * 110) + (sayur * 40);
+            const totalKarbo = (nasi * 40) + (ayam * 0) + (telur * 0.6) + (ikan * 0) + (sayur * 7);
+            const totalProtein = (nasi * 3) + (ayam * 25) + (telur * 6) + (ikan * 20) + (sayur * 2);
+            const totalLemak = (nasi * 0.4) + (ayam * 7) + (telur * 5) + (ikan * 2.5) + (sayur * 1);
+
+            document.getElementById('res-kalori').innerText = Math.round(totalKalori);
+            document.getElementById('res-karbo').innerText = Math.round(totalKarbo) + 'g';
+            document.getElementById('res-protein').innerText = Math.round(totalProtein) + 'g';
+            document.getElementById('res-lemak').innerText = Math.round(totalLemak) + 'g';
+
+            const tips = document.getElementById('gizi-tips');
+            if (totalKalori > 700) {
+                tips.innerHTML = "⚠️ Porsi sekali makan cukup tinggi kalori. Pastikan dibarengi aktivitas fisik yang mencukupi.";
+            } else if (totalKalori > 0) {
+                tips.innerHTML = "✅ Keseimbangan nutrisi porsi rumahan sudah diperhitungkan secara proposional.";
+            } else {
+                tips.innerHTML = "Tekan 'Hitung Nutrisi' untuk menampilkan estimasi kebutuhan gizi harianmu.";
+            }
+        }
+
+        // KALKULATOR BMI KHUSUS INDONESIA
+        function hitungBMI() {
+            const bb = parseFloat(document.getElementById('bmi-bb').value);
+            const tb = parseFloat(document.getElementById('bmi-tb').value);
+
+            if (!bb || !tb || tb <= 0 || bb <= 0) {
+                alert("Mohon masukkan Nilai Berat Badan dan Tinggi Badan yang valid.");
+                return;
+            }
+
+            const tbMeter = tb / 100;
+            const bmi = (bb / (tbMeter * tbMeter)).toFixed(1);
+
+            const bmiValEl = document.getElementById('bmi-value');
+            const bmiStatusEl = document.getElementById('bmi-status');
+            const bmiDescEl = document.getElementById('bmi-desc');
+
+            bmiValEl.innerText = bmi;
+
+            // Kategori Asia/Indonesia (Kemenkes)
+            if (bmi < 18.5) {
+                bmiStatusEl.innerText = "Kurus (Kurang Berat Badan)";
+                bmiStatusEl.className = "inline-block px-4 py-1.5 rounded-full text-sm font-bold bg-amber-100 text-amber-800";
+                bmiDescEl.innerText = "Asupan nutrisimu perlu ditingkatkan. Disarankan menambah asupan kalori dan protein bergizi.";
+            } else if (bmi >= 18.5 && bmi <= 22.9) {
+                bmiStatusEl.innerText = "Normal (Ideal)";
+                bmiStatusEl.className = "inline-block px-4 py-1.5 rounded-full text-sm font-bold bg-emerald-100 text-emerald-800";
+                bmiDescEl.innerText = "Selamat! Berat badanmu berada pada kondisi ideal untuk proporsi tubuh masyarakat Indonesia.";
+            } else if (bmi >= 23.0 && bmi <= 24.9) {
+                bmiStatusEl.innerText = "Kelebihan Berat Badan (At-Risk)";
+                bmiStatusEl.className = "inline-block px-4 py-1.5 rounded-full text-sm font-bold bg-orange-100 text-orange-800";
+                bmiDescEl.innerText = "Waspada, kondisi ini berpotensi meningkatkan risiko penyakit metabolik jika tidak dijaga.";
+            } else if (bmi >= 25.0 && bmi <= 29.9) {
+                bmiStatusEl.innerText = "Obesitas Tingkat I";
+                bmiStatusEl.className = "inline-block px-4 py-1.5 rounded-full text-sm font-bold bg-rose-100 text-rose-800";
+                bmiDescEl.innerText = "Kategori Obesitas I. Mulai atur pola makan rendah gula dan kurangi makanan olahan.";
+            } else {
+                bmiStatusEl.innerText = "Obesitas Tingkat II";
+                bmiStatusEl.className = "inline-block px-4 py-1.5 rounded-full text-sm font-bold bg-rose-200 text-rose-900 font-extrabold";
+                bmiDescEl.innerText = "Kategori Obesitas II. Disarankan untuk berkonsultasi dengan ahli gizi/dokter.";
+            }
+        }
+
+        // EVALUASI HASIL LAB & TEGURAN
+        function prosesSkriningLab() {
+            evalGula();
+            evalKoles();
+            evalAsam();
+            evalTD();
+        }
+
+        function renderBadge(elId, level, text) {
+            const el = document.getElementById(elId);
+            let colors = "";
+            switch (level) {
+                case 'baik':
+                    colors = "bg-emerald-100 text-emerald-800 font-bold border border-emerald-200";
+                    break;
+                case 'kurang':
+                    colors = "bg-amber-100 text-amber-800 font-bold border border-amber-200";
+                    break;
+                case 'berlebih':
+                    colors = "bg-orange-100 text-orange-800 font-bold border border-orange-200";
+                    break;
+                case 'bahaya':
+                    colors = "bg-rose-100 text-rose-800 font-bold border border-rose-300";
+                    break;
+                default:
+                    colors = "bg-slate-200 text-slate-600";
+            }
+            el.className = `p-2.5 rounded-xl text-xs text-center transition-all ${colors}`;
+            el.innerHTML = text;
+        }
+
+        // 1. Gula Darah Puasa
+        function evalGula() {
+            const val = parseFloat(document.getElementById('input-gula').value);
+            if (isNaN(val)) return;
+
+            if (!hasMedicalHistory) {
+                if (val < 70) renderBadge('badge-gula', 'kurang', 'Level: Kurang (Hipoglikemia)');
+                else if (val <= 99) renderBadge('badge-gula', 'baik', 'Level: Baik (Normal)');
+                else if (val <= 125) renderBadge('badge-gula', 'berlebih', 'Level: Berlebih (Prediabetes)');
+                else renderBadge('badge-gula', 'bahaya', 'Level: Bahaya (Indikasi Diabetes)');
+            } else { // Riwayat Diabetes
+                if (val < 80) renderBadge('badge-gula', 'kurang', 'Level: Kurang (Terlalu Rendah)');
+                else if (val <= 130) renderBadge('badge-gula', 'baik', 'Level: Baik (Terkontrol)');
+                else if (val <= 180) renderBadge('badge-gula', 'berlebih', 'Level: Berlebih (Perlu Penyesuaian)');
+                else renderBadge('badge-gula', 'bahaya', 'Level: Bahaya (Tinggi/Uncontrolled)');
+            }
+        }
+
+        // 2. Kolesterol Total
+        function evalKoles() {
+            const val = parseFloat(document.getElementById('input-koles').value);
+            if (isNaN(val)) return;
+
+            if (!hasMedicalHistory) {
+                if (val < 130) renderBadge('badge-koles', 'kurang', 'Level: Kurang (Sangat Rendah)');
+                else if (val < 200) renderBadge('badge-koles', 'baik', 'Level: Baik (Ideal)');
+                else if (val <= 239) renderBadge('badge-koles', 'berlebih', 'Level: Berlebih (Batas Tinggi)');
+                else renderBadge('badge-koles', 'bahaya', 'Level: Bahaya (Kolesterol Tinggi)');
+            } else { // Riwayat Jantung/Kolesterol (Target Lebih Ketat)
+                if (val < 100) renderBadge('badge-koles', 'kurang', 'Level: Kurang');
+                else if (val < 150) renderBadge('badge-koles', 'baik', 'Level: Baik (Terkontrol)');
+                else if (val <= 199) renderBadge('badge-koles', 'berlebih', 'Level: Berlebih');
+                else renderBadge('badge-koles', 'bahaya', 'Level: Bahaya (Sangat Riskan)');
+            }
+        }
+
+        // 3. Asam Urat
+        function evalAsam() {
+            const val = parseFloat(document.getElementById('input-asam').value);
+            const gender = document.getElementById('gender-asam').value;
+            if (isNaN(val)) return;
+
+            const maxNormal = (gender === 'L') ? 7.0 : 6.0;
+            const minNormal = (gender === 'L') ? 3.5 : 2.5;
+
+            if (val < minNormal) renderBadge('badge-asam', 'kurang', 'Level: Kurang (Di bawah normal)');
+            else if (val <= maxNormal) renderBadge('badge-asam', 'baik', 'Level: Baik (Normal)');
+            else if (val <= maxNormal + 1.5) renderBadge('badge-asam', 'berlebih', 'Level: Berlebih (Tinggi)');
+            else renderBadge('badge-asam', 'bahaya', 'Level: Bahaya (Sangat Tinggi / Gout)');
+        }
+
+        // 4. Tekanan Darah
+        function evalTD() {
+            const sys = parseFloat(document.getElementById('input-sys').value);
+            const dia = parseFloat(document.getElementById('input-dia').value);
+            if (isNaN(sys) || isNaN(dia)) return;
+
+            if (!hasMedicalHistory) {
+                if (sys < 90 || dia < 60) renderBadge('badge-td', 'kurang', 'Level: Kurang (Hipotensi)');
+                else if (sys <= 120 && dia <= 80) renderBadge('badge-td', 'baik', 'Level: Baik (Normal)');
+                else if (sys <= 139 || dia <= 89) renderBadge('badge-td', 'berlebih', 'Level: Berlebih (Prehipertensi)');
+                else renderBadge('badge-td', 'bahaya', 'Level: Bahaya (Hipertensi)');
+            } else { // Riwayat Hipertensi (Batas Terkontrol)
+                if (sys < 100 || dia < 65) renderBadge('badge-td', 'kurang', 'Level: Kurang');
+                else if (sys <= 130 && dia <= 80) renderBadge('badge-td', 'baik', 'Level: Baik (Terkontrol)');
+                else if (sys <= 140 || dia <= 90) renderBadge('badge-td', 'berlebih', 'Level: Berlebih');
+                else renderBadge('badge-td', 'bahaya', 'Level: Bahaya (Tinggi)');
+            }
+        }
+
+        // Auto calculate initial nutritional values on launch
+        window.addEventListener('DOMContentLoaded', () => {
+            hitungGizi();
+        });
+    </script>
+</body>
+</html>
