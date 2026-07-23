@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Optimization -->
+    <title>Jejak Bulukumba - Sejarah, Peta Interaktif & Wejangan Budaya</title>
+    <meta name="description" content="Jelajahi sejarah Kabupaten Bulukumba, peta lokasi bersejarah & wisata interaktif, serta wejangan kearifan lokal (Pasang Ri Kajang & Filosofi Pinisi).">
+    <meta name="keywords" content="Bulukumba, Sejarah Bulukumba, Tanah Beru, Tanjung Bira, Kajang Ammatoa, Wejangan Bulukumba, Peta Bulukumba">
+    <meta name="author" content="Ariel Usman">
+
+    <!-- Open Graph / Facebook / WhatsApp Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bulukumba-heritage.example.com/">
+    <meta property="og:title" content="Jejak Bulukumba - Pesona & Wisdom Bumi Panrita Lopi">
+    <meta property="og:description" content="Eksplorasi warisan sejarah, peta interaktif, dan kearifan lokal Kabupaten Bulukumba.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1596402184320-417e7178b2cd?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Twitter Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jejak Bulukumba - Sejarah & Wejangan Budaya">
+    <meta name="twitter:description" content="Eksplorasi warisan sejarah, peta interaktif, dan kearifan lokal Kabupaten Bulukumba.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1596402184320-417e7178b2cd?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/svg+xml" href="https://api.iconify.design/lucide:anchor.svg?color=%230284c7">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Leaflet.js (Peta Interaktif) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Custom Glassmorphism Styles -->
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+        }
+        .hero-bg {
+            background-image: linear-gradient(135deg, rgba(14, 165, 233, 0.75), rgba(245, 158, 11, 0.65)), 
+                              url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        #interactive-map {
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-cyan-50 via-sky-50 to-amber-50 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <!-- Logo Left -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-amber-400 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-ship text-lg"></i>
+                    </div>
+                    <span class="font-extrabold text-xl tracking-wide bg-gradient-to-r from-cyan-600 via-teal-600 to-amber-600 bg-clip-text text-transparent">
+                        Bulukumba Heritage
+                    </span>
+                </a>
+
+                <!-- Desktop Menu Right -->
+                <div class="hidden md:flex items-center space-x-6 font-semibold text-sm text-slate-700">
+                    <a href="#sejarah" class="hover:text-cyan-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-book-open text-xs"></i> Sejarah</a>
+                    <a href="#peta" class="hover:text-cyan-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-map-location-dot text-xs"></i> Peta Interaktif</a>
+                    <a href="#wejangan" class="hover:text-cyan-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-quote-left text-xs"></i> Wejangan</a>
+                    <a href="#fakta" class="hover:text-cyan-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-star text-xs"></i> Info Ringkas</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-700 p-2 rounded-lg hover:bg-slate-100 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-t border-slate-200 px-4 pt-2 pb-4 space-y-2 font-medium">
+            <a href="#sejarah" class="block py-2 text-slate-700 hover:text-cyan-600 border-b border-slate-100"><i class="fa-solid fa-book-open mr-2 text-cyan-500"></i> Sejarah</a>
+            <a href="#peta" class="block py-2 text-slate-700 hover:text-cyan-600 border-b border-slate-100"><i class="fa-solid fa-map-location-dot mr-2 text-amber-500"></i> Peta Interaktif</a>
+            <a href="#wejangan" class="block py-2 text-slate-700 hover:text-cyan-600 border-b border-slate-100"><i class="fa-solid fa-quote-left mr-2 text-teal-500"></i> Wejangan</a>
+            <a href="#fakta" class="block py-2 text-slate-700 hover:text-cyan-600"><i class="fa-solid fa-star mr-2 text-amber-500"></i> Info Ringkas</a>
+        </div>
+    </nav>
+
+    <!-- HEADER / HERO SECTION -->
+    <header class="relative hero-bg py-24 md:py-32 px-4 sm:px-6 lg:px-8 flex items-center justify-center text-center shadow-lg">
+        <div class="max-w-4xl glass-card rounded-3xl p-8 md:p-12 shadow-2xl border border-white/60 transform hover:scale-[1.01] transition-transform">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-cyan-100 text-cyan-800 text-xs font-bold tracking-wider uppercase mb-4 shadow-sm">
+                <i class="fa-solid fa-compass mr-1"></i> Bumi Panrita Lopi
+            </span>
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight mb-4">
+                Menjelajahi Pesona & Kearifan <span class="bg-gradient-to-r from-cyan-600 to-amber-500 bg-clip-text text-transparent">Bulukumba</span>
+            </h1>
+            <p class="text-base md:text-lg text-slate-700 max-w-2xl mx-auto mb-8 font-normal leading-relaxed">
+                Legenda perahu Phinisi, keasrian tradisi Ammatoa Kajang, dan keindahan pesisir pantai pulau Sulawesi terkumpul dalam satu simfoni budaya.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#peta" class="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white font-bold shadow-lg hover:shadow-cyan-500/30 transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-map-marked-alt"></i> Buka Peta Interaktif
+                </a>
+                <a href="#wejangan" class="px-6 py-3 rounded-xl bg-white/90 hover:bg-white text-slate-800 font-bold border border-slate-200 shadow-md transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-scroll text-amber-500"></i> Baca Wejangan
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN BODY CONTAINER WITH SIDEBAR -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+            <!-- MAIN CONTENT AREA (8 Cols) -->
+            <main class="lg:col-span-8 space-y-12">
+
+                <!-- SECTION 1: SEJARAH BULUKUMBA -->
+                <section id="sejarah" class="glass-card rounded-3xl p-6 sm:p-8 shadow-xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-3 bg-cyan-500 text-white rounded-2xl shadow-md">
+                            <i class="fa-solid fa-landmark text-xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-900">Sejarah Kabupaten Bulukumba</h2>
+                            <p class="text-sm text-slate-500">Asal-usul nama, penetapan hari jadi, & jejak peradaban Bahari</p>
+                        </div>
+                    </div>
+
+                    <div class="prose prose-slate max-w-none space-y-4 text-slate-700 leading-relaxed text-justify">
+                        <p>
+                            Nama <strong>Bulukumba</strong> berasal dari frasa dalam bahasa Bugis/Makassar yaitu <em>"Bulu'ku Mpa"</em> yang berarti <em>"Masih ada gunung yang saya sayangi"</em> atau mitos sejarah yang menyebutkan konfrontasi wilayah antara Kerajaan Gowa dan Kerajaan Bone di kawasan bukit pertikaian.
+                        </p>
+
+                        <!-- Timeline History -->
+                        <div class="mt-6 border-l-4 border-cyan-400 pl-4 space-y-6">
+                            <div class="relative group">
+                                <div class="absolute -left-[25px] top-1.5 w-4 h-4 rounded-full bg-cyan-500 border-2 border-white"></div>
+                                <h3 class="font-bold text-lg text-slate-800">Abad ke-14–17: Masa Kerajaan & Bahari</h3>
+                                <p class="text-sm text-slate-600 mt-1">
+                                    Wilayah pesisir Tanah Beru menjadi pusat pembuatan kapal perahu tradisional Phinisi oleh para *Panrita Lopi* (ahli pembuat perahu). Pengetahuan pembuatan kapal diturunkan secara turun-temurun tanpa resep tertulis.
+                                </p>
+                            </div>
+
+                            <div class="relative group">
+                                <div class="absolute -left-[25px] top-1.5 w-4 h-4 rounded-full bg-amber-500 border-2 border-white"></div>
+                                <h3 class="font-bold text-lg text-slate-800">4 Februari 1960: Penetapan Hari Jadi</h3>
+                                <p class="text-sm text-slate-600 mt-1">
+                                    Berdasarkan UU No. 29 Tahun 1959, Kabupaten Bulukumba resmi berdiri secara administratif. Tanggal 4 Februari ditetapkan sebagai Hari Jadi Kabupaten Bulukumba melalui Perda No. 13 Tahun 1994.
+                                </p>
+                            </div>
+
+                            <div class="relative group">
+                                <div class="absolute -left-[25px] top-1.5 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white"></div>
+                                <h3 class="font-bold text-lg text-slate-800">2017: Phinisi Diakui UNESCO</h3>
+                                <p class="text-sm text-slate-600 mt-1">
+                                    Seni pembuatan Kapal Phinisi dari Bulukumba secara resmi ditetapkan oleh UNESCO sebagai *Intangible Cultural Heritage* (Warisan Budaya Takbenda Dunia).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 2: SIMULASI PETA INTERAKTIF -->
+                <section id="peta" class="glass-card rounded-3xl p-6 sm:p-8 shadow-xl">
+                    <div class="flex items-center justify-between flex-wrap gap-4 mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="p-3 bg-amber-500 text-white rounded-2xl shadow-md">
+                                <i class="fa-solid fa-map-location-dot text-xl"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-bold text-slate-900">Simulasi Peta Interaktif</h2>
+                                <p class="text-sm text-slate-500">Klik penanda pada peta untuk menjelajahi ikon Bulukumba</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <button onclick="resetMapView()" class="px-3 py-1.5 text-xs bg-white border border-slate-300 rounded-lg shadow-sm hover:bg-slate-50 text-slate-700 font-semibold">
+                                <i class="fa-solid fa-rotate-left mr-1"></i> Reset Zoom
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Map Render Box -->
+                    <div id="interactive-map" class="w-full h-[380px] sm:h-[450px] rounded-2xl border-2 border-white shadow-inner overflow-hidden"></div>
+                    
+                    <!-- Dynamic Info Panel from Map -->
+                    <div id="map-info-panel" class="mt-4 p-4 rounded-xl bg-cyan-50/80 border border-cyan-200 text-sm text-cyan-900">
+                        <i class="fa-solid fa-circle-info mr-2 text-cyan-600"></i>
+                        <strong>Petunjuk:</strong> Klik salah satu *marker* di peta untuk melihat detail sejarah & lokasi penting seperti Tanjung Bira, Tanah Beru, atau Kawasan Adat Ammatoa Kajang.
+                    </div>
+                </section>
+
+                <!-- SECTION 3: WEJANGAN DARI BULUKUMBA -->
+                <section id="wejangan" class="glass-card rounded-3xl p-6 sm:p-8 shadow-xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-3 bg-teal-500 text-white rounded-2xl shadow-md">
+                            <i class="fa-solid fa-quote-left text-xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-900">Wejangan & Kearifan Lokal</h2>
+                            <p class="text-sm text-slate-500">Pasang Ri Kajang & Filosofi Hidup Masyarakat Bulukumba</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Wejangan Card 1 -->
+                        <div class="p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200/60 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-md bg-amber-200 text-amber-900 text-xs font-bold">Pasang Ri Kajang</span>
+                                <i class="fa-solid fa-tree text-amber-600"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-slate-800 mb-2">"Tallang Sipahua, Mali Sipanua"</h3>
+                            <p class="text-xs text-slate-600 italic mb-3">Tenggelam saling timbulkan, hanyut saling mendamparkan.</p>
+                            <p class="text-sm text-slate-700 leading-relaxed">
+                                Pesan persatuan dan gotong royong tinggi: Saling menolong dalam kebaikan, serta saling mengingatkan saat menghadapi kesusahan hidup.
+                            </p>
+                        </div>
+
+                        <!-- Wejangan Card 2 -->
+                        <div class="p-5 rounded-2xl bg-gradient-to-br from-cyan-50 to-sky-50 border border-cyan-200/60 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-md bg-cyan-200 text-cyan-900 text-xs font-bold">Filosofi Pinisi</span>
+                                <i class="fa-solid fa-anchor text-cyan-600"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-slate-800 mb-2">"Anmulei Sombalang, Pura Banna Layara"</h3>
+                            <p class="text-xs text-slate-600 italic mb-3">Layar telah terkembang, tak pantas surut ke pantai.</p>
+                            <p class="text-sm text-slate-700 leading-relaxed">
+                                Keteguhan hati & ketahanan mental. Sekali sebuah cita-cita atau tekad dimulai, pantang untuk menyerah sebelum berhasil sampai tujuan.
+                            </p>
+                        </div>
+
+                        <!-- Wejangan Card 3 -->
+                        <div class="p-5 rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200/60 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-md bg-emerald-200 text-emerald-900 text-xs font-bold">Ammatoa Principles</span>
+                                <i class="fa-solid fa-leaf text-emerald-600"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-slate-800 mb-2">"Jagai Lino Na Borro Kampong"</h3>
+                            <p class="text-xs text-slate-600 italic mb-3">Pelihara alam lingkungan agar desa tidak musnah.</p>
+                            <p class="text-sm text-slate-700 leading-relaxed">
+                                Himbauan kelestarian alam hidup dari suku Adat Kajang Ammatoa tentang pentingnya menjaga keselarasan hutan dan alam dari kerakusan manusia.
+                            </p>
+                        </div>
+
+                        <!-- Wejangan Card 4 -->
+                        <div class="p-5 rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200/60 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-md bg-purple-200 text-purple-900 text-xs font-bold">Sipakatau</span>
+                                <i class="fa-solid fa-hands-holding-circle text-purple-600"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-slate-800 mb-2">"Sipakatau, Sipakalebbi, Sipakainga"</h3>
+                            <p class="text-xs text-slate-600 italic mb-3">Saling memanusiakan, menghargai, dan mengingatkan.</p>
+                            <p class="text-sm text-slate-700 leading-relaxed">
+                                Pilar Etika Bugis-Makassar dalam bersosialisasi dengan mengedepankan sopan santun serta rasa hormat antar sesama manusia.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- SIDEBAR AREA (4 Cols) -->
+            <aside id="fakta" class="lg:col-span-4 space-y-6">
+
+                <!-- Sidebar Box 1: Profile Ringkas -->
+                <div class="glass-card rounded-3xl p-6 shadow-xl sticky top-20">
+                    <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2 border-b border-slate-200/80 pb-3">
+                        <i class="fa-solid fa-circle-info text-amber-500"></i> Ringkasan Daerah
+                    </h3>
+                    
+                    <ul class="space-y-3 text-sm text-slate-700">
+                        <li class="flex justify-between items-center py-1 border-b border-slate-100">
+                            <span class="text-slate-500">Julukan</span>
+                            <span class="font-semibold text-slate-800">Bumi Panrita Lopi</span>
+                        </li>
+                        <li class="flex justify-between items-center py-1 border-b border-slate-100">
+                            <span class="text-slate-500">Ibu Kota</span>
+                            <span class="font-semibold text-slate-800">Ujung Bulu</span>
+                        </li>
+                        <li class="flex justify-between items-center py-1 border-b border-slate-100">
+                            <span class="text-slate-500">Provinsi</span>
+                            <span class="font-semibold text-slate-800">Sulawesi Selatan</span>
+                        </li>
+                        <li class="flex justify-between items-center py-1 border-b border-slate-100">
+                            <span class="text-slate-500">Hari Jadi</span>
+                            <span class="font-semibold text-slate-800">4 Februari 1960</span>
+                        </li>
+                        <li class="flex justify-between items-center py-1">
+                            <span class="text-slate-500">Ikon Utama</span>
+                            <span class="font-semibold text-cyan-600">Kapal Phinisi & Bira</span>
+                        </li>
+                    </ul>
+
+                    <!-- Mini Gallery / Card Image -->
+                    <div class="mt-6 rounded-2xl overflow-hidden shadow-md relative group">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80" alt="Pantai Bira" class="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-3">
+                            <span class="text-xs font-semibold text-white"><i class="fa-solid fa-camera mr-1"></i> Pantai Tanjung Bira</span>
+                        </div>
+                    </div>
+
+                    <!-- Quick Navigation Links inside Sidebar -->
+                    <div class="mt-6">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Pintasan Informasi</h4>
+                        <div class="flex flex-col gap-2 text-sm font-medium">
+                            <button onclick="focusLocation(-5.6178, 120.4611, 'Tanah Beru')" class="text-left px-3 py-2 rounded-xl bg-slate-100/80 hover:bg-cyan-100 text-slate-700 hover:text-cyan-800 transition-colors flex items-center justify-between">
+                                <span><i class="fa-solid fa-hammer mr-2 text-amber-500"></i> Pembuatan Phinisi</span>
+                                <i class="fa-solid fa-chevron-right text-xs opacity-50"></i>
+                            </button>
+                            <button onclick="focusLocation(-5.3211, 120.2522, 'Kajang')" class="text-left px-3 py-2 rounded-xl bg-slate-100/80 hover:bg-cyan-100 text-slate-700 hover:text-cyan-800 transition-colors flex items-center justify-between">
+                                <span><i class="fa-solid fa-tree mr-2 text-emerald-500"></i> Kawasan Ammatoa</span>
+                                <i class="fa-solid fa-chevron-right text-xs opacity-50"></i>
+                            </button>
+                            <button onclick="focusLocation(-5.6110, 120.4570, 'Tanjung Bira')" class="text-left px-3 py-2 rounded-xl bg-slate-100/80 hover:bg-cyan-100 text-slate-700 hover:text-cyan-800 transition-colors flex items-center justify-between">
+                                <span><i class="fa-solid fa-umbrella-beach mr-2 text-cyan-500"></i> Wisata Tanjung Bira</span>
+                                <i class="fa-solid fa-chevron-right text-xs opacity-50"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </aside>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="mt-16 bg-slate-900 text-white border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            
+            <!-- Left Info -->
+            <div class="text-center sm:text-left">
+                <p class="font-bold text-lg bg-gradient-to-r from-cyan-400 to-amber-300 bg-clip-text text-transparent">
+                    Oleh Ariel Usman Copyright 2026
+                </p>
+                <p class="text-xs text-slate-400 mt-1">
+                    Proyek Digitalisasi Sejarah & Kebudayaan Kabupaten Bulukumba.
+                </p>
+            </div>
+
+            <!-- Right Social Link -->
+            <div class="flex items-center gap-3">
+                <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 hover:opacity-90 text-white font-semibold text-sm shadow-md transition-all hover:scale-105">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                    <span>@arielrcun</span>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT INTERAKTIF -->
+    <script>
+        // 1. Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 2. Leaflet Map Interactive Simulation Setup
+        // Bulukumba Center Coordinates: -5.5500, 120.2000
+        const defaultLat = -5.5500;
+        const defaultLng = 120.2000;
+        const defaultZoom = 10;
+
+        const map = L.map('interactive-map').setView([defaultLat, defaultLng], defaultZoom);
+
+        // OpenStreetMap Tile Layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Key Locations Data
+        const locations = [
+            {
+                name: "Pusat Kota Bulukumba (Ujung Bulu)",
+                lat: -5.5615,
+                lng: 120.1944,
+                type: "Pemerintahan & Sejarah",
+                desc: "Pusat pemerintahan kabupaten dan pusat pertumbuhan sejarah peradaban modern Bulukumba."
+            },
+            {
+                name: "Galangan Kapal Phinisi Tanah Beru",
+                lat: -5.6178,
+                lng: 120.4611,
+                type: "Warisan Budaya UNESCO",
+                desc: "Tempat lahirnya kapal legendaris Phinisi yang dibuat oleh para Panrita Lopi tanpa cetak biru formal."
+            },
+            {
+                name: "Kawasan Adat Ammatoa Kajang",
+                lat: -5.3211,
+                lng: 120.2522,
+                type: "Kawasan Adat & Hutan",
+                desc: "Komunitas suku adat unik berpakaian hitam yang memegang teguh aturan pelestarian alam 'Pasang Ri Kajang'."
+            },
+            {
+                name: "Pantai Tanjung Bira",
+                lat: -5.6110,
+                lng: 120.4570,
+                type: "Destinasi Wisata Bahari",
+                desc: "Pesisir ikonik berpasir putih sehalus tepung dengan pemandangan tebing memukau dan lautan jernih."
+            },
+            {
+                name: "Teletubbies Hill & Titik Nol Bulukumba",
+                lat: -5.6260,
+                lng: 120.4530,
+                type: "Wisata Alam",
+                desc: "Situs geografis terujung semenanjung Sulawesi Selatan dengan pemandangan selat Bugis yang megah."
+            }
+        ];
+
+        // Add Markers to Map
+        const markers = {};
+        locations.forEach((loc) => {
+            const marker = L.marker([loc.lat, loc.lng]).addTo(map);
+            marker.bindPopup(`
+                <div class="p-1">
+                    <strong class="text-cyan-700 text-sm font-bold block">${loc.name}</strong>
+                    <span class="text-[10px] bg-amber-100 text-amber-800 font-semibold px-2 py-0.5 rounded inline-block my-1">${loc.type}</span>
+                    <p class="text-xs text-slate-600 mt-1">${loc.desc}</p>
+                </div>
+            `);
+
+            marker.on('click', () => {
+                updateInfoPanel(loc.name, loc.desc, loc.type);
+            });
+
+            markers[loc.name] = marker;
+        });
+
+        // Function to update Info Panel below Map
+        function updateInfoPanel(title, desc, type) {
+            const panel = document.getElementById('map-info-panel');
+            panel.innerHTML = `
+                <div class="flex items-start gap-2">
+                    <i class="fa-solid fa-location-dot text-amber-500 text-lg mt-0.5"></i>
+                    <div>
+                        <span class="text-xs uppercase tracking-wide font-bold text-amber-600">${type}</span>
+                        <h4 class="font-bold text-slate-800 text-base">${title}</h4>
+                        <p class="text-slate-600 mt-1">${desc}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Reset View Function
+        function resetMapView() {
+            map.setView([defaultLat, defaultLng], defaultZoom);
+            document.getElementById('map-info-panel').innerHTML = `
+                <i class="fa-solid fa-circle-info mr-2 text-cyan-600"></i>
+                <strong>Petunjuk:</strong> Klik salah satu *marker* di peta untuk melihat detail sejarah & lokasi penting seperti Tanjung Bira, Tanah Beru, atau Kawasan Adat Ammatoa Kajang.
+            `;
+        }
+
+        // Sidebar Quick Location Focus Function
+        function focusLocation(lat, lng, locKey) {
+            map.setView([lat, lng], 13, { animate: true });
+            
+            // Auto open popup matching location
+            Object.keys(markers).forEach(key => {
+                if(key.toLowerCase().includes(locKey.toLowerCase())) {
+                    markers[key].openPopup();
+                    const matchedLoc = locations.find(l => l.name === key);
+                    if(matchedLoc) {
+                        updateInfoPanel(matchedLoc.name, matchedLoc.desc, matchedLoc.type);
+                    }
+                }
+            });
+
+            // Smooth scroll to map section on mobile/tablet
+            document.getElementById('peta').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
