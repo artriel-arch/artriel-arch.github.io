@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atomic Habits & M-Shape Polymath Engine | Ariel Usman</title>
+    
+    <meta name="title" content="Atomic Habits & M-Shape Polymath Engine">
+    <meta name="description" content="Sistem sederhana untuk membangun keahlian ganda (M-Shape) lewat Atomic Habits dan mendokumentasikan kegiatan belajar, menulis, coding, network, ilustrasi, dan fotografi menjadi PDF.">
+    <meta name="author" content="Ariel Usman">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            dark: '#0f172a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome & Lucide Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- HTML2Canvas & jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col font-sans antialiased">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-slate-900 text-white flex items-center justify-center font-bold">
+                    AU
+                </div>
+                <span class="font-bold text-slate-900 tracking-tight">Polymath Engine</span>
+            </div>
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
+                <a href="#paham" class="hover:text-green-600">Cara Kerja</a>
+                <a href="#pilar" class="hover:text-green-600">6 Pilar Kegiatan</a>
+                <a href="#kamera" class="bg-slate-900 text-white px-4 py-2 rounded-lg hover:bg-slate-800">Mulai Foto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+        
+        <!-- Hero Section -->
+        <section class="glass-card rounded-3xl p-6 sm:p-10 space-y-6 shadow-sm">
+            <div class="inline-block px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold uppercase tracking-wider">
+                Panduan Super Simpel
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 leading-tight">
+                Belajar Banyak Hal Sekaligus Tanpa Pusing dengan Atomic Habits.
+            </h1>
+            <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl">
+                Lupakan cara belajar yang rumit. Cukup lakukan kegiatan kecil setiap hari di 6 bidang utama, foto hasilnya pakai kamera belakang HP, lalu satukan jadi laporan PDF keren secara otomatis.
+            </p>
+        </section>
+
+        <!-- Penjelasan Sederhana -->
+        <section id="paham" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="glass-card p-6 rounded-2xl space-y-3">
+                <div class="w-10 h-10 rounded-lg bg-green-100 text-green-700 flex items-center justify-center font-bold">
+                    <i data-lucide="layers" class="w-5 h-5"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900">Apa itu M-Shape Skill?</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Bayangkan huruf M. Puncaknya banyak. Artinya, kamu punya keahlian mendalam di beberapa bidang sekaligus (tidak cuma jago satu hal). Kamu bisa ngerti komputer, bisa menggambar, sekaligus pandai bercerita.
+                </p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl space-y-3">
+                <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
+                    <i data-lucide="zap" class="w-5 h-5"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900">Cara Kerja Atomic Habits</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Kunci suksesnya cuma satu: lakukan hal kecil setiap hari secara konsisten. Tidak perlu langsung jadi ahli dalam sehari. Cukup luangkan waktu 5 sampai 10 menit untuk setiap kegiatan secara rutin.
+                </p>
+            </div>
+        </section>
+
+        <!-- 6 Pilar Utama -->
+        <section id="pilar" class="space-y-6">
+            <div>
+                <h2 class="text-2xl font-bold text-slate-900">6 Pilar Utama Kegiatan</h2>
+                <p class="text-slate-500 text-sm">Setiap pilar memiliki fokus tersendiri untuk membangun kemampuan M-Shape Anda.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="glass-card p-5 rounded-2xl space-y-2">
+                    <span class="text-xs font-bold px-2 py-1 bg-amber-100 text-amber-800 rounded">Prof. AU</span>
+                    <h4 class="font-bold text-slate-900 text-base">Membaca & Menulis</h4>
+                    <p class="text-xs text-slate-600">Membaca buku untuk belajar hal baru dan menulis untuk bercerita atau merangkum ilmu.</p>
+                </div>
+
+                <div class="glass-card p-5 rounded-2xl space-y-2">
+                    <span class="text-xs font-bold px-2 py-1 bg-blue-100 text-blue-800 rounded">MadeAI</span>
+                    <h4 class="font-bold text-slate-900 text-base">Coding & Network</h4>
+                    <p class="text-xs text-slate-600">Membuat program komputer, mengatur baris kode, serta merakit jaringan komputer.</p>
+                </div>
+
+                <div class="glass-card p-5 rounded-2xl space-y-2">
+                    <span class="text-xs font-bold px-2 py-1 bg-purple-100 text-purple-800 rounded">ARTriel</span>
+                    <h4 class="font-bold text-slate-900 text-base">Ilustrasi & Fotografi</h4>
+                    <p class="text-xs text-slate-600">Membuat sketsa gambar atau mengambil foto dan video dengan sudut pandang yang estetik.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kamera & Upload Section -->
+        <section id="kamera" class="glass-card p-6 sm:p-8 rounded-3xl space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900">Dokumentasikan Kegiatanmu</h2>
+                    <p class="text-slate-500 text-sm">Gunakan kamera belakang HP/Tablet atau upload foto dari galeri untuk 6 pilar di bawah ini.</p>
+                </div>
+                <button id="download-pdf-btn" class="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-xl shadow transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="file-down" class="w-5 h-5"></i>
+                    <span>Cetak PDF Sekarang</span>
+                </button>
+            </div>
+
+            <!-- Kamera Box Modal -->
+            <div id="camera-box" class="hidden bg-slate-900 rounded-2xl p-4 text-white space-y-3">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold uppercase text-slate-400" id="camera-target-label">Kamera Belakang</span>
+                    <button id="close-camera-btn" class="text-slate-400 hover:text-white p-1">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+                <div class="relative aspect-video bg-black rounded-xl overflow-hidden flex items-center justify-center">
+                    <video id="webcam-feed" autoplay playsinline class="w-full h-full object-cover"></video>
+                    <canvas id="camera-canvas" class="hidden"></canvas>
+                </div>
+                <div class="flex justify-center">
+                    <button id="snap-btn" class="px-6 py-2.5 bg-rose-600 hover:bg-rose-700 text-white rounded-xl font-bold flex items-center gap-2">
+                        <i data-lucide="aperture" class="w-5 h-5"></i>
+                        <span>Ambil Foto</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 6 Pilar Grid Upload -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="pillars-container">
+                
+                <!-- 1. Membaca -->
+                <div class="pillar-card bg-white p-4 rounded-2xl border border-slate-200 space-y-3" data-id="1" data-title="1. Membaca (Prof. AU)">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-amber-800 bg-amber-100 px-2.5 py-1 rounded">1. Membaca</span>
+                        <span class="text-xs text-slate-400 font-semibold">Prof. AU</span>
+                    </div>
+                    <div class="preview-area aspect-video bg-slate-100 rounded-xl border-2 border-dashed border-slate-200 flex flex-col items-center justify-center overflow-hidden relative">
+                        <img class="img-preview hidden w-full h-full object-cover" src="" alt="Preview">
+                        <div class="placeholder-text text-center p-3">
+                            <i data-lucide="image" class="w-6 h-6 text-slate-300 mx-auto mb-1"></i>
+                            <span class="text-xs text-slate-400">Belum ada foto</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="openCamera(1, '1. Membaca')" class="flex-1 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg flex items-center justify-center gap-1">
+                            <i data-lucide="camera" class="w-3.5 h-3.5"></i> Kamera
+                        </button>
+                        <label class="flex-1 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg flex items-center justify-center gap-1 cursor-pointer">
+                            <i data-lucide="upload" class="w-3.5 h-3.5"></i> Upload
+                            <input type="file" accept="image/*" class="hidden" onchange="handleFileUpload(event, 1)">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 2. Menulis -->
+                <div class="pillar-card bg-white p-4 rounded-2xl border border-slate-200 space-y-3" data-id="2" data-title="2. Menulis (Prof. AU)">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-amber-800 bg-amber-100 px-2.5 py-1 rounded">2. Menulis</span>
+                        <span class="text-xs text-slate-400 font-semibold">Prof. AU</span>
+                    </div>
+                    <div class="preview-area aspect-video bg-slate-100 rounded-xl border-2 border-dashed border-slate-200 flex flex-col items-center justify-center overflow-hidden relative">
+                        <img class="img-preview hidden w-full h-full object-cover" src="" alt="Preview">
+                        <div class="placeholder-text text-center p-3">
+                            <i data-lucide="image" class="w-6 h-6 text-slate-300 mx-auto mb-1"></i>
+                            <span class="text-xs text-slate-400">Belum ada foto</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="openCamera(2, '2. Menulis')" class="flex-1 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg flex items-center justify-center gap-1">
+                            <i data-lucide="camera" class="w-3.5 h-3.5"></i> Kamera
+                        </button>
+                        <label class="flex-1 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg flex items-center justify-center gap-1 cursor-pointer">
+                            <i data-lucide="upload" class="w-3.5 h-3.5"></i> Upload
+                            <input type="file" accept="image/*" class="hidden" onchange="handleFileUpload(event, 2)">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 3. Coding -->
+                <div class="pillar-card bg-white p-4 rounded-2xl border border-slate-200 space-y-3" data-id="3" data-title="3. Coding (MadeAI)">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-blue-800 bg-blue-100 px-2.5 py-1 rounded">3. Coding</span>
+                        <span class="text-xs text-slate-400 font-semibold">MadeAI</span>
+                    </div>
+                    <div class="preview-area aspect-video bg-slate-100 rounded-xl border-2 border-dashed border-slate-200 flex flex-col items-center justify-center overflow-hidden relative">
+                        <img class="img-preview hidden w-full h-full object-cover" src="" alt="Preview">
+                        <div class="placeholder-text text-center p-3">
+                            <i data-lucide="image" class="w-6 h-6 text-slate-300 mx-auto mb-1"></i>
+                            <span class="text-xs text-slate-400">Belum ada foto</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="openCamera(3, '3. Coding')" class="flex-1 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg flex items-center justify-center gap-1">
+                            <i data-lucide="camera" class="w-3.5 h-3.5"></i> Kamera
+                        </button>
+                        <label class="flex-1 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg flex items-center justify-center gap-1 cursor-pointer">
+                            <i data-lucide="upload" class="w-3.5 h-3.5"></i> Upload
+                            <input type="file" accept="image/*" class="hidden" onchange="handleFileUpload(event, 3)">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 4. Network Computer -->
+                <div class="pillar-card bg-white p-4 rounded-2xl border border-slate-200 space-y-3" data-id="4" data-title="4. Network Computer (MadeAI)">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-blue-800 bg-blue-100 px-2.5 py-1 rounded">4. Network</span>
+                        <span class="text-xs text-slate-400 font-semibold">MadeAI</span>
+                    </div>
+                    <div class="preview-area aspect-video bg-slate-100 rounded-xl border-2 border-dashed border-slate-200 flex flex-col items-center justify-center overflow-hidden relative">
+                        <img class="img-preview hidden w-full h-full object-cover" src="" alt="Preview">
+                        <div class="placeholder-text text-center p-3">
+                            <i data-lucide="image" class="w-6 h-6 text-slate-300 mx-auto mb-1"></i>
+                            <span class="text-xs text-slate-400">Belum ada foto</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="openCamera(4, '4. Network Computer')" class="flex-1 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg flex items-center justify-center gap-1">
+                            <i data-lucide="camera" class="w-3.5 h-3.5"></i> Kamera
+                        </button>
+                        <label class="flex-1 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg flex items-center justify-center gap-1 cursor-pointer">
+                            <i data-lucide="upload" class="w-3.5 h-3.5"></i> Upload
+                            <input type="file" accept="image/*" class="hidden" onchange="handleFileUpload(event, 4)">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 5. Ilustrasi Sketsa -->
+                <div class="pillar-card bg-white p-4 rounded-2xl border border-slate-200 space-y-3" data-id="5" data-title="5. Ilustrasi Sketsa (ARTriel)">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-purple-800 bg-purple-100 px-2.5 py-1 rounded">5. Ilustrasi</span>
+                        <span class="text-xs text-slate-400 font-semibold">ARTriel</span>
+                    </div>
+                    <div class="preview-area aspect-video bg-slate-100 rounded-xl border-2 border-dashed border-slate-200 flex flex-col items-center justify-center overflow-hidden relative">
+                        <img class="img-preview hidden w-full h-full object-cover" src="" alt="Preview">
+                        <div class="placeholder-text text-center p-3">
+                            <i data-lucide="image" class="w-6 h-6 text-slate-300 mx-auto mb-1"></i>
+                            <span class="text-xs text-slate-400">Belum ada foto</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="openCamera(5, '5. Ilustrasi Sketsa')" class="flex-1 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg flex items-center justify-center gap-1">
+                            <i data-lucide="camera" class="w-3.5 h-3.5"></i> Kamera
+                        </button>
+                        <label class="flex-1 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg flex items-center justify-center gap-1 cursor-pointer">
+                            <i data-lucide="upload" class="w-3.5 h-3.5"></i> Upload
+                            <input type="file" accept="image/*" class="hidden" onchange="handleFileUpload(event, 5)">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 6. Fotografi -->
+                <div class="pillar-card bg-white p-4 rounded-2xl border border-slate-200 space-y-3" data-id="6" data-title="6. Fotografi (ARTriel)">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-purple-800 bg-purple-100 px-2.5 py-1 rounded">6. Fotografi</span>
+                        <span class="text-xs text-slate-400 font-semibold">ARTriel</span>
+                    </div>
+                    <div class="preview-area aspect-video bg-slate-100 rounded-xl border-2 border-dashed border-slate-200 flex flex-col items-center justify-center overflow-hidden relative">
+                        <img class="img-preview hidden w-full h-full object-cover" src="" alt="Preview">
+                        <div class="placeholder-text text-center p-3">
+                            <i data-lucide="image" class="w-6 h-6 text-slate-300 mx-auto mb-1"></i>
+                            <span class="text-xs text-slate-400">Belum ada foto</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="openCamera(6, '6. Fotografi')" class="flex-1 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg flex items-center justify-center gap-1">
+                            <i data-lucide="camera" class="w-3.5 h-3.5"></i> Kamera
+                        </button>
+                        <label class="flex-1 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg flex items-center justify-center gap-1 cursor-pointer">
+                            <i data-lucide="upload" class="w-3.5 h-3.5"></i> Upload
+                            <input type="file" accept="image/*" class="hidden" onchange="handleFileUpload(event, 6)">
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Hidden Template for PDF Rendering -->
+    <div class="fixed top-[-9999px] left-[-9999px]">
+        <div id="pdf-render-template" class="w-[800px] bg-white p-10 font-sans text-slate-900 space-y-6">
+            <div class="flex items-center justify-between border-b-2 border-slate-900 pb-4">
+                <div>
+                    <h1 class="text-2xl font-black uppercase">Laporan M-Shape Polymath</h1>
+                    <p class="text-xs text-slate-500 mt-1">Dokumentasi 6 Pilar Kegiatan — Atomic Habits</p>
+                </div>
+                <div class="text-right">
+                    <span class="text-xs font-bold text-slate-900 block">Ariel Usman</span>
+                    <span class="text-[10px] text-slate-400" id="pdf-date-stamp">2026</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4" id="pdf-grid-target"></div>
+            <div class="border-t border-slate-200 pt-4 flex justify-between text-[10px] text-slate-400">
+                <span>MadeAI & ARTriel System</span>
+                <span>Copyright 2026 Ariel Usman</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-auto border-t border-slate-200 bg-white py-6">
+        <div class="max-w-6xl mx-auto px-4 text-center sm:flex sm:justify-between sm:items-center text-xs text-slate-500">
+            <div>Oleh Ariel Usman Copyright 2026</div>
+            <div class="mt-2 sm:mt-0">
+                <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener" class="inline-flex items-center gap-1 font-bold text-slate-700 hover:text-pink-600">
+                    <i class="fa-brands fa-instagram"></i> @arielrcun
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Logic -->
+    <script>
+        lucide.createIcons();
+
+        const pillarImages = { 1: null, 2: null, 3: null, 4: null, 5: null, 6: null };
+        const pillarTitles = {
+            1: "1. Membaca (Prof. AU)",
+            2: "2. Menulis (Prof. AU)",
+            3: "3. Coding (MadeAI)",
+            4: "4. Network (MadeAI)",
+            5: "5. Ilustrasi (ARTriel)",
+            6: "6. Fotografi (ARTriel)"
+        };
+
+        let activeStream = null;
+        let activeTargetId = null;
+
+        function handleFileUpload(event, id) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    setImagePreview(id, e.target.result);
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function setImagePreview(id, dataUrl) {
+            pillarImages[id] = dataUrl;
+            const card = document.querySelector(`.pillar-card[data-id="${id}"]`);
+            if (card) {
+                const img = card.querySelector('.img-preview');
+                const placeholder = card.querySelector('.placeholder-text');
+                img.src = dataUrl;
+                img.classList.remove('hidden');
+                placeholder.classList.add('hidden');
+            }
+        }
+
+        async function openCamera(id, title) {
+            activeTargetId = id;
+            const cameraBox = document.getElementById('camera-box');
+            const targetLabel = document.getElementById('camera-target-label');
+            const video = document.getElementById('webcam-feed');
+
+            targetLabel.innerText = `Kamera Belakang — ${title}`;
+            cameraBox.classList.remove('hidden');
+            cameraBox.scrollIntoView({ behavior: 'smooth' });
+
+            if (activeStream) {
+                activeStream.getTracks().forEach(track => track.stop());
+            }
+
+            try {
+                try {
+                    activeStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: { exact: "environment" } } });
+                } catch (e) {
+                    activeStream = await navigator.mediaDevices.getUserMedia({ video: true });
+                }
+                video.srcObject = activeStream;
+            } catch (err) {
+                alert("Gagal membuka kamera: " + err.message);
+                cameraBox.classList.add('hidden');
+            }
+        }
+
+        document.getElementById('close-camera-btn').addEventListener('click', () => {
+            if (activeStream) {
+                activeStream.getTracks().forEach(track => track.stop());
+                activeStream = null;
+            }
+            document.getElementById('camera-box').classList.add('hidden');
+        });
+
+        document.getElementById('snap-btn').addEventListener('click', () => {
+            if (!activeStream || !activeTargetId) return;
+            const video = document.getElementById('webcam-feed');
+            const canvas = document.getElementById('camera-canvas');
+            canvas.width = video.videoWidth || 640;
+            canvas.height = video.videoHeight || 480;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            const dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+            setImagePreview(activeTargetId, dataUrl);
+
+            if (activeStream) {
+                activeStream.getTracks().forEach(track => track.stop());
+                activeStream = null;
+            }
+            document.getElementById('camera-box').classList.add('hidden');
+        });
+
+        document.getElementById('download-pdf-btn').addEventListener('click', async () => {
+            const uploadedCount = Object.values(pillarImages).filter(Boolean).length;
+            if (uploadedCount === 0) {
+                alert("Silakan ambil foto atau upload minimal 1 gambar terlebih dahulu.");
+                return;
+            }
+
+            const btn = document.getElementById('download-pdf-btn');
+            const oldText = btn.innerHTML;
+            btn.innerHTML = `<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i><span>Membuat PDF...</span>`;
+            lucide.createIcons();
+
+            try {
+                const pdfGrid = document.getElementById('pdf-grid-target');
+                document.getElementById('pdf-date-stamp').innerText = new Date().toLocaleDateString('id-ID');
+                pdfGrid.innerHTML = '';
+
+                for (let i = 1; i <= 6; i++) {
+                    const imgSrc = pillarImages[i];
+                    const title = pillarTitles[i];
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'border border-slate-200 rounded-xl p-3 bg-slate-50 flex flex-col items-center justify-center space-y-2';
+                    
+                    if (imgSrc) {
+                        itemDiv.innerHTML = `
+                            <div class="w-full h-36 bg-slate-200 rounded-lg overflow-hidden flex items-center justify-center">
+                                <img src="${imgSrc}" class="w-full h-full object-cover"/>
+                            </div>
+                            <span class="text-xs font-bold text-slate-800">${title}</span>
+                        `;
+                    } else {
+                        itemDiv.innerHTML = `
+                            <div class="w-full h-36 bg-slate-100 rounded-lg flex items-center justify-center border-2 border-dashed border-slate-200">
+                                <span class="text-xs text-slate-400">Kosong</span>
+                            </div>
+                            <span class="text-xs font-bold text-slate-400">${title}</span>
+                        `;
+                    }
+                    pdfGrid.appendChild(itemDiv);
+                }
+
+                const element = document.getElementById('pdf-render-template');
+                const canvas = await html2canvas(element, { scale: 2, useCORS: true, logging: false });
+                const imgData = canvas.toDataURL('image/jpeg', 0.95);
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+                pdf.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight);
+                pdf.save(`Laporan-Polymath-${new Date().toISOString().slice(0,10)}.pdf`);
+            } catch (err) {
+                alert("Gagal membuat PDF: " + err.message);
+            } finally {
+                btn.innerHTML = oldText;
+                lucide.createIcons();
+            }
+        });
+    </script>
+</body>
+</html>
