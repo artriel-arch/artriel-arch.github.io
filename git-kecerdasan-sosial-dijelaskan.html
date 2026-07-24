@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Intelligence - Daniel Goleman | Panduan Kecerdasan Sosial</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Eksplorasi mendalam konsep Kecerdasan Sosial (Social Intelligence) karya Daniel Goleman. Pahami Social Awareness, Social Facility, dan neurobiologi hubungan manusia.">
+    <meta name="keywords" content="Social Intelligence, Daniel Goleman, Kecerdasan Sosial, Psikologi, Empati, Kesadaran Sosial">
+    <meta name="author" content="Ariel Usman">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook / WhatsApp Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://social-intelligence.example.com/">
+    <meta property="og:title" content="Memahami Social Intelligence - Daniel Goleman">
+    <meta property="og:description" content="Pelajari bagaimana otak manusia dirancang untuk terhubung dan membangun hubungan sosial yang lebih bermakna.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Memahami Social Intelligence - Daniel Goleman">
+    <meta name="twitter:description" content="Panduan interaktif kecerdasan sosial dan neurobiologi koneksi manusia.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366f1'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>">
+
+    <!-- Fonts Google & CDN Script -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .glass-hero {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #4f46e5 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-indigo-50 via-sky-50 to-pink-50 text-slate-800 font-sans min-h-screen flex flex-col justify-between antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- OVERLAY SIDEBAR MOBILE -->
+    <div id="sidebarOverlay" onclick="toggleSidebar()" class="fixed inset-0 bg-slate-900/40 z-40 hidden backdrop-blur-sm transition-opacity duration-300"></div>
+
+    <!-- SIDEBAR (DRAWER) HAL-HAL TERKAIT -->
+    <aside id="sidebar" class="fixed top-0 right-0 w-80 sm:w-96 h-full bg-white/95 backdrop-blur-xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col justify-between border-l border-white/40">
+        <div class="p-6 overflow-y-auto">
+            <div class="flex justify-between items-center pb-4 border-b border-slate-100">
+                <div class="flex items-center gap-2 text-indigo-600 font-bold text-lg">
+                    <i data-lucide="book-open"></i>
+                    <span>Eksplorasi Terkait</span>
+                </div>
+                <button onclick="toggleSidebar()" class="p-2 rounded-full hover:bg-slate-100 text-slate-500 transition">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+
+            <!-- Daftar Topik Sidebar -->
+            <div class="mt-6 space-y-4">
+                <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Karya Daniel Goleman</p>
+                
+                <a href="#penjelasan" onclick="toggleSidebar()" class="flex items-start gap-3 p-3 rounded-xl hover:bg-indigo-50 transition border border-transparent hover:border-indigo-100">
+                    <div class="p-2 bg-indigo-100 text-indigo-600 rounded-lg shrink-0">
+                        <i data-lucide="brain"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-slate-800 text-sm">Emotional Intelligence</h4>
+                        <p class="text-xs text-slate-500 mt-0.5">Fondasi utama pengelolaan emosi diri dan orang lain.</p>
+                    </div>
+                </a>
+
+                <a href="#pilar" onclick="toggleSidebar()" class="flex items-start gap-3 p-3 rounded-xl hover:bg-sky-50 transition border border-transparent hover:border-sky-100">
+                    <div class="p-2 bg-sky-100 text-sky-600 rounded-lg shrink-0">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-slate-800 text-sm">2 Pilar utama SQ</h4>
+                        <p class="text-xs text-slate-500 mt-0.5">Social Awareness & Social Facility.</p>
+                    </div>
+                </a>
+
+                <a href="#neurobiologi" onclick="toggleSidebar()" class="flex items-start gap-3 p-3 rounded-xl hover:bg-pink-50 transition border border-transparent hover:border-pink-100">
+                    <div class="p-2 bg-pink-100 text-pink-600 rounded-lg shrink-0">
+                        <i data-lucide="activity"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-slate-800 text-sm">Mirror Neurons</h4>
+                        <p class="text-xs text-slate-500 mt-0.5">Mekanisme saraf biologis penularan emosi.</p>
+                    </div>
+                </a>
+
+                <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider pt-4">Rekomendasi Bacaan</p>
+                <div class="p-4 bg-gradient-to-br from-indigo-500 to-purple-600 text-white rounded-2xl shadow-md">
+                    <i data-lucide="bookmark" class="mb-2"></i>
+                    <h5 class="font-bold text-sm">Social Intelligence (2006)</h5>
+                    <p class="text-xs opacity-90 mt-1">Buku legendaris yang merombak pemahaman kita tentang sains hubungan manusia.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-6 border-t border-slate-100 bg-slate-50">
+            <p class="text-xs text-center text-slate-500">Project Disusun Untuk Pengayaan Edukasi Psikologi Sosial.</p>
+        </div>
+    </aside>
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-30 glass-nav border-b border-white/50 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Brand / Nama Project -->
+            <a href="#" class="flex items-center gap-2.5 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-pink-500 flex items-center justify-center text-white shadow-md shadow-indigo-200 group-hover:scale-105 transition">
+                    <i data-lucide="sparkles" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <span class="font-extrabold text-lg tracking-tight text-slate-800 block leading-none">Social<span class="text-indigo-600">Intel</span></span>
+                    <span class="text-[10px] text-slate-500 font-medium tracking-wide">DANIEL GOLEMAN</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links (Desktop/Tablet) -->
+            <div class="hidden md:flex items-center gap-1 bg-slate-100/80 p-1.5 rounded-full border border-slate-200/60">
+                <a href="#penjelasan" class="px-4 py-1.5 text-xs font-semibold text-slate-600 hover:text-indigo-600 rounded-full hover:bg-white transition">Konsep Utama</a>
+                <a href="#pilar" class="px-4 py-1.5 text-xs font-semibold text-slate-600 hover:text-indigo-600 rounded-full hover:bg-white transition">Dua Pilar</a>
+                <a href="#neurobiologi" class="px-4 py-1.5 text-xs font-semibold text-slate-600 hover:text-indigo-600 rounded-full hover:bg-white transition">Neurobiologi</a>
+                <a href="#kuis" class="px-4 py-1.5 text-xs font-semibold text-slate-600 hover:text-indigo-600 rounded-full hover:bg-white transition">Kuis Interaktif</a>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-2">
+                <button onclick="toggleSidebar()" class="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold px-4 py-2.5 rounded-full shadow-md shadow-indigo-200 transition active:scale-95">
+                    <i data-lucide="menu" class="w-4 h-4"></i>
+                    <span class="hidden sm:inline">Eksplorasi</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER / HERO SECTION (GLASSMORPHISM) -->
+    <header class="relative px-4 sm:px-6 lg:px-8 pt-8 pb-16 max-w-7xl mx-auto w-full">
+        <div class="glass-hero rounded-3xl p-6 sm:p-12 md:p-16 relative overflow-hidden shadow-xl shadow-indigo-100/50">
+            <!-- Decorative Light Blobs -->
+            <div class="absolute -top-20 -right-20 w-72 h-72 bg-pink-300 rounded-full blur-3xl opacity-40 -z-10 animate-pulse"></div>
+            <div class="absolute -bottom-20 -left-20 w-72 h-72 bg-indigo-300 rounded-full blur-3xl opacity-40 -z-10"></div>
+
+            <div class="grid md:grid-cols-12 gap-8 items-center relative z-10">
+                <div class="md:col-span-7 space-y-6 text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/80 border border-indigo-100 text-indigo-700 text-xs font-bold tracking-wide shadow-sm">
+                        <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-500 fill-amber-500"></i>
+                        SAINS KONEKSI MANUSIA
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                        Kita Dirancang Otomatis Untuk <span class="gradient-text">Terhubung</span>
+                    </h1>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl">
+                        Menurut <strong>Daniel Goleman</strong>, Kecerdasan Sosial (<em>Social Intelligence</em>) bukan sekadar kemampuan bersosialisasi, melainkan bagaimana otak kita saling mempengaruhi saat berinteraksi melalui jaringan saraf biologis.
+                    </p>
+
+                    <div class="flex flex-wrap gap-3 justify-center md:justify-start pt-2">
+                        <a href="#penjelasan" class="px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs sm:text-sm rounded-xl shadow-lg transition flex items-center gap-2">
+                            Mulai Belajar <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#kuis" class="px-6 py-3 bg-white/80 hover:bg-white text-slate-700 font-semibold text-xs sm:text-sm rounded-xl border border-slate-200/80 shadow-sm transition flex items-center gap-2">
+                            Tes Kecerdasanmu <i data-lucide="sparkles" class="w-4 h-4 text-indigo-500"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Image Card -->
+                <div class="md:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-sm">
+                        <div class="aspect-square rounded-2xl overflow-hidden shadow-2xl border-4 border-white/80">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Social Intelligence Connection" class="w-full h-full object-cover">
+                        </div>
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-4 -left-4 glass-card p-4 rounded-2xl shadow-lg flex items-center gap-3 border border-white">
+                            <div class="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold">
+                                <i data-lucide="heart-handshake"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-800">Neurobiologi Empati</p>
+                                <p class="text-[11px] text-slate-500">Mirror Neurons & Resonansi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- BODY CONTENT -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 pb-16 flex-grow">
+
+        <!-- SECTION 1: PENJELASAN KONSEP UTAMA -->
+        <section id="penjelasan" class="scroll-mt-20">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Apa Itu Social Intelligence?</h2>
+                <p class="text-slate-600 text-xs sm:text-sm mt-2">Pandangan revolusioner Daniel Goleman mengenai kemampuan antarmanusia.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition border border-white/60">
+                    <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="network" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Wiring for Connection</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Otak manusia secara biologis dirancang untuk selalu terhubung satu sama lain. Setiap interaksi berdampak langsung pada fisiologi dan hormon tubuh kita.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition border border-white/60">
+                    <div class="w-12 h-12 bg-pink-100 text-pink-600 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="smile" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Penularan Emosi</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Emosi bersifat menular layaknya virus secara tak sadar. Sikap hangat atau ketegangan emosional seseorang langsung mempengaruhi suasana hati orang di sekitarnya.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition border border-white/60">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Beyond EQ</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Jika *Emotional Intelligence* (EQ) berfokus pada kesadaran emosi diri sendiri, maka *Social Intelligence* (SQ) melangkah lebih jauh pada kemampuan membina hubungan antarpribadi.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: DUA PILAR UTAMA (INTERAKTIF TAB) -->
+        <section id="pilar" class="scroll-mt-20">
+            <div class="glass-card rounded-3xl p-6 sm:p-10 border border-white/80 shadow-lg">
+                <div class="text-center max-w-xl mx-auto mb-8">
+                    <span class="text-xs font-bold text-indigo-600 tracking-widest uppercase">Struktur Konseptual</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Dua Pilar Kecerdasan Sosial</h2>
+                    <p class="text-slate-600 text-xs sm:text-sm mt-1">Daniel Goleman membagi Kecerdasan Sosial menjadi dua bagian penting.</p>
+                </div>
+
+                <!-- Interactive Tab Buttons -->
+                <div class="flex justify-center mb-8">
+                    <div class="bg-slate-200/70 p-1 rounded-2xl flex gap-1 max-w-md w-full">
+                        <button id="btnAwareness" onclick="switchTab('awareness')" class="flex-1 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition bg-white text-indigo-600 shadow-sm">
+                            1. Social Awareness
+                        </button>
+                        <button id="btnFacility" onclick="switchTab('facility')" class="flex-1 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition text-slate-600 hover:text-slate-900">
+                            2. Social Facility
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tab Content: Social Awareness -->
+                <div id="contentAwareness" class="grid md:grid-cols-2 gap-6 items-center">
+                    <div class="space-y-4">
+                        <div class="inline-block px-3 py-1 rounded-md bg-indigo-100 text-indigo-700 font-semibold text-xs">
+                            Merasakan Apa Yang Dirasakan Orang Lain
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800">Social Awareness (Kesadaran Sosial)</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                            Kemampuan spektrum luas mulai dari sekadar merasakan emosi orang lain hingga memahami niat dan pemikiran mereka secara presisi.
+                        </p>
+
+                        <ul class="space-y-2 text-xs text-slate-700">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500"></i> <strong>Primal Empathy:</strong> Merasakan sinyal emosional non-verbal secara spontan.</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500"></i> <strong>Attunement:</strong> Mendengarkan dengan perhatian penuh dan penuh kehadiran.</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500"></i> <strong>Empathic Accuracy:</strong> Memahami pikiran dan perasaan orang lain secara akurat.</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500"></i> <strong>Social Cognition:</strong> Memahami dinamika sosial dan aturan dalam kelompok.</li>
+                        </ul>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden shadow-md">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Social Awareness" class="w-full h-64 object-cover">
+                    </div>
+                </div>
+
+                <!-- Tab Content: Social Facility (Hidden initially) -->
+                <div id="contentFacility" class="grid md:grid-cols-2 gap-6 items-center hidden">
+                    <div class="space-y-4">
+                        <div class="inline-block px-3 py-1 rounded-md bg-pink-100 text-pink-700 font-semibold text-xs">
+                            Bertindak Mulus Dalam Interaksi
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800">Social Facility (Fasilitas Sosial)</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                            Membangun di atas kesadaran sosial untuk memungkinkan interaksi yang lancar, harmonis, dan berkesan positif.
+                        </p>
+
+                        <ul class="space-y-2 text-xs text-slate-700">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-pink-500"></i> <strong>Synchrony:</strong> Keselarasan gerakan non-verbal saat berkomunikasi.</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-pink-500"></i> <strong>Self-Presentation:</strong> Menampilkan diri dengan baik dan otentik.</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-pink-500"></i> <strong>Influence:</strong> Mampu mempengaruhi dan memberi dampak positif pada orang lain.</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-pink-500"></i> <strong>Concern:</strong> Kepedulian nyata yang diwujudkan dalam tindakan membantu.</li>
+                        </ul>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden shadow-md">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" alt="Social Facility" class="w-full h-64 object-cover">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 3: NEUROBIOLOGI HUBUNGAN -->
+        <section id="neurobiologi" class="scroll-mt-20">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4">
+                    <span class="text-xs font-bold text-sky-600 tracking-widest uppercase">Sains Otak</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Jalan Atas & Jalan Bawah Otak (High Road & Low Road)</h2>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Daniel Goleman menjelaskan bahwa otak merespons situasi sosial melalui dua jalur utama:
+                    </p>
+
+                    <div class="space-y-3 pt-2">
+                        <div class="p-4 bg-white/80 rounded-2xl border border-sky-100 shadow-sm">
+                            <h4 class="font-bold text-sky-800 text-sm flex items-center gap-2">
+                                <i data-lucide="zap" class="w-4 h-4 text-sky-500"></i> Low Road (Jalur Pintas Cepat)
+                            </h4>
+                            <p class="text-xs text-slate-600 mt-1">Berjalan otomatis, cepat, dan tanpa sadar. Dikendalikan oleh sistem limbik yang memicu empati instan dan naluri sosial.</p>
+                        </div>
+
+                        <div class="p-4 bg-white/80 rounded-2xl border border-indigo-100 shadow-sm">
+                            <h4 class="font-bold text-indigo-800 text-sm flex items-center gap-2">
+                                <i data-lucide="cpu" class="w-4 h-4 text-indigo-500"></i> High Road (Jalur Sadar Berpikir)
+                            </h4>
+                            <p class="text-xs text-slate-600 mt-1">Berjalan lebih lambat, terencana, dan rasional. Dikendalikan oleh neocortex untuk menganalisis norma sosial dan strategi komunikasi.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl border border-white/80 shadow-md space-y-4">
+                    <h3 class="font-bold text-slate-800 text-base">Kutipan Utama Daniel Goleman</h3>
+                    <blockquote class="text-sm italic text-slate-700 border-l-4 border-indigo-500 pl-4 py-1">
+                        "Kecerdasan sosial bukan sekadar tahu apa yang harus dikatakan. Ini tentang bagaimana kita terhubung di tingkat saraf biologically yang paling mendalam."
+                    </blockquote>
+                    <div class="p-4 bg-indigo-50/80 rounded-2xl flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Daniel Goleman Concept" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <p class="text-xs font-bold text-slate-800">Daniel Goleman</p>
+                            <p class="text-[11px] text-slate-500">Psikolog & Penulis Best Seller Dunia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: KUIS INTERAKTIF SINGKAT -->
+        <section id="kuis" class="scroll-mt-20">
+            <div class="glass-card rounded-3xl p-6 sm:p-10 border border-white/80 shadow-xl bg-gradient-to-br from-white/90 via-indigo-50/50 to-pink-50/50">
+                <div class="text-center max-w-xl mx-auto mb-8">
+                    <span class="text-xs font-bold text-pink-600 tracking-widest uppercase">Fitur Interaktif</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Refleksi Kecerdasan Sosial</h2>
+                    <p class="text-slate-600 text-xs sm:text-sm mt-1">Jawab pertanyaan singkat di bawah ini untuk menguji refleks kecerdasan sosialmu.</p>
+                </div>
+
+                <div id="quizContainer" class="max-w-xl mx-auto space-y-6">
+                    <div id="quizCard" class="bg-white/90 p-6 rounded-2xl shadow-sm border border-slate-100">
+                        <p id="quizQuestion" class="font-semibold text-slate-800 text-sm sm:text-base mb-4">
+                            Saat melihat temanmu tiba-tiba diam dan menghela napas panjang, apa respons pertamamu?
+                        </p>
+                        <div class="space-y-2" id="quizOptions">
+                            <button onclick="answerQuiz(1)" class="w-full text-left p-3 rounded-xl border border-slate-200 hover:border-indigo-500 hover:bg-indigo-50 transition text-xs sm:text-sm font-medium text-slate-700">
+                                A. Langsung bertanya dengan tenang: "Ada yang menganggumu?"
+                            </button>
+                            <button onclick="answerQuiz(2)" class="w-full text-left p-3 rounded-xl border border-slate-200 hover:border-indigo-500 hover:bg-indigo-50 transition text-xs sm:text-sm font-medium text-slate-700">
+                                B. Membiarkannya saja karena tidak ingin mencampuri urusannya.
+                            </button>
+                            <button onclick="answerQuiz(3)" class="w-full text-left p-3 rounded-xl border border-slate-200 hover:border-indigo-500 hover:bg-indigo-50 transition text-xs sm:text-sm font-medium text-slate-700">
+                                C. Menceritakan masalahmu sendiri agar dia lupa masalahnya.
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="quizResult" class="hidden p-6 bg-emerald-50 border border-emerald-200 rounded-2xl text-center space-y-3">
+                        <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
+                            <i data-lucide="check-circle" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="font-bold text-emerald-800 text-base">Hasil Refleksi</h4>
+                        <p id="quizResultText" class="text-xs sm:text-sm text-slate-700 leading-relaxed"></p>
+                        <button onclick="resetQuiz()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs rounded-xl shadow transition">
+                            Coba Lagi
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white/80 backdrop-blur-md border-t border-slate-200/80 py-8 px-4 sm:px-6 lg:px-8 mt-auto">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div>
+                <p class="text-xs sm:text-sm font-semibold text-slate-700">
+                    Oleh Ariel Usman Copyright 2026
+                </p>
+                <p class="text-[11px] text-slate-500 mt-0.5">
+                    Didesain untuk eksplorasi pembelajaran Kecerdasan Sosial.
+                </p>
+            </div>
+
+            <!-- Social Media Icon Link -->
+            <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-amber-500 text-white font-semibold text-xs shadow-md hover:opacity-90 transition transform hover:-translate-y-0.5">
+                <i data-lucide="instagram" class="w-4 h-4"></i>
+                <span>@arielrcun</span>
+            </a>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Toggle Sidebar Functionality
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            
+            if (sidebar.classList.contains('translate-x-full')) {
+                sidebar.classList.remove('translate-x-full');
+                overlay.classList.remove('hidden');
+            } else {
+                sidebar.classList.add('translate-x-full');
+                overlay.classList.add('hidden');
+            }
+        }
+
+        // Switch Tabs Functionality
+        function switchTab(tab) {
+            const btnAwareness = document.getElementById('btnAwareness');
+            const btnFacility = document.getElementById('btnFacility');
+            const contentAwareness = document.getElementById('contentAwareness');
+            const contentFacility = document.getElementById('contentFacility');
+
+            if (tab === 'awareness') {
+                btnAwareness.className = "flex-1 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition bg-white text-indigo-600 shadow-sm";
+                btnFacility.className = "flex-1 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition text-slate-600 hover:text-slate-900";
+                contentAwareness.classList.remove('hidden');
+                contentFacility.classList.add('hidden');
+            } else {
+                btnFacility.className = "flex-1 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition bg-white text-pink-600 shadow-sm";
+                btnAwareness.className = "flex-1 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition text-slate-600 hover:text-slate-900";
+                contentFacility.classList.remove('hidden');
+                contentAwareness.classList.add('hidden');
+            }
+        }
+
+        // Interactive Mini Quiz logic
+        function answerQuiz(option) {
+            const quizCard = document.getElementById('quizCard');
+            const quizResult = document.getElementById('quizResult');
+            const quizResultText = document.getElementById('quizResultText');
+
+            quizCard.classList.add('hidden');
+            quizResult.classList.remove('hidden');
+
+            if (option === 1) {
+                quizResultText.innerHTML = "<strong>Kecerdasan Sosial Tinggi!</strong> Anda menunjukkan *Attunement* dan *Concern* tinggi dengan mengenali sinyal non-verbal dan merespons secara empati.";
+            } else if (option === 2) {
+                quizResultText.innerHTML = "<strong>Menjaga Jarak.</strong> Anda menyadari sinyal emosi, namun membatasi eksekusi *Social Facility* untuk bertindak.";
+            } else {
+                quizResultText.innerHTML = "<strong>Ego-Centric Tendency.</strong> Anda mungkin perlu melatih *Primal Empathy* agar lebih mendengarkan daripada mengalihkan pembicaraan ke diri sendiri.";
+            }
+        }
+
+        function resetQuiz() {
+            document.getElementById('quizCard').classList.remove('hidden');
+            document.getElementById('quizResult').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
