@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistematika Belajar dari 0 - New Step Ariel AI & Art & Author</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Sistematika belajar dari 0 menggunakan metodologi Compression Loop: New Step Ariel AI (Python & Node.js), Ariel Art (Animation Short Film), dan Ariel AUTHOR (Content Creator YouTube & TikTok).">
+    <meta name="keywords" content="Ariel AI, Ariel Art, Ariel Author, Belajar Python, Node.js, Animasi, Content Creator, Compression Loop">
+    <meta name="author" content="Ariel Usman">
+
+    <!-- Open Graph / Social Media Links -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sistematika Belajar dari 0 - Ariel Workspace 2026">
+    <meta property="og:description" content="Panduan akurat dan terstruktur akselerasi keahlian coding, animasi, dan edukasi publik dari nol.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
+    <meta property="og:url" content="https://ariel-workspace.local">
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/svgs/solid/rocket.svg" type="image/svg+xml">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brightBg: '#F8FAFC',
+                        brandPrimary: '#4F46E5',
+                        brandSecondary: '#06B6D4',
+                        brandAccent: '#F59E0B',
+                        brandPink: '#EC4899',
+                        glassBorder: 'rgba(255, 255, 255, 0.6)',
+                        glassBg: 'rgba(255, 255, 255, 0.75)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #4F46E5 0%, #06B6D4 50%, #EC4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 glass-nav px-4 lg:px-8 py-3 transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Left: Project Name -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 via-cyan-400 to-pink-500 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-brain text-lg"></i>
+                </div>
+                <span class="font-extrabold text-xl tracking-tight text-slate-900 group-hover:text-indigo-600 transition-colors">
+                    Ariel<span class="text-indigo-600">Workspace</span>
+                </span>
+            </a>
+
+            <!-- Right: Menu Navigasi -->
+            <div class="hidden md:flex items-center space-x-1 lg:space-x-2 font-medium text-sm text-slate-600">
+                <a href="#hero" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-indigo-50/50 transition">Beranda</a>
+                <a href="#ai" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-indigo-50/50 transition"><i class="fa-solid fa-code text-indigo-500 mr-1.5"></i>Ariel AI</a>
+                <a href="#art" class="px-3 py-2 rounded-lg hover:text-cyan-600 hover:bg-cyan-50/50 transition"><i class="fa-solid fa-film text-cyan-500 mr-1.5"></i>Ariel Art</a>
+                <a href="#author" class="px-3 py-2 rounded-lg hover:text-pink-600 hover:bg-pink-50/50 transition"><i class="fa-solid fa-video text-pink-500 mr-1.5"></i>Ariel Author</a>
+                <a href="#framework" class="px-3 py-2 rounded-lg hover:text-amber-600 hover:bg-amber-50/50 transition"><i class="fa-solid fa-diagram-project text-amber-500 mr-1.5"></i>Metode</a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobileMenuBtn" class="md:hidden text-slate-600 hover:text-indigo-600 focus:outline-none p-2" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden mt-3 pt-3 border-t border-slate-200/60 flex flex-col space-y-2 font-medium text-slate-600">
+            <a href="#hero" class="px-3 py-2 rounded-lg hover:bg-indigo-50 text-slate-700">Beranda</a>
+            <a href="#ai" class="px-3 py-2 rounded-lg hover:bg-indigo-50 text-indigo-600"><i class="fa-solid fa-code mr-2"></i>Ariel AI (Coding)</a>
+            <a href="#art" class="px-3 py-2 rounded-lg hover:bg-cyan-50 text-cyan-600"><i class="fa-solid fa-film mr-2"></i>Ariel Art (Animation)</a>
+            <a href="#author" class="px-3 py-2 rounded-lg hover:bg-pink-50 text-pink-600"><i class="fa-solid fa-video mr-2"></i>Ariel Author (Content)</a>
+            <a href="#framework" class="px-3 py-2 rounded-lg hover:bg-amber-50 text-amber-600"><i class="fa-solid fa-diagram-project mr-2"></i>Metode Belajar</a>
+        </div>
+    </nav>
+
+    <!-- HEADER / HERO SECTION -->
+    <header id="hero" class="relative overflow-hidden py-16 lg:py-24 px-4 lg:px-8 bg-gradient-to-br from-indigo-100/60 via-cyan-50/40 to-pink-100/50">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-100/80 border border-indigo-200 text-indigo-700 text-xs font-semibold uppercase tracking-wider shadow-sm">
+                    <i class="fa-solid fa-bolt text-amber-500"></i> Metodologi Akselerasi Keahlian 2026
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                    Sistematika Belajar Apapun Dari 0 <br>
+                    <span class="text-gradient">Simulasi New Step Ariel</span>
+                </h1>
+                
+                <p class="text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed mx-auto lg:mx-0">
+                    Sistem akuisisi keterampilan berbasis efisiensi tinggi. Mengeliminasi distraksi informasi dan berfokus langsung pada 20% fondasi krusial (*Bottleneck Skill*) untuk hasil 80% kompetensi operasional nyata.
+                </p>
+
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                    <a href="#ai" class="px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold shadow-lg shadow-indigo-500/25 transition-all hover:-translate-y-0.5">
+                        Mulai Jelajahi
+                    </a>
+                    <a href="#framework" class="px-6 py-3.5 rounded-xl glass-card text-slate-700 font-semibold hover:bg-white/90 transition-all border border-slate-200">
+                        Pelajari Kerangka Kerja
+                    </a>
+                </div>
+            </div>
+
+            <!-- Glassmorphism Hero Visual Card -->
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="w-full max-w-md glass-card rounded-3xl p-6 sm:p-8 relative overflow-hidden">
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-pink-300 rounded-full blur-3xl opacity-50"></div>
+                    <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-cyan-300 rounded-full blur-3xl opacity-50"></div>
+
+                    <div class="relative z-10 space-y-6">
+                        <div class="flex items-center justify-between border-b border-slate-200/60 pb-4">
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Target Pencapaian</span>
+                            <span class="px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-700 text-xs font-semibold">&lt; 100 Jam Eksekusi</span>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4 p-3 rounded-2xl bg-white/60 border border-white/80 shadow-sm">
+                                <div class="w-10 h-10 rounded-xl bg-indigo-500 text-white flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-code"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-bold text-slate-800 text-sm">Ariel AI</h2>
+                                    <p class="text-xs text-slate-500">Python & Node.js Backend</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 p-3 rounded-2xl bg-white/60 border border-white/80 shadow-sm">
+                                <div class="w-10 h-10 rounded-xl bg-cyan-500 text-white flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-film"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-bold text-slate-800 text-sm">Ariel Art</h2>
+                                    <p class="text-xs text-slate-500">Animation Short Film</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 p-3 rounded-2xl bg-white/60 border border-white/80 shadow-sm">
+                                <div class="w-10 h-10 rounded-xl bg-pink-500 text-white flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-video"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-bold text-slate-800 text-sm">Ariel AUTHOR</h2>
+                                    <p class="text-xs text-slate-500">Content Creator (YouTube/TikTok)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <div class="p-3.5 rounded-xl bg-indigo-50/80 border border-indigo-100 text-xs text-indigo-900 leading-relaxed">
+                                <i class="fa-solid fa-quote-left text-indigo-400 mr-1"></i>
+                                Fokus pada 20% fondasi mendasar untuk mencapai 80% hasil praktis nyata.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- MAIN BODY CONTENT -->
+    <main class="max-w-7xl mx-auto px-4 lg:px-8 py-12 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <!-- CONTENT AREA (LEFT 8 COLS) -->
+            <div class="lg:col-span-8 space-y-12">
+                
+                <!-- SECTION 1: ARIEL AI -->
+                <section id="ai" class="glass-card rounded-3xl p-6 sm:p-8 space-y-6">
+                    <div class="flex items-center justify-between flex-wrap gap-4 border-b border-slate-200/80 pb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-2xl bg-indigo-600 text-white flex items-center justify-center shadow-lg shadow-indigo-500/30">
+                                <i class="fa-solid fa-laptop-code text-xl"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-bold text-slate-900">Ariel AI: Coding Python & Node.js</h2>
+                                <p class="text-xs sm:text-sm text-indigo-600 font-medium">Pengembangan Logic & Sistem Backend Terstruktur</p>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-indigo-100 text-indigo-800 text-xs font-bold">Fokus 0 → 1</span>
+                    </div>
+
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop" alt="Coding Python dan Node.js" class="w-full h-48 sm:h-64 object-cover rounded-2xl shadow-sm">
+
+                    <p class="text-slate-600 leading-relaxed">
+                        Pendekatan efisien dalam dunia pemrograman tidak dimulai dari menghafal seluruh sintaksis, melainkan memahami pemrosesan data, struktur logika murni, dan arsitektur API.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-2xl bg-white/70 border border-slate-200/80 shadow-sm space-y-2">
+                            <h3 class="font-bold text-slate-800 flex items-center gap-2">
+                                <i class="fa-brands fa-python text-amber-500 text-lg"></i> Python (Data & AI Logic)
+                            </h3>
+                            <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside">
+                                <li>Struktur Data & Tipe Data Dasar</li>
+                                <li>Fungsi & Modul Murni</li>
+                                <li>Ekosistem Modul / Pustaka Luar</li>
+                                <li><strong>Bottleneck Skill:</strong> Data Cleaning & Manipulasi Struktur Data</li>
+                            </ul>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-white/70 border border-slate-200/80 shadow-sm space-y-2">
+                            <h3 class="font-bold text-slate-800 flex items-center gap-2">
+                                <i class="fa-brands fa-node-js text-emerald-500 text-lg"></i> Node.js (Asynchronous Runtime)
+                            </h3>
+                            <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside">
+                                <li>Asynchronous JS & Event Loop</li>
+                                <li>Membangun REST API Sederhana</li>
+                                <li>Integrasi Database Express/Fastify</li>
+                                <li><strong>Bottleneck Skill:</strong> Logika Manipulasi Data JSON & Routing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 2: ARIEL ART -->
+                <section id="art" class="glass-card rounded-3xl p-6 sm:p-8 space-y-6">
+                    <div class="flex items-center justify-between flex-wrap gap-4 border-b border-slate-200/80 pb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-2xl bg-cyan-500 text-white flex items-center justify-center shadow-lg shadow-cyan-500/30">
+                                <i class="fa-solid fa-clapperboard text-xl"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-bold text-slate-900">Ariel Art: Animation Short Film</h2>
+                                <p class="text-xs sm:text-sm text-cyan-600 font-medium">Penceritaan Visual & Produksi Film Pendek</p>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-cyan-100 text-cyan-800 text-xs font-bold">Kreatif & Visual</span>
+                    </div>
+
+                    <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1000&auto=format&fit=crop" alt="Animation Studio Setup" class="w-full h-48 sm:h-64 object-cover rounded-2xl shadow-sm">
+
+                    <p class="text-slate-600 leading-relaxed">
+                        Membuat film animasi pendek dari nol bukan tentang merender efek visual rumit sejak awal, melainkan menguasai prinsip mendasar visualisasi cerita dan pencahayaan.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="p-4 rounded-2xl bg-white/70 border border-slate-200/80 shadow-sm space-y-2">
+                            <div class="w-8 h-8 rounded-lg bg-cyan-100 text-cyan-600 flex items-center justify-center font-bold text-sm">1</div>
+                            <h3 class="font-bold text-slate-800 text-sm">Storyboarding</h3>
+                            <p class="text-xs text-slate-500">Penyusunan alur adegan, komposisi kamera, dan kontinuitas cerita sebelum produksi.</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-white/70 border border-slate-200/80 shadow-sm space-y-2">
+                            <div class="w-8 h-8 rounded-lg bg-cyan-100 text-cyan-600 flex items-center justify-center font-bold text-sm">2</div>
+                            <h3 class="font-bold text-slate-800 text-sm">Visual Composition</h3>
+                            <p class="text-xs text-slate-500"><strong>Bottleneck Skill:</strong> Komposisi, Hierarki Visual, dan Pencahayaan (Lighting).</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-white/70 border border-slate-200/80 shadow-sm space-y-2">
+                            <div class="w-8 h-8 rounded-lg bg-cyan-100 text-cyan-600 flex items-center justify-center font-bold text-sm">3</div>
+                            <h3 class="font-bold text-slate-800 text-sm">Keyframe Motion</h3>
+                            <p class="text-xs text-slate-500">Penerapan 12 prinsip dasar animasi pada gerakan kuis / karakter utama.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 3: ARIEL AUTHOR -->
+                <section id="author" class="glass-card rounded-3xl p-6 sm:p-8 space-y-6">
+                    <div class="flex items-center justify-between flex-wrap gap-4 border-b border-slate-200/80 pb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-2xl bg-pink-500 text-white flex items-center justify-center shadow-lg shadow-pink-500/30">
+                                <i class="fa-solid fa-icons text-xl"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-bold text-slate-900">Ariel AUTHOR: Teaching & Content</h2>
+                                <p class="text-xs sm:text-sm text-pink-600 font-medium">Edukasi Publik di YouTube & TikTok</p>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-pink-100 text-pink-800 text-xs font-bold">Kreator Edukasi</span>
+                    </div>
+
+                    <img src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?q=80&w=1000&auto=format&fit=crop" alt="Content Creation Studio" class="w-full h-48 sm:h-64 object-cover rounded-2xl shadow-sm">
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-3">
+                            <h3 class="font-bold text-slate-800 flex items-center gap-2">
+                                <i class="fa-brands fa-youtube text-red-500 text-lg"></i> YouTube Long-form
+                            </h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Berfokus pada penjelasan mendalam (deep-dive), panduan teknis langkah-demi-langkah, serta dokumentasi studi kasus nyata.
+                            </p>
+                        </div>
+
+                        <div class="space-y-3">
+                            <h3 class="font-bold text-slate-800 flex items-center gap-2">
+                                <i class="fa-brands fa-tiktok text-slate-900 text-lg"></i> TikTok Short-form
+                            </h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Berfokus pada penyampaian poin krusial secara cepat (hook 3 detik pertama), tips praktis, dan penyempurnaan "Ugly Phase" konten.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 4: FRAMEWORK METODOLOGI BELAJAR -->
+                <section id="framework" class="glass-card rounded-3xl p-6 sm:p-8 space-y-6">
+                    <div class="border-b border-slate-200/80 pb-4">
+                        <h2 class="text-2xl font-bold text-slate-900">Sistematika Belajar: Kerangka Compression Loop</h2>
+                        <p class="text-xs sm:text-sm text-slate-500">Strategi mengompresi kurva belajar tanpa mengurangi kedalaman pemahaman operasional.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="p-5 rounded-2xl bg-white/80 border border-indigo-100 shadow-sm space-y-3">
+                            <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold">1</div>
+                            <h3 class="font-bold text-slate-800 text-sm">Praktisi Aktif</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Mengisolasi sumber belajar hanya dari praktisi yang beroperasi aktif di lapangan untuk menghindari teori statis yang usang.
+                            </p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/80 border border-cyan-100 shadow-sm space-y-3">
+                            <div class="w-10 h-10 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center font-bold">2</div>
+                            <h3 class="font-bold text-slate-800 text-sm">100 Jam Pertama</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Melakukan *reverse engineering* pada 100 jam awal masa inkubasi praktisi, bukan pada alur kerja tingkat lanjut mereka saat ini.
+                            </p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/80 border border-pink-100 shadow-sm space-y-3">
+                            <div class="w-10 h-10 rounded-xl bg-pink-100 text-pink-700 flex items-center justify-center font-bold">3</div>
+                            <h3 class="font-bold text-slate-800 text-sm">Fast Feedback Loop</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Memperpendek siklus evaluasi. Melakukan eksekusi dalam unit kecil yang dapat diuji dan dikoreksi secara langsung.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Ugly Phase Card -->
+                    <div class="p-5 rounded-2xl bg-amber-50/80 border border-amber-200 space-y-3">
+                        <h3 class="font-bold text-amber-900 text-sm flex items-center gap-2">
+                            <i class="fa-solid fa-triangle-exclamation text-amber-600"></i> Memahami "Ugly Phase"
+                        </h3>
+                        <p class="text-xs text-amber-800 leading-relaxed">
+                            Fase canggung di mana selera teknis Anda lebih tinggi daripada kemampuan eksekusi. Ini adalah indikator neurobiologis bahwa otak sedang merekonstruksi pola saraf baru. Solusinya: Terus buat iterasi berisiko rendah hingga otomatisasi kognitif tercapai.
+                        </p>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- SIDEBAR (RIGHT 4 COLS) -->
+            <aside class="lg:col-span-4 space-y-6">
+                
+                <!-- Widget 1: Quick Interactive Tool -->
+                <div class="glass-card rounded-3xl p-6 space-y-4 sticky top-24">
+                    <h2 class="font-bold text-slate-900 text-base flex items-center gap-2">
+                        <i class="fa-solid fa-sliders text-indigo-600"></i> Cek Fokus Belajar
+                    </h2>
+                    <p class="text-xs text-slate-500">Pilih topik untuk melihat komponen 20% (*Bottleneck Skill*) yang wajib diprioritaskan:</p>
+
+                    <div class="space-y-2">
+                        <button onclick="updateFocus('ai')" class="w-full text-left px-3.5 py-2.5 rounded-xl bg-white/80 hover:bg-indigo-50 border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center justify-between transition">
+                            <span>Ariel AI (Python / Node)</span>
+                            <i class="fa-solid fa-chevron-right text-slate-400 text-xs"></i>
+                        </button>
+                        <button onclick="updateFocus('art')" class="w-full text-left px-3.5 py-2.5 rounded-xl bg-white/80 hover:bg-cyan-50 border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center justify-between transition">
+                            <span>Ariel Art (Animasi)</span>
+                            <i class="fa-solid fa-chevron-right text-slate-400 text-xs"></i>
+                        </button>
+                        <button onclick="updateFocus('author')" class="w-full text-left px-3.5 py-2.5 rounded-xl bg-white/80 hover:bg-pink-50 border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center justify-between transition">
+                            <span>Ariel AUTHOR (Konten)</span>
+                            <i class="fa-solid fa-chevron-right text-slate-400 text-xs"></i>
+                        </button>
+                    </div>
+
+                    <!-- Output Panel Interactive -->
+                    <div id="focusOutput" class="p-4 rounded-2xl bg-indigo-50/80 border border-indigo-100 text-xs text-indigo-900 space-y-1">
+                        <span class="font-bold block text-indigo-950">Bottleneck Utama:</span>
+                        <p id="focusText">Klik salah satu opsi di atas untuk melihat prioritas latihan.</p>
+                    </div>
+
+                    <hr class="border-slate-200/80">
+
+                    <!-- Links Sidebar -->
+                    <div class="space-y-3 pt-2">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block">Tautan Pendukung</span>
+                        <a href="https://instagram.com/arielrcun" target="_blank" class="flex items-center gap-3 text-xs font-medium text-slate-600 hover:text-pink-600 transition">
+                            <i class="fa-brands fa-instagram text-base text-pink-500"></i>
+                            <span>Dokumentasi Harian (@arielrcun)</span>
+                        </a>
+                        <a href="#framework" class="flex items-center gap-3 text-xs font-medium text-slate-600 hover:text-indigo-600 transition">
+                            <i class="fa-solid fa-book-bookmark text-base text-indigo-500"></i>
+                            <span>Catatan Riset Compression Loop</span>
+                        </a>
+                    </div>
+                </div>
+
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-16 border-t border-slate-200/80 bg-white/80 backdrop-blur-md py-8 px-4 lg:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div>
+                <p class="text-sm font-semibold text-slate-800">Oleh Ariel Usman Copyright 2026</p>
+                <p class="text-xs text-slate-500 mt-0.5">Sistematika Belajar Cepat & Pembentukan Keahlian Mandiri.</p>
+            </div>
+
+            <!-- Social Media Icon Link -->
+            <div class="flex items-center space-x-4">
+                <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-pink-50 text-pink-600 hover:bg-pink-600 hover:text-white flex items-center justify-center transition-all shadow-sm" aria-label="Instagram Ariel Usman">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        // Mobile Menu Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Interactive Focus Selector Sidebar
+        function updateFocus(type) {
+            const focusText = document.getElementById('focusText');
+            if (type === 'ai') {
+                focusText.innerHTML = "<strong>Python & Node.js:</strong> Logika pemrosesan struktur data JSON, manipulasi DOM/API murni, dan pemahaman alur kerja asynchronous.";
+            } else if (type === 'art') {
+                focusText.innerHTML = "<strong>Animasi Short Film:</strong> Komposisi visual, pencahayaan (lighting), serta 12 prinsip dasar gerakan animasi keyframe.";
+            } else if (type === 'author') {
+                focusText.innerHTML = "<strong>Content Creator:</strong> Penyusunan struktur Hook 3 detik awal, simplifikasi materi kompleks, dan konsistensi publikasi untuk melewati Ugly Phase.";
+            }
+        }
+    </script>
+</body>
+</html>
