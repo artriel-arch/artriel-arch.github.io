@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cara Kerja Burung Terbang - Biomekanika & Aerodinamika</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Pelajari rahasia sains di balik keajaiban penerbangan burung. Jelajahi prinsip fisika, aerodinamika kepakan sayap, dan struktur anatomi unggas secara interaktif.">
+    <meta name="keywords" content="cara kerja burung terbang, aerodinamika burung, sains aviasi, biomekanika unggas, gaya angkat sayap">
+    <meta name="author" content="Ariel Usman">
+
+    <!-- Open Graph / Facebook / WhatsApp (Preview Link) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bagaimana Burung BISA Terbang? - Visualisasi Interaktif">
+    <meta property="og:description" content="Eksplorasi konsep aerodinamika, fungsi bulu, dan simulasi gaya angkat burung secara visual.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" href="https://img.icons8.com/color/48/bird.png" type="image/png">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            sky: '#0284c7',
+                            sun: '#f59e0b',
+                            mint: '#10b981',
+                            coral: '#ff6b6b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Glassmorphism Styles -->
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-sky-100 via-sky-50 to-amber-50 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 glass shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Brand Name -->
+                <a href="#" class="flex items-center space-x-2 text-sky-600 font-bold text-xl tracking-wide hover:opacity-80 transition">
+                    <i class="fa-solid fa-dove text-2xl text-amber-500"></i>
+                    <span>Aero<span class="text-amber-500">Avian</span></span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-700">
+                    <a href="#prinsip" class="hover:text-sky-600 transition">Prinsip Utama</a>
+                    <a href="#anatomi" class="hover:text-sky-600 transition">Anatomi Sayap</a>
+                    <a href="#simulasi" class="hover:text-sky-600 transition">Simulasi Gaya</a>
+                    <a href="#fakta" class="hover:text-sky-600 transition">Fakta Unik</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-700 hover:text-sky-600 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-b border-sky-100 px-4 pt-2 pb-4 space-y-2">
+            <a href="#prinsip" class="block text-slate-700 font-medium py-2 hover:text-sky-600">Prinsip Utama</a>
+            <a href="#anatomi" class="block text-slate-700 font-medium py-2 hover:text-sky-600">Anatomi Sayap</a>
+            <a href="#simulasi" class="block text-slate-700 font-medium py-2 hover:text-sky-600">Simulasi Gaya</a>
+            <a href="#fakta" class="block text-slate-700 font-medium py-2 hover:text-sky-600">Fakta Unik</a>
+        </div>
+    </nav>
+
+    <!-- Header / Hero Section (Glassmorphism Modern) -->
+    <header class="relative py-16 lg:py-24 px-4 overflow-hidden">
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <div class="glass inline-block rounded-full px-4 py-1.5 mb-6 text-sm font-semibold text-sky-700 shadow-sm border border-white/50">
+                <i class="fa-solid fa-wind mr-2 text-sky-500"></i>Fisika Penerbangan Unggas
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-800 tracking-tight leading-tight mb-6">
+                Bagaimana Burung Bisa <br class="hidden sm:inline">
+                <span class="bg-gradient-to-r from-sky-600 via-blue-500 to-amber-500 bg-clip-text text-transparent">Melawan Gravitasi?</span>
+            </h1>
+            
+            <p class="max-w-2xl mx-auto text-base sm:text-lg text-slate-600 mb-8 leading-relaxed">
+                Penerbangan burung bukan sekadar mengepakkan sayap. Ini adalah perpaduan sempurna antara biomekanika canggih, bentuk aerofoil alami, dan pemanfaatan arus udara.
+            </p>
+
+            <div class="flex justify-center gap-4">
+                <a href="#simulasi" class="bg-sky-600 hover:bg-sky-700 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-sky-500/30 transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-play"></i> Coba Simulasi
+                </a>
+                <a href="#prinsip" class="glass text-slate-700 hover:bg-white/40 font-semibold px-6 py-3 rounded-xl transition-all">
+                    Pelajari Prinsip
+                </a>
+            </div>
+        </div>
+
+        <!-- Decorative background shapes -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-sky-300/30 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute top-1/4 right-10 w-72 h-72 bg-amber-200/40 rounded-full blur-2xl -z-10"></div>
+    </header>
+
+    <!-- Main Content Area: Body + Sidebar -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Main Content (2 Columns on Large Screens) -->
+            <div class="lg:col-span-2 space-y-12">
+                
+                <!-- Section 1: Prinsip Fisika Terbang -->
+                <section id="prinsip" class="scroll-mt-24">
+                    <div class="glass-card rounded-2xl p-6 sm:p-8 shadow-sm">
+                        <h2 class="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-3">
+                            <span class="p-2 bg-sky-100 text-sky-600 rounded-lg"><i class="fa-solid fa-feather-pointed"></i></span>
+                            4 Gaya Utama dalam Penerbangan
+                        </h2>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            Sama seperti pesawat terbang, burung harus menyeimbangkan empat gaya fisika agar dapat melayang bebas di udara:
+                        </p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="p-4 bg-sky-50/80 rounded-xl border border-sky-100">
+                                <h3 class="font-bold text-sky-800 mb-1"><i class="fa-solid fa-arrow-up text-sky-500 mr-2"></i>1. Gaya Angkat (Lift)</h3>
+                                <p class="text-xs text-slate-600">Dihasilkan oleh perbedaan tekanan udara di atas dan di bawah bentuk lengkung sayap (Prinsip Bernoulli).</p>
+                            </div>
+                            <div class="p-4 bg-amber-50/80 rounded-xl border border-amber-100">
+                                <h3 class="font-bold text-amber-800 mb-1"><i class="fa-solid fa-bolt text-amber-500 mr-2"></i>2. Gaya Dorong (Thrust)</h3>
+                                <p class="text-xs text-slate-600">Diciptakan oleh kepakan otot dada yang kuat mendorong udara ke belakang.</p>
+                            </div>
+                            <div class="p-4 bg-rose-50/80 rounded-xl border border-rose-100">
+                                <h3 class="font-bold text-rose-800 mb-1"><i class="fa-solid fa-arrow-down text-rose-500 mr-2"></i>3. Gravitasi (Weight)</h3>
+                                <p class="text-xs text-slate-600">Gaya tarik bumi yang diringankan oleh struktur tulang burung yang berongga (pneumatik).</p>
+                            </div>
+                            <div class="p-4 bg-emerald-50/80 rounded-xl border border-emerald-100">
+                                <h3 class="font-bold text-emerald-800 mb-1"><i class="fa-solid fa-shield text-emerald-500 mr-2"></i>4. Hambatan Udara (Drag)</h3>
+                                <p class="text-xs text-slate-600">Hambatan gesekan udara yang diminimalkan oleh bentuk tubuh burung yang aerodinamis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 2: Interactive Aerodynamics Tool -->
+                <section id="simulasi" class="scroll-mt-24">
+                    <div class="glass-card rounded-2xl p-6 sm:p-8 shadow-md border-2 border-sky-200">
+                        <div class="flex items-center justify-between mb-4">
+                            <h2 class="text-2xl font-bold text-slate-800 flex items-center gap-2">
+                                <i class="fa-solid fa-sliders text-amber-500"></i>
+                                Simulasi Aerodinamika Sayap
+                            </h2>
+                            <span class="text-xs bg-amber-100 text-amber-800 px-3 py-1 rounded-full font-bold">Interaktif</span>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-6">
+                            Geser kontrol kecepatan angin dan sudut serang (*angle of attack*) untuk melihat kalkulasi kalkulatif gaya angkat (*lift force*).
+                        </p>
+
+                        <!-- Controls -->
+                        <div class="space-y-4 mb-6">
+                            <div>
+                                <div class="flex justify-between text-sm font-semibold text-slate-700 mb-1">
+                                    <span>Kecepatan Angin (m/s):</span>
+                                    <span id="wind-val" class="text-sky-600">12 m/s</span>
+                                </div>
+                                <input id="wind-slider" type="range" min="0" max="30" value="12" class="w-full h-2 bg-sky-200 rounded-lg appearance-none cursor-pointer accent-sky-600">
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm font-semibold text-slate-700 mb-1">
+                                    <span>Sudut Kemiringan Sayap (°):</span>
+                                    <span id="angle-val" class="text-sky-600">8°</span>
+                                </div>
+                                <input id="angle-slider" type="range" min="0" max="25" value="8" class="w-full h-2 bg-sky-200 rounded-lg appearance-none cursor-pointer accent-sky-600">
+                            </div>
+                        </div>
+
+                        <!-- Result Display Box -->
+                        <div class="p-4 bg-slate-900 rounded-xl text-white flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <div class="text-center sm:text-left">
+                                <span class="text-xs text-slate-400 block uppercase tracking-wider">Status Penerbangan</span>
+                                <span id="flight-status" class="text-lg font-bold text-emerald-400">Terbang Stabil</span>
+                            </div>
+                            <div class="text-center sm:text-right">
+                                <span class="text-xs text-slate-400 block uppercase tracking-wider">Perkiraan Gaya Angkat</span>
+                                <span id="lift-output" class="text-2xl font-extrabold text-amber-400">45.2 N</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 3: Anatomi Unik -->
+                <section id="anatomi" class="scroll-mt-24">
+                    <div class="glass-card rounded-2xl p-6 sm:p-8 shadow-sm">
+                        <h2 class="text-2xl font-bold text-slate-800 mb-4">Adaptasi Anatomi Penting</h2>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=200&q=80" alt="Bulu Burung" class="w-20 h-20 object-cover rounded-xl shadow">
+                                <div>
+                                    <h3 class="font-bold text-slate-800">Bulu Asimetris (Primary Feathers)</h3>
+                                    <p class="text-sm text-slate-600">Bulu pada ujung sayap memiliki struktur asimetris yang membelah udara secara efisien, mengurangi pusaran angin (*vortex*).</p>
+                                </div>
+                            </div>
+                            <hr class="border-slate-200">
+                            <div class="flex items-start gap-4">
+                                <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=200&q=80" alt="Burung Terbang" class="w-20 h-20 object-cover rounded-xl shadow">
+                                <div>
+                                    <h3 class="font-bold text-slate-800">Otot Pektoralis Cepat</h3>
+                                    <p class="text-sm text-slate-600">Otot dada memegang hingga 25% dari total berat tubuh burung, bertindak sebagai mesin pendorong berdaya tinggi.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="space-y-6">
+                <!-- Sidebar Widget 1: Fakta Kilat -->
+                <div class="glass-card rounded-2xl p-6 shadow-sm border border-white">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-lightbulb text-amber-500"></i> Fakta Ringkas
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-sky-500 mt-1"></i>
+                            <span>Tulang burung berongga (*pneumatik*), membuat tubuh sangat ringan namun tetap kokoh.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-sky-500 mt-1"></i>
+                            <span>Sistem pernapasan memiliki kantung udara (*air sacs*) yang menyuplai oksigen secara kontinu saat terbang.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-sky-500 mt-1"></i>
+                            <span>Burung Kolibri mengepakkan sayap hingga 80 kali per detik!</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Sidebar Widget 2: Navigasi Cepat Modul -->
+                <div class="glass-card rounded-2xl p-6 shadow-sm border border-white">
+                    <h3 class="text-lg font-bold text-slate-800 mb-3">Topik Terkait</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="#" class="px-3 py-1.5 bg-sky-100 hover:bg-sky-200 text-sky-700 text-xs font-semibold rounded-lg transition">#Aerodinamika</a>
+                        <a href="#" class="px-3 py-1.5 bg-amber-100 hover:bg-amber-200 text-amber-700 text-xs font-semibold rounded-lg transition">#Bernoulli</a>
+                        <a href="#" class="px-3 py-1.5 bg-emerald-100 hover:bg-emerald-200 text-emerald-700 text-xs font-semibold rounded-lg transition">#MigrasiBurung</a>
+                        <a href="#" class="px-3 py-1.5 bg-purple-100 hover:bg-purple-200 text-purple-700 text-xs font-semibold rounded-lg transition">#EvolusiUnggas</a>
+                    </div>
+                </div>
+
+                <!-- Sidebar Widget 3: Referensi Gambar -->
+                <div class="glass-card rounded-2xl p-4 text-center shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Latar Alam" class="rounded-xl mb-3 object-cover w-full h-32">
+                    <p class="text-xs text-slate-500">Mempelajari keajaiban alam memberi inspirasi bagi teknologi aviasi manusia.</p>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass border-t border-white/40 mt-16 py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-3">
+            <p class="text-slate-700 font-medium">
+                Dibuat Oleh <span class="font-bold text-sky-700">Ariel Usman</span> &copy; 2026
+            </p>
+            <div class="flex justify-center items-center space-x-2 text-slate-600">
+                <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-1.5 rounded-full text-xs font-semibold hover:opacity-90 transition shadow-sm">
+                    <i class="fa-brands fa-instagram text-base"></i>
+                    <span>@arielrcun</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Aerodynamics Interactive Calculator Logic
+        const windSlider = document.getElementById('wind-slider');
+        const angleSlider = document.getElementById('angle-slider');
+        const windVal = document.getElementById('wind-val');
+        const angleVal = document.getElementById('angle-val');
+        const liftOutput = document.getElementById('lift-output');
+        const flightStatus = document.getElementById('flight-status');
+
+        function updateSimulation() {
+            const windSpeed = parseFloat(windSlider.value);
+            const angle = parseFloat(angleSlider.value);
+
+            windVal.textContent = `${windSpeed} m/s`;
+            angleVal.textContent = `${angle}°`;
+
+            // Simple simplified lift formula proxy: L = 0.5 * v^2 * sin(angle)
+            let rad = (angle * Math.PI) / 180;
+            let lift = 0.1 * Math.pow(windSpeed, 2) * (Math.sin(rad) + 0.1);
+
+            liftOutput.textContent = `${lift.toFixed(1)} N`;
+
+            // Flight condition logic
+            if (angle > 18) {
+                flightStatus.textContent = "Stall (Kehilangan Angkat!)";
+                flightStatus.className = "text-lg font-bold text-rose-400";
+            } else if (lift < 5) {
+                flightStatus.textContent = "Terlalu Pelan (Jatuh)";
+                flightStatus.className = "text-lg font-bold text-amber-400";
+            } else {
+                flightStatus.textContent = "Terbang Stabil";
+                flightStatus.className = "text-lg font-bold text-emerald-400";
+            }
+        }
+
+        windSlider.addEventListener('input', updateSimulation);
+        angleSlider.addEventListener('input', updateSimulation);
+
+        // Run once on load
+        updateSimulation();
+    </script>
+</body>
+</html>
