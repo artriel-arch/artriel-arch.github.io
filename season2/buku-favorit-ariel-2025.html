@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>Koleksi Buku Favorit Ariel | Inspirasi Kreativitas & Produktivitas</title>
+    <meta name="description" content="Eksplorasi 3 buku paling berpengaruh bagi Ariel Usman: Steal Like An Artist, Atomic Habits, dan Save the Cat! Writes a Novel. Catatan, ulasan, dan filosofi eksekusi karya.">
+    <meta name="keywords" content="Ariel Usman, Koleksi Buku, Steal Like An Artist, Atomic Habits, Save the Cat, Web Developer, Pentingnya Membaca">
+    <meta name="author" content="Ariel Usman">
+
+    <!-- Open Graph / Facebook / WhatsApp Share -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arielrcun.github.io/koleksi-buku">
+    <meta property="og:title" content="Koleksi Buku Favorit Ariel Usman">
+    <meta property="og:description" content="Bagaimana 3 buku ini membentuk pola pikir sebagai seniman multitalenta, pendorong kebiasaan baik, dan perancang plot naratif.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Koleksi Buku Favorit Ariel Usman">
+    <meta name="twitter:description" content="Ulasan dan filosofi 3 buku utama penuntun proses kreatif & produktivitas Ariel.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Favicon CDN -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3389/3389081.png">
+
+    <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* ==========================================================================
+           1. MODERN WORDPRESS COLOR PALETTE & VARIABLES (Bright, Vibrant, Editorial)
+           ========================================================================== */
+        :root {
+            --bg-main: #F8FAFC;
+            --bg-card: #FFFFFF;
+            --primary: #4F46E5;        /* Vibrant Indigo */
+            --primary-hover: #4338CA;
+            --accent-amber: #F59E0B;   /* Warm Amber/Gold */
+            --accent-rose: #F43F5E;    /* Vibrant Coral Rose */
+            --accent-emerald: #10B981; /* Fresh Emerald */
+            --text-dark: #0F172A;     /* Deep Slate */
+            --text-muted: #475569;    /* Muted Slate */
+            --border-light: #E2E8F0;
+            --border-highlight: #CBD5E1;
+            
+            --font-heading: 'Playfair Display', Georgia, serif;
+            --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            
+            --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04);
+            --shadow-md: 0 10px 25px -5px rgba(79, 70, 229, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+            --shadow-hover: 0 20px 30px -10px rgba(79, 70, 229, 0.15);
+            --radius-lg: 18px;
+            --radius-md: 12px;
+            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* ==========================================================================
+           2. BASE STYLES & RESET
+           ========================================================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Container Layout */
+        .container {
+            width: 90%;
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        /* ==========================================================================
+           3. NAVBAR (Gaya Gutenberg WordPress Header)
+           ========================================================================== */
+        .site-navbar {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: var(--transition);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.35rem;
+            color: var(--primary);
+            letter-spacing: -0.02em;
+        }
+
+        .brand-logo i {
+            background: linear-gradient(135deg, var(--primary), var(--accent-rose));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.6rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Mobile Hamburger Menu Button */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        /* ==========================================================================
+           4. HERO SECTION (Bright Modern WordPress Banner)
+           ========================================================================== */
+        .hero-section {
+            padding: 5rem 0 3.5rem;
+            background: radial-gradient(circle at top right, rgba(245, 158, 11, 0.12), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(79, 70, 229, 0.1), transparent 50%);
+            border-bottom: 1px solid var(--border-light);
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #EEF2FF;
+            color: var(--primary);
+            border: 1px solid #C7D2FE;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--text-dark);
+            max-width: 850px;
+            margin: 0 auto 1.2rem;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, var(--primary), var(--accent-rose));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 680px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Interactive Filter Bar */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .filter-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            color: var(--text-muted);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            color: #FFFFFF;
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+        }
+
+        /* ==========================================================================
+           5. MAIN CONTENT & SIDEBAR LAYOUT
+           ========================================================================== */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 2.3fr 1fr;
+            gap: 2.5rem;
+            padding: 3.5rem 0 5rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        /* Book Cards Grid */
+        .books-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .book-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 2rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: #C7D2FE;
+        }
+
+        .book-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: var(--card-accent, var(--primary));
+        }
+
+        /* Book Cover Visual Box */
+        .book-cover-wrap {
+            position: relative;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+            background: #F1F5F9;
+            aspect-ratio: 2/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .book-cover-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .book-card:hover .book-cover-wrap img {
+            transform: scale(1.05);
+        }
+
+        .book-tag {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(4px);
+            color: #FFF;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* Book Details */
+        .book-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .book-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .book-author {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .book-title {
+            font-family: var(--font-heading);
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1.25;
+            margin-bottom: 1rem;
+        }
+
+        /* Quote Box / Paraphrased Reflection */
+        .book-reflection {
+            background: #F8FAFC;
+            border-left: 3px solid var(--card-accent, var(--primary));
+            padding: 1.2rem;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            font-style: italic;
+            color: #334155;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+            position: relative;
+        }
+
+        .book-reflection i.fa-quote-left {
+            color: var(--card-accent, var(--primary));
+            opacity: 0.3;
+            margin-right: 6px;
+        }
+
+        .book-footer-actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 1rem;
+            border-top: 1px dashed var(--border-light);
+        }
+
+        .takeaway-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .takeaway-pill i {
+            color: var(--accent-amber);
+        }
+
+        .action-btn {
+            background: transparent;
+            border: 1px solid var(--border-highlight);
+            color: var(--text-dark);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .action-btn:hover {
+            background: var(--primary);
+            color: #FFF;
+            border-color: var(--primary);
+        }
+
+        /* ==========================================================================
+           6. SIDEBAR COMPONENT (WordPress Style Widgets)
+           ========================================================================== */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .widget {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 1.8rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .widget-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 2px solid var(--bg-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .widget-title i {
+            color: var(--primary);
+        }
+
+        /* Profile Widget */
+        .profile-card {
+            text-align: center;
+        }
+
+        .profile-avatar {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent-rose));
+            padding: 3px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #FFF;
+        }
+
+        .profile-name {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+
+        .profile-role {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+        }
+
+        .profile-bio {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 1.2rem;
+        }
+
+        /* Quick Stats List */
+        .stat-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            padding: 8px 12px;
+            background: var(--bg-main);
+            border-radius: var(--radius-md);
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .stat-value {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Quotes Generator Widget */
+        .quote-box {
+            background: linear-gradient(135deg, #4F46E5, #7C3AED);
+            color: #FFFFFF;
+            border-radius: var(--radius-md);
+            padding: 1.4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-box p {
+            font-size: 0.95rem;
+            font-style: italic;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quote-box span {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-align: right;
+            opacity: 0.9;
+        }
+
+        .btn-quote-next {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: #FFF;
+            width: 100%;
+            padding: 8px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: var(--transition);
+        }
+
+        .btn-quote-next:hover {
+            background: #FFFFFF;
+            color: var(--primary);
+        }
+
+        /* ==========================================================================
+           7. FOOTER SECTION
+           ========================================================================== */
+        .site-footer {
+            background: #0F172A;
+            color: #94A3B8;
+            padding: 3.5rem 0 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #1E293B;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #1E293B;
+        }
+
+        .footer-brand {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            color: #FFFFFF;
+            font-weight: 800;
+        }
+
+        .footer-social {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #1E293B;
+            color: #F8FAFC;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            border: 1px solid #334155;
+        }
+
+        .social-link:hover {
+            background: linear-gradient(135deg, #E1306C, #FD1D1D, #F56040);
+            color: #FFFFFF;
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(225, 48, 108, 0.3);
+        }
+
+        .footer-bottom {
+            padding-top: 1.8rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #64748B;
+        }
+
+        .footer-bottom strong {
+            color: #CBD5E1;
+        }
+
+        /* ==========================================================================
+           8. MODAL / NOTIFICATION INTERACTION
+           ========================================================================== */
+        .toast {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: var(--text-dark);
+            color: #FFF;
+            padding: 12px 22px;
+            border-radius: var(--radius-md);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 2000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* ==========================================================================
+           9. RESPONSIVE BREAKPOINTS (Android Mobile, iPad Tablet, Windows/Linux PC)
+           ========================================================================== */
+        @media (max-width: 992px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                order: 2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #FFFFFF;
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1.2rem;
+                box-shadow: var(--shadow-md);
+                border-bottom: 1px solid var(--border-light);
+                display: none;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .book-card {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .book-cover-wrap {
+                max-width: 180px;
+                margin: 0 auto;
+            }
+
+            .hero-section {
+                padding: 3.5rem 0 2.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================================
+         NAVBAR
+         ========================================================================== -->
+    <nav class="site-navbar">
+        <div class="container nav-wrapper">
+            <a href="#" class="brand-logo">
+                <i class="fa-solid fa-book-bookmark"></i>
+                <span>Ariel's Bookshelf</span>
+            </a>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" class="nav-link active">Beranda</a></li>
+                <li><a href="#koleksi" class="nav-link">Koleksi Utama</a></li>
+                <li><a href="#filosofi" class="nav-link">Filosofi Eksekusi</a></li>
+                <li><a href="#tentang" class="nav-link">Tentang Ariel</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <header class="hero-section" id="hero">
+        <div class="container">
+            <div class="hero-badge">
+                <i class="fa-solid fa-sparkles"></i> 3 Pilar Pikiran & Karya
+            </div>
+            <h1 class="hero-title">
+                Koleksi Buku Favorit <span>Ariel Usman</span>
+            </h1>
+            <p class="hero-description">
+                Tiga buku pilihan yang membentuk fondasi mental, metode kerja kreatif, serta gaya eksekusi saya sebagai ilustrator, penulis, dan web coder.
+            </p>
+
+            <!-- Filter Interaktif -->
+            <div class="filter-container">
+                <button class="filter-btn active" onclick="filterBooks('all')">Semua Buku</button>
+                <button class="filter-btn" onclick="filterBooks('kreativitas')">Kreativitas & Seni</button>
+                <button class="filter-btn" onclick="filterBooks('produktivitas')">Sistem Kebiasaan</button>
+                <button class="filter-btn" onclick="filterBooks('penulisan')">Struktur Narasi</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+         MAIN CONTENT & SIDEBAR
+         ========================================================================== -->
+    <div class="container main-layout">
+        
+        <!-- KOLOM UTAMA: LIST BUKU -->
+        <main class="main-content" id="koleksi">
+            <div class="section-header">
+                <h2 class="section-title">Koleksi Terpilih</h2>
+                <span style="font-size: 0.9rem; color: var(--text-muted); font-weight: 600;">3 Rekomendasi Utama</span>
+            </div>
+
+            <div class="books-grid">
+
+                <!-- BUKU 1: STEAL LIKE AN ARTIST -->
+                <article class="book-card" data-category="kreativitas" style="--card-accent: #4F46E5;">
+                    <div class="book-cover-wrap">
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80" alt="Steal Like An Artist Cover">
+                        <span class="book-tag">Kreativitas</span>
+                    </div>
+
+                    <div class="book-info">
+                        <div>
+                            <div class="book-meta">
+                                <span class="book-author">Austin Kleon</span>
+                                <span>•</span>
+                                <span>160 Halaman</span>
+                            </div>
+                            <h3 class="book-title">Steal Like An Artist</h3>
+                            
+                            <div class="book-reflection">
+                                <i class="fa-solid fa-quote-left"></i>
+                                "Buku ini adalah lisensi bagi saya untuk tumbuh sebagai seniman multitalenta yang merdeka—merangkul peran sebagai ilustrator sketsa, penulis opini, hingga coder. Sebuah pengingat bahwa orisinalitas sejati lahir dari kurasi cerdas dan pemrosesan gagasan hebat di dalam kepala."
+                            </div>
+                        </div>
+
+                        <div class="book-footer-actions">
+                            <span class="takeaway-pill">
+                                <i class="fa-solid fa-lightbulb"></i> Esensi: Kurasi & Rekayasa Gagasan
+                            </span>
+                            <button class="action-btn" onclick="copyQuote('Steal Like An Artist', 'Orisinalitas sejati lahir dari kurasi cerdas dan pemrosesan gagasan di dalam kepala.')">
+                                <i class="fa-regular fa-copy"></i> Salin Kutipan
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- BUKU 2: ATOMIC HABITS -->
+                <article class="book-card" data-category="produktivitas" style="--card-accent: #10B981;">
+                    <div class="book-cover-wrap">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=600&q=80" alt="Atomic Habits Cover">
+                        <span class="book-tag">Produktivitas</span>
+                    </div>
+
+                    <div class="book-info">
+                        <div>
+                            <div class="book-meta">
+                                <span class="book-author">James Clear</span>
+                                <span>•</span>
+                                <span>320 Halaman</span>
+                            </div>
+                            <h3 class="book-title">Atomic Habits</h3>
+                            
+                            <div class="book-reflection">
+                                <i class="fa-solid fa-quote-left"></i>
+                                "Menjadi kompas utama untuk keluar dari kebisingan dan gangguan mental. Lewat arsitektur sistem yang konsisten, buku ini membimbing saya membangun kebiasaan produktif secara perlahan sembari mengeliminasi kebiasaan buruk yang merusak."
+                            </div>
+                        </div>
+
+                        <div class="book-footer-actions">
+                            <span class="takeaway-pill">
+                                <i class="fa-solid fa-chart-line"></i> Esensi: Sistem 1% Setiap Hari
+                            </span>
+                            <button class="action-btn" onclick="copyQuote('Atomic Habits', 'Membangun kebiasaan produktif secara perlahan sembari mengeliminasi kebiasaan buruk.')">
+                                <i class="fa-regular fa-copy"></i> Salin Kutipan
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- BUKU 3: SAVE THE CAT! WRITES A NOVEL -->
+                <article class="book-card" data-category="penulisan" style="--card-accent: #F43F5E;">
+                    <div class="book-cover-wrap">
+                        <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80" alt="Save the Cat Writes a Novel Cover">
+                        <span class="book-tag">Penulisan</span>
+                    </div>
+
+                    <div class="book-info">
+                        <div>
+                            <div class="book-meta">
+                                <span class="book-author">Jessica Brody</span>
+                                <span>•</span>
+                                <span>320 Halaman</span>
+                            </div>
+                            <h3 class="book-title">Save the Cat! Writes a Novel</h3>
+                            
+                            <div class="book-reflection">
+                                <i class="fa-solid fa-quote-left"></i>
+                                "Membuka rahasia di balik struktur cerita tanpa membuat proses menulis terasa berat. Sebuah panduan indah tentang seni memetakan plot (plot writing) yang mengubah gagasan abstrak menjadi narasi yang mengalir."
+                            </div>
+                        </div>
+
+                        <div class="book-footer-actions">
+                            <span class="takeaway-pill">
+                                <i class="fa-solid fa-pen-nib"></i> Esensi: Arsitektur Plot & Beats
+                            </span>
+                            <button class="action-btn" onclick="copyQuote('Save the Cat!', 'Seni memetakan plot (plot writing) yang mengubah gagasan abstrak menjadi narasi.')">
+                                <i class="fa-regular fa-copy"></i> Salin Kutipan
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </main>
+
+        <!-- SIDEBAR WIDGETS -->
+        <aside class="sidebar" id="tentang">
+            
+            <!-- Widget 1: Profil Penulis -->
+            <div class="widget profile-card">
+                <div class="profile-avatar">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Ariel Usman">
+                </div>
+                <h3 class="profile-name">Ariel Usman</h3>
+                <p class="profile-role">Web Coder, Ilustrator & Penulis</p>
+                <p class="profile-bio">
+                    Mengombinasikan logika pemrograman web native dengan ekspresi visual dan kekuatan narasi tulisan.
+                </p>
+                <a href="https://instagram.com/arielrcun" target="_blank" class="social-link" style="width: 100%; justify-content: center;">
+                    <i class="fa-brands fa-instagram"></i> Ikuti @arielrcun
+                </a>
+            </div>
+
+            <!-- Widget 2: Statistik Bacaan -->
+            <div class="widget">
+                <h3 class="widget-title"><i class="fa-solid fa-chart-pie"></i> Metode Kerja</h3>
+                <ul class="stat-list">
+                    <li class="stat-item">
+                        <span class="stat-label"><i class="fa-solid fa-code"></i> Frontend Tech</span>
+                        <span class="stat-value">HTML/CSS/JS</span>
+                    </li>
+                    <li class="stat-item">
+                        <span class="stat-label"><i class="fa-solid fa-brain"></i> Fokus Mental</span>
+                        <span class="stat-value">Atomic Systems</span>
+                    </li>
+                    <li class="stat-item">
+                        <span class="stat-label"><i class="fa-solid fa-palette"></i> Gaya Visual</span>
+                        <span class="stat-value">Multitalenta</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Widget 3: Random Quote Generator Interaktif -->
+            <div class="widget" id="filosofi">
+                <h3 class="widget-title"><i class="fa-solid fa-quote-right"></i> Mutiara Pikiran</h3>
+                <div class="quote-box">
+                    <p id="quoteText">"Kreativitas bukan tentang menciptakan sesuatu dari ketiadaan, tapi menyatukan potongan ide yang ada."</p>
+                    <span id="quoteAuthor">— Prinsip Ariel</span>
+                    <button class="btn-quote-next" onclick="generateRandomQuote()">
+                        <i class="fa-solid fa-arrows-rotate"></i> Acak Inspirasi
+                    </button>
+                </div>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- ==========================================================================
+         FOOTER SECTION
+         ========================================================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-brand">Ariel's Bookshelf</div>
+                    <p style="font-size: 0.9rem; color: #64748B; margin-top: 4px;">Koleksi ulasan & eksplorasi literatur pilihan.</p>
+                </div>
+
+                <div class="footer-social">
+                    <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="fa-brands fa-instagram"></i> @arielrcun
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Oleh <strong>Ariel Usman</strong> Copyright 2026. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toastNotification">
+        <i class="fa-solid fa-circle-check" style="color: var(--accent-emerald);"></i>
+        <span id="toastMessage">Teks berhasil disalin!</span>
+    </div>
+
+    <!-- ==========================================================================
+         VANILLA JAVASCRIPT INTERAKTIF
+         ========================================================================== -->
+    <script>
+        // 1. Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileToggle.querySelector('i');
+            if(navMenu.classList.contains('active')) {
+                icon.className = 'fa-solid fa-xmark';
+            } else {
+                icon.className = 'fa-solid fa-bars';
+            }
+        });
+
+        // 2. Interactive Filter Books
+        function filterBooks(category) {
+            const cards = document.querySelectorAll('.book-card');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+
+            filterBtns.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if(category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'grid';
+                    card.style.opacity = '1';
+                } else {
+                    card.style.display = 'none';
+                    card.style.opacity = '0';
+                }
+            });
+        }
+
+        // 3. Copy Quote to Clipboard Toast Function
+        function copyQuote(bookTitle, text) {
+            const copyContent = `"${text}" — Dari Ulasan Ariel tentang ${bookTitle}`;
+            navigator.clipboard.writeText(copyContent).then(() => {
+                showToast(`Kutipan ${bookTitle} berhasil disalin!`);
+            });
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toastNotification');
+            const toastMsg = document.getElementById('toastMessage');
+            toastMsg.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // 4. Random Quote Generator Widget
+        const quotesPool = [
+            { text: "Kreativitas bukan tentang menciptakan dari ketiadaan, tapi menyatukan potongan ide dari berbagai sumber.", author: "Steal Like An Artist Mindset" },
+            { text: "Anda tidak naik ke tingkat tujuan Anda, Anda turun ke tingkat sistem Anda.", author: "Atomic Habits Principle" },
+            { text: "Plot yang kuat adalah peta jalan yang membebaskan penulis dari kebingungan tengah jalan.", author: "Save the Cat Insight" },
+            { text: "Jangan tunggu menemukan siapa diri Anda untuk mulai berkarya. Berkaryalah untuk menemukannya.", author: "Austin Kleon" },
+            { text: "Fokus pada sistem 1% setiap hari daripada perubahan drastis instan.", author: "James Clear" }
+        ];
+
+        function generateRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotesPool.length);
+            const selected = quotesPool[randomIndex];
+            
+            const quoteText = document.getElementById('quoteText');
+            const quoteAuthor = document.getElementById('quoteAuthor');
+            
+            quoteText.style.opacity = '0';
+            quoteAuthor.style.opacity = '0';
+            
+            setTimeout(() => {
+                quoteText.textContent = `"${selected.text}"`;
+                quoteAuthor.textContent = `— ${selected.author}`;
+                quoteText.style.opacity = '1';
+                quoteAuthor.style.opacity = '1';
+            }, 200);
+        }
+    </script>
+</body>
+</html>
