@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeoVolcano - Cara Terbentuknya Gunung di Earth</title>
+  <meta name="description" content="Pelajari proses geologi luar biasa di balik terbentuknya gunung lipatan, patahan, dan gunung berapi secara interaktif.">
+  <meta name="keywords" content="terbentuknya gunung, geologi, tektonik lempeng, gunung berapi, ilmu bumi">
+  <meta name="author" content="Ariel Usman">
+
+  <!-- Open Graph Meta Tags (Untuk Preview saat Share Link) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://geovolcano.example.com">
+  <meta property="og:title" content="GeoVolcano - Rahasia Terbentuknya Gunung">
+  <meta property="og:description" content="Eksplorasi interaktif proses pembentukan struktur megah bumi secara visual dan mudah dipahami.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GeoVolcano - Rahasia Terbentuknya Gunung">
+  <meta name="twitter:description" content="Eksplorasi interaktif proses pembentukan struktur megah bumi secara visual dan mudah dipahami.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Favicon Icon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'><path d='M14 6l-3.8 5.7 1.8 2.7H5l7-10 2 2.9zm4 4l-4.5 6.5H21L18 10z'/></svg>">
+
+  <!-- Remix Icon (Cdn Icon Aman) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-brand">
+      <i class="ri-landscape-line"></i>
+      <span>GeoVolcano</span>
+    </div>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#hero">Beranda</a></li>
+      <li><a href="#proses">Proses Pembentukan</a></li>
+      <li><a href="#jenis">Jenis Gunung</a></li>
+      <li><a href="#simulasi">Simulasi Interaktif</a></li>
+      <li><a href="#" id="openSidebarBtn" class="sidebar-trigger"><i class="ri-book-read-line"></i> Info Geologi</a></li>
+    </ul>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+      <i class="ri-menu-4-line"></i>
+    </button>
+  </nav>
+
+  <!-- SIDEBAR (DRAWER) -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h3><i class="ri-compass-3-line"></i> Artikel Terkait</h3>
+      <button id="closeSidebarBtn" class="close-btn">&times;</button>
+    </div>
+    <div class="sidebar-content">
+      <div class="sidebar-item" onclick="showFact('ring-of-fire')">
+        <i class="ri-fire-line"></i>
+        <div>
+          <h4>Cincin Api Pasifik</h4>
+          <p>Wilayah dengan aktivitas seismik dan vulkanik tertinggi di dunia.</p>
+        </div>
+      </div>
+      <div class="sidebar-item" onclick="showFact('tektonik')">
+        <i class="ri-earth-line"></i>
+        <div>
+          <h4>Lempeng Tektonik</h4>
+          <p>Bagaimana potongan kerak bumi terus bergerak setiap tahunnya.</p>
+        </div>
+      </div>
+      <div class="sidebar-item" onclick="showFact('orogenesa')">
+        <i class="ri-gradienter-line"></i>
+        <div>
+          <h4>Aktivitas Orogenesa</h4>
+          <p>Mekanisme pendorong utama terbentuknya pegunungan raksasa.</p>
+        </div>
+      </div>
+      
+      <div class="sidebar-fact-box" id="factBox">
+        <i class="ri-lightbulb-line"></i>
+        <p id="factText">Klik salah satu topik di atas untuk membaca fakta singkat geologi!</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- HERO HEADER (Glassmorphic Modern) -->
+  <header id="hero" class="hero-section">
+    <div class="hero-glass-card">
+      <span class="badge"><i class="ri-sparkles-line"></i> Edukasi Geologi Interaktif</span>
+      <h1>Bagaimana Keajaiban Alam Membentuk Gunung?</h1>
+      <p>Gunung tidak tercipta secara instan. Di balik ketinggiannya yang megah, terdapat proses konvergensi lempeng, erosi, dan tekanan magmatis selama ribuan hingga jutaan tahun.</p>
+      <div class="hero-buttons">
+        <a href="#proses" class="btn btn-primary"><i class="ri-compass-discover-line"></i> Pelajari Proses</a>
+        <a href="#simulasi" class="btn btn-secondary"><i class="ri-play-circle-line"></i> Coba Simulasi</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+
+    <!-- SEKILAS PROSES -->
+    <section id="proses" class="section">
+      <div class="section-title">
+        <h2><i class="ri-route-line"></i> Tahapan Terbentuknya Gunung</h2>
+        <p>Tiga kekuatan utama yang mengukir relief permukaan bumi</p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-card">
+          <div class="step-num">01</div>
+          <i class="ri-shape-2-line card-icon"></i>
+          <h3>Pergerakan Lempeng</h3>
+          <p>Kerak bumi terpecah menjadi lempeng-lempeng tektonik yang terus bergerak akibat arus konveksi magma cair di dalam mantel bumi.</p>
+        </div>
+        <div class="process-card">
+          <div class="step-num">02</div>
+          <i class="ri-collapse-horizontal-line card-icon"></i>
+          <h3>Tumbukan / Tumbukan Magma</h3>
+          <p>Dua lempeng bertabrakan memicu pelipatan batuan (lipatan), atau satu lempeng menunjam ke bawah mencairkan batuan menjadi magma.</p>
+        </div>
+        <div class="process-card">
+          <div class="step-num">03</div>
+          <i class="ri-arrow-up-double-line card-icon"></i>
+          <h3>Pengangkatan & Erosi</h3>
+          <p>Tekanan masif mengangkat daratan menjadi puncak tinggi. Angin dan air kemudian mengukir lembah serta tebing tajam.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- JENIS GUNUNG (INTERACTIVE TABS) -->
+    <section id="jenis" class="section">
+      <div class="section-title">
+        <h2><i class="ri-mountain-line"></i> Jenis-Jenis Pembentukan Gunung</h2>
+        <p>Pilih tipe gunung untuk melihat mekanismenya</p>
+      </div>
+
+      <div class="tab-container">
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-tab="lipatan"><i class="ri-funds-line"></i> Gunung Lipatan</button>
+          <button class="tab-btn" data-tab="vulkanik"><i class="ri-fire-fill"></i> Gunung Vulkanik</button>
+          <button class="tab-btn" data-tab="patahan"><i class="ri-split-cells-horizontal"></i> Gunung Patahan</button>
+        </div>
+
+        <div class="tab-content active" id="lipatan">
+          <div class="tab-card">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Pegunungan Lipatan">
+            <div class="tab-text">
+              <h3>Gunung Lipatan (Fold Mountains)</h3>
+              <p>Terbentuk ketika dua lempeng tektonik bertabrakan secara konvergen. Karena tidak ada lempeng yang menunjam, lapisan batuan di antaranya melengkung dan terlipat ke atas membentuk pegunungan megah.</p>
+              <ul>
+                <li><i class="ri-checkbox-circle-fill"></i> <strong>Contoh Terkenal:</strong> Pegunungan Himalaya, Alpen, dan Pegunungan Rocky.</li>
+                <li><i class="ri-checkbox-circle-fill"></i> <strong>Karakteristik:</strong> Memiliki deretan puncak bersambung yang luas.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-content" id="vulkanik">
+          <div class="tab-card">
+            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80" alt="Gunung Berapi">
+            <div class="tab-text">
+              <h3>Gunung Vulkanik (Volcanic Mountains)</h3>
+              <p>Terbentuk saat magma panas keluar dari retakan kerak bumi menuju permukaan. Lava, abu, dan material vulkanik menumpuk serta mendingin secara berulang membentuk kerucut tinggi.</p>
+              <ul>
+                <li><i class="ri-checkbox-circle-fill"></i> <strong>Contoh Terkenal:</strong> Gunung Fuji (Jepang), Gunung Merapi (Indonesia).</li>
+                <li><i class="ri-checkbox-circle-fill"></i> <strong>Karakteristik:</strong> Memiliki kawah di puncaknya dan cenderung berbentuk simetris.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-content" id="patahan">
+          <div class="tab-card">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" alt="Gunung Patahan">
+            <div class="tab-text">
+              <h3>Gunung Patahan (Fault-Block Mountains)</h3>
+              <p>Terbentuk ketika retakan pada kerak bumi (patahan) mengalami gaya tarik. Blok batuan besar terdorong naik (horst) sementara blok lainnya merosot turun (graben).</p>
+              <ul>
+                <li><i class="ri-checkbox-circle-fill"></i> <strong>Contoh Terkenal:</strong> Pegunungan Sierra Nevada (AS), Pegunungan Harz (Jerman).</li>
+                <li><i class="ri-checkbox-circle-fill"></i> <strong>Karakteristik:</strong> Memiliki satu sisi yang sangat curam dan sisi lain yang lebih landai.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIMULASI INTERAKTIF SEDERHANA -->
+    <section id="simulasi" class="section">
+      <div class="section-title">
+        <h2><i class="ri-play-card-line"></i> Simulasi Tekanan Lempeng</h2>
+        <p>Gunakan slider untuk melihat bagaimana gaya dorong membentuk lipatan gunung</p>
+      </div>
+
+      <div class="simulation-card">
+        <div class="simulation-stage">
+          <div class="simulation-visual">
+            <div class="plate left-plate" id="leftPlate">Lempeng A &rarr;</div>
+            <div class="mountain-core" id="mountainCore"></div>
+            <div class="plate right-plate" id="rightPlate">&larr; Lempeng B</div>
+          </div>
+          <div class="sim-status" id="simStatus">Tingkat Tekanan: Normal (0%)</div>
+        </div>
+
+        <div class="simulation-controls">
+          <label for="pressureSlider"><i class="ri-speed-up-line"></i> Sesuaikan Tekanan Tektonik:</label>
+          <input type="range" id="pressureSlider" min="0" max="100" value="0">
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2>GeoVolcano</h2>
+        <p>Pusat pembelajaran geologi populer dengan visual interaktif dan modern.</p>
+      </div>
+      <div class="footer-social">
+        <span>Hubungi Pengembang:</span>
+        <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="social-link">
+          <i class="ri-instagram-line"></i> @arielrcun
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Oleh Ariel Usman. Hak Cipta Dilindungi Undang-Undang.</p>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT INLINE & CSS-IN-JS INJECTION -->
+  <script>
+    // ==========================================
+    // 1. INJEKSI CSS-IN-JS (STYLESHEET DYNAMIC)
+    // ==========================================
+    const cssStyles = `
+      :root {
+        --bg-main: #f0f4f9;
+        --primary: #2563eb;
+        --primary-light: #60a5fa;
+        --primary-dark: #1d4ed8;
+        --accent: #06b6d4;
+        --text-dark: #0f172a;
+        --text-muted: #475569;
+        --glass-bg: rgba(255, 255, 255, 0.75);
+        --glass-border: rgba(255, 255, 255, 0.8);
+        --card-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: var(--bg-main);
+        color: var(--text-dark);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* --- NAVBAR --- */
+      #navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        z-index: 1000;
+        transition: var(--transition);
+      }
+
+      .nav-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.35rem;
+        font-weight: 800;
+        color: var(--primary);
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 1.8rem;
+        align-items: center;
+      }
+
+      .nav-menu a {
+        text-decoration: none;
+        color: var(--text-dark);
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: var(--transition);
+      }
+
+      .nav-menu a:hover {
+        color: var(--primary);
+      }
+
+      .sidebar-trigger {
+        background: #eff6ff;
+        color: var(--primary) !important;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        border: 1px solid #bfdbfe;
+      }
+
+      .sidebar-trigger:hover {
+        background: var(--primary) !important;
+        color: #fff !important;
+      }
+
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.6rem;
+        color: var(--text-dark);
+        cursor: pointer;
+      }
+
+      /* --- HERO HEADER (GLASSMORPHISM) --- */
+      .hero-section {
+        min-height: 100vh;
+        padding: 100px 2rem 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.8), rgba(6, 182, 212, 0.7)),
+                    url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
+        position: relative;
+      }
+
+      .hero-glass-card {
+        background: var(--glass-bg);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid var(--glass-border);
+        padding: 3.5rem 2.5rem;
+        border-radius: 24px;
+        max-width: 800px;
+        text-align: center;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 0.4rem 1.2rem;
+        background: #dbeafe;
+        color: var(--primary-dark);
+        font-weight: 700;
+        font-size: 0.85rem;
+        border-radius: 50px;
+        margin-bottom: 1.2rem;
+      }
+
+      .hero-glass-card h1 {
+        font-size: 2.8rem;
+        font-weight: 800;
+        line-height: 1.25;
+        color: #0f172a;
+        margin-bottom: 1rem;
+      }
+
+      .hero-glass-card p {
+        font-size: 1.1rem;
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 0.8rem 1.8rem;
+        border-radius: 12px;
+        font-weight: 700;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: var(--transition);
+        cursor: pointer;
+        border: none;
+      }
+
+      .btn-primary {
+        background: var(--primary);
+        color: #fff;
+        box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+      }
+
+      .btn-primary:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+      }
+
+      .btn-secondary {
+        background: #fff;
+        color: var(--text-dark);
+        border: 1px solid #e2e8f0;
+      }
+
+      .btn-secondary:hover {
+        background: #f8fafc;
+        transform: translateY(-2px);
+      }
+
+      /* --- LAYOUT CONTAINER & SECTIONS --- */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 1.5rem;
+      }
+
+      .section {
+        margin-bottom: 5rem;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .section-title h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--text-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+      }
+
+      .section-title p {
+        color: var(--text-muted);
+        font-size: 1rem;
+        margin-top: 0.4rem;
+      }
+
+      /* --- TAHAPAN PROCESS CARDS --- */
+      .process-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+
+      .process-card {
+        background: #fff;
+        padding: 2.2rem 1.8rem;
+        border-radius: 20px;
+        box-shadow: var(--card-shadow);
+        position: relative;
+        border: 1px solid #e2e8f0;
+        transition: var(--transition);
+      }
+
+      .process-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary-light);
+      }
+
+      .step-num {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #e2e8f0;
+      }
+
+      .card-icon {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+        display: block;
+      }
+
+      .process-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .process-card p {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+
+      /* --- TABS SYSTEM --- */
+      .tab-container {
+        background: #fff;
+        border-radius: 24px;
+        padding: 2rem;
+        box-shadow: var(--card-shadow);
+        border: 1px solid #e2e8f0;
+      }
+
+      .tab-buttons {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        border-bottom: 2px solid #f1f5f9;
+        padding-bottom: 1rem;
+        overflow-x: auto;
+      }
+
+      .tab-btn {
+        padding: 0.75rem 1.5rem;
+        border: none;
+        background: #f1f5f9;
+        color: var(--text-muted);
+        border-radius: 12px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: var(--transition);
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .tab-btn.active {
+        background: var(--primary);
+        color: #fff;
+      }
+
+      .tab-content {
+        display: none;
+      }
+
+      .tab-content.active {
+        display: block;
+        animation: fadeIn 0.4s ease-in-out;
+      }
+
+      .tab-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .tab-card img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 16px;
+      }
+
+      .tab-text h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .tab-text p {
+        color: var(--text-muted);
+        margin-bottom: 1.2rem;
+      }
+
+      .tab-text ul {
+        list-style: none;
+      }
+
+      .tab-text li {
+        margin-bottom: 0.6rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+        color: var(--text-dark);
+      }
+
+      .tab-text li i {
+        color: var(--accent);
+        font-size: 1.2rem;
+      }
+
+      /* --- SIMULASI INTERAKTIF --- */
+      .simulation-card {
+        background: #fff;
+        padding: 2.5rem;
+        border-radius: 24px;
+        box-shadow: var(--card-shadow);
+        border: 1px solid #e2e8f0;
+      }
+
+      .simulation-stage {
+        background: #e0f2fe;
+        height: 250px;
+        border-radius: 16px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .simulation-visual {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        height: 100%;
+        width: 100%;
+        position: relative;
+      }
+
+      .plate {
+        background: #64748b;
+        color: #fff;
+        padding: 1rem;
+        font-weight: 700;
+        width: 40%;
+        height: 40px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.1s linear;
+        z-index: 2;
+      }
+
+      .mountain-core {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0px;
+        height: 0px;
+        border-left: 0px solid transparent;
+        border-right: 0px solid transparent;
+        border-bottom: 0px solid #15803d;
+        transition: var(--transition);
+        z-index: 1;
+      }
+
+      .sim-status {
+        text-align: center;
+        font-weight: 700;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 0.5rem;
+        border-radius: 8px;
+        color: var(--primary-dark);
+        z-index: 3;
+      }
+
+      .simulation-controls label {
+        display: block;
+        font-weight: 700;
+        margin-bottom: 0.8rem;
+      }
+
+      .simulation-controls input[type=range] {
+        width: 100%;
+        height: 8px;
+        border-radius: 5px;
+        background: #cbd5e1;
+        outline: none;
+      }
+
+      /* --- SIDEBAR (DRAWER) --- */
+      .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(15, 23, 42, 0.4);
+        backdrop-filter: blur(4px);
+        z-index: 1001;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+      }
+
+      .sidebar-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .sidebar {
+        position: fixed;
+        top: 0;
+        right: -380px;
+        width: 380px;
+        max-width: 85vw;
+        height: 100vh;
+        background: #fff;
+        z-index: 1002;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        transition: var(--transition);
+        padding: 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .sidebar.active {
+        right: 0;
+      }
+
+      .sidebar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .sidebar-header h3 {
+        font-size: 1.2rem;
+        color: var(--text-dark);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .close-btn {
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: var(--text-muted);
+      }
+
+      .sidebar-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .sidebar-item {
+        display: flex;
+        gap: 1rem;
+        padding: 1rem;
+        background: #f8fafc;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: var(--transition);
+        border: 1px solid #f1f5f9;
+      }
+
+      .sidebar-item:hover {
+        background: #eff6ff;
+        border-color: #bfdbfe;
+      }
+
+      .sidebar-item i {
+        font-size: 1.5rem;
+        color: var(--primary);
+      }
+
+      .sidebar-item h4 {
+        font-size: 0.95rem;
+      }
+
+      .sidebar-item p {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+
+      .sidebar-fact-box {
+        margin-top: 1.5rem;
+        background: #f0fdf4;
+        border: 1px dashed #4ade80;
+        padding: 1rem;
+        border-radius: 12px;
+        color: #166534;
+        font-size: 0.9rem;
+      }
+
+      /* --- FOOTER --- */
+      footer {
+        background: #0f172a;
+        color: #fff;
+        padding: 4rem 2rem 2rem;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        border-bottom: 1px solid #334155;
+        padding-bottom: 2.5rem;
+      }
+
+      .footer-brand h2 {
+        color: #fff;
+        margin-bottom: 0.4rem;
+      }
+
+      .footer-brand p {
+        color: #94a3b8;
+        font-size: 0.9rem;
+      }
+
+      .footer-social {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .social-link {
+        color: #38bdf8;
+        text-decoration: none;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 1.1rem;
+      }
+
+      .social-link:hover {
+        text-decoration: underline;
+      }
+
+      .footer-bottom {
+        max-width: 1200px;
+        margin: 1.5rem auto 0;
+        text-align: center;
+        color: #64748b;
+        font-size: 0.85rem;
+      }
+
+      /* --- KEYFRAMES --- */
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* --- MEDIA QUERIES (HP & TABLET) --- */
+      @media (max-width: 900px) {
+        .tab-card {
+          grid-template-columns: 1fr;
+        }
+        
+        .hero-glass-card h1 {
+          font-size: 2.2rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: block;
+        }
+
+        .nav-menu {
+          position: fixed;
+          top: 70px;
+          left: -100%;
+          width: 100%;
+          height: calc(100vh - 70px);
+          background: #fff;
+          flex-direction: column;
+          padding: 2rem;
+          gap: 1.5rem;
+          transition: var(--transition);
+        }
+
+        .nav-menu.active {
+          left: 0;
+        }
+
+        .hero-glass-card {
+          padding: 2rem 1.5rem;
+        }
+
+        .hero-glass-card h1 {
+          font-size: 1.8rem;
+        }
+
+        .footer-container {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    `;
+
+    const styleSheet = document.createElement("style");
+    styleSheet.innerText = cssStyles;
+    document.head.appendChild(styleSheet);
+
+
+    // ==========================================
+    // 2. JAVASCRIPT INTERAKTIF
+    // ==========================================
+    document.addEventListener("DOMContentLoaded", () => {
+      // Toggle Mobile Menu
+      const menuToggle = document.getElementById("menuToggle");
+      const navMenu = document.getElementById("navMenu");
+
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        const icon = menuToggle.querySelector("i");
+        if (navMenu.classList.contains("active")) {
+          icon.className = "ri-close-line";
+        } else {
+          icon.className = "ri-menu-4-line";
+        }
+      });
+
+      // Close Mobile Menu saat Nav Link Diklik
+      document.querySelectorAll(".nav-menu a").forEach(link => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("active");
+          menuToggle.querySelector("i").className = "ri-menu-4-line";
+        });
+      });
+
+      // Tabs Logic
+      const tabBtns = document.querySelectorAll(".tab-btn");
+      const tabContents = document.querySelectorAll(".tab-content");
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          tabBtns.forEach(b => b.classList.remove("active"));
+          tabContents.forEach(c => c.classList.remove("active"));
+
+          btn.classList.add("active");
+          const targetTab = btn.getAttribute("data-tab");
+          document.getElementById(targetTab).classList.add("active");
+        });
+      });
+
+      // Sidebar Drawer Logic
+      const sidebar = document.getElementById("sidebar");
+      const sidebarOverlay = document.getElementById("sidebarOverlay");
+      const openSidebarBtn = document.getElementById("openSidebarBtn");
+      const closeSidebarBtn = document.getElementById("closeSidebarBtn");
+
+      function openSidebar() {
+        sidebar.classList.add("active");
+        sidebarOverlay.classList.add("active");
+      }
+
+      function closeSidebar() {
+        sidebar.classList.remove("active");
+        sidebarOverlay.classList.remove("active");
+      }
+
+      openSidebarBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        openSidebar();
+      });
+
+      closeSidebarBtn.addEventListener("click", closeSidebar);
+      sidebarOverlay.addEventListener("click", closeSidebar);
+
+      // Interactive Simulation
+      const slider = document.getElementById("pressureSlider");
+      const leftPlate = document.getElementById("leftPlate");
+      const rightPlate = document.getElementById("rightPlate");
+      const mountainCore = document.getElementById("mountainCore");
+      const simStatus = document.getElementById("simStatus");
+
+      slider.addEventListener("input", (e) => {
+        const val = e.target.value;
+        
+        // Geser lempeng mendekat
+        leftPlate.style.transform = `translateX(${val * 0.8}px)`;
+        rightPlate.style.transform = `translateX(-${val * 0.8}px)`;
+
+        // Gunung tumbuh naik
+        const height = val * 1.8;
+        const width = val * 1.5;
+        mountainCore.style.borderLeftWidth = `${width}px`;
+        mountainCore.style.borderRightWidth = `${width}px`;
+        mountainCore.style.borderBottomWidth = `${height}px`;
+
+        // Update teks status
+        if(val < 30) {
+          simStatus.innerText = `Tingkat Tekanan: Rendah (${val}%)`;
+          simStatus.style.color = "#15803d";
+        } else if(val < 70) {
+          simStatus.innerText = `Tingkat Tekanan: Sedang - Pelipatan Batuan (${val}%)`;
+          simStatus.style.color = "#b45309";
+        } else {
+          simStatus.innerText = `Tingkat Tekanan: Maksimal - Puncak Pegunungan Terbentuk! (${val}%)`;
+          simStatus.style.color = "#b91c1c";
+        }
+      });
+    });
+
+    // Function Fact Sidebar
+    function showFact(type) {
+      const factText = document.getElementById("factText");
+      if (type === 'ring-of-fire') {
+        factText.innerText = "Cincin Api Pasifik berisi lebih dari 75% gunung berapi aktif di dunia dan merupakan rumah bagi 90% gempa bumi di planet ini!";
+      } else if (type === 'tektonik') {
+        factText.innerText = "Lempeng tektonik bergerak dengan kecepatan sekitar 2 hingga 10 cm per tahun, secepat pertumbuhan kuku jari tangan manusia!";
+      } else if (type === 'orogenesa') {
+        factText.innerText = "Orogenesa adalah periode pembentukan pegunungan intensif yang bisa berlangsung hingga puluhan juta tahun dalam sejarah geologi.";
+      }
+    }
+  </script>
+</body>
+</html>
