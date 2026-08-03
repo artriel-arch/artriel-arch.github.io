@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hipokritas Gender & Space | Analisis Sosial 2026</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Eksplorasi kritis dan data interaktif mengenai asimetri hukum, krisis kesepian pria, dan hipokrit perdebatan ruang gender laki-laki dan perempuan.">
+    <meta name="keywords" content="Perdebatan Gender, Hipokrit Gender, Male Spaces, Women Spaces, Kesehatan Mental Pria, Asimetri Hukum">
+    <meta name="author" content="Ariel Usman">
+
+    <!-- Open Graph / Facebook / WhatsApp Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://youtu.be/Kcy9rQjMglU">
+    <meta property="og:title" content="Hipokritnya Perdebatan Laki-Laki & Perempuan">
+    <meta property="og:description" content="Bedah tuntas asimetri hukum dan krisis sosial antara hilangnya ruang pria dan berjamurnya ruang khusus wanita.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hipokritnya Perdebatan Laki-Laki & Perempuan">
+    <meta name="twitter:description" content="Analisis visual & data interaktif mengenai krisis ruang publik gender.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            cyan: '#06b6d4',
+                            blue: '#3b82f6',
+                            rose: '#f43f5e',
+                            amber: '#f59e0b',
+                            violet: '#8b5cf6',
+                            emerald: '#10b981'
+                        }
+                    },
+                    boxShadow: {
+                        glass: '0 8px 32px 0 rgba(31, 38, 135, 0.12)',
+                        glow: '0 0 25px rgba(59, 130, 246, 0.3)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Alpine.js & Chart.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #e0f2fe 0%, #fce7f3 50%, #fef3c7 100%);
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen font-sans text-slate-800 antialiased selection:bg-cyan-500 selection:text-white" x-data="{ sidebarOpen: false, activeTab: 'asimetri', activeModal: null }">
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 glassmorphism shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Brand / Logo -->
+                <div class="flex items-center gap-3">
+                    <span class="text-2xl p-2 bg-gradient-to-tr from-cyan-500 to-blue-600 text-white rounded-xl shadow-md">⚖️</span>
+                    <a href="#" class="font-extrabold text-xl sm:text-2xl tracking-tight bg-gradient-to-r from-blue-600 via-violet-600 to-rose-500 bg-clip-text text-transparent">
+                        GenderDebate<span class="text-cyan-500">.ID</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-1 lg:space-x-2 font-medium text-slate-700">
+                    <a href="#hero" class="px-3 py-2 rounded-lg hover:text-blue-600 hover:bg-white/50 transition">Beranda</a>
+                    <a href="#fakta-data" class="px-3 py-2 rounded-lg hover:text-blue-600 hover:bg-white/50 transition">Data & Realita</a>
+                    <a href="#asimetri-hukum" class="px-3 py-2 rounded-lg hover:text-blue-600 hover:bg-white/50 transition">Asimetri Hukum</a>
+                    <a href="#krisis-sosial" class="px-3 py-2 rounded-lg hover:text-blue-600 hover:bg-white/50 transition">Krisis Pria</a>
+                    <a href="#solusi" class="px-3 py-2 rounded-lg hover:text-blue-600 hover:bg-white/50 transition">Masa Depan</a>
+                    <button @click="sidebarOpen = !sidebarOpen" class="ml-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl shadow-md hover:shadow-glow transition flex items-center gap-2">
+                        <i class="fa-solid fa-list-check"></i> Menu Lanjutan
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center gap-2">
+                    <button @click="sidebarOpen = !sidebarOpen" class="p-2 rounded-xl bg-white/80 text-slate-700 hover:bg-white shadow-sm focus:outline-none">
+                        <i class="fa-solid fa-bars-staggered text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER / HERO SECTION (Glassmorphism Modern) -->
+    <header id="hero" class="relative overflow-hidden py-12 lg:py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Hero Left Text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glassmorphism text-blue-700 font-semibold text-xs sm:text-sm shadow-sm border border-blue-200">
+                        <span class="flex h-2 w-2 rounded-full bg-rose-500 animate-ping"></span>
+                        Analisis Video Youtube & Studi Kasus Sosial 2026
+                    </div>
+                    
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-tight">
+                        Hipokritnya Perdebatan <br class="hidden sm:inline">
+                        <span class="bg-gradient-to-r from-blue-600 via-violet-600 to-rose-500 bg-clip-text text-transparent">
+                            Ruang Laki-Laki & Perempuan
+                        </span>
+                    </h1>
+
+                    <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Ketika institusi komunal pria seperti Masons, Jaycees, Rotary, dan VMI dihancurkan lewat gugatan hukum atas nama kesetaraan, namun di saat yang sama ruang eksklusif wanita seperti The Wing, Chief, dan Gym Khusus Wanita justru dilindungi dan didanai jutaan dolar. Mengapa terjadi standar ganda?
+                    </p>
+
+                    <!-- CTA Buttons & Video Link -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="https://youtu.be/Kcy9rQjMglU?si=nF0rkEgRlZ2XGoOD" target="_blank" class="px-6 py-3.5 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-2xl shadow-lg hover:shadow-rose-500/30 transition flex items-center gap-2 group">
+                            <i class="fa-brands fa-youtube text-xl group-hover:scale-110 transition"></i> Tonton Video Asli
+                        </a>
+                        <a href="#fakta-data" class="px-6 py-3.5 glassmorphism hover:bg-white text-slate-800 font-bold rounded-2xl shadow-md transition flex items-center gap-2">
+                            <i class="fa-solid fa-chart-line text-blue-500"></i> Eksplorasi Data
+                        </a>
+                    </div>
+
+                    <!-- Highlights Stat Badges -->
+                    <div class="grid grid-cols-3 gap-3 sm:gap-4 pt-6 border-t border-slate-200/60">
+                        <div class="p-3 rounded-xl glass-card text-center">
+                            <div class="text-2xl sm:text-3xl font-black text-rose-500">80%</div>
+                            <div class="text-xs text-slate-500 font-medium">Bunuh Diri Adalah Pria</div>
+                        </div>
+                        <div class="p-3 rounded-xl glass-card text-center">
+                            <div class="text-2xl sm:text-3xl font-black text-blue-600">15%</div>
+                            <div class="text-xs text-slate-500 font-medium">Pria Tanpa Teman Dekat</div>
+                        </div>
+                        <div class="p-3 rounded-xl glass-card text-center">
+                            <div class="text-2xl sm:text-3xl font-black text-violet-600">42%</div>
+                            <div class="text-xs text-slate-500 font-medium">Lulusan S1 Pria (AS)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Interactive Card / Video Preview -->
+                <div class="lg:col-span-5">
+                    <div class="relative glassmorphism p-4 sm:p-6 rounded-3xl shadow-glass border border-white/80">
+                        <div class="relative rounded-2xl overflow-hidden shadow-lg group">
+                            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80" alt="Diskusi Sosial Gender" class="w-full h-64 sm:h-80 object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent flex flex-col justify-end p-6 text-white">
+                                <span class="bg-amber-400 text-slate-900 font-bold text-xs px-3 py-1 rounded-full w-max mb-2">Dokumenter Front Page</span>
+                                <h3 class="font-bold text-lg leading-snug">The Hypocrisy Of Male VS Women Spaces</h3>
+                                <p class="text-xs text-slate-200 mt-1">Bedah tuntas krisis kesepian pria & runtuhnya ruang sosial tradisional.</p>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Feature Highlight Card inside Hero -->
+                        <div class="mt-4 p-4 rounded-xl bg-white/90 shadow-sm border border-slate-100 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-cyan-100 text-cyan-600 flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-balance-scale"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-slate-800">Asimetri Antar Hukum</h4>
+                                    <p class="text-xs text-slate-500">Studi Kasus Jaycees vs. Chief / Curves</p>
+                                </div>
+                            </div>
+                            <button @click="activeModal = 'asimetri-modal'" class="px-3 py-1.5 text-xs bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-lg transition">
+                                Detail
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT & LAYOUT WITH SIDEBAR -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <!-- BODY MAIN CONTENT (Col 8/12) -->
+            <main class="lg:col-span-8 space-y-12">
+
+                <!-- SECTION 1: KRONOLOGI RUNTUHNYA MALE SPACES & BERJAMURNYA WOMEN SPACES -->
+                <section id="asimetri-hukum" class="glass-card p-6 sm:p-8 rounded-3xl shadow-sm border border-white">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="p-3 bg-amber-100 text-amber-600 rounded-2xl text-xl"><i class="fa-solid fa-gavel"></i></span>
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-900">Runtuhnya Male Spaces vs Populerisasi Women Spaces</h2>
+                            <p class="text-sm text-slate-500">Rekam jejak hukum yang mengubah peta interaksi sosial pria & wanita</p>
+                        </div>
+                    </div>
+
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Selama lebih dari 100 tahun, pria memiliki ruang persaudaraan (fraternal lodges) seperti Freemasons, Odd Fellows, Elks, dan Jaycees yang berfungsi sebagai tempat dukungan emosional, jaringan bisnis, dan jaring pengaman sosial. Namun lewat serangkaian keputusan Mahkamah Agung (AS), ruang pria secara legal dipaksa dibuka untuk umum.
+                    </p>
+
+                    <!-- Interactive Timeline Accordion / Tabs -->
+                    <div class="space-y-4">
+                        <div class="p-4 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                            <h3 class="font-bold text-slate-800 flex items-center justify-between cursor-pointer" @click="activeTab = activeTab === 'jaycees' ? '' : 'jaycees'">
+                                <span><i class="fa-solid fa-scale-unbalanced text-rose-500 mr-2"></i> 1984: Roberts v. U.S. Jaycees</span>
+                                <i class="fa-solid" :class="activeTab === 'jaycees' ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                            </h3>
+                            <div x-show="activeTab === 'jaycees'" class="mt-3 text-sm text-slate-600 border-t pt-3 space-y-2">
+                                <p>Mahkamah Agung memutuskan 7-0 bahwa Junior Chamber of Commerce (Jaycees) yang eksklusif pria harus menerima anggota wanita. Hakim menetapkan bahwa klub jaringan profesional berskala besar tidak dilindungi hak kebebasan berserikat intimate association.</p>
+                                <span class="inline-block bg-rose-100 text-rose-700 text-xs px-2.5 py-1 rounded-md font-semibold">Dampak: Domino runtuhnya Rotary, Lions, Kiwanis</span>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                            <h3 class="font-bold text-slate-800 flex items-center justify-between cursor-pointer" @click="activeTab = activeTab === 'vmi' ? '' : 'vmi'">
+                                <span><i class="fa-solid fa-building-columns text-violet-500 mr-2"></i> 1996: U.S. v. Virginia (VMI)</span>
+                                <i class="fa-solid" :class="activeTab === 'vmi' ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                            </h3>
+                            <div x-show="activeTab === 'vmi'" class="mt-3 text-sm text-slate-600 border-t pt-3 space-y-2">
+                                <p>Keputusan pimpinan Hakim Ruth Bader Ginsburg memaksa Virginia Military Institute (VMI)—akademi militer khusus pria terakhir—membuka pendaftaran bagi wanita. Akademi pria dihapuskan secara publik.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                            <h3 class="font-bold text-slate-800 flex items-center justify-between cursor-pointer" @click="activeTab = activeTab === 'scout' ? '' : 'scout'">
+                                <span><i class="fa-solid fa-campground text-emerald-500 mr-2"></i> 2019-2024: Boy Scouts ke Scouting America</span>
+                                <i class="fa-solid" :class="activeTab === 'scout' ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                            </h3>
+                            <div x-show="activeTab === 'scout'" class="mt-3 text-sm text-slate-600 border-t pt-3 space-y-2">
+                                <p>Boy Scouts of America resmi menerima anak perempuan dan mengubah namanya menjadi Scouting America. Sementara Girl Scouts of USA tetap eksklusif perempuan dan menggugat balik soal nama.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-100 shadow-sm">
+                            <h3 class="font-bold text-emerald-900 flex items-center justify-between cursor-pointer" @click="activeTab = activeTab === 'women' ? '' : 'women'">
+                                <span><i class="fa-solid fa-gem text-emerald-600 mr-2"></i> Berjamurnya Ruang Khusus Wanita (Chief, Curves, The Wing)</span>
+                                <i class="fa-solid" :class="activeTab === 'women' ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                            </h3>
+                            <div x-show="activeTab === 'women'" class="mt-3 text-sm text-slate-700 border-t border-emerald-200/60 pt-3 space-y-2">
+                                <p>Di saat ruang pria dibubarkan, ruang jaringan bisnis khusus wanita seperti Chief mendapatkan pendanaan 140 Juta Dolar lebih dengan valuasi 1.1 Miliar Dolar. Jaringan gym khusus wanita seperti Curves dan Healthworks mendapat perlindungan hukum undang-undang khusus melalui pencetus pengecualian privasi dan agama.</p>
+                                <p class="text-xs font-semibold text-emerald-800">Catatan: Tidak ada model bisnis eksklusif pria setara Chief yang diizinkan beroperasi secara legal saat ini.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 2: DATA & INTERACTIVE CHARTS -->
+                <section id="fakta-data" class="glass-card p-6 sm:p-8 rounded-3xl shadow-sm border border-white">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="p-3 bg-blue-100 text-blue-600 rounded-2xl text-xl"><i class="fa-solid fa-chart-pie"></i></span>
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-900">Data Krisis Kesepian & Pendidikan Pria</h2>
+                            <p class="text-sm text-slate-500">Statistik faktual yang tidak diangkat di media utama</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Chart 1: Kesepian & Jumlah Teman Dekat -->
+                        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+                            <h3 class="font-bold text-sm text-slate-800 text-center mb-3">Persentase Pria Punya 0 Teman Dekat (1990 vs 2021)</h3>
+                            <div class="h-56">
+                                <canvas id="lonelinessChart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Chart 2: Angka Kelulusan S1 (Pria vs Wanita) -->
+                        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+                            <h3 class="font-bold text-sm text-slate-800 text-center mb-3">Proporsi Gelar Sarjana S1 (AS)</h3>
+                            <div class="h-56">
+                                <canvas id="educationChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 bg-amber-50 border border-amber-200 p-4 rounded-2xl flex items-start gap-3">
+                        <i class="fa-solid fa-circle-exclamation text-amber-500 text-xl mt-0.5"></i>
+                        <p class="text-xs sm:text-sm text-amber-900 leading-relaxed">
+                            <strong>Fakta Mengejutkan:</strong> Menurut penemuan pakar Brookings Institution (Richard Reeves), krisis pendidikan dan pekerjaan pria berujung pada meningkatnya Deaths of Despair (kematian akibat overdosis dan bunuh diri) yang merenggut hampir 40.000 pria setiap tahunnya di AS saja.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- SECTION 3: SOLUSI MASA DEPAN (MEN'S SHEDS & F3 NATION) -->
+                <section id="solusi" class="glass-card p-6 sm:p-8 rounded-3xl shadow-sm border border-white">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="p-3 bg-emerald-100 text-emerald-600 rounded-2xl text-xl"><i class="fa-solid fa-hammer"></i></span>
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-900">Solusi & Gerakan Komunitas Baru</h2>
+                            <p class="text-sm text-slate-500">Membangun kembali infrastruktur persaudaraan yang sehat</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm space-y-3">
+                            <div class="w-12 h-12 rounded-xl bg-cyan-100 text-cyan-600 flex items-center justify-center font-bold text-xl">
+                                <i class="fa-solid fa-screwdriver-wrench"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-slate-800">Men's Sheds Movement</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Dimulai di Australia, menyediakan bengkel kerja tempat pria tua dan muda berkumpul untuk pertukangan dan memasak. Pria bersosialisasi secara Shoulder-to-Shoulder (bahu-membahu lewat aktivitas), bukan face-to-face yang sering kaku.
+                            </p>
+                            <span class="inline-block text-xs font-bold text-cyan-600 bg-cyan-50 px-3 py-1 rounded-full">3.000+ Sheds di Dunia</span>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm space-y-3">
+                            <div class="w-12 h-12 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center font-bold text-xl">
+                                <i class="fa-solid fa-person-running"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-slate-800">F3 Nation</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Komunitas olahraga luar ruangan gratis setiap subuh bagi pria yang menggabungkan Fitness, Fellowship, dan Faith. Menghasilkan persahabatan erat tanpa biaya langganan aplikasi.
+                            </p>
+                            <span class="inline-block text-xs font-bold text-violet-600 bg-violet-50 px-3 py-1 rounded-full">50.000+ Anggota Aktif</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 4: INTERACTIVE POLL / VOTING -->
+                <section class="glass-card p-6 sm:p-8 rounded-3xl shadow-sm border border-white text-center" x-data="{ voted: false, choice: '' }">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Pendapat Anda: Haruskah Ruang Khusus Pria Diizinkan Kembali?</h3>
+                    <p class="text-sm text-slate-500 mb-6">Suarakan perspektif Anda mengenai kesetaraan ruang publik</p>
+
+                    <template x-if="!voted">
+                        <div class="flex flex-col sm:flex-row justify-center gap-4">
+                            <button @click="voted = true; choice = 'ya'" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition shadow-md">
+                                <i class="fa-solid fa-thumbs-up mr-2"></i> Ya, Harus Diberi Hak Sama
+                            </button>
+                            <button @click="voted = true; choice = 'tidak'" class="px-6 py-3 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-xl transition shadow-md">
+                                <i class="fa-solid fa-thumbs-down mr-2"></i> Tidak, Semua Harus Campuran
+                            </button>
+                        </div>
+                    </template>
+
+                    <template x-if="voted">
+                        <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-2xl text-emerald-800">
+                            <p class="font-bold text-lg">Terima kasih atas partisipasi Anda!</p>
+
+                            <p class="text-sm mt-1">Pilihan Anda: <span class="capitalize font-extrabold" x-text="choice"></span>. Diskusi yang inklusif dan berbasis data adalah kunci solusi krisis gender sosial.</p>
+                        </div>
+                    </template>
+                </section>
+
+            </main>
+
+            <!-- SIDEBAR (Col 4/12) -->
+            <aside class="lg:col-span-4 space-y-6">
+                
+                <!-- Sidebar Card 1: Video Reference -->
+                <div class="glass-card p-5 rounded-3xl border border-white shadow-sm space-y-4">
+                    <div class="flex items-center justify-between border-b pb-3">
+                        <h3 class="font-bold text-slate-800 text-base flex items-center gap-2">
+                            <i class="fa-brands fa-youtube text-rose-500 text-lg"></i> Sumber Utama Video
+                        </h3>
+                        <span class="text-xs bg-rose-100 text-rose-600 px-2.5 py-1 rounded-full font-bold">Front Page</span>
+                    </div>
+                    <div class="text-xs text-slate-600 space-y-2">
+                        <p class="font-semibold text-slate-800">Judul: The Hypocrisy Of Male VS Women Spaces</p>
+                        <p>Video dokumenter komprehensif mengulas hukum, sosiologi, dan krisis kesehatan mental pria di era modern.</p>
+                    </div>
+                    <a href="https://youtu.be/Kcy9rQjMglU?si=nF0rkEgRlZ2XGoOD" target="_blank" class="block w-full text-center py-2.5 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-xl text-xs transition shadow-md">
+                        Buka Video di YouTube <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Sidebar Card 2: Pokok Bahasan Penting -->
+                <div class="glass-card p-5 rounded-3xl border border-white shadow-sm space-y-4">
+                    <h3 class="font-bold text-slate-800 text-base border-b pb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-bookmark text-blue-500"></i> Topik Terkait
+                    </h3>
+                    <ul class="space-y-3 text-xs sm:text-sm text-slate-700">
+                        <li class="p-3 bg-white/80 rounded-xl hover:bg-white transition cursor-pointer border border-slate-100 flex items-center justify-between" @click="activeModal = 'modal-1'">
+                            <span class="font-medium"><i class="fa-solid fa-graduation-cap text-cyan-500 mr-2"></i> Ketimpangan Gender K-12</span>
+                            <i class="fa-solid fa-chevron-right text-slate-400 text-xs"></i>
+                        </li>
+                        <li class="p-3 bg-white/80 rounded-xl hover:bg-white transition cursor-pointer border border-slate-100 flex items-center justify-between" @click="activeModal = 'modal-2'">
+                            <span class="font-medium"><i class="fa-solid fa-heart-crack text-rose-400 mr-2"></i> Fenomena Korea Selatan (4B)</span>
+                            <i class="fa-solid fa-chevron-right text-slate-400 text-xs"></i>
+                        </li>
+                        <li class="p-3 bg-white/80 rounded-xl hover:bg-white transition cursor-pointer border border-slate-100 flex items-center justify-between" @click="activeModal = 'modal-3'">
+                            <span class="font-medium"><i class="fa-solid fa-masks-theater text-violet-500 mr-2"></i> Manosphere vs Performative Male</span>
+                            <i class="fa-solid fa-chevron-right text-slate-400 text-xs"></i>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Sidebar Card 3: Author Bio Badge -->
+                <div class="glass-card p-5 rounded-3xl border border-white shadow-sm text-center space-y-3">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-cyan-400 to-blue-600 text-white flex items-center justify-center font-bold text-2xl mx-auto shadow-md">
+                        AU
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800">Ariel Usman</h4>
+                        <p class="text-xs text-slate-500">Pengembang & Peneliti Web 2026</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-200/60">
+                        <a href="https://instagram.com/arielrcun" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-rose-600 bg-rose-50 hover:bg-rose-100 px-4 py-2 rounded-xl transition">
+                            <i class="fa-brands fa-instagram text-base"></i> @arielrcun
+                        </a>
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+    </div>
+
+    <!-- MODAL POPUPS FOR DETAILED TOPICS -->
+    <div x-show="activeModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm" x-cloak>
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 space-y-4 shadow-2xl relative border border-slate-100 animate-fade-in" @click.away="activeModal = null">
+            <button @click="activeModal = null" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Modal Content 1 -->
+            <template x-if="activeModal === 'modal-1'">
+                <div class="space-y-3">
+                    <h3 class="text-xl font-bold text-slate-900">Ketimpangan Pendidikan K-12</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Anak laki-laki tertinggal 1 tingkat sekolah dalam kemampuan membaca dibanding perempuan. Pengajar laki-laki di SD kini kurang dari 11% dan TK kurang dari 3%. Solusi yang diusulkan adalah Redshirting (memulai sekolah 1 tahun lebih lambat untuk menyelaraskan perkembangan otak).
+                    </p>
+                </div>
+            </template>
+
+            <!-- Modal Content 2 -->
+            <template x-if="activeModal === 'modal-2'">
+                <div class="space-y-3">
+                    <h3 class="text-xl font-bold text-slate-900">Fenomena Korea Selatan & Gerakan 4B</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Polarisasi gender paling ekstrem di dunia terjadi di Korsel, dengan tingkat fertilitas terendah (0.72). Munculnya gerakan 4B (No Marriage, No Childbirth, No Dating, No Sex with Men) sebagai bentuk respons balik dari iklim politik gender.
+                    </p>
+                </div>
+            </template>
+
+            <!-- Modal Content 3 -->
+            <template x-if="activeModal === 'modal-3'">
+                <div class="space-y-3">
+                    <h3 class="text-xl font-bold text-slate-900">Manosphere vs Performative Male</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Dua respons ekstrem pria: Manosphere yang mengubah rasa terisolasi menjadi kemarahan politik, dan Performative Male yang menggunakan bahasa progresif sebagai taktik pencitraan. Mayoritas pria di tengah terjebak tanpa wadah persaudaraan yang sehat.
+                    </p>
+                </div>
+            </template>
+
+            <!-- Modal Content Asimetri -->
+            <template x-if="activeModal === 'asimetri-modal'">
+                <div class="space-y-3">
+                    <h3 class="text-xl font-bold text-slate-900">Detail Asimetri Hukum</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Banyak negara bagian memberi pengecualian hukum khusus bagi ruang perempuan atas alasan privasi, pencegahan kekerasan domestik, dan akomodasi agama. Namun pengecualian serupa secara sistematis tidak diberikan untuk ruang pria.
+                    </p>
+                </div>
+            </template>
+        </div>
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <footer class="mt-20 glassmorphism border-t border-white/80 py-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div>
+                <p class="font-bold text-slate-800 text-sm">Oleh Ariel Usman Copyright 2026</p>
+                <p class="text-xs text-slate-500 mt-0.5">Dibuat untuk analisis media & edukasi kesetaraan sosial.</p>
+            </div>
+
+            <!-- Instagram Handle with Icon -->
+            <div class="flex items-center gap-4">
+                <a href="https://instagram.com/arielrcun" target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-purple-500 via-pink-500 to-amber-500 text-white font-bold text-xs shadow-md hover:opacity-90 transition">
+                    <i class="fa-brands fa-instagram text-base"></i> @arielrcun
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CHART.JS SCRIPT INITIALIZATION -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Chart 1: Loneliness Stats
+            const ctx1 = document.getElementById('lonelinessChart').getContext('2d');
+            new Chart(ctx1, {
+                type: 'bar',
+                data: {
+                    labels: ['1990 (Gallup)', '2021 (Cox Study)'],
+                    datasets: [{
+                        label: '% Pria Punya 0 Teman Dekat',
+                        data: [3, 15],
+                        backgroundColor: ['#3b82f6', '#f43f5e'],
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: { y: { beginAtZero: true, ticks: { callback: v => v + '%' } } }
+                }
+            });
+
+            // Chart 2: Education Stats
+            const ctx2 = document.getElementById('educationChart').getContext('2d');
+            new Chart(ctx2, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Wanita (58%)', 'Pria (42%)'],
+                    datasets: [{
+                        data: [58, 42],
+                        backgroundColor: ['#ec4899', '#06b6d4'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'bottom' } }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
