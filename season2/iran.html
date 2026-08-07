@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kuis Interaktif: Pengetahuan Negara Iran</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f4f7f6;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .quiz-container {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      max-width: 650px;
+      width: 100%;
+      padding: 30px;
+    }
+
+    .quiz-header {
+      border-bottom: 3px solid #00843d; /* Warna hijau bendera Iran */
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .quiz-header h1 {
+      font-size: 1.8rem;
+      color: #1b4332;
+    }
+
+    .quiz-header p {
+      font-size: 0.95rem;
+      color: #666;
+      margin-top: 5px;
+    }
+
+    .question-card {
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .question-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #2b2b2b;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .option-label {
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 0.98rem;
+    }
+
+    .option-label:hover {
+      background-color: #f0f7f4;
+      border-color: #00843d;
+    }
+
+    .option-label input {
+      margin-right: 12px;
+      accent-color: #00843d;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background-color: #da291c; /* Warna merah bendera Iran */
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .submit-btn:hover {
+      background-color: #b81d13;
+    }
+
+    .result-box {
+      display: none;
+      margin-top: 25px;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      background-color: #e8f5e9;
+      border: 1px solid #c8e6c9;
+    }
+
+    .result-box h2 {
+      color: #2e7d32;
+      margin-bottom: 10px;
+    }
+
+    .correct-ans {
+      border-color: #2e7d32 !important;
+      background-color: #e8f5e9;
+    }
+
+    .wrong-ans {
+      border-color: #c62828 !important;
+      background-color: #ffebee;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-container">
+    <div class="quiz-header">
+      <h1>Kuis Pengetahuan Negara Iran 🇮🇷</h1>
+      <p>Uji wawasan Anda mengenai sejarah, geografi, dan budaya Iran.</p>
+    </div>
+
+    <form id="quizForm">
+      <!-- Soal 1 -->
+      <div class="question-card">
+        <div class="question-title">1. Apa nama ibu kota sekaligus kota terbesar di Iran?</div>
+        <div class="options">
+          <label class="option-label"><input type="radio" name="q1" value="Isfahan"> Isfahan</label>
+          <label class="option-label"><input type="radio" name="q1" value="Tehran"> Tehran</label>
+          <label class="option-label"><input type="radio" name="q1" value="Shiraz"> Shiraz</label>
+          <label class="option-label"><input type="radio" name="q1" value="Tabriz"> Tabriz</label>
+        </div>
+      </div>
+
+      <!-- Soal 2 -->
+      <div class="question-card">
+        <div class="question-title">2. Sebelum berganti nama menjadi Iran pada tahun 1935, negara ini secara internasional dikenal dengan nama...</div>
+        <div class="options">
+          <label class="option-label"><input type="radio" name="q2" value="Mesopotamia"> Mesopotamia</label>
+          <label class="option-label"><input type="radio" name="q2" value="Persia"> Persia</label>
+          <label class="option-label"><input type="radio" name="q2" value="Ottoman"> Ottoman</label>
+          <label class="option-label"><input type="radio" name="q2" value="Babilonia"> Babilonia</label>
+        </div>
+      </div>
+
+      <!-- Soal 3 -->
+      <div class="question-card">
+        <div class="question-title">3. Apa nama mata uang resmi negara Iran?</div>
+        <div class="options">
+          <label class="option-label"><input type="radio" name="q3" value="Dinar"> Dinar</label>
+          <label class="option-label"><input type="radio" name="q3" value="Lira"> Lira</label>
+          <label class="option-label"><input type="radio" name="q3" value="Rial"> Rial Iran</label>
+          <label class="option-label"><input type="radio" name="q3" value="Dirham"> Dirham</label>
+        </div>
+      </div>
+
+      <!-- Soal 4 -->
+      <div class="question-card">
+        <div class="question-title">4. Bahasa resmi yang dipergunakan oleh mayoritas masyarakat Iran adalah...</div>
+        <div class="options">
+          <label class="option-label"><input type="radio" name="q4" value="Arab"> Bahasa Arab</label>
+          <label class="option-label"><input type="radio" name="q4" value="Farsi"> Bahasa Farsi (Persia)</label>
+          <label class="option-label"><input type="radio" name="q4" value="Turki"> Bahasa Turki</label>
+          <label class="option-label"><input type="radio" name="q4" value="Kurdi"> Bahasa Kurdi</label>
+        </div>
+      </div>
+
+      <!-- Soal 5 -->
+      <div class="question-card">
+        <div class="question-title">5. Perairan darat utama yang berbatasan langsung di sebelah utara negara Iran adalah...</div>
+        <div class="options">
+          <label class="option-label"><input type="radio" name="q5" value="Laut Merah"> Laut Merah</label>
+          <label class="option-label"><input type="radio" name="q5" value="Teluk Persia"> Teluk Persia</label>
+          <label class="option-label"><input type="radio" name="q5" value="Laut Kaspia"> Laut Kaspia</label>
+          <label class="option-label"><input type="radio" name="q5" value="Laut Hitam"> Laut Hitam</label>
+        </div>
+      </div>
+
+      <button type="button" class="submit-btn" onclick="checkAnswers()">Kirim Jawaban</button>
+    </form>
+
+    <div id="result" class="result-box">
+      <h2>Hasil Kuis</h2>
+      <p id="scoreText"></p>
+    </div>
+  </div>
+
+  <script>
+    const correctAnswers = {
+      q1: "Tehran",
+      q2: "Persia",
+      q3: "Rial",
+      q4: "Farsi",
+      q5: "Laut Kaspia"
+    };
+
+    function checkAnswers() {
+      let score = 0;
+      const totalQuestions = Object.keys(correctAnswers).length;
+
+      for (let key in correctAnswers) {
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
+        const options = document.querySelectorAll(`input[name="${key}"]`);
+
+        options.forEach(input => {
+          const label = input.parentElement;
+          label.classList.remove('correct-ans', 'wrong-ans');
+          
+          if (input.value === correctAnswers[key]) {
+            label.classList.add('correct-ans');
+          } else if (input.checked && input.value !== correctAnswers[key]) {
+            label.classList.add('wrong-ans');
+          }
+        });
+
+        if (selected && selected.value === correctAnswers[key]) {
+          score++;
+        }
+      }
+
+      const resultBox = document.getElementById('result');
+      const scoreText = document.getElementById('scoreText');
+      resultBox.style.display = 'block';
+      scoreText.innerHTML = `Anda menjawab benar <strong>${score}</strong> dari <strong>${totalQuestions}</strong> soal (${(score/totalQuestions)*100}%).`;
+      
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
