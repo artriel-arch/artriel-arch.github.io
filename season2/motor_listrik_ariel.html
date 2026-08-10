@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroRide - Edukasi & Simulasi Motor Listrik Interaktif</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Pelajari cara kerja motor listrik dan simulasikan pengisian daya baterai (cas) dengan berbagai metode secara real-time.">
+    <meta name="keywords" content="motor listrik, simulasi cas motor listrik, cara kerja motor listrik, SPKLU, baterai BLDC, kendaraan listrik">
+    <meta name="author" content="Ariel Usman">
+
+    <!-- Open Graph / Social Media Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://electroride.example.com/">
+    <meta property="og:title" content="ElectroRide - Masa Depan Motor Listrik & Simulasi Cas">
+    <meta property="og:description" content="Simulasikan waktu dan biaya cas motor listrik Anda dengan berbagai teknologi pengisian daya!">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ElectroRide - Simulasi Motor Listrik">
+    <meta name="twitter:description" content="Edukasi interaktif cara kerja dan kalkulator simulasi pengecasan motor listrik.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2310b981'><path d='M13 2L3 14h9l-1 8 10-12h-9l1-8z'/></svg>">
+    <script src="https://unpkg.com/@lucide/web"></script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                        },
+                        electric: '#06b6d4',
+                        accent: '#84cc16'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Animation & Glassmorphic Custom Styles */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+        .bg-mesh {
+            background-color: #f0fdf4;
+            background-image: 
+                radial-gradient(at 10% 20%, rgba(6, 182, 212, 0.18) 0px, transparent 50%),
+                radial-gradient(at 90% 10%, rgba(132, 204, 22, 0.2) 0px, transparent 50%),
+                radial-gradient(at 50% 80%, rgba(16, 185, 129, 0.15) 0px, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-mesh text-slate-800 font-sans min-h-screen flex flex-col justify-between antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- OVERLAY SIDEBAR -->
+    <div id="sidebar-overlay" onclick="toggleSidebar()" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-40 hidden transition-opacity duration-300"></div>
+
+    <!-- SIDEBAR DRAWER -->
+    <aside id="sidebar" class="fixed top-0 right-0 w-80 sm:w-96 h-full bg-white/95 backdrop-blur-xl shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out p-6 flex flex-col justify-between overflow-y-auto">
+        <div>
+            <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+                <div class="flex items-center gap-2 font-bold text-lg text-brand-600">
+                    <i data-lucide="zap" class="w-5 h-5 text-electric"></i>
+                    <span>Informasi & Tips</span>
+                </div>
+                <button onclick="toggleSidebar()" class="p-2 rounded-full hover:bg-slate-100 text-slate-500 transition">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="mt-6 space-y-6">
+                <!-- Highlight Stat -->
+                <div class="bg-gradient-to-br from-brand-50 to-emerald-100 p-4 rounded-2xl border border-brand-100">
+                    <h4 class="font-bold text-brand-700 text-sm flex items-center gap-2">
+                        <i data-lucide="piggy-bank" class="w-4 h-4"></i> Hemat Biaya Operasional
+                    </h4>
+                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                        Motor listrik rata-rata menghemat hingga **70-80% biaya bahan bakar** dibanding motor matik bensin per 100 km!
+                    </p>
+                </div>
+
+                <!-- Tips Baterai -->
+                <div>
+                    <h4 class="font-bold text-slate-800 text-sm mb-3 flex items-center gap-2">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-brand-600"></i> Tips Awet Baterai Lithium
+                    </h4>
+                    <ul class="space-y-2 text-xs text-slate-600">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-brand-500 mt-0.5 shrink-0"></i>
+                            Hindari pemakaian hingga 0% habis total.
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-brand-500 mt-0.5 shrink-0"></i>
+                            Isi daya idealnya di kisaran 20% hingga 80%.
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-brand-500 mt-0.5 shrink-0"></i>
+                            Jangan langsung cas saat baterai masih sangat panas usai perjalanan jauh.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Fast Nav -->
+                <div>
+                    <h4 class="font-bold text-slate-800 text-sm mb-3">Navigasi Cepat</h4>
+                    <nav class="space-y-1">
+                        <a href="#hero" onclick="toggleSidebar()" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600 transition">Beranda</a>
+                        <a href="#cara-kerja" onclick="toggleSidebar()" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600 transition">Cara Kerja Powertrain</a>
+                        <a href="#simulasi" onclick="toggleSidebar()" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600 transition">Simulator Pengecasan</a>
+                        <a href="#keunggulan" onclick="toggleSidebar()" class="block px-3 py-2 rounded-lg text-xs font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600 transition">Keunggulan EV</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-6 border-t border-slate-200 text-center">
+            <p class="text-xs text-slate-400">ElectroRide Hub &copy; 2026</p>
+        </div>
+    </aside>
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-30 transition-all duration-300">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <div class="glass-panel rounded-2xl px-4 py-3 flex items-center justify-between shadow-sm">
+                <!-- Logo Left -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 to-electric flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+                        <i data-lucide="zap" class="w-6 h-6 fill-current"></i>
+                    </div>
+                    <div>
+                        <span class="font-black text-xl tracking-tight bg-gradient-to-r from-brand-600 via-electric to-slate-800 bg-clip-text text-transparent">ElectroRide</span>
+                        <span class="block text-[10px] font-bold text-brand-600 tracking-wider uppercase -mt-1">EV Hub & Lab</span>
+                    </div>
+                </a>
+
+                <!-- Right Menu Desktop -->
+                <div class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600">
+                    <a href="#cara-kerja" class="hover:text-brand-600 transition-colors">Cara Kerja</a>
+                    <a href="#simulasi" class="hover:text-brand-600 transition-colors">Simulasi Cas</a>
+                    <a href="#komponen" class="hover:text-brand-600 transition-colors">Komponen Utama</a>
+                    <a href="#faq" class="hover:text-brand-600 transition-colors">FAQ</a>
+                </div>
+
+                <!-- Actions Right -->
+                <div class="flex items-center gap-3">
+                    <a href="#simulasi" class="hidden sm:inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-semibold text-xs px-4 py-2.5 rounded-xl shadow-md shadow-brand-500/20 hover:shadow-lg transition-all">
+                        <i data-lucide="calculator" class="w-4 h-4"></i> Coba Simulasi
+                    </a>
+                    <button onclick="toggleSidebar()" class="p-2.5 rounded-xl bg-white/80 hover:bg-white text-slate-700 shadow-sm border border-slate-200/80 transition" aria-label="Buka Menu Sidebar">
+                        <i data-lucide="panel-right" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-16">
+
+        <!-- HERO SECTION (GLASSMORPHISM) -->
+        <section id="hero" class="relative rounded-3xl overflow-hidden p-6 sm:p-12 lg:p-16 border border-white/60 shadow-xl bg-gradient-to-br from-white/70 via-emerald-50/50 to-cyan-50/60 backdrop-blur-xl">
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-400/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-electric/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-center relative z-10">
+                <!-- Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100/80 border border-brand-200 text-brand-700 text-xs font-bold tracking-wide">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Platform Edukasi Kendaraan Listrik
+                    </div>
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight">
+                        Masa Depan Berkendara dengan <span class="bg-gradient-to-r from-brand-600 via-electric to-accent bg-clip-text text-transparent">Motor Listrik</span>
+                    </h1>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Pahami teknologi ramah lingkungan, alur distribusi daya mesin BLDC, dan hitung estimasi biaya serta durasi pengecasan motor listrik secara akurat dan interaktif.
+                    </p>
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#simulasi" class="inline-flex items-center gap-2 bg-gradient-to-r from-brand-500 to-emerald-600 hover:from-brand-600 hover:to-emerald-700 text-white font-bold text-sm px-6 py-3.5 rounded-2xl shadow-lg shadow-brand-500/25 hover:scale-[1.02] transition-all">
+                            <i data-lucide="battery-charging" class="w-5 h-5"></i> Mulai Simulasi Cas
+                        </a>
+                        <a href="#cara-kerja" class="inline-flex items-center gap-2 bg-white/80 hover:bg-white text-slate-700 font-bold text-sm px-6 py-3.5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                            <i data-lucide="cpu" class="w-5 h-5 text-brand-600"></i> Pelajari Cara Kerja
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Visual Hero Card -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-sm lg:max-w-none">
+                        <div class="glass-card rounded-3xl p-4 shadow-2xl space-y-4">
+                            <div class="relative h-64 rounded-2xl overflow-hidden group">
+                                <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=800&auto=format&fit=crop" alt="Motor Listrik Modern" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent flex items-end p-4">
+                                    <div class="text-white">
+                                        <span class="text-xs font-semibold bg-brand-500 px-2 py-0.5 rounded-md">Zero Emission</span>
+                                        <h3 class="font-bold text-lg mt-1">Nol Emisi, Torsi Instan</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Mini Stat Badges -->
+                            <div class="grid grid-cols-2 gap-3 text-center">
+                                <div class="p-3 rounded-xl bg-slate-50/80 border border-slate-100">
+                                    <span class="block text-xs text-slate-500 font-medium">Efisiensi Energi</span>
+                                    <span class="font-black text-brand-600 text-lg">&gt; 85%</span>
+                                </div>
+                                <div class="p-3 rounded-xl bg-slate-50/80 border border-slate-100">
+                                    <span class="block text-xs text-slate-500 font-medium">Biaya / Km</span>
+                                    <span class="font-black text-electric text-lg">~Rp 180</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CARA KERJA MOTOR LISTRIK -->
+        <section id="cara-kerja" class="space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <h2 class="text-xs font-bold text-brand-600 uppercase tracking-widest">Prinsip Kerja Powertrain</h2>
+                <h3 class="text-2xl sm:text-3xl font-black text-slate-900">Bagaimana Motor Listrik Bekerja?</h3>
+                <p class="text-slate-600 text-sm">Berbeda dengan mesin pembakaran internal (ICE), motor listrik mengubah energi kimia baterai langsung menjadi gaya putar tanpa gesekan piston.</p>
+            </div>
+
+            <!-- Interactive Flow Diagram -->
+            <div class="grid md:grid-cols-4 gap-4">
+                <!-- Step 1: Baterai -->
+                <div onclick="selectStep(1)" id="step-card-1" class="cursor-pointer glass-card p-5 rounded-2xl border-2 border-brand-500 bg-white transition-all hover:shadow-lg space-y-3">
+                    <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center font-bold">
+                        <i data-lucide="battery-pack" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-xs font-extrabold text-brand-600 tracking-wider">TAHAP 1</span>
+                    <h4 class="font-bold text-slate-800">Baterai (BMS)</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Menyimpan arus searah (DC). Dilengkapi *Battery Management System* untuk mengontrol suhu & sel.</p>
+                </div>
+
+                <!-- Step 2: Controller -->
+                <div onclick="selectStep(2)" id="step-card-2" class="cursor-pointer glass-card p-5 rounded-2xl border-2 border-transparent bg-white/70 transition-all hover:shadow-lg space-y-3">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-100 text-cyan-600 flex items-center justify-center font-bold">
+                        <i data-lucide="cpu" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-xs font-extrabold text-slate-400 tracking-wider">TAHAP 2</span>
+                    <h4 class="font-bold text-slate-800">Controller (Inverter)</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Otak kendaraan. Mengatur besaran arus dari tuas gas dan mengubah arus DC menjadi AC multiphasa.</p>
+                </div>
+
+                <!-- Step 3: Motor BLDC -->
+                <div onclick="selectStep(3)" id="step-card-3" class="cursor-pointer glass-card p-5 rounded-2xl border-2 border-transparent bg-white/70 transition-all hover:shadow-lg space-y-3">
+                    <div class="w-12 h-12 rounded-xl bg-lime-100 text-lime-700 flex items-center justify-center font-bold">
+                        <i data-lucide="rotate-cw" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-xs font-extrabold text-slate-400 tracking-wider">TAHAP 3</span>
+                    <h4 class="font-bold text-slate-800">Motor Listrik (BLDC)</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Medan magnet induksi menghasilkan gaya putar (*torque*) secara instan tanpa perlu gigi transmisi rumit.</p>
+                </div>
+
+                <!-- Step 4: Roda & Regenerative -->
+                <div onclick="selectStep(4)" id="step-card-4" class="cursor-pointer glass-card p-5 rounded-2xl border-2 border-transparent bg-white/70 transition-all hover:shadow-lg space-y-3">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center font-bold">
+                        <i data-lucide="disc" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-xs font-extrabold text-slate-400 tracking-wider">TAHAP 4</span>
+                    <h4 class="font-bold text-slate-800">Roda & Regene-Braking</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Daya diteruskan ke roda. Saat pengereman, energi kinetik diubah kembali menjadi listrik mengisi baterai.</p>
+                </div>
+            </div>
+
+            <!-- Detail Display Box -->
+            <div id="step-detail-box" class="glass-panel p-6 rounded-2xl border border-brand-200 bg-white/90">
+                <div class="flex items-start gap-4">
+                    <div id="step-icon-detail" class="p-3 bg-brand-100 text-brand-600 rounded-xl shrink-0">
+                        <i data-lucide="battery-charging" class="w-6 h-6"></i>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 id="step-title-detail" class="font-bold text-lg text-slate-900">Baterai (BMS) - Sumber Energi Utama</h4>
+                        <p id="step-desc-detail" class="text-sm text-slate-600 leading-relaxed">
+                            Baterai Lithium-ion atau LFP (Lithium Iron Phosphate) menyimpan daya DC berkisar antara 48V hingga 72V. BMS memastikan tidak terjadi *overcharging*, *overheating*, atau *short circuit*.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SIMULASI CAS MOTOR LISTRIK (CORE INTERACTIVE FEATURE) -->
+        <section id="simulasi" class="space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <h2 class="text-xs font-bold text-electric uppercase tracking-widest">Kalkulator & Live Test</h2>
+                <h3 class="text-2xl sm:text-3xl font-black text-slate-900">Simulasi Pengecasan Motor Listrik</h3>
+                <p class="text-slate-600 text-sm">Pilih metode cas, atur kapasitas baterai, dan lihat estimasi biaya serta kecepatan pengisian dayanya.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-start">
+                <!-- Controls Panel -->
+                <div class="lg:col-span-7 glass-card p-6 sm:p-8 rounded-3xl space-y-6 shadow-xl bg-white/90">
+                    
+                    <!-- 1. Pilih Metode Cas -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-3">1. Pilih Metode Pengisian Daya</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="charging-methods">
+                            <!-- Option 1 -->
+                            <button onclick="setMethod('home_slow')" id="method-home_slow" class="method-btn p-3 rounded-2xl border-2 border-brand-500 bg-brand-50/50 text-left transition-all">
+                                <i data-lucide="home" class="w-5 h-5 text-brand-600 mb-2"></i>
+                                <span class="block font-bold text-xs text-slate-800">AC Rumah (Standard)</span>
+                                <span class="block text-[10px] text-slate-500">Daya 450W - 900W</span>
+                            </button>
+                            <!-- Option 2 -->
+                            <button onclick="setMethod('home_fast')" id="method-home_fast" class="method-btn p-3 rounded-2xl border-2 border-slate-200 bg-white text-left hover:border-brand-300 transition-all">
+                                <i data-lucide="zap" class="w-5 h-5 text-electric mb-2"></i>
+                                <span class="block font-bold text-xs text-slate-800">Home Fast Charger</span>
+                                <span class="block text-[10px] text-slate-500">Daya 2.2 kW</span>
+                            </button>
+                            <!-- Option 3 -->
+                            <button onclick="setMethod('spklu')" id="method-spklu" class="method-btn p-3 rounded-2xl border-2 border-slate-200 bg-white text-left hover:border-brand-300 transition-all">
+                                <i data-lucide="charging-station" class="w-5 h-5 text-amber-500 mb-2"></i>
+                                <span class="block font-bold text-xs text-slate-800">SPKLU Fast DC</span>
+                                <span class="block text-[10px] text-slate-500">Daya 3.3 kW - 7 kW</span>
+                            </button>
+                            <!-- Option 4 -->
+                            <button onclick="setMethod('swap')" id="method-swap" class="method-btn p-3 rounded-2xl border-2 border-slate-200 bg-white text-left hover:border-brand-300 transition-all">
+                                <i data-lucide="refresh-cw" class="w-5 h-5 text-lime-600 mb-2"></i>
+                                <span class="block font-bold text-xs text-slate-800">Swap Baterai</span>
+                                <span class="block text-[10px] text-slate-500">Tukar Instant (9 dtk)</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 2. Sliders Input -->
+                    <div class="space-y-5 pt-2">
+                        <!-- Kapasitas Baterai -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label for="battery-cap" class="text-xs font-bold text-slate-700 uppercase">Kapasitas Baterai Motor</label>
+                                <span class="font-black text-brand-600 text-sm" id="battery-cap-val">2.5 kWh</span>
+                            </div>
+                            <input type="range" id="battery-cap" min="1.0" max="5.0" step="0.1" value="2.5" oninput="updateSim()" class="w-full accent-brand-500 cursor-pointer">
+                            <span class="text-[10px] text-slate-400">Rata-rata motor listrik: 1.5 kWh - 3.5 kWh</span>
+                        </div>
+
+                        <!-- Baterai Awal (%) -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label for="battery-start" class="text-xs font-bold text-slate-700 uppercase">Persentase Awal (Saat Ini)</label>
+                                <span class="font-black text-slate-700 text-sm" id="battery-start-val">20%</span>
+                            </div>
+                            <input type="range" id="battery-start" min="0" max="90" step="5" value="20" oninput="updateSim()" class="w-full accent-slate-600 cursor-pointer">
+                        </div>
+
+                        <!-- Target Baterai (%) -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label for="battery-target" class="text-xs font-bold text-slate-700 uppercase">Target Persentase Cas</label>
+                                <span class="font-black text-brand-600 text-sm" id="battery-target-val">100%</span>
+                            </div>
+                            <input type="range" id="battery-target" min="30" max="100" step="5" value="100" oninput="updateSim()" class="w-full accent-brand-500 cursor-pointer">
+                        </div>
+
+                        <!-- Tarif Listrik -->
+                        <div class="pt-2 border-t border-slate-100">
+                            <div class="flex justify-between items-center mb-2">
+                                <label for="tariff" class="text-xs font-bold text-slate-700 uppercase">Tarif Listrik / kWh</label>
+                                <span class="font-bold text-slate-800 text-xs" id="tariff-val">Rp 1.444 / kWh (PLN R1)</span>
+                            </div>
+                            <select id="tariff" onchange="updateSim()" class="w-full p-2.5 rounded-xl border border-slate-200 bg-white text-xs font-semibold text-slate-700 focus:ring-2 focus:ring-brand-500 outline-none">
+                                <option value="1444">PLN Rumah Tangga R1 (Rp 1.444,70 / kWh)</option>
+                                <option value="1700">PLN Rumah Tangga R2/R3 (Rp 1.700 / kWh)</option>
+                                <option value="2468">SPKLU Fast Charging Official (Rp 2.468 / kWh)</option>
+                                <option value="10000">Paket Swap Baterai Flat (Rp 10.000 / Tukar)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simulation Output Display -->
+                <div class="lg:col-span-5 space-y-6">
+                    <!-- Dynamic Visual Battery Status Card -->
+                    <div class="glass-card p-6 rounded-3xl border border-white shadow-xl bg-gradient-to-br from-slate-900 to-slate-800 text-white space-y-6">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-bold tracking-widest text-brand-400 uppercase">Status Pengisian</span>
+                            <span id="charging-badge" class="px-2.5 py-1 rounded-full bg-brand-500/20 text-brand-300 text-[10px] font-extrabold flex items-center gap-1">
+                                <span class="w-2 h-2 rounded-full bg-brand-400 animate-pulse"></span> Standby
+                            </span>
+                        </div>
+
+                        <!-- Visual Battery Box -->
+                        <div class="space-y-2">
+                            <div class="relative w-full h-14 bg-slate-700/80 rounded-2xl p-1.5 border-2 border-slate-600 flex items-center">
+                                <!-- Battery Nipple -->
+                                <div class="absolute -right-3 top-1/2 -translate-y-1/2 w-2 h-5 bg-slate-500 rounded-r-md"></div>
+                                
+                                <!-- Progress Fill -->
+                                <div id="battery-progress-bar" class="h-full bg-gradient-to-r from-brand-500 to-electric rounded-xl transition-all duration-500 flex items-center justify-end px-3 font-black text-xs text-white" style="width: 20%;">
+                                    <span id="battery-progress-text">20%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between text-[11px] text-slate-400 px-1 font-mono">
+                                <span>Awal: <strong id="out-start" class="text-slate-200">20%</strong></span>
+                                <span>Target: <strong id="out-target" class="text-brand-400">100%</strong></span>
+                            </div>
+                        </div>
+
+                        <!-- Results Grid -->
+                        <div class="grid grid-cols-2 gap-4 pt-2 border-t border-slate-700/80">
+                            <div>
+                                <span class="block text-[11px] text-slate-400">Estimasi Waktu</span>
+                                <span id="res-time" class="text-2xl font-black text-brand-400">~ 3 jam 20 mnt</span>
+                            </div>
+                            <div>
+                                <span class="block text-[11px] text-slate-400">Estimasi Biaya</span>
+                                <span id="res-cost" class="text-2xl font-black text-electric">Rp 2.888</span>
+                            </div>
+                            <div>
+                                <span class="block text-[11px] text-slate-400">Energi Dibutuhkan</span>
+                                <span id="res-energy" class="text-sm font-bold text-slate-200">2.00 kWh</span>
+                            </div>
+                            <div>
+                                <span class="block text-[11px] text-slate-400">Estimasi Jarak Tambahan</span>
+                                <span id="res-range" class="text-sm font-bold text-accent">+ 50 km</span>
+                            </div>
+                        </div>
+
+                        <!-- Action Button to Test Animation -->
+                        <button onclick="startSimAnimation()" class="w-full py-3 rounded-xl bg-gradient-to-r from-brand-500 to-electric hover:from-brand-600 hover:to-electric/90 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-brand-500/20 transition-all">
+                            <i data-lucide="play" class="w-4 h-4 fill-current"></i> Jalankan Simulasi Animasi
+                        </button>
+                    </div>
+
+                    <!-- Comparison Callout -->
+                    <div class="glass-panel p-5 rounded-2xl border border-brand-200 flex items-center gap-4 bg-white/80">
+                        <div class="w-10 h-10 rounded-xl bg-lime-100 text-lime-700 flex items-center justify-center shrink-0">
+                            <i data-lucide="leaf" class="w-5 h-5"></i>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Bandingkan: Dengan energi yang sama, motor bensin membutuhkan sekitar **1,2 Liter Pertalite (Rp 12.000+)** untuk jarak yang setara!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ & KOMPONEN -->
+        <section id="faq" class="space-y-8 pt-8 border-t border-slate-200/60">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <h2 class="text-xs font-bold text-brand-600 uppercase tracking-widest">Pertanyaan Umum</h2>
+                <h3 class="text-2xl sm:text-3xl font-black text-slate-900">FAQ Motor Listrik</h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+                <div class="glass-card p-5 rounded-2xl space-y-2">
+                    <h4 class="font-bold text-sm text-slate-800 flex items-center gap-2">
+                        <i data-lucide="help-circle" class="w-4 h-4 text-brand-600"></i> Apakah aman mencuci motor listrik saat hujan?
+                    </h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Sangat aman! Komponen baterai, controller, dan soket kabel motor listrik standar telah tersertifikasi minimal IP67 (tahan air & debu).
+                    </p>
+                </div>
+                <div class="glass-card p-5 rounded-2xl space-y-2">
+                    <h4 class="font-bold text-sm text-slate-800 flex items-center gap-2">
+                        <i data-lucide="help-circle" class="w-4 h-4 text-brand-600"></i> Berapa lama umur pakai baterai motor listrik?
+                    </h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Baterai Lithium-ion/LFP modern mampu bertahan antara 1.000 hingga 2.000 siklus pengisian penuh (sekitar 4 - 7 tahun penggunaan harian).
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-20 border-t border-slate-200/80 bg-white/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div>
+                <p class="text-xs font-bold text-slate-700">Oleh Ariel Usman Copyright 2026</p>
+                <p class="text-[11px] text-slate-400 mt-0.5">ElectroRide Hub - Proyek Media Edukasi Motor Listrik Native Interaktif</p>
+            </div>
+
+            <!-- Instagram Link -->
+            <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-brand-50 text-slate-700 hover:text-brand-600 text-xs font-semibold transition border border-slate-200">
+                <i data-lucide="instagram" class="w-4 h-4 text-pink-600"></i>
+                <span>@arielrcun</span>
+            </a>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // -------------------------------------------------------------
+        // 1. SIDEBAR TOGGLE
+        // -------------------------------------------------------------
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const isHidden = sidebar.classList.contains('translate-x-full');
+
+            if (isHidden) {
+                sidebar.classList.remove('translate-x-full');
+                overlay.classList.remove('hidden');
+            } else {
+                sidebar.classList.add('translate-x-full');
+                overlay.classList.add('hidden');
+            }
+        }
+
+        // -------------------------------------------------------------
+        // 2. CARA KERJA POWERTRAIN INTERACTIVE TABS
+        // -------------------------------------------------------------
+        const stepData = {
+            1: {
+                title: "1. Baterai & Battery Management System (BMS)",
+                desc: "Baterai menyimpan daya DC. BMS mengawasi tegangan tiap sel, mencegah korsleting, mengontrol suhu, serta memastikan arus mengalir dengan aman ke controller.",
+                icon: "battery-pack"
+            },
+            2: {
+                title: "2. Controller (Inverter)",
+                desc: "Controller membaca bukaan tuas gas (throttle) pengemudi dan mengubah arus searah (DC) dari baterai menjadi arus bolak-balik (AC 3-Fase) untuk menggerakkan stator motor.",
+                icon: "cpu"
+            },
+            3: {
+                title: "3. Motor Listrik (BLDC / Hub / Mid-Drive)",
+                desc: "Motor Brushless Direct Current (BLDC) menggunakan kumparan elektromagnetik untuk memutar rotor. Menghasilkan torsi maksimal secara instan sejak putaran awal (0 RPM).",
+                icon: "rotate-cw"
+            },
+            4: {
+                title: "4. Roda & Regenerative Braking System",
+                desc: "Daya putar memutar roda belakang. Saat tuas rem ditarik atau gas dilepas, motor berubah fungsi menjadi generator untuk mengisi kembali energi ke baterai.",
+                icon: "disc"
+            }
+        };
+
+        function selectStep(stepNum) {
+            for (let i = 1; i <= 4; i++) {
+                const card = document.getElementById(`step-card-${i}`);
+                if (i === stepNum) {
+                    card.classList.remove('border-transparent', 'bg-white/70');
+                    card.classList.add('border-brand-500', 'bg-white', 'shadow-md');
+                } else {
+                    card.classList.add('border-transparent', 'bg-white/70');
+                    card.classList.remove('border-brand-500', 'bg-white', 'shadow-md');
+                }
+            }
+
+            const detail = stepData[stepNum];
+            document.getElementById('step-title-detail').innerText = detail.title;
+            document.getElementById('step-desc-detail').innerText = detail.desc;
+        }
+
+        // -------------------------------------------------------------
+        // 3. CHARGING SIMULATOR LOGIC
+        // -------------------------------------------------------------
+        let currentMethod = 'home_slow';
+
+        // Power rating in kW
+        const methodPowers = {
+            'home_slow': 0.6,   // 600W AC
+            'home_fast': 2.2,   // 2200W AC
+            'spklu': 4.5,       // Fast DC Charging
+            'swap': 999         // Instant swap
+        };
+
+        function setMethod(methodKey) {
+            currentMethod = methodKey;
+            
+            // Highlight active button
+            const buttons = document.querySelectorAll('.method-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('border-brand-500', 'bg-brand-50/50');
+                btn.classList.add('border-slate-200', 'bg-white');
+            });
+
+            const activeBtn = document.getElementById(`method-${methodKey}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('border-slate-200', 'bg-white');
+                activeBtn.classList.add('border-brand-500', 'bg-brand-50/50');
+            }
+
+            updateSim();
+        }
+
+        function updateSim() {
+            const batteryCap = parseFloat(document.getElementById('battery-cap').value);
+            let startPct = parseInt(document.getElementById('battery-start').value);
+            let targetPct = parseInt(document.getElementById('battery-target').value);
+            const tariff = parseFloat(document.getElementById('tariff').value);
+
+            // Validation: target must be higher than start
+            if (targetPct <= startPct) {
+                targetPct = Math.min(100, startPct + 10);
+                document.getElementById('battery-target').value = targetPct;
+            }
+
+            // Update label UI
+            document.getElementById('battery-cap-val').innerText = `${batteryCap.toFixed(1)} kWh`;
+            document.getElementById('battery-start-val').innerText = `${startPct}%`;
+            document.getElementById('battery-target-val').innerText = `${targetPct}%`;
+
+            // Energy needed calculation
+            const neededPct = (targetPct - startPct) / 100;
+            const neededEnergyKwh = batteryCap * neededPct; // in kWh
+
+            // Time calculation
+            const powerKw = methodPowers[currentMethod];
+            let hoursNeeded = 0;
+            
+            if (currentMethod === 'swap') {
+                hoursNeeded = 0.0025; // ~9 seconds
+            } else {
+                hoursNeeded = neededEnergyKwh / (powerKw * 0.88); // 88% charging efficiency
+            }
+
+            // Cost calculation
+            let totalCost = 0;
+            if (currentMethod === 'swap' && tariff === 10000) {
+                totalCost = 10000; // Flat swap rate
+            } else {
+                totalCost = neededEnergyKwh * tariff;
+            }
+
+            // Estimated Added Range (approx 25 km per kWh for eco motor)
+            const addedRange = Math.round(neededEnergyKwh * 25);
+
+            // Format Output Text
+            document.getElementById('res-energy').innerText = `${neededEnergyKwh.toFixed(2)} kWh`;
+            document.getElementById('res-cost').innerText = `Rp ${Math.round(totalCost).toLocaleString('id-ID')}`;
+            document.getElementById('res-range').innerText = `+ ${addedRange} km`;
+
+            if (currentMethod === 'swap') {
+                document.getElementById('res-time').innerText = " Instant (~9 dtk)";
+            } else {
+                const hrs = Math.floor(hoursNeeded);
+                const mins = Math.round((hoursNeeded - hrs) * 60);
+                if (hrs === 0) {
+                    document.getElementById('res-time').innerText = `~ ${mins} menit`;
+                } else {
+                    document.getElementById('res-time').innerText = `~ ${hrs} jm ${mins} mnt`;
+                }
+            }
+
+            // Update Visual Battery Progress Bar
+            document.getElementById('out-start').innerText = `${startPct}%`;
+            document.getElementById('out-target').innerText = `${targetPct}%`;
+            
+            const bar = document.getElementById('battery-progress-bar');
+            const barText = document.getElementById('battery-progress-text');
+            bar.style.width = `${startPct}%`;
+            barText.innerText = `${startPct}%`;
+        }
+
+        // Live Animation Test
+        let animInterval = null;
+        function startSimAnimation() {
+            if (animInterval) clearInterval(animInterval);
+
+            const startPct = parseInt(document.getElementById('battery-start').value);
+            const targetPct = parseInt(document.getElementById('battery-target').value);
+            const bar = document.getElementById('battery-progress-bar');
+            const barText = document.getElementById('battery-progress-text');
+            const badge = document.getElementById('charging-badge');
+
+            let current = startPct;
+            badge.innerHTML = `<span class="w-2 h-2 rounded-full bg-brand-400 animate-ping"></span> Mengisi Daya...`;
+
+            animInterval = setInterval(() => {
+                current += 1;
+                if (current > targetPct) {
+                    current = targetPct;
+                    clearInterval(animInterval);
+                    badge.innerHTML = `<span class="w-2 h-2 rounded-full bg-brand-400"></span> Selesai (100%)`;
+                }
+                bar.style.width = `${current}%`;
+                barText.innerText = `${current}%`;
+            }, 30);
+        }
+
+        // Run calculation on initial load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateSim();
+        });
+    </script>
+</body>
+</html>
