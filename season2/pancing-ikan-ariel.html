@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="PancingLab - Edukasi Cara Kerja & Simulasi Pancing Ikan Interaktif">
+    <meta name="description" content="Pelajari prinsip fisika & mekanika alat pancing serta rasakan pengalaman simulasi memancing ikan secara interaktif berbasis web.">
+    <meta name="keywords" content="simulasi pancing, cara kerja pancing, fisika pancing, reel pancing, joran, game pancing web">
+    <meta name="author" content="Ariel Usman">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pancinglab.example.com/">
+    <meta property="og:title" content="PancingLab - Cara Kerja & Simulasi Pancing Ikan">
+    <meta property="og:description" content="Edukasi interaktif mekanika alat pancing dan simulator mancing real-time di browser.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="PancingLab - Cara Kerja & Simulasi Pancing Ikan">
+    <meta property="twitter:description" content="Edukasi interaktif mekanika alat pancing dan simulator mancing real-time di browser.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80">
+
+    <title>PancingLab | Cara Kerja & Simulasi Pancing Ikan Interaktif</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ocean: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        sun: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome Icon CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        /* Custom Glassmorphism style */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .glass-dark {
+            background: rgba(12, 74, 110, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-sky-100 via-cyan-50 to-blue-100 text-slate-800 min-h-screen flex flex-col justify-between overflow-x-hidden">
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 glass-nav border-b border-sky-200/50 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Brand Left -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-ocean-600 to-cyan-400 flex items-center justify-center text-white shadow-md shadow-cyan-500/30 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid font-bold fa-fish-fins text-xl"></i>
+                    </div>
+                    <span class="font-extrabold text-xl bg-gradient-to-r from-ocean-800 to-cyan-600 bg-clip-text text-transparent tracking-tight">
+                        PancingLab
+                    </span>
+                </a>
+
+                <!-- Right Menu Desktop -->
+                <div class="hidden md:flex items-center space-x-6 text-sm font-semibold text-slate-700">
+                    <a href="#hero" class="hover:text-ocean-600 transition-colors">Beranda</a>
+                    <a href="#cara-kerja" class="hover:text-ocean-600 transition-colors">Cara Kerja</a>
+                    <a href="#komponen" class="hover:text-ocean-600 transition-colors">Komponen</a>
+                    <a href="#simulasi" class="hover:text-ocean-600 transition-colors">Simulasi</a>
+                    <button id="sidebarToggleBtn" class="bg-ocean-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-ocean-700 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-book-open"></i> Katalogue & Info
+                    </button>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="md:hidden flex items-center gap-2">
+                    <button id="sidebarToggleBtnMobile" class="p-2 text-ocean-700 rounded-lg hover:bg-sky-100">
+                        <i class="fa-solid fa-book-open text-lg"></i>
+                    </button>
+                    <button id="mobileMenuBtn" class="p-2 text-slate-700 hover:text-ocean-600 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden glass-card border-b border-sky-100 px-4 pt-2 pb-4 space-y-2 font-medium">
+            <a href="#hero" class="block py-2 text-slate-700 hover:text-ocean-600">Beranda</a>
+            <a href="#cara-kerja" class="block py-2 text-slate-700 hover:text-ocean-600">Cara Kerja</a>
+            <a href="#komponen" class="block py-2 text-slate-700 hover:text-ocean-600">Komponen</a>
+            <a href="#simulasi" class="block py-2 text-slate-700 hover:text-ocean-600">Simulasi</a>
+        </div>
+    </nav>
+
+    <!-- SIDEBAR DRAWER (OVERLAY) -->
+    <div id="sidebarOverlay" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 hidden transition-opacity duration-300"></div>
+    <aside id="sidebar" class="fixed top-0 right-0 h-full w-80 max-w-full glass-card border-l border-white/50 z-50 transform translate-x-full transition-transform duration-300 ease-in-out p-6 overflow-y-auto flex flex-col justify-between shadow-2xl">
+        <div>
+            <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+                <h3 class="font-bold text-lg text-ocean-900 flex items-center gap-2">
+                    <i class="fa-solid fa-circle-info text-ocean-600"></i> Ensiklopedia Pancing
+                </h3>
+                <button id="closeSidebarBtn" class="text-slate-400 hover:text-slate-700 text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="mt-6 space-y-6">
+                <!-- Quick Fact 1 -->
+                <div class="bg-sky-50/80 p-4 rounded-xl border border-sky-100">
+                    <h4 class="font-bold text-ocean-800 text-sm mb-1">
+                        <i class="fa-solid fa-lightbulb text-sun-500 mr-1"></i> Momen Gaya (Torsi)
+                    </h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Panjang joran pancing memanfaatkan hukum pengumpit (tuas kelas 3). Ujung joran memperbesar kecepatan lemparan umpan, sementara genggaman tangan menjadi titik tumpu.
+                    </p>
+                </div>
+
+                <!-- Catalog Species -->
+                <div>
+                    <h4 class="font-bold text-slate-800 text-sm mb-3">Target Spesies Ikan</h4>
+                    <div class="space-y-2 text-xs">
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/70 shadow-sm">
+                            <span class="font-medium text-slate-700">🐟 Ikan Nila (Kecil)</span>
+                            <span class="text-ocean-600 font-bold">1 - 2 kg</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/70 shadow-sm">
+                            <span class="font-medium text-slate-700">🐠 Gurame (Sedang)</span>
+                            <span class="text-ocean-600 font-bold">3 - 5 kg</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/70 shadow-sm">
+                            <span class="font-medium text-slate-700">🦈 Kakap Merah (Besar)</span>
+                            <span class="text-ocean-600 font-bold">6 - 10 kg</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/70 shadow-sm">
+                            <span class="font-medium text-slate-700">🐋 Monster Laut (Langka)</span>
+                            <span class="text-sun-500 font-bold">> 12 kg</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drag System -->
+                <div class="bg-amber-50/80 p-4 rounded-xl border border-amber-100">
+                    <h4 class="font-bold text-amber-900 text-sm mb-1">
+                        <i class="fa-solid fa-gear mr-1"></i> Sistem Drag Reel
+                    </h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Fungsi *Drag* pada reel pancing bekerja dengan gesekan kampas rem untuk mencegah senar putus saat tarikan ikan terlalu kuat.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-6 border-t border-slate-200 text-center">
+            <span class="text-xs text-slate-500">PancingLab Interactive v2.0</span>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow">
+        
+        <!-- HERO SECTION -->
+        <section id="hero" class="relative py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+            <!-- Background Decorative Glows -->
+            <div class="absolute -top-10 -left-10 w-72 h-72 bg-cyan-300 rounded-full mix-blend-multiply filter blur-3xl opacity-50 pointer-events-none"></div>
+            <div class="absolute top-20 right-0 w-80 h-80 bg-sky-400 rounded-full mix-blend-multiply filter blur-3xl opacity-40 pointer-events-none"></div>
+
+            <div class="relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Container -->
+                <div class="space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-card text-ocean-700 font-semibold text-xs border border-sky-300/50 shadow-sm">
+                        <span class="flex h-2 w-2 rounded-full bg-cyan-500 animate-ping"></span>
+                        Edukasi & Media Pembelajaran Fisika Interaktif
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
+                        Memahami <span class="bg-gradient-to-r from-ocean-600 via-cyan-500 to-teal-500 bg-clip-text text-transparent">Fisika Memancing</span> & Menguasai Tekniknya
+                    </h1>
+
+                    <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Jelajahi bagaimana kombinasi lever mekanis, gaya gesek reel, daya regang senar, dan hukum Archimedes bekerja harmonis saat Anda memancing ikan.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#simulasi" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-ocean-600 to-cyan-500 text-white font-bold text-center shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-gamepad"></i> Coba Simulasi Pancing
+                        </a>
+                        <a href="#cara-kerja" class="w-full sm:w-auto px-6 py-3.5 rounded-xl glass-card text-slate-800 font-bold text-center border border-slate-200 hover:bg-white/90 transition-all flex items-center justify-center gap-2">
+                            Pelajari Fisika <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Glass Image / Graphic Card -->
+                <div class="relative flex justify-center">
+                    <div class="w-full max-w-md glass-card rounded-3xl p-6 shadow-2xl relative overflow-hidden group border border-white">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80" alt="Memancing Ikan" class="w-full h-72 object-cover rounded-2xl shadow-md group-hover:scale-105 transition-transform duration-500">
+                        
+                        <!-- Floating Glass Metric Badge -->
+                        <div class="absolute bottom-10 left-10 right-10 glass-dark text-white p-4 rounded-xl shadow-lg flex items-center justify-between">
+                            <div>
+                                <p class="text-xs text-sky-200 font-medium">Hukum Pengumpit (Tuas)</p>
+                                <p class="text-sm font-bold">Mekanika Joran & Reel</p>
+                            </div>
+                            <div class="w-10 h-10 rounded-lg bg-cyan-500/30 flex items-center justify-center text-cyan-300">
+                                <i class="fa-solid fa-compass-drafting text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1: CARA KERJA & MEKANIKA -->
+        <section id="cara-kerja" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Bagaimana Alat Pancing Bekerja?</h2>
+                <p class="text-slate-600 mt-3">Alat pancing bukan sekadar kayu dan tali, melainkan gabungan dari beberapa prinsip fisika klasik.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="glass-card p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-white">
+                    <div class="w-12 h-12 rounded-xl bg-ocean-100 text-ocean-600 flex items-center justify-center text-2xl font-bold mb-4">
+                        <i class="fa-solid fa-ruler-combined"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">1. Joran (Prinsip Tuas Kelas 3)</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Joran pancing bertindak sebagai pengumpit. Tangan bawah menjadi titik tumpu, tangan atas memberikan gaya beban. Struktur fleksibel joran menyerap hentakan energi kinetic tarikan ikan.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-white">
+                    <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center text-2xl font-bold mb-4">
+                        <i class="fa-solid fa-arrows-spin"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">2. Reel & Roda Gigi (Gear Ratio)</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Reel menggandakan putaran engkol menggunakan *gear ratio* (contoh 6.2:1). Putaran reel memutar spool dan menggulung senar dengan gaya mekanis yang terukur.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-white">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl font-bold mb-4">
+                        <i class="fa-solid fa-water-ladder"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">3. Pelampung & Timah (Archimedes)</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Keseimbangan gaya apung (buoyancy) pelampung dan berat pemberat timah menjaga posisi umpan melayang di kedalaman air yang diinginkan.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: KOMPONEN UTAMA -->
+        <section id="komponen" class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="glass-card rounded-3xl p-8 border border-white shadow-xl">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6 text-center">Komponen Utama & Fungsinya</h2>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
+                    <div class="p-4 rounded-xl bg-sky-50/80 border border-sky-100 hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-rod-asclepius text-2xl text-ocean-600 mb-2"></i>
+                        <h4 class="font-bold text-sm text-slate-800">Joran</h4>
+                        <p class="text-xs text-slate-500 mt-1">Melempar & menyerap beban</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-sky-50/80 border border-sky-100 hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-circle-notch text-2xl text-ocean-600 mb-2"></i>
+                        <h4 class="font-bold text-sm text-slate-800">Reel</h4>
+                        <p class="text-xs text-slate-500 mt-1">Penampung & penggulung senar</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-sky-50/80 border border-sky-100 hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-bacon text-2xl text-ocean-600 mb-2"></i>
+                        <h4 class="font-bold text-sm text-slate-800">Senar (Line)</h4>
+                        <p class="text-xs text-slate-500 mt-1">Penghubung kekuatan daya tarik</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-sky-50/80 border border-sky-100 hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-dharmachakra text-2xl text-ocean-600 mb-2"></i>
+                        <h4 class="font-bold text-sm text-slate-800">Pelampung</h4>
+                        <p class="text-xs text-slate-500 mt-1">Indikator gigitan ikan</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-sky-50/80 border border-sky-100 hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-weight-hanging text-2xl text-ocean-600 mb-2"></i>
+                        <h4 class="font-bold text-sm text-slate-800">Pemberat</h4>
+                        <p class="text-xs text-slate-500 mt-1">Menenggelamkan umpan</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-sky-50/80 border border-sky-100 hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-anchor text-2xl text-ocean-600 mb-2"></i>
+                        <h4 class="font-bold text-sm text-slate-800">Kail (Hook)</h4>
+                        <p class="text-xs text-slate-500 mt-1">Kait penangkap mulut ikan</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: SIMULASI PANCING IKAN INTERAKTIF -->
+        <section id="simulasi" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <span class="text-ocean-600 font-bold text-xs uppercase tracking-wider">Mini Game Interaktif</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Simulator Pancing Ikan Real-Time</h2>
+                <p class="text-slate-600 text-sm mt-2">Lempar umpan, perhatikan indikator pelampung, dan kendalikan tegangan senar (*Tension*) agar senar tidak putus!</p>
+            </div>
+
+            <!-- Game Container Window -->
+            <div class="glass-card rounded-3xl p-4 sm:p-6 shadow-2xl border border-white max-w-4xl mx-auto">
+                
+                <!-- Status & Score Bar -->
+                <div class="flex flex-wrap items-center justify-between gap-4 mb-4 bg-sky-900/90 text-white p-4 rounded-2xl">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-cyan-500/20 border border-cyan-400 flex items-center justify-center text-cyan-300">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-sky-200">Total Tangkapan</p>
+                            <p id="scoreText" class="text-lg font-extrabold text-amber-400">0 Ekor (0 kg)</p>
+                        </div>
+                    </div>
+
+                    <div id="statusBadge" class="px-4 py-1.5 rounded-full bg-sky-800 text-sky-200 font-bold text-xs border border-sky-600">
+                        Siap Lempar Umpan
+                    </div>
+                </div>
+
+                <!-- Canvas Display -->
+                <div class="relative w-full h-80 sm:h-96 rounded-2xl overflow-hidden border border-sky-300 bg-gradient-to-b from-sky-300 via-sky-500 to-sky-800 shadow-inner">
+                    <canvas id="fishingCanvas" class="w-full h-full block"></canvas>
+                    
+                    <!-- Overlay Instruction on Canvas -->
+                    <div id="gameInstruction" class="absolute inset-0 flex flex-col items-center justify-center bg-slate-900/40 text-white p-4 text-center">
+                        <i class="fa-solid fa-hand-pointer text-4xl mb-3 text-cyan-300 animate-bounce"></i>
+                        <h3 class="text-xl font-bold">Klik tombol "Lempar Umpan" untuk memulai</h3>
+                        <p class="text-xs text-sky-200 mt-1">Jaga meteran tegangan senar agar tetap di area hijau saat menggulung ikan!</p>
+                    </div>
+                </div>
+
+                <!-- Controls & Meters -->
+                <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    
+                    <!-- Tension Meter Bar -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs font-bold text-slate-700">
+                            <span>Tegangan Senar (Line Tension)</span>
+                            <span id="tensionValueText" class="text-emerald-600">0%</span>
+                        </div>
+                        <div class="w-full h-5 bg-slate-200 rounded-full overflow-hidden p-0.5 border border-slate-300">
+                            <div id="tensionBar" class="h-full bg-emerald-500 rounded-full transition-all duration-100 w-0"></div>
+                        </div>
+                        <div class="flex justify-between text-[10px] text-slate-400">
+                            <span>Kendor (0%)</span>
+                            <span class="text-emerald-600 font-bold">Aman (20-75%)</span>
+                            <span class="text-red-500 font-bold">Putus (>90%)</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex items-center gap-3 justify-end">
+                        <button id="castBtn" class="flex-1 sm:flex-none px-6 py-3.5 rounded-xl bg-gradient-to-r from-ocean-600 to-cyan-500 text-white font-bold shadow-md hover:opacity-95 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Lempar Umpan
+                        </button>
+                        <button id="reelBtn" disabled class="flex-1 sm:flex-none px-6 py-3.5 rounded-xl bg-slate-300 text-slate-500 font-bold shadow-sm transition-all flex items-center justify-center gap-2 cursor-not-allowed">
+                            <i class="fa-solid fa-rotate-right"></i> Gulung (Tarik)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Fish Catch History Log -->
+                <div class="mt-6 pt-4 border-t border-slate-200">
+                    <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Tangkapan Terakhir:</h4>
+                    <div id="catchLog" class="flex flex-wrap gap-2 text-xs">
+                        <span class="text-slate-400 italic">Belum ada ikan yang ditangkap.</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-16 bg-slate-900 text-slate-300 py-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div>
+                <p class="font-semibold text-white">Oleh Ariel Usman Copyright 2026</p>
+                <p class="text-xs text-slate-400 mt-0.5">Media Pembelajaran & Simulasi Pancing Interaktif</p>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm font-medium hover:text-pink-400 transition-colors bg-slate-800/80 px-4 py-2 rounded-xl border border-slate-700">
+                    <i class="fa-brands fa-instagram text-lg text-pink-500"></i>
+                    <span>@arielrcun</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        // --- MOBILE MENU & SIDEBAR TOGGLE ---
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const sidebarToggleBtn = document.getElementById('sidebarToggleBtn');
+        const sidebarToggleBtnMobile = document.getElementById('sidebarToggleBtnMobile');
+        const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function openSidebar() {
+            sidebar.classList.remove('translate-x-full');
+            sidebarOverlay.classList.remove('hidden');
+        }
+
+        function closeSidebar() {
+            sidebar.classList.add('translate-x-full');
+            sidebarOverlay.classList.add('hidden');
+        }
+
+        sidebarToggleBtn.addEventListener('click', openSidebar);
+        sidebarToggleBtnMobile.addEventListener('click', openSidebar);
+        closeSidebarBtn.addEventListener('click', closeSidebar);
+        sidebarOverlay.addEventListener('click', closeSidebar);
+
+        // --- CANVASS FISHING SIMULATOR LOGIC ---
+        const canvas = document.getElementById('fishingCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Resize Canvas to parent
+        function resizeCanvas() {
+            canvas.width = canvas.parentElement.clientWidth;
+            canvas.height = canvas.parentElement.clientHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        // Game State Variables
+        // States: 'IDLE', 'CASTING', 'WAITING', 'HOOKED', 'REELING', 'CAUGHT'
+        let gameState = 'IDLE';
+        let lineTension = 0; // 0 - 100
+        let reelDistance = 100; // Distance to shore
+        let fishWeight = 0;
+        let fishType = '';
+        let totalCaughtCount = 0;
+        let totalWeightCount = 0;
+
+        // Visual Elements
+        let floatX = 0;
+        let floatY = 0;
+        let targetFloatY = 0;
+        let fishX = -50;
+        let fishY = 0;
+        let rippleRadius = 0;
+
+        // UI DOM Elements
+        const castBtn = document.getElementById('castBtn');
+        const reelBtn = document.getElementById('reelBtn');
+        const tensionBar = document.getElementById('tensionBar');
+        const tensionValueText = document.getElementById('tensionValueText');
+        const statusBadge = document.getElementById('statusBadge');
+        const scoreText = document.getElementById('scoreText');
+        const gameInstruction = document.getElementById('gameInstruction');
+        const catchLog = document.getElementById('catchLog');
+
+        const fishSpecies = [
+            { name: 'Ikan Nila', minWeight: 1, maxWeight: 2, color: '#38bdf8' },
+            { name: 'Ikan Gurame', minWeight: 3, maxWeight: 5, color: '#f59e0b' },
+            { name: 'Kakap Merah', minWeight: 6, maxWeight: 10, color: '#ef4444' },
+            { name: 'Monster Laut', minWeight: 12, maxWeight: 20, color: '#a855f7' }
+        ];
+
+        // Event Listeners for Game Buttons
+        castBtn.addEventListener('click', startCasting);
+        reelBtn.addEventListener('mousedown', startReeling);
+        reelBtn.addEventListener('mouseup', stopReeling);
+        reelBtn.addEventListener('touchstart', (e) => { e.preventDefault(); startReeling(); });
+        reelBtn.addEventListener('touchend', stopReeling);
+
+        let isReeling = false;
+
+        function startCasting() {
+            if (gameState !== 'IDLE') return;
+
+            gameInstruction.classList.add('hidden');
+            gameState = 'CASTING';
+            statusBadge.innerText = 'Melempar Umpan...';
+            statusBadge.className = 'px-4 py-1.5 rounded-full bg-cyan-700 text-cyan-100 font-bold text-xs border border-cyan-500';
+
+            floatX = canvas.width * 0.7;
+            floatY = 0;
+            targetFloatY = canvas.height * 0.55;
+
+            castBtn.disabled = true;
+            castBtn.classList.add('opacity-50', 'cursor-not-allowed');
+
+            setTimeout(() => {
+                gameState = 'WAITING';
+                statusBadge.innerText = 'Menunggu Ikan Memakan Umpan...';
+                // Random time for fish bite (2 - 5 seconds)
+                const biteTime = Math.random() * 3000 + 2000;
+                setTimeout(triggerFishBite, biteTime);
+            }, 1000);
+        }
+
+        function triggerFishBite() {
+            if (gameState !== 'WAITING') return;
+
+            gameState = 'HOOKED';
+            statusBadge.innerText = 'STRIKE! Ikan Memakan Umpan! SEGERA TARIK!';
+            statusBadge.className = 'px-4 py-1.5 rounded-full bg-amber-500 text-white font-bold text-xs border border-amber-300 animate-pulse';
+
+            // Pick random fish
+            const randIndex = Math.floor(Math.random() * fishSpecies.length);
+            const selected = fishSpecies[randIndex];
+            fishType = selected.name;
+            fishWeight = (Math.random() * (selected.maxWeight - selected.minWeight) + selected.minWeight).toFixed(1);
+
+            reelDistance = 100;
+            lineTension = 30;
+
+            // Enable Reel Button
+            reelBtn.disabled = false;
+            reelBtn.className = 'flex-1 sm:flex-none px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold shadow-lg hover:opacity-95 transition-all flex items-center justify-center gap-2 cursor-pointer';
+        }
+
+        function startReeling() {
+            if (gameState === 'HOOKED' || gameState === 'REELING') {
+                isReeling = true;
+                gameState = 'REELING';
+            }
+        }
+
+        function stopReeling() {
+            isReeling = false;
+        }
+
+        // Main Simulation Loop
+        function updateGame() {
+            // Update Float Animation
+            if (gameState === 'CASTING') {
+                floatY += (targetFloatY - floatY) * 0.1;
+            }
+
+            // Hooked & Reeling Tension Physics
+            if (gameState === 'HOOKED' || gameState === 'REELING') {
+                if (isReeling) {
+                    lineTension += 2.2 + (fishWeight * 0.2); // Tension increases faster for heavier fish
+                    reelDistance -= 0.6;
+                } else {
+                    lineTension -= 1.5; // Tension drops when not reeling
+                    reelDistance += 0.2; // Fish pulls line back
+                }
+
+                // Fish struggle force
+                lineTension += (Math.random() - 0.45) * 2;
+
+                // Clamp tension
+                lineTension = Math.max(0, Math.min(100, lineTension));
+
+                // Check Line Snap Condition
+                if (lineTension >= 95) {
+                    gameLost('Senar Putus! Tarikan terlalu kencang!');
+                } else if (reelDistance <= 0) {
+                    gameWon();
+                }
+            } else {
+                lineTension = Math.max(0, lineTension - 2);
+            }
+
+            // Update UI Elements
+            tensionBar.style.width = lineTension + '%';
+            tensionValueText.innerText = Math.round(lineTension) + '%';
+
+            if (lineTension < 70) {
+                tensionBar.className = 'h-full bg-emerald-500 rounded-full transition-all duration-100';
+                tensionValueText.className = 'text-emerald-600';
+            } else if (lineTension < 88) {
+                tensionBar.className = 'h-full bg-amber-500 rounded-full transition-all duration-100';
+                tensionValueText.className = 'text-amber-600 font-bold';
+            } else {
+                tensionBar.className = 'h-full bg-red-600 rounded-full transition-all duration-100 animate-pulse';
+                tensionValueText.className = 'text-red-600 font-extrabold';
+            }
+
+            renderCanvas();
+            requestAnimationFrame(updateGame);
+        }
+
+        function renderCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const waterLevel = canvas.height * 0.45;
+
+            // Draw Sky & Water Background
+            ctx.fillStyle = '#7dd3fc';
+            ctx.fillRect(0, 0, canvas.width, waterLevel);
+
+            ctx.fillStyle = '#0284c7';
+            ctx.fillRect(0, waterLevel, canvas.width, canvas.height - waterLevel);
+
+            // Draw Rod (Joran) on Shore (Left)
+            const rodBaseX = 30;
+            const rodBaseY = waterLevel - 10;
+            const rodTipX = 120;
+            const rodTipY = waterLevel - 80;
+
+            ctx.beginPath();
+            ctx.moveTo(rodBaseX, rodBaseY);
+            ctx.lineTo(rodTipX, rodTipY);
+            ctx.strokeStyle = '#334155';
+            ctx.lineWidth = 5;
+            ctx.stroke();
+
+            // Draw Fishing Line (Senar)
+            if (gameState !== 'IDLE') {
+                ctx.beginPath();
+                ctx.moveTo(rodTipX, rodTipY);
+
+                if (gameState === 'CASTING') {
+                    ctx.lineTo(floatX, floatY);
+                } else {
+                    // Curved tension line
+                    const curveness = (100 - lineTension) * 0.3;
+                    ctx.quadraticCurveTo(
+                        (rodTipX + floatX) / 2, 
+                        (rodTipY + targetFloatY) / 2 + curveness, 
+                        floatX, 
+                        targetFloatY
+                    );
+                }
+
+                ctx.strokeStyle = lineTension > 85 ? '#ef4444' : 'rgba(255, 255, 255, 0.8)';
+                ctx.lineWidth = 1.5;
+                ctx.stroke();
+            }
+
+            // Draw Float (Pelampung)
+            if (gameState !== 'IDLE') {
+                const currentY = gameState === 'CASTING' ? floatY : targetFloatY;
+                
+                // Float Bobbing effect if waiting or hooked
+                let bobble = 0;
+                if (gameState === 'HOOKED' || gameState === 'REELING') {
+                    bobble = Math.sin(Date.now() * 0.02) * 8;
+                } else if (gameState === 'WAITING') {
+                    bobble = Math.sin(Date.now() * 0.005) * 3;
+                }
+
+                // Pelampung Top (Red)
+                ctx.fillStyle = '#ef4444';
+                ctx.beginPath();
+                ctx.arc(floatX, currentY + bobble, 6, Math.PI, 0);
+                ctx.fill();
+
+                // Pelampung Bottom (White)
+                ctx.fillStyle = '#ffffff';
+                ctx.beginPath();
+                ctx.arc(floatX, currentY + bobble, 6, 0, Math.PI);
+                ctx.fill();
+
+                // Ripples in Water
+                if (gameState === 'HOOKED' || gameState === 'REELING') {
+                    rippleRadius = (rippleRadius + 0.5) % 20;
+                    ctx.beginPath();
+                    ctx.arc(floatX, waterLevel + 10, rippleRadius, 0, Math.PI * 2);
+                    ctx.strokeStyle = `rgba(255, 255, 255, ${1 - rippleRadius / 20})`;
+                    ctx.stroke();
+                }
+            }
+        }
+
+        function gameLost(reason) {
+            gameState = 'IDLE';
+            statusBadge.innerText = reason;
+            statusBadge.className = 'px-4 py-1.5 rounded-full bg-red-800 text-red-100 font-bold text-xs border border-red-600';
+            resetControls();
+        }
+
+        function gameWon() {
+            gameState = 'IDLE';
+            totalCaughtCount++;
+            totalWeightCount += parseFloat(fishWeight);
+
+            scoreText.innerText = `${totalCaughtCount} Ekor (${totalWeightCount.toFixed(1)} kg)`;
+            statusBadge.innerText = `Berhasil Menangkap ${fishType} (${fishWeight} kg)!`;
+            statusBadge.className = 'px-4 py-1.5 rounded-full bg-emerald-600 text-white font-bold text-xs border border-emerald-400';
+
+            // Add Log Item
+            if (totalCaughtCount === 1) catchLog.innerHTML = '';
+            
+            const badge = document.createElement('span');
+            badge.className = 'px-3 py-1 rounded-lg bg-sky-100 text-ocean-800 font-semibold shadow-sm border border-sky-200';
+            badge.innerText = `🐟 ${fishType} (${fishWeight} kg)`;
+            catchLog.prepend(badge);
+
+            resetControls();
+        }
+
+        function resetControls() {
+            isReeling = false;
+            castBtn.disabled = false;
+            castBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+
+            reelBtn.disabled = true;
+            reelBtn.className = 'flex-1 sm:flex-none px-6 py-3.5 rounded-xl bg-slate-300 text-slate-500 font-bold shadow-sm transition-all flex items-center justify-center gap-2 cursor-not-allowed';
+        }
+
+        // Start Game Loop
+        requestAnimationFrame(updateGame);
+    </script>
+</body>
+</html>
