@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vine Nostalgia - Menjelajah Era 6 Detik & Meme Klasik</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Nostalgia aplikasi Vine dan tren meme 6 detik yang mengubah budaya internet modern. Jelajahi sejarah, pengaruh, dan kompilasi meme ikonik Vine.">
+    <meta name="keywords" content="Vine app, meme vine, kompilasi vine, sejarah vine, internet nostalgia, meme jadul">
+    <meta name="author" content="Ariel Usman">
+
+    <!-- Open Graph / Facebook / WhatsApp (Preview Link) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Vine Nostalgia - Menjelajah Era 6 Detik & Meme Klasik">
+    <meta property="og:description" content="Ingat 'Roadwork ahead'? Atau 'Look at all those chickens'? Mari nostalgia bersama aplikasi Vine!">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1516251193007-45ef944ab0c6?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vine Nostalgia - Era Meme 6 Detik">
+    <meta name="twitter:description" content="Aplikasi video pendek legendaris sebelum era TikTok. Pelajari sejarah dan meme terpopulernya di sini.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1516251193007-45ef944ab0c6?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        vine: {
+                            DEFAULT: '#00bf8f',
+                            dark: '#008f6b',
+                            light: '#e6f9f4'
+                        },
+                        sunshine: '#ffbd59',
+                        coral: '#ff6b6b'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-amber-50/50 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-amber-200/50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Brand -->
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <span class="bg-vine text-white p-2 rounded-xl text-xl font-black shadow-md shadow-vine/30">
+                        <i class="fa-solid fa-shapes"></i>
+                    </span>
+                    <span class="font-extrabold text-xl tracking-tight text-slate-900">Vine<span class="text-vine">Archive</span></span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-6 font-medium text-slate-600">
+                        <a href="#apa-itu" class="hover:text-vine transition-colors">Apa Itu Vine?</a>
+                        <a href="#sejarah" class="hover:text-vine transition-colors">Sejarah singkat</a>
+                        <a href="#meme-populer" class="hover:text-vine transition-colors">Meme Ikonik</a>
+                        <a href="#warisan" class="hover:text-vine transition-colors">Dampak & Warisan</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-600 hover:bg-amber-100/50 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-amber-200 px-4 pt-2 pb-4 space-y-3 font-medium">
+            <a href="#apa-itu" class="block text-slate-700 hover:text-vine py-1">Apa Itu Vine?</a>
+            <a href="#sejarah" class="block text-slate-700 hover:text-vine py-1">Sejarah Singkat</a>
+            <a href="#meme-populer" class="block text-slate-700 hover:text-vine py-1">Meme Ikonik</a>
+            <a href="#warisan" class="block text-slate-700 hover:text-vine py-1">Dampak & Warisan</a>
+        </div>
+    </nav>
+
+    <!-- Header / Hero Section (Glassmorphism) -->
+    <header class="relative overflow-hidden bg-gradient-to-br from-vine via-teal-500 to-sunshine py-20 lg:py-28 px-4">
+        <!-- Decorative blur background elements -->
+        <div class="absolute -top-10 -left-10 w-72 h-72 bg-white/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-10 -right-10 w-96 h-96 bg-coral/30 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <!-- Glass Card -->
+            <div class="bg-white/20 backdrop-blur-xl border border-white/40 p-8 sm:p-12 rounded-3xl shadow-2xl shadow-black/10">
+                <span class="inline-block px-4 py-1.5 bg-white/30 backdrop-blur-md border border-white/50 text-white rounded-full text-sm font-semibold mb-4 shadow-sm">
+                    <i class="fa-solid fa-clock-rotate-left mr-1"></i> Era Golden Age Internet (2013-2017)
+                </span>
+                <h1 class="text-4xl sm:text-6xl font-black text-white leading-tight mb-6 drop-shadow-sm">
+                    Aplikasi & Meme <span class="text-amber-300 underline decoration-wavy">Vine Jadul</span> Itu Apa Sih?
+                </h1>
+                <p class="text-lg sm:text-xl text-emerald-50 max-w-2xl mx-auto font-medium leading-relaxed mb-8">
+                    Sebelum ada TikTok atau Instagram Reels, ada aplikasi berdurasi 6 detik yang membentuk komedi dan komedi mikro modern di seluruh dunia.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#apa-itu" class="bg-white text-vine-dark hover:bg-amber-100 font-bold px-7 py-3.5 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200">
+                        Mulai Eksplorasi <i class="fa-solid fa-arrow-down ml-1"></i>
+                    </a>
+                    <button onclick="playRandomSound()" class="bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold px-7 py-3.5 rounded-2xl shadow-lg transition-all duration-200 flex items-center gap-2">
+                        <i class="fa-solid fa-volume-high"></i> Bunyi Catchphrase!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Layout (Body + Sidebar) -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Main Content (2 Columns on Desktop) -->
+            <main class="lg:col-span-2 space-y-12">
+                
+                <!-- Section 1: Apa Itu Vine -->
+                <section id="apa-itu" class="bg-white p-6 sm:p-8 rounded-3xl shadow-md border border-amber-100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-vine/10 rounded-xl flex items-center justify-center text-vine font-bold text-xl">
+                            <i class="fa-solid fa-circle-info"></i>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-slate-800">Apa Itu Aplikasi Vine?</h2>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        <strong class="text-slate-900">Vine</strong> adalah aplikasi media sosial berbagi video pendek di mana pengguna dapat merekam dan mengunggah klip video berdurasi maksimum <strong>6 detik</strong> yang berputar secara terus-menerus (looping).
+                    </p>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Fitur utama Vine adalah batasan durasinya. Batasan ini justru mendorong pencipta konten (Viners) untuk sangat kreatif, memotong adegan dengan cepat (snap cut), serta merancang lelucon ringkas tanpa basa-basi.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-emerald-50 p-4 rounded-2xl border border-emerald-100">
+                            <i class="fa-solid fa-stopwatch text-vine text-2xl mb-2"></i>
+                            <h3 class="font-bold text-slate-800">Durasi 6 Detik</h3>
+                            <p class="text-xs text-slate-600 mt-1">Memaksa komedi disampaikan dengan ritme cepat dan presisi tinggi.</p>
+                        </div>
+                        <div class="bg-amber-50 p-4 rounded-2xl border border-amber-100">
+                            <i class="fa-solid fa-rotate text-sunshine text-2xl mb-2"></i>
+                            <h3 class="font-bold text-slate-800">Auto-Looping</h3>
+                            <p class="text-xs text-slate-600 mt-1">Video terus berulang tanpa henti, menciptakan efek punchline berantai.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 2: Sejarah Singkat -->
+                <section id="sejarah" class="bg-white p-6 sm:p-8 rounded-3xl shadow-md border border-amber-100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-coral/10 rounded-xl flex items-center justify-center text-coral font-bold text-xl">
+                            <i class="fa-solid fa-timeline"></i>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-slate-800">Sejarah Ringkas Vine</h2>
+                    </div>
+                    
+                    <div class="relative border-l-2 border-amber-200 ml-4 space-y-6 my-6">
+                        <div class="relative pl-6">
+                            <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-vine"></span>
+                            <span class="text-xs font-bold bg-emerald-100 text-vine-dark px-2 py-0.5 rounded">Juni 2012</span>
+                            <h3 class="font-bold text-slate-800 mt-1">Didirikan</h3>
+                            <p class="text-sm text-slate-600">Didirikan oleh Dom Hofmann, Rus Yusupov, dan Colin Kroll.</p>
+                        </div>
+                        <div class="relative pl-6">
+                            <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-sunshine"></span>
+                            <span class="text-xs font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded">Oktober 2012</span>
+                            <h3 class="font-bold text-slate-800 mt-1">Akuisisi Twitter</h3>
+                            <p class="text-sm text-slate-600">Diakuisisi oleh Twitter senilai sekitar $30 juta sebelum resmi diluncurkan.</p>
+                        </div>
+                        <div class="relative pl-6">
+                            <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-teal-400"></span>
+                            <span class="text-xs font-bold bg-teal-100 text-teal-800 px-2 py-0.5 rounded">2013 - 2015</span>
+                            <h3 class="font-bold text-slate-800 mt-1">Mencapai Puncak Popularitas</h3>
+                            <p class="text-sm text-slate-600">Menjadi aplikasi bertema video terpopuler dan melahirkan kreator papan atas dunia.</p>
+                        </div>
+                        <div class="relative pl-6">
+                            <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-coral"></span>
+                            <span class="text-xs font-bold bg-red-100 text-red-800 px-2 py-0.5 rounded">Januari 2017</span>
+                            <h3 class="font-bold text-slate-800 mt-1">Resmi Ditutup</h3>
+                            <p class="text-sm text-slate-600">Kalah bersaing monetize dan fitur baru dari Instagram, Twitter menghentikan operasional Vine.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 3: Meme Populer Interaktif -->
+                <section id="meme-populer" class="bg-white p-6 sm:p-8 rounded-3xl shadow-md border border-amber-100">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-sunshine/20 rounded-xl flex items-center justify-center text-amber-600 font-bold text-xl">
+                                <i class="fa-solid fa-laugh-beam"></i>
+                            </div>
+                            <h2 class="text-2xl sm:text-3xl font-bold text-slate-800">Koleksi Meme Vine Ikonik</h2>
+                        </div>
+                    </div>
+                    
+                    <p class="text-slate-600 mb-6 text-sm">Klik kartu di bawah ini untuk melihat kutipan atau kutipan audio khas meme tersebut!</p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Card Meme 1 -->
+                        <div onclick="showMemeQuote('Roadwork Ahead?', 'Uh, yeah, I sure hope it does!')" class="cursor-pointer group bg-slate-50 border border-slate-200 hover:border-vine p-4 rounded-2xl transition-all duration-200 hover:shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=80" alt="Roadwork Sign" class="w-full h-36 object-cover rounded-xl mb-3 group-hover:scale-[1.02] transition-transform">
+                            <h3 class="font-bold text-slate-800 group-hover:text-vine">"Roadwork Ahead?"</h3>
+                            <p class="text-xs text-slate-500 mt-1">Oleh Drew Gooden</p>
+                        </div>
+
+                        <!-- Card Meme 2 -->
+                        <div onclick="showMemeQuote('Look at all those...', 'CHICKENS! 🦆 (Padahal Angsa)')" class="cursor-pointer group bg-slate-50 border border-slate-200 hover:border-vine p-4 rounded-2xl transition-all duration-200 hover:shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=600&q=80" alt="Chickens/Geese" class="w-full h-36 object-cover rounded-xl mb-3 group-hover:scale-[1.02] transition-transform">
+                            <h3 class="font-bold text-slate-800 group-hover:text-vine">"Look at all those Chickens!"</h3>
+                            <p class="text-xs text-slate-500 mt-1">Gadis kecil menunjuk kumpul burung</p>
+                        </div>
+
+                        <!-- Card Meme 3 -->
+                        <div onclick="showMemeQuote('9 + 10 = ?', '21! ... You stupid!')" class="cursor-pointer group bg-slate-50 border border-slate-200 hover:border-vine p-4 rounded-2xl transition-all duration-200 hover:shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=600&q=80" alt="Math Meme" class="w-full h-36 object-cover rounded-xl mb-3 group-hover:scale-[1.02] transition-transform">
+                            <h3 class="font-bold text-slate-800 group-hover:text-vine">"What's 9 + 10?"</h3>
+                            <p class="text-xs text-slate-500 mt-1">Meme matematika populer 21</p>
+                        </div>
+
+                        <!-- Card Meme 4 -->
+                        <div onclick="showMemeQuote('Fresh Avocado', 'Fre-sha-voca-do! 🥑')" class="cursor-pointer group bg-slate-50 border border-slate-200 hover:border-vine p-4 rounded-2xl transition-all duration-200 hover:shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=600&q=80" alt="Avocado" class="w-full h-36 object-cover rounded-xl mb-3 group-hover:scale-[1.02] transition-transform">
+                            <h3 class="font-bold text-slate-800 group-hover:text-vine">"Free-shavoca-do"</h3>
+                            <p class="text-xs text-slate-500 mt-1">Salah baca plang restoran Del Taco</p>
+                        </div>
+                    </div>
+
+                    <!-- Modal / Alert Box Interaktif -->
+                    <div id="quote-modal" class="hidden mt-6 bg-amber-100 border border-amber-300 p-4 rounded-2xl text-center animate-fade-in">
+                        <p id="quote-title" class="font-bold text-amber-900 text-sm"></p>
+                        <p id="quote-text" class="text-lg font-extrabold text-vine-dark mt-1 italic"></p>
+                    </div>
+                </section>
+
+                <!-- Section 4: Dampak & Warisan -->
+                <section id="warisan" class="bg-white p-6 sm:p-8 rounded-3xl shadow-md border border-amber-100">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-800 mb-4">Warisan Vine Bagi Internet</h2>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Meskipun Vine sudah tiada, cetak birunya melahirkan tren short-form video modern. Algoritma dan konsep konten <strong class="text-slate-900">TikTok, Youtube Shorts, dan Instagram Reels</strong> hampir seluruhnya mengadopsi DNA komedi cepat yang diciptakan oleh komunitas Vine.
+                    </p>
+                </section>
+
+            </main>
+
+            <!-- Sidebar -->
+            <aside class="space-y-6">
+                
+                <!-- Widget 1: Fakta Cepat -->
+                <div class="bg-gradient-to-br from-emerald-500 to-vine text-white p-6 rounded-3xl shadow-md">
+                    <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-bolt text-sunshine"></i> Fakta Kilat Vine
+                    </h3>
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-sunshine mt-1"></i>
+                            <span>Shawn Mendes pertama kali terkenal lewat cover lagu 6 detik di Vine.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-sunshine mt-1"></i>
+                            <span>Istilah "On Fleek" diciptakan pertama kali oleh pengguna Vine bernama Peaches Monroee.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-sunshine mt-1"></i>
+                            <span>Aplikasi TikTok secara tidak langsung mengisi kekosongan yang ditinggalkan Vine.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Widget 2: Alumni Vine Terkenal -->
+                <div class="bg-white p-6 rounded-3xl shadow-md border border-amber-100">
+                    <h3 class="font-bold text-slate-800 text-lg mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-user-astronaut text-vine"></i> Alumni Vine Terkenal
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-600">SM</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Shawn Mendes</h4>
+                                <p class="text-xs text-slate-500">Penyanyi Internasional</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-600">LD</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Liza Koshy</h4>
+                                <p class="text-xs text-slate-500">Kreator & Aktris</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-600">DG</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Danny Gonzalez</h4>
+                                <p class="text-xs text-slate-500">YouTuber Komedi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Widget 3: Mini Quiz / Interactive Tool -->
+                <div class="bg-amber-100/60 p-6 rounded-3xl border border-amber-200">
+                    <h3 class="font-bold text-slate-800 text-lg mb-2">Seberapa Anak Old Kamu?</h3>
+                    <p class="text-xs text-slate-600 mb-4">Uji pengetahuan nostalgia Vine kamu di sini.</p>
+                    <button onclick="runMiniQuiz()" class="w-full bg-vine hover:bg-vine-dark text-white font-bold py-2.5 rounded-xl text-sm transition-colors shadow-sm">
+                        Mulai Kuis Singkat
+                    </button>
+                    <div id="quiz-result" class="mt-3 text-xs font-bold text-center text-slate-700 hidden"></div>
+                </div>
+
+            </aside>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 mt-auto border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            
+            <!-- Copyright -->
+            <div class="text-sm font-medium">
+                Oleh <span class="text-white font-semibold">Ariel Usman</span> Copyright 2026
+            </div>
+
+            <!-- Social Link Instagram -->
+            <div>
+                <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-amber-400 rounded-full transition-colors text-sm font-semibold border border-slate-700">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                    <span>@arielrcun</span>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Toggle Mobile Menu
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Interactive Meme Quote Display
+        function showMemeQuote(title, quote) {
+            const modal = document.getElementById('quote-modal');
+            const titleEl = document.getElementById('quote-title');
+            const textEl = document.getElementById('quote-text');
+
+            titleEl.textContent = title;
+            textEl.textContent = `"${quote}"`;
+
+            modal.classList.remove('hidden');
+        }
+
+        // Catchphrase Audio Simulation
+        const catchphrases = [
+            "Roadwork ahead? Uh, yeah! I sure hope it does!",
+            "Look at all those chickens!",
+            "Fre-sha-voca-do!",
+            "What's 9 plus 10? 21!",
+            "Hi, thanks for checking in, I'm still a piece of garbage~"
+        ];
+
+        function playRandomSound() {
+            const randomPhrase = catchphrases[Math.floor(Math.random() * catchphrases.length)];
+            
+            // Menggunakan Web Speech API bawaan browser untuk memutar suara interaktif
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(randomPhrase);
+                utterance.lang = 'en-US';
+                utterance.pitch = 1.2;
+                utterance.rate = 1.1;
+                window.speechSynthesis.speak(utterance);
+            }
+            
+            alert(`🔊 [Audio Vine Played]: "${randomPhrase}"`);
+        }
+
+        // Simple Mini Quiz
+        function runMiniQuiz() {
+            const answer = confirm("Apakah kamu ingat meme 'Roadwork Ahead'?");
+            const resultEl = document.getElementById('quiz-result');
+            resultEl.classList.remove('hidden');
+            
+            if(answer) {
+                resultEl.textContent = "🎉 Kamu fix Veteran Internet & Veteran Vine!";
+                resultEl.className = "mt-3 text-xs font-bold text-center text-emerald-600";
+            } else {
+                resultEl.textContent = "🐣 Kamu mungkin generasi Gen-Z / TikTok era!";
+                resultEl.className = "mt-3 text-xs font-bold text-center text-amber-600";
+            }
+        }
+    </script>
+</body>
+</html>
