@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sirkulasi Uang vs Penimbunan Harta | Analisis Ekonomi & Moral</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Eksplorasi mendalam mengenai filosofi sirkulasi uang, pesan moral Surah Al-Humazah, bahaya penimbunan modal, serta dampak ekonomi riil vs spekulasi finansial.">
+    <meta name="keywords" content="Sirkulasi Uang, Ekonomi Islam, Al-Humazah, Financial Freedom, Velocity of Money, Korupsi, Ketimpangan Ekonomi, Ariel Usman">
+    <meta name="author" content="Ariel Usman">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook / WhatsApp Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arielusman.github.io/sirkulasi-uang/">
+    <meta property="og:title" content="Sirkulasi Uang vs Penimbunan Harta - Perspektif Al-Humazah & Ekonomi">
+    <meta property="og:description" content="Mengapa uang harus mengalir seperti sungai, bukan tergenang dalam spekulasi digital. Temukan simulasi interaktif & komparasi ekonominya.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sirkulasi Uang vs Penimbunan Harta">
+    <meta name="twitter:description" content="Filosofi perputaran uang, bahaya bubble finansial, dan penguatan SDM sosial.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        amberGold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                        serif: ['Amiri', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .glass-hero {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(240, 253, 244, 0.65));
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+        .hero-bg {
+            background-image: radial-gradient(circle at 10% 20%, rgba(34, 197, 94, 0.15) 0%, transparent 40%),
+                              radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.15) 0%, transparent 40%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-500 selection:text-white min-h-screen flex flex-col">
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/80 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Brand / Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-amberGold-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid font-bold fa-arrow-rotate-right text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="text-lg font-extrabold bg-gradient-to-r from-brand-800 via-brand-600 to-amberGold-600 bg-clip-text text-transparent">Sirkulasi Uang</span>
+                        <span class="block text-[10px] tracking-wider text-slate-500 uppercase font-semibold">Al-Humazah & Ekonomi</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <div class="hidden md:flex items-center gap-1 font-medium text-slate-600 text-sm">
+                    <a href="#pengantar" class="px-3 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition-colors">Esensi Al-Humazah</a>
+                    <a href="#komparasi" class="px-3 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition-colors">Sungai vs Genangan</a>
+                    <a href="#simulasi" class="px-3 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition-colors">Simulasi Ekonomi</a>
+                    <a href="#sdm" class="px-3 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition-colors">Modal SDM & Sosial</a>
+                    <a href="#bubble" class="px-3 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition-colors">Ancaman Bubble</a>
+                </div>
+
+                <!-- Right Action / Mobile Toggle -->
+                <div class="flex items-center gap-3">
+                    <a href="#simulasi" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-brand-600 rounded-xl shadow-md shadow-brand-600/20 hover:bg-brand-700 active:scale-95 transition-all">
+                        <i class="fa-solid fa-calculator text-xs"></i> Coba Simulasi
+                    </a>
+                    <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 hover:text-brand-600 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white/95 px-4 pt-2 pb-4 space-y-1">
+            <a href="#pengantar" class="block px-3 py-2 rounded-lg text-slate-700 font-medium hover:bg-brand-50 hover:text-brand-600">Esensi Al-Humazah</a>
+            <a href="#komparasi" class="block px-3 py-2 rounded-lg text-slate-700 font-medium hover:bg-brand-50 hover:text-brand-600">Sungai vs Genangan</a>
+            <a href="#simulasi" class="block px-3 py-2 rounded-lg text-slate-700 font-medium hover:bg-brand-50 hover:text-brand-600">Simulasi Ekonomi</a>
+            <a href="#sdm" class="block px-3 py-2 rounded-lg text-slate-700 font-medium hover:bg-brand-50 hover:text-brand-600">Modal SDM & Sosial</a>
+            <a href="#bubble" class="block px-3 py-2 rounded-lg text-slate-700 font-medium hover:bg-brand-50 hover:text-brand-600">Ancaman Bubble</a>
+        </div>
+    </nav>
+
+    <!-- HEADER / HERO SECTION -->
+    <header class="relative hero-bg overflow-hidden py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="glass-hero rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl border border-white/60">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100/80 border border-brand-200 text-brand-800 text-xs font-bold tracking-wide uppercase shadow-sm">
+                            <i class="fa-solid fa-lightbulb text-amberGold-500"></i> Sintesis Spiritual & Makroekonomi
+                        </div>
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
+                            Uang Harus Mengalir Seperti <span class="bg-gradient-to-r from-brand-600 to-amberGold-600 bg-clip-text text-transparent">Sungai</span>, Bukan Mengendap Dalam Genangan
+                        </h1>
+                        <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
+                            Refleksi filosofis dari Surah Al-Humazah tentang bahaya penimbunan harta (hoarding), ketimpangan ekonomi, serta pentingnya mendistribusikan modal untuk sektor produktif riil dan penguatan SDM sosial.
+                        </p>
+
+                        <!-- Quote Card -->
+                        <div class="p-4 rounded-2xl bg-white/80 border-l-4 border-amberGold-500 shadow-sm text-sm text-slate-700 italic flex gap-3">
+                            <i class="fa-solid fa-quote-left text-2xl text-amberGold-400 shrink-0 mt-1"></i>
+                            <div>
+                                "Orang kaya yang sebenarnya bukanlah orang yang menumpuk uang sekian banyak, melainkan yang memiliki nilai dan aliran uang begitu besar serta berhasil mendistribusikannya untuk hal produktif pada masyarakat."
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <a href="#pengantar" class="px-6 py-3 rounded-xl bg-brand-600 text-white font-bold shadow-lg shadow-brand-600/30 hover:bg-brand-700 active:scale-95 transition-all flex items-center gap-2">
+                                <i class="fa-solid fa-book-open text-sm"></i> Mulai Membaca
+                            </a>
+                            <a href="#simulasi" class="px-6 py-3 rounded-xl bg-white text-slate-800 font-bold border border-slate-200 hover:bg-slate-50 shadow-sm transition-all flex items-center gap-2">
+                                <i class="fa-solid fa-sliders text-sm text-brand-600"></i> Uji Simulasi
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Hero Visual Illustration -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative w-full max-w-md">
+                            <div class="absolute -top-6 -left-6 w-24 h-24 bg-brand-300 rounded-full blur-2xl opacity-60"></div>
+                            <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-amberGold-300 rounded-full blur-2xl opacity-60"></div>
+                            
+                            <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white group">
+                                <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80" alt="Sirkulasi Uang dan Ekonomi" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
+                                    <div class="font-serif text-right text-2xl mb-1 text-amberGold-400">وجمع مالاً وعدّده</div>
+                                    <p class="text-xs text-slate-200">"Yang mengumpulkan harta dan menghitung-hitungnya" — QS. Al-Humazah: 2</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT & SIDEBAR CONTAINER -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-1">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+            <!-- MAIN BODY CONTENT -->
+            <div class="lg:col-span-8 space-y-12">
+
+                <!-- SECTION 1: PENGANTAR & AL-HUMAZAH -->
+                <section id="pengantar" class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-2xl bg-amberGold-100 text-amberGold-600 flex items-center justify-center font-bold text-xl">
+                            <i class="fa-solid fa-quran"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-900">Ancaman Al-Humazah & Ekonomi Dunia</h2>
+                            <p class="text-xs text-slate-500">Perspektif Tafsir Sosial & Kecepatan Uang (Velocity of Money)</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-amberGold-50 border border-amberGold-200/60 text-slate-800">
+                        <p class="font-serif text-xl text-right mb-2 text-amberGold-900 leading-relaxed">
+                            الَّذِي جَمَعَ مَالًا وَعَدَّدَهُ ﴿٢﴾ يَحْسَبُ أَنَّ مَالَهُ أَخْلَدَهُ ﴿٣﴾
+                        </p>
+                        <p class="text-sm italic text-slate-700">
+                            "Yang mengumpulkan harta dan menghitung-hitungnya. Dia mengira bahwa hartanya itu dapat mengekalkannya." (QS. Al-Humazah: 2-3)
+                        </p>
+                    </div>
+
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        Sebuah paham penting lahir dari pembacaan mendalam terhadap pesan moral Al-Humazah: <strong>Uang tidak boleh ditimbun atau dikumpulkan dalam satu titik saja.</strong> Tindakan menimbun harta secara berlebihan merupakan pemicu utama korupsi, keserakahan kekuasaan, dan ketimpangan ekonomi berat yang terjadi di berbagai belahan dunia, termasuk Indonesia.
+                    </p>
+
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        Ketika sekelompok orang menahan likuiditas yang seharusnya bersirkulasi di masyarakat, sistem ekonomi lokal tercekik. Uang yang seharusnya menjadi darah penggerak produktivitas justru berubah menjadi komoditas isolatif yang hanya melayani ego pemegangnya.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <h3 class="font-bold text-slate-800 mb-1 flex items-center gap-2">
+                                <i class="fa-solid fa-ban text-red-500"></i> Dampak Penimbunan
+                            </h3>
+                            <p class="text-xs text-slate-600">Menyebabkan Liquidity Trap, mematikan bisnis lokal, mendorong perilaku destruktif koruptif, dan menciptakan krisis ketersediaan modal kerja.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-brand-50 border border-brand-200">
+                            <h3 class="font-bold text-brand-900 mb-1 flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-brand-600"></i> Dampak Sirkulasi
+                            </h3>
+                            <p class="text-xs text-brand-800">Menimbulkan Multiplier Effect, membuka lapangan kerja baru, memperkuat daya beli, serta menciptakan jaringan keselamatan sosial (safety net).</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 2: KOMPARASI SUNGAI VS GENANGAN -->
+                <section id="komparasi" class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-100 text-brand-600 flex items-center justify-center font-bold text-xl">
+                            <i class="fa-solid fa-water"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-900">Metafora Ekonomi: Sungai vs Genangan</h2>
+                            <p class="text-xs text-slate-500">Memahami Aliran Produktif Uang</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Card Sungai -->
+                        <div class="p-6 rounded-2xl bg-gradient-to-br from-brand-50 to-emerald-100/50 border border-brand-200 relative overflow-hidden flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <div class="w-10 h-10 rounded-xl bg-brand-600 text-white flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-water"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-brand-900">Model Sungai Uang</h3>
+                                <p class="text-sm text-slate-700 leading-relaxed">
+                                    Uang mengalir deras atau pelan menyentuh berbagai lapisan masyarakat. Digunakan untuk bertani, beternak, membangun bisnis riil, dan berderma.
+                                </p>
+                            </div>
+                            <ul class="mt-4 text-xs text-brand-800 space-y-2 font-medium">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Menghidupkan lingkungan sekitar</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Tahan krisis krisis finansial global</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Membangun modal manusia riil</li>
+                            </ul>
+                        </div>
+
+                        <!-- Card Genangan -->
+                        <div class="p-6 rounded-2xl bg-gradient-to-br from-slate-100 to-amber-100/40 border border-slate-200 relative overflow-hidden flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <div class="w-10 h-10 rounded-xl bg-amberGold-600 text-white flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-box-archive"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-900">Model Genangan Pasif</h3>
+                                <p class="text-sm text-slate-700 leading-relaxed">
+                                    Uang dikunci dalam aset spekulatif digital/paper demi financial freedom pasif tanpa menyentuh sektor fisik lokal di sekitarnya.
+                                </p>
+                            </div>
+                            <ul class="mt-4 text-xs text-slate-700 space-y-2 font-medium">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-xmark text-red-500"></i> Rentan ledakan bubble ekonomi</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-xmark text-red-500"></i> Menyebabkan keringnya modal lokal</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-xmark text-red-500"></i> Angka kuantitatif tanpa dampak sosial</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 3: SIMULASI INTERAKTIF -->
+                <section id="simulasi" class="bg-gradient-to-br from-slate-900 to-brand-950 text-white rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
+                    <div class="flex items-center justify-between flex-wrap gap-4 border-b border-slate-800 pb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-500/20 border border-brand-500/40 text-brand-400 flex items-center justify-center font-bold text-xl">
+                                <i class="fa-solid fa-sliders"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-bold text-white">Simulasi Dampak Ekonomi Interaktif</h2>
+                                <p class="text-xs text-slate-400">Atur Alokasi Uang Anda & Lihat Dampak Multiplier-nya</p>
+                            </div>
+                        </div>
+                        <span class="text-xs px-3 py-1 rounded-full bg-brand-500/20 text-brand-300 font-mono border border-brand-500/30">Fitur JS Interaktif</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <!-- Controls -->
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between text-sm font-semibold mb-2">
+                                    <label for="slider-sirkulasi" class="text-slate-200">Dialirkan ke Sektor Riil / Lokal</label>
+                                    <span id="val-sirkulasi" class="text-brand-400 font-bold">60%</span>
+                                </div>
+                                <input type="range" id="slider-sirkulasi" min="0" max="100" value="60" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-brand-500">
+                                <p class="text-[11px] text-slate-400 mt-1">Bisnis lokal, pertanian, UMKM, gaji karyawan, filantropi.</p>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between text-sm font-semibold mb-2">
+                                    <label for="slider-penimbunan" class="text-slate-200">Ditimbun / Spekulasi Pasif</label>
+                                    <span id="val-penimbunan" class="text-amberGold-400 font-bold">40%</span>
+                                </div>
+                                <input type="range" id="slider-penimbunan" min="0" max="100" value="40" disabled class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-not-allowed opacity-60">
+                                <p class="text-[11px] text-slate-400 mt-1">Otomatis menyesuaikan (Total Modal: 100%).</p>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-slate-800/80 border border-slate-700 space-y-2">
+                                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider">Input Modal Awal:</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-slate-400 font-bold text-sm">Rp</span>
+                                    <input type="number" id="input-modal" value="100000000" step="10000000" class="bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-white font-mono text-sm w-full focus:outline-none focus:border-brand-500">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Results Dashboard -->
+                        <div class="p-6 rounded-2xl bg-slate-800/60 border border-slate-700/80 space-y-4">
+                            <h3 class="text-sm font-bold uppercase tracking-wider text-slate-300 border-b border-slate-700 pb-2">Proyeksi Dampak Komunitas</h3>
+
+                            <div class="space-y-3">
+                                <div>
+                                    <div class="flex justify-between text-xs text-slate-400 mb-1">
+                                        <span>Nilai Putaran Ekonomi (Velocity x2.5):</span>
+                                        <span id="res-velocity" class="font-mono text-brand-400 font-bold">Rp 150.000.000</span>
+                                    </div>
+                                    <div class="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                                        <div id="bar-velocity" class="bg-brand-500 h-full transition-all duration-300" style="width: 60%"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between text-xs text-slate-400 mb-1">
+                                        <span>Potensi Lapangan Kerja / Resiliensi:</span>
+                                        <span id="res-dampak" class="font-bold text-slate-200">Tinggi (Sangat Baik)</span>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between text-xs text-slate-400 mb-1">
+                                        <span>Kerentanan Terhadap Bubble Crisis:</span>
+                                        <span id="res-risiko" class="font-bold text-emerald-400">Rendah</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="status-box" class="p-3 rounded-xl bg-brand-900/50 border border-brand-500/30 text-xs text-brand-200 leading-relaxed">
+                                <i class="fa-solid fa-circle-info mr-1 text-brand-400"></i>
+                                <span id="status-text">Mayoritas dana Anda mengalir dan menggerakkan kehidupan sosial nyata di sekitar.</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 4: MODAL SDM & SOSIAL -->
+                <section id="sdm" class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xl">
+                            <i class="fa-solid fa-users-viewfinder"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-900">Memperkuat Kualitas SDM & Modal Sosial</h2>
+                            <p class="text-xs text-slate-500">Kekayaan Sejati Adalah Kapasitas & Jejaring Kerja Sama</p>
+                        </div>
+                    </div>
+
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        Bagaimana cara menambah nilai kekayaan tanpa harus menimbun barang materil? Jawabannya terletak pada <strong>pengembangan Sumber Daya Manusia (SDM) pribadi</strong> dan <strong>Sumber Daya Manusia Sosial</strong>.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                            <div class="w-8 h-8 rounded-lg bg-brand-600 text-white flex items-center justify-center font-bold text-sm">1</div>
+                            <h3 class="font-bold text-slate-800">Kualitas Diri (Kapabilitas)</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Menginvestasikan modal untuk keterampilan, pengetahuan riset, logika bisnis, dan keahlian nyata yang tidak bisa hilang akibat inflasi atau krisis mata uang.
+                            </p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                            <div class="w-8 h-8 rounded-lg bg-amberGold-500 text-white flex items-center justify-center font-bold text-sm">2</div>
+                            <h3 class="font-bold text-slate-800">Network & Silaturahim</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Membangun jaringan kerja sama saling menguntungkan dalam konteks menghasilkan uang, bertukar jasa, atau sekadar menjaga ikatan persaudaraan yang kokoh.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 5: ANCAMAN BUBBLE -->
+                <section id="bubble" class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center font-bold text-xl">
+                            <i class="fa-solid fa-burst"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-900">Ancaman Ledakan Bubble Ekonomi</h2>
+                            <p class="text-xs text-slate-500">Dari Dot-Com, Housing, AI, hingga Saham Komoditas Lokal</p>
+                        </div>
+                    </div>
+
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        Sejarah mencatat berbagai gelembung ekonomi (bubble) yang pecah akibat penumpukan nilai spekulatif tanpa fondasi riil:
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50">
+                            <span class="text-xs font-bold text-slate-400">1999 - 2001</span>
+                            <h4 class="font-bold text-slate-800 text-sm mt-1">Dot-Com / WWW Bubble</h4>
+                            <p class="text-xs text-slate-500 mt-1">Valuasi perusahaan internet melambung tanpa fundamental keuntungan nyata.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50">
+                            <span class="text-xs font-bold text-slate-400">2007 - 2008</span>
+                            <h4 class="font-bold text-slate-800 text-sm mt-1">Housing Subprime Bubble</h4>
+                            <p class="text-xs text-slate-500 mt-1">Penumpukan aset properti spekulatif memicu krisis finansial global.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50">
+                            <span class="text-xs font-bold text-slate-400">Tren Terkini</span>
+                            <h4 class="font-bold text-slate-800 text-sm mt-1">AI & Komoditas Lokal</h4>
+                            <p class="text-xs text-slate-500 mt-1">Saham emas, minyak, sawit di Indonesia yang rentan pergeseran regulasi politik.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-red-50 border border-red-200 text-xs text-red-900 space-y-1">
+                        <p class="font-bold"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Kesimpulan Penting:</p>
+                        <p class="leading-relaxed">
+                            Anak muda yang menumpuk seluruh hartanya di aset spekulatif akan hancur saat bubble meledak. Namun, mereka yang menyebarkan uangnya ke sungai sirkulasi lokal dan safety net keluarga/tetangga akan tetap selamat karena memiliki aset kehidupan yang nyata.
+                        </p>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- SIDEBAR CONTENT -->
+            <aside class="lg:col-span-4 space-y-6">
+
+                <!-- Widget Profile / Konteks -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200/80 space-y-4 sticky top-24">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-200 overflow-hidden border-2 border-brand-500 flex-shrink-0">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Ariel Usman" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-base">Ariel Usman</h3>
+                            <p class="text-xs text-slate-500">Penulis & Inisiator Gagasan</p>
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Gagasan ini ditulis berdasarkan pencermatan teologis Surah Al-Humazah dan analisis praktis dinamika ekonomi lokal vs tren finansial spekulatif anak muda modern.
+                    </p>
+
+                    <hr class="border-slate-100">
+
+                    <!-- Related Topics Menu / Links -->
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Topik Terkait & Navigasi</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>
+                                <a href="#pengantar" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-brand-50 hover:text-brand-700 transition-colors group">
+                                    <span class="text-slate-700 group-hover:text-brand-700 font-medium">Tafsir Al-Humazah</span>
+                                    <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:text-brand-600"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#komparasi" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-brand-50 hover:text-brand-700 transition-colors group">
+                                    <span class="text-slate-700 group-hover:text-brand-700 font-medium">Model Sungai Ekonomi</span>
+                                    <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:text-brand-600"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#simulasi" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-brand-50 hover:text-brand-700 transition-colors group">
+                                    <span class="text-slate-700 group-hover:text-brand-700 font-medium">Simulasi Velocity Money</span>
+                                    <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:text-brand-600"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#sdm" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-brand-50 hover:text-brand-700 transition-colors group">
+                                    <span class="text-slate-700 group-hover:text-brand-700 font-medium">Penguatan SDM & Network</span>
+                                    <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:text-brand-600"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#bubble" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-brand-50 hover:text-brand-700 transition-colors group">
+                                    <span class="text-slate-700 group-hover:text-brand-700 font-medium">Mitigasi Bubble Crises</span>
+                                    <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:text-brand-600"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Callout Quote Box -->
+                    <div class="p-4 rounded-2xl bg-amberGold-50/80 border border-amberGold-200/80 text-xs space-y-2">
+                        <span class="font-bold text-amberGold-900 flex items-center gap-1.5">
+                            <i class="fa-solid fa-hand-holding-heart text-amberGold-600"></i> Kedermawanan Tanpa Syarat
+                        </span>
+                        <p class="text-slate-700 leading-relaxed">
+                            Membangun lapangan pekerjaan dan memastikan keluarga, tetangga, serta sahabat berada dalam safety net ekonomi yang baik adalah bentuk investasi bernilai tertinggi.
+                        </p>
+                    </div>
+
+                    <!-- Social / Connect Badge -->
+                    <div class="pt-2 flex items-center justify-between">
+                        <span class="text-xs text-slate-500 font-medium">Ikuti Diskusi:</span>
+                        <a href="https://instagram.com/arielrcun" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs font-bold shadow-md hover:opacity-90 transition-opacity">
+                            <i class="fa-brands fa-instagram"></i> @arielrcun
+                        </a>
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 border-t border-slate-800 mt-16 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Footer Brand -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-amberGold-500 flex items-center justify-center text-white shadow-md">
+                        <i class="fa-solid fa-arrow-rotate-right text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="text-lg font-extrabold text-white">Sirkulasi Uang</span>
+                        <p class="text-xs text-slate-500">Manifesto Ekonomi Al-Humazah & Resiliensi Sosial</p>
+                    </div>
+                </div>
+
+                <!-- Footer Social Links -->
+                <div class="flex items-center gap-4">
+                    <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-gradient-to-tr hover:from-purple-600 hover:to-pink-600 text-slate-300 hover:text-white flex items-center justify-center transition-all">
+                        <i class="fa-brands fa-instagram text-lg"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-brand-600 text-slate-300 hover:text-white flex items-center justify-center transition-all">
+                        <i class="fa-solid fa-globe text-lg"></i>
+                    </a>
+                </div>
+            </div>
+
+            <hr class="border-slate-800">
+
+            <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>Oleh Ariel Usman Copyright 2026. All Rights Reserved.</p>
+                <div class="flex items-center gap-4">
+                    <a href="#pengantar" class="hover:text-slate-300 transition-colors">Surah Al-Humazah</a>
+                    <span>•</span>
+                    <a href="#simulasi" class="hover:text-slate-300 transition-colors">Simulasi</a>
+                    <span>•</span>
+                    <a href="https://instagram.com/arielrcun" target="_blank" class="hover:text-slate-300 transition-colors flex items-center gap-1">
+                        <i class="fa-brands fa-instagram text-xs"></i> @arielrcun
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.className = 'fa-solid fa-bars text-xl';
+            } else {
+                menuIcon.className = 'fa-solid fa-xmark text-xl';
+            }
+        });
+
+        // Close mobile menu when link clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fa-solid fa-bars text-xl';
+            });
+        });
+
+        // Interactive Simulation Logic
+        const sliderSirkulasi = document.getElementById('slider-sirkulasi');
+        const sliderPenimbunan = document.getElementById('slider-penimbunan');
+        const valSirkulasi = document.getElementById('val-sirkulasi');
+        const valPenimbunan = document.getElementById('val-penimbunan');
+        const inputModal = document.getElementById('input-modal');
+
+        const resVelocity = document.getElementById('res-velocity');
+        const resDampak = document.getElementById('res-dampak');
+        const resRisiko = document.getElementById('res-risiko');
+        const barVelocity = document.getElementById('bar-velocity');
+        const statusText = document.getElementById('status-text');
+
+        function formatIDR(amount) {
+            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(amount);
+        }
+
+        function updateSimulation() {
+            const sirkulasiVal = parseInt(sliderSirkulasi.value);
+            const penimbunanVal = 100 - sirkulasiVal;
+            const modalVal = parseFloat(inputModal.value) || 0;
+
+            sliderPenimbunan.value = penimbunanVal;
+            valSirkulasi.textContent = sirkulasiVal + '%';
+            valPenimbunan.textContent = penimbunanVal + '%';
+
+            // Calculations
+            // Money Velocity Multiplier for circulated money (e.g., 2.5x)
+            const danaSirkulasi = modalVal * (sirkulasiVal / 100);
+            const nilaiPutaran = danaSirkulasi * 2.5;
+
+            resVelocity.textContent = formatIDR(nilaiPutaran);
+            barVelocity.style.width = Math.max(5, sirkulasiVal) + '%';
+
+            // Impact and Risk Assessment
+            if (sirkulasiVal >= 70) {
+                resDampak.textContent = 'Sangat Tinggi (Sangat Baik)';
+                resDampak.className = 'font-bold text-emerald-400';
+                resRisiko.textContent = 'Sangat Rendah';
+                resRisiko.className = 'font-bold text-emerald-400';
+                statusText.textContent = 'Luar Biasa! Uang Anda mengalir deras layaknya sungai, menghidupkan bisnis sekitar, membuka lapangan kerja, dan membangun benteng ekonomi kolektif.';
+            } else if (sirkulasiVal >= 40) {
+                resDampak.textContent = 'Sedang (Cukup Baik)';
+                resDampak.className = 'font-bold text-amberGold-400';
+                resRisiko.textContent = 'Sedang';
+                resRisiko.className = 'font-bold text-amberGold-400';
+                statusText.textContent = 'Seimbang, namun tingkatkan porsi sirkulasi lokal agar tidak terlalu banyak dana yang mengendap pada risiko gelembung spekulatif.';
+            } else {
+                resDampak.textContent = 'Rendah (Kering lokal)';
+                resDampak.className = 'font-bold text-red-400';
+                resRisiko.textContent = 'Sangat Tinggi (Bahaya Bubble)';
+                resRisiko.className = 'font-bold text-red-400';
+                statusText.textContent = 'Peringatan: Mayoritas harta Anda tertahan dalam genangan. Saat terjadi krisis spekulatif, komunitas lokal tidak terlindungi dan harta pasif rentan terdevaluasi.';
+            }
+        }
+
+        sliderSirkulasi.addEventListener('input', updateSimulation);
+        inputModal.addEventListener('input', updateSimulation);
+
+        // Initialize on page load
+        updateSimulation();
+    </script>
+</body>
+</html>
