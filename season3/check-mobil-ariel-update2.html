@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full bg-slate-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Drive Check - Checklist Inspeksi Pagi Mobil</title>
+    
+    <!-- SEO & Open Graph Meta Tags -->
+    <meta name="description" content="Aplikasi checklist harian mandiri untuk memeriksa kondisi mesin, ban, bahan bakar, dan dokumen kendaraan sebelum beraktivitas. Cetak laporan PDF instan.">
+    <meta name="author" content="Ariel Usman">
+    <meta property="og:title" content="Daily Drive Check - Inspeksi Mobil Harian Praktis">
+    <meta property="og:description" content="Cek kondisi mobil Anda setiap pagi dan unduh laporan PDF resmi secara langsung dari perangkat Anda.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                        },
+                        skybrand: {
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- jsPDF & html2canvas Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <style>
+        .glassmorph {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 20px;
+        }
+        
+        /* Menyembunyikan elemen PDF dari tampilan layar normal tapi tetap ada di DOM */
+        #pdf-render-wrapper {
+            position: absolute;
+            left: -9999px;
+            top: -9999px;
+            width: 800px;
+        }
+
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #pdf-template, #pdf-template * {
+                visibility: visible;
+            }
+            #pdf-render-wrapper {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-full font-sans text-slate-800 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 glassmorph border-b border-slate-200/80 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Left: Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 to-skybrand-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
+                        <i class="fa-solid fa-car-on text-xl"></i>
+                    </div>
+                    <span class="font-bold text-xl tracking-tight bg-gradient-to-r from-brand-600 to-skybrand-600 bg-clip-text text-transparent">
+                        DailyDrive Check
+                    </span>
+                </div>
+
+                <!-- Right: Desktop Navigation Menu -->
+                <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                    <a href="#hero" class="text-slate-600 hover:text-brand-600 transition">Beranda</a>
+                    <a href="#form-inspection" class="text-slate-600 hover:text-brand-600 transition">Form Checklist</a>
+                    <a href="#summary" class="text-slate-600 hover:text-brand-600 transition">Ringkasan</a>
+                    <a href="#tips" class="text-slate-600 hover:text-brand-600 transition">Tips Perawatan</a>
+                    <button onclick="document.getElementById('form-inspection').scrollIntoView({behavior: 'smooth'})" class="bg-brand-500 hover:bg-brand-600 text-white px-4 py-2 rounded-lg font-semibold shadow-md shadow-brand-500/20 transition duration-200">
+                        Mulai Cek
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 border-b border-slate-200 px-4 pt-2 pb-4 space-y-2 text-sm font-medium">
+            <a href="#hero" class="block py-2 text-slate-600 hover:text-brand-600">Beranda</a>
+            <a href="#form-inspection" class="block py-2 text-slate-600 hover:text-brand-600">Form Checklist</a>
+            <a href="#summary" class="block py-2 text-slate-600 hover:text-brand-600">Ringkasan</a>
+            <a href="#tips" class="block py-2 text-slate-600 hover:text-brand-600">Tips Perawatan</a>
+        </div>
+    </nav>
+
+    <!-- HEADER / HERO SECTION -->
+    <header id="hero" class="relative overflow-hidden bg-gradient-to-br from-emerald-100 via-sky-50 to-amber-50 py-12 md:py-20 border-b border-slate-200">
+        <div class="absolute -top-24 -left-20 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-skybrand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-12 gap-8 items-center">
+                <!-- Hero Text -->
+                <div class="md:col-span-7 space-y-6 text-center md:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-white/80 border border-brand-500/30 px-3 py-1.5 rounded-full text-xs font-semibold text-brand-700 shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-brand-500 animate-ping"></span>
+                        <span>Sistem Inspeksi Mandiri Setiap Pagi</span>
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                        Pastikan Perjalanan Aman & Nyaman Sebelum Meluncur
+                    </h1>
+                    <p class="text-slate-600 text-base sm:text-lg max-w-xl mx-auto md:mx-0">
+                        Pemeriksaan rutin suara mesin, ban, hingga dokumen kendaraan. Dapatkan laporan PDF otomatis dengan timestamp waktu nyata.
+                    </p>
+                    
+                    <!-- Realtime Clock Widget -->
+                    <div class="p-4 rounded-2xl glassmorph shadow-md inline-block max-w-full">
+                        <div class="flex items-center justify-center md:justify-start space-x-4">
+                            <div class="text-brand-600 text-2xl sm:text-3xl">
+                                <i class="fa-regular fa-clock"></i>
+                            </div>
+                            <div class="text-left">
+                                <div id="live-time" class="text-xl sm:text-2xl font-bold font-mono text-slate-900">00:00:00 WITA</div>
+                                <div id="live-date" class="text-xs sm:text-sm text-slate-500 font-medium">Jumat, 21 Agustus 2026</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image Card -->
+                <div class="md:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md p-3 bg-white/60 rounded-3xl shadow-xl glassmorph border border-white">
+                        <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" alt="Inspeksi Mobil" class="w-full h-64 object-cover rounded-2xl shadow-inner">
+                        <div class="absolute bottom-6 left-6 right-6 p-4 bg-white/90 rounded-xl shadow-lg backdrop-blur-md border border-slate-100 flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-solid fa-shield-halved text-brand-500 text-2xl"></i>
+                                <div>
+                                    <p class="text-xs text-slate-500">Status Keamanan</p>
+                                    <p class="text-sm font-bold text-slate-800">Standar Keselamatan OK</p>
+                                </div>
+                            </div>
+                            <span class="text-xs bg-brand-100 text-brand-700 font-bold px-2.5 py-1 rounded-md">V1.0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN BODY CONTENT -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <div class="grid lg:grid-cols-12 gap-8">
+            
+            <!-- FORM CHECKLIST (LEFT/MAIN COLUMN) -->
+            <section id="form-inspection" class="lg:col-span-8 space-y-8">
+                <form id="checklist-form" onsubmit="event.preventDefault();" class="space-y-6">
+                    
+                    <!-- SECTION 1: DATA PEMILIK & KENDARAAN -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 space-y-4">
+                        <div class="flex items-center space-x-3 pb-3 border-b border-slate-100">
+                            <span class="w-8 h-8 bg-sky-100 text-sky600 rounded-lg flex items-center justify-center font-bold text-sm">1</span>
+                            <h2 class="text-lg font-bold text-slate-900">Identitas Pemilik & Kendaraan</h2>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-600 mb-1">Nama Pemilik / Pengemudi *</label>
+                                <input type="text" id="owner_name" required placeholder="Contoh: Ariel Usman" class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-600 mb-1">Tipe & Merk Mobil *</label>
+                                <input type="text" id="car_type" required placeholder="Contoh: Honda HR-V / Toyota Innova" class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-600 mb-1">Nomor Plat Mobil</label>
+                                <input type="text" id="car_plate" placeholder="Contoh: DD 1234 XX" class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition uppercase">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-600 mb-1">Kilometer Saat Ini (KM)</label>
+                                <input type="number" id="car_km" placeholder="Contoh: 45200" class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: CHECKLIST ITEM INSPEKSI -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 space-y-6">
+                        <div class="flex items-center space-x-3 pb-3 border-b border-slate-100">
+                            <span class="w-8 h-8 bg-brand-100 text-brand-600 rounded-lg flex items-center justify-center font-bold text-sm">2</span>
+                            <h2 class="text-lg font-bold text-slate-900">Point Inspection Checklist</h2>
+                        </div>
+
+                        <!-- Grid Checklist Items -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            
+                            <!-- 1. Engine Sound -->
+                            <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white transition space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-semibold text-sm text-slate-800"><i class="fa-solid fa-car-battery text-amber-500 mr-2"></i>Suara Mesin</span>
+                                    <span class="text-xs text-slate-400">Halus / Kasar</span>
+                                </div>
+                                <select id="check_engine" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-xs font-medium focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                    <option value="Normal / Halus">✅ Normal / Halus</option>
+                                    <option value="Ada Suara Aneh">⚠️ Ada Suara Aneh/Bising</option>
+                                    <option value="Kasar / Butuh Service">❌ Kasar / Perlu Servis</option>
+                                </select>
+                            </div>
+
+                            <!-- 2. Lights Check -->
+                            <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white transition space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-semibold text-sm text-slate-800"><i class="fa-solid fa-lightbulb text-amber-400 mr-2"></i>Lampu Utama & Sein</span>
+                                    <span class="text-xs text-slate-400">Fungsi</span>
+                                </div>
+                                <select id="check_lights" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-xs font-medium focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                    <option value="Semua Lampu Menyala">✅ Semua Lampu Menyala</option>
+                                    <option value="Salah Satu Mati">⚠️ Salah Satu Mati</option>
+                                    <option value="Lampu Utama Mati">❌ Lampu Utama Mati</option>
+                                </select>
+                            </div>
+
+                            <!-- 3. Tire Condition -->
+                            <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white transition space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-semibold text-sm text-slate-800"><i class="fa-solid fa-circle-notch text-slate-700 mr-2"></i>Kondisi Ban & Tekanan</span>
+                                    <span class="text-xs text-slate-400">4 Ban + Cadangan</span>
+                                </div>
+                                <select id="check_tires" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-xs font-medium focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                    <option value="Tekanan Baik & Tebal">✅ Tekanan Baik & Tebal</option>
+                                    <option value="Kurang Angin">⚠️ Kurang Angin</option>
+                                    <option value="Ban Botak / Bocor">❌ Ban Botak / Bocor</option>
+                                </select>
+                            </div>
+
+                            <!-- 4. Fuel Level -->
+                            <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white transition space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-semibold text-sm text-slate-800"><i class="fa-solid fa-gas-pump text-red-500 mr-2"></i>Jumlah Bensin</span>
+                                    <span class="text-xs text-slate-400">Kapasitas Tangki</span>
+                                </div>
+                                <select id="check_fuel" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-xs font-medium focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                    <option value="Penuh (Full Tank)">✅ Penuh (Full Tank)</option>
+                                    <option value="Cukup (Setengah Tangki)">🟡 Cukup (Setengah)</option>
+                                    <option value="Hampir Habis (RESERVE)">❌ Hampir Habis</option>
+                                </select>
+                            </div>
+
+                            <!-- 5. Radio & Head Unit -->
+                            <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white transition space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-semibold text-sm text-slate-800"><i class="fa-solid fa-radio text-sky-500 mr-2"></i>Radio & Multi-Media</span>
+                                    <span class="text-xs text-slate-400">Hiburan</span>
+                                </div>
+                                <select id="check_radio" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-xs font-medium focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                    <option value="Berfungsi Normal">✅ Berfungsi Normal</option>
+                                    <option value="Audio Mati / Redup">⚠️ Audio Bermasalah</option>
+                                </select>
+                            </div>
+
+                            <!-- 6. Document Check -->
+                            <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white transition space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-semibold text-sm text-slate-800"><i class="fa-solid fa-id-card text-emerald-600 mr-2"></i>STNK & SIM Cadangan</span>
+                                    <span class="text-xs text-slate-400">Dokumen Lengkap</span>
+                                </div>
+                                <select id="check_docs" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-xs font-medium focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                    <option value="Lengkap Ada di Mobil">✅ Lengkap (STNK / SIM)</option>
+                                    <option value="Tidak Pembawa STNK">❌ Tidak Ada STNK</option>
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: FOTO DOKUMENTASI (LUAR & DALAM) -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 space-y-4">
+                        <div class="flex items-center space-x-3 pb-3 border-b border-slate-100">
+                            <span class="w-8 h-8 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center font-bold text-sm">3</span>
+                            <h2 class="text-lg font-bold text-slate-900">Dokumentasi Foto Fisik Mobil</h2>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Foto Luar -->
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-600 mb-2">Foto Eksterior / Luar Mobil</label>
+                                <div class="border-2 border-dashed border-slate-300 hover:border-brand-500 rounded-xl p-4 text-center cursor-pointer transition bg-slate-50 relative group">
+                                    <input type="file" id="photo_ext" accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" onchange="previewImage(event, 'preview_ext')">
+                                    <div class="space-y-1">
+                                        <i class="fa-solid fa-camera text-2xl text-slate-400 group-hover:text-brand-500 transition"></i>
+                                        <p class="text-xs text-slate-500 font-medium">Klik untuk upload foto luar</p>
+                                    </div>
+                                </div>
+                                <div id="preview_ext_container" class="mt-3 hidden">
+                                    <img id="preview_ext" src="" alt="Preview Eksterior" class="w-full h-36 object-cover rounded-xl border border-slate-200 shadow-sm">
+                                </div>
+                            </div>
+
+                            <!-- Foto Dalam -->
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-600 mb-2">Foto Interior / Dalam Mobil</label>
+                                <div class="border-2 border-dashed border-slate-300 hover:border-brand-500 rounded-xl p-4 text-center cursor-pointer transition bg-slate-50 relative group">
+                                    <input type="file" id="photo_int" accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" onchange="previewImage(event, 'preview_int')">
+                                    <div class="space-y-1">
+                                        <i class="fa-solid fa-couch text-2xl text-slate-400 group-hover:text-brand-500 transition"></i>
+                                        <p class="text-xs text-slate-500 font-medium">Klik untuk upload foto dalam</p>
+                                    </div>
+                                </div>
+                                <div id="preview_int_container" class="mt-3 hidden">
+                                    <img id="preview_int" src="" alt="Preview Interior" class="w-full h-36 object-cover rounded-xl border border-slate-200 shadow-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ACTION BUTTONS -->
+                    <div class="flex flex-col sm:flex-row items-center gap-4 pt-2">
+                        <button type="button" onclick="generateReport()" class="w-full sm:w-1/2 py-3.5 px-6 bg-brand-500 hover:bg-brand-600 text-white rounded-xl font-bold shadow-lg shadow-brand-500/25 transition duration-200 flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span>Proses Hasil Checklist</span>
+                        </button>
+                        <button type="button" onclick="downloadPDF()" class="w-full sm:w-1/2 py-3.5 px-6 bg-skybrand-500 hover:bg-skybrand-600 text-white rounded-xl font-bold shadow-lg shadow-skybrand-500/25 transition duration-200 flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            <span>Cetak Laporan PDF</span>
+                        </button>
+                    </div>
+
+                </form>
+            </section>
+
+            <!-- SIDEBAR / SUMMARY & HELPFUL INFO (RIGHT COLUMN) -->
+            <aside class="lg:col-span-4 space-y-6">
+                
+                <!-- SUMMARY CARD -->
+                <div id="summary" class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 sticky top-24 space-y-4">
+                    <h3 class="text-base font-bold text-slate-900 border-b border-slate-100 pb-3 flex items-center justify-between">
+                        <span>Ringkasan Hasil Inspeksi</span>
+                        <i class="fa-solid fa-clipboard-check text-brand-500"></i>
+                    </h3>
+
+                    <!-- Status Indicator -->
+                    <div class="text-center py-4 bg-slate-50 rounded-xl border border-slate-100">
+                        <span class="text-xs font-medium text-slate-500 block mb-1">Status Kelayakan Kendaraan</span>
+                        <div id="status-badge" class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-slate-200 text-slate-700">
+                            Belum Di-Proses
+                        </div>
+                    </div>
+
+                    <!-- Live Details List -->
+                    <div class="space-y-2.5 text-xs text-slate-600">
+                        <div class="flex justify-between py-1 border-b border-slate-100">
+                            <span>Waktu Cek:</span>
+                            <span id="sum-time" class="font-semibold text-slate-800">-</span>
+                        </div>
+                        <div class="flex justify-between py-1 border-b border-slate-100">
+                            <span>Pemilik:</span>
+                            <span id="sum-owner" class="font-semibold text-slate-800">-</span>
+                        </div>
+                        <div class="flex justify-between py-1 border-b border-slate-100">
+                            <span>Mobil / Plat:</span>
+                            <span id="sum-car" class="font-semibold text-slate-800">-</span>
+                        </div>
+                        <div class="flex justify-between py-1 border-b border-slate-100">
+                            <span>Bensin:</span>
+                            <span id="sum-fuel" class="font-semibold text-slate-800">-</span>
+                        </div>
+                        <div class="flex justify-between py-1">
+                            <span>Kondisi Ban:</span>
+                            <span id="sum-tire" class="font-semibold text-slate-800">-</span>
+                        </div>
+                    </div>
+
+                    <!-- TIPS ACCORDION / WIDGET -->
+                    <div id="tips" class="mt-6 pt-4 border-t border-slate-100 space-y-3">
+                        <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider">Tips Perawatan Pagi</h4>
+                        <div class="p-3 bg-amber-50 rounded-xl border border-amber-200/60 text-xs text-amber-800 space-y-1">
+                            <p class="font-semibold"><i class="fa-solid fa-lightbulb mr-1"></i> Panaskan Mesin 1-2 Menit</p>
+                            <p class="text-slate-600">Mobil modern tidak perlu dipanaskan terlalu lama. Cukup tunggu hingga indikator oli dan RPM mobil stabil.</p>
+                        </div>
+                        <div class="p-3 bg-sky-50 rounded-xl border border-sky-200/60 text-xs text-sky-800 space-y-1">
+                            <p class="font-semibold"><i class="fa-solid fa-droplet mr-1"></i> Cek Tetesan Oli Di Bawah</p>
+                            <p class="text-slate-600">Perhatikan lantai garasi sebelum mundur. Pastikan tidak ada kebocoran cairan oli / radiator.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- RENDER WRAPPER FOR PDF GENERATION -->
+    <div id="pdf-render-wrapper">
+        <div id="pdf-template" class="p-8 bg-white text-slate-900 border border-slate-200 font-sans">
+            <!-- Header PDF -->
+            <div class="flex justify-between items-center border-b-2 border-brand-500 pb-4 mb-6">
+                <div>
+                    <h1 class="text-2xl font-bold text-brand-600 tracking-tight">LAPORAN CHECKLIST MOBIL HARIAN</h1>
+                    <p class="text-xs text-slate-500">Self Inspection Drive System • DailyDrive Check</p>
+                </div>
+                <div class="text-right">
+                    <p id="pdf-date" class="text-sm font-semibold text-slate-800"></p>
+                    <p id="pdf-time" class="text-xs text-slate-500"></p>
+                </div>
+            </div>
+
+            <!-- Content Data -->
+            <div class="grid grid-cols-2 gap-4 mb-6 bg-slate-50 p-4 rounded-lg text-xs">
+                <div>
+                    <p class="text-slate-500">Nama Pemilik:</p>
+                    <p id="pdf-owner" class="font-bold text-slate-800 text-sm"></p>
+                </div>
+                <div>
+                    <p class="text-slate-500">Tipe & Merk Mobil:</p>
+                    <p id="pdf-car" class="font-bold text-slate-800 text-sm"></p>
+                </div>
+                <div>
+                    <p class="text-slate-500">Plat Nomor Kendaraan:</p>
+                    <p id="pdf-plate" class="font-bold text-slate-800 text-sm"></p>
+                </div>
+                <div>
+                    <p class="text-slate-500">Kilometer Saat Ini:</p>
+                    <p id="pdf-km" class="font-bold text-slate-800 text-sm"></p>
+                </div>
+            </div>
+
+            <!-- Table Items -->
+            <table class="w-full text-xs text-left mb-6 border-collapse">
+                <thead>
+                    <tr class="bg-slate-100 border-b border-slate-300">
+                        <th class="p-2 font-bold">Komponen / Item Inspection</th>
+                        <th class="p-2 font-bold">Status Condition</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200">
+                    <tr><td class="p-2">Suara & Performa Mesin</td><td id="pdf-c-engine" class="p-2 font-semibold"></td></tr>
+                    <tr><td class="p-2">Lampu Utama & Sein</td><td id="pdf-c-lights" class="p-2 font-semibold"></td></tr>
+                    <tr><td class="p-2">Tekanan & Kondisi Ban</td><td id="pdf-c-tires" class="p-2 font-semibold"></td></tr>
+                    <tr><td class="p-2">Jumlah Bensin / Bahan Bakar</td><td id="pdf-c-fuel" class="p-2 font-semibold"></td></tr>
+                    <tr><td class="p-2">Radio / Head Unit</td><td id="pdf-c-radio" class="p-2 font-semibold"></td></tr>
+                    <tr><td class="p-2">Dokumen STNK & SIM</td><td id="pdf-c-docs" class="p-2 font-semibold"></td></tr>
+                </tbody>
+            </table>
+
+            <!-- Photos Section PDF -->
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <div>
+                    <p class="text-xs font-bold text-slate-700 mb-1">Dokumentasi Eksterior:</p>
+                    <div class="h-36 bg-slate-100 border border-slate-200 rounded flex items-center justify-center overflow-hidden">
+                        <img id="pdf-img-ext" src="" class="h-full w-full object-cover hidden">
+                        <span id="pdf-no-ext" class="text-slate-400 text-xs">Tidak ada foto</span>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-xs font-bold text-slate-700 mb-1">Dokumentasi Interior:</p>
+                    <div class="h-36 bg-slate-100 border border-slate-200 rounded flex items-center justify-center overflow-hidden">
+                        <img id="pdf-img-int" src="" class="h-full w-full object-cover hidden">
+                        <span id="pdf-no-int" class="text-slate-400 text-xs">Tidak ada foto</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer PDF -->
+            <div class="border-t border-slate-200 pt-4 flex justify-between items-center text-xs text-slate-500">
+                <p>Verifikasi Mandiri Oleh Sistem DailyDrive Check</p>
+                <p>Copyright © 2026 Ariel Usman</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-slate-200 py-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-600">
+            <p class="font-medium">Oleh <span class="text-brand-600 font-bold">Ariel Usman</span> Copyright 2026</p>
+            <div class="flex items-center space-x-4">
+                <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-slate-600 hover:text-pink-600 transition font-semibold">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                    <span>@arielrcun</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        // Realtime Clock & Calendar
+        function updateClock() {
+            const now = new Date();
+            const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+            const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            
+            document.getElementById('live-time').innerText = now.toLocaleTimeString('id-ID', timeOptions) + " WITA";
+            document.getElementById('live-date').innerText = now.toLocaleDateString('id-ID', dateOptions);
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Image Preview Handler
+        function previewImage(event, targetId) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.getElementById(targetId);
+                    img.src = e.target.result;
+                    document.getElementById(targetId + '_container').classList.remove('hidden');
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Process Report and Update Sidebar
+        function generateReport() {
+            const owner = document.getElementById('owner_name').value.trim();
+            const car = document.getElementById('car_type').value.trim();
+
+            if (!owner || !car) {
+                alert("Silakan isi Nama Pemilik dan Tipe Mobil terlebih dahulu!");
+                return;
+            }
+
+            const plate = document.getElementById('car_plate').value || "-";
+            const fuel = document.getElementById('check_fuel').value;
+            const tires = document.getElementById('check_tires').value;
+            const engine = document.getElementById('check_engine').value;
+
+            document.getElementById('sum-owner').innerText = owner;
+            document.getElementById('sum-car').innerText = car + " (" + plate + ")";
+            document.getElementById('sum-fuel').innerText = fuel;
+            document.getElementById('sum-tire').innerText = tires;
+            document.getElementById('sum-time').innerText = new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+
+            // Calculate Simple Status
+            const badge = document.getElementById('status-badge');
+            if (engine.includes("Normal") && tires.includes("Baik") && !fuel.includes("Hampir Habis")) {
+                badge.innerText = "SIAP JALAN (AMMAN)";
+                badge.className = "inline-block px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-700";
+            } else {
+                badge.innerText = "PERLU PERHATIAN";
+                badge.className = "inline-block px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-700";
+            }
+
+            alert("Data laporan checklist berhasil diproses! Ringkasan dapat dilihat di panel samping.");
+        }
+
+        // Fixed Download PDF Function
+        async function downloadPDF() {
+            const owner = document.getElementById('owner_name').value.trim();
+            const car = document.getElementById('car_type').value.trim();
+
+            if (!owner || !car) {
+                alert("Silakan isi Nama Pemilik dan Tipe Mobil terlebih dahulu sebelum membuat PDF!");
+                return;
+            }
+
+            // Populate Data to Template
+            document.getElementById('pdf-date').innerText = document.getElementById('live-date').innerText;
+            document.getElementById('pdf-time').innerText = document.getElementById('live-time').innerText;
+            document.getElementById('pdf-owner').innerText = owner;
+            document.getElementById('pdf-car').innerText = car;
+            document.getElementById('pdf-plate').innerText = document.getElementById('car_plate').value || "-";
+            document.getElementById('pdf-km').innerText = (document.getElementById('car_km').value || "0") + " KM";
+
+            document.getElementById('pdf-c-engine').innerText = document.getElementById('check_engine').value;
+            document.getElementById('pdf-c-lights').innerText = document.getElementById('check_lights').value;
+            document.getElementById('pdf-c-tires').innerText = document.getElementById('check_tires').value;
+            document.getElementById('pdf-c-fuel').innerText = document.getElementById('check_fuel').value;
+            document.getElementById('pdf-c-radio').innerText = document.getElementById('check_radio').value;
+            document.getElementById('pdf-c-docs').innerText = document.getElementById('check_docs').value;
+
+            // Handle Images
+            const extSrc = document.getElementById('preview_ext').src;
+            const intSrc = document.getElementById('preview_int').src;
+
+            if (extSrc && extSrc.length > 50) {
+                const pdfExtImg = document.getElementById('pdf-img-ext');
+                pdfExtImg.src = extSrc;
+                pdfExtImg.classList.remove('hidden');
+                document.getElementById('pdf-no-ext').classList.add('hidden');
+            }
+            if (intSrc && intSrc.length > 50) {
+                const pdfIntImg = document.getElementById('pdf-img-int');
+                pdfIntImg.src = intSrc;
+                pdfIntImg.classList.remove('hidden');
+                document.getElementById('pdf-no-int').classList.add('hidden');
+            }
+
+            const element = document.getElementById('pdf-template');
+
+            try {
+                // Check if libraries loaded correctly
+                if (window.jspdf && window.html2canvas) {
+                    const { jsPDF } = window.jspdf;
+                    
+                    const canvas = await html2canvas(element, { 
+                        scale: 2,
+                        useCORS: true,
+                        logging: false
+                    });
+
+                    const imgData = canvas.toDataURL('image/png');
+                    const pdf = new jsPDF('p', 'mm', 'a4');
+                    const pdfWidth = pdf.internal.pageSize.getWidth();
+                    const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+                    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+                    pdf.save(`Laporan_Inspeksi_${owner.replace(/\s+/g, '_')}_${new Date().toISOString().slice(0,10)}.pdf`);
+                } else {
+                    // Fallback to native print if CDN blocked
+                    window.print();
+                }
+            } catch (err) {
+                console.error("PDF Generation Error:", err);
+                // Print fallback for file:// or browser restriction
+                window.print();
+            }
+        }
+    </script>
+</body>
+</html>
