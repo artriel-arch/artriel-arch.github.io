@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolusi Wibu: Pemula, Akut & Dewasa Sehat | Panduan Menikmati Anime Era Baru</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Panduan komprehensif spektrum wibu: Wibu Pemula, Wibu Akut, dan Wibu Dewasa Sehat. Temukan rekomendasi anime, hal yang perlu dihindari, dan cara menikmati anime era baru.">
+    <meta name="keywords" content="wibu pemula, wibu akut, wibu dewasa, rekomendasi anime, anime era baru, panduan anime">
+    <meta name="author" content="Ariel Usman">
+
+    <!-- Open Graph / Facebook / WhatsApp Link Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/evolusi-wibu">
+    <meta property="og:title" content="Evolusi Wibu: Pemula vs Akut vs Dewasa Sehat">
+    <meta property="og:description" content="Pahami fase kultur wibu dan temukan cara terbaik menikmati anime secara bijak di era modern.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Evolusi Wibu: Pemula vs Akut vs Dewasa Sehat">
+    <meta name="twitter:description" content="Navigasi kultur otaku dan panduan menikmati anime era baru secara sehat.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛩️</text></svg>">
+
+    <!-- Tailwind CSS (Tailwhip CDN Setup) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            pink: '#FF6B8B',
+                            purple: '#8A2BE2',
+                            yellow: '#FFD166',
+                            teal: '#06D6A0',
+                            bgLight: '#FFF9FB'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome Icon CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FFF9FB;
+        }
+        /* Custom Glassmorphic Effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-40 w-full glass-nav border-b border-pink-100 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <!-- Logo / Nama Project -->
+                <a href="#" class="flex items-center space-x-2">
+                    <span class="text-2xl">⛩️</span>
+                    <span class="font-extrabold text-xl bg-gradient-to-r from-brand-pink via-purple-600 to-brand-teal bg-clip-text text-transparent">
+                        WibuVerse
+                    </span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-6 text-sm font-semibold text-slate-600">
+                    <a href="#perbandingan" class="hover:text-brand-pink transition-colors">Perbandingan Tipe</a>
+                    <a href="#rekomendasi" class="hover:text-brand-pink transition-colors">Rekomendasi Tontonan</a>
+                    <a href="#hindari" class="hover:text-brand-pink transition-colors">Hal Dihindari</a>
+                    <a href="#era-baru" class="hover:text-brand-pink transition-colors">Era Baru</a>
+                </div>
+
+                <!-- Action Button & Mobile Toggle -->
+                <div class="flex items-center space-x-3">
+                    <button id="openSidebar" class="p-2 rounded-xl bg-pink-100 text-brand-pink hover:bg-pink-200 transition-colors flex items-center space-x-2 text-sm font-bold">
+                        <i class="fa-solid fa-compass"></i>
+                        <span class="hidden sm:inline">Navigasi Cepat</span>
+                    </button>
+                    
+                    <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-600 hover:text-brand-pink">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-pink-100 bg-white/95 px-4 pt-2 pb-4 space-y-2 font-medium">
+            <a href="#perbandingan" class="block py-2 text-slate-700 hover:text-brand-pink">Perbandingan Tipe</a>
+            <a href="#rekomendasi" class="block py-2 text-slate-700 hover:text-brand-pink">Rekomendasi Tontonan</a>
+            <a href="#hindari" class="block py-2 text-slate-700 hover:text-brand-pink">Hal Dihindari</a>
+            <a href="#era-baru" class="block py-2 text-slate-700 hover:text-brand-pink">Era Baru</a>
+        </div>
+    </nav>
+
+    <!-- HERO HEADER (Glassmorphism Modern) -->
+    <header class="relative overflow-hidden py-16 lg:py-24 bg-gradient-to-br from-pink-200 via-purple-100 to-teal-100">
+        <!-- Background Ornaments -->
+        <div class="absolute -top-10 -left-10 w-72 h-72 bg-brand-pink rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+        <div class="absolute -bottom-10 -right-10 w-80 h-80 bg-brand-teal rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center relative z-10">
+            <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-brand-purple mb-6">
+                <span>✨ Spektrum Pop-Kultur Anime Modern</span>
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
+                Evolusi Kultur Wibu:<br>
+                <span class="bg-gradient-to-r from-brand-pink via-purple-600 to-brand-teal bg-clip-text text-transparent">
+                    Pemula, Akut, hingga Dewasa Sehat
+                </span>
+            </h1>
+            
+            <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto mb-8 font-normal leading-relaxed">
+                Menikmati anime bukan lagi sekadar pelarian ekstrem atau tren sesaat. Pahami spektrumnya, hindari jebakan toxic, dan temukan cara menikmati karya di era modern secara bijak.
+            </p>
+
+            <!-- Hero Glass Card Stats -->
+            <div class="glass-card rounded-2xl p-6 max-w-3xl mx-auto shadow-xl grid grid-cols-1 md:grid-cols-3 gap-4 border border-white/50">
+                <div class="text-center p-3">
+                    <div class="text-2xl font-bold text-brand-pink">🌱 Pemula</div>
+                    <div class="text-xs text-slate-500 mt-1">Fase Ekspansi & Rasa Ingin Tahu</div>
+                </div>
+                <div class="text-center p-3 border-y md:border-y-0 md:border-x border-pink-200/50">
+                    <div class="text-2xl font-bold text-purple-600">🌀 Akut</div>
+                    <div class="text-xs text-slate-500 mt-1">Fase Obsesi & Isolasi Sosial</div>
+                </div>
+                <div class="text-center p-3">
+                    <div class="text-2xl font-bold text-brand-teal">🌿 Dewasa Sehat</div>
+                    <div class="text-xs text-slate-500 mt-1">Fase Apresiasi & Keseimbangan Hidup</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+
+        <!-- SECTION 1: PERBANDINGAN TIPE WIBU -->
+        <section id="perbandingan" class="scroll-mt-20">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-slate-900">Perbandingan Spektrum Wibu</h2>
+                <p class="text-slate-500 mt-2">Bagaimana karakteristik dan cara pandang dari masing-masing tipe?</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Wibu Pemula -->
+                <div class="bg-white rounded-2xl p-6 border-2 border-yellow-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-bold rounded-full">Fase 1</span>
+                            <i class="fa-solid fa-seedling text-2xl text-yellow-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Wibu Pemula</h3>
+                        <p class="text-sm text-slate-600 mb-4">Baru mengenal anime dari judul-judul populer yang viral di media sosial.</p>
+                        <ul class="text-sm space-y-2 text-slate-600 mb-6">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-yellow-500 mt-1 mr-2"></i>Menonton anime mainstream (Shonen harian).</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-yellow-500 mt-1 mr-2"></i>Sangat mengandalkan dubbing atau subtitle dasar.</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-yellow-500 mt-1 mr-2"></i>Antusiasme tinggi, sering *posting* kutipan anime.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-yellow-50 p-3 rounded-xl text-xs text-yellow-800 font-semibold">
+                        Karakteristik: Penuh rasa ingin tahu, mudah kagum.
+                    </div>
+                </div>
+
+                <!-- Wibu Akut -->
+                <div class="bg-white rounded-2xl p-6 border-2 border-purple-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs font-bold rounded-full">Fase Toksik/Rawan</span>
+                            <i class="fa-solid fa-biohazard text-2xl text-purple-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Wibu Akut</h3>
+                        <p class="text-sm text-slate-600 mb-4">Menjadikan anime seluruh identitas dirinya dan mengabaikan dunia nyata.</p>
+                        <ul class="text-sm space-y-2 text-slate-600 mb-6">
+                            <li class="flex items-start"><i class="fa-solid fa-xmark text-purple-500 mt-1 mr-2"></i>Menggunakan istilah bahasa Jepang campur-aduk secara dipaksakan.</li>
+                            <li class="flex items-start"><i class="fa-solid fa-xmark text-purple-500 mt-1 mr-2"></i>Melakukan *waifu war* dan merendahkan tontonan orang lain.</li>
+                            <li class="flex items-start"><i class="fa-solid fa-xmark text-purple-500 mt-1 mr-2"></i>Melarikan diri total dari tanggung jawab kehidupan nyata.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-purple-50 p-3 rounded-xl text-xs text-purple-800 font-semibold">
+                        Karakteristik: Gatekeeping, obsesif, defensif.
+                    </div>
+                </div>
+
+                <!-- Wibu Dewasa Sehat -->
+                <div class="bg-white rounded-2xl p-6 border-2 border-teal-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="px-3 py-1 bg-teal-100 text-teal-800 text-xs font-bold rounded-full">Fase Ideal</span>
+                            <i class="fa-solid fa-user-tie text-2xl text-brand-teal"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Wibu Dewasa Sehat</h3>
+                        <p class="text-sm text-slate-600 mb-4">Menikmati anime sebagai salah satu hobi hiburan bermutu tanpa mengganggu realita.</p>
+                        <ul class="text-sm space-y-2 text-slate-600 mb-6">
+                            <li class="flex items-start"><i class="fa-solid fa-heart text-brand-teal mt-1 mr-2"></i>Menghargai keberagaman genre dan selera orang lain.</li>
+                            <li class="flex items-start"><i class="fa-solid fa-heart text-brand-teal mt-1 mr-2"></i>Memiliki finansial mandiri untuk mendukung karya resmi.</li>
+                            <li class="flex items-start"><i class="fa-solid fa-heart text-brand-teal mt-1 mr-2"></i>Menjaga keseimbangan karier, sosial, dan hobi.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-teal-50 p-3 rounded-xl text-xs text-teal-800 font-semibold">
+                        Karakteristik: Apresiatif, terbuka, bijaksana.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: REKOMENDASI TONTONAN (INTERAKTIF FILTER) -->
+        <section id="rekomendasi" class="scroll-mt-20">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900">Rekomendasi Tontonan</h2>
+                    <p class="text-slate-500 mt-1">Pilih kategori untuk memfilter Anime yang sesuai dengan tingkatanmu.</p>
+                </div>
+                
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap gap-2 mt-4 md:mt-0" id="filterContainer">
+                    <button onclick="filterAnime('all')" class="filter-btn px-4 py-2 text-xs font-bold rounded-xl bg-brand-pink text-white transition-all">Semua</button>
+                    <button onclick="filterAnime('pemula')" class="filter-btn px-4 py-2 text-xs font-bold rounded-xl bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 transition-all">Untuk Pemula</button>
+                    <button onclick="filterAnime('dewasa')" class="filter-btn px-4 py-2 text-xs font-bold rounded-xl bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 transition-all">Dewasa Sehat (Deep/Slice of Life)</button>
+                </div>
+            </div>
+
+            <!-- Grid Anime -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="animeGrid">
+                
+                <!-- Card 1 -->
+                <div class="anime-card pemula bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-md transition-all">
+                    <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=600&auto=format&fit=crop" alt="Shonen Anime" class="h-48 w-full object-cover">
+                    <div class="p-5">
+                        <span class="px-2.5 py-0.5 bg-yellow-100 text-yellow-800 text-[10px] font-bold rounded-full">Pemula</span>
+                        <h4 class="font-bold text-lg text-slate-800 mt-2">Demon Slayer (Kimetsu no Yaiba)</h4>
+                        <p class="text-xs text-slate-500 mt-1">Visual animasi luar biasa dengan alur cerita yang mudah dipahami.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="anime-card pemula bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-md transition-all">
+                    <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=600&auto=format&fit=crop" alt="Spy x Family" class="h-48 w-full object-cover">
+                    <div class="p-5">
+                        <span class="px-2.5 py-0.5 bg-yellow-100 text-yellow-800 text-[10px] font-bold rounded-full">Pemula</span>
+                        <h4 class="font-bold text-lg text-slate-800 mt-2">Spy x Family</h4>
+                        <p class="text-xs text-slate-500 mt-1">Komedi hangat ramah keluarga yang menghibur dan ringan.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="anime-card dewasa bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-md transition-all">
+                    <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=600&auto=format&fit=crop" alt="Frieren" class="h-48 w-full object-cover">
+                    <div class="p-5">
+                        <span class="px-2.5 py-0.5 bg-teal-100 text-teal-800 text-[10px] font-bold rounded-full">Dewasa Sehat</span>
+                        <h4 class="font-bold text-lg text-slate-800 mt-2">Frieren: Beyond Journey's End</h4>
+                        <p class="text-xs text-slate-500 mt-1">Refleksi mendalam tentang waktu, penyesalan, dan makna hubungan manusia.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="anime-card dewasa bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-md transition-all">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=600&auto=format&fit=crop" alt="March Comes in Like a Lion" class="h-48 w-full object-cover">
+                    <div class="p-5">
+                        <span class="px-2.5 py-0.5 bg-teal-100 text-teal-800 text-[10px] font-bold rounded-full">Dewasa Sehat</span>
+                        <h4 class="font-bold text-lg text-slate-800 mt-2">March Comes in Like a Lion</h4>
+                        <p class="text-xs text-slate-500 mt-1">Eksplorasi kesehatan mental, kedewasaan, dan penerimaan diri secara dramatis.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 3: REKOMENDASI UNTUK DIHINDARI (DOS & DON'TS) -->
+        <section id="hindari" class="bg-red-50/60 rounded-3xl p-6 sm:p-10 border border-red-100 scroll-mt-20">
+            <div class="max-w-3xl mx-auto text-center mb-8">
+                <span class="text-red-500 text-2xl"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                <h2 class="text-3xl font-bold text-slate-900 mt-2">Hal-Hal yang Perlu Dihindari</h2>
+                <p class="text-slate-600 text-sm mt-1">Agar hobi tetap menyehatkan mental dan tidak merusak hubungan sosialmu.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Hal Negatif -->
+                <div class="bg-white p-6 rounded-2xl border border-red-200 shadow-sm space-y-4">
+                    <h3 class="font-bold text-red-600 text-lg flex items-center">
+                        <i class="fa-solid fa-ban mr-2"></i> Sikap & Kebiasaan Toksik
+                    </h3>
+                    <ul class="text-sm text-slate-600 space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-xmark text-red-500 mt-1 mr-2"></i>
+                            <div><strong>Elitisme/Gatekeeping:</strong> Merendahkan penonton baru atau penonton anime yang memilih dubbing.</div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-xmark text-red-500 mt-1 mr-2"></i>
+                            <div><strong>Mencampur Realita & Fiksi:</strong> Terlalu terikat emosional dengan karakter hingga mengabaikan pasangan/teman nyata.</div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-xmark text-red-500 mt-1 mr-2"></i>
+                            <div><strong>Bajakan Tanpa Batas:</strong> Selalu menolak menggunakan platform resmi padahal memiliki kemampuan finansial.</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Genre Terjebak -->
+                <div class="bg-white p-6 rounded-2xl border border-amber-200 shadow-sm space-y-4">
+                    <h3 class="font-bold text-amber-600 text-lg flex items-center">
+                        <i class="fa-solid fa-eye-slash mr-2"></i> Beban Genre Konsumsi Masif
+                    </h3>
+                    <ul class="text-sm text-slate-600 space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-triangle-exclamation text-amber-500 mt-1 mr-2"></i>
+                            <div><strong>Isekai Pasaran Berlebihan:</strong> Formula cerita instan yang sering dijadikan sarana pelarian ketimbang apresiasi naratif.</div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-triangle-exclamation text-amber-500 mt-1 mr-2"></i>
+                            <div><strong>Ecchi Tanpa Plot:</strong> Tontonan yang mengeksploitasi fan-service tanpa pengembangan karakter atau cerita bernilai.</div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-triangle-exclamation text-amber-500 mt-1 mr-2"></i>
+                            <div><strong>Drama Over-Sensasional:</strong> Judul anime yang bertujuan membakar emosi sesaat tanpa penyelesaian logis.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: ERA BARU & CARA MENIKMATI ANIME SEHAT -->
+        <section id="era-baru" class="scroll-mt-20">
+            <div class="bg-gradient-to-r from-brand-purple to-purple-800 rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden shadow-xl">
+                <div class="relative z-10 max-w-3xl">
+                    <span class="px-3 py-1 bg-white/20 text-white text-xs font-bold rounded-full border border-white/30">Panduan Era Modern</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mt-4 mb-4">Cara Menikmati Anime di Era Baru</h2>
+                    <p class="text-purple-100 text-sm sm:text-base leading-relaxed mb-8">
+                        Industri anime kini menjadi hiburan arus utama global. Menjadi Wibu Dewasa yang Sehat berarti merayakan karya seni ini dengan pemikiran kritis dan terbuka.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/10">
+                            <div class="text-2xl mb-2">💻</div>
+                            <h4 class="font-bold text-sm">Gunakan Platform Resmi</h4>
+                            <p class="text-xs text-purple-200 mt-1">Dukung kreator melalui Bstation, Muse, Ani-One, Crunchyroll, atau Netflix.</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/10">
+                            <div class="text-2xl mb-2">🎨</div>
+                            <h4 class="font-bold text-sm">Apresiasi Aspek Teknis</h4>
+                            <p class="text-xs text-purple-200 mt-1">Nikmati kualitas sinematografi, musik latar (OST), dan pengarahan cerita.</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/10">
+                            <div class="text-2xl mb-2">⚖️</div>
+                            <h4 class="font-bold text-sm">Prinsip Moderasi</h4>
+                            <p class="text-xs text-purple-200 mt-1">Jadikan menonton anime sebagai imbalan setelah menyelesaikan kewajiban harian.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SIDEBAR DRAWER (Interaktif) -->
+    <div id="sidebarOverlay" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+    <aside id="sidebarDrawer" class="fixed top-0 right-0 h-full w-80 bg-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out shadow-2xl p-6 flex flex-col justify-between">
+        <div>
+            <div class="flex justify-between items-center pb-4 border-b border-slate-100">
+                <h3 class="font-bold text-slate-800 text-lg">Navigasi & Pencarian</h3>
+                <button id="closeSidebar" class="p-1 text-slate-400 hover:text-slate-600">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Widget Pencarian Cepat -->
+            <div class="mt-6">
+                <label class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-2">Cari Topik</label>
+                <div class="relative">
+                    <input type="text" id="searchInput" placeholder="Cari anime, tipe, tips..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-brand-pink pr-10">
+                    <i class="fa-solid fa-magnifying-glass absolute right-3 top-3 text-slate-400 text-sm"></i>
+                </div>
+            </div>
+
+            <!-- Tautan Terkait -->
+            <div class="mt-8 space-y-4">
+                <label class="text-xs font-bold text-slate-400 uppercase tracking-wider block">Menu Cepat</label>
+                <a href="#perbandingan" onclick="closeDrawer()" class="flex items-center text-slate-700 hover:text-brand-pink text-sm font-semibold p-2 rounded-lg hover:bg-pink-50">
+                    <i class="fa-solid fa-layer-group w-6 text-brand-pink"></i> Perbandingan Tipe
+                </a>
+                <a href="#rekomendasi" onclick="closeDrawer()" class="flex items-center text-slate-700 hover:text-brand-pink text-sm font-semibold p-2 rounded-lg hover:bg-pink-50">
+                    <i class="fa-solid fa-film w-6 text-purple-600"></i> Rekomendasi
+                </a>
+                <a href="#hindari" onclick="closeDrawer()" class="flex items-center text-slate-700 hover:text-brand-pink text-sm font-semibold p-2 rounded-lg hover:bg-pink-50">
+                    <i class="fa-solid fa-triangle-exclamation w-6 text-red-500"></i> Hal Dihindari
+                </a>
+                <a href="#era-baru" onclick="closeDrawer()" class="flex items-center text-slate-700 hover:text-brand-pink text-sm font-semibold p-2 rounded-lg hover:bg-pink-50">
+                    <i class="fa-solid fa-rocket w-6 text-brand-teal"></i> Era Baru
+                </a>
+            </div>
+        </div>
+
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center">
+            <p class="text-xs text-slate-500">Status Wibu Anda saat ini?</p>
+            <p class="text-sm font-bold text-brand-pink mt-0.5">Menuju Dewasa Sehat 🌿</p>
+        </div>
+    </aside>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-slate-100 mt-16 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+            <!-- Copyright -->
+            <div class="text-sm text-slate-500 text-center sm:text-left">
+                Oleh <span class="font-bold text-slate-800">Ariel Usman</span> &copy; 2026. All rights reserved.
+            </div>
+
+            <!-- Instagram Link -->
+            <div>
+                <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-bold shadow-sm hover:opacity-90 transition-opacity">
+                    <i class="fa-brands fa-instagram text-base"></i>
+                    <span>@arielrcun</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT INTERAKTIF -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Sidebar Drawer Control
+        const openSidebarBtn = document.getElementById('openSidebar');
+        const closeSidebarBtn = document.getElementById('closeSidebar');
+        const sidebarDrawer = document.getElementById('sidebarDrawer');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+        function openDrawer() {
+            sidebarDrawer.classList.remove('translate-x-full');
+            sidebarOverlay.classList.remove('hidden');
+        }
+
+        function closeDrawer() {
+            sidebarDrawer.classList.add('translate-x-full');
+            sidebarOverlay.classList.add('hidden');
+        }
+
+        openSidebarBtn.addEventListener('click', openDrawer);
+        closeSidebarBtn.addEventListener('click', closeDrawer);
+        sidebarOverlay.addEventListener('click', closeDrawer);
+
+        // Filter Anime Functionality
+        function filterAnime(category) {
+            const cards = document.querySelectorAll('.anime-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Reset button styles
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-brand-pink', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+            });
+
+            // Set active button
+            event.target.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+            event.target.classList.add('bg-brand-pink', 'text-white');
+
+            // Filter logic
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.style.display = 'block';
+                } else {
+                    if (card.classList.contains(category)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        // Live Search Mock Functionality in Sidebar
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.anime-card');
+            
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
