@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaya Kepemimpinan di Kampus - Panduan & Tinjauan Teoretis</title>
+    
+    <!-- Meta SEO -->
+    <meta name="description" content="Tinjauan teoretis dan eksplorasi gaya kepemimpinan di pendidikan tinggi / kampus. Memahami cara terbaik memimpin kampus dengan bahasa yang sederhana.">
+    <meta name="keywords" content="Kepemimpinan Kampus, Gaya Kepemimpinan, Pendidikan Tinggi, Terdistribusi, Transformasional, Transaksional, Adaptif, Ariel Usman">
+    <meta name="author" content="Ariel Usman">
+
+    <!-- Open Graph / Facebook / WhatsApp Share Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gaya Kepemimpinan di Kampus - Panduan & Tinjauan Teoretis">
+    <meta property="og:description" content="Eksplorasi 4 gaya kepemimpinan di perguruan tinggi: Terdistribusi, Transformasional, Transaksional, dan Adaptif.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Twitter Card Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gaya Kepemimpinan di Kampus">
+    <meta name="twitter:description" content="Tinjauan teoretis gaya kepemimpinan di pendidikan tinggi. Ringkasan materi lengkap dan kalkulator gaya kepemimpinan interaktif.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Favicon Icon -->
+    <link rel="icon" type="image/png" href="https://img.icons8.com/isometric-line/64/000000/graduation-cap.png">
+
+    <!-- Tailwind CSS (Tailwhip CDN styling utility) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#06b6d4',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            accent: '#f59e0b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome Icon CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        /* Custom Glassmorphism Styling */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .glass-hero {
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-amber-50 via-sky-50 to-indigo-50 text-slate-800 min-h-screen flex flex-col justify-between">
+
+    <!-- NAVBAR -->
+    <nav class="glass-nav fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Left: Project Name -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white shadow-lg shadow-cyan-500/30">
+                        <i class="fa-solid fa-graduation-cap text-xl"></i>
+                    </div>
+                    <div class="font-extrabold text-xl bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                        LeadKampus
+                    </div>
+                </div>
+
+                <!-- Right: Desktop Navigation Menu -->
+                <div class="hidden md:flex items-center space-x-6 font-semibold text-slate-600">
+                    <a href="#konsep" class="hover:text-cyan-600 transition-colors">Konsep Dasar</a>
+                    <a href="#konteks" class="hover:text-cyan-600 transition-colors">Konteks Kampus</a>
+                    <a href="#gaya-utama" class="hover:text-cyan-600 transition-colors">4 Gaya Utama</a>
+                    <a href="#interaktif" class="hover:text-cyan-600 transition-colors text-cyan-600 font-bold"><i class="fa-solid fa-wand-magic-sparkles mr-1"></i> Kuis Gaya</a>
+                    <a href="#kesimpulan" class="hover:text-cyan-600 transition-colors">Kesimpulan</a>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-600 hover:text-cyan-600 hover:bg-slate-100 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass-nav border-t border-slate-200 px-4 pt-2 pb-4 space-y-3 font-semibold text-slate-600">
+            <a href="#konsep" class="block py-2 hover:text-cyan-600">Konsep Dasar</a>
+            <a href="#konteks" class="block py-2 hover:text-cyan-600">Konteks Kampus</a>
+            <a href="#gaya-utama" class="block py-2 hover:text-cyan-600">4 Gaya Utama</a>
+            <a href="#interaktif" class="block py-2 text-cyan-600"><i class="fa-solid fa-wand-magic-sparkles mr-1"></i> Kuis Interaktif</a>
+            <a href="#kesimpulan" class="block py-2 hover:text-cyan-600">Kesimpulan</a>
+        </div>
+    </nav>
+
+    <!-- HEADER / HERO SECTION -->
+    <header class="relative pt-28 pb-16 md:pt-36 md:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <!-- Background Blur Decorative Bubbles -->
+        <div class="absolute top-10 left-1/4 w-72 h-72 bg-amber-300/40 rounded-full filter blur-3xl -z-10 animate-pulse"></div>
+        <div class="absolute top-20 right-1/4 w-96 h-96 bg-cyan-300/40 rounded-full filter blur-3xl -z-10"></div>
+        <div class="absolute bottom-5 left-1/3 w-80 h-80 bg-indigo-300/40 rounded-full filter blur-3xl -z-10"></div>
+
+        <div class="max-w-5xl mx-auto text-center">
+            <!-- Glassmorphism Banner Card -->
+            <div class="glass-hero p-8 md:p-12 rounded-3xl shadow-2xl shadow-cyan-500/10 border border-white/60">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-bold bg-gradient-to-r from-amber-400 to-orange-400 text-white shadow-md mb-6">
+                    <i class="fa-solid fa-book-open"></i> Tinjauan Teoretis Kepemimpinan
+                </div>
+                <h1 class="text-3xl sm:text-4xl md:text-6xl font-black text-slate-900 tracking-tight leading-tight mb-6">
+                    Gaya Kepemimpinan di <div class="inline-block bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">Pendidikan Tinggi</div>
+                </h1>
+                <p class="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
+                    Memahami cara terbaik memimpin kampus, dosen, dan mahasiswa dengan bahasa yang sederhana, praktis, dan adaptif.
+                </p>
+                <div class="flex flex-wrap justify-center items-center gap-4 text-xs sm:text-sm font-semibold text-slate-500">
+                    <div class="flex items-center gap-1.5 bg-white/80 px-4 py-2 rounded-xl shadow-sm"><i class="fa-solid fa-pen-nib text-cyan-500"></i> Ringkasan Teori</div>
+                    <div class="flex items-center gap-1.5 bg-white/80 px-4 py-2 rounded-xl shadow-sm"><i class="fa-solid fa-users text-indigo-500"></i> Untuk Dosen & Mahasiswa</div>
+                    <div class="flex items-center gap-1.5 bg-white/80 px-4 py-2 rounded-xl shadow-sm"><i class="fa-solid fa-sliders text-amber-500"></i> Tool Interaktif</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN BODY CONTENT WITH SIDEBAR GRID -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <!-- MAIN CONTENT AREA (8 Cols) -->
+            <div class="lg:col-span-8 space-y-12">
+                
+                <!-- SECTION 01: KONSEP DASAR -->
+                <section id="konsep" class="scroll-mt-24">
+                    <div class="glass-card p-6 md:p-8 rounded-2xl shadow-xl">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="px-3 py-1 bg-cyan-100 text-cyan-700 font-extrabold rounded-lg text-sm">01</div>
+                            <h2 class="text-2xl font-bold text-slate-900">Apa Itu Kepemimpinan?</h2>
+                        </div>
+                        <p class="text-slate-600 leading-relaxed mb-6">
+                            Secara sederhana, kepemimpinan adalah kemampuan menggerakkan orang lain agar mau bekerja sama mencapai tujuan bersama—bukan karena dipaksa, tapi karena mereka percaya dan terinspirasi.
+                        </p>
+
+                        <!-- Comparison Cards Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-amber-50/80 border border-amber-200 p-5 rounded-xl">
+                                <div class="flex items-center gap-2 text-amber-700 font-bold mb-2">
+                                    <i class="fa-solid fa-list-check"></i> Manajemen
+                                </div>
+                                <p class="text-sm text-slate-600 leading-relaxed">
+                                    Fokus ke dalam. Memastikan aturan dijalankan, tugas selesai, dan keluhan staf ditangani dengan baik.
+                                </p>
+                            </div>
+                            <div class="bg-cyan-50/80 border border-cyan-200 p-5 rounded-xl">
+                                <div class="flex items-center gap-2 text-cyan-700 font-bold mb-2">
+                                    <i class="fa-solid fa-compass"></i> Kepemimpinan
+                                </div>
+                                <p class="text-sm text-slate-600 leading-relaxed">
+                                    Fokus ke luar. Memberi arah, menginspirasi, dan membangun suasana kerja yang positif bagi semua orang.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Quote Highlight -->
+                        <blockquote class="mt-6 border-l-4 border-indigo-500 pl-4 py-2 italic text-slate-700 bg-indigo-50/50 rounded-r-lg">
+                            "Pemimpin yang baik mengajak orang menuju arah baru bahkan ke tempat yang awalnya terasa tidak nyaman."
+                            <footer class="text-xs font-semibold text-indigo-600 mt-1">— Hofmeyer et al., 2015</footer>
+                        </blockquote>
+                    </div>
+                </section>
+
+                <!-- SECTION 02: KONTEKS KAMPUS -->
+                <section id="konteks" class="scroll-mt-24">
+                    <div class="glass-card p-6 md:p-8 rounded-2xl shadow-xl">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="px-3 py-1 bg-indigo-100 text-indigo-700 font-extrabold rounded-lg text-sm">02</div>
+                            <h2 class="text-2xl font-bold text-slate-900">Kepemimpinan di Kampus</h2>
+                        </div>
+                        <p class="text-slate-600 leading-relaxed mb-6">
+                            Di dunia pendidikan tinggi, kepemimpinan bisa datang dari mana saja—bukan cuma dari rektor atau dekan. Kepemimpinan tercermin dari berbagai dimensi:
+                        </p>
+
+                        <!-- 4 Dimension Badges -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6 text-center">
+                            <div class="p-3 bg-white rounded-xl shadow-sm border border-slate-100">
+                                <i class="fa-solid fa-id-badge text-cyan-500 text-xl mb-1"></i>
+                                <div class="font-bold text-sm text-slate-800">Posisi</div>
+                                <div class="text-xs text-slate-500">Melekat jabatan</div>
+                            </div>
+                            <div class="p-3 bg-white rounded-xl shadow-sm border border-slate-100">
+                                <i class="fa-solid fa-chart-line text-amber-500 text-xl mb-1"></i>
+                                <div class="font-bold text-sm text-slate-800">Kinerja</div>
+                                <div class="text-xs text-slate-500">Hasil kerja nyata</div>
+                            </div>
+                            <div class="p-3 bg-white rounded-xl shadow-sm border border-slate-100">
+                                <i class="fa-solid fa-handshake text-emerald-500 text-xl mb-1"></i>
+                                <div class="font-bold text-sm text-slate-800">Praktik</div>
+                                <div class="text-xs text-slate-500">Kegiatan sehari-hari</div>
+                            </div>
+                            <div class="p-3 bg-white rounded-xl shadow-sm border border-slate-100">
+                                <i class="fa-solid fa-user-gear text-indigo-500 text-xl mb-1"></i>
+                                <div class="font-bold text-sm text-slate-800">Peran</div>
+                                <div class="text-xs text-slate-500">Keahlian profesional</div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="p-4 bg-white/70 rounded-xl border border-slate-100">
+                                <h3 class="font-bold text-slate-800 mb-1 flex items-center gap-2">
+                                    <i class="fa-solid fa-sitemap text-indigo-500"></i> Formal & Informal
+                                </h3>
+                                <p class="text-sm text-slate-600">
+                                    Kepemimpinan formal menentukan pembagian tugas mengajar dan penghargaan. Keduanya sama-sama membentuk budaya kerja kampus.
+                                </p>
+                            </div>
+                            <div class="p-4 bg-white/70 rounded-xl border border-slate-100">
+                                <h3 class="font-bold text-slate-800 mb-1 flex items-center gap-2">
+                                    <i class="fa-solid fa-arrows-rotate text-cyan-500"></i> Perubahan Paradigma
+                                </h3>
+                                <p class="text-sm text-slate-600">
+                                    Dulu, kampus cenderung dipimpin secara ketat dan berjenjang. Kini muncul dorongan untuk gaya yang lebih terbuka dan tidak terlalu berjenjang.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 03: 4 GAYA UTAMA -->
+                <section id="gaya-utama" class="scroll-mt-24">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="px-3 py-1 bg-emerald-100 text-emerald-700 font-extrabold rounded-lg text-sm">03</div>
+                        <h2 class="text-2xl font-bold text-slate-900">Empat Gaya Utama di Kampus</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        
+                        <!-- Gaya 1: Terdistribusi -->
+                        <div class="glass-card p-6 rounded-2xl shadow-lg border-t-4 border-t-cyan-500 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold text-slate-800">1. Terdistribusi</h3>
+                                    <div class="p-2 bg-cyan-100 text-cyan-600 rounded-lg"><i class="fa-solid fa-diagram-project text-lg"></i></div>
+                                </div>
+                                <p class="text-sm text-slate-600 mb-4">
+                                    Bayangkan kepemimpinan bukan tugas satu orang saja. Dosen, mahasiswa, dan pihak lain semuanya ikut ambil peran dalam memimpin dan mengelola kampus bersama-sama.
+                                </p>
+                                <div class="space-y-2 mb-4">
+                                    <div class="text-xs font-semibold text-emerald-600 flex items-start gap-1">
+                                        <i class="fa-solid fa-circle-check mt-0.5"></i>
+                                        <div><strong>Menarik:</strong> Beban tidak menumpuk di 1 orang; banyak sudut pandang berkontribusi.</div>
+                                    </div>
+                                    <div class="text-xs font-semibold text-rose-500 flex items-start gap-1">
+                                        <i class="fa-solid fa-circle-xmark mt-0.5"></i>
+                                        <div><strong>Tantangan:</strong> Kadang fokus hanya pada pembagian tugas; kerja sama masalah rumit bisa terabaikan.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <blockquote class="text-xs italic text-slate-500 pt-3 border-t border-slate-200">
+                                "Kepemimpinan adalah aktivitas bersama, bukan milik satu jabatan." — Spillane, 2006
+                            </blockquote>
+                        </div>
+
+                        <!-- Gaya 2: Transformasional -->
+                        <div class="glass-card p-6 rounded-2xl shadow-lg border-t-4 border-t-emerald-500 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold text-slate-800">2. Transformasional</h3>
+                                    <div class="p-2 bg-emerald-100 text-emerald-600 rounded-lg"><i class="fa-solid fa-seedling text-lg"></i></div>
+                                </div>
+                                <p class="text-sm text-slate-600 mb-4">
+                                    Menginspirasi lewat visi, perhatian pribadi, dan cara berpikir baru. Aktif memperjuangkan keadilan dan kesejahteraan semua orang di kampus.
+                                </p>
+                                <div class="space-y-2 mb-4">
+                                    <div class="text-xs font-semibold text-emerald-600 flex items-start gap-1">
+                                        <i class="fa-solid fa-circle-check mt-0.5"></i>
+                                        <div><strong>Menarik:</strong> Mendorong keberagaman; memotivasi lebih dari sekadar tugas rutin.</div>
+                                    </div>
+                                    <div class="text-xs font-semibold text-rose-500 flex items-start gap-1">
+                                        <i class="fa-solid fa-circle-xmark mt-0.5"></i>
+                                        <div><strong>Tantangan:</strong> Kurang perhatikan konteks institusi; butuh usaha besar & konsisten.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-xs text-slate-500 pt-3 border-t border-slate-200">
+                                <strong>4 Unsur:</strong> Teladan, Motivasi, Stimulasi Berpikir, Perhatian Individu.
+                            </div>
+                        </div>
+
+                        <!-- Gaya 3: Transaksional -->
+                        <div class="glass-card p-6 rounded-2xl shadow-lg border-t-4 border-t-amber-500 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold text-slate-800">3. Transaksional</h3>
+                                    <div class="p-2 bg-amber-100 text-amber-600 rounded-lg"><i class="fa-solid fa-right-left text-lg"></i></div>
+                                </div>
+                                <p class="text-sm text-slate-600 mb-4">
+                                    Mengandalkan aturan, kepatuhan, dan sistem imbalan yang jelas. Mengelola anggaran, sumber daya, dan pengangkatan pejabat secara terstruktur.
+                                </p>
+                                <div class="space-y-2 mb-4">
+                                    <div class="text-xs font-semibold text-emerald-600 flex items-start gap-1">
+                                        <i class="fa-solid fa-circle-check mt-0.5"></i>
+                                        <div><strong>Menarik:</strong> Kuat bangun infrastruktur; aturan jelas & mudah diikuti.</div>
+                                    </div>
+                                    <div class="text-xs font-semibold text-rose-500 flex items-start gap-1">
+                                        <i class="fa-solid fa-circle-xmark mt-0.5"></i>
+                                        <div><strong>Tantangan:</strong> Sulit memotivasi melampaui target; kurang peka perubahan.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-xs text-slate-500 pt-3 border-t border-slate-200">
+                                <strong>Cara Kerja:</strong> Atur akses info, kendalikan anggaran, alokasi sumber daya.
+                            </div>
+                        </div>
+
+                        <!-- Gaya 4: Adaptif -->
+                        <div class="glass-card p-6 rounded-2xl shadow-lg border-t-4 border-t-indigo-500 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold text-slate-800">4. Adaptif</h3>
+                                    <div class="p-2 bg-indigo-100 text-indigo-600 rounded-lg"><i class="fa-solid fa-shuffle text-lg"></i></div>
+                                </div>
+                                <p class="text-sm text-slate-600 mb-4">
+                                    Jeli melihat masalah, memahami perubahan di sekitar, lalu berani mengubah cara lama demi hasil yang lebih baik bagi organisasi kampus.
+                                </p>
+                                <div class="space-y-2 mb-4">
+                                    <div class="text-xs font-semibold text-emerald-600 flex items-start gap-1">
+                                        <i class="fa-solid fa-circle-check mt-0.5"></i>
+                                        <div><strong>Menarik:</strong> Tanggap pada perubahan; berani pilih solusi terbaik.</div>
+                                    </div>
+                                    <div class="text-xs font-semibold text-rose-500 flex items-start gap-1">
+                                        <i class="fa-solid fa-circle-xmark mt-0.5"></i>
+                                        <div><strong>Tantangan:</strong> Menantang nilai lama sehingga bisa ditolak/resisten.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-xs text-slate-500 pt-3 border-t border-slate-200">
+                                <strong>3 Langkah:</strong> 1. Kenali masalah, 2. Pahami perubahan, 3. Pilih solusi.
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- SECTION 04: INTERAKTIF (KUIS / KALKULATOR GAYA) -->
+                <section id="interaktif" class="scroll-mt-24">
+                    <div class="glass-card p-6 md:p-8 rounded-3xl shadow-2xl border-2 border-cyan-400/50">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl shadow-md">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <h2 class="text-2xl font-bold text-slate-900">Fitur Interaktif: Cek Gaya Kepemimpinan</h2>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-6">
+                            Jawab 3 pertanyaan singkat di bawah untuk mengetahui gaya kepemimpinan kampus mana yang paling dominan pada diri Anda atau kampus Anda!
+                        </p>
+
+                        <form id="quiz-form" class="space-y-6">
+                            <!-- Question 1 -->
+                            <div class="bg-white/80 p-4 rounded-xl border border-slate-200">
+                                <label class="block font-semibold text-slate-800 text-sm mb-3">1. Bagaimana keputusan penting biasanya diambil dalam tim/kampus Anda?</label>
+                                <div class="space-y-2 text-sm text-slate-600">
+                                    <label class="flex items-center gap-2 cursor-pointer hover:text-cyan-600">
+                                        <input type="radio" name="q1" value="terdistribusi" class="text-cyan-600 focus:ring-cyan-500" required>
+                                        <div>Dibagi bersama dosen & mahasiswa secara kolektif</div>
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer hover:text-cyan-600">
+                                        <input type="radio" name="q1" value="transformasional" class="text-cyan-600 focus:ring-cyan-500">
+                                        <div>Diinspirasi oleh visi pemimpin yang memperjuangkan keadilan bersama</div>
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer hover:text-cyan-600">
+                                        <input type="radio" name="q1" value="transaksional" class="text-cyan-600 focus:ring-cyan-500">
+                                        <div>Mengikuti aturan formal, alokasi anggaran, dan kriteria tertulis</div>
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer hover:text-cyan-600">
+                                        <input type="radio" name="q1" value="adaptif" class="text-cyan-600 focus:ring-cyan-500">
+                                        <div>Melihat situasi luar lalu berani mengubah cara lama demi solusi baru</div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Question 2 -->
+                            <div class="bg-white/80 p-4 rounded-xl border border-slate-200">
+                                <label class="block font-semibold text-slate-800 text-sm mb-3">2. Apa dorongan utama dalam menyelesaikan target pekerjaan?</label>
+                                <div class="space-y-2 text-sm text-slate-600">
+                                    <label class="flex items-center gap-2 cursor-pointer hover:text-cyan-600">
+                                        <input type="radio" name="q2" value="transformasional" class="text-cyan-600 focus:ring-cyan-500" required>
+                                        <div>Motivasi emosional, inovasi berpikir, dan dorongan moral</div>
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer hover:text-cyan-600">
+                                        <input type="radio" name="q2" value="transaksional" class="text-cyan-600 focus:ring-cyan-500">
+                                        <div>Sistem imbalan, remunerasi, kepatuhan, dan penilaian resmi</div>
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer hover:text-cyan-600">
+                                        <input type="radio" name="q2" value="terdistribusi" class="text-cyan-600 focus:ring-cyan-500">
+                                        <div>Rasa memiliki bersama karena tugas didistribusikan secara merata</div>
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer hover:text-cyan-600">
+                                        <input type="radio" name="q2" value="adaptif" class="text-cyan-600 focus:ring-cyan-500">
+                                        <div>Kebutuhan untuk bertahan dan beradaptasi terhadap tren eksternal</div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 text-white font-bold rounded-xl shadow-lg shadow-cyan-500/30 hover:opacity-95 transition-all">
+                                <i class="fa-solid fa-chart-pie mr-2"></i> Lihat Hasil Analisis Gaya
+                            </button>
+                        </form>
+
+                        <!-- Quiz Result Modal / Box -->
+                        <div id="quiz-result" class="hidden mt-6 p-6 bg-gradient-to-br from-white to-cyan-50 border border-cyan-300 rounded-2xl shadow-inner text-center">
+                            <div class="text-xs font-bold uppercase tracking-wider text-cyan-600">Hasil Gaya Kepemimpinan Anda</div>
+                            <h3 id="result-title" class="text-2xl font-extrabold text-slate-900 mt-1 mb-2"></h3>
+                            <p id="result-desc" class="text-sm text-slate-600 leading-relaxed max-w-lg mx-auto mb-4"></p>
+                            <button onclick="document.getElementById('quiz-result').classList.add('hidden')" class="text-xs font-semibold text-slate-400 hover:text-slate-600 underline">
+                                Coba lagi
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 05: KESIMPULAN & KEPADAAN KAMPUS -->
+                <section id="kesimpulan" class="scroll-mt-24">
+                    <div class="glass-card p-6 md:p-8 rounded-2xl shadow-xl border-l-4 border-l-amber-500">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="px-3 py-1 bg-amber-100 text-amber-700 font-extrabold rounded-lg text-sm">04</div>
+                            <h2 class="text-2xl font-bold text-slate-900">Kesimpulan: Menyesuaikan Gaya dengan Kampus</h2>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                            <div class="p-4 bg-white/80 rounded-xl border border-slate-200">
+                                <h4 class="font-bold text-slate-800 text-sm mb-1 flex items-center gap-2">
+                                    <i class="fa-solid fa-microscope text-cyan-500"></i> Kampus Berbasis Riset
+                                </h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">
+                                    Cenderung lebih cocok dengan gaya <strong>Transaksional</strong>—aturan jelas, sumber daya terkelola rapi, dan capaian terukur (Wolverton & Gmelch, 2002).
+                                </p>
+                            </div>
+                            <div class="p-4 bg-white/80 rounded-xl border border-slate-200">
+                                <h4 class="font-bold text-slate-800 text-sm mb-1 flex items-center gap-2">
+                                    <i class="fa-solid fa-chalkboard-user text-indigo-500"></i> Kampus Berbasis Pengajaran
+                                </h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">
+                                    Lebih cocok dengan gaya <strong>Transformasional</strong>—menginspirasi dosen dan mendorong kualitas pengajaran yang terus berkembang.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="bg-amber-50 border border-amber-200 p-4 rounded-xl text-sm text-slate-700 space-y-2">
+                            <div class="font-bold text-amber-900 flex items-center gap-2">
+                                <i class="fa-solid fa-scale-balanced"></i> Inti Ringkasan:
+                            </div>
+                            <ul class="list-disc list-inside space-y-1 text-xs sm:text-sm text-slate-700">
+                                <li><strong>Tidak ada gaya tunggal terbaik:</strong> Setiap gaya punya kelebihan dan tantangan masing-masing.</li>
+                                <li><strong>Utamakan hubungan & kerja sama:</strong> Gaya yang dipilih harus mendorong keberagaman dan kekompakan tim.</li>
+                                <li><strong>Siap berubah:</strong> Pemimpin perlu tanggap pada situasi internal maupun eksternal kampus.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- SIDEBAR AREA (4 Cols) -->
+            <aside class="lg:col-span-4 space-y-6">
+                
+                <!-- Sidebar Box 1: Info Ringkasan PDF -->
+                <div class="glass-card p-6 rounded-2xl shadow-lg sticky top-20">
+                    <h3 class="font-bold text-slate-900 text-lg mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-file-pdf text-rose-500"></i> Ringkasan Referensi
+                    </h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                        Materi dalam web ini bersumber dari dokumen Tinjauan Teoretis Gaya Kepemimpinan di Pendidikan Tinggi.
+                    </p>
+
+                    <div class="space-y-3 mb-6 text-xs text-slate-600 border-t border-b border-slate-200 py-3">
+                        <div class="flex items-center justify-between">
+                            <div class="text-slate-400">Tim Penyusun:</div>
+                            <div class="font-semibold text-slate-700">Ariel, Alia, Hilda</div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="text-slate-400">Fokus:</div>
+                            <div class="font-semibold text-slate-700">Pendidikan Tinggi</div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="text-slate-400">Gaya Utama:</div>
+                            <div class="font-semibold text-slate-700">4 Gaya Teruji</div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Quick Action Widget -->
+                    <div class="bg-slate-900 text-white p-4 rounded-xl space-y-3">
+                        <div class="text-xs font-semibold text-cyan-400 uppercase tracking-wider block">Catatan Cepat</div>
+                        <textarea id="quick-note" rows="3" placeholder="Tulis ide kepemimpinan Anda..." class="w-full bg-slate-800 text-slate-200 text-xs p-2.5 rounded-lg border border-slate-700 focus:outline-none focus:border-cyan-500"></textarea>
+                        <button onclick="saveNote()" class="w-full text-xs font-bold py-2 bg-cyan-500 hover:bg-cyan-400 text-slate-900 rounded-lg transition-colors">
+                            <i class="fa-solid fa-floppy-disk mr-1"></i> Simpan Catatan Lokal
+                        </button>
+                        <div id="note-saved-msg" class="hidden text-[10px] text-emerald-400 text-center">Catatan berhasil tersimpan di browser!</div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Box 2: Visual Card / Quote -->
+                <div class="glass-card p-6 rounded-2xl shadow-lg bg-gradient-to-br from-indigo-500 to-blue-600 text-white">
+                    <i class="fa-solid fa-quote-left text-3xl opacity-40 mb-2"></i>
+                    <p class="text-sm font-medium leading-relaxed mb-4">
+                        "Kepemimpinan di perguruan tinggi bukan lagi soal instruksi satu arah dari atas, melainkan ekosistem kolaborasi dan adaptasi kontinu."
+                    </p>
+                    <div class="text-xs text-indigo-200 font-semibold">
+                        — Tinjauan Teoretis Perguruan Tinggi
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-16 bg-white/90 border-t border-slate-200 py-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+            <div>
+                <p class="text-sm font-semibold text-slate-700">
+                    Oleh Ariel Usman Copyright 2026
+                </p>
+                <p class="text-xs text-slate-400 mt-0.5">
+                    Didesain secara adaptif untuk Smartphone, Tablet, & Desktop Windows/Linux.
+                </p>
+            </div>
+            
+            <!-- Instagram Link with Icon -->
+            <div class="flex items-center gap-3">
+                <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500 text-white font-semibold text-sm rounded-xl shadow-md hover:opacity-90 transition-opacity">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                    <div>@arielrcun</div>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT INTERAKTIF -->
+    <script>
+        // Toggle Mobile Menu Navigation
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close Mobile Menu on Link Click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Quiz Logic Implementation
+        document.getElementById('quiz-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const q1 = document.querySelector('input[name="q1"]:checked')?.value;
+            const q2 = document.querySelector('input[name="q2"]:checked')?.value;
+            
+            const resultBox = document.getElementById('quiz-result');
+            const resultTitle = document.getElementById('result-title');
+            const resultDesc = document.getElementById('result-desc');
+
+            let title = "";
+            let desc = "";
+
+            if (q1 === 'terdistribusi' || q2 === 'terdistribusi') {
+                title = "Kepemimpinan Terdistribusi";
+                desc = "Anda atau kampus Anda cenderung membagi peran leadership secara luas. Kepemimpinan adalah aktivitas bersama antara dosen, staf, dan mahasiswa.";
+            } else if (q1 === 'transformasional' || q2 === 'transformasional') {
+                title = "Kepemimpinan Transformasional";
+                desc = "Pendekatan Anda berpusat pada visi besar, inspirasi emosional, stimulasi intelektual, dan kepedulian tinggi terhadap individu di kampus.";
+            } else if (q1 === 'transaksional' || q2 === 'transaksional') {
+                title = "Kepemimpinan Transaksional";
+                desc = "Anda mengutamakan struktur formal, kejelasan aturan, kepatuhan, serta pengelolaan sumber daya dan imbalan yang terukur.";
+            } else {
+                title = "Kepemimpinan Adaptif";
+                desc = "Anda memiliki kejelian terhadap perubahan lingkungan eksternal dan berani mengambil langkah fleksibel untuk pembaharuan cara kerja.";
+            }
+
+            resultTitle.textContent = title;
+            resultDesc.textContent = desc;
+            resultBox.classList.remove('hidden');
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+
+        // Local Storage Quick Note Feature
+        function saveNote() {
+            const noteText = document.getElementById('quick-note').value;
+            if(noteText.trim() !== "") {
+                localStorage.setItem('leadkampus_note', noteText);
+                const msg = document.getElementById('note-saved-msg');
+                msg.classList.remove('hidden');
+                setTimeout(() => msg.classList.add('hidden'), 3000);
+            }
+        }
+
+        // Load Saved Note on Load
+        window.addEventListener('DOMContentLoaded', () => {
+            const saved = localStorage.getItem('leadkampus_note');
+            if (saved) {
+                document.getElementById('quick-note').value = saved;
+            }
+        });
+    </script>
+</body>
+</html>
