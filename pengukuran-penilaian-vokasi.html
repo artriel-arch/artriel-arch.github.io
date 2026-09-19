@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranah Pengukuran | Teknik & Instrumen Penilaian Pendidikan Vokasi</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Platform edukasi interaktif mengenai Ranah Pengukuran, Teknik, dan Instrumen Penilaian dalam Pendidikan Vokasi. Dirancang khusus untuk pendidik dan profesional vokasi.">
+    <meta name="keywords" content="Ranah Pengukuran, Penilaian Vokasi, Teknik Penilaian, Instrumen Penilaian, Pendidikan Vokasi, Evaluasi Pembelajaran">
+    <meta name="author" content="Ariel Usman">
+
+    <!-- Open Graph / Social Media / WhatsApp Link Preview -->
+    <meta property="og:title" content="Ranah Pengukuran | Teknik & Instrumen Penilaian Pendidikan Vokasi">
+    <meta property="og:description" content="Pelajari teknik, instrumen, dan ranah pengukuran dalam penilaian pendidikan vokasi secara modern dan interaktif.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CSS (Tailwhip / Tailwind Play CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#06b6d4',
+                        accent: '#f59e0b',
+                        lightbg: '#f8fafc',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50 text-slate-800 min-h-screen flex flex-col justify-between selection:bg-blue-500 selection:text-white">
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-slate-200/60 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Project Name -->
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-graduation-cap text-lg"></i>
+                </div>
+                <span class="font-bold text-lg sm:text-xl bg-gradient-to-r from-blue-700 to-cyan-600 bg-clip-text text-transparent">
+                    RanahVokasi
+                </span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-6 font-medium text-sm text-slate-600">
+                <a href="#beranda" class="hover:text-blue-600 transition-colors">Beranda</a>
+                <a href="#ranah" class="hover:text-blue-600 transition-colors">Ranah Ukur</a>
+                <a href="#teknik" class="hover:text-blue-600 transition-colors">Teknik & Instrumen</a>
+                <a href="#simulator" class="hover:text-blue-600 transition-colors">Simulasi Kuis</a>
+                <a href="#materi" class="hover:text-blue-600 transition-colors">Materi Lain</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-slate-700 hover:text-blue-600 focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-b border-slate-200 px-6 py-4 space-y-3">
+            <a href="#beranda" class="block text-slate-700 hover:text-blue-600 font-medium">Beranda</a>
+            <a href="#ranah" class="block text-slate-700 hover:text-blue-600 font-medium">Ranah Ukur</a>
+            <a href="#teknik" class="block text-slate-700 hover:text-blue-600 font-medium">Teknik & Instrumen</a>
+            <a href="#simulator" class="block text-slate-700 hover:text-blue-600 font-medium">Simulasi Kuis</a>
+            <a href="#materi" class="block text-slate-700 hover:text-blue-600 font-medium">Materi Lain</a>
+        </div>
+    </nav>
+
+    <!-- HEADER / HERO SECTION -->
+    <header id="beranda" class="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
+        <!-- Background Ornaments -->
+        <div class="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-blue-300/30 to-cyan-300/30 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100/80 text-blue-700 text-xs sm:text-sm font-semibold shadow-inner">
+                        <i class="fa-solid fa-sparkles"></i> Pusat Edukasi & Pengukuran Vokasi
+                    </div>
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                        Ranah Pengukuran, <br class="hidden sm:inline">
+                        <span class="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Teknik & Instrumen Penilaian</span> Vokasi
+                    </h1>
+                    <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0">
+                        Mengukur kompetensi keahlian peserta didik secara komprehensif melalui pendekatan kognitif, psikomotorik, dan afektif yang selaras dengan standar industri modern.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#teknik" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-center shadow-lg shadow-blue-500/25 transition-all transform hover:-translate-y-0.5">
+                            Mulai Eksplorasi <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#simulator" class="w-full sm:w-auto px-6 py-3.5 rounded-xl glass-card text-slate-700 hover:bg-white/80 font-semibold text-center border border-slate-200 transition-all">
+                            Coba Kuis Interaktif
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Image / Glassmorphism Illustration Card -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-1.5 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-3xl blur-xl opacity-30 animate-pulse"></div>
+                        <div class="relative glass-card p-6 rounded-3xl shadow-2xl border border-white/80 space-y-5">
+                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop" alt="Pendidikan Vokasi" class="w-full h-52 object-cover rounded-2xl shadow-md">
+                            <div class="space-y-2">
+                                <span class="text-xs font-bold uppercase tracking-wider text-cyan-600">Standar Industri</span>
+                                <h3 class="text-xl font-bold text-slate-800">Penilaian Berbasis Kompetensi (CBT & PBT)</h3>
+                                <p class="text-sm text-slate-600">
+                                    Menjamin lulusan SMK dan politeknik memiliki _hard skills_ dan _soft skills_ siap kerja.
+                                </p>
+                            </div>
+                            <div class="pt-2 flex items-center justify-between text-xs text-slate-500 border-t border-slate-200/60">
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-check-circle text-emerald-500"></i> Valid & Reliable</span>
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-shield-halved text-blue-500"></i> Objektif</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN BODY SECTION WITH SIDEBAR LAYOUT -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- MAIN CONTENT AREA (8 Columns on desktop) -->
+        <div class="lg:col-span-8 space-y-12">
+            
+            <!-- SECTION 1: RANAH PENGUKURAN (3 DOMAIN) -->
+            <section id="ranah" class="glass-card p-6 sm:p-8 rounded-3xl shadow-sm border border-white space-y-6">
+                <div class="flex items-center gap-3">
+                    <div class="p-3 bg-blue-100 text-blue-600 rounded-2xl text-xl">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900">3 Ranah Utama Pengukuran</h2>
+                        <p class="text-sm text-slate-500">Taksonomi evaluasi dalam pembelajaran vokasi</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+                    <!-- Kognitif -->
+                    <div class="bg-white/70 p-5 rounded-2xl border border-slate-100 shadow-sm space-y-3 hover:shadow-md transition-shadow">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-lg">Kognitif</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Penguasaan pengetahuan teoretis, analisis rangkaian, pemahaman sistem, dan pemecahan masalah teknis.
+                        </p>
+                    </div>
+
+                    <!-- Psikomotorik -->
+                    <div class="bg-white/70 p-5 rounded-2xl border border-slate-100 shadow-sm space-y-3 hover:shadow-md transition-shadow">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-lg">Psikomotorik</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Keterampilan motorik, ketepatan kerja, kecepatan, serta pengoperasian alat dan mesin produksi.
+                        </p>
+                    </div>
+
+                    <!-- Afektif -->
+                    <div class="bg-white/70 p-5 rounded-2xl border border-slate-100 shadow-sm space-y-3 hover:shadow-md transition-shadow">
+                        <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-lg">Afektif</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Sikap kerja, kedisiplinan K3 (Kesehatan & Keselamatan Kerja), tanggung jawab, dan etika profesi.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: TEKNIK & INSTRUMEN PENILAIAN -->
+            <section id="teknik" class="glass-card p-6 sm:p-8 rounded-3xl shadow-sm border border-white space-y-6">
+                <div class="flex items-center gap-3">
+                    <div class="p-3 bg-cyan-100 text-cyan-600 rounded-2xl text-xl">
+                        <i class="fa-solid fa-toolbox"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900">Teknik & Instrumen Penilaian Vokasi</h2>
+                        <p class="text-sm text-slate-500">Alat ukur valid untuk menilai unjuk kerja siswa</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Item 1 -->
+                    <div class="bg-white/70 p-5 rounded-2xl border border-slate-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <div class="space-y-1">
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-blue-100 text-blue-700 rounded-md">Psikomotorik</span>
+                            <h4 class="font-bold text-slate-800 text-base pt-1">Lembar Penilaian Unjuk Kerja (Performance Test)</h4>
+                            <p class="text-xs text-slate-600">Mengukur proses kerja nyata saat siswa merakit, memperbaiki, atau mengoperasikan alat.</p>
+                        </div>
+                        <button onclick="toggleDetail('detail-1')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-xl transition-colors whitespace-nowrap">
+                            Lihat Detail <i class="fa-solid fa-chevron-down ml-1"></i>
+                        </button>
+                    </div>
+                    <div id="detail-1" class="hidden bg-blue-50/50 p-4 rounded-xl text-xs text-slate-700 space-y-2 border border-blue-100">
+                        <p><strong>Instrumen:</strong> Lembar Checklist / Rubrik Penilaian Praktik.</p>
+                        <p><strong>Komponen Dinilai:</strong> Persiapan alat, langkah kerja/prosedur, hasil produk, dan waktu penyelesaian.</p>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="bg-white/70 p-5 rounded-2xl border border-slate-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <div class="space-y-1">
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-amber-100 text-amber-700 rounded-md">Kognitif</span>
+                            <h4 class="font-bold text-slate-800 text-base pt-1">Tes Tertulis & Portofolio Produk</h4>
+                            <p class="text-xs text-slate-600">Evaluasi konsep teoretis dikombinasikan dengan kumpulan dokumen hasil karya terbaik siswa.</p>
+                        </div>
+                        <button onclick="toggleDetail('detail-2')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-xl transition-colors whitespace-nowrap">
+                            Lihat Detail <i class="fa-solid fa-chevron-down ml-1"></i>
+                        </button>
+                    </div>
+                    <div id="detail-2" class="hidden bg-amber-50/50 p-4 rounded-xl text-xs text-slate-700 space-y-2 border border-amber-100">
+                        <p><strong>Instrumen:</strong> Soal Pilihan Ganda Kompleks, Essay Studi Kasus, & Lembar Evaluasi Portofolio.</p>
+                        <p><strong>Fokus:</strong> Memastikan pemahaman mendalam terhadap standar operasional prosedur (SOP).</p>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="bg-white/70 p-5 rounded-2xl border border-slate-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <div class="space-y-1">
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-emerald-100 text-emerald-700 rounded-md">Afektif & Industri</span>
+                            <h4 class="font-bold text-slate-800 text-base pt-1">Jurnal Observasi Sikap & Penilaian Industri (PKL)</h4>
+                            <p class="text-xs text-slate-600">Catatan langsung instruktur atau pembimbing lapangan terhadap etos kerja peserta didik.</p>
+                        </div>
+                        <button onclick="toggleDetail('detail-3')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-xl transition-colors whitespace-nowrap">
+                            Lihat Detail <i class="fa-solid fa-chevron-down ml-1"></i>
+                        </button>
+                    </div>
+                    <div id="detail-3" class="hidden bg-emerald-50/50 p-4 rounded-xl text-xs text-slate-700 space-y-2 border border-emerald-100">
+                        <p><strong>Instrumen:</strong> Skala Rating (Rating Scale) dan Rubrik Penilaian Dunia Usaha/Dunia Industri (DU/DI).</p>
+                        <p><strong>Aspek:</strong> Kedisiplinan, kerjasama tim, kepatuhan K3, dan tanggung jawab.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: INTERACTIVE QUIZ / SIMULATOR -->
+            <section id="simulator" class="glass-card p-6 sm:p-8 rounded-3xl shadow-sm border border-white space-y-6">
+                <div class="flex items-center gap-3">
+                    <div class="p-3 bg-indigo-100 text-indigo-600 rounded-2xl text-xl">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900">Simulasi Cek Pemahaman Vokasi</h2>
+                        <p class="text-sm text-slate-500">Uji cepat instrumen penilaian yang tepat</p>
+                    </div>
+                </div>
+
+                <div class="bg-white/80 p-6 rounded-2xl border border-slate-200 space-y-4">
+                    <p id="quiz-question" class="font-semibold text-slate-800 text-sm sm:text-base">
+                        1. Instrumen apakah yang paling tepat digunakan untuk menilai kecepatan dan ketepatan siswa SMK merakit mesin bubut?
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="quiz-options">
+                        <button onclick="checkAnswer(0)" class="p-3 text-left bg-slate-50 hover:bg-blue-50 border border-slate-200 rounded-xl text-xs sm:text-sm font-medium transition-all">
+                            A. Tes Tertulis Pilihan Ganda
+                        </button>
+                        <button onclick="checkAnswer(1)" class="p-3 text-left bg-slate-50 hover:bg-blue-50 border border-slate-200 rounded-xl text-xs sm:text-sm font-medium transition-all">
+                            B. Lembar Observasi Unjuk Kerja (Rubrik Praktik)
+                        </button>
+                        <button onclick="checkAnswer(2)" class="p-3 text-left bg-slate-50 hover:bg-blue-50 border border-slate-200 rounded-xl text-xs sm:text-sm font-medium transition-all">
+                            C. Angket Sikap Siswa
+                        </button>
+                        <button onclick="checkAnswer(3)" class="p-3 text-left bg-slate-50 hover:bg-blue-50 border border-slate-200 rounded-xl text-xs sm:text-sm font-medium transition-all">
+                            D. Jurnal Harian Guru
+                        </button>
+                    </div>
+
+                    <div id="quiz-feedback" class="hidden p-4 rounded-xl text-xs sm:text-sm font-medium"></div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- SIDEBAR AREA (4 Columns on desktop) -->
+        <aside class="lg:col-span-4 space-y-6">
+            
+            <!-- Widget 1: Info Cepat / Ringkasan -->
+            <div class="glass-card p-6 rounded-3xl shadow-sm border border-white space-y-4">
+                <div class="flex items-center gap-2 text-blue-600 font-bold text-base">
+                    <i class="fa-solid fa-circle-info"></i> Fokus Penilaian Vokasi
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Pendidikan vokasi berorientasi pada <strong>"Hands-on Skills"</strong>. Oleh karena itu, bobot penilaian psikomotorik dan kesesuaian standar industri memegang porsi terbesar dibanding hafalan teoretis semata.
+                </p>
+                <div class="pt-2 border-t border-slate-200/60 flex items-center justify-between text-xs text-slate-500">
+                    <span>Standar SKKNI</span>
+                    <span class="text-blue-600 font-semibold"><i class="fa-solid fa-industry"></i> Validated</span>
+                </div>
+            </div>
+
+            <!-- Widget 2: Navigasi / Topik Terkait (Sesuai Permintaan Sidebar) -->
+            <div id="materi" class="glass-card p-6 rounded-3xl shadow-sm border border-white space-y-4">
+                <div class="flex items-center gap-2 text-slate-900 font-bold text-base">
+                    <i class="fa-solid fa-bookmark text-cyan-600"></i> Topik Terkait Vokasi
+                </div>
+                <ul class="space-y-2 text-xs sm:text-sm font-medium text-slate-600">
+                    <li>
+                        <a href="#ranah" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-white/80 transition-colors">
+                            <span><i class="fa-solid fa-angle-right text-blue-500 mr-2"></i> Taksonomi Bloom Versi Vokasi</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-400"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#teknik" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-white/80 transition-colors">
+                            <span><i class="fa-solid fa-angle-right text-blue-500 mr-2"></i> Pembuatan Rubrik Skala Likert</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-400"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#simulator" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-white/80 transition-colors">
+                            <span><i class="fa-solid fa-angle-right text-blue-500 mr-2"></i> Evaluasi Pembelajaran PBL</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-400"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#beranda" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-white/80 transition-colors">
+                            <span><i class="fa-solid fa-angle-right text-blue-500 mr-2"></i> Sertifikasi Kompetensi</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-400"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Widget 3: Quote Vokasi -->
+            <div class="bg-gradient-to-br from-blue-600 to-cyan-500 p-6 rounded-3xl shadow-lg text-white space-y-3">
+                <i class="fa-solid fa-quote-left text-2xl opacity-75"></i>
+                <p class="text-xs sm:text-sm font-medium leading-relaxed">
+                    "Pendidikan vokasi yang unggul lahir dari sistem pengukuran dan penilaian yang jujur, berbasis unjuk kerja nyata, serta merangkul kebutuhan dunia industri."
+                </p>
+                <div class="text-[10px] font-bold uppercase tracking-wider opacity-90 pt-1">
+                    — Kurikulum Merdeka Vokasi
+                </div>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="glass-nav border-t border-slate-200/80 mt-16 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center text-white text-xs shadow">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <span class="font-bold text-sm text-slate-800">RanahVokasi Edu</span>
+            </div>
+
+            <p class="text-xs text-slate-600">
+                Oleh <span class="font-semibold text-slate-800">Ariel Usman</span> Copyright 2026
+            </p>
+
+            <div class="flex items-center gap-3">
+                <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-white shadow-sm border border-slate-200 flex items-center justify-center text-pink-600 hover:scale-110 transition-transform">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <span class="text-xs text-slate-500 font-medium">@arielrcun</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        // Toggle Mobile Menu
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Toggle Detail Accordion function
+        function toggleDetail(id) {
+            const el = document.getElementById(id);
+            if (el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+            } else {
+                el.classList.add('hidden');
+            }
+        }
+
+        // Quiz Logic Simulator
+        function checkAnswer(selectedIndex) {
+            const feedback = document.getElementById('quiz-feedback');
+            feedback.classList.remove('hidden');
+            
+            if (selectedIndex === 1) {
+                feedback.className = "p-4 rounded-xl text-xs sm:text-sm font-medium bg-emerald-100 text-emerald-800 border border-emerald-200";
+                feedback.innerHTML = `<i class="fa-solid fa-circle-check mr-1"></i> <strong>Benar!</strong> Lembar Observasi Unjuk Kerja / Rubrik Praktik adalah instrumen utama untuk menilai ranah psikomotorik dan ketepatan prosedural kerja.`;
+            } else {
+                feedback.className = "p-4 rounded-xl text-xs sm:text-sm font-medium bg-rose-100 text-rose-800 border border-rose-200";
+                feedback.innerHTML = `<i class="fa-solid fa-circle-xmark mr-1"></i> <strong>Kurang tepat.</strong> Untuk mengukur keterampilan merakit secara langsung, instrumen yang paling akurat adalah Rubrik Praktik/Unjuk Kerja. Coba lagi!`;
+            }
+        }
+    </script>
+</body>
+</html>
