@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Kuesioner Kualitatif Metopen - Portal Mahasiswa</title>
+    <meta name="description" content="Platform pengisian kuesioner kualitatif untuk mahasiswa/i mata kuliah Metodologi Penelitian.">
+    <meta name="keywords" content="Kuesioner, Metopen, Metodologi Penelitian, Mahasiswa, Kualitatif">
+    <meta name="author" content="Ariel Usman">
+    
+    <!-- Open Graph for Social Media Link Previews -->
+    <meta property="og:title" content="Kuesioner Kualitatif Metopen">
+    <meta property="og:description" content="Isi kuesioner pengalaman belajar Metodologi Penelitian Anda di sini.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS & Configuration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        kampus: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#006B3F', /* Primary Islamic Green */
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- html2pdf.js for PDF Generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f0fdf4; }
+        ::-webkit-scrollbar-thumb { background: #006B3F; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #15803d; }
+        
+        /* Glassmorphism utility for older browsers fallback */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-kampus-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <nav class="bg-kampus-800 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-book-open-reader text-2xl text-kampus-200"></i>
+                    <span class="font-bold text-xl tracking-wide">Metopen<span class="text-kampus-300">Quest</span></span>
+                </div>
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="#" class="hover:text-kampus-200 transition-colors font-medium">Beranda</a>
+                    <a href="#kuesioner" class="hover:text-kampus-200 transition-colors font-medium">Kuesioner</a>
+                    <a href="#panduan" class="hover:text-kampus-200 transition-colors font-medium">Panduan</a>
+                </div>
+                <!-- Mobile menu button (visual only for this scope) -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-white hover:text-kampus-200 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative bg-cover bg-center py-20 lg:py-32" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-kampus-900 bg-opacity-60"></div>
+        
+        <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center text-center">
+            <div class="glass-panel p-8 md:p-12 rounded-2xl shadow-2xl max-w-3xl transform transition duration-500 hover:scale-[1.01]">
+                <div class="inline-block p-3 rounded-full bg-kampus-100 text-kampus-800 mb-4">
+                    <i class="fa-solid fa-leaf text-3xl"></i>
+                </div>
+                <h1 class="text-3xl md:text-5xl font-extrabold text-kampus-900 mb-4 leading-tight">
+                    Kuesioner Evaluasi Pembelajaran Metopen
+                </h1>
+                <p class="text-md md:text-lg text-gray-700 mb-6 font-medium">
+                    "Menuju pemahaman metodologi penelitian yang mendalam, aplikatif, dan berlandaskan nilai-nilai keilmuan yang bermanfaat."
+                </p>
+                <a href="#kuesioner" class="inline-block bg-kampus-800 text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-kampus-700 transition-all hover:shadow-xl transform hover:-translate-y-1">
+                    Mulai Mengisi
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full grid grid-cols-1 lg:grid-cols-4 gap-8">
+        
+        <!-- Main Form Content -->
+        <section id="kuesioner" class="lg:col-span-3">
+            <div class="bg-white rounded-2xl shadow-lg border border-kampus-100 overflow-hidden">
+                <div class="bg-kampus-800 px-6 py-4 border-b border-kampus-700 flex justify-between items-center">
+                    <h2 class="text-xl font-bold text-white"><i class="fa-solid fa-clipboard-list mr-2"></i> Form Kuesioner</h2>
+                </div>
+                
+                <form id="kuesionerForm" class="p-6 md:p-8">
+                    
+                    <div class="mb-8 p-5 bg-kampus-50 rounded-xl border border-kampus-200">
+                        <h3 class="text-lg font-semibold text-kampus-800 mb-4 border-b border-kampus-200 pb-2">Informasi Mahasiswa</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="inisial" class="block text-sm font-medium text-gray-700 mb-1">Inisial Nama <span class="text-red-500">*</span></label>
+                                <input type="text" id="inisial" name="inisial" required placeholder="Contoh: A U"
+                                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-kampus-500 focus:border-kampus-500 outline-none transition-all">
+                            </div>
+                            <div>
+                                <label for="jurusan" class="block text-sm font-medium text-gray-700 mb-1">Program Studi / Jurusan <span class="text-red-500">*</span></label>
+                                <input type="text" id="jurusan" name="jurusan" required placeholder="Contoh: Pekerjaan Sosial"
+                                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-kampus-500 focus:border-kampus-500 outline-none transition-all">
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-lg font-semibold text-kampus-800 mb-4">Pertanyaan Kualitatif</h3>
+                    
+                    <div class="space-y-6">
+                        <!-- Q1 -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-800 mb-2">
+                                1. Bagaimana pengalaman Anda saat mengikuti pembelajaran metodologi penelitian secara konvensional (ceramah/diskusi)?
+                            </label>
+                            <textarea id="q1" rows="3" required placeholder="Ceritakan pengalaman Anda di sini..."
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-kampus-500 focus:border-kampus-500 outline-none transition-all resize-y"></textarea>
+                        </div>
+                        
+                        <!-- Q2 -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-800 mb-2">
+                                2. Apa kendala yang Anda rasakan ketika harus mengaitkan satu konsep metodologi dengan konsep lain (misalnya populasi-sampel dengan teknik pengumpulan data)?
+                            </label>
+                            <textarea id="q2" rows="3" required placeholder="Jelaskan kendala atau kesulitan yang dihadapi..."
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-kampus-500 focus:border-kampus-500 outline-none transition-all resize-y"></textarea>
+                        </div>
+
+                        <!-- Q3 -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-800 mb-2">
+                                3. Bagaimana keterlibatan Anda dalam diskusi kelas saat membahas materi metodologi penelitian?
+                            </label>
+                            <textarea id="q3" rows="3" required placeholder="Gambarkan tingkat partisipasi dan perasaan Anda saat diskusi..."
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-kampus-500 focus:border-kampus-500 outline-none transition-all resize-y"></textarea>
+                        </div>
+
+                        <!-- Q4 -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-800 mb-2">
+                                4. Apa pengalaman Anda sejauh ini dalam menggunakan aplikasi AI generatif (seperti ChatGPT, Gemini, atau NotebookLM) untuk mendukung tugas kuliah?
+                            </label>
+                            <textarea id="q4" rows="3" required placeholder="Bagikan pengalaman positif maupun negatif..."
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-kampus-500 focus:border-kampus-500 outline-none transition-all resize-y"></textarea>
+                        </div>
+
+                        <!-- Q5 -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-800 mb-2">
+                                5. Bagaimana Anda membayangkan penerapan metodologi penelitian dalam pekerjaan Anda sebagai calon pekerja sosial?
+                            </label>
+                            <textarea id="q5" rows="3" required placeholder="Tuliskan pandangan Anda ke depan..."
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-kampus-500 focus:border-kampus-500 outline-none transition-all resize-y"></textarea>
+                        </div>
+
+                        <!-- Q6 -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-800 mb-2">
+                                6. Apa jenis media atau metode pembelajaran yang menurut Anda paling membantu memahami materi metodologi penelitian secara mendalam dan tahan lama?
+                            </label>
+                            <textarea id="q6" rows="3" required placeholder="Sebutkan preferensi metode atau media belajar Anda..."
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-kampus-500 focus:border-kampus-500 outline-none transition-all resize-y"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="mt-10 flex flex-col sm:flex-row gap-4 items-center justify-end border-t border-gray-200 pt-6">
+                        <span class="text-sm text-gray-500 italic mr-auto hidden sm:block">Pastikan semua kolom terisi sebelum mengunduh.</span>
+                        <button type="button" onclick="clearForm()" class="px-6 py-2.5 rounded-lg border-2 border-kampus-600 text-kampus-700 font-semibold hover:bg-kampus-50 transition-colors w-full sm:w-auto text-center">
+                            <i class="fa-solid fa-eraser mr-2"></i> Bersihkan
+                        </button>
+                        <button type="button" onclick="generatePDF()" class="px-6 py-2.5 rounded-lg bg-kampus-800 text-white font-semibold shadow hover:bg-kampus-700 hover:shadow-lg transition-all w-full sm:w-auto flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-file-pdf"></i> Unduh PDF Rekaman
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <aside class="lg:col-span-1 space-y-6">
+            <!-- Info Card -->
+            <div class="bg-white rounded-2xl shadow border border-kampus-100 p-5">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-kampus-100 p-2 rounded-lg text-kampus-800">
+                        <i class="fa-solid fa-circle-info text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800">Petunjuk Pengisian</h3>
+                </div>
+                <p class="text-sm text-gray-600 mb-3 leading-relaxed">
+                    Kuesioner ini dirancang untuk merekam perspektif mahasiswa. Jawaban Anda disimpan secara lokal menjadi PDF, <b>tidak</b> diunggah ke server publik.
+                </p>
+                <ul class="text-sm text-gray-600 list-disc list-inside space-y-1">
+                    <li>Gunakan Inisial (Bukan nama lengkap)</li>
+                    <li>Jawab secara jujur & naratif</li>
+                    <li>Klik "Unduh PDF" untuk menyimpan</li>
+                </ul>
+            </div>
+
+            <!-- Related Links Card -->
+            <div id="panduan" class="bg-kampus-800 text-white rounded-2xl shadow p-5">
+                <h3 class="font-bold mb-4 border-b border-kampus-600 pb-2"><i class="fa-solid fa-link mr-2"></i> Hal Terkait</h3>
+                <ul class="space-y-3 text-sm font-medium">
+                    <li>
+                        <a href="#" class="flex items-center gap-3 hover:text-kampus-200 transition-colors bg-kampus-900 bg-opacity-40 p-2 rounded-lg hover:bg-opacity-60">
+                            <i class="fa-solid fa-globe w-5 text-center"></i> Portal Akademik Kampus
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center gap-3 hover:text-kampus-200 transition-colors bg-kampus-900 bg-opacity-40 p-2 rounded-lg hover:bg-opacity-60">
+                            <i class="fa-solid fa-file-lines w-5 text-center"></i> Panduan Metopen 2026
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center gap-3 hover:text-kampus-200 transition-colors bg-kampus-900 bg-opacity-40 p-2 rounded-lg hover:bg-opacity-60">
+                            <i class="fa-solid fa-book-journal-whills w-5 text-center"></i> Jurnal Referensi Kualitatif
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="bg-kampus-900 text-kampus-100 py-8 mt-auto border-t-[6px] border-kampus-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-center md:text-left">
+                <h2 class="text-xl font-bold mb-1 text-white"><i class="fa-solid fa-book-open-reader mr-2"></i>MetopenQuest</h2>
+                <p class="text-sm text-kampus-200 opacity-80">Platform Evaluasi Pembelajaran Islami</p>
+            </div>
+            
+            <div class="flex flex-col items-center md:items-end">
+                <a href="https://instagram.com/arielrcun" target="_blank" class="flex items-center gap-2 hover:text-white transition-colors bg-white/10 px-4 py-2 rounded-full mb-2 hover:bg-white/20">
+                    <i class="fa-brands fa-instagram text-xl"></i>
+                    <span class="font-medium tracking-wide">@arielrcun</span>
+                </a>
+                <p class="text-sm opacity-90">&copy; Oleh Ariel Usman Copyright 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Toast Notification Container (To avoid using alert()) -->
+    <div id="toast-container" class="fixed top-20 right-5 z-50 flex flex-col gap-3"></div>
+
+    <script>
+        // Helper function to show custom toast message
+        function showToast(message, type = 'error') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            
+            const bgColor = type === 'error' ? 'bg-red-500' : 'bg-kampus-600';
+            const icon = type === 'error' ? 'fa-circle-exclamation' : 'fa-circle-check';
+
+            toast.className = `${bgColor} text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-3 transform transition-all duration-300 translate-x-full opacity-0`;
+            toast.innerHTML = `<i class="fa-solid ${icon} text-lg"></i> <span>${message}</span>`;
+            
+            container.appendChild(toast);
+            
+            // Animate in
+            setTimeout(() => {
+                toast.classList.remove('translate-x-full', 'opacity-0');
+            }, 10);
+
+            // Animate out and remove
+            setTimeout(() => {
+                toast.classList.add('translate-x-full', 'opacity-0');
+                setTimeout(() => {
+                    toast.remove();
+                }, 300);
+            }, 3000);
+        }
+
+        // Clear form values
+        function clearForm() {
+            document.getElementById('kuesionerForm').reset();
+            showToast('Formulir berhasil dibersihkan.', 'success');
+        }
+
+        // Generate and Download PDF
+        function generatePDF() {
+            // 1. Get input values
+            const inisial = document.getElementById('inisial').value.trim();
+            const jurusan = document.getElementById('jurusan').value.trim();
+            const q1 = document.getElementById('q1').value.trim();
+            const q2 = document.getElementById('q2').value.trim();
+            const q3 = document.getElementById('q3').value.trim();
+            const q4 = document.getElementById('q4').value.trim();
+            const q5 = document.getElementById('q5').value.trim();
+            const q6 = document.getElementById('q6').value.trim();
+
+            // 2. Validate inputs
+            if (!inisial || !jurusan || !q1 || !q2 || !q3 || !q4 || !q5 || !q6) {
+                showToast('Mohon isi semua kolom sebelum mengunduh PDF.', 'error');
+                return;
+            }
+
+            // 3. Create a clean HTML template for the PDF document
+            const dateStr = new Date().toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+            
+            const pdfTemplate = document.createElement('div');
+            pdfTemplate.innerHTML = `
+                <div style="font-family: 'Inter', sans-serif; color: #111; max-width: 800px; margin: 0 auto; padding: 40px; background: white;">
+                    
+                    <div style="text-align: center; border-bottom: 3px solid #006B3F; padding-bottom: 20px; margin-bottom: 30px;">
+                        <h1 style="color: #006B3F; font-size: 24px; margin: 0 0 10px 0; text-transform: uppercase;">Rekam Kuesioner Kualitatif</h1>
+                        <h2 style="color: #333; font-size: 18px; margin: 0; font-weight: normal;">Mata Kuliah Metodologi Penelitian</h2>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px; background: #f0fdf4; padding: 15px; border-left: 4px solid #006B3F;">
+                        <p style="margin: 5px 0;"><strong>Inisial Mahasiswa:</strong> ${inisial}</p>
+                        <p style="margin: 5px 0;"><strong>Jurusan:</strong> ${jurusan}</p>
+                        <p style="margin: 5px 0;"><strong>Tanggal Pengisian:</strong> ${dateStr}</p>
+                    </div>
+                    
+                    <h3 style="color: #006B3F; font-size: 18px; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-bottom: 20px;">Hasil Respons:</h3>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <p style="font-weight: bold; margin-bottom: 8px; color: #333; font-size: 14px;">1. Bagaimana pengalaman Anda saat mengikuti pembelajaran metodologi penelitian secara konvensional (ceramah/diskusi)?</p>
+                        <p style="background: #f9f9f9; padding: 12px; border: 1px solid #e5e7eb; border-radius: 4px; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${q1}</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <p style="font-weight: bold; margin-bottom: 8px; color: #333; font-size: 14px;">2. Apa kendala yang Anda rasakan ketika harus mengaitkan satu konsep metodologi dengan konsep lain?</p>
+                        <p style="background: #f9f9f9; padding: 12px; border: 1px solid #e5e7eb; border-radius: 4px; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${q2}</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <p style="font-weight: bold; margin-bottom: 8px; color: #333; font-size: 14px;">3. Bagaimana keterlibatan Anda dalam diskusi kelas saat membahas materi metodologi penelitian?</p>
+                        <p style="background: #f9f9f9; padding: 12px; border: 1px solid #e5e7eb; border-radius: 4px; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${q3}</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <p style="font-weight: bold; margin-bottom: 8px; color: #333; font-size: 14px;">4. Apa pengalaman Anda sejauh ini dalam menggunakan aplikasi AI generatif untuk mendukung tugas kuliah?</p>
+                        <p style="background: #f9f9f9; padding: 12px; border: 1px solid #e5e7eb; border-radius: 4px; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${q4}</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <p style="font-weight: bold; margin-bottom: 8px; color: #333; font-size: 14px;">5. Bagaimana Anda membayangkan penerapan metodologi penelitian dalam pekerjaan Anda sebagai calon pekerja sosial?</p>
+                        <p style="background: #f9f9f9; padding: 12px; border: 1px solid #e5e7eb; border-radius: 4px; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${q5}</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <p style="font-weight: bold; margin-bottom: 8px; color: #333; font-size: 14px;">6. Apa jenis media atau metode pembelajaran yang menurut Anda paling membantu memahami materi secara mendalam?</p>
+                        <p style="background: #f9f9f9; padding: 12px; border: 1px solid #e5e7eb; border-radius: 4px; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${q6}</p>
+                    </div>
+                    
+                    <div style="margin-top: 40px; font-size: 12px; color: #666; text-align: center; border-top: 1px solid #ccc; padding-top: 10px;">
+                        Dokumen ini dibuat otomatis oleh Sistem Evaluasi Metopen. &copy; Ariel Usman 2026
+                    </div>
+                </div>
+            `;
+
+            // 4. Configure html2pdf options
+            const opt = {
+                margin:       [0, 0, 0, 0], // margins are handled in the HTML padding
+                filename:     `Kuesioner_Metopen_${inisial.replace(/\s+/g, '_')}.pdf`,
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, useCORS: true },
+                jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+
+            // 5. Generate and save
+            showToast('Memproses Dokumen PDF, mohon tunggu...', 'success');
+            html2pdf().set(opt).from(pdfTemplate).save().then(() => {
+                showToast('Unduhan PDF berhasil dimulai!', 'success');
+            }).catch(err => {
+                console.error(err);
+                showToast('Terjadi kesalahan saat membuat PDF.', 'error');
+            });
+        }
+    </script>
+</body>
+</html>
