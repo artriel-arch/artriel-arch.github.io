@@ -117,7 +117,7 @@
         
         <!-- Main Form Content -->
         <section id="kuesioner" class="lg:col-span-3">
-            <div class="bg-white rounded-2xl shadow-lg border border-kampus-100 overflow-hidden">
+            <div id="capture-area" class="bg-white rounded-2xl shadow-lg border border-kampus-100 overflow-hidden">
                 <div class="bg-kampus-800 px-6 py-4 border-b border-kampus-700 flex justify-between items-center">
                     <h2 class="text-xl font-bold text-white"><i class="fa-solid fa-clipboard-list mr-2"></i> Form Kuesioner</h2>
                 </div>
@@ -194,17 +194,17 @@
                                 6. Apa jenis media atau metode pembelajaran yang menurut Anda paling membantu memahami materi metodologi penelitian secara mendalam dan tahan lama?
                             </label>
                             <textarea id="q6" rows="3" required placeholder="Sebutkan preferensi metode atau media belajar Anda..."
-                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-kampus-500 focus:border-kampus-500 outline-none transition-all resize-y"></textarea>
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-kampus-500 focus:border-kampus-500 outline-none transition-all resize-none overflow-hidden"></textarea>
                         </div>
                     </div>
 
-                    <div class="mt-10 flex flex-col sm:flex-row gap-4 items-center justify-end border-t border-gray-200 pt-6">
+                    <div data-html2canvas-ignore="true" class="mt-10 flex flex-col sm:flex-row gap-4 items-center justify-end border-t border-gray-200 pt-6">
                         <span class="text-sm text-gray-500 italic mr-auto hidden sm:block">Pastikan semua kolom terisi sebelum mengunduh.</span>
                         <button type="button" onclick="clearForm()" class="px-6 py-2.5 rounded-lg border-2 border-kampus-600 text-kampus-700 font-semibold hover:bg-kampus-50 transition-colors w-full sm:w-auto text-center">
                             <i class="fa-solid fa-eraser mr-2"></i> Bersihkan
                         </button>
                         <button type="button" onclick="generatePDF()" class="px-6 py-2.5 rounded-lg bg-kampus-800 text-white font-semibold shadow hover:bg-kampus-700 hover:shadow-lg transition-all w-full sm:w-auto flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-file-pdf"></i> Unduh PDF Rekaman
+                            <i class="fa-solid fa-camera"></i> Unduh PDF (Screenshot)
                         </button>
                     </div>
                 </form>
@@ -302,102 +302,62 @@
             }, 3000);
         }
 
+        // Auto-resize textareas so screenshot captures all text
+        document.querySelectorAll('textarea').forEach(el => {
+            el.addEventListener('input', function() {
+                this.style.height = 'auto';
+                this.style.height = (this.scrollHeight) + 'px';
+            });
+        });
+
         // Clear form values
         function clearForm() {
             document.getElementById('kuesionerForm').reset();
+            // Reset textarea heights back to default
+            document.querySelectorAll('textarea').forEach(el => {
+                el.style.height = 'auto';
+            });
             showToast('Formulir berhasil dibersihkan.', 'success');
         }
 
-        // Generate and Download PDF
+        // Generate and Download PDF by capturing the visual state (Screenshot)
         function generatePDF() {
-            // 1. Get input values
+            // 1. Get required inputs for validation
             const inisial = document.getElementById('inisial').value.trim();
-            const jurusan = document.getElementById('jurusan').value.trim();
-            const q1 = document.getElementById('q1').value.trim();
-            const q2 = document.getElementById('q2').value.trim();
-            const q3 = document.getElementById('q3').value.trim();
-            const q4 = document.getElementById('q4').value.trim();
-            const q5 = document.getElementById('q5').value.trim();
-            const q6 = document.getElementById('q6').value.trim();
+            const form = document.getElementById('kuesionerForm');
 
-            // 2. Validate inputs
-            if (!inisial || !jurusan || !q1 || !q2 || !q3 || !q4 || !q5 || !q6) {
-                showToast('Mohon isi semua kolom sebelum mengunduh PDF.', 'error');
+            // 2. Validate form inputs
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                showToast('Mohon lengkapi semua isian sebelum mengunduh.', 'error');
                 return;
             }
 
-            // 3. Create a clean HTML template for the PDF document
-            const dateStr = new Date().toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-            
-            const pdfTemplate = document.createElement('div');
-            pdfTemplate.innerHTML = `
-                <div style="font-family: 'Inter', sans-serif; color: #111; max-width: 800px; margin: 0 auto; padding: 40px; background: white;">
-                    
-                    <div style="text-align: center; border-bottom: 3px solid #006B3F; padding-bottom: 20px; margin-bottom: 30px;">
-                        <h1 style="color: #006B3F; font-size: 24px; margin: 0 0 10px 0; text-transform: uppercase;">Rekam Kuesioner Kualitatif</h1>
-                        <h2 style="color: #333; font-size: 18px; margin: 0; font-weight: normal;">Mata Kuliah Metodologi Penelitian</h2>
-                    </div>
-                    
-                    <div style="margin-bottom: 30px; background: #f0fdf4; padding: 15px; border-left: 4px solid #006B3F;">
-                        <p style="margin: 5px 0;"><strong>Inisial Mahasiswa:</strong> ${inisial}</p>
-                        <p style="margin: 5px 0;"><strong>Jurusan:</strong> ${jurusan}</p>
-                        <p style="margin: 5px 0;"><strong>Tanggal Pengisian:</strong> ${dateStr}</p>
-                    </div>
-                    
-                    <h3 style="color: #006B3F; font-size: 18px; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-bottom: 20px;">Hasil Respons:</h3>
-                    
-                    <div style="margin-bottom: 20px;">
-                        <p style="font-weight: bold; margin-bottom: 8px; color: #333; font-size: 14px;">1. Bagaimana pengalaman Anda saat mengikuti pembelajaran metodologi penelitian secara konvensional (ceramah/diskusi)?</p>
-                        <p style="background: #f9f9f9; padding: 12px; border: 1px solid #e5e7eb; border-radius: 4px; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${q1}</p>
-                    </div>
+            // 3. Target the DOM element to capture (Screenshot Target)
+            const captureArea = document.getElementById('capture-area');
 
-                    <div style="margin-bottom: 20px;">
-                        <p style="font-weight: bold; margin-bottom: 8px; color: #333; font-size: 14px;">2. Apa kendala yang Anda rasakan ketika harus mengaitkan satu konsep metodologi dengan konsep lain?</p>
-                        <p style="background: #f9f9f9; padding: 12px; border: 1px solid #e5e7eb; border-radius: 4px; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${q2}</p>
-                    </div>
-
-                    <div style="margin-bottom: 20px;">
-                        <p style="font-weight: bold; margin-bottom: 8px; color: #333; font-size: 14px;">3. Bagaimana keterlibatan Anda dalam diskusi kelas saat membahas materi metodologi penelitian?</p>
-                        <p style="background: #f9f9f9; padding: 12px; border: 1px solid #e5e7eb; border-radius: 4px; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${q3}</p>
-                    </div>
-
-                    <div style="margin-bottom: 20px;">
-                        <p style="font-weight: bold; margin-bottom: 8px; color: #333; font-size: 14px;">4. Apa pengalaman Anda sejauh ini dalam menggunakan aplikasi AI generatif untuk mendukung tugas kuliah?</p>
-                        <p style="background: #f9f9f9; padding: 12px; border: 1px solid #e5e7eb; border-radius: 4px; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${q4}</p>
-                    </div>
-
-                    <div style="margin-bottom: 20px;">
-                        <p style="font-weight: bold; margin-bottom: 8px; color: #333; font-size: 14px;">5. Bagaimana Anda membayangkan penerapan metodologi penelitian dalam pekerjaan Anda sebagai calon pekerja sosial?</p>
-                        <p style="background: #f9f9f9; padding: 12px; border: 1px solid #e5e7eb; border-radius: 4px; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${q5}</p>
-                    </div>
-
-                    <div style="margin-bottom: 20px;">
-                        <p style="font-weight: bold; margin-bottom: 8px; color: #333; font-size: 14px;">6. Apa jenis media atau metode pembelajaran yang menurut Anda paling membantu memahami materi secara mendalam?</p>
-                        <p style="background: #f9f9f9; padding: 12px; border: 1px solid #e5e7eb; border-radius: 4px; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${q6}</p>
-                    </div>
-                    
-                    <div style="margin-top: 40px; font-size: 12px; color: #666; text-align: center; border-top: 1px solid #ccc; padding-top: 10px;">
-                        Dokumen ini dibuat otomatis oleh Sistem Evaluasi Metopen. &copy; Ariel Usman 2026
-                    </div>
-                </div>
-            `;
-
-            // 4. Configure html2pdf options
+            // 4. Configure html2pdf options for visual screenshot capture
             const opt = {
-                margin:       [0, 0, 0, 0], // margins are handled in the HTML padding
-                filename:     `Kuesioner_Metopen_${inisial.replace(/\s+/g, '_')}.pdf`,
-                image:        { type: 'jpeg', quality: 0.98 },
-                html2canvas:  { scale: 2, useCORS: true },
+                margin:       [0.3, 0.3, 0.3, 0.3], // margins (Top, Left, Bottom, Right)
+                filename:     `Screenshot_Kuesioner_${inisial ? inisial.replace(/\s+/g, '_') : 'Mahasiswa'}.pdf`,
+                image:        { type: 'jpeg', quality: 1 }, // High quality image
+                html2canvas:  { 
+                    scale: 2, // Double resolution for sharpness
+                    useCORS: true, 
+                    scrollY: 0, 
+                    windowWidth: document.documentElement.offsetWidth 
+                },
                 jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
             };
 
             // 5. Generate and save
-            showToast('Memproses Dokumen PDF, mohon tunggu...', 'success');
-            html2pdf().set(opt).from(pdfTemplate).save().then(() => {
-                showToast('Unduhan PDF berhasil dimulai!', 'success');
+            showToast('Mengambil tangkapan layar, mohon tunggu...', 'success');
+            
+            html2pdf().set(opt).from(captureArea).save().then(() => {
+                showToast('Screenshot form berhasil diunduh!', 'success');
             }).catch(err => {
                 console.error(err);
-                showToast('Terjadi kesalahan saat membuat PDF.', 'error');
+                showToast('Terjadi kesalahan saat memproses screenshot.', 'error');
             });
         }
     </script>
