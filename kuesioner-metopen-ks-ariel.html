@@ -4,361 +4,892 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Meta Tags -->
     <title>Kuesioner Kualitatif Metopen - Portal Mahasiswa</title>
     <meta name="description" content="Platform pengisian kuesioner kualitatif untuk mahasiswa/i mata kuliah Metodologi Penelitian.">
-    <meta name="keywords" content="Kuesioner, Metopen, Metodologi Penelitian, Mahasiswa, Kualitatif">
     <meta name="author" content="Ariel Usman">
-    
-    <!-- Open Graph for Social Media Link Previews -->
+
     <meta property="og:title" content="Kuesioner Kualitatif Metopen">
     <meta property="og:description" content="Isi kuesioner pengalaman belajar Metodologi Penelitian Anda di sini.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
     <meta property="og:type" content="website">
 
-    <!-- Fonts and Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Tailwind CSS & Configuration -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        kampus: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            200: '#bbf7d0',
-                            300: '#86efac',
-                            400: '#4ade80',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            800: '#006B3F', /* Primary Islamic Green */
-                            900: '#14532d',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- html2pdf.js for PDF Generation -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <!-- jsPDF (text-based PDF — tidak butuh html2canvas) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
     <style>
-        /* Custom Scrollbar */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --green-50:  #f0fdf4;
+            --green-100: #dcfce7;
+            --green-200: #bbf7d0;
+            --green-300: #86efac;
+            --green-600: #16a34a;
+            --green-700: #15803d;
+            --green-800: #006B3F;
+            --green-900: #14532d;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--green-50);
+            color: var(--gray-800);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Scrollbar ── */
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f0fdf4; }
-        ::-webkit-scrollbar-thumb { background: #006B3F; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #15803d; }
-        
-        /* Glassmorphism utility for older browsers fallback */
+        ::-webkit-scrollbar-track { background: var(--green-50); }
+        ::-webkit-scrollbar-thumb { background: var(--green-800); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--green-700); }
+
+        /* ── Nav ── */
+        nav {
+            background: var(--green-800);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 2px 8px rgba(0,0,0,.25);
+        }
+        .nav-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand { display: flex; align-items: center; gap: .75rem; font-size: 1.25rem; font-weight: 700; letter-spacing: .02em; }
+        .nav-brand i { color: var(--green-300); font-size: 1.5rem; }
+        .nav-brand span.accent { color: var(--green-300); }
+        .nav-links { display: flex; gap: 1.5rem; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 500; transition: color .2s; }
+        .nav-links a:hover { color: var(--green-300); }
+        @media (max-width: 768px) { .nav-links { display: none; } }
+
+        /* ── Hero ── */
+        header.hero {
+            position: relative;
+            background: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            padding: 5rem 1.5rem;
+        }
+        .hero-overlay {
+            position: absolute; inset: 0;
+            background: rgba(20, 83, 45, .62);
+        }
+        .hero-inner {
+            position: relative;
+            max-width: 720px;
+            margin: 0 auto;
+            text-align: center;
+        }
         .glass-panel {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255,255,255,.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255,255,255,.35);
+            border-radius: 1.25rem;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,.18);
+        }
+        .hero-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px; height: 56px;
+            border-radius: 50%;
+            background: var(--green-100);
+            color: var(--green-800);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .glass-panel h1 {
+            font-size: clamp(1.6rem, 4vw, 2.8rem);
+            font-weight: 800;
+            color: var(--green-900);
+            line-height: 1.2;
+            margin-bottom: .75rem;
+        }
+        .glass-panel p { color: var(--gray-600); font-size: 1rem; margin-bottom: 1.5rem; line-height: 1.65; }
+        .btn-primary {
+            display: inline-block;
+            background: var(--green-800);
+            color: white;
+            font-weight: 600;
+            padding: .75rem 2rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(0,0,0,.2);
+            transition: background .2s, transform .15s, box-shadow .2s;
+        }
+        .btn-primary:hover { background: var(--green-700); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.25); }
+
+        /* ── Layout ── */
+        main {
+            flex: 1;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        @media (min-width: 1024px) {
+            main { grid-template-columns: 3fr 1fr; }
+        }
+
+        /* ── Form card ── */
+        .form-card {
+            background: white;
+            border-radius: 1rem;
+            border: 1px solid var(--green-100);
+            box-shadow: 0 4px 20px rgba(0,0,0,.07);
+            overflow: hidden;
+        }
+        .form-card-header {
+            background: var(--green-800);
+            padding: .9rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+        }
+        .form-card-header h2 { color: white; font-weight: 700; font-size: 1.1rem; }
+        .form-body { padding: 1.75rem 2rem; }
+        @media (max-width: 640px) { .form-body { padding: 1.25rem; } }
+
+        /* ── Field groups ── */
+        .info-section {
+            background: var(--green-50);
+            border: 1px solid var(--green-200);
+            border-radius: .75rem;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .info-section h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--green-800);
+            padding-bottom: .5rem;
+            border-bottom: 1px solid var(--green-200);
+            margin-bottom: 1rem;
+        }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+        @media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }
+
+        label { display: block; font-size: .875rem; font-weight: 500; color: var(--gray-700); margin-bottom: .3rem; }
+        label .req { color: #ef4444; }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: .6rem 1rem;
+            border: 1px solid var(--gray-300);
+            border-radius: .5rem;
+            font-family: inherit;
+            font-size: .95rem;
+            color: var(--gray-800);
+            background: white;
+            outline: none;
+            transition: border-color .2s, box-shadow .2s;
+        }
+        input[type="text"]:focus,
+        textarea:focus {
+            border-color: var(--green-600);
+            box-shadow: 0 0 0 3px rgba(22,163,74,.15);
+        }
+        textarea { resize: vertical; overflow: hidden; }
+
+        .questions-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--green-800);
+            margin-bottom: 1rem;
+        }
+        .question-item { margin-bottom: 1.5rem; }
+        .question-item label {
+            font-size: .875rem;
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-bottom: .5rem;
+            line-height: 1.55;
+        }
+
+        /* ── Form actions ── */
+        .form-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            justify-content: flex-end;
+            border-top: 1px solid var(--gray-200);
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+        }
+        @media (min-width: 640px) { .form-actions { flex-direction: row; } }
+        .hint-text { font-size: .8rem; color: var(--gray-500); font-style: italic; margin-right: auto; }
+        @media (max-width: 639px) { .hint-text { display: none; } }
+
+        .btn-outline {
+            padding: .6rem 1.5rem;
+            border: 2px solid var(--green-600);
+            color: var(--green-700);
+            background: white;
+            border-radius: .5rem;
+            font-weight: 600;
+            font-size: .9rem;
+            cursor: pointer;
+            transition: background .2s;
+            width: 100%;
+        }
+        @media (min-width: 640px) { .btn-outline { width: auto; } }
+        .btn-outline:hover { background: var(--green-50); }
+
+        .btn-download {
+            padding: .6rem 1.5rem;
+            background: var(--green-800);
+            color: white;
+            border: none;
+            border-radius: .5rem;
+            font-weight: 600;
+            font-size: .9rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .5rem;
+            transition: background .2s, box-shadow .2s;
+            width: 100%;
+        }
+        @media (min-width: 640px) { .btn-download { width: auto; } }
+        .btn-download:hover { background: var(--green-700); box-shadow: 0 4px 12px rgba(0,0,0,.18); }
+        .btn-download:disabled { opacity: .65; cursor: not-allowed; }
+
+        /* ── Sidebar ── */
+        aside { display: flex; flex-direction: column; gap: 1.5rem; }
+
+        .sidebar-card {
+            background: white;
+            border-radius: 1rem;
+            border: 1px solid var(--green-100);
+            box-shadow: 0 2px 10px rgba(0,0,0,.06);
+            padding: 1.25rem;
+        }
+        .sidebar-card-head { display: flex; align-items: center; gap: .75rem; margin-bottom: 1rem; }
+        .sidebar-icon {
+            display: flex; align-items: center; justify-content: center;
+            width: 38px; height: 38px;
+            background: var(--green-100);
+            border-radius: .5rem;
+            color: var(--green-800);
+            font-size: 1.1rem;
+        }
+        .sidebar-card-head h3 { font-weight: 700; font-size: .95rem; color: var(--gray-800); }
+        .sidebar-card p { font-size: .85rem; color: var(--gray-600); line-height: 1.6; margin-bottom: .75rem; }
+        .sidebar-list { list-style: disc; padding-left: 1.1rem; font-size: .85rem; color: var(--gray-600); line-height: 1.9; }
+
+        .sidebar-dark {
+            background: var(--green-800);
+            color: white;
+            border-radius: 1rem;
+            padding: 1.25rem;
+        }
+        .sidebar-dark h3 {
+            font-weight: 700;
+            font-size: .95rem;
+            border-bottom: 1px solid rgba(255,255,255,.2);
+            padding-bottom: .5rem;
+            margin-bottom: 1rem;
+        }
+        .sidebar-dark ul { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
+        .sidebar-dark a {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            color: white;
+            text-decoration: none;
+            font-size: .85rem;
+            font-weight: 500;
+            padding: .5rem .75rem;
+            border-radius: .5rem;
+            background: rgba(0,0,0,.2);
+            transition: background .2s, color .2s;
+        }
+        .sidebar-dark a:hover { background: rgba(0,0,0,.35); color: var(--green-300); }
+
+        /* ── Footer ── */
+        footer {
+            background: var(--green-900);
+            color: var(--green-100);
+            padding: 2rem 1.5rem;
+            border-top: 6px solid var(--green-600);
+        }
+        .footer-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
+        }
+        @media (min-width: 768px) {
+            .footer-inner { flex-direction: row; justify-content: space-between; text-align: left; }
+        }
+        .footer-brand h2 { font-size: 1.15rem; font-weight: 700; color: white; margin-bottom: .25rem; }
+        .footer-brand p { font-size: .8rem; opacity: .75; }
+        .footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: .5rem; }
+        .footer-ig {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,.12);
+            padding: .4rem 1rem;
+            border-radius: 9999px;
+            font-size: .875rem;
+            font-weight: 500;
+            transition: background .2s;
+        }
+        .footer-ig:hover { background: rgba(255,255,255,.22); }
+        .footer-copy { font-size: .8rem; opacity: .8; }
+
+        /* ── Toast ── */
+        #toast-container { position: fixed; top: 80px; right: 1.25rem; z-index: 100; display: flex; flex-direction: column; gap: .75rem; }
+        .toast {
+            color: white;
+            padding: .75rem 1.25rem;
+            border-radius: .5rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,.2);
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            font-size: .9rem;
+            transform: translateX(120%);
+            opacity: 0;
+            transition: transform .3s ease, opacity .3s ease;
+            min-width: 260px;
+        }
+        .toast.show { transform: translateX(0); opacity: 1; }
+        .toast.error { background: #ef4444; }
+        .toast.success { background: var(--green-600); }
+
+        /* ── Progress bar ── */
+        .progress-bar-wrap {
+            display: none;
+            height: 6px;
+            background: var(--gray-200);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+        .progress-bar-wrap.visible { display: block; }
+        .progress-bar {
+            height: 100%;
+            background: var(--green-600);
+            width: 0%;
+            transition: width .3s ease;
         }
     </style>
 </head>
-<body class="bg-kampus-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen">
+<body>
 
-    <nav class="bg-kampus-800 text-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center gap-3">
-                    <i class="fa-solid fa-book-open-reader text-2xl text-kampus-200"></i>
-                    <span class="font-bold text-xl tracking-wide">Metopen<span class="text-kampus-300">Quest</span></span>
-                </div>
-                <div class="hidden md:flex space-x-6 items-center">
-                    <a href="#" class="hover:text-kampus-200 transition-colors font-medium">Beranda</a>
-                    <a href="#kuesioner" class="hover:text-kampus-200 transition-colors font-medium">Kuesioner</a>
-                    <a href="#panduan" class="hover:text-kampus-200 transition-colors font-medium">Panduan</a>
-                </div>
-                <!-- Mobile menu button (visual only for this scope) -->
-                <div class="md:hidden flex items-center">
-                    <button class="text-white hover:text-kampus-200 focus:outline-none">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
+    <nav>
+        <div class="nav-inner">
+            <div class="nav-brand">
+                <i class="fa-solid fa-book-open-reader"></i>
+                <span>Metopen<span class="accent">Quest</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="#">Beranda</a>
+                <a href="#kuesioner">Kuesioner</a>
+                <a href="#panduan">Panduan</a>
             </div>
         </div>
     </nav>
 
-    <header class="relative bg-cover bg-center py-20 lg:py-32" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
-        <!-- Overlay -->
-        <div class="absolute inset-0 bg-kampus-900 bg-opacity-60"></div>
-        
-        <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center text-center">
-            <div class="glass-panel p-8 md:p-12 rounded-2xl shadow-2xl max-w-3xl transform transition duration-500 hover:scale-[1.01]">
-                <div class="inline-block p-3 rounded-full bg-kampus-100 text-kampus-800 mb-4">
-                    <i class="fa-solid fa-leaf text-3xl"></i>
-                </div>
-                <h1 class="text-3xl md:text-5xl font-extrabold text-kampus-900 mb-4 leading-tight">
-                    Kuesioner Evaluasi Pembelajaran Metopen
-                </h1>
-                <p class="text-md md:text-lg text-gray-700 mb-6 font-medium">
-                    "Menuju pemahaman metodologi penelitian yang mendalam, aplikatif, dan berlandaskan nilai-nilai keilmuan yang bermanfaat."
-                </p>
-                <a href="#kuesioner" class="inline-block bg-kampus-800 text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-kampus-700 transition-all hover:shadow-xl transform hover:-translate-y-1">
-                    Mulai Mengisi
-                </a>
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-inner">
+            <div class="glass-panel">
+                <div class="hero-icon"><i class="fa-solid fa-leaf"></i></div>
+                <h1>Kuesioner Evaluasi Pembelajaran Metopen</h1>
+                <p>"Menuju pemahaman metodologi penelitian yang mendalam, aplikatif, dan berlandaskan nilai-nilai keilmuan yang bermanfaat."</p>
+                <a href="#kuesioner" class="btn-primary">Mulai Mengisi</a>
             </div>
         </div>
     </header>
 
-    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full grid grid-cols-1 lg:grid-cols-4 gap-8">
-        
-        <!-- Main Form Content -->
-        <section id="kuesioner" class="lg:col-span-3">
-            <div id="capture-area" class="bg-white rounded-2xl shadow-lg border border-kampus-100 overflow-hidden">
-                <div class="bg-kampus-800 px-6 py-4 border-b border-kampus-700 flex justify-between items-center">
-                    <h2 class="text-xl font-bold text-white"><i class="fa-solid fa-clipboard-list mr-2"></i> Form Kuesioner</h2>
+    <main>
+        <section id="kuesioner">
+            <div class="form-card">
+                <div class="form-card-header">
+                    <h2><i class="fa-solid fa-clipboard-list"></i> Form Kuesioner</h2>
                 </div>
-                
-                <form id="kuesionerForm" class="p-6 md:p-8">
-                    
-                    <div class="mb-8 p-5 bg-kampus-50 rounded-xl border border-kampus-200">
-                        <h3 class="text-lg font-semibold text-kampus-800 mb-4 border-b border-kampus-200 pb-2">Informasi Mahasiswa</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="inisial" class="block text-sm font-medium text-gray-700 mb-1">Inisial Nama <span class="text-red-500">*</span></label>
-                                <input type="text" id="inisial" name="inisial" required placeholder="Contoh: A U"
-                                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-kampus-500 focus:border-kampus-500 outline-none transition-all">
+
+                <div class="form-body">
+                    <form id="kuesionerForm" novalidate>
+
+                        <div class="info-section">
+                            <h3>Informasi Mahasiswa</h3>
+                            <div class="grid-2">
+                                <div>
+                                    <label for="inisial">Inisial Nama <span class="req">*</span></label>
+                                    <input type="text" id="inisial" name="inisial" placeholder="Contoh: A U">
+                                </div>
+                                <div>
+                                    <label for="jurusan">Program Studi / Jurusan <span class="req">*</span></label>
+                                    <input type="text" id="jurusan" name="jurusan" placeholder="Contoh: Pekerjaan Sosial">
+                                </div>
                             </div>
-                            <div>
-                                <label for="jurusan" class="block text-sm font-medium text-gray-700 mb-1">Program Studi / Jurusan <span class="text-red-500">*</span></label>
-                                <input type="text" id="jurusan" name="jurusan" required placeholder="Contoh: Pekerjaan Sosial"
-                                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-kampus-500 focus:border-kampus-500 outline-none transition-all">
+                        </div>
+
+                        <p class="questions-title">Pertanyaan Kualitatif</p>
+
+                        <div id="questions-wrap">
+                            <div class="question-item">
+                                <label for="q1">1. Bagaimana pengalaman Anda saat mengikuti pembelajaran metodologi penelitian secara konvensional (ceramah/diskusi)?</label>
+                                <textarea id="q1" rows="3" placeholder="Ceritakan pengalaman Anda di sini..."></textarea>
+                            </div>
+
+                            <div class="question-item">
+                                <label for="q2">2. Apa kendala yang Anda rasakan ketika harus mengaitkan satu konsep metodologi dengan konsep lain (misalnya populasi-sampel dengan teknik pengumpulan data)?</label>
+                                <textarea id="q2" rows="3" placeholder="Jelaskan kendala atau kesulitan yang dihadapi..."></textarea>
+                            </div>
+
+                            <div class="question-item">
+                                <label for="q3">3. Bagaimana keterlibatan Anda dalam diskusi kelas saat membahas materi metodologi penelitian?</label>
+                                <textarea id="q3" rows="3" placeholder="Gambarkan tingkat partisipasi dan perasaan Anda saat diskusi..."></textarea>
+                            </div>
+
+                            <div class="question-item">
+                                <label for="q4">4. Apa pengalaman Anda sejauh ini dalam menggunakan aplikasi AI generatif (seperti ChatGPT, Gemini, atau NotebookLM) untuk mendukung tugas kuliah?</label>
+                                <textarea id="q4" rows="3" placeholder="Bagikan pengalaman positif maupun negatif..."></textarea>
+                            </div>
+
+                            <div class="question-item">
+                                <label for="q5">5. Bagaimana Anda membayangkan penerapan metodologi penelitian dalam pekerjaan Anda sebagai calon pekerja sosial?</label>
+                                <textarea id="q5" rows="3" placeholder="Tuliskan pandangan Anda ke depan..."></textarea>
+                            </div>
+
+                            <div class="question-item">
+                                <label for="q6">6. Apa jenis media atau metode pembelajaran yang menurut Anda paling membantu memahami materi metodologi penelitian secara mendalam dan tahan lama?</label>
+                                <textarea id="q6" rows="3" placeholder="Sebutkan preferensi metode atau media belajar Anda..."></textarea>
                             </div>
                         </div>
-                    </div>
 
-                    <h3 class="text-lg font-semibold text-kampus-800 mb-4">Pertanyaan Kualitatif</h3>
-                    
-                    <div class="space-y-6">
-                        <!-- Q1 -->
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-800 mb-2">
-                                1. Bagaimana pengalaman Anda saat mengikuti pembelajaran metodologi penelitian secara konvensional (ceramah/diskusi)?
-                            </label>
-                            <textarea id="q1" rows="3" required placeholder="Ceritakan pengalaman Anda di sini..."
-                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-kampus-500 focus:border-kampus-500 outline-none transition-all resize-y"></textarea>
-                        </div>
-                        
-                        <!-- Q2 -->
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-800 mb-2">
-                                2. Apa kendala yang Anda rasakan ketika harus mengaitkan satu konsep metodologi dengan konsep lain (misalnya populasi-sampel dengan teknik pengumpulan data)?
-                            </label>
-                            <textarea id="q2" rows="3" required placeholder="Jelaskan kendala atau kesulitan yang dihadapi..."
-                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-kampus-500 focus:border-kampus-500 outline-none transition-all resize-y"></textarea>
+                        <div class="form-actions">
+                            <span class="hint-text">Pastikan semua kolom terisi sebelum mengunduh.</span>
+                            <button type="button" onclick="clearForm()" class="btn-outline">
+                                <i class="fa-solid fa-eraser"></i> Bersihkan
+                            </button>
+                            <button type="button" id="btnDownload" onclick="generatePDF()" class="btn-download">
+                                <i class="fa-solid fa-file-pdf"></i> Unduh PDF
+                            </button>
                         </div>
 
-                        <!-- Q3 -->
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-800 mb-2">
-                                3. Bagaimana keterlibatan Anda dalam diskusi kelas saat membahas materi metodologi penelitian?
-                            </label>
-                            <textarea id="q3" rows="3" required placeholder="Gambarkan tingkat partisipasi dan perasaan Anda saat diskusi..."
-                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-kampus-500 focus:border-kampus-500 outline-none transition-all resize-y"></textarea>
+                        <div class="progress-bar-wrap" id="progressWrap">
+                            <div class="progress-bar" id="progressBar"></div>
                         </div>
 
-                        <!-- Q4 -->
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-800 mb-2">
-                                4. Apa pengalaman Anda sejauh ini dalam menggunakan aplikasi AI generatif (seperti ChatGPT, Gemini, atau NotebookLM) untuk mendukung tugas kuliah?
-                            </label>
-                            <textarea id="q4" rows="3" required placeholder="Bagikan pengalaman positif maupun negatif..."
-                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-kampus-500 focus:border-kampus-500 outline-none transition-all resize-y"></textarea>
-                        </div>
-
-                        <!-- Q5 -->
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-800 mb-2">
-                                5. Bagaimana Anda membayangkan penerapan metodologi penelitian dalam pekerjaan Anda sebagai calon pekerja sosial?
-                            </label>
-                            <textarea id="q5" rows="3" required placeholder="Tuliskan pandangan Anda ke depan..."
-                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-kampus-500 focus:border-kampus-500 outline-none transition-all resize-y"></textarea>
-                        </div>
-
-                        <!-- Q6 -->
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-800 mb-2">
-                                6. Apa jenis media atau metode pembelajaran yang menurut Anda paling membantu memahami materi metodologi penelitian secara mendalam dan tahan lama?
-                            </label>
-                            <textarea id="q6" rows="3" required placeholder="Sebutkan preferensi metode atau media belajar Anda..."
-                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-kampus-500 focus:border-kampus-500 outline-none transition-all resize-none overflow-hidden"></textarea>
-                        </div>
-                    </div>
-
-                    <div data-html2canvas-ignore="true" class="mt-10 flex flex-col sm:flex-row gap-4 items-center justify-end border-t border-gray-200 pt-6">
-                        <span class="text-sm text-gray-500 italic mr-auto hidden sm:block">Pastikan semua kolom terisi sebelum mengunduh.</span>
-                        <button type="button" onclick="clearForm()" class="px-6 py-2.5 rounded-lg border-2 border-kampus-600 text-kampus-700 font-semibold hover:bg-kampus-50 transition-colors w-full sm:w-auto text-center">
-                            <i class="fa-solid fa-eraser mr-2"></i> Bersihkan
-                        </button>
-                        <button type="button" onclick="generatePDF()" class="px-6 py-2.5 rounded-lg bg-kampus-800 text-white font-semibold shadow hover:bg-kampus-700 hover:shadow-lg transition-all w-full sm:w-auto flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-camera"></i> Unduh PDF (Screenshot)
-                        </button>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </section>
 
-        <aside class="lg:col-span-1 space-y-6">
-            <!-- Info Card -->
-            <div class="bg-white rounded-2xl shadow border border-kampus-100 p-5">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="bg-kampus-100 p-2 rounded-lg text-kampus-800">
-                        <i class="fa-solid fa-circle-info text-xl"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-800">Petunjuk Pengisian</h3>
+        <aside>
+            <div class="sidebar-card">
+                <div class="sidebar-card-head">
+                    <div class="sidebar-icon"><i class="fa-solid fa-circle-info"></i></div>
+                    <h3>Petunjuk Pengisian</h3>
                 </div>
-                <p class="text-sm text-gray-600 mb-3 leading-relaxed">
-                    Kuesioner ini dirancang untuk merekam perspektif mahasiswa. Jawaban Anda disimpan secara lokal menjadi PDF, <b>tidak</b> diunggah ke server publik.
-                </p>
-                <ul class="text-sm text-gray-600 list-disc list-inside space-y-1">
-                    <li>Gunakan Inisial (Bukan nama lengkap)</li>
-                    <li>Jawab secara jujur & naratif</li>
+                <p>Kuesioner ini merekam perspektif mahasiswa. Jawaban Anda diproses <b>langsung di browser</b> menjadi PDF — tidak diunggah ke server manapun.</p>
+                <ul class="sidebar-list">
+                    <li>Gunakan inisial (bukan nama lengkap)</li>
+                    <li>Jawab secara jujur &amp; naratif</li>
                     <li>Klik "Unduh PDF" untuk menyimpan</li>
                 </ul>
             </div>
 
-            <!-- Related Links Card -->
-            <div id="panduan" class="bg-kampus-800 text-white rounded-2xl shadow p-5">
-                <h3 class="font-bold mb-4 border-b border-kampus-600 pb-2"><i class="fa-solid fa-link mr-2"></i> Hal Terkait</h3>
-                <ul class="space-y-3 text-sm font-medium">
-                    <li>
-                        <a href="#" class="flex items-center gap-3 hover:text-kampus-200 transition-colors bg-kampus-900 bg-opacity-40 p-2 rounded-lg hover:bg-opacity-60">
-                            <i class="fa-solid fa-globe w-5 text-center"></i> Portal Akademik Kampus
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center gap-3 hover:text-kampus-200 transition-colors bg-kampus-900 bg-opacity-40 p-2 rounded-lg hover:bg-opacity-60">
-                            <i class="fa-solid fa-file-lines w-5 text-center"></i> Panduan Metopen 2026
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center gap-3 hover:text-kampus-200 transition-colors bg-kampus-900 bg-opacity-40 p-2 rounded-lg hover:bg-opacity-60">
-                            <i class="fa-solid fa-book-journal-whills w-5 text-center"></i> Jurnal Referensi Kualitatif
-                        </a>
-                    </li>
+            <div class="sidebar-dark" id="panduan">
+                <h3><i class="fa-solid fa-link" style="margin-right:.5rem"></i> Hal Terkait</h3>
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-globe"></i> Portal Akademik Kampus</a></li>
+                    <li><a href="#"><i class="fa-solid fa-file-lines"></i> Panduan Metopen 2026</a></li>
+                    <li><a href="#"><i class="fa-solid fa-book-journal-whills"></i> Jurnal Referensi Kualitatif</a></li>
                 </ul>
             </div>
         </aside>
     </main>
 
-    <footer class="bg-kampus-900 text-kampus-100 py-8 mt-auto border-t-[6px] border-kampus-600">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div class="text-center md:text-left">
-                <h2 class="text-xl font-bold mb-1 text-white"><i class="fa-solid fa-book-open-reader mr-2"></i>MetopenQuest</h2>
-                <p class="text-sm text-kampus-200 opacity-80">Platform Evaluasi Pembelajaran Islami</p>
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <h2><i class="fa-solid fa-book-open-reader" style="margin-right:.4rem"></i>MetopenQuest</h2>
+                <p>Platform Evaluasi Pembelajaran Islami</p>
             </div>
-            
-            <div class="flex flex-col items-center md:items-end">
-                <a href="https://instagram.com/arielrcun" target="_blank" class="flex items-center gap-2 hover:text-white transition-colors bg-white/10 px-4 py-2 rounded-full mb-2 hover:bg-white/20">
-                    <i class="fa-brands fa-instagram text-xl"></i>
-                    <span class="font-medium tracking-wide">@arielrcun</span>
+            <div class="footer-right">
+                <a href="https://instagram.com/arielrcun" target="_blank" class="footer-ig">
+                    <i class="fa-brands fa-instagram" style="font-size:1.1rem"></i>
+                    <span>@arielrcun</span>
                 </a>
-                <p class="text-sm opacity-90">&copy; Oleh Ariel Usman Copyright 2026</p>
+                <span class="footer-copy">&copy; Oleh Ariel Usman Copyright 2026</span>
             </div>
         </div>
     </footer>
 
-    <!-- Custom Toast Notification Container (To avoid using alert()) -->
-    <div id="toast-container" class="fixed top-20 right-5 z-50 flex flex-col gap-3"></div>
+    <div id="toast-container"></div>
 
     <script>
-        // Helper function to show custom toast message
+        /* ── Toast ── */
         function showToast(message, type = 'error') {
             const container = document.getElementById('toast-container');
             const toast = document.createElement('div');
-            
-            const bgColor = type === 'error' ? 'bg-red-500' : 'bg-kampus-600';
+            toast.className = `toast ${type}`;
             const icon = type === 'error' ? 'fa-circle-exclamation' : 'fa-circle-check';
-
-            toast.className = `${bgColor} text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-3 transform transition-all duration-300 translate-x-full opacity-0`;
-            toast.innerHTML = `<i class="fa-solid ${icon} text-lg"></i> <span>${message}</span>`;
-            
+            toast.innerHTML = `<i class="fa-solid ${icon}"></i><span>${message}</span>`;
             container.appendChild(toast);
-            
-            // Animate in
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => toast.classList.add('show'));
+            });
             setTimeout(() => {
-                toast.classList.remove('translate-x-full', 'opacity-0');
-            }, 10);
-
-            // Animate out and remove
-            setTimeout(() => {
-                toast.classList.add('translate-x-full', 'opacity-0');
-                setTimeout(() => {
-                    toast.remove();
-                }, 300);
-            }, 3000);
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 350);
+            }, 3200);
         }
 
-        // Auto-resize textareas so screenshot captures all text
+        /* ── Auto-resize textarea ── */
         document.querySelectorAll('textarea').forEach(el => {
-            el.addEventListener('input', function() {
+            el.addEventListener('input', function () {
                 this.style.height = 'auto';
-                this.style.height = (this.scrollHeight) + 'px';
+                this.style.height = this.scrollHeight + 'px';
             });
         });
 
-        // Clear form values
+        /* ── Clear form ── */
         function clearForm() {
             document.getElementById('kuesionerForm').reset();
-            // Reset textarea heights back to default
-            document.querySelectorAll('textarea').forEach(el => {
-                el.style.height = 'auto';
-            });
+            document.querySelectorAll('textarea').forEach(el => { el.style.height = 'auto'; });
             showToast('Formulir berhasil dibersihkan.', 'success');
         }
 
-        // Generate and Download PDF by capturing the visual state (Screenshot)
-        function generatePDF() {
-            // 1. Get required inputs for validation
-            const inisial = document.getElementById('inisial').value.trim();
-            const form = document.getElementById('kuesionerForm');
+        /* ── Validation ── */
+        function validate() {
+            const ids = ['inisial', 'jurusan', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6'];
+            for (const id of ids) {
+                const el = document.getElementById(id);
+                if (!el.value.trim()) {
+                    el.focus();
+                    el.style.borderColor = '#ef4444';
+                    el.style.boxShadow = '0 0 0 3px rgba(239,68,68,.15)';
+                    setTimeout(() => {
+                        el.style.borderColor = '';
+                        el.style.boxShadow = '';
+                    }, 2500);
+                    return false;
+                }
+            }
+            return true;
+        }
 
-            // 2. Validate form inputs
-            if (!form.checkValidity()) {
-                form.reportValidity();
+        /* ── PDF Generation (pure jsPDF — no html2canvas, no blank pages) ── */
+        async function generatePDF() {
+            if (!validate()) {
                 showToast('Mohon lengkapi semua isian sebelum mengunduh.', 'error');
                 return;
             }
 
-            // 3. Target the DOM element to capture (Screenshot Target)
-            const captureArea = document.getElementById('capture-area');
+            const btn = document.getElementById('btnDownload');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Membuat PDF...';
 
-            // 4. Configure html2pdf options for visual screenshot capture
-            const opt = {
-                margin:       [0.3, 0.3, 0.3, 0.3], // margins (Top, Left, Bottom, Right)
-                filename:     `Screenshot_Kuesioner_${inisial ? inisial.replace(/\s+/g, '_') : 'Mahasiswa'}.pdf`,
-                image:        { type: 'jpeg', quality: 1 }, // High quality image
-                html2canvas:  { 
-                    scale: 2, // Double resolution for sharpness
-                    useCORS: true, 
-                    scrollY: 0, 
-                    windowWidth: document.documentElement.offsetWidth 
-                },
-                jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
-            };
+            const progressWrap = document.getElementById('progressWrap');
+            const progressBar  = document.getElementById('progressBar');
+            progressWrap.classList.add('visible');
 
-            // 5. Generate and save
-            showToast('Mengambil tangkapan layar, mohon tunggu...', 'success');
-            
-            html2pdf().set(opt).from(captureArea).save().then(() => {
-                showToast('Screenshot form berhasil diunduh!', 'success');
-            }).catch(err => {
-                console.error(err);
-                showToast('Terjadi kesalahan saat memproses screenshot.', 'error');
+            const setProgress = p => { progressBar.style.width = p + '%'; };
+            setProgress(10);
+
+            // Collect data
+            const inisial  = document.getElementById('inisial').value.trim();
+            const jurusan  = document.getElementById('jurusan').value.trim();
+            const answers  = [1,2,3,4,5,6].map(n => document.getElementById('q'+n).value.trim());
+
+            const questions = [
+                'Bagaimana pengalaman Anda saat mengikuti pembelajaran metodologi penelitian secara konvensional (ceramah/diskusi)?',
+                'Apa kendala yang Anda rasakan ketika harus mengaitkan satu konsep metodologi dengan konsep lain (misalnya populasi-sampel dengan teknik pengumpulan data)?',
+                'Bagaimana keterlibatan Anda dalam diskusi kelas saat membahas materi metodologi penelitian?',
+                'Apa pengalaman Anda sejauh ini dalam menggunakan aplikasi AI generatif (seperti ChatGPT, Gemini, atau NotebookLM) untuk mendukung tugas kuliah?',
+                'Bagaimana Anda membayangkan penerapan metodologi penelitian dalam pekerjaan Anda sebagai calon pekerja sosial?',
+                'Apa jenis media atau metode pembelajaran yang menurut Anda paling membantu memahami materi metodologi penelitian secara mendalam dan tahan lama?'
+            ];
+
+            await new Promise(r => setTimeout(r, 50)); // let browser breathe
+            setProgress(25);
+
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF({ unit: 'mm', format: 'a4', orientation: 'portrait' });
+
+            const pageW   = doc.internal.pageSize.getWidth();   // 210
+            const pageH   = doc.internal.pageSize.getHeight();  // 297
+            const marginL = 18;
+            const marginR = 18;
+            const contentW = pageW - marginL - marginR;
+            let y = 0;
+
+            /* ── Color helpers ── */
+            const GREEN_DARK  = [0,   107, 63];
+            const GREEN_MED   = [22,  163, 74];
+            const GREEN_LIGHT = [220, 252, 231];
+            const GRAY_TEXT   = [55,  65,  81];
+            const GRAY_LIGHT  = [243, 244, 246];
+            const WHITE       = [255, 255, 255];
+
+            /* ── Text wrap helper ── */
+            function splitLines(text, maxW, fontSize) {
+                doc.setFontSize(fontSize);
+                return doc.splitTextToSize(String(text), maxW);
+            }
+
+            /* ── Page break helper ── */
+            function checkPageBreak(neededH) {
+                if (y + neededH > pageH - 18) {
+                    doc.addPage();
+                    drawPageHeader();
+                    y = 42;
+                }
+            }
+
+            /* ── Draw header stripe on each page ── */
+            function drawPageHeader() {
+                // Top color bar
+                doc.setFillColor(...GREEN_DARK);
+                doc.rect(0, 0, pageW, 26, 'F');
+
+                // Title in header
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(13);
+                doc.setTextColor(...WHITE);
+                doc.text('Kuesioner Evaluasi Pembelajaran Metopen', marginL, 10.5);
+
+                doc.setFont('helvetica', 'normal');
+                doc.setFontSize(8.5);
+                doc.setTextColor(200, 240, 215);
+                doc.text('MetopenQuest  |  Platform Evaluasi Pembelajaran', marginL, 18);
+                doc.text('© Ariel Usman 2026', pageW - marginR, 18, { align: 'right' });
+
+                // Thin accent line below header
+                doc.setDrawColor(...GREEN_MED);
+                doc.setLineWidth(0.6);
+                doc.line(0, 26, pageW, 26);
+            }
+
+            /* ── Draw footer on current page ── */
+            function drawPageFooter(pageNum) {
+                const footerY = pageH - 10;
+                doc.setDrawColor(...GREEN_LIGHT[0], ...GREEN_LIGHT.slice(1));
+                doc.setDrawColor(187, 247, 208);
+                doc.setLineWidth(0.4);
+                doc.line(marginL, footerY - 4, pageW - marginR, footerY - 4);
+
+                doc.setFont('helvetica', 'normal');
+                doc.setFontSize(7.5);
+                doc.setTextColor(150, 150, 150);
+                doc.text('Jawaban disimpan secara lokal — tidak diunggah ke server publik', marginL, footerY);
+                doc.text('Hal. ' + pageNum, pageW - marginR, footerY, { align: 'right' });
+            }
+
+            /* ═══════ PAGE 1 ═══════ */
+            drawPageHeader();
+            y = 34;
+
+            // Date
+            const now = new Date();
+            const dateStr = now.toLocaleDateString('id-ID', { day: '2-digit', month: 'long', year: 'numeric' });
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(8.5);
+            doc.setTextColor(120, 120, 120);
+            doc.text('Tanggal pengisian: ' + dateStr, marginL, y);
+            y += 8;
+
+            setProgress(40);
+
+            /* ── Identitas box ── */
+            const idBoxH = 30;
+            doc.setFillColor(...GREEN_LIGHT);
+            doc.roundedRect(marginL, y, contentW, idBoxH, 3, 3, 'F');
+            doc.setDrawColor(...GREEN_MED);
+            doc.setLineWidth(0.5);
+            doc.roundedRect(marginL, y, contentW, idBoxH, 3, 3, 'S');
+
+            // "Informasi Mahasiswa" label
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(9.5);
+            doc.setTextColor(...GREEN_DARK);
+            doc.text('Informasi Mahasiswa', marginL + 5, y + 8);
+
+            // Divider
+            doc.setDrawColor(...GREEN_MED);
+            doc.setLineWidth(0.3);
+            doc.line(marginL + 5, y + 10.5, marginL + contentW - 5, y + 10.5);
+
+            const halfW = (contentW - 14) / 2;
+
+            // Left col: Inisial
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(8);
+            doc.setTextColor(...GRAY_TEXT);
+            doc.text('Inisial Nama', marginL + 5, y + 17);
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(10);
+            doc.setTextColor(...GREEN_DARK);
+            doc.text(inisial, marginL + 5, y + 24);
+
+            // Right col: Jurusan
+            const colX = marginL + 5 + halfW + 4;
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(8);
+            doc.setTextColor(...GRAY_TEXT);
+            doc.text('Program Studi / Jurusan', colX, y + 17);
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(10);
+            doc.setTextColor(...GREEN_DARK);
+            doc.text(jurusan, colX, y + 24);
+
+            y += idBoxH + 10;
+
+            setProgress(55);
+
+            /* ── Section title ── */
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(11);
+            doc.setTextColor(...GREEN_DARK);
+            doc.text('Pertanyaan Kualitatif', marginL, y);
+
+            // Underline accent
+            doc.setDrawColor(...GREEN_MED);
+            doc.setLineWidth(1.2);
+            doc.line(marginL, y + 1.5, marginL + 52, y + 1.5);
+            y += 8;
+
+            setProgress(65);
+
+            /* ── Questions loop ── */
+            const LABEL_BG    = GREEN_LIGHT;
+            const LABEL_COLOR = GREEN_DARK;
+
+            questions.forEach((q, i) => {
+                const num     = i + 1;
+                const answer  = answers[i] || '(tidak diisi)';
+
+                // Question label
+                const qLines  = splitLines('Pertanyaan ' + num + ': ' + q, contentW - 10, 9);
+                const qH      = qLines.length * 4.5 + 8;
+
+                // Answer lines
+                const aLines  = splitLines(answer, contentW - 14, 9.5);
+                const aH      = aLines.length * 5.2 + 10;
+
+                const totalH  = qH + aH + 6;
+                checkPageBreak(totalH);
+
+                // Question header pill
+                doc.setFillColor(...LABEL_BG);
+                doc.roundedRect(marginL, y, contentW, qH, 2, 2, 'F');
+                doc.setDrawColor(...GREEN_MED);
+                doc.setLineWidth(0.3);
+                doc.roundedRect(marginL, y, contentW, qH, 2, 2, 'S');
+
+                // Number badge
+                doc.setFillColor(...GREEN_DARK);
+                doc.roundedRect(marginL + 3, y + 3, 6, 6, 1, 1, 'F');
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(7);
+                doc.setTextColor(...WHITE);
+                doc.text(String(num), marginL + 6, y + 7.3, { align: 'center' });
+
+                // Question text
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(9);
+                doc.setTextColor(...LABEL_COLOR);
+                doc.text(qLines, marginL + 12, y + 7);
+
+                y += qH + 2;
+
+                // Answer area
+                doc.setFillColor(...WHITE);
+                doc.setDrawColor(...GREEN_MED);
+                doc.setLineWidth(0.3);
+                doc.roundedRect(marginL, y, contentW, aH, 2, 2, 'FD');
+
+                // Left accent bar
+                doc.setFillColor(...GREEN_MED);
+                doc.rect(marginL, y, 2.5, aH, 'F');
+
+                doc.setFont('helvetica', 'normal');
+                doc.setFontSize(9.5);
+                doc.setTextColor(...GRAY_TEXT);
+                doc.text(aLines, marginL + 7, y + 7);
+
+                y += aH + 8;
+
+                setProgress(65 + Math.round((i + 1) / 6 * 25));
             });
+
+            /* ── Closing note ── */
+            checkPageBreak(22);
+            doc.setFillColor(...GRAY_LIGHT);
+            doc.roundedRect(marginL, y, contentW, 18, 2, 2, 'F');
+            doc.setFont('helvetica', 'italic');
+            doc.setFontSize(8.5);
+            doc.setTextColor(100, 100, 100);
+            doc.text(
+                'Terima kasih telah mengisi kuesioner ini dengan jujur dan lengkap.',
+                marginL + contentW / 2, y + 7.5, { align: 'center' }
+            );
+            doc.text(
+                'Jawaban Anda sangat berharga untuk pengembangan pembelajaran Metodologi Penelitian.',
+                marginL + contentW / 2, y + 13, { align: 'center' }
+            );
+
+            setProgress(95);
+
+            /* ── Footers on all pages ── */
+            const totalPages = doc.internal.getNumberOfPages();
+            for (let p = 1; p <= totalPages; p++) {
+                doc.setPage(p);
+                drawPageFooter(p);
+            }
+
+            /* ── Save ── */
+            const safeName = inisial.replace(/\s+/g, '_') || 'Mahasiswa';
+            doc.save(`Kuesioner_Metopen_${safeName}.pdf`);
+
+            setProgress(100);
+
+            setTimeout(() => {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fa-solid fa-file-pdf"></i> Unduh PDF';
+                progressWrap.classList.remove('visible');
+                progressBar.style.width = '0%';
+                showToast('PDF berhasil diunduh!', 'success');
+            }, 600);
         }
     </script>
 </body>
