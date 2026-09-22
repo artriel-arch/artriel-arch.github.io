@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO & Open Graph Meta Tags -->
+  <title>PoultrySort Hub - Panduan & Sistem Sortir Karkas Ayam Potong Komersial</title>
+  <meta name="description" content="Platform interaktif manajemen penyortiran, klasifikasi potongan karkas ayam potong komersial, spesifikasi kuliner, dan kalkulator estimasi bobot." />
+  <meta name="keywords" content="sortir ayam potong, potongan karkas ayam, dada fillet, paha ayam, sayap ayam, rumah potong ayam, grading ayam" />
+  <meta name="author" content="Ariel Usman" />
+
+  <!-- Open Graph / Facebook / WhatsApp Preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://poultrysort.local/" />
+  <meta property="og:title" content="PoultrySort Hub - Penyortiran Karkas Ayam Potong" />
+  <meta property="og:description" content="Sistem edukasi & grading interaktif bagian potongan ayam potong untuk kebutuhan industri dan pasar ritel." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1587593810167-a84920ea0781?q=80&w=1200&auto=format&fit=crop" />
+
+  <!-- Twitter Meta -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PoultrySort Hub - Grading Ayam Potong" />
+  <meta name="twitter:description" content="Klasifikasi karkas dan kalkulator penyortiran ayam potong." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1587593810167-a84920ea0781?q=80&w=1200&auto=format&fit=crop" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ea580c'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.4z'/></svg>" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#fff7ed',
+              100: '#ffedd5',
+              400: '#fb923c',
+              500: '#f97316',
+              600: '#ea580c',
+              700: '#c2410c',
+            },
+            fresh: {
+              lime: '#84cc16',
+              yellow: '#facc15',
+              amber: '#f59e0b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Glassmorphism Classes */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-orange-50 via-amber-50 to-emerald-50 text-slate-800 min-h-screen flex flex-col font-sans selection:bg-brand-500 selection:text-white">
+
+  <!-- NAVBAR -->
+  <nav class="sticky top-0 z-40 w-full glass-nav border-b border-orange-100/60 shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo Kiri -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-600 via-amber-500 to-yellow-400 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-drumstick-bite text-xl"></i>
+          </div>
+          <div>
+            <span class="text-xl font-extrabold bg-gradient-to-r from-brand-700 via-orange-600 to-amber-600 bg-clip-text text-transparent">PoultrySort</span>
+            <span class="text-xs block tracking-widest text-slate-500 font-semibold uppercase">Hub & Sorting Guide</span>
+          </div>
+        </a>
+
+        <!-- Menu Kanan (Desktop & iPad) -->
+        <div class="hidden md:flex items-center space-x-2">
+          <a href="#katalog" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-orange-50 transition">Katalog Potongan</a>
+          <a href="#kalkulator" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-orange-50 transition">Kalkulator Yield</a>
+          <a href="#sop" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-orange-50 transition">Standar Mutu (SOP)</a>
+          
+          <!-- Tombol Buka Sidebar Referensi -->
+          <button id="openSidebarBtn" class="ml-3 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-brand-500 to-amber-500 text-white text-sm font-bold shadow-md shadow-brand-500/25 hover:shadow-brand-500/40 hover:brightness-105 active:scale-95 transition">
+            <i class="fa-solid fa-book-open"></i>
+            <span>Buku Pedoman</span>
+          </button>
+        </div>
+
+        <!-- Tombol Mobile / HP -->
+        <div class="flex md:hidden items-center gap-2">
+          <button id="mobileSidebarToggle" class="p-2.5 rounded-xl bg-orange-100 text-brand-700 hover:bg-orange-200 transition">
+            <i class="fa-solid fa-bars text-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SIDEBAR (DRAWER KANAN) -->
+  <aside id="infoSidebar" class="fixed inset-y-0 right-0 z-50 w-full sm:w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col border-l border-orange-100">
+    <!-- Header Sidebar -->
+    <div class="p-6 border-b border-slate-100 flex items-center justify-between bg-gradient-to-r from-orange-500 to-amber-500 text-white">
+      <div class="flex items-center gap-2">
+        <i class="fa-solid fa-clipboard-check text-xl"></i>
+        <h3 class="text-lg font-bold">Rujukan Standar Industri</h3>
+      </div>
+      <button id="closeSidebarBtn" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Isi Sidebar -->
+    <div class="p-6 overflow-y-auto flex-1 space-y-6 text-sm text-slate-600 leading-relaxed">
+      <div class="p-4 rounded-2xl bg-amber-50 border border-amber-200/70">
+        <h4 class="font-bold text-amber-900 flex items-center gap-2 mb-2">
+          <i class="fa-solid fa-temperature-arrow-down text-brand-600"></i> Cold Chain (Rantai Dingin)
+        </h4>
+        <p>Potongan karkas segar wajib dipertahankan pada suhu internal <strong>0°C hingga 4°C</strong>, sedangkan produk beku (frozen) harus segera disimpan di <strong>-18°C</strong>.</p>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-slate-800 mb-2 flex items-center gap-2">
+          <i class="fa-solid fa-layer-group text-brand-600"></i> Klasifikasi Potongan Komersial
+        </h4>
+        <ul class="space-y-2 list-disc list-inside text-slate-600">
+          <li><strong>Potong 4:</strong> 2 Dada Utuh, 2 Paha Utuh.</li>
+          <li><strong>Potong 8:</strong> 2 Sayap, 2 Dada, 2 Paha Bawah, 2 Paha Atas (Favorit Ritel).</li>
+          <li><strong>Potong 10/12:</strong> Standar menu katering dan fried chicken cepat saji.</li>
+          <li><strong>Boneless (Tanpa Tulang):</strong> Fillet Dada (BLD/BS) & Fillet Paha (BLP/BS) untuk olahan sate atau katsu.</li>
+        </ul>
+      </div>
+
+      <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200/70">
+        <h4 class="font-bold text-emerald-900 flex items-center gap-2 mb-1">
+          <i class="fa-solid fa-certificate text-emerald-600"></i> Standar Higienitas
+        </h4>
+        <p>Seluruh proses eviserasi, pencucian air klorinasi terkontrol, dan pemotongan wajib memenuhi kaidah ASUH (Aman, Sehat, Utuh, dan Halal).</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Overlay Sidebar -->
+  <div id="sidebarOverlay" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-40 hidden transition-opacity"></div>
+
+  <!-- HEADER / HERO SECTION (GLASSMORPHISM) -->
+  <header class="relative overflow-hidden py-14 lg:py-24 px-4 sm:px-6 lg:px-8">
+    <!-- Ornamen Lingkaran Berwarna / Glow Ambient -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 sm:w-[600px] h-96 sm:h-[600px] bg-gradient-to-tr from-orange-300 via-amber-200 to-yellow-200 rounded-full blur-3xl opacity-50 -z-10 pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto">
+      <div class="glass-card rounded-3xl p-8 sm:p-12 lg:p-16 shadow-xl shadow-orange-500/10 text-center relative border border-white/80">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-100/90 text-brand-700 text-xs sm:text-sm font-bold tracking-wide uppercase mb-6">
+          <i class="fa-solid fa-award"></i> Optimalisasi Nilai Jual Karkas
+        </span>
+        
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+          Presisi Penyortiran <span class="bg-gradient-to-r from-brand-600 to-amber-500 bg-clip-text text-transparent">Bagian Ayam Potong</span> Siap Jual
+        </h1>
+
+        <p class="mt-6 text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          Maksimalkan margin keuntungan bisnis perunggasan Anda dengan sistem klasifikasi potongan, spesifikasi pasar kuliner, dan manajemen proporsi karkas yang tepat.
+        </p>
+
+        <!-- CTA Hero Buttons -->
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="#katalog" class="px-7 py-3.5 rounded-2xl bg-gradient-to-r from-brand-600 to-amber-500 text-white font-bold shadow-lg shadow-brand-500/30 hover:brightness-105 active:scale-95 transition flex items-center gap-2">
+            <i class="fa-solid fa-list-check"></i> Jelajahi Potongan
+          </a>
+          <a href="#kalkulator" class="px-7 py-3.5 rounded-2xl bg-white/80 hover:bg-white text-slate-700 font-bold border border-slate-200/80 shadow-sm active:scale-95 transition flex items-center gap-2">
+            <i class="fa-solid fa-calculator text-brand-600"></i> Hitung Estimasi Bobot
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN BODY -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-1 space-y-20">
+
+    <!-- SEKSI KATALOG & FILTER SORTIR -->
+    <section id="katalog" class="scroll-mt-24">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 flex items-center gap-3">
+            <span class="w-2.5 h-8 bg-brand-500 rounded-full inline-block"></span>
+            Katalog Bagian Tubuh Ayam Potong
+          </h2>
+          <p class="text-slate-500 text-sm mt-1">Pilih kategori untuk memfilter bagian daging yang ingin Anda jual.</p>
+        </div>
+
+        <!-- Filter Tab Kategori Interaktif -->
+        <div class="flex flex-wrap gap-2 p-1.5 rounded-2xl bg-white/80 border border-orange-100 shadow-sm">
+          <button onclick="filterPart('all')" class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-500 text-white shadow-sm transition" data-cat="all">Semua</button>
+          <button onclick="filterPart('prime')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-slate-600 hover:text-brand-600 transition" data-cat="prime">Potongan Utama</button>
+          <button onclick="filterPart('secondary')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-slate-600 hover:text-brand-600 transition" data-cat="secondary">Tulang & Sayap</button>
+          <button onclick="filterPart('giblet')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-slate-600 hover:text-brand-600 transition" data-cat="giblet">Jeroan & Sampingan</button>
+        </div>
+      </div>
+
+      <!-- Grid Cards Potongan Ayam -->
+      <div id="cardGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Card 1: Dada Fillet -->
+        <div class="part-card glass-card rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col border border-white/80" data-category="prime">
+          <div class="relative h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?q=80&w=700&auto=format&fit=crop" alt="Dada Ayam Fillet" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-extrabold bg-emerald-500 text-white shadow">Tingkat Penjualan: Tinggi</span>
+            <span class="absolute bottom-3 right-3 px-3 py-1 rounded-xl text-xs font-semibold bg-white/90 text-slate-800 backdrop-blur">~28-32% Bobot Karkas</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl font-bold text-slate-950">Dada Ayam (Breast & Fillet)</h3>
+              <i class="fa-solid fa-crown text-amber-500 text-lg"></i>
+            </div>
+            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+              Kaya protein rendah lemak. Sangat diminati segmen diet sehat, gym, katering katsu, nugget olahan, dan restoran modern.
+            </p>
+            <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-500">
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-utensils text-brand-500"></i> Steak, Katsu, Sate</span>
+              <span class="text-brand-600 font-bold">Grade Premium</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Paha Atas & Bawah -->
+        <div class="part-card glass-card rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col border border-white/80" data-category="prime">
+          <div class="relative h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1587593810167-a84920ea0781?q=80&w=700&auto=format&fit=crop" alt="Paha Ayam Bawah Drumstick" class="w-full h-full object-cover" />
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-extrabold bg-amber-500 text-white shadow">Paling Favorit</span>
+            <span class="absolute bottom-3 right-3 px-3 py-1 rounded-xl text-xs font-semibold bg-white/90 text-slate-800 backdrop-blur">~30-34% Bobot Karkas</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl font-bold text-slate-950">Paha (Thigh & Drumstick)</h3>
+              <i class="fa-solid fa-fire-burner text-orange-500 text-lg"></i>
+            </div>
+            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+              Tekstur daging lebih berair (juicy) dan gurih alami. Komponen utama franchise fried chicken cepat saji dan warung ayam goreng tradisional.
+            </p>
+            <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-500">
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-utensils text-brand-500"></i> Ayam Krispi, Panggang</span>
+              <span class="text-brand-600 font-bold">Permintaan Stabil</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Sayap Ayam -->
+        <div class="part-card glass-card rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col border border-white/80" data-category="secondary">
+          <div class="relative h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1527477378370-90c4d2fd7b47?q=80&w=700&auto=format&fit=crop" alt="Sayap Ayam" class="w-full h-full object-cover" />
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-extrabold bg-brand-500 text-white shadow">Kafe & Snack</span>
+            <span class="absolute bottom-3 right-3 px-3 py-1 rounded-xl text-xs font-semibold bg-white/90 text-slate-800 backdrop-blur">~10-12% Bobot Karkas</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl font-bold text-slate-950">Sayap (Chicken Wings)</h3>
+              <i class="fa-solid fa-drumstick-bite text-amber-600 text-lg"></i>
+            </div>
+            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+              Terdiri dari wingette, drumette, dan wingtip. Memiliki lapisan kulit renyah yang sempurna untuk menu spicy wings, barbeque, dan finger food kafe.
+            </p>
+            <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-500">
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-utensils text-brand-500"></i> Buffalo Wings, Saus Madu</span>
+              <span class="text-brand-600 font-bold">Ritel Tinggi</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Ceker & Leher -->
+        <div class="part-card glass-card rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col border border-white/80" data-category="secondary">
+          <div class="relative h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=700&auto=format&fit=crop" alt="Sup Ceker Ayam" class="w-full h-full object-cover" />
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-extrabold bg-blue-500 text-white shadow">Kolagen Tinggi</span>
+            <span class="absolute bottom-3 right-3 px-3 py-1 rounded-xl text-xs font-semibold bg-white/90 text-slate-800 backdrop-blur">~6-8% Bobot Karkas</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl font-bold text-slate-950">Ceker & Leher (Feet & Neck)</h3>
+              <i class="fa-solid fa-bowl-food text-blue-500 text-lg"></i>
+            </div>
+            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+              Kaya gelatin dan kolagen alami, sangat ideal untuk bahan dasar kaldu gurih gurih kental (broth), seblak pedas, dan kuliner dimsum ceker.
+            </p>
+            <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-500">
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-utensils text-brand-500"></i> Kaldu, Seblak, Dimsum</span>
+              <span class="text-brand-600 font-bold">Ekonomis</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Hati & Ampela (Giblets) -->
+        <div class="part-card glass-card rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col border border-white/80" data-category="giblet">
+          <div class="relative h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=700&auto=format&fit=crop" alt="Jeroan Ati Ampela" class="w-full h-full object-cover" />
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-extrabold bg-rose-500 text-white shadow">Pasar Tradisional</span>
+            <span class="absolute bottom-3 right-3 px-3 py-1 rounded-xl text-xs font-semibold bg-white/90 text-slate-800 backdrop-blur">~4-6% Bobot Karkas</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl font-bold text-slate-950">Ati Ampela & Jantung</h3>
+              <i class="fa-solid fa-heart-pulse text-rose-500 text-lg"></i>
+            </div>
+            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+              Jeroan segar kaya zat besi. Wajib diproses ekstra bersih dan dibersihkan dari empedu. Target pasar warung nasi, soto, dan sambal goreng.
+            </p>
+            <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-500">
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-utensils text-brand-500"></i> Sambal Goreng, Sate Usus</span>
+              <span class="text-brand-600 font-bold">Fast Moving</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Kerongkongan / Tulang Karkas -->
+        <div class="part-card glass-card rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col border border-white/80" data-category="secondary">
+          <div class="relative h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1541832676-9b763b0239ab?q=80&w=700&auto=format&fit=crop" alt="Tulang Kerongkongan Ayam" class="w-full h-full object-cover" />
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-extrabold bg-purple-500 text-white shadow">Olahan Kaldu</span>
+            <span class="absolute bottom-3 right-3 px-3 py-1 rounded-xl text-xs font-semibold bg-white/90 text-slate-800 backdrop-blur">~15-18% Bobot</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl font-bold text-slate-950">Tulang Kerongkong (Carcass Frame)</h3>
+              <i class="fa-solid fa-bone text-purple-500 text-lg"></i>
+            </div>
+            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+              Sisa kerangka dada/punggung setelah difillet. Sangat dicari oleh pabrik bakso, penjual mi ayam, dan produsen pakan hewan berkualitas tinggi.
+            </p>
+            <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-500">
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-utensils text-brand-500"></i> Kuah Bakso, Ekstrak Kaldu</span>
+              <span class="text-brand-600 font-bold">Nilai Tambah</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FITUR TAMBAHAN: KALKULATOR ESTIMASI HASIL SORTIR (YIELD CALCULATOR) -->
+    <section id="kalkulator" class="scroll-mt-24">
+      <div class="glass-card rounded-3xl p-6 sm:p-10 border border-orange-100 shadow-lg">
+        <div class="max-w-2xl mb-8">
+          <span class="text-brand-600 font-bold text-xs uppercase tracking-wider block mb-1">Fitur Interaktif Cepat</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Kalkulator Hasil Potongan Ayam (Yield)</h2>
+          <p class="text-slate-600 text-sm mt-1">Masukkan total bobot ayam potong hidup atau karkas kotor untuk menghitung estimasi bobot bersih tiap bagian yang dapat Anda jual.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <!-- Form Input -->
+          <div class="lg:col-span-5 space-y-4">
+            <div>
+              <label for="carcassWeight" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Total Berat Ayam Karkas (kg):</label>
+              <div class="relative">
+                <input type="number" id="carcassWeight" value="10" min="1" step="0.5" class="w-full pl-4 pr-16 py-3.5 rounded-2xl bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-slate-900 font-bold text-lg shadow-sm" />
+                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold text-sm">KG</span>
+              </div>
+            </div>
+
+            <button onclick="calculateYield()" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-brand-600 to-amber-500 text-white font-bold shadow-md shadow-brand-500/30 hover:brightness-105 active:scale-95 transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-calculator"></i> Kalkulasi Proporsi Jual
+            </button>
+            <p class="text-[11px] text-slate-400 italic text-center">*Perhitungan berdasarkan rata-rata rasio karkas standar komersial Indonesia.</p>
+          </div>
+
+          <!-- Hasil Hitung -->
+          <div class="lg:col-span-7 bg-white/90 p-6 rounded-2xl border border-orange-100 shadow-sm">
+            <h4 class="font-extrabold text-slate-900 text-sm mb-4 flex items-center gap-2">
+              <i class="fa-solid fa-chart-pie text-brand-600"></i> Estimasi Distribusi Produk:
+            </h4>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="calcResults">
+              <div class="p-3 rounded-xl bg-orange-50 border border-orange-100">
+                <span class="text-xs text-slate-500 block">Dada (30%)</span>
+                <span class="text-lg font-black text-brand-700" id="resBreast">3.00 kg</span>
+              </div>
+              <div class="p-3 rounded-xl bg-amber-50 border border-amber-100">
+                <span class="text-xs text-slate-500 block">Paha (32%)</span>
+                <span class="text-lg font-black text-amber-700" id="resThigh">3.20 kg</span>
+              </div>
+              <div class="p-3 rounded-xl bg-yellow-50 border border-yellow-100">
+                <span class="text-xs text-slate-500 block">Sayap (11%)</span>
+                <span class="text-lg font-black text-yellow-700" id="resWings">1.10 kg</span>
+              </div>
+              <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-100">
+                <span class="text-xs text-slate-500 block">Ceker & Leher (8%)</span>
+                <span class="text-lg font-black text-emerald-700" id="resFeet">0.80 kg</span>
+              </div>
+              <div class="p-3 rounded-xl bg-rose-50 border border-rose-100">
+                <span class="text-xs text-slate-500 block">Jeroan (5%)</span>
+                <span class="text-lg font-black text-rose-700" id="resGiblet">0.50 kg</span>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                <span class="text-xs text-slate-500 block">Kerangka/Tulang (14%)</span>
+                <span class="text-lg font-black text-slate-700" id="resBones">1.40 kg</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOP & STANDAR MUTU SORTIR -->
+    <section id="sop" class="scroll-mt-24">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Standar Mutu (Grading) Sebelum Dijual</h2>
+        <p class="text-slate-500 text-sm mt-2">Pastikan karkas lolos 3 parameter pengecekan utama sebelum didistribusikan ke pasar modern maupun pasar becek.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card p-6 rounded-3xl border border-white/80 shadow-sm text-center">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl mb-4">
+            <i class="fa-solid fa-eye"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">1. Visual & Warna</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Daging berwarna merah muda cerah keputihan, tidak pucat kebiruan, bebas dari memar darah (hematoma), dan kulit bersih dari sisa bulu halus.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-3xl border border-white/80 shadow-sm text-center">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl mb-4">
+            <i class="fa-solid fa-hand-dots"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">2. Tekstur & Kekenyalan</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Daging bertekstur kenyal elastis saat ditekan (kembali ke bentuk semula), permukaan tidak berlendir tebal, dan serat padat.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-3xl border border-white/80 shadow-sm text-center">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-brand-100 text-brand-600 flex items-center justify-center text-2xl mb-4">
+            <i class="fa-solid fa-wind"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">3. Aroma Alami</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Memiliki aroma khas daging ayam segar yang netral, tidak berbau asam, tidak berbau amonia menyengat, atau aroma anyir busuk.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-auto bg-white/80 border-t border-orange-100 py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <div>
+        <p class="text-sm font-semibold text-slate-700">
+          Oleh Ariel Usman Copyright 2026. Seluruh hak cipta dilindungi.
+        </p>
+        <p class="text-xs text-slate-400 mt-0.5">Sistem Manajemen & Grading Ayam Potong Komersial.</p>
+      </div>
+
+      <!-- Instagram Icon & Link -->
+      <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white text-xs font-bold shadow hover:opacity-90 active:scale-95 transition">
+        <i class="fa-brands fa-instagram text-base"></i>
+        <span>@arielrcun</span>
+      </a>
+    </div>
+  </footer>
+
+  <!-- SCRIPT INTERAKTIF -->
+  <script>
+    // 1. Sidebar Toggle Logic
+    const sidebar = document.getElementById('infoSidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+    const openBtn = document.getElementById('openSidebarBtn');
+    const mobileToggle = document.getElementById('mobileSidebarToggle');
+    const closeBtn = document.getElementById('closeSidebarBtn');
+
+    function showSidebar() {
+      sidebar.classList.remove('translate-x-full');
+      overlay.classList.remove('hidden');
+    }
+
+    function hideSidebar() {
+      sidebar.classList.add('translate-x-full');
+      overlay.classList.add('hidden');
+    }
+
+    openBtn?.addEventListener('click', showSidebar);
+    mobileToggle?.addEventListener('click', showSidebar);
+    closeBtn?.addEventListener('click', hideSidebar);
+    overlay?.addEventListener('click', hideSidebar);
+
+    // 2. Filter Kategori Potongan Logic
+    function filterPart(category) {
+      // Update state tombol
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-cat') === category) {
+          btn.classList.add('bg-brand-500', 'text-white', 'shadow-sm');
+          btn.classList.remove('text-slate-600');
+        } else {
+          btn.classList.remove('bg-brand-500', 'text-white', 'shadow-sm');
+          btn.classList.add('text-slate-600');
+        }
+      });
+
+      // Filter kartu
+      const cards = document.querySelectorAll('.part-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // 3. Kalkulator Yield Potongan Ayam
+    function calculateYield() {
+      const inputWeight = parseFloat(document.getElementById('carcassWeight').value);
+      if (isNaN(inputWeight) || inputWeight <= 0) {
+        alert("Silakan masukkan bobot karkas yang valid (angka di atas 0)!");
+        return;
+      }
+
+      // Rasio persentase potongan komersial
+      const breast = (inputWeight * 0.30).toFixed(2);
+      const thigh = (inputWeight * 0.32).toFixed(2);
+      const wings = (inputWeight * 0.11).toFixed(2);
+      const feet = (inputWeight * 0.08).toFixed(2);
+      const giblet = (inputWeight * 0.05).toFixed(2);
+      const bones = (inputWeight * 0.14).toFixed(2);
+
+      document.getElementById('resBreast').innerText = `${breast} kg`;
+      document.getElementById('resThigh').innerText = `${thigh} kg`;
+      document.getElementById('resWings').innerText = `${wings} kg`;
+      document.getElementById('resFeet').innerText = `${feet} kg`;
+      document.getElementById('resGiblet').innerText = `${giblet} kg`;
+      document.getElementById('resBones').innerText = `${bones} kg`;
+    }
+  </script>
+</body>
+</html>
