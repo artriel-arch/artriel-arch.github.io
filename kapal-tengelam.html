@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARUNG KARAM — Ensiklopedia & Misteri Kapal Tenggelam Dunia</title>
+    <meta name="description" content="Eksplorasi visual dan arsip mendalam mengenai tragedi, misteri, dan bangkai kapal laut yang karam di dasar samudera dari era penjelajahan hingga modern.">
+    <meta name="keywords" content="kapal karam, kapal tenggelam, RMS Titanic, Edmund Fitzgerald, Vasa, misteri laut dalam, sejarah maritim, sonar">
+    <meta name="author" content="Ariel Usman">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arungkaram.id/">
+    <meta property="og:title" content="ARUNG KARAM — Ekspedisi Kapal Laut Tenggelam Dunia">
+    <meta property="og:description" content="Arsip visual interaktif bangkai kapal legendaris, kedalaman samudera, artefak bersejarah, dan kisah tragedi laut abadi.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Twitter Cards -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="ARUNG KARAM — Ensiklopedia Kapal Karam Dunia">
+    <meta property="twitter:description" content="Jelajahi bangkai kapal paling misterius di dasar samudera secara interaktif.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230284c7'><path d='M3 13.5l9-7.5 9 7.5v6.75a.75.75 0 01-1.05.69L12 17.25 4.05 20.94A.75.75 0 013 20.25V13.5z'/></svg>">
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        ocean: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        amberGlow: '#f59e0b',
+                        marineTeal: '#0d9488'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Glassmorphism Classes */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.45);
+        }
+        .glass-panel-deep {
+            background: rgba(14, 165, 233, 0.12);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+        .glass-card-hover {
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px -10px rgba(2, 132, 199, 0.22);
+        }
+
+        /* Ambient subtle pulse */
+        @keyframes sonar-wave {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 0.4; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+        .animate-sonar {
+            animation: sonar-wave 4s ease-in-out infinite;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e0f2fe;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #38bdf8;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0284c7;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-sky-50 via-cyan-50/70 to-blue-100 text-slate-800 antialiased min-h-screen flex flex-col selection:bg-cyan-200 selection:text-ocean-900">
+
+    <!-- Sticky Glassmorphic Navbar -->
+    <header class="sticky top-0 z-40 w-full transition-all duration-300">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <div class="glass-panel rounded-2xl shadow-sm px-4 sm:px-6 py-3 flex items-center justify-between border border-white/60">
+                <!-- Brand / Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-ocean-600 to-cyan-400 flex items-center justify-center text-white shadow-md shadow-ocean-400/30 group-hover:rotate-6 transition-transform">
+                        <i class="fa-solid fa-anchor text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-ocean-700 via-cyan-600 to-ocean-500 bg-clip-text text-transparent">
+                            ARUNG KARAM
+                        </span>
+                        <span class="hidden sm:inline-block text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 ml-2 bg-ocean-100 text-ocean-700 rounded-full border border-ocean-200">
+                            Deep Sea Archive
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-600">
+                    <a href="#beranda" class="hover:text-ocean-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-compass text-xs text-ocean-500"></i> Beranda</a>
+                    <a href="#katalog" class="hover:text-ocean-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-ship text-xs text-ocean-500"></i> Tragedi Karang</a>
+                    <a href="#depth-explorer" class="hover:text-ocean-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-water text-xs text-ocean-500"></i> Peta Kedalaman</a>
+                    <a href="#fakta-laut" class="hover:text-ocean-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-lightbulb text-xs text-ocean-500"></i> Fakta Laut</a>
+                    <a href="#timeline" class="hover:text-ocean-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-timeline text-xs text-ocean-500"></i> Garis Waktu</a>
+                </div>
+
+                <!-- Right Actions: Sonar Audio Button & Sidebar Toggle -->
+                <div class="flex items-center gap-2.5">
+                    <!-- Audio Ambience (Sonar Sound) Toggle -->
+                    <button id="sonar-toggle-btn" class="px-3.5 py-2 rounded-xl text-xs font-semibold bg-white/90 border border-slate-200 text-slate-700 hover:border-ocean-400 hover:text-ocean-600 transition-all flex items-center gap-2 shadow-sm" title="Nyalakan Efek Sonar Laut">
+                        <i id="sonar-icon" class="fa-solid fa-volume-xmark text-ocean-500"></i>
+                        <span class="hidden sm:inline" id="sonar-text">Sonar: Off</span>
+                    </button>
+
+                    <!-- Sidebar Toggle Button -->
+                    <button id="open-sidebar-btn" class="p-2.5 rounded-xl bg-ocean-600 text-white hover:bg-ocean-700 active:scale-95 transition-all shadow-md shadow-ocean-600/30 flex items-center gap-2" aria-label="Buka Menu Sidebar">
+                        <i class="fa-solid fa-bars-staggered text-sm"></i>
+                        <span class="hidden md:inline text-xs font-bold uppercase tracking-wider pr-1">Menu</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Interactive Sidebar Drawer -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"></div>
+    <aside id="sidebar-drawer" class="fixed top-0 right-0 h-full w-full sm:w-96 bg-white/95 backdrop-blur-xl border-l border-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+        <!-- Drawer Header -->
+        <div class="p-6 border-b border-slate-100 flex items-center justify-between bg-sky-50/70">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-ocean-600 text-white flex items-center justify-center font-bold text-sm shadow">
+                    <i class="fa-solid fa-compass-drafting"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-800 text-base">Panel Ekspedisi</h3>
+                    <p class="text-[11px] text-slate-500">Arsip Digital Bawah Laut</p>
+                </div>
+            </div>
+            <button id="close-sidebar-btn" class="w-8 h-8 rounded-lg bg-slate-100 text-slate-500 hover:bg-slate-200 hover:text-slate-800 transition flex items-center justify-center">
+                <i class="fa-solid fa-xmark text-sm"></i>
+            </button>
+        </div>
+
+        <!-- Drawer Content Body -->
+        <div class="flex-1 overflow-y-auto p-6 space-y-6 text-sm text-slate-600">
+            <!-- Mobile Navigation Links (Only visible on small devices) -->
+            <div class="lg:hidden space-y-2 pb-4 border-b border-slate-100">
+                <p class="text-xs font-bold uppercase tracking-wider text-ocean-600 mb-2">Navigasi Langsung</p>
+                <a href="#beranda" class="sidebar-nav-link flex items-center gap-3 py-2 px-3 rounded-lg hover:bg-ocean-50 text-slate-700 font-medium">
+                    <i class="fa-solid fa-house text-ocean-500 w-4"></i> Beranda Utama
+                </a>
+                <a href="#katalog" class="sidebar-nav-link flex items-center gap-3 py-2 px-3 rounded-lg hover:bg-ocean-50 text-slate-700 font-medium">
+                    <i class="fa-solid fa-ship text-ocean-500 w-4"></i> Tragedi Karang
+                </a>
+                <a href="#depth-explorer" class="sidebar-nav-link flex items-center gap-3 py-2 px-3 rounded-lg hover:bg-ocean-50 text-slate-700 font-medium">
+                    <i class="fa-solid fa-water text-ocean-500 w-4"></i> Peta Kedalaman Laut
+                </a>
+                <a href="#fakta-laut" class="sidebar-nav-link flex items-center gap-3 py-2 px-3 rounded-lg hover:bg-ocean-50 text-slate-700 font-medium">
+                    <i class="fa-solid fa-lightbulb text-ocean-500 w-4"></i> Fakta & Mitos Laut
+                </a>
+                <a href="#timeline" class="sidebar-nav-link flex items-center gap-3 py-2 px-3 rounded-lg hover:bg-ocean-50 text-slate-700 font-medium">
+                    <i class="fa-solid fa-clock-rotate-left text-ocean-500 w-4"></i> Garis Waktu
+                </a>
+            </div>
+
+            <!-- Quick Stats Card -->
+            <div class="bg-gradient-to-br from-ocean-50 to-cyan-50 p-4 rounded-2xl border border-ocean-100">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-ocean-700 block mb-2">Statistik Samudera Dunia</span>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-white/80 p-2.5 rounded-xl border border-white">
+                        <span class="text-xs text-slate-400 block">Tenggelam Terdata</span>
+                        <span class="text-lg font-extrabold text-ocean-700">3 Juta+</span>
+                    </div>
+                    <div class="bg-white/80 p-2.5 rounded-xl border border-white">
+                        <span class="text-xs text-slate-400 block">Baru Ditemukan</span>
+                        <span class="text-lg font-extrabold text-amber-600">&lt; 1%</span>
+                    </div>
+                    <div class="bg-white/80 p-2.5 rounded-xl border border-white">
+                        <span class="text-xs text-slate-400 block">Harta Karun Tercecer</span>
+                        <span class="text-lg font-extrabold text-emerald-600">$60B+</span>
+                    </div>
+                    <div class="bg-white/80 p-2.5 rounded-xl border border-white">
+                        <span class="text-xs text-slate-400 block">Titik Terdalam</span>
+                        <span class="text-lg font-extrabold text-indigo-600">6.895 m</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curated Log & Mission -->
+            <div>
+                <h4 class="font-bold text-slate-800 text-xs uppercase tracking-wider mb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-scroll text-ocean-500"></i> Catatan Kurator Ekspedisi
+                </h4>
+                <p class="text-xs text-slate-600 leading-relaxed bg-white p-3 rounded-xl border border-slate-100 shadow-sm">
+                    "Setiap lambung kapal yang bersemayam di dasar samudera bukan sekadar puing kayu dan baja berkarat, melainkan kapsul waktu yang mengabadikan detik-detik keberanian, keputusasaan, dan keagungan maritim peradaban manusia."
+                </p>
+            </div>
+
+            <!-- Recent Expedition Updates -->
+            <div>
+                <h4 class="font-bold text-slate-800 text-xs uppercase tracking-wider mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-satellite-dish text-cyan-600"></i> Warta Penemuan Terbaru
+                </h4>
+                <ul class="space-y-2 text-xs">
+                    <li class="p-2.5 bg-slate-50 hover:bg-sky-50 rounded-xl transition cursor-pointer border border-slate-100">
+                        <div class="flex justify-between font-semibold text-slate-700">
+                            <span>Galeón San José</span>
+                            <span class="text-ocean-600 font-bold">Kolombia</span>
+                        </div>
+                        <p class="text-[11px] text-slate-500 mt-1">Robot selam ROV memetakan muatan emas & koin senilai miliaran dolar di kedalaman 600m.</p>
+                    </li>
+                    <li class="p-2.5 bg-slate-50 hover:bg-sky-50 rounded-xl transition cursor-pointer border border-slate-100">
+                        <div class="flex justify-between font-semibold text-slate-700">
+                            <span>Endurance (Shackleton)</span>
+                            <span class="text-ocean-600 font-bold">Antartika</span>
+                        </div>
+                        <p class="text-[11px] text-slate-500 mt-1">Ditemukan utuh di kedalaman 3.008 meter di bawah Laut Weddell yang dingin membeku.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Drawer Footer -->
+        <div class="p-4 border-t border-slate-100 bg-slate-50 text-center">
+            <p class="text-xs text-slate-500">
+                Dibuat untuk penjelajah maritim sejati.
+            </p>
+        </div>
+    </aside>
+
+    <!-- Hero Section -->
+    <main class="flex-grow">
+        <section id="beranda" class="relative pt-6 pb-20 overflow-hidden">
+            <!-- Decorative Gradient Orbs -->
+            <div class="absolute top-12 left-1/2 -translate-x-1/2 w-96 sm:w-[650px] h-96 sm:h-[450px] bg-gradient-to-tr from-cyan-300/40 via-sky-400/30 to-blue-300/20 blur-3xl rounded-full pointer-events-none animate-sonar"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <!-- Hero Card -->
+                <div class="glass-panel rounded-3xl p-6 sm:p-12 md:p-16 shadow-xl border border-white/80 text-center max-w-4xl mx-auto mt-4">
+                    <!-- Pill Tag -->
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-ocean-100/90 text-ocean-800 text-xs sm:text-sm font-semibold tracking-wide mb-6 border border-ocean-200">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                        Arsip Digital Kemaritiman Dunia 2026
+                    </div>
+
+                    <!-- Heading -->
+                    <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6">
+                        Menyingkap Jejak <br class="hidden sm:inline"/>
+                        <span class="bg-gradient-to-r from-ocean-700 via-cyan-600 to-sky-500 bg-clip-text text-transparent">
+                            Kapal Karam Terbesar
+                        </span> di Samudera
+                    </h1>
+
+                    <!-- Paragraph -->
+                    <p class="text-slate-600 text-base sm:text-lg md:text-xl font-normal max-w-2xl mx-auto mb-8 leading-relaxed">
+                        Dari kemewahan naas Titanic hingga armada perang yang terkubur di Pasifik. Telusuri misteri, koordinat kedalaman, dan kisah abadi para pelaut di bawah permukaan biru dunia.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-wrap items-center justify-center gap-4">
+                        <a href="#katalog" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-ocean-600 to-cyan-500 hover:from-ocean-700 hover:to-cyan-600 text-white font-bold text-sm shadow-lg shadow-ocean-500/25 transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-compass"></i>
+                            Jelajahi Ekspedisi
+                        </a>
+                        <a href="#depth-explorer" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 font-bold text-sm shadow-sm transition-all hover:border-ocean-300 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-angles-down text-ocean-500"></i>
+                            Peta Kedalaman Laut
+                        </a>
+                    </div>
+
+                    <!-- Quick Highlight Stats -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12 pt-8 border-t border-slate-200/60 text-left">
+                        <div>
+                            <span class="block text-2xl font-black text-ocean-700">3.800 m</span>
+                            <span class="text-xs text-slate-500 font-medium">Bangkai Titanic</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-black text-cyan-600">1628 M</span>
+                            <span class="text-xs text-slate-500 font-medium">Tragedi Kapal Vasa</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-black text-amberGlow">6.895 m</span>
+                            <span class="text-xs text-slate-500 font-medium">USS Samuel B. Roberts</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-black text-emerald-600">300+ Thn</span>
+                            <span class="text-xs text-slate-500 font-medium">Kapsul Waktu Samudera</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Shipwreck Catalog Section -->
+        <section id="katalog" class="py-16 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Header -->
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-ocean-600 bg-ocean-100 px-3 py-1 rounded-full border border-ocean-200">
+                        Koleksi Arsip
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-3 tracking-tight">
+                        Kapal Karam Bersejarah di Jagat Raya
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base mt-2">
+                        Pilih kategori era untuk meninjau dokumentasi, posisi geologis, dan data teknis kapal yang bersemayam di dasar laut.
+                    </p>
+                </div>
+
+                <!-- Category Filter Buttons -->
+                <div class="flex flex-wrap items-center justify-center gap-2 mb-10" id="filter-container">
+                    <button data-filter="all" class="filter-btn active-filter px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-ocean-600 text-white shadow-sm transition">
+                        Semua Kapal
+                    </button>
+                    <button data-filter="abad-pertengahan" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white/80 hover:bg-ocean-50 text-slate-700 border border-slate-200 transition">
+                        Abad Pertengahan & Layar
+                    </button>
+                    <button data-filter="perang-dunia" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white/80 hover:bg-ocean-50 text-slate-700 border border-slate-200 transition">
+                        Perang Dunia (WWI & WWII)
+                    </button>
+                    <button data-filter="modern" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white/80 hover:bg-ocean-50 text-slate-700 border border-slate-200 transition">
+                        Misteri Modern & Danau
+                    </button>
+                </div>
+
+                <!-- Ship Cards Grid -->
+                <div id="shipwreck-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                    <!-- Dynamic Items rendered by JS below for seamless maintenance -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Deep Sea Depth Explorer / Meter -->
+        <section id="depth-explorer" class="py-16 bg-gradient-to-b from-sky-100/60 via-ocean-100/40 to-sky-50 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-700 bg-cyan-100 px-3 py-1 rounded-full border border-cyan-200">
+                        Simulasi Grafis
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-3 tracking-tight">
+                        Penjelajah Kedalaman Samudera (Depth Meter)
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base mt-2">
+                        Geser slider kedalaman untuk merasakan atmosfer zona laut serta melihat kapal karam legendaris di kedalaman tersebut.
+                    </p>
+                </div>
+
+                <!-- Depth Interactive Container -->
+                <div class="glass-panel max-w-4xl mx-auto rounded-3xl p-6 sm:p-10 shadow-xl border border-white">
+                    <div class="flex flex-col md:flex-row gap-8 items-center">
+                        <!-- Left: Slider Control -->
+                        <div class="w-full md:w-1/2 space-y-6">
+                            <div>
+                                <label for="depthSlider" class="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-2">
+                                    Atur Kedalaman Penyelaman:
+                                </label>
+                                <div class="flex items-baseline justify-between mb-2">
+                                    <span id="depthDisplay" class="text-4xl sm:text-5xl font-black text-ocean-700">0</span>
+                                    <span class="text-lg font-bold text-ocean-500">Meter di Bawah Laut</span>
+                                </div>
+                                <input type="range" id="depthSlider" min="0" max="4000" step="50" value="0" class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-ocean-600">
+                                <div class="flex justify-between text-[11px] text-slate-400 mt-1 font-semibold">
+                                    <span>Permukaan (0 m)</span>
+                                    <span>Fotik (200 m)</span>
+                                    <span>Abisal (4.000 m)</span>
+                                </div>
+                            </div>
+
+                            <!-- Oceanic Zone Badge -->
+                            <div class="p-4 rounded-2xl bg-white/80 border border-slate-100 shadow-sm">
+                                <span class="text-xs text-slate-400 font-semibold uppercase block">Zona Ekosistem:</span>
+                                <h4 id="zoneName" class="text-base font-extrabold text-slate-800 mt-0.5">Zona Epipelagik (Sunlight Zone)</h4>
+                                <p id="zoneDesc" class="text-xs text-slate-600 mt-1">Cahaya matahari masih menembus air, kaya akan biota laut dan terumbu karang.</p>
+                            </div>
+
+                            <!-- Jump to Famous Wrecks Buttons -->
+                            <div>
+                                <span class="text-xs font-bold text-slate-500 uppercase tracking-wider block mb-2">Lompat Cepat ke Lokasi:</span>
+                                <div class="flex flex-wrap gap-2">
+                                    <button onclick="setDepth(32)" class="px-3 py-1.5 rounded-lg bg-sky-100 hover:bg-sky-200 text-sky-800 text-xs font-semibold transition">
+                                        Vasa (32 m)
+                                    </button>
+                                    <button onclick="setDepth(120)" class="px-3 py-1.5 rounded-lg bg-sky-100 hover:bg-sky-200 text-sky-800 text-xs font-semibold transition">
+                                        Britannic (120 m)
+                                    </button>
+                                    <button onclick="setDepth(160)" class="px-3 py-1.5 rounded-lg bg-sky-100 hover:bg-sky-200 text-sky-800 text-xs font-semibold transition">
+                                        Edmund Fitz. (160 m)
+                                    </button>
+                                    <button onclick="setDepth(3800)" class="px-3 py-1.5 rounded-lg bg-ocean-600 hover:bg-ocean-700 text-white text-xs font-semibold transition shadow-sm">
+                                        Titanic (3.800 m)
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Visual Submersible Viewport -->
+                        <div class="w-full md:w-1/2">
+                            <div id="depthViewport" class="relative h-72 sm:h-80 rounded-2xl overflow-hidden flex flex-col justify-between p-6 transition-colors duration-700 border-2 border-white/60 shadow-inner" style="background-color: #38bdf8;">
+                                <!-- Bubble effect container -->
+                                <div id="bubble-container" class="absolute inset-0 pointer-events-none overflow-hidden"></div>
+
+                                <!-- Ambient Status Indicator -->
+                                <div class="relative z-10 flex justify-between items-center text-xs font-bold text-white/90 drop-shadow">
+                                    <span class="flex items-center gap-1.5 bg-black/30 backdrop-blur-sm px-2.5 py-1 rounded-full">
+                                        <i class="fa-solid fa-temperature-half"></i> <span id="tempDisplay">22°C</span>
+                                    </span>
+                                    <span class="flex items-center gap-1.5 bg-black/30 backdrop-blur-sm px-2.5 py-1 rounded-full">
+                                        <i class="fa-solid fa-gauge-high"></i> <span id="pressureDisplay">1 atm</span>
+                                    </span>
+                                </div>
+
+                                <!-- Center dynamic Ship Icon & Status -->
+                                <div class="relative z-10 text-center my-auto">
+                                    <div id="submarineIcon" class="text-4xl text-white drop-shadow-md mb-2 transition-transform duration-300">
+                                        <i class="fa-solid fa-ship"></i>
+                                    </div>
+                                    <h4 id="wreckNearbyTitle" class="text-lg font-black text-white drop-shadow">Permukaan Air</h4>
+                                    <p id="wreckNearbyDesc" class="text-xs text-white/80 max-w-xs mx-auto drop-shadow">Kapal masih berlayar aman di atas laut.</p>
+                                </div>
+
+                                <!-- Lighting Bar Indicator -->
+                                <div class="relative z-10 text-[10px] text-white/80 bg-black/30 px-3 py-1.5 rounded-xl backdrop-blur-sm flex justify-between items-center">
+                                    <span>Intensitas Cahaya Matahari:</span>
+                                    <span id="lightLevelText" class="font-bold text-amber-300">100% (Terang Benderang)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marine Trivia & Myth Section -->
+        <section id="fakta-laut" class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full border border-emerald-200">
+                        Wawasan Maritim
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-3 tracking-tight">
+                        Fakta & Misteri di Dasar Laut Dalam
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base mt-2">
+                        Mengapa bangkai kapal bisa bertahan ratusan tahun dan apa saja mitos yang telah dipecahkan sains?
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Fact Card 1 -->
+                    <div class="glass-panel p-6 rounded-2xl border border-white/80 shadow-md">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-bacteria"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2">Bakteri Pemakan Besi</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Bangkai Titanic perlahan hancur bukan karena erosi air, melainkan bakteri <em>Halomonas titanicae</em> yang memakan karat besi. Diprediksi puingnya akan lenyap dalam kurun 30 tahun mendatang.
+                        </p>
+                    </div>
+
+                    <!-- Fact Card 2 -->
+                    <div class="glass-panel p-6 rounded-2xl border border-white/80 shadow-md">
+                        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2">Museum Terbesar di Bumi</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            UNESCO memperkirakan terdapat lebih dari 3 juta kapal karam di samudera dunia. Samudera menyimpan lebih banyak artefak sejarah manusia daripada seluruh museum di daratan digabungkan.
+                        </p>
+                    </div>
+
+                    <!-- Fact Card 3 -->
+                    <div class="glass-panel p-6 rounded-2xl border border-white/80 shadow-md">
+                        <div class="w-12 h-12 rounded-xl bg-ocean-100 text-ocean-700 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-snowflake"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2">Pengawetan Alami Air Dingin</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Kapal seperti <em>Vasa</em> di Laut Baltik dan <em>Endurance</em> di Antartika ditemukan dalam kondisi kayu sangat utuh karena ketiadaan cacing kapal penggerek kayu (*shipworms*) akibat air yang terlalu dingin atau payau.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Mini Interactive Quiz Card -->
+                <div class="mt-12 glass-panel-deep p-6 sm:p-8 rounded-3xl border border-ocean-300/40 text-center max-w-3xl mx-auto shadow-lg">
+                    <span class="text-xs font-bold uppercase tracking-wider text-ocean-700 block mb-1">
+                        <i class="fa-solid fa-circle-question mr-1"></i> Uji Pengetahuan Maritim
+                    </span>
+                    <h3 id="quizQuestion" class="text-lg sm:text-xl font-extrabold text-slate-900 mb-4">
+                        Di kedalaman berapa bangkai kapal legendaris RMS Titanic bersemayam?
+                    </h3>
+                    <div id="quizOptions" class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-md mx-auto">
+                        <button onclick="checkQuiz(0)" class="quiz-btn px-4 py-2.5 rounded-xl bg-white hover:bg-ocean-50 border border-slate-200 text-xs sm:text-sm font-semibold text-slate-700 transition">
+                            A. 1.200 Meter
+                        </button>
+                        <button onclick="checkQuiz(1)" class="quiz-btn px-4 py-2.5 rounded-xl bg-white hover:bg-ocean-50 border border-slate-200 text-xs sm:text-sm font-semibold text-slate-700 transition">
+                            B. 3.800 Meter
+                        </button>
+                        <button onclick="checkQuiz(2)" class="quiz-btn px-4 py-2.5 rounded-xl bg-white hover:bg-ocean-50 border border-slate-200 text-xs sm:text-sm font-semibold text-slate-700 transition">
+                            C. 6.500 Meter
+                        </button>
+                        <button onclick="checkQuiz(3)" class="quiz-btn px-4 py-2.5 rounded-xl bg-white hover:bg-ocean-50 border border-slate-200 text-xs sm:text-sm font-semibold text-slate-700 transition">
+                            D. 11.000 Meter
+                        </button>
+                    </div>
+                    <p id="quizFeedback" class="mt-4 text-xs font-bold hidden"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Historical Shipwreck Timeline Section -->
+        <section id="timeline" class="py-16 bg-white/40">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-ocean-600 bg-ocean-100 px-3 py-1 rounded-full border border-ocean-200">
+                        Kronologi Masa
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-3 tracking-tight">
+                        Garis Waktu Tenggelamnya Kapal Terkenal
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base mt-2">
+                        Rangkaian masa dari kapal layar kerajaan masa silam hingga era kapal uap dan perang besar dunia.
+                    </p>
+                </div>
+
+                <div class="relative border-l-2 border-ocean-300 ml-4 sm:ml-32 space-y-8">
+                    <!-- Timeline Item 1 -->
+                    <div class="relative pl-6 sm:pl-8 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-ocean-600 border-4 border-white shadow"></div>
+                        <span class="sm:absolute sm:-left-28 sm:top-1 text-xs font-black text-ocean-700 block mb-1">Tahun 1628</span>
+                        <div class="glass-panel p-4 rounded-2xl border border-white">
+                            <h4 class="font-bold text-slate-800 text-base">Vasa (Stockholm, Swedia)</h4>
+                            <p class="text-xs text-slate-600 mt-1">Kapal perang paling megah di masanya yang terbalik dan tenggelam hanya 1.300 meter setelah pelayaran perdananya akibat desain lambung yang terlalu berat.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="relative pl-6 sm:pl-8 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-cyan-600 border-4 border-white shadow"></div>
+                        <span class="sm:absolute sm:-left-28 sm:top-1 text-xs font-black text-cyan-700 block mb-1">Tahun 1708</span>
+                        <div class="glass-panel p-4 rounded-2xl border border-white">
+                            <h4 class="font-bold text-slate-800 text-base">San José (Kolombia)</h4>
+                            <p class="text-xs text-slate-600 mt-1">Galeon harta Spanyol bermuatan berton-ton koin emas dan zamrud yang diledakkan oleh skuadron Inggris di lepas pantai Barú.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3 -->
+                    <div class="relative pl-6 sm:pl-8 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-ocean-600 border-4 border-white shadow"></div>
+                        <span class="sm:absolute sm:-left-28 sm:top-1 text-xs font-black text-ocean-700 block mb-1">Tahun 1912</span>
+                        <div class="glass-panel p-4 rounded-2xl border border-white">
+                            <h4 class="font-bold text-slate-800 text-base">RMS Titanic (Atlantik Utara)</h4>
+                            <p class="text-xs text-slate-600 mt-1">Tragedi kapal penumpang terbesar yang menabrak gunung es pada tengah malam sunyi, merenggut lebih dari 1.500 nyawa manusia.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 4 -->
+                    <div class="relative pl-6 sm:pl-8 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-cyan-600 border-4 border-white shadow"></div>
+                        <span class="sm:absolute sm:-left-28 sm:top-1 text-xs font-black text-cyan-700 block mb-1">Tahun 1941</span>
+                        <div class="glass-panel p-4 rounded-2xl border border-white">
+                            <h4 class="font-bold text-slate-800 text-base">Bismarck (Samudera Atlantik)</h4>
+                            <p class="text-xs text-slate-600 mt-1">Kapal tempur kebanggaan Jerman yang ditenggelamkan setelah perburuan laut sengit tak henti oleh Royal Navy Inggris.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 5 -->
+                    <div class="relative pl-6 sm:pl-8 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-ocean-600 border-4 border-white shadow"></div>
+                        <span class="sm:absolute sm:-left-28 sm:top-1 text-xs font-black text-ocean-700 block mb-1">Tahun 1975</span>
+                        <div class="glass-panel p-4 rounded-2xl border border-white">
+                            <h4 class="font-bold text-slate-800 text-base">SS Edmund Fitzgerald (Danau Superior)</h4>
+                            <p class="text-xs text-slate-600 mt-1">Kapal kargo raksasa yang tertelan badai dahsyat tanpa sempat mengirim sinyal SOS, menjadi salah satu legenda maritim terbesar di Amerika Utara.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Detailed Shipwreck Modal Popup -->
+    <div id="ship-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md hidden opacity-0 transition-opacity duration-300">
+        <div class="glass-panel w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl border border-white/80 transform scale-95 transition-transform duration-300 bg-white">
+            <!-- Modal Header Image -->
+            <div class="relative h-56 sm:h-64 w-full overflow-hidden bg-slate-900">
+                <img id="modalImg" src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80" alt="Foto Bangkai Kapal" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                
+                <!-- Close Button -->
+                <button id="closeModalBtn" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/40 hover:bg-black/60 text-white flex items-center justify-center transition backdrop-blur-sm">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <div class="absolute bottom-4 left-6 right-6">
+                    <span id="modalCategory" class="px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-ocean-500 text-white inline-block mb-1">
+                        Kategori
+                    </span>
+                    <h3 id="modalTitle" class="text-2xl font-black text-white drop-shadow-md">Nama Kapal</h3>
+                </div>
+            </div>
+
+            <!-- Modal Info Body -->
+            <div class="p-6 space-y-4 max-h-[60vh] overflow-y-auto">
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase">Tahun Karam</span>
+                        <p id="modalYear" class="text-sm font-extrabold text-slate-800">1912</p>
+                    </div>
+                    <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase">Kedalaman</span>
+                        <p id="modalDepth" class="text-sm font-extrabold text-ocean-600">3.800 m</p>
+                    </div>
+                    <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase">Status Penemuan</span>
+                        <p id="modalStatus" class="text-sm font-extrabold text-emerald-600">Ditemukan</p>
+                    </div>
+                    <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase">Lokasi Dasar Laut</span>
+                        <p id="modalLocation" class="text-sm font-extrabold text-slate-800">Atlantik</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Kisah Kronologi & Penyelidikan:</h4>
+                    <p id="modalDescription" class="text-sm text-slate-600 leading-relaxed"></p>
+                </div>
+
+                <div class="p-3 bg-amber-50 rounded-xl border border-amber-200">
+                    <h5 class="text-xs font-bold text-amber-800 flex items-center gap-1.5">
+                        <i class="fa-solid fa-lightbulb"></i> Artefak & Penemuan Unik:
+                    </h5>
+                    <p id="modalArtifact" class="text-xs text-amber-900 mt-1"></p>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-4 border-t border-slate-100 bg-slate-50 flex justify-end">
+                <button id="closeModalBtnBottom" class="px-5 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold text-xs transition">
+                    Tutup Arsip
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="mt-auto border-t border-ocean-200/60 bg-white/70 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Left: Branding -->
+                <div class="flex items-center gap-3 text-center md:text-left">
+                    <div class="w-9 h-9 rounded-xl bg-ocean-600 text-white flex items-center justify-center shadow-md">
+                        <i class="fa-solid fa-anchor text-sm"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-slate-900 tracking-tight text-base">ARUNG KARAM</span>
+                        <p class="text-xs text-slate-500">Misteri & Sejarah Bahari Samudera Raya</p>
+                    </div>
+                </div>
+
+                <!-- Center: Copyright & Attribution -->
+                <div class="text-center text-xs text-slate-600">
+                    <p class="font-semibold text-slate-800">
+                        Oleh Ariel Usman Copyright 2026
+                    </p>
+                    <p class="text-[11px] text-slate-500 mt-0.5">
+                        Seluruh data dihimpun dari ekspedisi oseanografi internasional.
+                    </p>
+                </div>
+
+                <!-- Right: Instagram Link & Social Media -->
+                <div class="flex items-center gap-3">
+                    <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200 hover:border-pink-300 hover:bg-pink-50/50 shadow-sm transition-all duration-200" title="Kunjungi Instagram Ariel Usman">
+                        <i class="fa-brands fa-instagram text-base text-pink-600 group-hover:scale-110 transition-transform"></i>
+                        <span class="text-xs font-bold text-slate-700 group-hover:text-pink-600">@arielrcun</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Logic & Data Script -->
+    <script>
+        // Data Kapal Karam (Shipwrecks Catalog Data)
+        const shipwrecksData = [
+            {
+                id: 'titanic',
+                name: 'RMS Titanic',
+                category: 'modern',
+                year: '1912',
+                depth: '3.800 m',
+                location: 'Atlantik Utara',
+                status: 'Ditemukan (1985)',
+                image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=700&q=80',
+                shortDesc: 'Kapal penumpang mewah paling megah yang karam usai menabrak gunung es pada pelayaran perdananya.',
+                fullDesc: 'RMS Titanic tenggelam pada dini hari 15 April 1912 di Samudera Atlantik Utara, empat hari setelah memulai pelayaran perdananya dari Southampton menuju New York City. Sekitar 1.500 penumpang dan kru meninggal dunia, menjadikannya salah satu bencana laut masa damai paling mematikan dalam sejarah modern.',
+                artifact: 'Biola milik Wallace Hartley, perhiasan emas, arloji saku penumpang yang berhenti tepat di jam tragedi, serta botol sampanye kuno.'
+            },
+            {
+                id: 'vasa',
+                name: 'Kapal Perang Vasa',
+                category: 'abad-pertengahan',
+                year: '1628',
+                depth: '32 m',
+                location: 'Stockholm, Swedia',
+                status: 'Diangkat Utuh (1961)',
+                image: 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=700&q=80',
+                shortDesc: 'Kapal perang kebanggaan Raja Gustavus Adolphus yang karam hanya berlayar sejauh 1.300 meter.',
+                fullDesc: 'Vasa dibangun sebagai salah satu kapal perang paling kuat di dunia dengan 64 meriam perunggu. Namun karena pusat gravitasi yang terlalu tinggi dan konstruksi lambung bawah yang sempit, embusan angin sepoi-sepoi langsung membalikkan kapal di depan ribuan penonton yang menyaksikan peluncurannya di pelabuhan Stockholm.',
+                artifact: 'Lebih dari 14.000 artefak kayu utuh, 6 meriam perunggu asli, patung ukiran kayu singa lambang kerajaan Swedia, dan pakaian pelaut abad ke-17.'
+            },
+            {
+                id: 'san-jose',
+                name: 'Galeón San José',
+                category: 'abad-pertengahan',
+                year: '1708',
+                depth: '600 m',
+                location: 'Karibia, Kolombia',
+                status: 'Ditemukan (2015)',
+                image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=700&q=80',
+                shortDesc: 'Dikenal sebagai "Holy Grail of Shipwrecks" dengan muatan emas dan perhiasan senilai puluhan miliar dolar.',
+                fullDesc: 'San José adalah galeon 64 meriam milik Spanyol yang membawa harta karun dari benua Amerika menuju Spanyol untuk mendanai Perang Suksesi Spanyol. Kapal ini meledak di tengah pertempuran sengit melawan armada Inggris di dekat Semenanjung Barú.',
+                artifact: 'Meriam perunggu bertatahkan ukiran lumba-lumba unik, cangkir porselen Tiongkok dinasti Ming, koin emas macuquinas, dan ribuan zamrud Kolombia.'
+            },
+            {
+                id: 'bismarck',
+                name: 'Kapal Tempur Bismarck',
+                category: 'perang-dunia',
+                year: '1941',
+                depth: '4.791 m',
+                location: 'Samudera Atlantik',
+                status: 'Ditemukan (1989)',
+                image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=700&q=80',
+                shortDesc: 'Benteng terapung Nazi Jerman yang tenggelam setelah perburuan laut terdahsyat Perang Dunia II.',
+                fullDesc: 'Setelah menenggelamkan kebanggaan Inggris HMS Hood, Bismarck diburu habis-habisan oleh puluhan armada Sekutu. Torpedo dari pesawat bersayap ganda Fairey Swordfish merusak kemudi kapal hingga ia terkepung dan dihujani tembakan sebelum akhirnya karam di kedalaman 4.791 meter.',
+                artifact: 'Turret meriam raksasa 38 cm, katapel peluncur pesawat Arado Ar 196, dan lambung lapis baja baja Krupp yang masih kokoh tegak di lereng gunung bawah laut.'
+            },
+            {
+                id: 'edmund-fitzgerald',
+                name: 'SS Edmund Fitzgerald',
+                category: 'modern',
+                year: '1975',
+                depth: '160 m',
+                location: 'Danau Superior, AS/Kanada',
+                status: 'Ditemukan (1975)',
+                image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=80',
+                shortDesc: 'Kapal barang raksasa Danau-Danau Besar yang lenyap seketika dalam badai salju dan ombak setinggi 10 meter.',
+                fullDesc: 'Kapal sepanjang 222 meter ini membawa 26.000 ton bijih besi taconite ketika diterjang badai ganas di Danau Superior. Kapal terbelah menjadi dua bagian dan tenggelam seketika tanpa sempat membunyikan panggilan darurat maritim.',
+                artifact: 'Lonceng perunggu seberat 90 kg berhasil diangkat pada tahun 1995 sebagai tugu peringatan kehormatan bagi 29 kru yang gugur.'
+            },
+            {
+                id: 'uss-samuel',
+                name: 'USS Samuel B. Roberts',
+                category: 'perang-dunia',
+                year: '1944',
+                depth: '6.895 m',
+                location: 'Laut Filipina',
+                status: 'Ditemukan (2022)',
+                image: 'https://images.unsplash.com/photo-1544551763-77ef2d0cf96c?auto=format&fit=crop&w=700&q=80',
+                shortDesc: 'Bangkai kapal terdalam yang pernah diidentifikasi manusia dalam sejarah oseanografi modern.',
+                fullDesc: 'Dikenal sebagai "Destroyer Escort yang bertarung layaknya Kapal Perang Perkasa". Kapal kecil ini bertempur gagah berani melawan armada tempur utama Jepang dalam Pertempuran Samar sebelum akhirnya tenggelam ke palung samudra terdalam.',
+                artifact: 'Peluncur torpedo triple-tube dan laras senapan ganda 40mm Bofors yang terdokumentasi jelas oleh kapal selam riset Victor Vescovo.'
+            }
+        ];
+
+        // 1. Render Catalog Cards
+        const grid = document.getElementById('shipwreck-grid');
+        function renderShips(category = 'all') {
+            grid.innerHTML = '';
+            const filtered = category === 'all' 
+                ? shipwrecksData 
+                : shipwrecksData.filter(s => s.category === category);
+
+            filtered.forEach(ship => {
+                const card = document.createElement('div');
+                card.className = 'glass-panel rounded-2xl overflow-hidden shadow-md glass-card-hover flex flex-col border border-white/80';
+                card.innerHTML = `
+                    <div class="relative h-48 w-full overflow-hidden bg-slate-800">
+                        <img src="${ship.image}" alt="${ship.name}" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" onerror="this.src='https://placehold.co/600x400/0284c7/ffffff?text=${encodeURIComponent(ship.name)}'">
+                        <div class="absolute top-3 left-3 bg-ocean-900/80 backdrop-blur-sm text-cyan-300 text-[10px] font-extrabold px-2.5 py-1 rounded-md uppercase tracking-wider">
+                            ${ship.year}
+                        </div>
+                        <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-ocean-700 text-[10px] font-bold px-2 py-1 rounded-md">
+                            <i class="fa-solid fa-water"></i> ${ship.depth}
+                        </div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
+                                <span><i class="fa-solid fa-location-dot text-ocean-500 mr-1"></i>${ship.location}</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">${ship.name}</h3>
+                            <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-4">${ship.shortDesc}</p>
+                        </div>
+                        <button onclick="openModal('${ship.id}')" class="w-full py-2.5 px-4 rounded-xl bg-sky-50 hover:bg-ocean-600 text-ocean-700 hover:text-white font-bold text-xs transition duration-200 border border-ocean-200 hover:border-transparent flex items-center justify-center gap-1.5 shadow-sm">
+                            <i class="fa-solid fa-folder-open"></i> Buka Arsip Detail
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+        renderShips();
+
+        // Filter tab interactions
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-ocean-600', 'text-white', 'active-filter');
+                    b.classList.add('bg-white/80', 'text-slate-700');
+                });
+                btn.classList.add('bg-ocean-600', 'text-white', 'active-filter');
+                btn.classList.remove('bg-white/80', 'text-slate-700');
+                renderShips(btn.dataset.filter);
+            });
+        });
+
+        // 2. Modal Handlers
+        const modal = document.getElementById('ship-modal');
+        function openModal(shipId) {
+            const ship = shipwrecksData.find(s => s.id === shipId);
+            if (!ship) return;
+
+            document.getElementById('modalImg').src = ship.image;
+            document.getElementById('modalImg').onerror = function() {
+                this.src = `https://placehold.co/800x400/0284c7/ffffff?text=${encodeURIComponent(ship.name)}`;
+            };
+            document.getElementById('modalTitle').textContent = ship.name;
+            document.getElementById('modalCategory').textContent = ship.category.replace('-', ' ');
+            document.getElementById('modalYear').textContent = ship.year;
+            document.getElementById('modalDepth').textContent = ship.depth;
+            document.getElementById('modalStatus').textContent = ship.status;
+            document.getElementById('modalLocation').textContent = ship.location;
+            document.getElementById('modalDescription').textContent = ship.fullDesc;
+            document.getElementById('modalArtifact').textContent = ship.artifact;
+
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('.transform').classList.remove('scale-95');
+                modal.querySelector('.transform').classList.add('scale-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.add('opacity-0');
+            modal.querySelector('.transform').classList.remove('scale-100');
+            modal.querySelector('.transform').classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        document.getElementById('closeModalBtn').addEventListener('click', closeModal);
+        document.getElementById('closeModalBtnBottom').addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // 3. Sidebar Drawer Handlers
+        const sidebar = document.getElementById('sidebar-drawer');
+        const overlay = document.getElementById('sidebar-overlay');
+        const openSidebarBtn = document.getElementById('open-sidebar-btn');
+        const closeSidebarBtn = document.getElementById('close-sidebar-btn');
+
+        function toggleSidebar(open) {
+            if (open) {
+                overlay.classList.remove('hidden');
+                setTimeout(() => overlay.classList.remove('opacity-0'), 10);
+                sidebar.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+            } else {
+                overlay.classList.add('opacity-0');
+                sidebar.classList.add('translate-x-full');
+                setTimeout(() => overlay.classList.add('hidden'), 300);
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        openSidebarBtn.addEventListener('click', () => toggleSidebar(true));
+        closeSidebarBtn.addEventListener('click', () => toggleSidebar(false));
+        overlay.addEventListener('click', () => toggleSidebar(false));
+
+        document.querySelectorAll('.sidebar-nav-link').forEach(link => {
+            link.addEventListener('click', () => toggleSidebar(false));
+        });
+
+        // 4. Depth Explorer Simulation
+        const depthSlider = document.getElementById('depthSlider');
+        const depthDisplay = document.getElementById('depthDisplay');
+        const depthViewport = document.getElementById('depthViewport');
+        const zoneName = document.getElementById('zoneName');
+        const zoneDesc = document.getElementById('zoneDesc');
+        const tempDisplay = document.getElementById('tempDisplay');
+        const pressureDisplay = document.getElementById('pressureDisplay');
+        const lightLevelText = document.getElementById('lightLevelText');
+        const wreckNearbyTitle = document.getElementById('wreckNearbyTitle');
+        const wreckNearbyDesc = document.getElementById('wreckNearbyDesc');
+        const submarineIcon = document.getElementById('submarineIcon');
+
+        function updateDepth(val) {
+            depthDisplay.textContent = val.toLocaleString();
+            
+            // Calculate pressure (approx 1 atm per 10 meters + 1 atm surface)
+            const pressure = Math.round(1 + (val / 10));
+            pressureDisplay.textContent = `${pressure} atm`;
+
+            // Temperature calculation
+            let temp = 24 - (val * 0.0055);
+            if (temp < 2) temp = 2; // Deep ocean stays around 1-4 deg C
+            tempDisplay.textContent = `${temp.toFixed(1)}°C`;
+
+            // Color gradient shift based on depth
+            if (val < 200) {
+                // Epipelagic (Sunlight)
+                depthViewport.style.backgroundColor = '#38bdf8';
+                zoneName.textContent = 'Zona Epipelagik (Sunlight Zone)';
+                zoneDesc.textContent = '0 - 200m: Cahaya melimpah, fotosintesis fitoplankton terjadi di sini.';
+                lightLevelText.textContent = `${Math.max(10, 100 - Math.round(val/2))}%`;
+                lightLevelText.className = 'font-bold text-amber-300';
+            } else if (val < 1000) {
+                // Mesopelagic (Twilight)
+                depthViewport.style.backgroundColor = '#0284c7';
+                zoneName.textContent = 'Zona Mesopelagik (Twilight Zone)';
+                zoneDesc.textContent = '200 - 1.000m: Cahaya sangat redup, mata makhluk laut mulai beradaptasi dengan bioluminesensi.';
+                lightLevelText.textContent = '< 1% (Remang-remang)';
+                lightLevelText.className = 'font-bold text-cyan-200';
+            } else if (val < 3000) {
+                // Bathypelagic (Midnight)
+                depthViewport.style.backgroundColor = '#0c4a6e';
+                zoneName.textContent = 'Zona Batipelagik (Midnight Zone)';
+                zoneDesc.textContent = '1.000 - 3.000m: Gelap gulita tanpa sinar matahari, tekanan sangat tinggi dan air dingin mendekati beku.';
+                lightLevelText.textContent = '0% (Gelap Total)';
+                lightLevelText.className = 'font-bold text-slate-400';
+            } else {
+                // Abyssopelagic
+                depthViewport.style.backgroundColor = '#020617';
+                zoneName.textContent = 'Zona Abisopelagik (The Abyss)';
+                zoneDesc.textContent = '3.000m+: Dasar samudera abisal dengan tekanan luar biasa mencapai ratusan atmosfer.';
+                lightLevelText.textContent = '0% (Hampa Cahaya)';
+                lightLevelText.className = 'font-bold text-slate-500';
+            }
+
+            // Ship proximity detection
+            if (val === 0) {
+                submarineIcon.innerHTML = '<i class="fa-solid fa-ship"></i>';
+                wreckNearbyTitle.textContent = 'Permukaan Laut';
+                wreckNearbyDesc.textContent = 'Kapal berlayar aman di batas langit dan samudera.';
+            } else if (val >= 20 && val <= 50) {
+                submarineIcon.innerHTML = '<i class="fa-solid fa-sailboat"></i>';
+                wreckNearbyTitle.textContent = 'Bangkai Vasa (32 Meter)';
+                wreckNearbyDesc.textContent = 'Lokasi persemayaman kapal perang Swedia abad ke-17 di teluk Stockholm.';
+            } else if (val >= 100 && val <= 140) {
+                submarineIcon.innerHTML = '<i class="fa-solid fa-hospital"></i>';
+                wreckNearbyTitle.textContent = 'HMHS Britannic (120 Meter)';
+                wreckNearbyDesc.textContent = 'Saudari kembar Titanic yang bertugas sebagai kapal rumah sakit Perang Dunia I.';
+            } else if (val >= 150 && val <= 180) {
+                submarineIcon.innerHTML = '<i class="fa-solid fa-ferry"></i>';
+                wreckNearbyTitle.textContent = 'SS Edmund Fitzgerald (160 Meter)';
+                wreckNearbyDesc.textContent = 'Tenggelam di dasar berbatu Danau Superior akibat badai november ganas.';
+            } else if (val >= 550 && val <= 650) {
+                submarineIcon.innerHTML = '<i class="fa-solid fa-coins"></i>';
+                wreckNearbyTitle.textContent = 'Galeón San José (600 Meter)';
+                wreckNearbyDesc.textContent = 'Kawasan harta karun bernilai puluhan miliar dolar di perairan Kolombia.';
+            } else if (val >= 3700 && val <= 3900) {
+                submarineIcon.innerHTML = '<i class="fa-solid fa-gem"></i>';
+                wreckNearbyTitle.textContent = 'RMS Titanic (3.800 Meter)';
+                wreckNearbyDesc.textContent = 'Terbelah dua di dataran lumpur dasar samudera Atlantik Utara yang tenang.';
+            } else {
+                submarineIcon.innerHTML = '<i class="fa-solid fa-water"></i>';
+                wreckNearbyTitle.textContent = `Kedalaman ${val} Meter`;
+                wreckNearbyDesc.textContent = 'Samudera terbuka hening. Menggunakan sonar pemindai ROV...';
+            }
+        }
+
+        depthSlider.addEventListener('input', (e) => updateDepth(parseInt(e.target.value)));
+
+        window.setDepth = function(val) {
+            depthSlider.value = val;
+            updateDepth(val);
+        };
+
+        // 5. Ambient Sonar Synth using safe Web Audio API
+        let audioCtx = null;
+        let isSonarActive = false;
+        let sonarInterval = null;
+
+        function playSonarPing() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(800, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(700, audioCtx.currentTime + 0.35);
+
+            gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 1.2);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start();
+            osc.stop(audioCtx.currentTime + 1.2);
+        }
+
+        const sonarBtn = document.getElementById('sonar-toggle-btn');
+        const sonarIcon = document.getElementById('sonar-icon');
+        const sonarText = document.getElementById('sonar-text');
+
+        sonarBtn.addEventListener('click', () => {
+            isSonarActive = !isSonarActive;
+            if (isSonarActive) {
+                sonarIcon.className = 'fa-solid fa-volume-high text-ocean-600 animate-pulse';
+                sonarText.textContent = 'Sonar: On';
+                playSonarPing();
+                sonarInterval = setInterval(playSonarPing, 4500);
+            } else {
+                sonarIcon.className = 'fa-solid fa-volume-xmark text-ocean-500';
+                sonarText.textContent = 'Sonar: Off';
+                if (sonarInterval) clearInterval(sonarInterval);
+            }
+        });
+
+        // 6. Mini Quiz Interactive Handler
+        const quizFeedback = document.getElementById('quizFeedback');
+        window.checkQuiz = function(selectedIndex) {
+            const buttons = document.querySelectorAll('.quiz-btn');
+            buttons.forEach(btn => btn.classList.remove('bg-emerald-100', 'border-emerald-500', 'bg-rose-100', 'border-rose-500'));
+
+            quizFeedback.classList.remove('hidden');
+            if (selectedIndex === 1) { // Jawaban B: 3.800 Meter
+                buttons[selectedIndex].classList.add('bg-emerald-100', 'border-emerald-500', 'text-emerald-900');
+                quizFeedback.className = 'mt-4 text-xs font-bold text-emerald-700 block';
+                quizFeedback.innerHTML = '<i class="fa-solid fa-circle-check"></i> Jawaban Tepat! RMS Titanic bersemayam di kedalaman 3.800 meter (12.500 kaki) di Samudera Atlantik Utara.';
+            } else {
+                buttons[selectedIndex].classList.add('bg-rose-100', 'border-rose-500', 'text-rose-900');
+                buttons[1].classList.add('bg-emerald-100', 'border-emerald-500', 'text-emerald-900');
+                quizFeedback.className = 'mt-4 text-xs font-bold text-rose-600 block';
+                quizFeedback.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> Kurang tepat. Jawaban yang benar adalah 3.800 Meter (B).';
+            }
+        };
+    </script>
+</body>
+</html>
