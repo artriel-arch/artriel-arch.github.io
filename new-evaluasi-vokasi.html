@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduVokasi - Evaluasi & Profesi Pendidikan Kejuruan Indonesia</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portal komprehensif kajian Evaluasi Pembelajaran Vokasi, Standar Asesmen BNSP/LSP, dan Peta Profesi Pendidik Kejuruan Indonesia. Dilengkapi simulator evaluasi interaktif.">
+    <meta name="keywords" content="Evaluasi Pendidikan Kejuruan, Profesi Guru SMK, Asesmen Vokasi, BNSP, LSP, Teaching Factory, Kurikulum Merdeka Vokasi, Ariel Usman">
+    <meta name="author" content="Ariel Usman">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://eduvokasi.id/">
+    <meta property="og:title" content="EduVokasi - Evaluasi & Profesi Pendidikan Kejuruan">
+    <meta property="og:description" content="Eksplorasi metodologi evaluasi kurikulum vokasi, asesmen autentik, dan prospek profesi pendidikan kejuruan modern.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1200&h=630&q=80">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="EduVokasi - Evaluasi & Profesi Pendidikan Kejuruan">
+    <meta name="twitter:description" content="Platform edukatif asesmen kejuruan, simulator nilai kompetensi, dan uji kecocokan profesi vokasi.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1200&h=630&q=80">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23059669'><path d='M12 2L1 7l11 5 9-4.09V17h2V7L12 2zM3.46 8.78L12 12.67l8.54-3.89L12 5.12 3.46 8.78zM12 14.5l-9-4.09v5.68l9 4.09 9-4.09v-5.68l-9 4.09z'/></svg>">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0ea5e9',
+                        brand: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                        },
+                        accent: {
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                        },
+                        warm: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Custom Micro-styling -->
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .hero-pattern {
+            background-color: #f8fafc;
+            background-image: radial-gradient(at 10% 20%, rgba(16, 185, 129, 0.15) 0px, transparent 50%),
+                              radial-gradient(at 90% 10%, rgba(99, 102, 241, 0.18) 0px, transparent 50%),
+                              radial-gradient(at 50% 80%, rgba(245, 158, 11, 0.12) 0px, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <header class="sticky top-0 z-40 w-full glass-panel border-b border-slate-200/80 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-18 py-3">
+                <!-- Brand Logo (Kiri) -->
+                <a href="#beranda" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-600 via-teal-500 to-accent-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-graduation-cap text-xl"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-1.5">
+                            <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-slate-900 via-brand-700 to-accent-600 bg-clip-text text-transparent">EduVokasi</span>
+                            <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded-full border border-amber-300">PRO 2026</span>
+                        </div>
+                        <p class="text-[11px] font-medium text-slate-500 hidden sm:block">Evaluasi & Profesi Pendidikan Kejuruan</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Menu (Kanan Berurut) -->
+                <nav class="hidden lg:flex items-center gap-1 xl:gap-2">
+                    <a href="#beranda" class="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-brand-600 rounded-xl hover:bg-slate-100/70 transition-colors">Beranda</a>
+                    <a href="#evaluasi-vokasi" class="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-brand-600 rounded-xl hover:bg-slate-100/70 transition-colors">Evaluasi Vokasi</a>
+                    <a href="#peta-profesi" class="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-brand-600 rounded-xl hover:bg-slate-100/70 transition-colors">Peta Profesi</a>
+                    <a href="#simulator-evaluasi" class="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-brand-600 rounded-xl hover:bg-slate-100/70 transition-colors">Simulator Nilai</a>
+                    <a href="#kuis-karier" class="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-brand-600 rounded-xl hover:bg-slate-100/70 transition-colors">Kuis Profesi</a>
+                    <a href="#materi-kurikulum" class="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-brand-600 rounded-xl hover:bg-slate-100/70 transition-colors">Materi & Standar</a>
+                </nav>
+
+                <!-- Actions: Sidebar Trigger & Mobile Hamburger -->
+                <div class="flex items-center gap-2">
+                    <button id="sidebarToggleBtn" title="Buka Pusat Referensi" class="flex items-center gap-2 px-3.5 py-2 text-xs font-semibold bg-emerald-50 text-brand-700 hover:bg-brand-600 hover:text-white border border-brand-200 rounded-xl transition-all shadow-sm">
+                        <i class="fa-solid fa-book-bookmark text-sm"></i>
+                        <span class="hidden sm:inline">Pusat Referensi</span>
+                    </button>
+                    <button id="mobileMenuBtn" aria-label="Toggle Mobile Menu" class="lg:hidden p-2.5 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none">
+                        <i class="fa-solid fa-bars-staggered text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-200/80 bg-white/95 backdrop-blur-md px-4 pt-3 pb-5 space-y-2 shadow-lg">
+            <a href="#beranda" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-emerald-50 hover:text-brand-600">Beranda</a>
+            <a href="#evaluasi-vokasi" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-emerald-50 hover:text-brand-600">Evaluasi Vokasi</a>
+            <a href="#peta-profesi" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-emerald-50 hover:text-brand-600">Peta Profesi Pendidik</a>
+            <a href="#simulator-evaluasi" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-emerald-50 hover:text-brand-600">Simulator Evaluasi Siswa</a>
+            <a href="#kuis-karier" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-emerald-50 hover:text-brand-600">Kuis Kecocokan Karier</a>
+            <a href="#materi-kurikulum" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-emerald-50 hover:text-brand-600">Materi Standar & SKKNI</a>
+        </div>
+    </header>
+
+    <!-- Sidebar Overlay & Off-canvas Drawer -->
+    <div id="sidebarBackdrop" class="fixed inset-0 bg-slate-900/40 backdrop-blur-xs z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    <aside id="sidebarDrawer" class="fixed top-0 right-0 z-50 w-full sm:w-96 max-w-full h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+        <div class="p-5 border-b border-slate-200 flex items-center justify-between bg-gradient-to-r from-emerald-50 via-teal-50 to-indigo-50">
+            <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-brand-600 text-white flex items-center justify-center shadow-xs">
+                    <i class="fa-solid fa-folder-tree text-sm"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-base">Pusat Data Vokasi</h3>
+                    <p class="text-xs text-slate-500">Regulasi & Kamus Istilah</p>
+                </div>
+            </div>
+            <button id="sidebarCloseBtn" class="p-2 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto p-5 space-y-6">
+            <!-- Regulasi Penting -->
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-1.5">
+                    <i class="fa-solid fa-scale-balanced text-brand-600"></i> Landasan Regulasi
+                </h4>
+                <div class="space-y-2.5">
+                    <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-brand-400 transition-colors">
+                        <div class="text-xs font-bold text-slate-800">Perpres No. 68 Tahun 2022</div>
+                        <p class="text-xs text-slate-600 mt-1">Revitalisasi Pendidikan Vokasi dan Pelatihan Vokasi nasional terintegrasi DUDIKA.</p>
+                    </div>
+                    <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-brand-400 transition-colors">
+                        <div class="text-xs font-bold text-slate-800">Standar BNSP & SKKNI</div>
+                        <p class="text-xs text-slate-600 mt-1">Asesmen berbasis kompetensi (CBA) mengacu Standar Kompetensi Kerja Nasional Indonesia.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Glosarium Vokasi -->
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-1.5">
+                    <i class="fa-solid fa-spell-check text-accent-500"></i> Glosarium Kejuruan
+                </h4>
+                <dl class="space-y-3 text-xs">
+                    <div class="border-l-2 border-brand-500 pl-3">
+                        <dt class="font-bold text-slate-800">Teaching Factory (TeFa)</dt>
+                        <dd class="text-slate-600 mt-0.5">Model pembelajaran berbasis produksi riil barang/jasa sesuai standar industri di sekolah.</dd>
+                    </div>
+                    <div class="border-l-2 border-indigo-500 pl-3">
+                        <dt class="font-bold text-slate-800">Uji Sertifikasi Kompetensi (UKK / LSP)</dt>
+                        <dd class="text-slate-600 mt-0.5">Pengujian akhir siswa oleh Lembaga Sertifikasi Profesi untuk lisensi keahlian kerja resmi.</dd>
+                    </div>
+                    <div class="border-l-2 border-amber-500 pl-3">
+                        <dt class="font-bold text-slate-800">Rekognisi Pembelajaran Lampau (RPL)</dt>
+                        <dd class="text-slate-600 mt-0.5">Pengakuan atas capaian pembelajaran hasil pendidikan formal, nonformal, atau pengalaman kerja.</dd>
+                    </div>
+                </dl>
+            </div>
+
+            <!-- Toolkit Download Simulator Mock -->
+            <div class="p-4 rounded-2xl bg-gradient-to-br from-indigo-50 to-purple-50 border border-indigo-100">
+                <h4 class="font-bold text-indigo-900 text-sm mb-1">Instrumen Evaluasi Siap Pakai</h4>
+                <p class="text-xs text-indigo-700/80 mb-3">Unduh contoh template rubrik observasi praktikum bengkel berformat siap cetak.</p>
+                <button id="btnDownloadMock" class="w-full py-2.5 px-3 bg-accent-600 hover:bg-accent-700 text-white rounded-xl text-xs font-semibold flex items-center justify-center gap-2 shadow-xs transition-colors">
+                    <i class="fa-solid fa-file-arrow-down"></i> Salin Link Rubrik Penilaian
+                </button>
+                <div id="copyNotification" class="hidden mt-2 text-[11px] text-center text-emerald-700 font-semibold bg-emerald-100/80 py-1 rounded-lg">
+                    Tautan instrumen berhasil disalin!
+                </div>
+            </div>
+        </div>
+
+        <div class="p-4 border-t border-slate-200 bg-slate-50 text-center text-xs text-slate-500">
+            Akses Terbuka &copy; 2026 EduVokasi Hub
+        </div>
+    </aside>
+
+    <main>
+        <section id="beranda" class="relative hero-pattern pt-8 pb-16 md:pt-14 md:pb-24 overflow-hidden border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                    
+                    <!-- Left Hero Content -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-100 text-brand-700 text-xs font-semibold border border-emerald-200 shadow-2xs">
+                            <i class="fa-solid fa-bolt text-amber-500"></i>
+                            <span>Paradigma Asesmen Vokasi Era Industri 4.0 & Society 5.0</span>
+                        </div>
+                        
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                            Evaluasi Komprehensif & <br class="hidden sm:inline">
+                            <span class="bg-gradient-to-r from-brand-600 via-teal-600 to-indigo-600 bg-clip-text text-transparent">
+                                Profesi Pendidikan Kejuruan
+                            </span>
+                        </h1>
+                        
+                        <p class="text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed">
+                            Membangun ekosistem vokasi unggul melalui asesmen autentik, keterhubungan industri (*Link and Match* 8+i), serta profesionalisme pendidik dan asesor kejuruan masa depan.
+                        </p>
+
+                        <div class="flex flex-wrap items-center gap-3 pt-2">
+                            <a href="#simulator-evaluasi" class="px-6 py-3.5 bg-brand-600 hover:bg-brand-700 text-white rounded-2xl font-bold text-sm shadow-lg shadow-brand-500/25 hover:shadow-xl hover:shadow-brand-500/35 transition-all flex items-center gap-2">
+                                <i class="fa-solid fa-calculator"></i>
+                                <span>Coba Simulator Nilai</span>
+                            </a>
+                            <a href="#peta-profesi" class="px-6 py-3.5 bg-white/90 hover:bg-white text-slate-700 border border-slate-300 rounded-2xl font-semibold text-sm hover:border-slate-400 transition-all flex items-center gap-2 shadow-xs">
+                                <i class="fa-solid fa-compass text-accent-500"></i>
+                                <span>Jelajahi Peta Profesi</span>
+                            </a>
+                        </div>
+
+                        <!-- Mini Stats / Key Highlights -->
+                        <div class="pt-4 grid grid-cols-3 gap-3 max-w-lg border-t border-slate-200/60">
+                            <div>
+                                <div class="text-xl sm:text-2xl font-extrabold text-slate-900">4 Dimensi</div>
+                                <div class="text-xs text-slate-500">Evaluasi Holistik</div>
+                            </div>
+                            <div>
+                                <div class="text-xl sm:text-2xl font-extrabold text-brand-600">8+i Pillar</div>
+                                <div class="text-xs text-slate-500">Link & Match DUDI</div>
+                            </div>
+                            <div>
+                                <div class="text-xl sm:text-2xl font-extrabold text-accent-600">SKKNI</div>
+                                <div class="text-xs text-slate-500">Standar Kompetensi</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Glassmorphism Visual Card -->
+                    <div class="lg:col-span-5">
+                        <div class="relative mx-auto max-w-md lg:max-w-none">
+                            <div class="absolute -top-6 -left-6 w-48 h-48 bg-teal-300 rounded-full mix-blend-multiply filter blur-2xl opacity-40 animate-pulse"></div>
+                            <div class="absolute -bottom-8 -right-6 w-48 h-48 bg-indigo-300 rounded-full mix-blend-multiply filter blur-2xl opacity-40"></div>
+                            
+                            <div class="relative glass-card rounded-3xl p-6 sm:p-7 shadow-xl space-y-5 border border-white/60">
+                                <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold">
+                                            <i class="fa-solid fa-chart-pie"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-sm font-bold text-slate-900">Matriks Mutu Vokasi</div>
+                                            <div class="text-xs text-slate-500">Skema Standar Asesmen 2026</div>
+                                        </div>
+                                    </div>
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">Aktif</span>
+                                </div>
+
+                                <div class="space-y-3.5">
+                                    <div class="space-y-1.5">
+                                        <div class="flex justify-between text-xs font-semibold">
+                                            <span class="text-slate-600">Asesmen Kinerja Bengkel (Psychomotor)</span>
+                                            <span class="text-brand-600">40%</span>
+                                        </div>
+                                        <div class="w-full bg-slate-100 rounded-full h-2">
+                                            <div class="bg-brand-500 h-2 rounded-full" style="width: 40%"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-1.5">
+                                        <div class="flex justify-between text-xs font-semibold">
+                                            <span class="text-slate-600">Portofolio & Produk Nyata (TeFa)</span>
+                                            <span class="text-accent-500">30%</span>
+                                        </div>
+                                        <div class="w-full bg-slate-100 rounded-full h-2">
+                                            <div class="bg-accent-500 h-2 rounded-full" style="width: 30%"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-1.5">
+                                        <div class="flex justify-between text-xs font-semibold">
+                                            <span class="text-slate-600">Budaya Kerja & K3 (Affective)</span>
+                                            <span class="text-warm-500">20%</span>
+                                        </div>
+                                        <div class="w-full bg-slate-100 rounded-full h-2">
+                                            <div class="bg-warm-500 h-2 rounded-full" style="width: 20%"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-1.5">
+                                        <div class="flex justify-between text-xs font-semibold">
+                                            <span class="text-slate-600">Penguasaan Konsep Teori (Cognitive)</span>
+                                            <span class="text-slate-700">10%</span>
+                                        </div>
+                                        <div class="w-full bg-slate-100 rounded-full h-2">
+                                            <div class="bg-slate-500 h-2 rounded-full" style="width: 10%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-center justify-between text-xs">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fa-solid fa-certificate text-emerald-500 text-base"></i>
+                                        <span class="text-slate-700 font-medium">Uji Kompetensi Keahlian (UKK)</span>
+                                    </div>
+                                    <span class="font-bold text-slate-800">LSP P-1 / P-3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="evaluasi-vokasi" class="py-16 md:py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-2">Pilar Penilaian Kejuruan</h2>
+                    <p class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Konsep Inti Model Evaluasi Pendidikan Kejuruan</p>
+                    <p class="text-slate-600 text-sm sm:text-base mt-2">
+                        Pendidikan vokasi menuntut evaluasi yang berbeda dengan pendidikan umum, berakar pada unjuk kerja nyata, kecakapan adaptif, dan standar industri.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Model CIPP -->
+                    <div class="p-6 rounded-3xl bg-slate-50 hover:bg-white border border-slate-200/80 hover:border-brand-500/40 hover:shadow-xl hover:shadow-brand-500/5 transition-all duration-300 group">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-brand-600 flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-arrows-spin"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Model CIPP Stufflebeam</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Mengevaluasi secara terpadu aspek <strong>Context</strong> (kebutuhan industri), <strong>Input</strong> (sarana bengkel & kurikulum), <strong>Process</strong> (pelaksanaan PBM & TeFa), dan <strong>Product</strong> (kompetensi lulusan).
+                        </p>
+                    </div>
+
+                    <!-- Kirkpatrick -->
+                    <div class="p-6 rounded-3xl bg-slate-50 hover:bg-white border border-slate-200/80 hover:border-indigo-500/40 hover:shadow-xl hover:shadow-indigo-500/5 transition-all duration-300 group">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Model Evaluasi Kirkpatrick</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Mengukur 4 jenjang efektivitas pelatihan vokasi: <strong>Reaction</strong> (kepuasan peserta), <strong>Learning</strong> (peningkatan skill), <strong>Behavior</strong> (penerapan di tempat kerja), dan <strong>Results</strong> (dampak produktivitas).
+                        </p>
+                    </div>
+
+                    <!-- Asesmen Autentik -->
+                    <div class="p-6 rounded-3xl bg-slate-50 hover:bg-white border border-slate-200/80 hover:border-amber-500/40 hover:shadow-xl hover:shadow-amber-500/5 transition-all duration-300 group">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-hammer"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Asesmen Autentik & PBL</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Evaluasi berbasis pengerjaan pesanan nyata (Project-Based Learning) dengan instrumen <em>rubric rating scale</em>, tes kinerja operasional mesin, dan keselamatan kerja (K3LH).
+                        </p>
+                    </div>
+
+                    <!-- Standar BNSP & LSP -->
+                    <div class="p-6 rounded-3xl bg-slate-50 hover:bg-white border border-slate-200/80 hover:border-teal-500/40 hover:shadow-xl hover:shadow-teal-500/5 transition-all duration-300 group">
+                        <div class="w-12 h-12 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-stamp"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Sertifikasi BNSP / LSP</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Uji kompetensi berbasis bukti (*evidence-based assessment*) berprinsip <em>Valid, Reliable, Flexible, dan Fair</em> untuk menentukan status <strong>K</strong> (Kompeten) atau <strong>BK</strong> (Belum Kompeten).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="simulator-evaluasi" class="py-16 bg-slate-100/70 border-y border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center mb-10">
+                    <span class="px-3 py-1 bg-brand-100 text-brand-700 text-xs font-bold rounded-full uppercase tracking-wider">Fitur Interaktif 1</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">Simulator & Kalkulator Evaluasi Kompetensi Siswa SMK</h2>
+                    <p class="text-slate-600 text-xs sm:text-sm mt-1">Ukur prediksi capaian kompetensi kejuruan berdasarkan pembobotan standar Kurikulum Merdeka Vokasi & DUDI.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <!-- Input Form Panel -->
+                    <div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-200">
+                        <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-100">
+                            <h3 class="font-bold text-slate-800 text-base flex items-center gap-2">
+                                <i class="fa-solid fa-sliders text-brand-600"></i> Masukkan Parameter Asesmen
+                            </h3>
+                            <button id="btnResetSimulator" class="text-xs text-slate-500 hover:text-rose-600 font-semibold flex items-center gap-1 transition-colors">
+                                <i class="fa-solid fa-arrow-rotate-left"></i> Reset
+                            </button>
+                        </div>
+
+                        <div class="space-y-5">
+                            <!-- Input 1: Praktik Bengkel/Lab -->
+                            <div>
+                                <div class="flex justify-between items-center text-xs mb-1.5">
+                                    <label for="sliderPraktik" class="font-semibold text-slate-700 flex items-center gap-1.5">
+                                        <i class="fa-solid fa-wrench text-brand-600"></i> Tes Unjuk Kerja & Praktik Bengkel (Bobot 40%)
+                                    </label>
+                                    <span id="labelPraktik" class="font-bold text-brand-700 bg-brand-50 px-2 py-0.5 rounded-lg border border-brand-200 text-xs">85</span>
+                                </div>
+                                <input type="range" id="sliderPraktik" min="40" max="100" value="85" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-brand-600">
+                                <span class="text-[11px] text-slate-400">Kecepatan kerja, akurasi dimensi, dan SOP pengoperasian alat.</span>
+                            </div>
+
+                            <!-- Input 2: Proyek TeFa / Portofolio -->
+                            <div>
+                                <div class="flex justify-between items-center text-xs mb-1.5">
+                                    <label for="sliderPorto" class="font-semibold text-slate-700 flex items-center gap-1.5">
+                                        <i class="fa-solid fa-boxes-stacked text-accent-500"></i> Portofolio Produk & Proyek Nyata (Bobot 30%)
+                                    </label>
+                                    <span id="labelPorto" class="font-bold text-accent-700 bg-indigo-50 px-2 py-0.5 rounded-lg border border-indigo-200 text-xs">80</span>
+                                </div>
+                                <input type="range" id="sliderPorto" min="40" max="100" value="80" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-accent-500">
+                                <span class="text-[11px] text-slate-400">Hasil produk layak jual, dokumentasi proyek, dan kepuasan pemesan.</span>
+                            </div>
+
+                            <!-- Input 3: Sikap Kerja & K3 -->
+                            <div>
+                                <div class="flex justify-between items-center text-xs mb-1.5">
+                                    <label for="sliderSikap" class="font-semibold text-slate-700 flex items-center gap-1.5">
+                                        <i class="fa-solid fa-shield-halved text-warm-500"></i> Budaya Kerja 5R & K3LH (Bobot 20%)
+                                    </label>
+                                    <span id="labelSikap" class="font-bold text-warm-600 bg-amber-50 px-2 py-0.5 rounded-lg border border-amber-200 text-xs">90</span>
+                                </div>
+                                <input type="range" id="sliderSikap" min="40" max="100" value="90" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-warm-500">
+                                <span class="text-[11px] text-slate-400">Disiplin waktu, penggunaan APD, higienitas, dan integritas kerja.</span>
+                            </div>
+
+                            <!-- Input 4: Pengetahuan Teori -->
+                            <div>
+                                <div class="flex justify-between items-center text-xs mb-1.5">
+                                    <label for="sliderTeori" class="font-semibold text-slate-700 flex items-center gap-1.5">
+                                        <i class="fa-solid fa-book-open text-slate-600"></i> Tes Pemahaman Teori & Analisis (Bobot 10%)
+                                    </label>
+                                    <span id="labelTeori" class="font-bold text-slate-700 bg-slate-100 px-2 py-0.5 rounded-lg border border-slate-300 text-xs">75</span>
+                                </div>
+                                <input type="range" id="sliderTeori" min="40" max="100" value="75" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-slate-700">
+                                <span class="text-[11px] text-slate-400">Konsep dasar ilmiah kejuruan, troubleshooting logis, dan regulasi.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Output Result Panel -->
+                    <div class="lg:col-span-5 bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-200 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-slate-800 text-base mb-4 flex items-center gap-2">
+                                <i class="fa-solid fa-award text-amber-500"></i> Hasil Evaluasi Kompetensi
+                            </h3>
+
+                            <div class="p-5 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 text-center mb-5">
+                                <span class="text-xs text-slate-500 font-medium uppercase tracking-wider">Nilai Akhir Terbobot</span>
+                                <div id="finalScoreDisplay" class="text-5xl font-black text-brand-600 my-1">83.5</div>
+                                <div id="competencyBadge" class="inline-block mt-1 px-4 py-1 rounded-full text-xs font-extrabold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                                    KOMPETEN (Sangat Baik)
+                                </div>
+                            </div>
+
+                            <div class="space-y-2.5 text-xs">
+                                <div class="flex justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-200/60">
+                                    <span class="text-slate-600">Kualifikasi Sertifikasi:</span>
+                                    <span id="certQualification" class="font-bold text-slate-800">Direkomendasikan LSP</span>
+                                </div>
+                                <div class="flex justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-200/60">
+                                    <span class="text-slate-600">Kesiapan Magang Industri:</span>
+                                    <span id="internshipReadiness" class="font-bold text-emerald-600">Sangat Siap (Tier 1)</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 p-3.5 rounded-xl bg-amber-50/80 border border-amber-200">
+                                <div class="text-[11px] font-bold text-amber-800 mb-1 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-circle-info"></i> Rekomendasi Tindak Lanjut Guru/Asesor:
+                                </div>
+                                <p id="recommendationText" class="text-xs text-amber-900/90 leading-relaxed">
+                                    Pertahankan performa praktik bengkel. Disarankan pengayaan materi trouble-shooting mutakhir dan peningkatan kecepatan siklus produksi TeFa.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-slate-100 text-center">
+                            <span class="text-[11px] text-slate-400">Algoritma mengacu SKKNI & Pedoman Asesmen Ditjen Pendidikan Vokasi.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="peta-profesi" class="py-16 md:py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-accent-600 mb-2">Jenjang Karier & Ekosistem</h2>
+                    <p class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Peta Profesi Pendidikan Kejuruan</p>
+                    <p class="text-slate-600 text-sm sm:text-base mt-2">
+                        Pendidikan kejuruan menawarkan spektrum karier luas bagi para ahli teknis dan pendidik yang berkomitmen mencetak tenaga kerja terampil nasional.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Profesi 1: Guru Produktif SMK -->
+                    <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-brand-600 flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-chalkboard-user"></i>
+                            </div>
+                            <span class="text-[11px] font-bold text-brand-700 bg-brand-50 px-2 py-0.5 rounded-md border border-brand-200 uppercase">Jalur Formal</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-2 mb-1">Guru Kejuruan / Produktif SMK</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Pendidik profesional di Sekolah Menengah Kejuruan yang menguasai keahlian spesifik (Teknik Mesin, RPL, Otomotif, Tata Boga, dll.) dengan sertifikasi pendidik (PPG) dan magang industri berkala.
+                            </p>
+                        </div>
+                        <div class="mt-5 pt-3 border-t border-slate-200/80 text-xs text-slate-500 flex items-center justify-between">
+                            <span>Sertifikasi: <strong>PPG Vokasi & Asesor</strong></span>
+                            <i class="fa-solid fa-circle-check text-emerald-500"></i>
+                        </div>
+                    </div>
+
+                    <!-- Profesi 2: Instruktur Pelatihan Vokasi / BLK -->
+                    <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-toolbox"></i>
+                            </div>
+                            <span class="text-[11px] font-bold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded-md border border-indigo-200 uppercase">Jalur Non-Formal</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-2 mb-1">Instruktur Pelatihan Vokasi (BPVP / BLK)</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Tenaga ahli di Balai Pelatihan Vokasi dan Produktivitas (Kemnaker) yang membina pencari kerja atau pekerja terdisrupsi melalui pelatihan intensif berorientasi sertifikasi kompetensi.
+                            </p>
+                        </div>
+                        <div class="mt-5 pt-3 border-t border-slate-200/80 text-xs text-slate-500 flex items-center justify-between">
+                            <span>Standar: <strong>SKKNI Metodologi Pelatihan</strong></span>
+                            <i class="fa-solid fa-circle-check text-indigo-500"></i>
+                        </div>
+                    </div>
+
+                    <!-- Profesi 3: Asesor Kompetensi BNSP -->
+                    <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-clipboard-check"></i>
+                            </div>
+                            <span class="text-[11px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200 uppercase">Otoritas Penguji</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-2 mb-1">Asesor Kompetensi (LSP / BNSP)</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Profesional bersertifikat lisensi BNSP yang berwenang menilai, memvalidasi bukti portofolio, dan merekomendasikan keputusan sertifikasi kompetensi bagi peserta uji vokasi.
+                            </p>
+                        </div>
+                        <div class="mt-5 pt-3 border-t border-slate-200/80 text-xs text-slate-500 flex items-center justify-between">
+                            <span>Lisensi: <strong>Asesor BNSP Resmi</strong></span>
+                            <i class="fa-solid fa-circle-check text-amber-500"></i>
+                        </div>
+                    </div>
+
+                    <!-- Profesi 4: Dosen Vokasi / Politeknik -->
+                    <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-user-graduate"></i>
+                            </div>
+                            <span class="text-[11px] font-bold text-teal-700 bg-teal-50 px-2 py-0.5 rounded-md border border-teal-200 uppercase">Pendidikan Tinggi</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-2 mb-1">Dosen Vokasi Politeknik</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Mengampu jenjang Diploma (D3/D4/Sarjana Terapan) dan Magister Terapan dengan fokus pada riset terapan industri, inovasi prototipe, serta hilirisasi produk inovatif.
+                            </p>
+                        </div>
+                        <div class="mt-5 pt-3 border-t border-slate-200/80 text-xs text-slate-500 flex items-center justify-between">
+                            <span>Kualifikasi: <strong>Magister/Doktor Terapan</strong></span>
+                            <i class="fa-solid fa-circle-check text-teal-500"></i>
+                        </div>
+                    </div>
+
+                    <!-- Profesi 5: Instructional Designer Vokasi -->
+                    <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-cubes"></i>
+                            </div>
+                            <span class="text-[11px] font-bold text-sky-700 bg-sky-50 px-2 py-0.5 rounded-md border border-sky-200 uppercase">EdTech & Industri</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-2 mb-1">Curriculum & Learning Specialist</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Merancang modul pembelajaran interaktif, simulator VR/AR bengkel virtual, dan menyelaraskan matriks kompetensi dunia industri ke dalam satuan bahan ajar vokasi.
+                            </p>
+                        </div>
+                        <div class="mt-5 pt-3 border-t border-slate-200/80 text-xs text-slate-500 flex items-center justify-between">
+                            <span>Keahlian: <strong>Instructional Design & LMS</strong></span>
+                            <i class="fa-solid fa-circle-check text-sky-500"></i>
+                        </div>
+                    </div>
+
+                    <!-- Profesi 6: Manager Corporate Training -->
+                    <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-violet-100 text-violet-600 flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-building-user"></i>
+                            </div>
+                            <span class="text-[11px] font-bold text-violet-700 bg-violet-50 px-2 py-0.5 rounded-md border border-violet-200 uppercase">Sektor Korporasi</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-2 mb-1">Industrial Training Specialist</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Memimpin departemen pelatihan internal manufaktur/korporasi untuk program magang, *upskilling*, dan *reskilling* teknisi pabrik sesuai teknologi mesin termutakhir.
+                            </p>
+                        </div>
+                        <div class="mt-5 pt-3 border-t border-slate-200/80 text-xs text-slate-500 flex items-center justify-between">
+                            <span>Sektor: <strong>Human Capital & L&D DUDI</strong></span>
+                            <i class="fa-solid fa-circle-check text-violet-500"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="kuis-karier" class="py-16 bg-gradient-to-b from-slate-50 to-emerald-50/50 border-t border-slate-200">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10">
+                    <span class="px-3 py-1 bg-accent-100 text-accent-700 text-xs font-bold rounded-full uppercase tracking-wider">Fitur Interaktif 2</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">Kuis: Temukan Peran Profesi Vokasi Anda</h2>
+                    <p class="text-slate-600 text-xs sm:text-sm mt-1">Jawab 3 pertanyaan preferensi kerja untuk menemukan rekomendasi spesialisasi profesi kejuruan yang paling sesuai.</p>
+                </div>
+
+                <div class="glass-card rounded-3xl p-6 sm:p-9 shadow-md border border-slate-200/80">
+                    <div id="quizContainer">
+                        <!-- Pertanyaan 1 -->
+                        <div class="quiz-step space-y-4" data-step="1">
+                            <div class="flex items-center justify-between text-xs text-slate-400 font-semibold mb-2">
+                                <span>Pertanyaan 1 dari 3</span>
+                                <span class="text-brand-600">Langkah 1/3</span>
+                            </div>
+                            <h3 class="text-base sm:text-lg font-bold text-slate-900">
+                                1. Aktivitas mana yang paling membuat Anda bersemangat saat berada di lingkungan kejuruan?
+                            </h3>
+                            <div class="space-y-3 pt-2">
+                                <label class="flex items-center p-3.5 rounded-2xl border border-slate-200 hover:border-brand-500 hover:bg-emerald-50/40 cursor-pointer transition-all">
+                                    <input type="radio" name="q1" value="guru" class="w-4 h-4 text-brand-600 focus:ring-brand-500">
+                                    <span class="ml-3 text-xs sm:text-sm text-slate-700 font-medium">Membimbing siswa di bengkel, melihat mereka dari belum bisa memegang alat hingga terampil membuat karya.</span>
+                                </label>
+                                <label class="flex items-center p-3.5 rounded-2xl border border-slate-200 hover:border-brand-500 hover:bg-emerald-50/40 cursor-pointer transition-all">
+                                    <input type="radio" name="q1" value="asesor" class="w-4 h-4 text-brand-600 focus:ring-brand-500">
+                                    <span class="ml-3 text-xs sm:text-sm text-slate-700 font-medium">Memeriksa kepatuhan SOP, ketelitian presisi dimensi, dan memvalidasi sertifikasi kelayakan standar.</span>
+                                </label>
+                                <label class="flex items-center p-3.5 rounded-2xl border border-slate-200 hover:border-brand-500 hover:bg-emerald-50/40 cursor-pointer transition-all">
+                                    <input type="radio" name="q1" value="kurikulum" class="w-4 h-4 text-brand-600 focus:ring-brand-500">
+                                    <span class="ml-3 text-xs sm:text-sm text-slate-700 font-medium">Merancang modul inovatif, simulasi digital interaktif, dan menyinkronkan kebutuhan teknologi terbaru industri.</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Pertanyaan 2 -->
+                        <div class="quiz-step hidden space-y-4" data-step="2">
+                            <div class="flex items-center justify-between text-xs text-slate-400 font-semibold mb-2">
+                                <span>Pertanyaan 2 dari 3</span>
+                                <span class="text-brand-600">Langkah 2/3</span>
+                            </div>
+                            <h3 class="text-base sm:text-lg font-bold text-slate-900">
+                                2. Pendekatan evaluasi apa yang menurut Anda paling esensial dalam kejuruan?
+                            </h3>
+                            <div class="space-y-3 pt-2">
+                                <label class="flex items-center p-3.5 rounded-2xl border border-slate-200 hover:border-brand-500 hover:bg-emerald-50/40 cursor-pointer transition-all">
+                                    <input type="radio" name="q2" value="guru" class="w-4 h-4 text-brand-600 focus:ring-brand-500">
+                                    <span class="ml-3 text-xs sm:text-sm text-slate-700 font-medium">Evaluasi formatif berkelanjutan: pendampingan sikap kerja (K3) dan ketekunan menyelesaikan kendala praktik.</span>
+                                </label>
+                                <label class="flex items-center p-3.5 rounded-2xl border border-slate-200 hover:border-brand-500 hover:bg-emerald-50/40 cursor-pointer transition-all">
+                                    <input type="radio" name="q2" value="asesor" class="w-4 h-4 text-brand-600 focus:ring-brand-500">
+                                    <span class="ml-3 text-xs sm:text-sm text-slate-700 font-medium">Uji sumatif berbasis unjuk kerja standar BNSP dengan rubrik objektif tanpa kompromi toleransi teknis.</span>
+                                </label>
+                                <label class="flex items-center p-3.5 rounded-2xl border border-slate-200 hover:border-brand-500 hover:bg-emerald-50/40 cursor-pointer transition-all">
+                                    <input type="radio" name="q2" value="kurikulum" class="w-4 h-4 text-brand-600 focus:ring-brand-500">
+                                    <span class="ml-3 text-xs sm:text-sm text-slate-700 font-medium">Evaluasi program makro (CIPP/Kirkpatrick) untuk mengukur daya serap lulusan dan kepuasan mitra DUDI.</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Pertanyaan 3 -->
+                        <div class="quiz-step hidden space-y-4" data-step="3">
+                            <div class="flex items-center justify-between text-xs text-slate-400 font-semibold mb-2">
+                                <span>Pertanyaan 3 dari 3</span>
+                                <span class="text-brand-600">Langkah 3/3</span>
+                            </div>
+                            <h3 class="text-base sm:text-lg font-bold text-slate-900">
+                                3. Di mana lingkungan kerja impian Anda?
+                            </h3>
+                            <div class="space-y-3 pt-2">
+                                <label class="flex items-center p-3.5 rounded-2xl border border-slate-200 hover:border-brand-500 hover:bg-emerald-50/40 cursor-pointer transition-all">
+                                    <input type="radio" name="q3" value="guru" class="w-4 h-4 text-brand-600 focus:ring-brand-500">
+                                    <span class="ml-3 text-xs sm:text-sm text-slate-700 font-medium">SMK Pusat Keunggulan / Teaching Factory yang dinamis bersama murid-murid kreatif.</span>
+                                </label>
+                                <label class="flex items-center p-3.5 rounded-2xl border border-slate-200 hover:border-brand-500 hover:bg-emerald-50/40 cursor-pointer transition-all">
+                                    <input type="radio" name="q3" value="asesor" class="w-4 h-4 text-brand-600 focus:ring-brand-500">
+                                    <span class="ml-3 text-xs sm:text-sm text-slate-700 font-medium">Lembaga Sertifikasi Profesi (LSP) independen atau sentra uji kompetensi industri terakreditasi.</span>
+                                </label>
+                                <label class="flex items-center p-3.5 rounded-2xl border border-slate-200 hover:border-brand-500 hover:bg-emerald-50/40 cursor-pointer transition-all">
+                                    <input type="radio" name="q3" value="kurikulum" class="w-4 h-4 text-brand-600 focus:ring-brand-500">
+                                    <span class="ml-3 text-xs sm:text-sm text-slate-700 font-medium">Divisi Learning & Development korporasi atau konsultan perancangan kurikulum vokasi nasional.</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Quiz Result View -->
+                        <div id="quizResult" class="hidden text-center space-y-4 py-4">
+                            <div class="w-16 h-16 rounded-full bg-emerald-100 text-brand-600 mx-auto flex items-center justify-center text-2xl shadow-inner">
+                                <i class="fa-solid fa-trophy"></i>
+                            </div>
+                            <span class="text-xs uppercase tracking-wider font-bold text-brand-600">Rekomendasi Karier Vokasi Anda:</span>
+                            <h3 id="resultRoleTitle" class="text-2xl font-black text-slate-900">Guru Produktif & Fasilitator TeFa</h3>
+                            <p id="resultRoleDesc" class="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto leading-relaxed">
+                                Anda memiliki jiwa mendidik yang kuat serta gairah mentransfer keahlian teknis secara langsung kepada generasi muda kejuruan.
+                            </p>
+                            <div class="pt-2">
+                                <button id="btnRestartQuiz" class="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-semibold inline-flex items-center gap-2 transition-colors">
+                                    <i class="fa-solid fa-arrow-rotate-left"></i> Ulangi Kuis
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Quiz Footer Controls -->
+                        <div id="quizControls" class="flex justify-between items-center mt-8 pt-5 border-t border-slate-200/80">
+                            <button id="btnPrevStep" class="hidden px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-xl transition-colors">
+                                <i class="fa-solid fa-chevron-left mr-1"></i> Kembali
+                            </button>
+                            <span class="text-[11px] text-slate-400 font-medium">Pilih salah satu jawaban</span>
+                            <button id="btnNextStep" class="px-5 py-2.5 bg-accent-600 hover:bg-accent-700 text-white text-xs font-bold rounded-xl transition-colors inline-flex items-center gap-1.5 shadow-sm">
+                                <span>Lanjut</span> <i class="fa-solid fa-chevron-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="materi-kurikulum" class="py-16 md:py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-600">Kumpulan Modul & Rubrik</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Eksplorasi Materi & Pedoman Evaluasi</h2>
+                    </div>
+
+                    <!-- Category Filter Buttons -->
+                    <div class="flex flex-wrap gap-2" id="filterContainer">
+                        <button class="filter-btn active-filter px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all bg-brand-600 text-white shadow-xs" data-category="all">Semua</button>
+                        <button class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-medium text-slate-600 bg-slate-100 hover:bg-slate-200 transition-all" data-category="asesmen">Asesmen</button>
+                        <button class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-medium text-slate-600 bg-slate-100 hover:bg-slate-200 transition-all" data-category="profesi">Profesi</button>
+                        <button class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-medium text-slate-600 bg-slate-100 hover:bg-slate-200 transition-all" data-category="link-match">Link & Match</button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="materiCardGrid">
+                    <!-- Card 1 -->
+                    <div class="materi-card p-6 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col justify-between" data-category="asesmen">
+                        <div>
+                            <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">Asesmen</span>
+                            <h3 class="text-base font-bold text-slate-900 mt-3 mb-1.5">Rubrik Holistik Penilaian Praktik Bengkel</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Standar matriks rubrik mencakup persiapan alat, kepatuhan K3LH, ketelitian ukuran toleransi ±0.02 mm, dan waktu siklus pengerjaan.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-200/80 flex items-center justify-between text-xs">
+                            <span class="text-slate-400">Format: Pedoman PDF</span>
+                            <span class="text-brand-600 font-semibold cursor-pointer hover:underline" onclick="toggleDetail('detail-1')">Buka Ulasan</span>
+                        </div>
+                        <div id="detail-1" class="hidden mt-3 pt-3 border-t border-dashed border-slate-200 text-xs text-slate-600">
+                            Komponen utama mencakup: 1. Aspek K3 (20%), 2. Proses Kerja (30%), 3. Hasil Fisik Presisi (40%), 4. Efisiensi Waktu (10%).
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="materi-card p-6 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col justify-between" data-category="profesi">
+                        <div>
+                            <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-indigo-100 text-indigo-800">Profesi</span>
+                            <h3 class="text-base font-bold text-slate-900 mt-3 mb-1.5">Standar Kompetensi Guru Produktif Abad 21</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Integrasi pedagogik vokasi, kapabilitas sertifikat kompetensi industri, serta kecakapan mengelola unit produksi mandiri di sekolah.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-200/80 flex items-center justify-between text-xs">
+                            <span class="text-slate-400">Format: Kajian Riset</span>
+                            <span class="text-brand-600 font-semibold cursor-pointer hover:underline" onclick="toggleDetail('detail-2')">Buka Ulasan</span>
+                        </div>
+                        <div id="detail-2" class="hidden mt-3 pt-3 border-t border-dashed border-slate-200 text-xs text-slate-600">
+                            Guru SMK wajib memperbarui sertifikasi industri minimal 3 tahun sekali lewat program magang guru di sentra manufaktur rekanan.
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="materi-card p-6 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col justify-between" data-category="link-match">
+                        <div>
+                            <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-amber-100 text-amber-800">Link & Match</span>
+                            <h3 class="text-base font-bold text-slate-900 mt-3 mb-1.5">Penyelarasan Kurikulum & Guru Tamu Industri</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Strategi implementasi paket 8+i: kurikulum dirancang bersama mitra, minimal 50 jam guru tamu industri tiap semester, dan beasiswa ikatan kerja.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-200/80 flex items-center justify-between text-xs">
+                            <span class="text-slate-400">Format: SOP Kemitraan</span>
+                            <span class="text-brand-600 font-semibold cursor-pointer hover:underline" onclick="toggleDetail('detail-3')">Buka Ulasan</span>
+                        </div>
+                        <div id="detail-3" class="hidden mt-3 pt-3 border-t border-dashed border-slate-200 text-xs text-slate-600">
+                            Poin kunci evaluasi keberhasilan adalah rasio serapan lulusan dalam waktu kurang dari 6 bulan pasca kelulusan di atas 80%.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 text-xs py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 pb-8 border-b border-slate-800">
+                <div class="md:col-span-2 space-y-3">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-xl bg-brand-500 text-white flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <span class="text-white font-extrabold text-base tracking-tight">EduVokasi Hub</span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm text-xs leading-relaxed">
+                        Pusat rujukan evaluasi pembelajaran kejuruan, standardisasi uji kompetensi BNSP, dan pengembangan profesi pendidik vokasi Indonesia.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-3 text-xs uppercase tracking-wider">Navigasi Utama</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#beranda" class="hover:text-emerald-400 transition-colors">Beranda</a></li>
+                        <li><a href="#evaluasi-vokasi" class="hover:text-emerald-400 transition-colors">Evaluasi Vokasi</a></li>
+                        <li><a href="#peta-profesi" class="hover:text-emerald-400 transition-colors">Peta Profesi</a></li>
+                        <li><a href="#simulator-evaluasi" class="hover:text-emerald-400 transition-colors">Simulator Penilaian</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-3 text-xs uppercase tracking-wider">Kreator & Kontak</h4>
+                    <p class="text-slate-400 mb-2">Dikembangkan untuk kemajuan ekosistem pendidikan vokasi Indonesia.</p>
+                    <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-white bg-gradient-to-r from-pink-600 via-rose-500 to-amber-500 hover:opacity-90 px-3.5 py-1.5 rounded-xl font-semibold shadow-xs transition-opacity">
+                        <i class="fa-brands fa-instagram text-sm"></i>
+                        <span>@arielrcun</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="text-slate-500">
+                    Oleh Ariel Usman Copyright 2026. Seluruh hak cipta dilindungi undang-undang.
+                </div>
+                <div class="flex items-center gap-4 text-slate-500">
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-bolt text-amber-500"></i> Standar Vokasi 4.0</span>
+                    <span>•</span>
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-brand-500"></i> BNSP & SKKNI Aligned</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- 1. Mobile Menu Toggle ---
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // --- 2. Off-canvas Sidebar Drawer ---
+        const sidebarToggleBtn = document.getElementById('sidebarToggleBtn');
+        const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
+        const sidebarDrawer = document.getElementById('sidebarDrawer');
+        const sidebarBackdrop = document.getElementById('sidebarBackdrop');
+
+        function openSidebar() {
+            sidebarDrawer.classList.remove('translate-x-full');
+            sidebarBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+            sidebarBackdrop.classList.add('opacity-100');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeSidebar() {
+            sidebarDrawer.classList.add('translate-x-full');
+            sidebarBackdrop.classList.remove('opacity-100');
+            sidebarBackdrop.classList.add('opacity-0', 'pointer-events-none');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        sidebarToggleBtn.addEventListener('click', openSidebar);
+        sidebarCloseBtn.addEventListener('click', closeSidebar);
+        sidebarBackdrop.addEventListener('click', closeSidebar);
+
+        // Copy Template Link Mock Notification
+        const btnDownloadMock = document.getElementById('btnDownloadMock');
+        const copyNotification = document.getElementById('copyNotification');
+
+        btnDownloadMock.addEventListener('click', () => {
+            const tempText = "https://eduvokasi.id/template-rubrik-evaluasi-vokasi-2026.pdf";
+            const tempInput = document.createElement('input');
+            tempInput.value = tempText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            copyNotification.classList.remove('hidden');
+            setTimeout(() => {
+                copyNotification.classList.add('hidden');
+            }, 3000);
+        });
+
+        // --- 3. Vocational Competency Evaluation Simulator ---
+        const sliderPraktik = document.getElementById('sliderPraktik');
+        const sliderPorto = document.getElementById('sliderPorto');
+        const sliderSikap = document.getElementById('sliderSikap');
+        const sliderTeori = document.getElementById('sliderTeori');
+
+        const labelPraktik = document.getElementById('labelPraktik');
+        const labelPorto = document.getElementById('labelPorto');
+        const labelSikap = document.getElementById('labelSikap');
+        const labelTeori = document.getElementById('labelTeori');
+
+        const finalScoreDisplay = document.getElementById('finalScoreDisplay');
+        const competencyBadge = document.getElementById('competencyBadge');
+        const certQualification = document.getElementById('certQualification');
+        const internshipReadiness = document.getElementById('internshipReadiness');
+        const recommendationText = document.getElementById('recommendationText');
+        const btnResetSimulator = document.getElementById('btnResetSimulator');
+
+        function calculateEvaluation() {
+            const vPraktik = parseFloat(sliderPraktik.value);
+            const vPorto = parseFloat(sliderPorto.value);
+            const vSikap = parseFloat(sliderSikap.value);
+            const vTeori = parseFloat(sliderTeori.value);
+
+            // Update Labels
+            labelPraktik.textContent = vPraktik;
+            labelPorto.textContent = vPorto;
+            labelSikap.textContent = vSikap;
+            labelTeori.textContent = vTeori;
+
+            // Weighted calculation: 40% praktik, 30% porto, 20% sikap, 10% teori
+            const total = (vPraktik * 0.40) + (vPorto * 0.30) + (vSikap * 0.20) + (vTeori * 0.10);
+            const scoreFormatted = total.toFixed(1);
+            finalScoreDisplay.textContent = scoreFormatted;
+
+            // Logic and Badges
+            if (total >= 85) {
+                competencyBadge.textContent = "SANGAT KOMPETEN (Sangat Baik / A)";
+                competencyBadge.className = "inline-block mt-1 px-4 py-1 rounded-full text-xs font-extrabold bg-emerald-100 text-emerald-800 border border-emerald-300";
+                certQualification.textContent = "Direkomendasikan Sertifikasi BNSP Penuh";
+                internshipReadiness.textContent = "Sangat Siap Kerja di Industri Utama (Tier 1)";
+                internshipReadiness.className = "font-bold text-emerald-600";
+                recommendationText.textContent = "Performa sangat unggul. Siswa layak diikutsertakan Lomba Kompetensi Siswa (LKS) atau program fast-track magang industri multinasional.";
+            } else if (total >= 75) {
+                competencyBadge.textContent = "KOMPETEN (Baik / B)";
+                competencyBadge.className = "inline-block mt-1 px-4 py-1 rounded-full text-xs font-extrabold bg-teal-100 text-teal-800 border border-teal-300";
+                certQualification.textContent = "Memenuhi Standar Kelulusan LSP";
+                internshipReadiness.textContent = "Siap Magang dengan Supervisi Reguler";
+                internshipReadiness.className = "font-bold text-teal-600";
+                recommendationText.textContent = "Kompetensi telah memenuhi ambang batas industri. Pertahankan ketelitian kerja dan asah kecepatan estimasi waktu produksi.";
+            } else if (total >= 65) {
+                competencyBadge.textContent = "CUKUP / PERLU PEMANTAPAN (C)";
+                competencyBadge.className = "inline-block mt-1 px-4 py-1 rounded-full text-xs font-extrabold bg-amber-100 text-amber-800 border border-amber-300";
+                certQualification.textContent = "Asesmen Ulang pada Unit Tertentu";
+                internshipReadiness.textContent = "Perlu Tambahan Jam Praktikum Bengkel";
+                internshipReadiness.className = "font-bold text-amber-600";
+                recommendationText.textContent = "Diperlukan bimbingan klinis remedial pada aspek tes unjuk kerja bengkel dan penegakan budaya kerja K3 sebelum terjun ke DUDI.";
+            } else {
+                competencyBadge.textContent = "BELUM KOMPETEN (BK / Perlu Remediasi)";
+                competencyBadge.className = "inline-block mt-1 px-4 py-1 rounded-full text-xs font-extrabold bg-rose-100 text-rose-800 border border-rose-300";
+                certQualification.textContent = "Belum Memenuhi Syarat Lisensi BNSP";
+                internshipReadiness.textContent = "Belum Direkomendasikan Terjun Magang";
+                internshipReadiness.className = "font-bold text-rose-600";
+                recommendationText.textContent = "Segera lakukan pendampingan intensif berfokus pada keselamatan kerja dasar, penguasaan SOP mesin, dan latihan proyek sederhana bertahap.";
+            }
+        }
+
+        [sliderPraktik, sliderPorto, sliderSikap, sliderTeori].forEach(slider => {
+            slider.addEventListener('input', calculateEvaluation);
+        });
+
+        btnResetSimulator.addEventListener('click', () => {
+            sliderPraktik.value = 85;
+            sliderPorto.value = 80;
+            sliderSikap.value = 90;
+            sliderTeori.value = 75;
+            calculateEvaluation();
+        });
+
+        // Initialize Simulator Default
+        calculateEvaluation();
+
+        // --- 4. Interactive Quiz Logic ---
+        let currentStep = 1;
+        const totalSteps = 3;
+        const btnNextStep = document.getElementById('btnNextStep');
+        const btnPrevStep = document.getElementById('btnPrevStep');
+        const quizControls = document.getElementById('quizControls');
+        const quizResult = document.getElementById('quizResult');
+        const btnRestartQuiz = document.getElementById('btnRestartQuiz');
+        const resultRoleTitle = document.getElementById('resultRoleTitle');
+        const resultRoleDesc = document.getElementById('resultRoleDesc');
+
+        function showStep(step) {
+            document.querySelectorAll('.quiz-step').forEach(el => el.classList.add('hidden'));
+            const targetStep = document.querySelector(`.quiz-step[data-step="${step}"]`);
+            if (targetStep) targetStep.classList.remove('hidden');
+
+            if (step === 1) {
+                btnPrevStep.classList.add('hidden');
+            } else {
+                btnPrevStep.classList.remove('hidden');
+            }
+
+            if (step === totalSteps) {
+                btnNextStep.innerHTML = '<span>Lihat Hasil</span> <i class="fa-solid fa-flag-checkered ml-1"></i>';
+            } else {
+                btnNextStep.innerHTML = '<span>Lanjut</span> <i class="fa-solid fa-chevron-right ml-1"></i>';
+            }
+        }
+
+        btnNextStep.addEventListener('click', () => {
+            const selectedRadio = document.querySelector(`input[name="q${currentStep}"]:checked`);
+            if (!selectedRadio) {
+                alertToast("Silakan pilih salah satu opsi jawaban sebelum melanjutkan!");
+                return;
+            }
+
+            if (currentStep < totalSteps) {
+                currentStep++;
+                showStep(currentStep);
+            } else {
+                // Kalkulasi Hasil Jawaban
+                calculateQuizResult();
+            }
+        });
+
+        btnPrevStep.addEventListener('click', () => {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        });
+
+        function calculateQuizResult() {
+            document.querySelectorAll('.quiz-step').forEach(el => el.classList.add('hidden'));
+            quizControls.classList.add('hidden');
+            quizResult.classList.remove('hidden');
+
+            const counts = { guru: 0, asesor: 0, kurikulum: 0 };
+            for (let i = 1; i <= 3; i++) {
+                const checked = document.querySelector(`input[name="q${i}"]:checked`);
+                if (checked) {
+                    counts[checked.value] = (counts[checked.value] || 0) + 1;
+                }
+            }
+
+            let maxRole = 'guru';
+            if (counts.asesor > counts[maxRole]) maxRole = 'asesor';
+            if (counts.kurikulum > counts[maxRole]) maxRole = 'kurikulum';
+
+            if (maxRole === 'asesor') {
+                resultRoleTitle.textContent = "Asesor Kompetensi Lisensi BNSP / LSP";
+                resultRoleDesc.textContent = "Karakter Anda sangat teliti, analitis, dan objektif. Anda sangat cocok menjadi penguji independen standar kompetensi nasional serta pengawal mutu sertifikasi tenaga kerja.";
+            } else if (maxRole === 'kurikulum') {
+                resultRoleTitle.textContent = "Spesialis Kurikulum & Pembelajaran Vokasi (Instructional Designer)";
+                resultRoleDesc.textContent = "Anda memiliki visi strategis dalam menghubungkan kebutuhan teknologi industri modern dengan media edukasi dan modul pelatihan berbasis digital.";
+            } else {
+                resultRoleTitle.textContent = "Guru Kejuruan / Fasilitator Teaching Factory (TeFa)";
+                resultRoleDesc.textContent = "Anda memiliki jiwa pendidik dan mentor sejati. Anda unggul dalam membangkitkan potensi siswa secara langsung di ruang praktik, bengkel produksi, dan laboratorium.";
+            }
+        }
+
+        btnRestartQuiz.addEventListener('click', () => {
+            document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+            currentStep = 1;
+            quizResult.classList.add('hidden');
+            quizControls.classList.remove('hidden');
+            showStep(1);
+        });
+
+        // Helper Notification Toast (No alert() used)
+        function alertToast(msg) {
+            const toast = document.createElement('div');
+            toast.className = "fixed bottom-6 right-6 z-50 bg-slate-900 text-white text-xs px-4 py-3 rounded-2xl shadow-xl border border-slate-700 flex items-center gap-2 transition-all transform duration-300";
+            toast.innerHTML = `<i class="fa-solid fa-circle-exclamation text-amber-400"></i> <span>${msg}</span>`;
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-2');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // --- 5. Filter Materi Cards ---
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const materiCards = document.querySelectorAll('.materi-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-brand-600', 'text-white', 'shadow-xs');
+                    b.classList.add('bg-slate-100', 'text-slate-600');
+                });
+                btn.classList.add('bg-brand-600', 'text-white', 'shadow-xs');
+                btn.classList.remove('bg-slate-100', 'text-slate-600');
+
+                const cat = btn.getAttribute('data-category');
+                materiCards.forEach(card => {
+                    if (cat === 'all' || card.getAttribute('data-category') === cat) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // --- 6. Accordion / Detail Toggle ---
+        function toggleDetail(id) {
+            const el = document.getElementById(id);
+            if (el) {
+                el.classList.toggle('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
