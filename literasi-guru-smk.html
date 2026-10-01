@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Literasi AI Untuk Guru SMK - Transformasi Pendidikan Vokasi Era 2026</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Platform edukasi dan panduan praktis literasi Kecerdasan Buatan (AI) khusus guru SMK se-Indonesia. Lengkap dengan prompt builder kejuruan, katalog tools, modul ajar, dan etika AI.">
+    <meta name="keywords" content="literasi AI guru SMK, AI vokasi, modul ajar kurikulum merdeka AI, prompt engineering guru, AI SMK, etika AI pendidikan">
+    <meta name="author" content="Ariel Usman">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Literasi AI Untuk Guru SMK | Platform Edukasi Vokasi 2026">
+    <meta property="og:description" content="Tingkatkan produktivitas pengajaran, rancang modul ajar kurikulum merdeka, dan simulasikan praktikum kejuruan dengan AI.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:url" content="https://arielrcun.github.io/literasi-ai-guru-smk">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Literasi AI Untuk Guru SMK">
+    <meta name="twitter:description" content="Panduan interaktif dan AI Prompt Builder khusus pendidik vokasi Indonesia.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💡</text></svg>">
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            400: '#38bdf8',
+                            500: '#0284c7',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            accent: '#f59e0b',
+                            teal: '#0d9488',
+                            emerald: '#059669',
+                            rose: '#e11d48'
+                        }
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.12)',
+                        'glow': '0 0 25px -5px rgba(37, 99, 235, 0.4)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 45%, #faf5ff 100%);
+            min-height: 100vh;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.65);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 30px -10px rgba(37, 99, 235, 0.15);
+            border-color: rgba(59, 130, 246, 0.4);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #2563eb 0%, #06b6d4 50%, #0d9488 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased selection:bg-brand-500 selection:text-white flex flex-col min-h-screen">
+
+    <!-- Top Alert Banner -->
+    <div class="bg-gradient-to-r from-blue-600 via-indigo-600 to-teal-500 text-white text-xs sm:text-sm font-medium py-1.5 px-4 text-center shadow-inner">
+        <span class="inline-flex items-center gap-2">
+            <span class="bg-white/20 text-white text-[11px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">Update 2026</span>
+            <span>Panduan Edukasi AI Berbasis Kurikulum Merdeka Vokasi & DUDI</span>
+        </span>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav class="sticky top-0 z-40 glass-panel shadow-sm border-b border-white/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Left: Brand Logo & Title -->
+                <div class="flex items-center gap-3">
+                    <button id="sidebarToggleBtn" aria-label="Buka Sidebar Navigasi" class="p-2.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <i class="fa-solid fa-bars-staggered text-lg"></i>
+                    </button>
+                    <a href="#hero" class="flex items-center gap-3 group">
+                        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-blue-600 to-cyan-500 flex items-center justify-center text-white shadow-md shadow-blue-500/30 group-hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-graduation-cap text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <span class="font-extrabold text-xl tracking-tight text-slate-900">EduAI <span class="text-blue-600">SMK</span></span>
+                                <span class="hidden sm:inline-block text-[11px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">Guru 2026</span>
+                            </div>
+                            <p class="text-[11px] text-slate-500 font-medium tracking-wide">Literasi AI Guru Vokasi Indonesia</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Center/Right: Desktop Menu items -->
+                <div class="hidden lg:flex items-center space-x-1 font-medium text-slate-600 text-sm">
+                    <a href="#hero" class="px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50/80 transition-colors">Beranda</a>
+                    <a href="#pilar" class="px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50/80 transition-colors">4 Pilar Literasi</a>
+                    <a href="#prompt-builder" class="px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50/80 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-wand-magic-sparkles text-amber-500 text-xs"></i>
+                        Prompt Generator
+                    </a>
+                    <a href="#katalog-tools" class="px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50/80 transition-colors">Katalog Tools</a>
+                    <a href="#kuis" class="px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50/80 transition-colors">Kuis Kesiapan</a>
+                    <a href="#etika" class="px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-blue-50/80 transition-colors">Etika & Praktik</a>
+                </div>
+
+                <!-- Right Actions: CTA & Quick Drawer trigger -->
+                <div class="flex items-center gap-3">
+                    <a href="#prompt-builder" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold text-sm shadow-md shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all">
+                        <i class="fa-solid fa-terminal text-xs"></i>
+                        <span>Coba Prompt</span>
+                    </a>
+                    <!-- Mobile Hamburger -->
+                    <button id="mobileMenuBtn" aria-label="Menu Utama" class="lg:hidden p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+                        <i class="fa-solid fa-ellipsis-vertical text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobileDropdown" class="hidden lg:hidden border-t border-slate-200/80 bg-white/95 px-4 pt-3 pb-5 space-y-2 text-sm font-medium text-slate-700 shadow-xl">
+            <a href="#hero" class="block px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600">Beranda</a>
+            <a href="#pilar" class="block px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600">4 Pilar Literasi AI Guru</a>
+            <a href="#prompt-builder" class="block px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600">Prompt Generator Vokasi</a>
+            <a href="#katalog-tools" class="block px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600">Katalog Tools AI Guru</a>
+            <a href="#kuis" class="block px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600">Kuis Kesiapan AI</a>
+            <a href="#etika" class="block px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600">Etika & Asesmen Autentik</a>
+            <div class="pt-2">
+                <button onclick="toggleSidebar(true)" class="w-full py-2.5 px-4 rounded-xl bg-blue-50 text-blue-700 font-semibold text-center flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-book-open"></i> Buka Kamus AI & Cheat Sheet
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Offcanvas Overlay -->
+    <div id="sidebarBackdrop" onclick="toggleSidebar(false)" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+    <!-- Sidebar Drawer Panel -->
+    <aside id="sidebarDrawer" class="fixed top-0 left-0 bottom-0 w-80 sm:w-96 bg-white z-50 shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col border-r border-slate-200">
+        <!-- Sidebar Header -->
+        <div class="p-5 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
+            <div class="flex items-center gap-2.5">
+                <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-compass"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-800 text-base leading-tight">Panel Asisten Guru</h3>
+                    <p class="text-xs text-slate-500">Pusat Referensi Cepat AI Vokasi</p>
+                </div>
+            </div>
+            <button onclick="toggleSidebar(false)" aria-label="Tutup Sidebar" class="w-8 h-8 rounded-lg hover:bg-slate-200 text-slate-500 hover:text-slate-800 flex items-center justify-center">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+
+        <!-- Sidebar Content (Scrollable) -->
+        <div class="p-5 overflow-y-auto space-y-6 flex-1 text-sm">
+            <!-- Nav Shortcut -->
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Navigasi Halaman</h4>
+                <div class="space-y-1">
+                    <a href="#pilar" onclick="toggleSidebar(false)" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-100 text-slate-700 font-medium">
+                        <span><i class="fa-solid fa-cube text-blue-500 mr-2.5"></i> 4 Pilar Literasi</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                    </a>
+                    <a href="#prompt-builder" onclick="toggleSidebar(false)" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-100 text-slate-700 font-medium">
+                        <span><i class="fa-solid fa-terminal text-amber-500 mr-2.5"></i> Generator Prompt SMK</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                    </a>
+                    <a href="#katalog-tools" onclick="toggleSidebar(false)" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-100 text-slate-700 font-medium">
+                        <span><i class="fa-solid fa-shapes text-indigo-500 mr-2.5"></i> Katalog Tools Terpilih</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                    </a>
+                    <a href="#kuis" onclick="toggleSidebar(false)" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-100 text-slate-700 font-medium">
+                        <span><i class="fa-solid fa-clipboard-question text-emerald-500 mr-2.5"></i> Tes Kesiapan AI</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Kamus Istilah AI Vokasi -->
+            <div>
+                <div class="flex items-center justify-between mb-2">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400">Kamus Mini Istilah AI</h4>
+                    <span class="text-[10px] bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-bold">Wajib Tahu</span>
+                </div>
+                <div class="space-y-2.5">
+                    <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/70">
+                        <div class="font-bold text-slate-800 text-xs text-blue-700">1. LLM (Large Language Model)</div>
+                        <p class="text-xs text-slate-600 mt-1">Model AI bahasa (seperti ChatGPT, Claude, Gemini) yang mampu mengolah teks, merangkum, dan menulis kode atau modul ajar.</p>
+                    </div>
+                    <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/70">
+                        <div class="font-bold text-slate-800 text-xs text-amber-600">2. Prompt Engineering</div>
+                        <p class="text-xs text-slate-600 mt-1">Seni merumuskan instruksi spesifik kepada AI agar menghasilkan jawaban yang tepat sasaran untuk kebutuhan praktikum kejuruan.</p>
+                    </div>
+                    <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/70">
+                        <div class="font-bold text-slate-800 text-xs text-rose-600">3. Halusinasi (Hallucination)</div>
+                        <p class="text-xs text-slate-600 mt-1">Kondisi ketika AI menyajikan informasi yang terdengar meyakinkan namun sebenarnya fiktif atau salah. Wajib diverifikasi oleh guru!</p>
+                    </div>
+                    <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/70">
+                        <div class="font-bold text-slate-800 text-xs text-teal-600">4. Generative AI</div>
+                        <p class="text-xs text-slate-600 mt-1">AI yang menghasilkan karya baru: gambar (Midjourney/Canva AI), audio, video, hingga simulasi instruksi mesin perbengkelan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aturan Emas Etika Guru SMK -->
+            <div class="p-4 rounded-2xl bg-gradient-to-br from-indigo-50 to-blue-50 border border-indigo-100">
+                <div class="flex items-center gap-2 text-indigo-700 font-bold text-xs mb-2">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Prinsip Keamanan Data Guru</span>
+                </div>
+                <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside">
+                    <li>Jangan pernah mengunggah NISN atau data privat siswa ke publik LLM.</li>
+                    <li>Gunakan AI sebagai <i>Co-Pilot</i> (pendamping), bukan pengganti nalar guru.</li>
+                    <li>Latih murid mengecek fakta teknis dari manual book orisinal industri.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sidebar Footer -->
+        <div class="p-4 border-t border-slate-200 bg-slate-50 text-center">
+            <p class="text-xs text-slate-500">Karya Dedikasi untuk Pendidik Vokasi 2026</p>
+        </div>
+    </aside>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section id="hero" class="relative pt-10 pb-20 md:pt-16 md:pb-28 overflow-hidden">
+            <!-- Decorative Glow Blobs in Background -->
+            <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-tr from-blue-300/35 via-teal-200/30 to-amber-200/25 blur-3xl pointer-events-none -z-10 rounded-full"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Left Hero Content -->
+                    <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                        <!-- Pill Badge -->
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 border border-blue-200 text-blue-700 text-xs sm:text-sm font-semibold shadow-sm backdrop-blur-md">
+                            <span class="flex h-2 w-2 relative">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
+                            </span>
+                            Revolusi Guru SMK 5.0 • Link & Match Industri
+                        </div>
+
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+                            Literasi AI Cerdas untuk <span class="gradient-text">Pendidik Vokasi</span> Unggul
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                            Bukan sekadar menggantikan tugas, tapi mengalikan efisiensi. Rancang RPP Kurikulum Merdeka, buat studi kasus bengkel/lab industri, hingga simulasi Uji Kompetensi Keahlian (UKK) secara presisi dengan bantuan Kecerdasan Buatan.
+                        </p>
+
+                        <!-- Hero CTA Buttons -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
+                            <a href="#prompt-builder" class="w-full sm:w-auto px-7 py-3.5 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-sm sm:text-base shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:-translate-y-0.5 transition-all text-center flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                <span>Generator Prompt SMK</span>
+                            </a>
+                            <a href="#kuis" class="w-full sm:w-auto px-7 py-3.5 rounded-2xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 font-bold text-sm sm:text-base shadow-sm hover:shadow transition-all text-center flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-chart-simple text-blue-600"></i>
+                                <span>Cek Kesiapan AI Saya</span>
+                            </a>
+                        </div>
+
+                        <!-- Stats Preview Bar -->
+                        <div class="pt-6 border-t border-slate-200/80 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0 text-left">
+                            <div>
+                                <p class="text-2xl sm:text-3xl font-extrabold text-slate-900">12+</p>
+                                <p class="text-xs text-slate-500 font-medium">Jurusan Vokasi Siap Pakai</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl sm:text-3xl font-extrabold text-blue-600">5x</p>
+                                <p class="text-xs text-slate-500 font-medium">Penyusunan RPP Lebih Cepat</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl sm:text-3xl font-extrabold text-teal-600">100%</p>
+                                <p class="text-xs text-slate-500 font-medium">Pedoman Etis & Autentik</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Hero Visual: Glassmorphism Interactive Card -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative mx-auto max-w-md lg:max-w-none">
+                            
+                            <!-- Main Floating Card -->
+                            <div class="glass-panel rounded-3xl p-6 sm:p-7 shadow-glass relative border border-white/80">
+                                <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+                                    <div class="flex items-center gap-2.5">
+                                        <div class="w-3 h-3 rounded-full bg-rose-400"></div>
+                                        <div class="w-3 h-3 rounded-full bg-amber-400"></div>
+                                        <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
+                                        <span class="text-xs font-semibold text-slate-400 ml-2">Simulasi Asisten Guru v2.6</span>
+                                    </div>
+                                    <span class="text-[11px] font-bold bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">AI Aktif</span>
+                                </div>
+
+                                <div class="space-y-4 my-5">
+                                    <!-- Prompt Bubble -->
+                                    <div class="flex gap-3 items-start">
+                                        <div class="w-8 h-8 rounded-full bg-slate-200 flex-shrink-0 flex items-center justify-center text-slate-600 text-xs font-bold">
+                                            Guru
+                                        </div>
+                                        <div class="bg-blue-50/90 border border-blue-100 rounded-2xl rounded-tl-none p-3.5 text-xs text-slate-700 leading-relaxed shadow-sm">
+                                            "Buatkan skenario studi kasus kerusakan sistem EFI mobil Avanza untuk ujian praktik siswa Teknik Kendaraan Ringan (TKR) beserta rubrik penilaiannya."
+                                        </div>
+                                    </div>
+
+                                    <!-- AI Response Bubble -->
+                                    <div class="flex gap-3 items-start">
+                                        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-600 to-teal-500 flex-shrink-0 flex items-center justify-center text-white text-xs font-bold shadow-md shadow-blue-500/20">
+                                            <i class="fa-solid fa-bolt"></i>
+                                        </div>
+                                        <div class="bg-white rounded-2xl rounded-tl-none p-3.5 text-xs text-slate-700 leading-relaxed shadow-sm border border-slate-100 space-y-2">
+                                            <div class="flex items-center gap-2 font-semibold text-slate-900">
+                                                <i class="fa-solid fa-check text-emerald-500"></i> Skenario Kasus Siap!
+                                            </div>
+                                            <p class="text-slate-600">
+                                                <strong>Kasus:</strong> Check Engine menyala, kode DTC P0102 (Mass Air Flow). Siswa ditugaskan melacak wiring harness, tegangan sensor, dan prosedur scanning.
+                                            </p>
+                                            <div class="text-[11px] bg-emerald-50 text-emerald-800 p-2 rounded-lg font-medium">
+                                                ✓ Rubrik K3, SOP APAR, & Waktu Pengerjaan 30 Menit disertakan.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Card Bottom Feature Chips -->
+                                <div class="pt-3 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] font-medium text-slate-600">
+                                    <span class="bg-slate-100 px-2.5 py-1 rounded-lg"><i class="fa-solid fa-file-lines text-blue-500 mr-1"></i> Modul Ajar</span>
+                                    <span class="bg-slate-100 px-2.5 py-1 rounded-lg"><i class="fa-solid fa-code text-indigo-500 mr-1"></i> RPL / TKJ</span>
+                                    <span class="bg-slate-100 px-2.5 py-1 rounded-lg"><i class="fa-solid fa-palette text-pink-500 mr-1"></i> DKV / Animasi</span>
+                                    <span class="bg-slate-100 px-2.5 py-1 rounded-lg"><i class="fa-solid fa-utensils text-amber-500 mr-1"></i> Tata Boga</span>
+                                </div>
+                            </div>
+
+                            <!-- Decorative Floating Badges -->
+                            <div class="absolute -top-4 -right-4 glass-panel px-3.5 py-2 rounded-2xl shadow-lg border border-white flex items-center gap-2 text-xs font-bold text-slate-800 animate-bounce" style="animation-duration: 4s;">
+                                <i class="fa-solid fa-award text-amber-500 text-sm"></i>
+                                <span>Kurikulum Merdeka Ready</span>
+                            </div>
+
+                            <div class="absolute -bottom-5 -left-4 glass-panel px-3.5 py-2.5 rounded-2xl shadow-lg border border-white flex items-center gap-2 text-xs font-bold text-slate-800">
+                                <div class="w-6 h-6 rounded-lg bg-teal-500 text-white flex items-center justify-center text-xs">
+                                    <i class="fa-solid fa-brain"></i>
+                                </div>
+                                <span>Etika AI Akademik Teruji</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="pilar" class="py-16 bg-white/70 relative border-y border-slate-200/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">Kerangka Kompetensi Guru</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-4">4 Pilar Utama Literasi AI Pendidik Vokasi</h2>
+                    <p class="text-slate-600 text-sm sm:text-base">Membangun ekosistem belajar yang tidak hanya melek teknologi, tetapi juga relevan dengan standar dunia usaha dan dunia industri (DUDI).</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Pilar 1 -->
+                    <div class="glass-card rounded-3xl p-6 relative flex flex-col justify-between">
+                        <div>
+                            <div class="w-13 h-13 w-12 h-12 rounded-2xl bg-blue-500 text-white flex items-center justify-center text-xl mb-5 shadow-md shadow-blue-500/20">
+                                <i class="fa-solid fa-network-wired"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-slate-900 mb-2">1. Fondasi & Cara Kerja</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Memahami bahwa AI memproses pola probabilitas data, bukan "berpikir sadar". Mengetahui batasan halusinasi dan batas validasi kebenaran.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 text-xs text-blue-700 font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-circle-check"></i> Mengikis Mitos & Fobia AI
+                        </div>
+                    </div>
+
+                    <!-- Pilar 2 -->
+                    <div class="glass-card rounded-3xl p-6 relative flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-teal-500 text-white flex items-center justify-center text-xl mb-5 shadow-md shadow-teal-500/20">
+                                <i class="fa-solid fa-calendar-check"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-slate-900 mb-2">2. Administrasi Efisien</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Mengotomasi pembuatan Alur Tujuan Pembelajaran (ATP), Modul Ajar, rubrik asesmen, dan diferensiasi materi belajar siswa secara instan.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 text-xs text-teal-700 font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-clock"></i> Hemat 60% Waktu Ketik
+                        </div>
+                    </div>
+
+                    <!-- Pilar 3 -->
+                    <div class="glass-card rounded-3xl p-6 relative flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-indigo-500 text-white flex items-center justify-center text-xl mb-5 shadow-md shadow-indigo-500/20">
+                                <i class="fa-solid fa-wrench"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-slate-900 mb-2">3. Integrasi Praktik Kejuruan</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Memanfaatkan AI untuk mensimulasikan troubleshooting mesin, skrip coding aplikasi, brief desain visual DKV, atau simulasi akuntansi pajak.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 text-xs text-indigo-700 font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-industry"></i> Sesuai Kebutuhan Industri
+                        </div>
+                    </div>
+
+                    <!-- Pilar 4 -->
+                    <div class="glass-card rounded-3xl p-6 relative flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-rose-500 text-white flex items-center justify-center text-xl mb-5 shadow-md shadow-rose-500/20">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-slate-900 mb-2">4. Etika & Integritas</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Membimbing peserta didik agar tidak plagiat, menjaga kerahasiaan data industri, serta menerapkan model asesmen portofolio autentik.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 text-xs text-rose-700 font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-shield"></i> Karakter Pelajar Pancasila
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="prompt-builder" class="py-20 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-amber-600 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Fitur Interaktif Praktis</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-3">AI Prompt Generator Khusus Guru SMK</h2>
+                    <p class="text-slate-600 text-sm sm:text-base">Pilih konsentrasi keahlian dan kebutuhan Anda, lalu salin prompt berkualitas tinggi untuk ditempel langsung ke ChatGPT, Gemini, atau Claude.</p>
+                </div>
+
+                <div class="glass-panel rounded-3xl p-6 sm:p-10 shadow-glass border border-white/80 max-w-5xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                        
+                        <!-- Configuration Controls -->
+                        <div class="md:col-span-5 space-y-4">
+                            <h3 class="font-bold text-slate-900 text-base flex items-center gap-2">
+                                <i class="fa-solid fa-sliders text-blue-600"></i>
+                                <span>Parameter Prompt Pembelajaran</span>
+                            </h3>
+
+                            <!-- Jurusan SMK -->
+                            <div>
+                                <label for="jurusanSelect" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">1. Jurusan / Konsentrasi Keahlian</label>
+                                <select id="jurusanSelect" class="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium">
+                                    <option value="rpl">RPL / PPLG (Pengembangan Perangkat Lunak)</option>
+                                    <option value="tkr">TKR / Otomotif (Teknik Kendaraan Ringan)</option>
+                                    <option value="dkv">DKV (Desain Komunikasi Visual)</option>
+                                    <option value="tkj">TKJ / TJKT (Teknik Komputer & Jaringan)</option>
+                                    <option value="akuntansi">AKL (Akuntansi & Keuangan Lembaga)</option>
+                                    <option value="kuliner">Kuliner / Tata Boga</option>
+                                    <option value="perhotelan">Perhotelan</option>
+                                    <option value="mesin">Teknik Pemesinan (TP)</option>
+                                </select>
+                            </div>
+
+                            <!-- Jenis Output -->
+                            <div>
+                                <label for="outputTypeSelect" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">2. Kebutuhan Dokumen Guru</label>
+                                <select id="outputTypeSelect" class="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium">
+                                    <option value="rpp">Modul Ajar Lengkap (Kurikulum Merdeka)</option>
+                                    <option value="studi_kasus">Studi Kasus Troubleshooting Praktik</option>
+                                    <option value="ukk">Instrumen Kisi-Kisi Uji Kompetensi (UKK)</option>
+                                    <option value="rubrik">Rubrik Asesmen Proyek Kelompok</option>
+                                    <option value="icebreaking">Kuis Diagnostik & Ice Breaking Kelas</option>
+                                </select>
+                            </div>
+
+                            <!-- Topik Khusus -->
+                            <div>
+                                <label for="topicInput" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">3. Topik Spesifik Pembelajaran</label>
+                                <input type="text" id="topicInput" placeholder="Contoh: REST API Laravel / Sistem Rem ABS / Tipografi Poster" value="Dasar Pemrograman RESTful API & Keamanan Token" class="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium">
+                                <p class="text-[11px] text-slate-500 mt-1">Sesuaikan dengan Capaian Pembelajaran (CP) minggu ini.</p>
+                            </div>
+
+                            <!-- Tombol Generate -->
+                            <button id="generatePromptBtn" class="w-full py-3 px-5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-sm shadow-md shadow-blue-500/20 hover:shadow-blue-500/40 transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-sparkles"></i>
+                                <span>Buat Prompt Berkualitas</span>
+                            </button>
+                        </div>
+
+                        <!-- Result Display -->
+                        <div class="md:col-span-7 flex flex-col h-full bg-slate-900 rounded-2xl p-5 text-slate-100 shadow-xl border border-slate-800">
+                            <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                                    <span class="text-xs font-mono text-slate-300">Prompt Siap Pakai (Optimized)</span>
+                                </div>
+                                <button id="copyPromptBtn" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 transition flex items-center gap-1.5 border border-slate-700">
+                                    <i class="fa-regular fa-copy text-amber-400"></i>
+                                    <span id="copyBtnText">Salin Teks</span>
+                                </button>
+                            </div>
+
+                            <div class="relative flex-1">
+                                <textarea id="promptResultArea" readonly class="w-full h-72 sm:h-80 bg-transparent text-slate-200 text-xs sm:text-sm font-mono leading-relaxed resize-none focus:outline-none p-1 selection:bg-blue-600 selection:text-white" placeholder="Prompt akan muncul di sini..."></textarea>
+                            </div>
+
+                            <div class="pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-400">
+                                <span><i class="fa-solid fa-circle-info text-blue-400 mr-1"></i> Format: Persona + Konteks SMK + Standar DUDI</span>
+                                <span class="text-amber-400 font-medium">Tinggal Paste ke ChatGPT / Claude</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="katalog-tools" class="py-16 bg-white/60 border-t border-slate-200/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                    <div>
+                        <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Kurasi Praktis</span>
+                        <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Katalog Alat AI Ramah Guru SMK</h2>
+                        <p class="text-slate-600 text-sm mt-1">Tools yang terbukti meningkatkan efisiensi pendidik tanpa kurva belajar yang rumit.</p>
+                    </div>
+
+                    <!-- Category Filter Buttons -->
+                    <div id="filterButtonGroup" class="flex flex-wrap gap-2 text-xs font-semibold">
+                        <button onclick="filterTools('all')" class="filter-btn active-filter px-3.5 py-1.5 rounded-xl bg-blue-600 text-white transition shadow-sm">Semua</button>
+                        <button onclick="filterTools('rpp')" class="filter-btn px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition">Modul/RPP</button>
+                        <button onclick="filterTools('media')" class="filter-btn px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition">Presentasi & Media</button>
+                        <button onclick="filterTools('asesmen')" class="filter-btn px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition">Soal & Kuis</button>
+                        <button onclick="filterTools('vokasi')" class="filter-btn px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition">Spesifik Kejuruan</button>
+                    </div>
+                </div>
+
+                <!-- Tools Grid -->
+                <div id="toolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Tool 1 -->
+                    <div class="tool-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="rpp">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-lg">
+                                    <i class="fa-solid fa-robot"></i>
+                                </span>
+                                <span class="text-[11px] font-bold bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-full">Gratis / Freemium</span>
+                            </div>
+                            <h3 class="font-bold text-base text-slate-900">ChatGPT & Claude.ai</h3>
+                            <p class="text-xs text-blue-600 font-semibold mb-2">Asisten Penyusun Modul & Skenario Kasus</p>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                                Sangat handal untuk menyusun instrumen penilaian, merumuskan Tujuan Pembelajaran dari Capaian Pembelajaran BSKAP, dan membuat studi kasus industri.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                            <span class="text-slate-400 font-medium">Kategori: Modul / RPP</span>
+                            <span class="text-blue-600 font-bold flex items-center gap-1">Rekomendasi Utama <i class="fa-solid fa-star text-amber-400"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Tool 2 -->
+                    <div class="tool-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="media">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="w-10 h-10 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-lg">
+                                    <i class="fa-solid fa-wand-magic"></i>
+                                </span>
+                                <span class="text-[11px] font-bold bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-full">Tersedia Akun Belajar.id</span>
+                            </div>
+                            <h3 class="font-bold text-base text-slate-900">Canva Magic Studio</h3>
+                            <p class="text-xs text-purple-600 font-semibold mb-2">Slide & Infografis Praktikum Visual</p>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                                Fitur Magic Write, Magic Presentation, dan Text-to-Image sangat cocok untuk membuat poster K3 bengkel, diagram komponen, dan materi ajar visual interaktif.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                            <span class="text-slate-400 font-medium">Kategori: Media Pembelajaran</span>
+                            <span class="text-purple-600 font-bold">Akses Edukasi</span>
+                        </div>
+                    </div>
+
+                    <!-- Tool 3 -->
+                    <div class="tool-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="media">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center font-bold text-lg">
+                                    <i class="fa-solid fa-desktop"></i>
+                                </span>
+                                <span class="text-[11px] font-bold bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded-full">Freemium</span>
+                            </div>
+                            <h3 class="font-bold text-base text-slate-900">Gamma.app</h3>
+                            <p class="text-xs text-amber-600 font-semibold mb-2">Generator Slide Presentasi Kilat</p>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                                Cukup ketik outline topik pembelajaran (misal: "Prinsip Kerja Motor 4 Tak"), AI akan langsung menyusun slide presentasi rapi dan responsif dalam hitungan detik.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                            <span class="text-slate-400 font-medium">Kategori: Presentasi</span>
+                            <span class="text-amber-600 font-bold">Hemat Waktu</span>
+                        </div>
+                    </div>
+
+                    <!-- Tool 4 -->
+                    <div class="tool-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="asesmen">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-lg">
+                                    <i class="fa-solid fa-list-check"></i>
+                                </span>
+                                <span class="text-[11px] font-bold bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-full">Gratis</span>
+                            </div>
+                            <h3 class="font-bold text-base text-slate-900">Quizizz AI & Curipod</h3>
+                            <p class="text-xs text-rose-600 font-semibold mb-2">Pembuat Soal Diagnostik Otomatis</p>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                                Mengonversi artikel teks teknis atau dokumen PDF panduan industri menjadi puluhan butir soal pilihan ganda, mencocokkan, atau esai HOTS.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                            <span class="text-slate-400 font-medium">Kategori: Asesmen & Kuis</span>
+                            <span class="text-rose-600 font-bold">Interaktif</span>
+                        </div>
+                    </div>
+
+                    <!-- Tool 5 -->
+                    <div class="tool-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="vokasi">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold text-lg">
+                                    <i class="fa-solid fa-code"></i>
+                                </span>
+                                <span class="text-[11px] font-bold bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded-full">Gratis untuk Guru</span>
+                            </div>
+                            <h3 class="font-bold text-base text-slate-900">GitHub Copilot / Phind</h3>
+                            <p class="text-xs text-indigo-600 font-semibold mb-2">Asisten Koding Guru RPL & Jaringan</p>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                                Membantu guru mereview kode buatan siswa, menemukan bug teknis, serta memberikan rekomendasi solusi algoritma yang bersih sesuai standar software engineer.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                            <span class="text-slate-400 font-medium">Kategori: Khusus RPL/IT</span>
+                            <span class="text-indigo-600 font-bold">Standard Industri</span>
+                        </div>
+                    </div>
+
+                    <!-- Tool 6 -->
+                    <div class="tool-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="vokasi">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="w-10 h-10 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center font-bold text-lg">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </span>
+                                <span class="text-[11px] font-bold bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-full">Free Search</span>
+                            </div>
+                            <h3 class="font-bold text-base text-slate-900">Perplexity.ai</h3>
+                            <p class="text-xs text-teal-600 font-semibold mb-2">Riset Regulasi & Manual Teknis Terverifikasi</p>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                                AI mesin pencari dengan sitasi sumber langsung. Sangat cocok mencari rujukan SOP industri, SNI, atau jurnal inovasi vokasi terkini tanpa risiko halusinasi data.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                            <span class="text-slate-400 font-medium">Kategori: Riset Berfakta</span>
+                            <span class="text-teal-600 font-bold">Akurat & Bersumber</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="kuis" class="py-20 relative">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-200">Refleksi Mandiri</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 mt-3 mb-2">Cek Level Kesiapan AI Anda</h2>
+                    <p class="text-slate-600 text-sm">Jawab 5 pertanyaan singkat ini untuk mengetahui profil kecakapan AI Anda sebagai guru vokasi.</p>
+                </div>
+
+                <div class="glass-panel rounded-3xl p-6 sm:p-10 shadow-glass border border-white">
+                    <form id="quizForm" class="space-y-8" onsubmit="event.preventDefault(); calculateQuizScore();">
+                        
+                        <!-- Question 1 -->
+                        <div class="space-y-3">
+                            <p class="font-bold text-sm sm:text-base text-slate-800 flex items-center gap-2">
+                                <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-xs flex items-center justify-center font-bold">1</span>
+                                Seberapa sering Anda menggunakan AI (ChatGPT, Canva AI, dsb) untuk menyiapkan materi mengajar?
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs font-medium text-slate-700">
+                                <label class="p-3 rounded-xl border border-slate-200 hover:border-blue-400 bg-white cursor-pointer flex items-center gap-2 transition">
+                                    <input type="radio" name="q1" value="1" required class="text-blue-600 focus:ring-blue-500">
+                                    <span>Belum pernah sama sekali</span>
+                                </label>
+                                <label class="p-3 rounded-xl border border-slate-200 hover:border-blue-400 bg-white cursor-pointer flex items-center gap-2 transition">
+                                    <input type="radio" name="q1" value="2" class="text-blue-600 focus:ring-blue-500">
+                                    <span>Kadang-kadang (1-2 kali sebulan)</span>
+                                </label>
+                                <label class="p-3 rounded-xl border border-slate-200 hover:border-blue-400 bg-white cursor-pointer flex items-center gap-2 transition">
+                                    <input type="radio" name="q1" value="3" class="text-blue-600 focus:ring-blue-500">
+                                    <span>Rutin setiap minggu</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Question 2 -->
+                        <div class="space-y-3">
+                            <p class="font-bold text-sm sm:text-base text-slate-800 flex items-center gap-2">
+                                <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-xs flex items-center justify-center font-bold">2</span>
+                                Saat AI memberikan penjelasan teknis untuk kejuruan Anda, apa yang biasanya Anda lakukan?
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs font-medium text-slate-700">
+                                <label class="p-3 rounded-xl border border-slate-200 hover:border-blue-400 bg-white cursor-pointer flex items-center gap-2 transition">
+                                    <input type="radio" name="q2" value="1" required class="text-blue-600 focus:ring-blue-500">
+                                    <span>Langsung dipakai tanpa diperiksa</span>
+                                </label>
+                                <label class="p-3 rounded-xl border border-slate-200 hover:border-blue-400 bg-white cursor-pointer flex items-center gap-2 transition">
+                                    <input type="radio" name="q2" value="3" class="text-blue-600 focus:ring-blue-500">
+                                    <span>Memverifikasi dengan buku manual teknis / SOP DUDI</span>
+                                </label>
+                                <label class="p-3 rounded-xl border border-slate-200 hover:border-blue-400 bg-white cursor-pointer flex items-center gap-2 transition">
+                                    <input type="radio" name="q2" value="2" class="text-blue-600 focus:ring-blue-500">
+                                    <span>Hanya membaca sekilas bagian pembukanya</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Question 3 -->
+                        <div class="space-y-3">
+                            <p class="font-bold text-sm sm:text-base text-slate-800 flex items-center gap-2">
+                                <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-xs flex items-center justify-center font-bold">3</span>
+                                Bagaimana sikap Anda jika siswa SMK mengumpulkan tugas laporan praktik yang dihasilkan AI?
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs font-medium text-slate-700">
+                                <label class="p-3 rounded-xl border border-slate-200 hover:border-blue-400 bg-white cursor-pointer flex items-center gap-2 transition">
+                                    <input type="radio" name="q3" value="1" required class="text-blue-600 focus:ring-blue-500">
+                                    <span>Melarang keras segala bentuk AI dan memberi nilai 0</span>
+                                </label>
+                                <label class="p-3 rounded-xl border border-slate-200 hover:border-blue-400 bg-white cursor-pointer flex items-center gap-2 transition">
+                                    <input type="radio" name="q3" value="2" class="text-blue-600 focus:ring-blue-500">
+                                    <span>Membiarkannya tanpa evaluasi lebih lanjut</span>
+                                </label>
+                                <label class="p-3 rounded-xl border border-slate-200 hover:border-blue-400 bg-white cursor-pointer flex items-center gap-2 transition">
+                                    <input type="radio" name="q3" value="3" class="text-blue-600 focus:ring-blue-500">
+                                    <span>Meminta siswa presentasi, uji demonstrasi, & melampirkan prompt</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Question 4 -->
+                        <div class="space-y-3">
+                            <p class="font-bold text-sm sm:text-base text-slate-800 flex items-center gap-2">
+                                <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-xs flex items-center justify-center font-bold">4</span>
+                                Sudahkah Anda mengetahui cara membuat prompt dengan struktur: Peran + Konteks + Instruksi Spesifik + Format?
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs font-medium text-slate-700">
+                                <label class="p-3 rounded-xl border border-slate-200 hover:border-blue-400 bg-white cursor-pointer flex items-center gap-2 transition">
+                                    <input type="radio" name="q4" value="1" required class="text-blue-600 focus:ring-blue-500">
+                                    <span>Belum tahu, saya hanya mengetik pertanyaan pendek</span>
+                                </label>
+                                <label class="p-3 rounded-xl border border-slate-200 hover:border-blue-400 bg-white cursor-pointer flex items-center gap-2 transition">
+                                    <input type="radio" name="q4" value="2" class="text-blue-600 focus:ring-blue-500">
+                                    <span>Pernah dengar tapi jarang menerapkan secara runut</span>
+                                </label>
+                                <label class="p-3 rounded-xl border border-slate-200 hover:border-blue-400 bg-white cursor-pointer flex items-center gap-2 transition">
+                                    <input type="radio" name="q4" value="3" class="text-blue-600 focus:ring-blue-500">
+                                    <span>Ya, selalu saya terapkan untuk hasil maksimal</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Question 5 -->
+                        <div class="space-y-3">
+                            <p class="font-bold text-sm sm:text-base text-slate-800 flex items-center gap-2">
+                                <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-xs flex items-center justify-center font-bold">5</span>
+                                Apakah Anda pernah mengintegrasikan alat AI ke dalam skenario praktikum kejuruan siswa?
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs font-medium text-slate-700">
+                                <label class="p-3 rounded-xl border border-slate-200 hover:border-blue-400 bg-white cursor-pointer flex items-center gap-2 transition">
+                                    <input type="radio" name="q5" value="1" required class="text-blue-600 focus:ring-blue-500">
+                                    <span>Belum sama sekali</span>
+                                </label>
+                                <label class="p-3 rounded-xl border border-slate-200 hover:border-blue-400 bg-white cursor-pointer flex items-center gap-2 transition">
+                                    <input type="radio" name="q5" value="2" class="text-blue-600 focus:ring-blue-500">
+                                    <span>Sedang merencanakan di semester ini</span>
+                                </label>
+                                <label class="p-3 rounded-xl border border-slate-200 hover:border-blue-400 bg-white cursor-pointer flex items-center gap-2 transition">
+                                    <input type="radio" name="q5" value="3" class="text-blue-600 focus:ring-blue-500">
+                                    <span>Sudah terbiasa (misal: simulasi klien, debugging, riset resep)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="pt-4 flex justify-center">
+                            <button type="submit" class="px-8 py-3.5 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-sm sm:text-base shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all">
+                                <i class="fa-solid fa-calculator mr-2"></i> Analisis Kesiapan Saya
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Quiz Result Modal / Box -->
+                    <div id="quizResultBox" class="hidden mt-8 p-6 rounded-2xl border transition-all duration-300">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="etika" class="py-16 bg-slate-900 text-white relative overflow-hidden">
+            <!-- Background glow -->
+            <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-blue-600/20 blur-3xl pointer-events-none rounded-full"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    <div class="lg:col-span-5 space-y-4">
+                        <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-400 bg-cyan-950 px-3 py-1 rounded-full border border-cyan-800">Integritas Akademik</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">Menilai Karya Siswa di Era Generative AI</h2>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Di SMK, kompetensi utama adalah keterampilan psikomotorik dan pemecahan masalah nyata. AI tidak bisa memegang obeng, mengoperasikan mesin bubut, ataupun meracik masakan. Gunakan strategi penilaian autentik berikut:
+                        </p>
+                        <div class="pt-2 space-y-3 text-xs">
+                            <div class="flex items-start gap-3">
+                                <div class="w-6 h-6 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold flex-shrink-0">1</div>
+                                <p class="text-slate-300"><strong class="text-white">Uji Demonstrasi Langsung:</strong> Minta siswa menjelaskan logika di balik laporan atau kode yang dibuatnya tanpa membaca teks.</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-6 h-6 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold flex-shrink-0">2</div>
+                                <p class="text-slate-300"><strong class="text-white">Transparansi Prompt:</strong> Wajibkan siswa melampirkan log prompt AI dan menjelaskan bagian mana yang dikoreksi manual.</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-6 h-6 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold flex-shrink-0">3</div>
+                                <p class="text-slate-300"><strong class="text-white">Proyek Portofolio Terbuka:</strong> Berikan studi kasus unik dari mitra DUDI setempat yang belum beredar di internet publik.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7">
+                        <div class="bg-slate-800/80 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-slate-700 space-y-5">
+                            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                                <i class="fa-solid fa-triangle-exclamation text-amber-400"></i>
+                                <span>Trik Mendeteksi Kecurangan Tugas Praktikum</span>
+                            </h3>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                                <div class="p-4 rounded-xl bg-slate-900/70 border border-slate-700/80">
+                                    <h4 class="font-bold text-cyan-400 mb-1">Ciri Laporan Hasil Copy-Paste AI</h4>
+                                    <ul class="text-slate-300 space-y-1 list-disc list-inside">
+                                        <li>Bahasa terlalu puitis dan generik.</li>
+                                        <li>Menyebut alat yang tidak ada di bengkel sekolah.</li>
+                                        <li>Tidak ada foto proses tangan siswa sendiri.</li>
+                                        <li>Format penulisan kaku dengan kata penghubung klise.</li>
+                                    </ul>
+                                </div>
+                                <div class="p-4 rounded-xl bg-slate-900/70 border border-slate-700/80">
+                                    <h4 class="font-bold text-emerald-400 mb-1">Solusi Guru SMK yang Bijak</h4>
+                                    <ul class="text-slate-300 space-y-1 list-disc list-inside">
+                                        <li>Tanyakan: "Kenapa kamu memilih resistor ukuran ini?".</li>
+                                        <li>Gunakan video reel dokumentasi 60 detik proses kerja.</li>
+                                        <li>Terapkan peer-review antar kelompok kerja bengkel.</li>
+                                        <li>Fokuskan nilai pada troubleshooting saat gagal fungsi.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Quote Box -->
+                            <div class="p-4 rounded-xl bg-gradient-to-r from-blue-900/50 to-indigo-900/50 border border-blue-500/30 text-xs italic text-blue-200">
+                                "Tujuan pendidikan vokasi bukan mencetak mesin, melainkan mencetak teknisi dan kreator cerdas yang mampu mengarahkan mesin untuk kesejahteraan masyarakat."
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="py-16 bg-white/70 border-b border-slate-200/60">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-slate-500 bg-slate-100 px-3 py-1 rounded-full border border-slate-200">Pertanyaan Populer</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Pertanyaan Guru SMK Seputar AI</h2>
+                </div>
+
+                <div class="space-y-3.5">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item glass-card rounded-2xl overflow-hidden border border-slate-200">
+                        <button onclick="toggleFaq(1)" class="w-full p-4 sm:p-5 text-left flex items-center justify-between font-bold text-slate-800 text-sm sm:text-base focus:outline-none">
+                            <span>Apakah penyusunan RPP Kurikulum Merdeka menggunakan AI diizinkan oleh pengawas sekolah?</span>
+                            <i id="faq-icon-1" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                        </button>
+                        <div id="faq-answer-1" class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Sangat diizinkan, asalkan guru berperan sebagai kurator dan validator. AI berfungsi sebagai pemicu ide awal dan pengetik draf (co-pilot). Modul ajar tetap wajib disesuaikan dengan kondisi sarana prasarana sekolah, profil karakter siswa, dan instruksi industri mitra SMK masing-masing.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="faq-item glass-card rounded-2xl overflow-hidden border border-slate-200">
+                        <button onclick="toggleFaq(2)" class="w-full p-4 sm:p-5 text-left flex items-center justify-between font-bold text-slate-800 text-sm sm:text-base focus:outline-none">
+                            <span>Apakah AI berpotensi menggantikan lapangan kerja lulusan SMK?</span>
+                            <i id="faq-icon-2" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                        </button>
+                        <div id="faq-answer-2" class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            AI menggantikan tugas-tugas repetitif, namun tidak menggantikan keahlian fisik, perbaikan mekanis tak terduga, rasa estetika kuliner, atau hubungan interpersonal perhotelan. Yang terjadi adalah: lulusan SMK yang memahami cara menggunakan alat AI akan menggantikan lulusan yang gagap teknologi.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="faq-item glass-card rounded-2xl overflow-hidden border border-slate-200">
+                        <button onclick="toggleFaq(3)" class="w-full p-4 sm:p-5 text-left flex items-center justify-between font-bold text-slate-800 text-sm sm:text-base focus:outline-none">
+                            <span>Bagaimana cara guru yang masih awam teknologi mulai belajar AI?</span>
+                            <i id="faq-icon-3" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                        </button>
+                        <div id="faq-answer-3" class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Mulailah dari tugas administrasi yang paling menyita waktu Anda hari ini. Gunakan fitur Prompt Generator di web ini, salin ke ChatGPT gratis atau Gemini, dan mintalah saran rancangan soal kuis atau rubrik penilaian praktik bengkel. Eksplorasi secara bertahap selama 15 menit setiap hari.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-slate-900 text-slate-300 pt-12 pb-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-slate-800">
+                
+                <!-- Brand Info -->
+                <div class="md:col-span-6 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <span class="text-xl font-bold text-white tracking-tight">EduAI <span class="text-blue-400">SMK</span></span>
+                    </div>
+                    <p class="text-xs text-slate-400 max-w-md leading-relaxed">
+                        Inisiatif digital untuk memberdayakan pendidik vokasi di seluruh Indonesia melalui pemahaman Artificial Intelligence yang etis, solutif, dan berorientasi dunia kerja.
+                    </p>
+                    <div class="flex items-center gap-3 text-xs text-slate-400">
+                        <span class="inline-flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400"></i> Responsif HP & Tablet</span>
+                        <span class="inline-flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-400"></i> Ramah Guru</span>
+                    </div>
+                </div>
+
+                <!-- Fast Links -->
+                <div class="md:col-span-3 space-y-2">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-200">Tautan Pintar</h4>
+                    <ul class="text-xs space-y-2 text-slate-400">
+                        <li><a href="#hero" class="hover:text-cyan-400 transition">Beranda Utama</a></li>
+                        <li><a href="#pilar" class="hover:text-cyan-400 transition">4 Pilar Literasi AI</a></li>
+                        <li><a href="#prompt-builder" class="hover:text-cyan-400 transition">AI Prompt Generator</a></li>
+                        <li><a href="#katalog-tools" class="hover:text-cyan-400 transition">Katalog Tools Pilihan</a></li>
+                        <li><a href="#kuis" class="hover:text-cyan-400 transition">Tes Kesiapan AI</a></li>
+                    </ul>
+                </div>
+
+                <!-- Connect & Social -->
+                <div class="md:col-span-3 space-y-3">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-200">Sosial & Pengembang</h4>
+                    <p class="text-xs text-slate-400">Terhubung dengan kreator platform:</p>
+                    <div>
+                        <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-4 py-2 rounded-xl bg-gradient-to-r from-pink-600 via-rose-600 to-amber-600 text-white font-semibold text-xs shadow-md hover:opacity-90 transition">
+                            <i class="fa-brands fa-instagram text-base"></i>
+                            <span>@arielrcun</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mandatory Copyright Bottom Row -->
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-3">
+                <div>
+                    <span>Oleh Ariel Usman Copyright 2026</span>
+                </div>
+                <div class="flex items-center gap-4 text-xs">
+                    <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="hover:text-white transition flex items-center gap-1.5">
+                        <i class="fa-brands fa-instagram text-pink-500"></i>
+                        <span>Insta: @arielrcun</span>
+                    </a>
+                    <span>•</span>
+                    <span class="text-slate-500">Edukasi Vokasi Berdaya Saing</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- 1. Database Template Prompt Khusus SMK ---
+        const promptTemplates = {
+            rpl: {
+                rpp: (topik) => `Bertindaklah sebagai Konsultan Kurikulum Vokasi SMK Bidang Pengembangan Perangkat Lunak dan Gim (PPLG).\n\nSusun Modul Ajar Kurikulum Merdeka yang mendalam untuk materi: "${topik}".\n\nStruktur yang wajib ada:\n1. Identitas Modul (Alokasi Waktu: 4 JP x 45 Menit, Fase F Kelas XI/XII).\n2. Capaian Pembelajaran & 3 Tujuan Pembelajaran Spesifik (menggunakan taksonomi Bloom revisi level HOTS C4-C6).\n3. Pemahaman Bermakna & 2 Pertanyaan Pemantik Berbasis Proyek Industri.\n4. Rincian Kegiatan Pembelajaran (Pendahuluan, Inti: Model Project-Based Learning dengan GitHub/VS Code, Penutup).\n5. Rubrik Asesmen Diagnostik, Formatif, dan Sumatif Autentik (Kriteria Kerapian Kode, Clean Architecture, & Error Handling).\n\nPastikan bahasa lugas, profesional, dan siap diajukan ke kurikulum sekolah.`,
+                studi_kasus: (topik) => `Bertindaklah sebagai Senior Lead Software Engineer di Tech Startup yang bermitra dengan SMK.\n\nBuat 1 studi kasus troubleshooting nyata untuk siswa SMK RPL dengan topik: "${topik}".\nFormat studi kasus:\n- Deskripsi Masalah: Skenario bug/error pada sistem (sertakan potongan kode sederhana yang rusak).\n- Tantangan Siswa: 3 langkah debugging yang harus mereka selesaikan di terminal / editor.\n- Kunci Refleksi Guru: Petunjuk bagi guru untuk memandu siswa menemukan akar masalah (Root Cause Analysis).`,
+                ukk: (topik) => `Buatkan kisi-kisi dan instruksi tugas Uji Kompetensi Keahlian (UKK) SMK Jurusan RPL untuk topik: "${topik}". Sertakan daftar alat software, estimasi waktu 4 jam pengerjaan, dan rubrik skor dari skala 70-100 dengan indikator industri.`,
+                rubrik: (topik) => `Rancang rubrik asesmen autentik untuk tugas proyek kelompok siswa SMK RPL topik: "${topik}". Bobot penilaian: 30% Struktur Kode & Keamanan, 30% Fungsionalitas Fitur, 20% Dokumentasi Git, 20% Presentasi Demo.`,
+                icebreaking: (topik) => `Buat 5 pertanyaan kuis cepat (Fast-Paced Quiz) bertema teknologi dan logika coding seputar "${topik}" untuk mencairkan suasana di 10 menit awal jam pelajaran produktif SMK.`
+            },
+            tkr: {
+                rpp: (topik) => `Bertindaklah sebagai Instruktur Kepala Bengkel Resmi Agen Tunggal Pemegang Merek (ATPM) dan Guru Pamong SMK Teknik Kendaraan Ringan (TKR).\n\nRancang Modul Ajar Praktikum Kejuruan untuk topik: "${topik}".\nSertakan:\n1. Standar Operasional Prosedur (SOP) Bengkel & K3 (Kesehatan dan Keselamatan Kerja).\n2. Pembagian Pos Kerja Siswa (Job Sheet Praktik Mandiri & Kelompok).\n3. Langkah Trouble Shooting Terstruktur dengan Scan Tool atau Multitester.\n4. Rubrik Asesmen Unjuk Kerja (Keterampilan Mekanik, Kecepatan, dan Sikap Kerja).`,
+                studi_kasus: (topik) => `Buatkan skenario keluhan pelanggan di bengkel resmi mobil: "Mobil masuk dengan keluhan pada topik: ${topik}". Buat runtutan gejala, kemungkinan 3 komponen penyebab kerusakan, dan panduan urutan inspeksi mekanik siswa SMK TKR.`,
+                ukk: (topik) => `Susun lembar kerja Uji Kompetensi Praktik Kejuruan (UKK) TKR pada topik "${topik}". Lengkapi dengan checklist verifikasi alat SST (Special Service Tools), manual servis, dan kriteria kelulusan teknisi muda.`,
+                rubrik: (topik) => `Rancang tabel rubrik penilaian psikomotorik bengkel otomotif materi "${topik}" dengan parameter: Penggunaan APD (20%), Ketepatan Penggunaan Tool (30%), Kebersihan Area Kerja/5R (20%), Penyelesaian Kasus (30%).`,
+                icebreaking: (topik) => `Buatkan 5 tebak-tebakan teknis komponen mobil dan tips bengkel lucu namun mendidik seputar "${topik}" untuk ice breaking siswa SMK di awal sesi teori.`
+            },
+            dkv: {
+                rpp: (topik) => `Bertindaklah sebagai Creative Director di Agensi Desain ternama dan Guru DKV SMK.\n\nBuat Modul Ajar Desain Komunikasi Visual untuk materi: "${topik}".\nStruktur modul mencakup:\n- Brief Klien Fiktif (Target audiens, brand tone, deadline).\n- Eksplorasi Desain Menggabungkan Sketsa Manual dan Tool Digital (Photoshop/Illustrator/AI Generative sebagai moodboard).\n- Prinsip Desain (Hirarki visual, tipografi, kontras warna).\n- Rubrik Asesmen Kreativitas, Originalitas, dan Kesiapan File Siap Cetak/Tayang.`,
+                studi_kasus: (topik) => `Buatkan 'Creative Client Brief' yang menantang siswa DKV: Sebuah brand UMKM lokal membutuhkan desain untuk materi "${topik}". Sertakan tantangan batasan warna dan pesan yang harus tersampaikan secara visual.`,
+                ukk: (topik) => `Susun soal paket UKK DKV bertema kampanye publik atau branding komersial untuk topik: "${topik}". Sertakan spesifikasi teknis dimensi file, color profile CMYK/RGB, dan format ekspor portofolio.`,
+                rubrik: (topik) => `Buat rubrik asesmen desain grafis DKV dengan topik "${topik}". Kategori: Konsep & Riset (25%), Eksekusi Visual & Layout (35%), Penguasaan Software (20%), Presentasi Pitching (20%).`,
+                icebreaking: (topik) => `Buatkan games visual "Tebak Makna Logo / Font" 5 putaran singkat untuk topik "${topik}" guna melatih kepekaan visual siswa DKV sebelum mulai menggambar.`
+            },
+            tkj: {
+                rpp: (topik) => `Bertindaklah sebagai Network Architect dan Guru Produktif TKJ (Teknik Komputer & Jaringan).\n\nBuat Modul Ajar Administrasi Jaringan untuk topik: "${topik}".\nIsi modul:\n1. Topologi Jaringan & Spesifikasi Perangkat Router/Switch.\n2. Langkah Konfigurasi CLI (Cisco IOS / Mikrotik RouterOS).\n3. Skenario Uji Konektivitas (Ping, Traceroute, Wireshark packet capture).\n4. Asesmen Troubleshooting Jaringan & Keamanan Siber Dasar.`,
+                studi_kasus: (topik) => `Buat skenario insiden jaringan kantor: "Jaringan kantor tiba-tiba down terkait masalah ${topik}". Rancang petunjuk log router palsu dan minta siswa TKJ menganalisis letak kesalahan subnet atau firewall.`,
+                ukk: (topik) => `Susun dokumen kisi-kisi UKK TKJ materi "${topik}". Tentukan waktu pengerjaan 2 jam, topologi fisik jaringan, serta rubrik verifikasi konfigurasi berhasil 100%.`,
+                rubrik: (topik) => `Buat format rubrik penilaian praktikum server dan jaringan topik "${topik}". Parameter: Kerapian Crimping/Kabel (15%), Keberhasilan Konfigurasi (45%), Dokumentasi IP Address (20%), Troubleshooting (20%).`,
+                icebreaking: (topik) => `Buat 5 pertanyaan cepat tentang istilah unik jaringan komputer seputar "${topik}" untuk game pemanasan di laboratorium TKJ.`
+            },
+            akuntansi: {
+                rpp: (topik) => `Bertindaklah sebagai Konsultan Akuntan Publik dan Guru Akuntansi SMK (AKL).\n\nSusun Modul Ajar Siklus Akuntansi praktis untuk topik: "${topik}".\nMuat: Bukti transaksi keuangan riil UMKM, jurnal umum/khusus, buku besar, neraca lajur, dan penyajian laporan keuangan sesuai SAK EMKM.`,
+                studi_kasus: (topik) => `Sajikan transaksi keuangan perusahaan dagang yang memiliki ketidakcocokan saldo bank dengan buku besar pada topik: "${topik}". Minta siswa melakukan rekonsiliasi dan membuat jurnal penyesuaian.`,
+                ukk: (topik) => `Buat paket simulasi soal UKK Akuntansi manual dan spreadsheet/komputer akuntansi (MYOB/Accurate) untuk studi kasus "${topik}".`,
+                rubrik: (topik) => `Rancang lembar penilaian praktik akuntansi materi "${topik}": Ketelitian Angka (40%), Kerapian Buku Jurnal (30%), Kecepatan Kerja (20%), Kepatuhan Standar Akuntansi (10%).`,
+                icebreaking: (topik) => `Buat 5 kuis tebak istilah debit/kredit dan pajak seputar "${topik}" yang seru dan mengasah ketelitian siswa.`
+            },
+            kuliner: {
+                rpp: (topik) => `Bertindaklah sebagai Executive Chef Hotel Bintang 5 dan Guru Tata Boga/Kuliner SMK.\n\nSusun Modul Ajar Pengolahan Makanan untuk materi: "${topik}".\nIsi mencakup:\n- Standar HACCP & Higienitas Dapur Profesional.\n- Perhitungan Food Costing & Resep Standar.\n- Alur Kerja Mise en place, Memasak, Plating Kontemporer.\n- Rubrik Uji Organoleptik (Rasa, Tekstur, Aroma, Penampilan).`,
+                studi_kasus: (topik) => `Buatkan kasus tantangan dapur: "Terjadi kesalahan tekstur atau rasa pada olahan ${topik} saat pesanan katering mendesak". Pandu siswa mencari solusi penyelematan hidangan tanpa membuang bahan.`,
+                ukk: (topik) => `Susun lembar kerja UKK Kuliner untuk menu hidangan "${topik}". Lengkapi dengan batasan waktu 90 menit dan daftar bahan baku baku per peserta didik.`,
+                rubrik: (topik) => `Buat rubrik evaluasi rasa dan penyajian makanan materi "${topik}": Cita Rasa & Kematangan (40%), Kebersihan & K3 Dapur (25%), Estetika Plating (20%), Efisiensi Bahan/Costing (15%).`,
+                icebreaking: (topik) => `Buat tebak nama bumbu rahasia atau istilah kuliner internasional seputar "${topik}" untuk membuka kelas praktik memasak.`
+            },
+            perhotelan: {
+                rpp: (topik) => `Bertindaklah sebagai General Manager Hotel dan Guru Program Perhotelan SMK. Buat Modul Ajar Pelayanan Prima (Front Office / Housekeeping) dengan fokus materi: "${topik}". Sertakan simulasi roleplay komunikasi bahasa Inggris dan standar grooming internasional.`,
+                studi_kasus: (topik) => `Buatkan skenario komplain tamu hotel yang emosional terkait topik: "${topik}". Berikan panduan teknik L.A.S.T (Listen, Apologize, Solve, Thank) untuk dipraktikkan siswa.`,
+                ukk: (topik) => `Rancang instrumen UKK Perhotelan untuk topik "${topik}" dengan rubrik standar sertifikasi profesi perhotelan BNSP.`,
+                rubrik: (topik) => `Buatkan rubrik penilaian roleplay perhotelan materi "${topik}": Sikap & Keramahan (30%), Kemampuan Bahasa & Diksi (30%), Kecepatan Solusi (25%), Penampilan Grooming (15%).`,
+                icebreaking: (topik) => `Buat 5 skenario lucu 'Apa yang harus dilakukan staf hotel jika...' terkait topik "${topik}" untuk melatih spontanitas keramahan siswa.`
+            },
+            mesin: {
+                rpp: (topik) => `Bertindaklah sebagai Production Supervisor Pabrik Manufaktur dan Guru Teknik Mesin SMK. Buat Modul Ajar Pengoperasian Mesin Bubut/Fravis/CNC untuk materi: "${topik}". Sertakan lembar pembacaan gambar teknik, toleransi ukuran ISO, dan K3 mutlak di area perbengkelan logam.`,
+                studi_kasus: (topik) => `Buatkan skenario kegagalan hasil benda kerja yang mengalami penyimpangan toleransi pada topik: "${topik}". Siswa harus menganalisis apakah kesalahan terjadi pada mata pahat, kecepatan putar spindle, atau penjepitan ragum.`,
+                ukk: (topik) => `Susun format instruksi kerja UKK Pemesinan untuk produk komponen bertopik "${topik}" beserta lembar pemeriksaan jangka sorong / mikrometer sekrup.`,
+                rubrik: (topik) => `Rancang rubrik penilaian hasil bubut/frais materi "${topik}": Dimensi Presisi Toleransi (40%), Kehalusan Permukaan (25%), Waktu Pengerjaan (20%), K3 (15%).`,
+                icebreaking: (topik) => `Buat 5 kuis kilat membaca skala jangka sorong atau rumus kecepatan potong mesin seputar "${topik}".`
+            }
+        };
+
+        // --- 2. Logic Generate & Copy Prompt ---
+        function generatePrompt() {
+            const jurusan = document.getElementById('jurusanSelect').value;
+            const outputType = document.getElementById('outputTypeSelect').value;
+            let topic = document.getElementById('topicInput').value.trim();
+
+            if (!topic) {
+                topic = "Materi Pokok Kejuruan SMK Terpilih";
+            }
+
+            const jurObj = promptTemplates[jurusan] || promptTemplates['rpl'];
+            const templateFn = jurObj[outputType] || jurObj['rpp'];
+            const resultText = templateFn(topic);
+
+            const promptArea = document.getElementById('promptResultArea');
+            promptArea.value = resultText;
+
+            // Flash effect visual
+            promptArea.classList.add('bg-slate-800/80');
+            setTimeout(() => {
+                promptArea.classList.remove('bg-slate-800/80');
+            }, 300);
+        }
+
+        // Copy Clipboard Safe (execCommand & fallback)
+        function copyPromptToClipboard() {
+            const promptArea = document.getElementById('promptResultArea');
+            const copyBtnText = document.getElementById('copyBtnText');
+
+            if (!promptArea.value) {
+                generatePrompt();
+            }
+
+            promptArea.select();
+            promptArea.setSelectionRange(0, 99999); // Mobile
+
+            let successful = false;
+            try {
+                successful = document.execCommand('copy');
+            } catch (err) {
+                successful = false;
+            }
+
+            if (successful) {
+                copyBtnText.innerText = "Tersalin!";
+                copyBtnText.parentElement.classList.add('bg-emerald-700', 'text-white');
+                setTimeout(() => {
+                    copyBtnText.innerText = "Salin Teks";
+                    copyBtnText.parentElement.classList.remove('bg-emerald-700', 'text-white');
+                }, 2200);
+            } else {
+                copyBtnText.innerText = "Tekan Ctrl+C";
+                setTimeout(() => {
+                    copyBtnText.innerText = "Salin Teks";
+                }, 2000);
+            }
+        }
+
+        // --- 3. Filter Katalog Tools AI ---
+        function filterTools(category) {
+            const cards = document.querySelectorAll('.tool-card');
+            const buttons = document.querySelectorAll('#filterButtonGroup .filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white', 'shadow-sm');
+                btn.classList.add('bg-slate-100', 'text-slate-700');
+            });
+
+            // Activate clicked button
+            event.target.classList.remove('bg-slate-100', 'text-slate-700');
+            event.target.classList.add('bg-blue-600', 'text-white', 'shadow-sm');
+
+            cards.forEach(card => {
+                const cardCat = card.getAttribute('data-category');
+                if (category === 'all' || cardCat === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // --- 4. Logic Kuis Kesiapan AI Guru ---
+        function calculateQuizScore() {
+            const form = document.getElementById('quizForm');
+            const formData = new FormData(form);
+            let total = 0;
+            let answered = 0;
+
+            for (let i = 1; i <= 5; i++) {
+                const val = formData.get('q' + i);
+                if (val) {
+                    total += parseInt(val, 10);
+                    answered++;
+                }
+            }
+
+            if (answered < 5) {
+                // Not all answered
+                return;
+            }
+
+            const resultBox = document.getElementById('quizResultBox');
+            resultBox.classList.remove('hidden');
+
+            let title = "";
+            let badge = "";
+            let description = "";
+            let recommendation = "";
+            let borderClass = "";
+
+            if (total <= 7) {
+                badge = "Level: Pemula (AI Explorer)";
+                title = "🌱 Langkah Awal Memulai Eksplorasi AI";
+                borderClass = "bg-amber-50 border-amber-200 text-amber-900";
+                description = "Anda masih di tahap awal mengenal kecerdasan buatan. Ini adalah momen terbaik untuk mengeksplorasi AI tanpa rasa takut salah.";
+                recommendation = "Mulailah dengan menggunakan fitur Prompt Builder di web ini untuk membuat satu draf ide ice breaking atau kuis ringan di kelas minggu ini.";
+            } else if (total <= 11) {
+                badge = "Level: Praktisi Berkembang (AI Practitioner)";
+                title = "⚡ Guru Adaptif & Proaktif!";
+                borderClass = "bg-blue-50 border-blue-200 text-blue-900";
+                description = "Anda sudah cukup akrab memanfaatkan AI dalam tugas guru harian dan memahami batas etis dalam menilai siswa.";
+                recommendation = "Tingkatkan integrasi ke ranah praktikum kejuruan siswa (simulasi kerusakan mesin, debugging kode, studi kasus klien) dan perkuat panduan etika.";
+            } else {
+                badge = "Level: Master Penggerak Vokasi (AI Champion)";
+                title = "🏆 Guru Penggerak AI Masa Depan 2026!";
+                borderClass = "bg-emerald-50 border-emerald-200 text-emerald-900";
+                description = "Luar biasa! Anda memiliki literasi AI yang matang: tidak hanya paham teknis prompt, tetapi juga bijak menjaga integritas akademik dan keselamatan data.";
+                recommendation = "Bagikan praktik baik (Best Practice) Anda kepada rekan guru di MGMP atau komunitas vokasi sekolah untuk menginspirasi ekosistem yang lebih luas.";
+            }
+
+            resultBox.className = `mt-8 p-6 rounded-2xl border transition-all duration-300 ${borderClass}`;
+            resultBox.innerHTML = `
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                    <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-white/80 border w-fit">${badge}</span>
+                    <span class="text-sm font-extrabold">Skor Kesiapan: ${total} / 15 Poin</span>
+                </div>
+                <h4 class="text-xl font-bold mb-2">${title}</h4>
+                <p class="text-xs sm:text-sm leading-relaxed mb-3 opacity-90">${description}</p>
+                <div class="p-3.5 rounded-xl bg-white/80 border text-xs sm:text-sm font-medium">
+                    <strong>Rekomendasi Aksi:</strong> ${recommendation}
+                </div>
+            `;
+
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // --- 5. FAQ Accordion Toggle ---
+        function toggleFaq(id) {
+            const answer = document.getElementById(`faq-answer-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                answer.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        // --- 6. Sidebar Drawer & Mobile Menu Controller ---
+        function toggleSidebar(open) {
+            const drawer = document.getElementById('sidebarDrawer');
+            const backdrop = document.getElementById('sidebarBackdrop');
+
+            if (open) {
+                drawer.classList.remove('-translate-x-full');
+                backdrop.classList.remove('opacity-0', 'pointer-events-none');
+                backdrop.classList.add('opacity-100', 'pointer-events-auto');
+                document.body.style.overflow = 'hidden'; // prevent bg scroll
+            } else {
+                drawer.classList.add('-translate-x-full');
+                backdrop.classList.add('opacity-0', 'pointer-events-none');
+                backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Mobile dropdown toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileDropdown = document.getElementById('mobileDropdown');
+        if (mobileMenuBtn && mobileDropdown) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileDropdown.classList.toggle('hidden');
+            });
+        }
+
+        // Close mobile dropdown when a link is clicked
+        if (mobileDropdown) {
+            mobileDropdown.querySelectorAll('a').forEach(anchor => {
+                anchor.addEventListener('click', () => {
+                    mobileDropdown.classList.add('hidden');
+                });
+            });
+        }
+
+        // --- 7. Event Listeners Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Generate initial prompt
+            generatePrompt();
+
+            // Hook up prompt generator buttons
+            document.getElementById('generatePromptBtn').addEventListener('click', generatePrompt);
+            document.getElementById('copyPromptBtn').addEventListener('click', copyPromptToClipboard);
+
+            // Auto-update when select changes
+            document.getElementById('jurusanSelect').addEventListener('change', generatePrompt);
+            document.getElementById('outputTypeSelect').addEventListener('change', generatePrompt);
+
+            // Hook up sidebar trigger
+            const sidebarBtn = document.getElementById('sidebarToggleBtn');
+            if (sidebarBtn) {
+                sidebarBtn.addEventListener('click', () => toggleSidebar(true));
+            }
+        });
+    </script>
+</body>
+</html>
