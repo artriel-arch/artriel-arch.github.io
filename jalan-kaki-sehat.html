@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LangkahSehat - Rahasia Sehat & Bugar Lewat Jalan Kaki</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Temukan rahasia kebugaran, kesehatan jantung, dan kebahagiaan pikiran melalui rutinitas jalan kaki harian. Dilengkapi kalkulator kalori dan panduan praktis.">
+  <meta name="keywords" content="sehatnya jalan kaki, manfaat jalan kaki, 10000 langkah, kalkulator kalori jalan kaki, kesehatan jantung, olahraga santai">
+  <meta name="author" content="Ariel Usman">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://langkahsehat.web.app/">
+  <meta property="og:title" content="LangkahSehat - Sehatnya Jalan Kaki Setiap Hari">
+  <meta property="og:description" content="Mulai langkah kecil untuk umur panjang. Panduan lengkap, kalkulator langkah, dan tips postur jalan kaki yang sehat.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?q=80&w=1200&auto=format&fit=crop">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LangkahSehat - Sehatnya Jalan Kaki Setiap Hari">
+  <meta name="twitter:description" content="Investasi kesehatan termurah dan termudah. Cek manfaat dan hitung kalori jalan kaki Anda sekarang.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?q=80&w=1200&auto=format&fit=crop">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2310B981'><path d='M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7'/></svg>">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              200: '#a7f3d0',
+              300: '#6ee7b7',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b',
+            },
+            sun: {
+              300: '#fde047',
+              400: '#facc15',
+              500: '#eab308',
+            }
+          },
+          boxShadow: {
+            'glass': '0 8px 32px 0 rgba(16, 185, 129, 0.12)',
+            'glass-card': '0 12px 40px 0 rgba(0, 0, 0, 0.06)',
+            'float': '0 20px 35px -10px rgba(16, 185, 129, 0.28)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Glassmorphism styles */
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+    .glass-hero {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(240, 253, 244, 0.75) 100%);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+    }
+    /* Subtle pulsing animation */
+    @keyframes pulse-slow {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.04); opacity: 1; }
+    }
+    .animate-pulse-slow {
+      animation: pulse-slow 3s infinite ease-in-out;
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-emerald-50 via-teal-50/50 to-sky-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col selection:bg-brand-400 selection:text-white relative overflow-x-hidden">
+
+  <!-- Top Navigation Bar -->
+  <header class="sticky top-0 z-40 w-full glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo / Brand Name -->
+        <a href="#" class="flex items-center gap-3 group focus:outline-none">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-brand-600 via-brand-500 to-teal-400 flex items-center justify-center text-white shadow-md shadow-brand-500/30 group-hover:rotate-6 transition-all duration-300">
+            <i class="fa-solid fa-person-walking text-2xl"></i>
+          </div>
+          <div>
+            <span class="text-2xl font-extrabold tracking-tight bg-gradient-to-r from-brand-800 to-teal-600 bg-clip-text text-transparent">LangkahSehat</span>
+            <span class="block text-xs font-semibold text-brand-600 tracking-wider uppercase">Sehatnya Jalan Kaki</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Items -->
+        <nav class="hidden md:flex items-center space-x-1 lg:space-x-3">
+          <a href="#manfaat" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-brand-50/80 transition-all">Manfaat</a>
+          <a href="#kalkulator" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-brand-50/80 transition-all">Kalkulator Langkah</a>
+          <a href="#timer" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-brand-50/80 transition-all">Simulasi Timer</a>
+          <a href="#panduan" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-brand-50/80 transition-all">Panduan Postur</a>
+          <a href="#checklist" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-brand-50/80 transition-all">Target Harian</a>
+        </nav>
+
+        <!-- Right Side: Sidebar Trigger & CTA -->
+        <div class="flex items-center gap-3">
+          <button id="sidebarToggleBtn" aria-label="Buka Menu Sidebar Informasi" class="relative p-2.5 rounded-2xl bg-emerald-100/80 text-brand-800 hover:bg-brand-200 transition-all flex items-center gap-2 text-sm font-bold shadow-sm">
+            <i class="fa-solid fa-compass text-base text-brand-600"></i>
+            <span class="hidden sm:inline">Info & Fakta</span>
+            <span class="flex h-2 w-2 relative">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+            </span>
+          </button>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button id="mobileMenuBtn" aria-label="Menu Navigasi Mobile" class="md:hidden p-2.5 rounded-2xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">
+            <i id="mobileMenuIcon" class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-150 bg-white/95 backdrop-blur-md px-5 pt-3 pb-5 space-y-2 shadow-lg">
+      <a href="#manfaat" class="mobile-link block px-4 py-2.5 rounded-xl font-semibold text-slate-700 hover:bg-brand-50 hover:text-brand-600">Manfaat Jalan Kaki</a>
+      <a href="#kalkulator" class="mobile-link block px-4 py-2.5 rounded-xl font-semibold text-slate-700 hover:bg-brand-50 hover:text-brand-600">Kalkulator Kalori</a>
+      <a href="#timer" class="mobile-link block px-4 py-2.5 rounded-xl font-semibold text-slate-700 hover:bg-brand-50 hover:text-brand-600">Simulasi Timer Berjalan</a>
+      <a href="#panduan" class="mobile-link block px-4 py-2.5 rounded-xl font-semibold text-slate-700 hover:bg-brand-50 hover:text-brand-600">Panduan Postur</a>
+      <a href="#checklist" class="mobile-link block px-4 py-2.5 rounded-xl font-semibold text-slate-700 hover:bg-brand-50 hover:text-brand-600">Target Harian</a>
+    </div>
+  </header>
+
+  <!-- Sidebar Backdrop & Drawer Component -->
+  <div id="sidebarBackdrop" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  
+  <aside id="infoSidebar" class="fixed top-0 right-0 h-full w-full max-w-sm sm:max-w-md bg-white/95 backdrop-blur-xl z-50 shadow-2xl translate-x-full transition-transform duration-300 ease-in-out flex flex-col border-l border-emerald-100 overflow-hidden">
+    <!-- Sidebar Header -->
+    <div class="p-6 bg-gradient-to-r from-brand-600 to-teal-600 text-white flex items-center justify-between shadow-md">
+      <div class="flex items-center gap-3">
+        <i class="fa-solid fa-notes-medical text-2xl"></i>
+        <div>
+          <h3 class="font-bold text-lg leading-tight">Pusat Info Langkah</h3>
+          <p class="text-xs text-brand-100">Fakta medis & tips cerdas jalan kaki</p>
+        </div>
+      </div>
+      <button id="closeSidebarBtn" class="w-9 h-9 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+    </div>
+
+    <!-- Sidebar Scrollable Content -->
+    <div class="flex-1 overflow-y-auto p-6 space-y-6">
+      
+      <!-- Fakta Medis Kilat -->
+      <div class="p-4 rounded-2xl bg-amber-50/80 border border-amber-200">
+        <div class="flex items-center gap-2 text-amber-800 font-bold text-sm mb-2">
+          <i class="fa-solid fa-lightbulb text-amber-500"></i>
+          <span>Fakta Ilmiah 15 Menit</span>
+        </div>
+        <p class="text-xs leading-relaxed text-amber-900">
+          Jalan kaki cepat hanya <strong>15 menit setelah makan</strong> terbukti menurunkan lonjakan gula darah hingga 30% dan melancarkan pencernaan secara alami.
+        </p>
+      </div>
+
+      <!-- Panduan Hidrasi -->
+      <div class="p-4 rounded-2xl bg-sky-50/80 border border-sky-200">
+        <div class="flex items-center gap-2 text-sky-800 font-bold text-sm mb-2">
+          <i class="fa-solid fa-bottle-water text-sky-500"></i>
+          <span>Aturan Minum Saat Berjalan</span>
+        </div>
+        <ul class="text-xs text-sky-900 space-y-1.5 list-disc list-inside">
+          <li>Minum 1 gelas air (250ml) 20 menit sebelum jalan.</li>
+          <li>Untuk durasi &gt; 45 menit, bawa tumbler air putih kecil.</li>
+          <li>Hindari air es berlebihan segera setelah jalan cepat.</li>
+        </ul>
+      </div>
+
+      <!-- Kategori Kecepatan Langkah -->
+      <div class="p-4 rounded-2xl bg-emerald-50/80 border border-emerald-200">
+        <h4 class="text-sm font-bold text-brand-900 mb-3 flex items-center gap-2">
+          <i class="fa-solid fa-gauge-high text-brand-600"></i> Standar Kecepatan Jalan
+        </h4>
+        <div class="space-y-2 text-xs">
+          <div class="flex justify-between items-center pb-1 border-b border-emerald-100">
+            <span class="font-medium text-slate-700">Jalan Santai</span>
+            <span class="font-bold text-brand-700">~3 - 4 km/jam</span>
+          </div>
+          <div class="flex justify-between items-center pb-1 border-b border-emerald-100">
+            <span class="font-medium text-slate-700">Jalan Sedang (Brisk)</span>
+            <span class="font-bold text-brand-700">~4.5 - 5.5 km/jam</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="font-medium text-slate-700">Power Walk (Cepat)</span>
+            <span class="font-bold text-brand-700">&gt; 6 km/jam</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quote Pengingat -->
+      <div class="text-center p-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
+        <i class="fa-solid fa-quote-left text-2xl text-brand-300 mb-2"></i>
+        <p class="text-xs italic text-slate-600 leading-relaxed">
+          "Tubuh manusia diciptakan untuk bergerak, bukan berdiam 8 jam di depan layar. Berdirilah dan melangkah!"
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Sidebar Footer Action -->
+    <div class="p-4 bg-slate-50 border-t border-slate-200 text-center">
+      <button onclick="window.scrollTo({top: 0, behavior: 'smooth'}); toggleSidebar(false);" class="w-full py-2.5 px-4 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-sm font-bold shadow-md shadow-brand-500/20 transition-all">
+        Mulai Hari Ini
+      </button>
+    </div>
+  </aside>
+
+  <!-- Hero Section -->
+  <section class="relative pt-8 pb-16 md:pt-16 md:pb-24 overflow-hidden">
+    <!-- Ambient Blur Background Orbs -->
+    <div class="absolute top-10 left-1/2 -translate-x-1/2 w-96 h-96 bg-brand-300/30 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    <div class="absolute top-40 right-10 w-72 h-72 bg-sun-300/25 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    <div class="absolute top-60 left-10 w-80 h-80 bg-sky-300/25 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Left Hero Text Content -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100/90 text-brand-800 text-xs sm:text-sm font-bold tracking-wide shadow-sm border border-emerald-200">
+            <span class="w-2 h-2 rounded-full bg-brand-500 animate-ping"></span>
+            <span>Olahraga Termudah, Hasil Paling Nyata</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+            Langkah Kecil, <br class="hidden sm:inline">
+            <span class="bg-gradient-to-r from-brand-600 via-teal-500 to-sky-600 bg-clip-text text-transparent">
+              Sejuta Manfaat
+            </span> <br>
+            Untuk Tubuh & Pikiran.
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+            Jalan kaki bukan sekadar perpindahan tempat. Jalan kaki adalah obat alami terbaik untuk memperpanjang usia, menurunkan stres mental, melancarkan peredaran darah, dan mengaktifkan metabolisme tubuh tanpa perlu biaya mahal.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#kalkulator" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-brand-600 to-teal-600 text-white font-bold text-base shadow-float hover:shadow-lg hover:from-brand-700 hover:to-teal-700 transition-all flex items-center justify-center gap-3">
+              <i class="fa-solid fa-calculator"></i>
+              <span>Hitung Kalori Jalanmu</span>
+            </a>
+            <a href="#manfaat" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white/90 border border-slate-200 text-slate-700 font-bold text-base hover:bg-slate-50 transition-all flex items-center justify-center gap-2 shadow-sm">
+              <i class="fa-solid fa-circle-play text-brand-500"></i>
+              <span>Pelajari Manfaat</span>
+            </a>
+          </div>
+
+          <!-- Quick Stat Counters -->
+          <div class="grid grid-cols-3 gap-3 pt-6 border-t border-slate-200/80 max-w-lg mx-auto lg:mx-0">
+            <div class="p-3 bg-white/70 rounded-2xl border border-white/60 shadow-sm text-center">
+              <div class="text-2xl sm:text-3xl font-extrabold text-brand-700">10.000</div>
+              <div class="text-[11px] sm:text-xs text-slate-500 font-medium">Target Langkah/Hari</div>
+            </div>
+            <div class="p-3 bg-white/70 rounded-2xl border border-white/60 shadow-sm text-center">
+              <div class="text-2xl sm:text-3xl font-extrabold text-teal-700">300+</div>
+              <div class="text-[11px] sm:text-xs text-slate-500 font-medium">Kalori Terbakar</div>
+            </div>
+            <div class="p-3 bg-white/70 rounded-2xl border border-white/60 shadow-sm text-center">
+              <div class="text-2xl sm:text-3xl font-extrabold text-sky-700">+3 Thn</div>
+              <div class="text-[11px] sm:text-xs text-slate-500 font-medium">Harapan Hidup Sehat</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Hero Glassmorphism Showcase Card with Image -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            
+            <!-- Outer Glow Frame -->
+            <div class="absolute -inset-1.5 bg-gradient-to-r from-brand-400 via-sun-300 to-teal-400 rounded-3xl blur-lg opacity-40 group-hover:opacity-100 transition duration-1000"></div>
+
+            <div class="relative rounded-3xl overflow-hidden glass-hero shadow-glass-card border border-white/80 p-4 sm:p-5">
+              
+              <!-- Featured Healthy Walk Image -->
+              <div class="relative h-72 sm:h-80 w-full rounded-2xl overflow-hidden shadow-inner">
+                <img 
+                  src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?q=80&w=1000&auto=format&fit=crop" 
+                  alt="Seseorang sedang berjalan santai di alam terbuka yang segar" 
+                  class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
+                  loading="eager"
+                  onerror="this.src='https://placehold.co/800x600/10b981/ffffff?text=Langkah+Sehat'"
+                >
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+                
+                <div class="absolute bottom-4 left-4 right-4 text-white">
+                  <div class="inline-block px-2.5 py-1 rounded-lg bg-brand-500/80 backdrop-blur-md text-[11px] font-bold mb-1">
+                    Morning Routine
+                  </div>
+                  <h2 class="text-lg font-bold leading-snug">Jalan Kaki Pagi di Bawah Sinar Matahari</h2>
+                </div>
+              </div>
+
+              <!-- Floating Live Card Component -->
+              <div class="mt-4 p-4 rounded-2xl bg-white/90 border border-white shadow-sm flex items-center justify-between gap-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-11 h-11 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-heart-pulse text-xl text-rose-500 animate-pulse"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-xs font-bold text-slate-800">Detak Jantung Ideal</h3>
+                    <p class="text-[11px] text-slate-500">Zona Pembakaran Lemak Efisien</p>
+                  </div>
+                </div>
+                <span class="text-xs font-extrabold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-lg border border-brand-200">
+                  Optimal
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Manfaat Jalan Kaki Section -->
+  <section id="manfaat" class="py-16 md:py-20 bg-white/70 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs sm:text-sm font-bold text-brand-600 tracking-wider uppercase bg-brand-50 px-3.5 py-1.5 rounded-full border border-brand-200">
+          Khasiat Teruji Secara Klinis
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
+          Apa yang Terjadi Pada Tubuh Saat Anda Berjalan Kaki?
+        </h2>
+        <p class="text-slate-600 mt-3 text-sm sm:text-base leading-relaxed">
+          Bukan hanya membakar kalori, setiap langkah Anda merangsang sirkulasi darah, menstabilkan hormon, dan memperkuat organ vital.
+        </p>
+      </div>
+
+      <!-- Benefit Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        
+        <!-- Card 1: Jantung & Kardiovaskular -->
+        <div class="glass-card rounded-3xl p-6 sm:p-7 shadow-glass-card hover:-translate-y-1.5 transition-all duration-300 border border-slate-100 relative group">
+          <div class="w-14 h-14 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-heart-circle-bolt"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Kesehatan Jantung Maksimal</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            Berjalan 30 menit sehari menurunkan risiko penyakit jantung koroner dan stroke hingga 35%. Tekanan darah tinggi menjadi lebih stabil secara alami.
+          </p>
+          <div class="text-xs font-semibold text-rose-600 flex items-center gap-1.5">
+            <i class="fa-solid fa-check"></i> Menurunkan Kolesterol LDL Jahat
+          </div>
+        </div>
+
+        <!-- Card 2: Mental & Suasana Hati -->
+        <div class="glass-card rounded-3xl p-6 sm:p-7 shadow-glass-card hover:-translate-y-1.5 transition-all duration-300 border border-slate-100 relative group">
+          <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Penawar Stres & Mood Booster</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            Gerakan ritmis jalan kaki memicu pelepasan endorfin dan serotonin. Mengurangi rasa cemas berlebih, mengatasi brain fog, dan mempertajam kreativitas.
+          </p>
+          <div class="text-xs font-semibold text-amber-700 flex items-center gap-1.5">
+            <i class="fa-solid fa-check"></i> Kualitas Tidur Malam Lebih Pulas
+          </div>
+        </div>
+
+        <!-- Card 3: Kontrol Gula Darah -->
+        <div class="glass-card rounded-3xl p-6 sm:p-7 shadow-glass-card hover:-translate-y-1.5 transition-all duration-300 border border-slate-100 relative group">
+          <div class="w-14 h-14 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Pengontrol Diabetes Alami</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            Otot-otot kaki yang berkontraksi saat melangkah menyerap glukosa darah langsung tanpa membutuhkan lonjakan hormon insulin berlebih.
+          </p>
+          <div class="text-xs font-semibold text-teal-700 flex items-center gap-1.5">
+            <i class="fa-solid fa-check"></i> Menjaga Sensitivitas Hormon Insulin
+          </div>
+        </div>
+
+        <!-- Card 4: Sendi & Kepadatan Tulang -->
+        <div class="glass-card rounded-3xl p-6 sm:p-7 shadow-glass-card hover:-translate-y-1.5 transition-all duration-300 border border-slate-100 relative group">
+          <div class="w-14 h-14 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-bone"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Sendi Awet & Tulang Kuat</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            Jalan kaki melumasi cairan sinovial di persendian lutut dan panggul, memperkuat otot penopang, dan mencegah osteoporosis dini pada lansia.
+          </p>
+          <div class="text-xs font-semibold text-sky-700 flex items-center gap-1.5">
+            <i class="fa-solid fa-check"></i> Low-Impact: Ramah Lutut & Tulang Belakang
+          </div>
+        </div>
+
+        <!-- Card 5: Manajemen Berat Badan -->
+        <div class="glass-card rounded-3xl p-6 sm:p-7 shadow-glass-card hover:-translate-y-1.5 transition-all duration-300 border border-slate-100 relative group">
+          <div class="w-14 h-14 rounded-2xl bg-brand-100 text-brand-600 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-fire"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Bakar Lemak Visceral</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            Jalan santai hingga brisk walking menjaga tubuh berada di zona denyut aerobik ideal untuk pembakaran lemak perut membandel secara konsisten.
+          </p>
+          <div class="text-xs font-semibold text-brand-700 flex items-center gap-1.5">
+            <i class="fa-solid fa-check"></i> Meningkatkan Laju Metabolisme Istirahat
+          </div>
+        </div>
+
+        <!-- Card 6: Daya Tahan Imun -->
+        <div class="glass-card rounded-3xl p-6 sm:p-7 shadow-glass-card hover:-translate-y-1.5 transition-all duration-300 border border-slate-100 relative group">
+          <div class="w-14 h-14 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-shield-virus"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Kekebalan Imun Tubuh</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            Penelitian menunjukkan mereka yang rutin berjalan 20 menit per hari memiliki jumlah hari sakit flu atau infeksi saluran napas 43% lebih sedikit.
+          </p>
+          <div class="text-xs font-semibold text-purple-700 flex items-center gap-1.5">
+            <i class="fa-solid fa-check"></i> Sirkulasi Sel Darah Putih Lebih Cepat
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Calculator Section -->
+  <section id="kalkulator" class="py-16 md:py-20 relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="glass-card rounded-3xl p-6 sm:p-10 shadow-glass-card border border-white/90">
+        
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <span class="text-xs font-bold text-teal-700 uppercase tracking-widest bg-teal-100 px-3.5 py-1 rounded-full">
+            Kalkulator Pintar
+          </span>
+          <h2 class="text-3xl font-extrabold text-slate-900 mt-3">Hitung Pembakaran Kalori & Estimasi Jarak</h2>
+          <p class="text-slate-600 text-sm mt-1">Masukkan parameter tubuh dan durasi jalan Anda untuk hasil ilmiah seketika.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          
+          <!-- Input Form Area -->
+          <div class="md:col-span-7 space-y-5">
+            
+            <!-- Berat Badan -->
+            <div>
+              <div class="flex justify-between text-sm font-bold text-slate-700 mb-2">
+                <label for="weightInput">Berat Badan Anda</label>
+                <span id="weightVal" class="text-brand-600 font-extrabold">65 kg</span>
+              </div>
+              <input type="range" id="weightInput" min="35" max="130" value="65" class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-brand-500">
+              <div class="flex justify-between text-[11px] text-slate-400 mt-1">
+                <span>35 kg</span>
+                <span>80 kg</span>
+                <span>130 kg</span>
+              </div>
+            </div>
+
+            <!-- Durasi Jalan Kaki -->
+            <div>
+              <div class="flex justify-between text-sm font-bold text-slate-700 mb-2">
+                <label for="durationInput">Durasi Berjalan</label>
+                <span id="durationVal" class="text-brand-600 font-extrabold">30 Menit</span>
+              </div>
+              <input type="range" id="durationInput" min="5" max="180" step="5" value="30" class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-brand-500">
+              <div class="flex justify-between text-[11px] text-slate-400 mt-1">
+                <span>5 Menit</span>
+                <span>60 Menit</span>
+                <span>3 Jam</span>
+              </div>
+            </div>
+
+            <!-- Intensitas Kecepatan -->
+            <div>
+              <label class="block text-sm font-bold text-slate-700 mb-2">Kecepatan & Intensitas Langkah</label>
+              <div class="grid grid-cols-3 gap-2">
+                <label class="cursor-pointer">
+                  <input type="radio" name="pace" value="santai" class="peer sr-only">
+                  <div class="p-3 text-center rounded-xl border border-slate-200 bg-white text-xs font-semibold text-slate-700 peer-checked:border-brand-500 peer-checked:bg-brand-50 peer-checked:text-brand-700 transition-all">
+                    <i class="fa-solid fa-mug-saucer block text-base mb-1 text-slate-400 peer-checked:text-brand-600"></i>
+                    Santai
+                    <span class="block text-[10px] text-slate-400 font-normal">3.5 km/j</span>
+                  </div>
+                </label>
+
+                <label class="cursor-pointer">
+                  <input type="radio" name="pace" value="sedang" class="peer sr-only" checked>
+                  <div class="p-3 text-center rounded-xl border border-slate-200 bg-white text-xs font-semibold text-slate-700 peer-checked:border-brand-500 peer-checked:bg-brand-50 peer-checked:text-brand-700 transition-all">
+                    <i class="fa-solid fa-person-walking block text-base mb-1 text-brand-600"></i>
+                    Sedang
+                    <span class="block text-[10px] text-slate-400 font-normal">5.0 km/j</span>
+                  </div>
+                </label>
+
+                <label class="cursor-pointer">
+                  <input type="radio" name="pace" value="cepat" class="peer sr-only">
+                  <div class="p-3 text-center rounded-xl border border-slate-200 bg-white text-xs font-semibold text-slate-700 peer-checked:border-brand-500 peer-checked:bg-brand-50 peer-checked:text-brand-700 transition-all">
+                    <i class="fa-solid fa-person-walking-dashed-line-arrow-right block text-base mb-1 text-slate-400 peer-checked:text-brand-600"></i>
+                    Cepat
+                    <span class="block text-[10px] text-slate-400 font-normal">6.5 km/j</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Dynamic Output Card -->
+          <div class="md:col-span-5 bg-gradient-to-br from-brand-600 via-teal-700 to-slate-900 rounded-3xl p-6 sm:p-7 text-white shadow-xl relative overflow-hidden">
+            <!-- Background pattern -->
+            <div class="absolute -right-8 -bottom-8 opacity-10 text-9xl">
+              <i class="fa-solid fa-shoe-prints"></i>
+            </div>
+
+            <div class="relative z-10 space-y-6">
+              <div class="border-b border-white/20 pb-4">
+                <span class="text-xs uppercase tracking-wider text-teal-200 font-bold">Estimasi Pembakaran</span>
+                <div class="flex items-baseline gap-2 mt-1">
+                  <span id="resultCalories" class="text-4xl sm:text-5xl font-black text-sun-300">123</span>
+                  <span class="text-base text-teal-100 font-bold">kkal (Kalori)</span>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div class="bg-white/10 rounded-2xl p-3 backdrop-blur-sm border border-white/10">
+                  <span class="text-[11px] text-teal-200 block">Jarak Ditempuh</span>
+                  <span id="resultDistance" class="text-xl font-bold">2.5</span> <span class="text-xs">km</span>
+                </div>
+                <div class="bg-white/10 rounded-2xl p-3 backdrop-blur-sm border border-white/10">
+                  <span class="text-[11px] text-teal-200 block">Estimasi Langkah</span>
+                  <span id="resultSteps" class="text-xl font-bold">3.300</span> <span class="text-xs">step</span>
+                </div>
+              </div>
+
+              <!-- Equivalent Food Snack Burned -->
+              <div class="bg-white/10 rounded-2xl p-3.5 backdrop-blur-sm border border-white/10 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-sun-400/20 text-sun-300 flex items-center justify-center text-lg">
+                  <i class="fa-solid fa-bowl-rice"></i>
+                </div>
+                <div>
+                  <span class="text-[11px] text-teal-200 block">Setara Dengan Membakar:</span>
+                  <p id="resultEquivalent" class="text-xs font-bold text-white leading-tight">1 Mangkok Nasi Putih</p>
+                </div>
+              </div>
+
+              <p class="text-[11px] text-teal-200/80 italic text-center">
+                *Dihitung berdasarkan rumus MET (Metabolic Equivalent of Task) resmi American College of Sports Medicine.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Live Walking Session Timer & Pedometer Simulator -->
+  <section id="timer" class="py-16 bg-gradient-to-b from-transparent via-emerald-100/40 to-transparent">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="glass-card rounded-3xl p-6 sm:p-10 shadow-glass border border-white/90 text-center">
+        
+        <span class="text-xs font-bold text-brand-600 tracking-wider uppercase bg-brand-100 px-3 py-1 rounded-full">
+          Pendamping Latihan Langsung
+        </span>
+        <h2 class="text-3xl font-extrabold text-slate-900 mt-3">Simulasi Sesi Jalan Kaki</h2>
+        <p class="text-slate-600 text-sm max-w-md mx-auto mt-1 mb-8">
+          Nyalakan timer saat Anda melangkah. Simak estimasi langkah real-time dan rasakan ritme langkah yang konsisten.
+        </p>
+
+        <!-- Timer Big Display -->
+        <div class="relative max-w-xs mx-auto mb-8">
+          <div class="w-56 h-56 mx-auto rounded-full bg-gradient-to-tr from-brand-600 to-teal-400 p-2 shadow-2xl flex items-center justify-center">
+            <div class="w-full h-full bg-white rounded-full flex flex-col items-center justify-center p-4">
+              <span class="text-xs font-semibold text-slate-400 tracking-widest uppercase">Durasi Berjalan</span>
+              <div id="sessionTimerDisplay" class="text-4xl font-black text-slate-800 my-1 font-mono tracking-tight">
+                00:00:00
+              </div>
+              <div class="flex items-center gap-1 text-brand-600 text-xs font-bold">
+                <i class="fa-solid fa-person-walking animate-bounce"></i>
+                <span id="sessionStepsCount">0</span> <span>Langkah</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="flex items-center justify-center gap-3">
+          <button id="startTimerBtn" class="px-7 py-3 rounded-2xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-md transition-all flex items-center gap-2">
+            <i class="fa-solid fa-play"></i> Mulai Jalan
+          </button>
+          <button id="pauseTimerBtn" class="px-7 py-3 rounded-2xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm shadow-md transition-all hidden items-center gap-2">
+            <i class="fa-solid fa-pause"></i> Jeda
+          </button>
+          <button id="resetTimerBtn" class="px-5 py-3 rounded-2xl bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-sm transition-all flex items-center gap-2">
+            <i class="fa-solid fa-rotate-left"></i> Reset
+          </button>
+        </div>
+
+        <!-- Motivational Status -->
+        <p id="timerStatusMsg" class="mt-6 text-xs font-semibold text-slate-500">
+          Siap berjalan? Tekan 'Mulai Jalan' dan jaga ritme pernapasan teratur.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Panduan Postur & Teknik Jalan Kaki -->
+  <section id="panduan" class="py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs sm:text-sm font-bold text-sky-700 tracking-wider uppercase bg-sky-100 px-3.5 py-1.5 rounded-full border border-sky-200">
+          Agar Bebas Cedera
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
+          Panduan Postur Jalan Kaki yang Benar
+        </h2>
+        <p class="text-slate-600 mt-2 text-sm sm:text-base">
+          Postur yang keliru dapat menyebabkan nyeri punggung atau sakit tumit. Ikuti 4 kaidah postur ergonomis berikut:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Step 1 -->
+        <div class="glass-card rounded-3xl p-6 border border-white text-center shadow-glass-card hover:-translate-y-1 transition-all">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-brand-100 text-brand-600 flex items-center justify-center text-xl font-black mb-4">
+            01
+          </div>
+          <h3 class="text-base font-bold text-slate-900 mb-2">Pandangan Lurus ke Depan</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Arahkan mata sekitar 4–6 meter ke depan, bukan menunduk menatap ponsel. Ini menjaga kelengkungan alami leher dan tulang leher belakang.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="glass-card rounded-3xl p-6 border border-white text-center shadow-glass-card hover:-translate-y-1 transition-all">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center text-xl font-black mb-4">
+            02
+          </div>
+          <h3 class="text-base font-bold text-slate-900 mb-2">Bahu Rileks & Dada Terbuka</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Tarik bahu sedikit ke belakang tanpa kaku. Buka ruang rongga dada agar paru-paru dapat mengembang dan menyerap oksigen maksimal.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="glass-card rounded-3xl p-6 border border-white text-center shadow-glass-card hover:-translate-y-1 transition-all">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-sun-300/40 text-amber-700 flex items-center justify-center text-xl font-black mb-4">
+            03
+          </div>
+          <h3 class="text-base font-bold text-slate-900 mb-2">Ayunkan Lengan Selaras</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Tekuk siku sekitar 90 derajat secara santai. Ayunkan dari pangkal bahu berlawanan dengan langkah kaki untuk dorongan kinetik alami.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="glass-card rounded-3xl p-6 border border-white text-center shadow-glass-card hover:-translate-y-1 transition-all">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center text-xl font-black mb-4">
+            04
+          </div>
+          <h3 class="text-base font-bold text-slate-900 mb-2">Pijakan Tumit Menuju Ujung Jari</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Mendaratlah dengan tumit terlebih dahulu secara lembut, gulirkan telapak kaki, lalu dorong menggunakan jemari kaki (*heel-to-toe strike*).
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Target & Checklist Harian Berjalan -->
+  <section id="checklist" class="py-16 bg-white/80">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="glass-card rounded-3xl p-6 sm:p-8 shadow-glass-card border border-slate-100">
+        
+        <div class="flex items-center justify-between flex-wrap gap-4 mb-6">
+          <div>
+            <h2 class="text-2xl font-bold text-slate-900">Checklist Kebiasaan Jalan Harian</h2>
+            <p class="text-xs text-slate-500 mt-0.5">Centang target yang berhasil Anda selesaikan hari ini.</p>
+          </div>
+          <div class="text-right">
+            <span id="checklistPercent" class="text-2xl font-black text-brand-600">0%</span>
+            <span class="block text-[11px] text-slate-400 font-semibold">Tercapai</span>
+          </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="w-full bg-slate-100 rounded-full h-3 mb-6 overflow-hidden">
+          <div id="checkprogressBar" class="bg-gradient-to-r from-brand-500 to-teal-400 h-3 rounded-full transition-all duration-500" style="width: 0%"></div>
+        </div>
+
+        <!-- Tasks list -->
+        <div class="space-y-3" id="checklistContainer">
+          
+          <label class="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/60 border border-slate-200/80 cursor-pointer transition-all">
+            <input type="checkbox" class="task-checkbox w-5 h-5 rounded-lg text-brand-600 accent-brand-600 cursor-pointer">
+            <span class="text-sm font-medium text-slate-700">Jalan pagi 15-20 menit sambil berjemur matahari</span>
+          </label>
+
+          <label class="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/60 border border-slate-200/80 cursor-pointer transition-all">
+            <input type="checkbox" class="task-checkbox w-5 h-5 rounded-lg text-brand-600 accent-brand-600 cursor-pointer">
+            <span class="text-sm font-medium text-slate-700">Pilih gunakan tangga daripada eskalator/lift (minimal 2 lantai)</span>
+          </label>
+
+          <label class="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/60 border border-slate-200/80 cursor-pointer transition-all">
+            <input type="checkbox" class="task-checkbox w-5 h-5 rounded-lg text-brand-600 accent-brand-600 cursor-pointer">
+            <span class="text-sm font-medium text-slate-700">Jalan santai ringan 10 menit setelah makan siang / makan malam</span>
+          </label>
+
+          <label class="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/60 border border-slate-200/80 cursor-pointer transition-all">
+            <input type="checkbox" class="task-checkbox w-5 h-5 rounded-lg text-brand-600 accent-brand-600 cursor-pointer">
+            <span class="text-sm font-medium text-slate-700">Mencapai akumulasi minimal 6.000 - 8.000 langkah hari ini</span>
+          </label>
+
+          <label class="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-50 hover:bg-emerald-50/60 border border-slate-200/80 cursor-pointer transition-all">
+            <input type="checkbox" class="task-checkbox w-5 h-5 rounded-lg text-brand-600 accent-brand-600 cursor-pointer">
+            <span class="text-sm font-medium text-slate-700">Minum 2 gelas air mineral setelah menyelesaikan sesi jalan</span>
+          </label>
+
+        </div>
+
+        <div id="congratsBox" class="mt-6 p-4 rounded-2xl bg-emerald-100/90 text-brand-900 border border-brand-200 text-center hidden">
+          <p class="font-bold text-sm">🎉 Luar Biasa! Anda Menyelesaikan Semua Target Hari Ini!</p>
+          <p class="text-xs text-brand-700 mt-1">Tubuh Anda berterima kasih atas setiap energi yang Anda investasikan.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="mt-auto bg-slate-900 text-slate-300 pt-14 pb-10 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-slate-800">
+        
+        <!-- Left: Brand Info -->
+        <div class="md:col-span-6 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-brand-500 text-white flex items-center justify-center">
+              <i class="fa-solid fa-person-walking text-xl"></i>
+            </div>
+            <span class="text-xl font-black text-white tracking-tight">LangkahSehat</span>
+          </div>
+          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-md">
+            Membangun kesadaran gaya hidup aktif melalui aktivitas paling natural manusia: melangkah. Dirancang untuk kenyamanan membaca di ponsel pintar, tablet, maupun layar komputer.
+          </p>
+        </div>
+
+        <!-- Middle: Nav Quick Links -->
+        <div class="md:col-span-3 space-y-3">
+          <h4 class="text-white font-bold text-sm tracking-wider uppercase">Navigasi Halaman</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#manfaat" class="hover:text-brand-400 transition-colors">Khasiat Klinis</a></li>
+            <li><a href="#kalkulator" class="hover:text-brand-400 transition-colors">Kalkulator Kalori & Langkah</a></li>
+            <li><a href="#timer" class="hover:text-brand-400 transition-colors">Simulasi Stopwatch</a></li>
+            <li><a href="#panduan" class="hover:text-brand-400 transition-colors">Postur & Teknik</a></li>
+          </ul>
+        </div>
+
+        <!-- Right: Social & Developer Info -->
+        <div class="md:col-span-3 space-y-3">
+          <h4 class="text-white font-bold text-sm tracking-wider uppercase">Koneksi & Sosial</h4>
+          <p class="text-xs text-slate-400">Ikuti pembaruan seputar hidup sehat dan karya lainnya:</p>
+          
+          <!-- Instagram Badge Mandatory -->
+          <a 
+            href="https://instagram.com/arielrcun" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-pink-600 via-rose-600 to-amber-600 text-white font-bold text-xs hover:opacity-95 hover:scale-105 transition-all shadow-md"
+          >
+            <i class="fa-brands fa-instagram text-base"></i>
+            <span>@arielrcun</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4 text-center sm:text-left">
+        <div>
+          <!-- Required explicit copyright -->
+          <p class="font-medium text-slate-400">
+            Oleh Ariel Usman Copyright 2026. Seluruh hak cipta dilindungi undang-undang.
+          </p>
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="inline-flex items-center gap-1.5 text-brand-400">
+            <i class="fa-solid fa-heart text-xs text-rose-500"></i> Untuk Hidup Lebih Panjang & Bugar
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // --- 1. Mobile Menu and Sidebar Off-canvas Logic ---
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuIcon = document.getElementById('mobileMenuIcon');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.toggle('hidden');
+      if (isHidden) {
+        mobileMenuIcon.classList.replace('fa-xmark', 'fa-bars');
+      } else {
+        mobileMenuIcon.classList.replace('fa-bars', 'fa-xmark');
+      }
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenuIcon.classList.replace('fa-xmark', 'fa-bars');
+      });
+    });
+
+    // Sidebar drawer elements
+    const sidebarToggleBtn = document.getElementById('sidebarToggleBtn');
+    const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+    const infoSidebar = document.getElementById('infoSidebar');
+    const sidebarBackdrop = document.getElementById('sidebarBackdrop');
+
+    function toggleSidebar(open) {
+      if (open) {
+        infoSidebar.classList.remove('translate-x-full');
+        sidebarBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+        sidebarBackdrop.classList.add('opacity-100');
+        document.body.style.overflow = 'hidden';
+      } else {
+        infoSidebar.classList.add('translate-x-full');
+        sidebarBackdrop.classList.add('opacity-0', 'pointer-events-none');
+        sidebarBackdrop.classList.remove('opacity-100');
+        document.body.style.overflow = '';
+      }
+    }
+
+    sidebarToggleBtn.addEventListener('click', () => toggleSidebar(true));
+    closeSidebarBtn.addEventListener('click', () => toggleSidebar(false));
+    sidebarBackdrop.addEventListener('click', () => toggleSidebar(false));
+
+    // --- 2. Step & Calorie Calculator Logic (MET Formulas) ---
+    const weightInput = document.getElementById('weightInput');
+    const weightVal = document.getElementById('weightVal');
+    const durationInput = document.getElementById('durationInput');
+    const durationVal = document.getElementById('durationVal');
+    const paceRadios = document.querySelectorAll('input[name="pace"]');
+
+    const resultCalories = document.getElementById('resultCalories');
+    const resultDistance = document.getElementById('resultDistance');
+    const resultSteps = document.getElementById('resultSteps');
+    const resultEquivalent = document.getElementById('resultEquivalent');
+
+    // MET Constants based on walking speed
+    // Santai (3.5 km/h) = 2.8 MET
+    // Sedang (5.0 km/h) = 3.5 MET
+    // Cepat (6.5 km/h) = 4.8 MET
+    const paceConfig = {
+      santai: { met: 2.8, speedKmH: 3.5, stepsPerMin: 90 },
+      sedang: { met: 3.5, speedKmH: 5.0, stepsPerMin: 115 },
+      cepat:  { met: 4.8, speedKmH: 6.5, stepsPerMin: 135 }
+    };
+
+    function updateCalculator() {
+      const weight = parseFloat(weightInput.value) || 65;
+      const durationMin = parseFloat(durationInput.value) || 30;
+      
+      let selectedPace = 'sedang';
+      paceRadios.forEach(radio => {
+        if (radio.checked) selectedPace = radio.value;
+      });
+
+      const config = paceConfig[selectedPace];
+
+      // Update Slider labels
+      weightVal.innerText = `${weight} kg`;
+      durationVal.innerText = `${durationMin} Menit`;
+
+      // Formula: Calories = (MET * 3.5 * weightInKg / 200) * durationInMinutes
+      const caloriesBurned = Math.round((config.met * 3.5 * weight / 200) * durationMin);
+      
+      // Distance = speed * (time in hours)
+      const distanceKm = ((config.speedKmH * durationMin) / 60).toFixed(1);
+      
+      // Steps estimated
+      const totalSteps = Math.round(durationMin * config.stepsPerMin);
+
+      // Equivalent food representation
+      let foodSnippet = "1 Gelas Susu Kedelai";
+      if (caloriesBurned < 80) {
+        foodSnippet = "1 Buah Apel Segar (75 kkal)";
+      } else if (caloriesBurned < 150) {
+        foodSnippet = "1 Butir Telur Rebus & Roti Gandum";
+      } else if (caloriesBurned < 250) {
+        foodSnippet = "1 Porsi Nasi Putih Hangat (200 kkal)";
+      } else if (caloriesBurned < 400) {
+        foodSnippet = "Seporsi Mie Ayam Bakso";
+      } else {
+        foodSnippet = "1 Potong Pizza Keju Gurih (450+ kkal)";
+      }
+
+      // Render with animation effect
+      resultCalories.innerText = caloriesBurned.toLocaleString('id-ID');
+      resultDistance.innerText = distanceKm;
+      resultSteps.innerText = totalSteps.toLocaleString('id-ID');
+      resultEquivalent.innerText = foodSnippet;
+    }
+
+    weightInput.addEventListener('input', updateCalculator);
+    durationInput.addEventListener('input', updateCalculator);
+    paceRadios.forEach(radio => radio.addEventListener('change', updateCalculator));
+
+    // Initial calculation trigger
+    updateCalculator();
+
+    // --- 3. Walking Session Stopwatch & Pedometer Simulator ---
+    let timerInterval = null;
+    let elapsedSeconds = 0;
+    let liveSteps = 0;
+
+    const timerDisplay = document.getElementById('sessionTimerDisplay');
+    const stepsDisplay = document.getElementById('sessionStepsCount');
+    const startTimerBtn = document.getElementById('startTimerBtn');
+    const pauseTimerBtn = document.getElementById('pauseTimerBtn');
+    const resetTimerBtn = document.getElementById('resetTimerBtn');
+    const timerStatusMsg = document.getElementById('timerStatusMsg');
+
+    function formatTime(totalSeconds) {
+      const hrs = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+      const mins = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+      const secs = String(totalSeconds % 60).padStart(2, '0');
+      return `${hrs}:${mins}:${secs}`;
+    }
+
+    startTimerBtn.addEventListener('click', () => {
+      if (timerInterval) return;
+
+      startTimerBtn.classList.add('hidden');
+      pauseTimerBtn.classList.remove('hidden');
+      pauseTimerBtn.classList.add('flex');
+      timerStatusMsg.innerText = "Langkah terdeteksi! Bernapas rileks dan ayunkan lengan Anda.";
+      timerStatusMsg.classList.add('text-brand-600');
+
+      timerInterval = setInterval(() => {
+        elapsedSeconds++;
+        // Simulate approx 1.8 to 2 steps per second for realistic brisk pace
+        liveSteps += Math.floor(Math.random() * 2) + 1;
+        timerDisplay.innerText = formatTime(elapsedSeconds);
+        stepsDisplay.innerText = liveSteps.toLocaleString('id-ID');
+      }, 1000);
+    });
+
+    pauseTimerBtn.addEventListener('click', () => {
+      clearInterval(timerInterval);
+      timerInterval = null;
+      pauseTimerBtn.classList.add('hidden');
+      startTimerBtn.classList.remove('hidden');
+      timerStatusMsg.innerText = "Sesi dijeda. Ambil nafas atau minum seteguk air.";
+    });
+
+    resetTimerBtn.addEventListener('click', () => {
+      clearInterval(timerInterval);
+      timerInterval = null;
+      elapsedSeconds = 0;
+      liveSteps = 0;
+      timerDisplay.innerText = "00:00:00";
+      stepsDisplay.innerText = "0";
+      pauseTimerBtn.classList.add('hidden');
+      startTimerBtn.classList.remove('hidden');
+      timerStatusMsg.innerText = "Sesi direset. Siap untuk melangkah kembali?";
+      timerStatusMsg.classList.remove('text-brand-600');
+    });
+
+    // --- 4. Daily Habit Checklist Tracker ---
+    const taskCheckboxes = document.querySelectorAll('.task-checkbox');
+    const checkprogressBar = document.getElementById('checkprogressBar');
+    const checklistPercent = document.getElementById('checklistPercent');
+    const congratsBox = document.getElementById('congratsBox');
+
+    function updateChecklistProgress() {
+      const total = taskCheckboxes.length;
+      let checkedCount = 0;
+      taskCheckboxes.forEach(cb => {
+        if (cb.checked) checkedCount++;
+      });
+
+      const percentage = Math.round((checkedCount / total) * 100);
+      checkprogressBar.style.width = `${percentage}%`;
+      checklistPercent.innerText = `${percentage}%`;
+
+      if (percentage === 100) {
+        congratsBox.classList.remove('hidden');
+      } else {
+        congratsBox.classList.add('hidden');
+      }
+    }
+
+    taskCheckboxes.forEach(cb => {
+      cb.addEventListener('change', updateChecklistProgress);
+    });
+
+    // Smooth scroll offset adjustment for sticky navbar
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          const navOffset = 80;
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - navOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
