@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Primary Meta Tags -->
+    <title>Sains di Balik Spaghetti: Dari Kaku Menjadi Lentur | SpaghettiLab</title>
+    <meta name="title" content="Sains di Balik Spaghetti: Dari Kaku Menjadi Lentur | SpaghettiLab">
+    <meta name="description" content="Eksplorasi ilmiah interaktif: Bagaimana batang pasta spaghetti yang rapuh dan kaku berubah menjadi helai lentur, kenyal, dan Al Dente melalui proses gelatinisasi pati dan hidrasi protein gluten.">
+    <meta name="keywords" content="spaghetti, memasak pasta, sains makanan, gelatinisasi pati, gluten, al dente, kenapa pasta lentur, kimia dapur">
+    <meta name="author" content="Ariel Usman">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://spaghettilab.id/">
+    <meta property="og:title" content="Sains di Balik Spaghetti: Dari Kaku Menjadi Lentur">
+    <meta property="og:description" content="Mengapa spaghetti yang rapuh bisa menjadi lentur dan kenyal saat direbus? Jelajahi simulasi masak interaktif dan sains dapur di sini!">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Sains di Balik Spaghetti: Dari Kaku Menjadi Lentur">
+    <meta property="twitter:description" content="Simulasi ilmiah interaktif perubahan fisik & kimia spaghetti saat dimasak hingga Al Dente.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Favicon SVG -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍝</text></svg>">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pasta: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        tomato: {
+                            50: '#fff1f2',
+                            500: '#f43f5e',
+                            600: '#e11d48',
+                            700: '#be123c',
+                        },
+                        basil: {
+                            500: '#10b981',
+                            600: '#059669',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-serif-display {
+            font-family: 'Playfair Display', serif;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .glass-panel-dark {
+            background: rgba(254, 243, 199, 0.82);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(251, 191, 36, 0.35);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fef3c7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f59e0b;
+            border-radius: 9999px;
+        }
+        /* Boiling bubbles animation */
+        @keyframes float-bubble {
+            0% { transform: translateY(0) scale(0.6); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-110px) scale(1.2); opacity: 0; }
+        }
+        .bubble {
+            animation: float-bubble 2.2s infinite ease-in;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-100 text-stone-800 min-h-screen relative overflow-x-hidden selection:bg-amber-400 selection:text-white">
+
+    <!-- OVERLAY SHADOW FOR SIDEBAR -->
+    <div id="sidebarOverlay" onclick="toggleSidebar()" class="fixed inset-0 bg-stone-900/40 backdrop-blur-sm z-40 hidden transition-opacity duration-300"></div>
+
+    <!-- SIDEBAR (DRAWER) -->
+    <aside id="sidebar" class="fixed top-0 right-0 w-80 sm:w-96 h-full bg-white/95 backdrop-blur-xl shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out border-l border-amber-200 flex flex-col">
+        <!-- Sidebar Header -->
+        <div class="p-6 border-b border-amber-100 flex items-center justify-between bg-amber-500/10">
+            <div class="flex items-center gap-3">
+                <span class="text-2xl">📚</span>
+                <div>
+                    <h3 class="font-bold text-stone-800 text-lg">Referensi Dapur</h3>
+                    <p class="text-xs text-amber-700 font-medium">Panduan Lanjutan & Rahasia Pasta</p>
+                </div>
+            </div>
+            <button onclick="toggleSidebar()" class="w-9 h-9 rounded-full bg-white shadow-sm flex items-center justify-center text-stone-500 hover:text-stone-800 hover:bg-amber-100 transition">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+
+        <!-- Sidebar Content -->
+        <div class="p-6 overflow-y-auto flex-1 space-y-6 text-sm">
+            <!-- Item 1: Waktu Lentur Pasta -->
+            <div class="bg-amber-50/80 p-4 rounded-2xl border border-amber-200">
+                <div class="flex items-center gap-2 font-bold text-amber-900 mb-2">
+                    <i class="fa-solid fa-clock text-amber-600"></i>
+                    <span>Ketebalan vs Waktu Lentur</span>
+                </div>
+                <p class="text-stone-600 text-xs mb-3">Semakin tipis pasta, semakin cepat penetrasi air mendidih ke inti pati:</p>
+                <ul class="space-y-2 text-xs">
+                    <li class="flex justify-between items-center bg-white p-2 rounded-lg shadow-xs">
+                        <span class="font-medium">Capellini (Angel Hair)</span>
+                        <span class="font-bold text-amber-600">2 - 4 Menit</span>
+                    </li>
+                    <li class="flex justify-between items-center bg-white p-2 rounded-lg shadow-xs">
+                        <span class="font-medium">Spaghetti Standar</span>
+                        <span class="font-bold text-amber-600">8 - 10 Menit</span>
+                    </li>
+                    <li class="flex justify-between items-center bg-white p-2 rounded-lg shadow-xs">
+                        <span class="font-medium">Fettuccine</span>
+                        <span class="font-bold text-amber-600">10 - 12 Menit</span>
+                    </li>
+                    <li class="flex justify-between items-center bg-white p-2 rounded-lg shadow-xs">
+                        <span class="font-medium">Rigatoni / Penne</span>
+                        <span class="font-bold text-amber-600">11 - 13 Menit</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Item 2: Rahasia Pasta Water -->
+            <div class="bg-rose-50/80 p-4 rounded-2xl border border-rose-200">
+                <div class="flex items-center gap-2 font-bold text-rose-900 mb-2">
+                    <i class="fa-solid fa-droplet text-rose-600"></i>
+                    <span>"Liquid Gold" (Air Rebusan)</span>
+                </div>
+                <p class="text-stone-600 text-xs leading-relaxed">
+                    Saat spaghetti menjadi lentur, sebagian amilosa lepas ke air rebusan. Jangan buang seluruh airnya! 2 sendok sayur air rebusan kaya pati ini berfungsi sebagai <strong>emulsifier alami</strong> untuk menyatukan lemak saus dan pasta menjadi krim lembut berkilau.
+                </p>
+            </div>
+
+            <!-- Item 3: Tips Garam -->
+            <div class="bg-emerald-50/80 p-4 rounded-2xl border border-emerald-200">
+                <div class="flex items-center gap-2 font-bold text-emerald-900 mb-2">
+                    <i class="fa-solid fa-kitchen-set text-emerald-600"></i>
+                    <span>Rasio Emas Rebusan</span>
+                </div>
+                <p class="text-stone-600 text-xs leading-relaxed">
+                    Rumus klasik Italia <strong>100 : 1000 : 10</strong>:
+                    <br>• 100g Pasta Kering
+                    <br>• 1000ml (1 Liter) Air Mendidih
+                    <br>• 10g Garam Dapur (Memberi rasa langsung hingga ke inti saat molekul mengembang).
+                </p>
+            </div>
+
+            <!-- Author Card inside Sidebar -->
+            <div class="p-4 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-md">
+                <p class="text-xs uppercase tracking-wider text-amber-100 font-semibold">Kurator Web</p>
+                <h4 class="font-bold text-base mt-1">Ariel Usman</h4>
+                <p class="text-xs opacity-90 mt-1">Eksplorasi fisika & kimia kuliner modern.</p>
+                <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 backdrop-blur-md px-3 py-1.5 rounded-lg text-xs font-semibold transition">
+                    <i class="fa-brands fa-instagram text-sm"></i> @arielrcun
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-30 w-full glass-panel border-b border-amber-200/70 transition-all duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Project Brand (Left) -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-500 via-orange-500 to-yellow-400 flex items-center justify-center text-white shadow-md shadow-orange-500/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-bowl-food text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-lg sm:text-xl font-extrabold tracking-tight text-stone-900 flex items-center gap-1.5">
+                        Spaghetti<span class="text-amber-600">Lab</span>
+                        <span class="text-xs px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 font-semibold hidden md:inline-block">Sains Masak</span>
+                    </span>
+                    <p class="text-[11px] text-stone-500 font-medium hidden sm:block">Dari Kaku Menjadi Lentur</p>
+                </div>
+            </a>
+
+            <!-- Nav Links (Center / Right) -->
+            <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-stone-700">
+                <a href="#sains" class="hover:text-amber-600 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-atom text-xs text-amber-500"></i> Sains & Kimia
+                </a>
+                <a href="#simulator" class="hover:text-amber-600 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-flask-vial text-xs text-amber-500"></i> Simulator Kelenturan
+                </a>
+                <a href="#tahapan" class="hover:text-amber-600 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-stairs text-xs text-amber-500"></i> 4 Fase Perubahan
+                </a>
+                <a href="#mitos" class="hover:text-amber-600 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-lightbulb text-xs text-amber-500"></i> Mitos Dapur
+                </a>
+                <a href="#timer" class="hover:text-amber-600 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-stopwatch text-xs text-amber-500"></i> Timer Al Dente
+                </a>
+            </nav>
+
+            <!-- Actions (Right) -->
+            <div class="flex items-center gap-3">
+                <button onclick="toggleSidebar()" aria-label="Buka Menu Sidebar" class="flex items-center gap-2 bg-amber-500/10 hover:bg-amber-500/20 text-amber-900 border border-amber-300/60 font-semibold px-3.5 py-2 rounded-xl text-sm transition">
+                    <i class="fa-solid fa-book-open text-amber-600"></i>
+                    <span class="hidden sm:inline">Info Terkait</span>
+                </button>
+                <a href="#simulator" class="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold px-4 py-2 rounded-xl text-sm shadow-md shadow-orange-500/25 transition transform active:scale-95 flex items-center gap-1.5">
+                    <i class="fa-solid fa-play text-xs"></i>
+                    <span>Coba Uji</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (Glassmorphism & High-Impact Visuals) -->
+    <section class="relative pt-8 pb-16 md:py-20 overflow-hidden">
+        <!-- Decorative Ambient Light Balls -->
+        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-gradient-to-b from-amber-300/40 via-orange-300/30 to-transparent blur-3xl pointer-events-none rounded-full"></div>
+        <div class="absolute top-1/3 -left-32 w-80 h-80 bg-yellow-300/30 blur-3xl pointer-events-none rounded-full"></div>
+        <div class="absolute bottom-10 -right-20 w-96 h-96 bg-rose-300/20 blur-3xl pointer-events-none rounded-full"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <!-- Text Intro -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 border border-amber-300 shadow-sm text-xs font-bold text-amber-800 tracking-wide uppercase">
+                        <span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
+                        Fisika & Kimia Kuliner
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-stone-900 tracking-tight leading-[1.15]">
+                        Bagaimana Spaghetti <span class="bg-gradient-to-r from-amber-600 via-orange-600 to-amber-500 bg-clip-text text-transparent underline decoration-amber-300/80 decoration-wavy">Kaku Menjadi Lentur</span>?
+                    </h1>
+                    <p class="text-stone-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Di dalam kotak, batang pasta terbuat dari adonan semolina gandum durum yang kering, padat, dan rapuh. Namun hanya dalam <strong>9 menit di air 100°C</strong>, struktur mikroskopisnya mengalami transformasi radikal melalui <em>gelatinisasi pati</em> dan <em>relaksasi gluten</em>.
+                    </p>
+
+                    <!-- Interactive CTAs -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#simulator" class="px-6 py-3.5 rounded-2xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-base shadow-lg shadow-amber-500/30 transition transform hover:-translate-y-0.5 flex items-center gap-2">
+                            <i class="fa-solid fa-fire-burner"></i>
+                            <span>Buka Lab Simulasi</span>
+                        </a>
+                        <a href="#sains" class="px-6 py-3.5 rounded-2xl glass-panel hover:bg-white/90 text-stone-800 font-bold text-base border border-amber-300 transition flex items-center gap-2">
+                            <i class="fa-solid fa-microscope text-amber-600"></i>
+                            <span>Pelajari Struktur Mikro</span>
+                        </a>
+                    </div>
+
+                    <!-- Micro Metric Badges -->
+                    <div class="grid grid-cols-3 gap-3 pt-4 max-w-lg mx-auto lg:mx-0">
+                        <div class="glass-panel p-3 rounded-2xl text-center border border-amber-200">
+                            <span class="text-amber-600 font-extrabold text-xl sm:text-2xl block">100°C</span>
+                            <span class="text-[11px] text-stone-500 font-medium">Titik Gelatinisasi</span>
+                        </div>
+                        <div class="glass-panel p-3 rounded-2xl text-center border border-amber-200">
+                            <span class="text-amber-600 font-extrabold text-xl sm:text-2xl block">~150%</span>
+                            <span class="text-[11px] text-stone-500 font-medium">Kenaikan Bobot Air</span>
+                        </div>
+                        <div class="glass-panel p-3 rounded-2xl text-center border border-amber-200">
+                            <span class="text-amber-600 font-extrabold text-xl sm:text-2xl block">Al Dente</span>
+                            <span class="text-[11px] text-stone-500 font-medium">Kelenturan Ideal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Glassmorphic Visual Card -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative glow -->
+                        <div class="absolute -inset-1.5 bg-gradient-to-r from-amber-400 to-orange-400 rounded-3xl blur opacity-30"></div>
+                        
+                        <div class="relative glass-panel rounded-3xl p-6 sm:p-8 shadow-xl border border-white/60 space-y-6">
+                            <div class="flex items-center justify-between border-b border-amber-200 pb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-xl bg-orange-500/10 text-orange-600 flex items-center justify-center font-bold">
+                                        <i class="fa-solid fa-wheat-awn text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-stone-800 text-sm">Gandum Durum (Semolina)</h3>
+                                        <p class="text-xs text-stone-500">Bahan Dasar Spaghetti Berkualitas</p>
+                                    </div>
+                                </div>
+                                <span class="bg-amber-100 text-amber-800 text-xs font-bold px-2.5 py-1 rounded-full">Kadar Protein ~13%</span>
+                            </div>
+
+                            <!-- Visual Comparison Graphic -->
+                            <div class="space-y-4">
+                                <!-- Sebelum Masak -->
+                                <div class="bg-white/80 p-3.5 rounded-2xl border border-amber-100 flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center text-amber-700 text-xl font-bold shrink-0">
+                                        🥖
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-center mb-1">
+                                            <span class="text-xs font-bold text-stone-800">Kondisi Kering (0 Menit)</span>
+                                            <span class="text-[10px] bg-stone-100 text-stone-600 px-2 py-0.5 rounded font-mono">Kaku & Rapuh</span>
+                                        </div>
+                                        <div class="w-full bg-stone-200 h-2 rounded-full overflow-hidden">
+                                            <div class="bg-stone-400 h-full w-[10%]"></div>
+                                        </div>
+                                        <p class="text-[11px] text-stone-500 mt-1">Granula pati terkunci rapat dalam matriks protein padat tanpa molekul air.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Saat Al Dente -->
+                                <div class="bg-gradient-to-r from-amber-50 to-orange-50 p-3.5 rounded-2xl border border-amber-300 flex items-center gap-4 shadow-sm">
+                                    <div class="w-12 h-12 rounded-xl bg-amber-500 flex items-center justify-center text-white text-xl font-bold shrink-0 shadow-md">
+                                        🍝
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-center mb-1">
+                                            <span class="text-xs font-bold text-amber-900">Al Dente Sempurna (9 Menit)</span>
+                                            <span class="text-[10px] bg-amber-200 text-amber-900 px-2 py-0.5 rounded font-bold font-mono">Lentur & Membal</span>
+                                        </div>
+                                        <div class="w-full bg-amber-200 h-2 rounded-full overflow-hidden">
+                                            <div class="bg-gradient-to-r from-amber-500 to-orange-500 h-full w-[88%]"></div>
+                                        </div>
+                                        <p class="text-[11px] text-amber-800 mt-1">Pati amilosa menyerap air panas, mekar & diikat elastis oleh jaring gluten.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Live Insight Quote -->
+                            <div class="p-3.5 rounded-2xl bg-amber-500/10 border border-amber-200 text-xs text-stone-700 italic flex gap-3 items-start">
+                                <i class="fa-solid fa-quote-left text-amber-600 text-base mt-0.5"></i>
+                                <span>"Perebusan pasta bukan sekadar menghangatkan makanan, melainkan sintesis polimer alami hidrasi pati dan pemadatan jaringan protein."</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN BODY CONTENT -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-24">
+
+        <!-- SECTION 1: INTERACTIVE COOKING SIMULATOR -->
+        <section id="simulator" class="scroll-mt-28">
+            <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+                <span class="text-xs font-bold text-amber-700 tracking-wider uppercase px-3 py-1 rounded-full bg-amber-200/70 border border-amber-300">
+                    🔬 Laboratorium Interaktif
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900">
+                    Simulasi Dinamis: Uji Kelenturan Batang Pasta
+                </h2>
+                <p class="text-stone-600 text-sm sm:text-base">
+                    Geser tuas durasi waktu rebusan di bawah untuk mengamati perubahan fisik, lengkungan batang pasta saat digantung, dan hidrasi internal secara real-time.
+                </p>
+            </div>
+
+            <!-- Simulator Card Container -->
+            <div class="glass-panel rounded-3xl p-6 sm:p-8 md:p-10 shadow-xl border border-amber-200">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Left: Interactive Visual Spaghetti Canvas -->
+                    <div class="lg:col-span-7 bg-gradient-to-b from-stone-900 via-stone-850 to-stone-950 p-6 rounded-2xl shadow-inner border border-stone-800 text-white relative overflow-hidden flex flex-col justify-between min-h-[360px]">
+                        
+                        <!-- Water/Boiling Effect in Sim -->
+                        <div class="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-cyan-900/40 via-blue-900/20 to-transparent pointer-events-none"></div>
+                        <div class="absolute bottom-2 left-10 w-2.5 h-2.5 rounded-full bg-cyan-300/40 bubble"></div>
+                        <div class="absolute bottom-4 left-1/3 w-3.5 h-3.5 rounded-full bg-cyan-300/40 bubble" style="animation-delay: 0.8s;"></div>
+                        <div class="absolute bottom-1 right-1/4 w-2 h-2 rounded-full bg-cyan-300/40 bubble" style="animation-delay: 1.4s;"></div>
+
+                        <!-- Top Status bar inside monitor -->
+                        <div class="flex items-center justify-between text-xs font-mono text-amber-400 z-10 border-b border-stone-800 pb-3">
+                            <span class="flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                                SIMULASI PENETRASI TERMAL: 100°C
+                            </span>
+                            <span id="displayPhaseTag" class="bg-amber-500/20 text-amber-300 px-2.5 py-1 rounded border border-amber-400/30">
+                                00:00 - FASE KERING PADAT
+                            </span>
+                        </div>
+
+                        <!-- Center SVG Spaghetti Strand Rendering -->
+                        <div class="my-auto py-8 flex flex-col items-center justify-center relative z-10">
+                            <!-- Fork / Clamp Holding Pasta -->
+                            <div class="flex flex-col items-center">
+                                <div class="w-8 h-8 rounded-full bg-stone-700 border-2 border-stone-500 flex items-center justify-center shadow-lg">
+                                    <i class="fa-solid fa-utensils text-xs text-amber-400"></i>
+                                </div>
+                                <div class="w-1.5 h-4 bg-stone-500 rounded-b"></div>
+                            </div>
+
+                            <!-- Dynamic SVG String for Spaghetti -->
+                            <svg id="spaghettiSvg" class="w-72 sm:w-80 h-44 overflow-visible" viewBox="0 0 300 160">
+                                <defs>
+                                    <linearGradient id="pastaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#fde047" />
+                                        <stop offset="50%" stop-color="#f59e0b" />
+                                        <stop offset="100%" stop-color="#d97706" />
+                                    </linearGradient>
+                                    <filter id="glow">
+                                        <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#f59e0b" flood-opacity="0.4"/>
+                                    </filter>
+                                </defs>
+                                <!-- The Spaghetti Path -->
+                                <path id="pastaPath" d="M 50,20 L 250,20" stroke="url(#pastaGrad)" stroke-width="7" stroke-linecap="round" fill="none" filter="url(#glow)" class="transition-all duration-300 ease-out" />
+                            </svg>
+
+                            <p id="spaghettiVisualLabel" class="text-xs font-mono text-stone-400 mt-2">
+                                Batang Horizontal Kaku (Modulus Elastisitas Tinggi)
+                            </p>
+                        </div>
+
+                        <!-- Live Measurements HUD inside Simulator -->
+                        <div class="grid grid-cols-3 gap-2 pt-3 border-t border-stone-800 text-center font-mono text-xs z-10">
+                            <div>
+                                <span class="text-stone-400 block text-[10px]">KEKELAKUAN (F)</span>
+                                <span id="hudStiffness" class="text-amber-400 font-bold text-sm">100% Kaku</span>
+                            </div>
+                            <div>
+                                <span class="text-stone-400 block text-[10px]">SERAPAN AIR (H2O)</span>
+                                <span id="hudWater" class="text-cyan-400 font-bold text-sm">+0% Bobot</span>
+                            </div>
+                            <div>
+                                <span class="text-stone-400 block text-[10px]">LENGKUNG SUDUT</span>
+                                <span id="hudAngle" class="text-rose-400 font-bold text-sm">0° (Lurus)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Control Sliders & Scientific Readings -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label for="cookTimeSlider" class="text-sm font-bold text-stone-800 flex items-center gap-2">
+                                    <i class="fa-solid fa-stopwatch text-amber-600"></i> Durasi Perebusan:
+                                </label>
+                                <span id="sliderTimeValue" class="text-xl font-extrabold text-amber-600 font-mono bg-amber-100 px-3 py-1 rounded-xl">0 Menit</span>
+                            </div>
+                            <!-- Time Slider -->
+                            <input id="cookTimeSlider" type="range" min="0" max="15" step="0.5" value="0" class="w-full h-3 bg-amber-200 rounded-lg appearance-none cursor-pointer accent-amber-600">
+                            <div class="flex justify-between text-[11px] text-stone-400 font-semibold px-1 mt-1.5">
+                                <span>0 m (Mentah)</span>
+                                <span>4 m</span>
+                                <span class="text-amber-700 font-bold">9 m (Al Dente)</span>
+                                <span>12 m</span>
+                                <span>15 m (Overcooked)</span>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Explanation Box -->
+                        <div class="p-4 rounded-2xl bg-amber-50 border border-amber-200 space-y-2">
+                            <h4 id="simStatusTitle" class="font-bold text-amber-900 text-base flex items-center gap-2">
+                                <i class="fa-solid fa-circle-info text-amber-600"></i>
+                                Tahap Awal: Kaku & Rapuh
+                            </h4>
+                            <p id="simStatusDesc" class="text-xs text-stone-600 leading-relaxed">
+                                Spaghetti dalam bentuk mentah memiliki kadar air kurang dari 12%. Rantai molekul amilosa dan amilopektin terkunci rapat di dalam matriks protein gluten durum yang kering dan getas.
+                            </p>
+                        </div>
+
+                        <!-- Quick Presets -->
+                        <div class="space-y-2">
+                            <span class="text-xs font-bold text-stone-700 uppercase tracking-wide">Pilih Cepat Status:</span>
+                            <div class="grid grid-cols-4 gap-2">
+                                <button onclick="setCookTime(0)" class="preset-btn px-2.5 py-2 rounded-xl bg-white hover:bg-amber-100 text-stone-700 text-xs font-semibold border border-amber-200 transition text-center shadow-xs">
+                                    Mentah<br><span class="text-[10px] text-stone-400">0 m</span>
+                                </button>
+                                <button onclick="setCookTime(4)" class="preset-btn px-2.5 py-2 rounded-xl bg-white hover:bg-amber-100 text-stone-700 text-xs font-semibold border border-amber-200 transition text-center shadow-xs">
+                                    Setengah<br><span class="text-[10px] text-stone-400">4 m</span>
+                                </button>
+                                <button onclick="setCookTime(9)" class="preset-btn px-2.5 py-2 rounded-xl bg-amber-500 text-white text-xs font-bold border border-amber-500 transition text-center shadow-md">
+                                    Al Dente<br><span class="text-[10px] text-amber-100">9 m</span>
+                                </button>
+                                <button onclick="setCookTime(14)" class="preset-btn px-2.5 py-2 rounded-xl bg-white hover:bg-amber-100 text-stone-700 text-xs font-semibold border border-amber-200 transition text-center shadow-xs">
+                                    Lembek<br><span class="text-[10px] text-stone-400">14 m</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Micro Textual Fact -->
+                        <div class="flex items-center gap-3 p-3 rounded-xl bg-white/70 border border-stone-200 text-xs text-stone-600">
+                            <i class="fa-solid fa-temperature-arrow-up text-amber-500 text-lg"></i>
+                            <span>Pada suhu &gt;60°C, ikatan hidrogen air mulai melemahkan struktur kristal pati (Starch Gelatinization).</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: SAINS & STRUKTUR KIMIA -->
+        <section id="sains" class="scroll-mt-28">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                <span class="text-xs font-bold text-amber-700 tracking-wider uppercase px-3 py-1 rounded-full bg-amber-200/70 border border-amber-300">
+                    🔬 Molekuler & Biokimia
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900">
+                    Dua Aktor Utama: Mengapa Batang Kering Melunak
+                </h2>
+                <p class="text-stone-600 text-sm sm:text-base">
+                    Pasta bukan sekadar tepung; ini adalah sistem rekayasa bahan alami antara karbohidrat kompleks dan jalinan protein.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Card 1: Gelatinisasi Pati -->
+                <div class="glass-panel rounded-3xl p-6 sm:p-8 border border-amber-200 shadow-lg relative overflow-hidden flex flex-col justify-between hover:shadow-xl transition-shadow">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center text-2xl font-bold">
+                            <i class="fa-solid fa-shapes"></i>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-stone-900">1. Gelatinisasi Pati (Starch)</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">
+                            Pati pada gandum durum terdiri dari <strong>Amilosa</strong> (rantai lurus) dan <strong>Amilopektin</strong> (rantai bercabang). Saat mentah, keduanya terikat rapat seperti kristal padat yang kedap air.
+                        </p>
+                        <div class="bg-amber-50 p-4 rounded-2xl border border-amber-200 space-y-2">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-amber-800">Mekanisme Pelunakan:</h4>
+                            <p class="text-xs text-stone-700 leading-relaxed">
+                                Saat air mendidih (100°C) menembus pori-pori spaghetti, energi kinetik panas memutuskan ikatan hidrogen antar molekul pati. Air terserap masuk ke dalam granula pati hingga membengkak dan pecah membentuk gel yang lembut dan fleksibel.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-amber-100 flex items-center justify-between text-xs text-stone-500 font-semibold">
+                        <span>Efek Fisik: Menghilangkan kekakuan getas</span>
+                        <span class="text-amber-600">Hidrasi Panas</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Koagulasi & Jaring Gluten -->
+                <div class="glass-panel rounded-3xl p-6 sm:p-8 border border-orange-200 shadow-lg relative overflow-hidden flex flex-col justify-between hover:shadow-xl transition-shadow">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-orange-500/10 text-orange-600 flex items-center justify-center text-2xl font-bold">
+                            <i class="fa-solid fa-dna"></i>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-stone-900">2. Jaring Protein Gluten</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">
+                            Gandum durum memiliki kadar protein tinggi (Gliadin & Glutenin). Saat adonan dibuat, keduanya bersatu membentuk <strong>jaring gluten elastis</strong> tiga dimensi.
+                        </p>
+                        <div class="bg-orange-50 p-4 rounded-2xl border border-orange-200 space-y-2">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-orange-900">Mekanisme Kelenturan:</h4>
+                            <p class="text-xs text-stone-700 leading-relaxed">
+                                Jika hanya ada pati, spaghetti akan larut menjadi bubur saat terkena air panas. Namun protein gluten terdenaturasi dan <em>terkoagulasi</em> (memadat lentur), berfungsi bagai jaring pengaman elastis yang memenjarakan gel pati agar pasta tetap utuh dan kenyal membal.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-orange-100 flex items-center justify-between text-xs text-stone-500 font-semibold">
+                        <span>Efek Fisik: Menjaga elastisitas & tekstur kenyal</span>
+                        <span class="text-orange-600">Struktur Penyangga</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: 4 TAHAPAN PERUBAHAN FISIK -->
+        <section id="tahapan" class="scroll-mt-28">
+            <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+                <span class="text-xs font-bold text-amber-700 tracking-wider uppercase px-3 py-1 rounded-full bg-amber-200/70 border border-amber-300">
+                    ⏱️ Garis Waktu
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900">
+                    4 Fase Perubahan: Dari Panci ke Piring
+                </h2>
+                <p class="text-stone-600 text-sm sm:text-base">
+                    Perjalanan molekuler air dari permukaan luar meresap perlahan menuju titik pusat batang spaghetti.
+                </p>
+            </div>
+
+            <!-- Steps Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Phase 1 -->
+                <div class="glass-panel p-6 rounded-3xl border border-amber-200 relative group hover:-translate-y-1 transition duration-200">
+                    <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 font-extrabold flex items-center justify-center text-sm mb-4">
+                        01
+                    </div>
+                    <h3 class="text-lg font-bold text-stone-900 mb-1">Fase Hidrasi Awal</h3>
+                    <span class="text-xs font-mono font-bold text-amber-600 block mb-3">Menit 0 - 2</span>
+                    <p class="text-xs text-stone-600 leading-relaxed">
+                        Air panas menyentuh permukaan luar batang pasta. Permukaan luar mulai basah dan licin, tetapi bagian dalam 90% masih kering, keras, dan rapuh. Batang masih tegak berdiri di atas panci.
+                    </p>
+                    <div class="mt-4 pt-3 border-t border-amber-100 flex items-center gap-1.5 text-[11px] text-stone-500">
+                        <i class="fa-solid fa-arrows-to-dot text-amber-500"></i> Penetrasi air: ~15%
+                    </div>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="glass-panel p-6 rounded-3xl border border-amber-200 relative group hover:-translate-y-1 transition duration-200">
+                    <div class="w-10 h-10 rounded-xl bg-amber-200 text-amber-800 font-extrabold flex items-center justify-center text-sm mb-4">
+                        02
+                    </div>
+                    <h3 class="text-lg font-bold text-stone-900 mb-1">Fase Pelunakan Awal</h3>
+                    <span class="text-xs font-mono font-bold text-amber-600 block mb-3">Menit 3 - 6</span>
+                    <p class="text-xs text-stone-600 leading-relaxed">
+                        Suhu dalam spaghetti mencapai titik kritis gelatinisasi (60°-70°C). Ujung pasta yang terendam air mulai melengkung lemas dan tenggelam ke dalam air seluruhnya karena gravitasi.
+                    </p>
+                    <div class="mt-4 pt-3 border-t border-amber-100 flex items-center gap-1.5 text-[11px] text-stone-500">
+                        <i class="fa-solid fa-arrows-to-dot text-amber-500"></i> Penetrasi air: ~50%
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="glass-panel-dark p-6 rounded-3xl border-2 border-amber-400 relative group hover:-translate-y-1 transition duration-200 shadow-md">
+                    <div class="absolute -top-3 right-4 bg-amber-600 text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                        Sempurna
+                    </div>
+                    <div class="w-10 h-10 rounded-xl bg-amber-500 text-white font-extrabold flex items-center justify-center text-sm mb-4 shadow">
+                        03
+                    </div>
+                    <h3 class="text-lg font-bold text-stone-900 mb-1">Al Dente (Gigitan Pas)</h3>
+                    <span class="text-xs font-mono font-bold text-amber-800 block mb-3">Menit 8 - 10</span>
+                    <p class="text-xs text-stone-700 leading-relaxed">
+                        Air telah menghidrasi hampir seluruh batang, namun masih meninggalkan satu titik mikroskopis putih kecil di tengah. Lentur, tidak patah, tetapi tetap memiliki kekenyalan yang memuaskan saat digigit.
+                    </p>
+                    <div class="mt-4 pt-3 border-t border-amber-300/50 flex items-center gap-1.5 text-[11px] text-amber-900 font-medium">
+                        <i class="fa-solid fa-star text-amber-600"></i> Standar Emas Kuliner
+                    </div>
+                </div>
+
+                <!-- Phase 4 -->
+                <div class="glass-panel p-6 rounded-3xl border border-rose-200 relative group hover:-translate-y-1 transition duration-200">
+                    <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-700 font-extrabold flex items-center justify-center text-sm mb-4">
+                        04
+                    </div>
+                    <h3 class="text-lg font-bold text-stone-900 mb-1">Overcooked (Lembek)</h3>
+                    <span class="text-xs font-mono font-bold text-rose-600 block mb-3">Menit &gt; 12</span>
+                    <p class="text-xs text-stone-600 leading-relaxed">
+                        Jaring gluten rusak akibat penetrasi air berlebih. Granula pati meledak keluar menyebabkan pasta kehilangan kelenturan elastisnya, menjadi lembek, basah, dan mudah hancur terputus.
+                    </p>
+                    <div class="mt-4 pt-3 border-t border-rose-100 flex items-center gap-1.5 text-[11px] text-rose-600">
+                        <i class="fa-solid fa-triangle-exclamation"></i> Kehilangan Karakter Pasta
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: INTERACTIVE TIMER AL DENTE & MITOS DAPUR -->
+        <section id="mitos" class="scroll-mt-28">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Left: Mitos vs Fakta Sains -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div>
+                        <span class="text-xs font-bold text-amber-700 tracking-wider uppercase px-3 py-1 rounded-full bg-amber-200/70 border border-amber-300">
+                            💡 Mitos Sains Dapur
+                        </span>
+                        <h2 class="text-3xl font-extrabold text-stone-900 mt-2">
+                            Fakta Nyata di Balik Kebiasaan Memasak
+                        </h2>
+                    </div>
+
+                    <!-- Accordion / Interactive Myth Cards -->
+                    <div class="space-y-4">
+                        <!-- Myth 1 -->
+                        <div class="glass-panel p-5 rounded-2xl border border-amber-200">
+                            <div class="flex items-start gap-3.5">
+                                <span class="w-8 h-8 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center font-bold shrink-0 text-sm">❌</span>
+                                <div class="space-y-1">
+                                    <h4 class="font-bold text-stone-900 text-sm sm:text-base">Mitos: "Tambahkan minyak ke air rebusan agar spaghetti tidak saling menempel"</h4>
+                                    <p class="text-xs text-stone-600 leading-relaxed">
+                                        <strong>Fakta Sains:</strong> Minyak memiliki densitas lebih ringan daripada air sehingga hanya mengapung di permukaan. Minyak tidak bersentuhan dengan spaghetti di dasar panci. Justru saat ditiriskan, lapisan minyak akan melapisi pasta dan membuat saus tidak bisa menempel! Kuncinya cukup: <em>gunakan panci besar dan aduk pada 2 menit pertama</em>.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Myth 2 -->
+                        <div class="glass-panel p-5 rounded-2xl border border-amber-200">
+                            <div class="flex items-start gap-3.5">
+                                <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold shrink-0 text-sm">✅</span>
+                                <div class="space-y-1">
+                                    <h4 class="font-bold text-stone-900 text-sm sm:text-base">Fakta: "Garam tidak hanya untuk rasa, tapi membatasi larutnya pati"</h4>
+                                    <p class="text-xs text-stone-600 leading-relaxed">
+                                        <strong>Fakta Sains:</strong> Ion natrium klorida (NaCl) berinteraksi dengan protein gluten, memperkuat kestabilan jaringannya sehingga gelatinisasi pati berjalan lebih terkontrol dan pasta tidak mudah menjadi lembek berlendir.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Myth 3 -->
+                        <div class="glass-panel p-5 rounded-2xl border border-amber-200">
+                            <div class="flex items-start gap-3.5">
+                                <span class="w-8 h-8 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center font-bold shrink-0 text-sm">❌</span>
+                                <div class="space-y-1">
+                                    <h4 class="font-bold text-stone-900 text-sm sm:text-base">Mitos: "Lempar spaghetti ke dinding keramik, jika menempel berarti sudah matang"</h4>
+                                    <p class="text-xs text-stone-600 leading-relaxed">
+                                        <strong>Fakta Sains:</strong> Spaghetti menempel ke dinding karena lapisan pati luar telah menjadi lem lengket (starch glue). Pasta yang overcooked justru paling mudah menempel, padahal pasta Al Dente ideal tidak boleh se-lembek itu. Cara terbaik adalah mencicipi gigitannya langsung.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Live Kitchen Stopwatch Timer -->
+                <div id="timer" class="lg:col-span-5 scroll-mt-28">
+                    <div class="glass-panel p-6 sm:p-8 rounded-3xl border-2 border-amber-300 shadow-xl space-y-6">
+                        <div class="flex items-center justify-between border-b border-amber-200 pb-3">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-stopwatch text-amber-600 text-xl"></i>
+                                <h3 class="font-bold text-stone-900 text-base">Timer Dapur Al Dente</h3>
+                            </div>
+                            <span class="text-xs bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded-full">Siap Pakai</span>
+                        </div>
+
+                        <!-- Stopwatch Counter Display -->
+                        <div class="text-center py-4 bg-gradient-to-b from-stone-900 to-stone-950 rounded-2xl border border-stone-800 shadow-inner">
+                            <span class="text-xs text-stone-400 font-mono tracking-widest block uppercase mb-1">Target Rebus Ideal</span>
+                            <div id="timerDisplay" class="text-5xl sm:text-6xl font-extrabold text-amber-400 font-mono tracking-tight">
+                                09:00
+                            </div>
+                            <p id="timerCurrentStatus" class="text-xs text-amber-300/80 font-medium mt-2">
+                                Siap merebus spaghetti Al Dente standar
+                            </p>
+                        </div>
+
+                        <!-- Quick Presets for Timer -->
+                        <div class="flex justify-between gap-2">
+                            <button onclick="setTimerTarget(300, 'Angel Hair')" class="flex-1 py-1.5 rounded-lg bg-white border border-amber-200 text-stone-700 text-xs font-semibold hover:bg-amber-100 transition">5 Menit</button>
+                            <button onclick="setTimerTarget(540, 'Spaghetti Standar')" class="flex-1 py-1.5 rounded-lg bg-amber-100 border border-amber-300 text-amber-900 text-xs font-bold hover:bg-amber-200 transition">9 Menit</button>
+                            <button onclick="setTimerTarget(720, 'Fettuccine / Tebal')" class="flex-1 py-1.5 rounded-lg bg-white border border-amber-200 text-stone-700 text-xs font-semibold hover:bg-amber-100 transition">12 Menit</button>
+                        </div>
+
+                        <!-- Buttons Control -->
+                        <div class="grid grid-cols-2 gap-3">
+                            <button id="btnStartTimer" onclick="toggleKitchenTimer()" class="py-3 px-4 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm shadow-md transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-play text-xs"></i>
+                                <span id="timerBtnText">Mulai Timer</span>
+                            </button>
+                            <button onclick="resetKitchenTimer()" class="py-3 px-4 rounded-xl bg-stone-200 hover:bg-stone-300 text-stone-700 font-semibold text-sm transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-rotate-right text-xs"></i>
+                                <span>Reset</span>
+                            </button>
+                        </div>
+
+                        <p class="text-[11px] text-stone-500 text-center italic">
+                            *Gunakan timer ini langsung di dapur ponsel Anda saat merebus spaghetti hari ini!
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-24 border-t border-amber-200 bg-white/70 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+                <!-- Brand & Copyright -->
+                <div class="space-y-1">
+                    <div class="flex items-center justify-center md:justify-start gap-2">
+                        <span class="text-xl">🍝</span>
+                        <span class="font-extrabold text-stone-900 text-lg">SpaghettiLab</span>
+                    </div>
+                    <p class="text-xs text-stone-500">
+                        Eksplorasi interaktif fisika & biokimia kuliner. Dari kaku getas menjadi lentur sempurna.
+                    </p>
+                    <p class="text-xs text-stone-400 font-medium pt-1">
+                        Dibuat oleh <strong class="text-stone-700">Ariel Usman</strong> © 2026. Hak Cipta Dilindungi.
+                    </p>
+                </div>
+
+                <!-- Instagram & Social Link -->
+                <div class="flex items-center gap-4">
+                    <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-2.5 px-4 py-2 rounded-xl bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 text-white text-xs font-bold shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-instagram text-base group-hover:scale-110 transition-transform"></i>
+                        <span>@arielrcun</span>
+                    </a>
+                    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Kembali ke atas" class="w-10 h-10 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-900 flex items-center justify-center transition">
+                        <i class="fa-solid fa-arrow-up text-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        // --- SIDEBAR DRAWER TOGGLE ---
+        const sidebar = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+        function toggleSidebar() {
+            const isClosed = sidebar.classList.contains('translate-x-full');
+            if (isClosed) {
+                sidebar.classList.remove('translate-x-full');
+                sidebarOverlay.classList.remove('hidden');
+            } else {
+                sidebar.classList.add('translate-x-full');
+                sidebarOverlay.classList.add('hidden');
+            }
+        }
+
+        // --- SPAGHETTI COOKING SIMULATOR ---
+        const cookTimeSlider = document.getElementById('cookTimeSlider');
+        const sliderTimeValue = document.getElementById('sliderTimeValue');
+        const pastaPath = document.getElementById('pastaPath');
+        const displayPhaseTag = document.getElementById('displayPhaseTag');
+        const spaghettiVisualLabel = document.getElementById('spaghettiVisualLabel');
+        const hudStiffness = document.getElementById('hudStiffness');
+        const hudWater = document.getElementById('hudWater');
+        const hudAngle = document.getElementById('hudAngle');
+        const simStatusTitle = document.getElementById('simStatusTitle');
+        const simStatusDesc = document.getElementById('simStatusDesc');
+
+        function updateSimulation(minutes) {
+            sliderTimeValue.textContent = `${minutes} Menit`;
+
+            // SVG Path coordinates interpolation
+            // Start: Lurus mendatar di (50, 20) sampai (250, 20)
+            // End: Melengkung ke bawah menyerupai kurva U lemas
+            let curveY = 20;
+            let startX = 50;
+            let endX = 250;
+            let startY = 20;
+            let endY = 20;
+            let stiffnessText = '100% Kaku';
+            let waterText = '+0% Bobot';
+            let angleText = '0° (Lurus)';
+
+            if (minutes === 0) {
+                // Kaku Total
+                pastaPath.setAttribute('d', 'M 50,20 L 250,20');
+                displayPhaseTag.textContent = '00:00 - FASE KERING PADAT';
+                spaghettiVisualLabel.textContent = 'Batang Horizontal Kaku (Modulus Elastisitas Maksimum)';
+                stiffnessText = '100% Kaku';
+                waterText = '+0% Bobot';
+                angleText = '0° (Lurus)';
+
+                simStatusTitle.innerHTML = '<i class="fa-solid fa-circle-info text-amber-600"></i> Tahap 0 Menit: Kering & Getas';
+                simStatusDesc.textContent = 'Spaghetti dalam kondisi kering mengandung sedikit sekali air (<12%). Granula amilosa dan amilopektin terkunci rapat di dalam matriks gluten kering. Batang akan patah berkeping-keping jika ditekuk tiba-tiba.';
+            } 
+            else if (minutes > 0 && minutes <= 4) {
+                // Mulai melunak di tepi luar
+                const factor = minutes / 4;
+                const sagY = 20 + factor * 45;
+                pastaPath.setAttribute('d', `M 60,25 Q 150,${sagY} 240,25`);
+                displayPhaseTag.textContent = `0${minutes}:00 - PENETRASI TERMAL AWAL`;
+                spaghettiVisualLabel.textContent = 'Mulai Menekuk Lemah (Lapisan Luar Terhidrasi)';
+                stiffnessText = `${Math.round(100 - factor * 40)}% Kaku`;
+                waterText = `+${Math.round(factor * 50)}% Bobot`;
+                angleText = `~${Math.round(factor * 25)}° Lengkung`;
+
+                simStatusTitle.innerHTML = '<i class="fa-solid fa-temperature-high text-amber-600"></i> Menit 1 - 4: Hidrasi Dinding Luar';
+                simStatusDesc.textContent = 'Molekul air panas mulai membobol lapisan luar pasta. Air menembus celah kapiler mikro. Batang pasta mulai layu dan merosot ke dalam air rebusan, tetapi bagian inti dalam masih keras seperti kawat.';
+            } 
+            else if (minutes > 4 && minutes <= 9.5) {
+                // Rentang Al Dente
+                const factor = (minutes - 4) / 5.5;
+                const sagY = 65 + factor * 60;
+                pastaPath.setAttribute('d', `M 75,30 Q 150,${sagY} 225,30`);
+                displayPhaseTag.textContent = minutes >= 8.5 ? '09:00 - AL DENTE SEMPURNA' : `0${minutes}:00 - FASE GELATINISASI AKTIF`;
+                spaghettiVisualLabel.textContent = 'Kelenturan Sempurna (Elastis & Membal)';
+                stiffnessText = `${Math.round(60 - factor * 35)}% Kaku`;
+                waterText = `+${Math.round(50 + factor * 90)}% Bobot`;
+                angleText = `~${Math.round(25 + factor * 45)}° Lengkung`;
+
+                simStatusTitle.innerHTML = '<i class="fa-solid fa-check-double text-emerald-600"></i> Menit 8 - 10: Golden Al Dente!';
+                simStatusDesc.textContent = 'Ini adalah puncak kesempurnaan pasta Italia. Granula pati telah mekar optimal dan diikat erat oleh jaring protein gluten yang telah matang. Saat digantung atau diangkat, ia melengkung anggun tanpa patah maupun hancur.';
+            } 
+            else {
+                // Overcooked / Lembek
+                const factor = Math.min(1, (minutes - 9.5) / 5.5);
+                const sagY = 125 + factor * 25;
+                pastaPath.setAttribute('d', `M 90,35 Q 150,${sagY} 210,35`);
+                displayPhaseTag.textContent = `${minutes}:00 - OVERCOOKED (LEMBEK)`;
+                spaghettiVisualLabel.textContent = 'Kehilangan Elastisitas (Pati Pecah & Hancur)';
+                stiffnessText = '5% (Lembek Total)';
+                waterText = `+${Math.round(140 + factor * 40)}% Bobot`;
+                angleText = '90° (Terkulai Mati)';
+
+                simStatusTitle.innerHTML = '<i class="fa-solid fa-triangle-exclamation text-rose-600"></i> Menit > 12: Struktur Rusak';
+                simStatusDesc.textContent = 'Jaring gluten tak lagi mampu menahan amilosa yang terus menyerap air secara berlebihan. Batang spaghetti kehilangan kekenyalan (chewiness), teksturnya berlendir di luar, dan sangat rapuh saat diaduk bersama saus.';
+            }
+
+            hudStiffness.textContent = stiffnessText;
+            hudWater.textContent = waterText;
+            hudAngle.textContent = angleText;
+        }
+
+        cookTimeSlider.addEventListener('input', (e) => {
+            updateSimulation(parseFloat(e.target.value));
+        });
+
+        function setCookTime(val) {
+            cookTimeSlider.value = val;
+            updateSimulation(val);
+        }
+
+        // --- KITCHEN STOPWATCH / TIMER ---
+        let timerDuration = 540; // 9 minutes default
+        let timerRemaining = 540;
+        let timerInterval = null;
+        let isTimerRunning = false;
+
+        const timerDisplay = document.getElementById('timerDisplay');
+        const timerCurrentStatus = document.getElementById('timerCurrentStatus');
+        const timerBtnText = document.getElementById('timerBtnText');
+        const btnStartTimer = document.getElementById('btnStartTimer');
+
+        function formatTimer(seconds) {
+            const m = Math.floor(seconds / 60);
+            const s = seconds % 60;
+            return `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+        }
+
+        function setTimerTarget(seconds, pastaName) {
+            resetKitchenTimer();
+            timerDuration = seconds;
+            timerRemaining = seconds;
+            timerDisplay.textContent = formatTimer(timerRemaining);
+            timerCurrentStatus.textContent = `Target waktu untuk: ${pastaName}`;
+        }
+
+        function toggleKitchenTimer() {
+            if (isTimerRunning) {
+                // Pause
+                clearInterval(timerInterval);
+                isTimerRunning = false;
+                timerBtnText.textContent = 'Lanjutkan';
+                btnStartTimer.classList.remove('bg-rose-500', 'hover:bg-rose-600');
+                btnStartTimer.classList.add('bg-amber-500', 'hover:bg-amber-600');
+            } else {
+                // Start
+                if (timerRemaining <= 0) timerRemaining = timerDuration;
+                isTimerRunning = true;
+                timerBtnText.textContent = 'Jeda';
+                btnStartTimer.classList.remove('bg-amber-500', 'hover:bg-amber-600');
+                btnStartTimer.classList.add('bg-rose-500', 'hover:bg-rose-600');
+
+                timerInterval = setInterval(() => {
+                    timerRemaining--;
+                    timerDisplay.textContent = formatTimer(timerRemaining);
+
+                    if (timerRemaining <= 0) {
+                        clearInterval(timerInterval);
+                        isTimerRunning = false;
+                        timerBtnText.textContent = 'Selesai!';
+                        timerCurrentStatus.textContent = '🎉 Waktu habis! Angkat spaghetti Anda sekarang untuk Al Dente sempurna!';
+                    }
+                }, 1000);
+            }
+        }
+
+        function resetKitchenTimer() {
+            clearInterval(timerInterval);
+            isTimerRunning = false;
+            timerRemaining = timerDuration;
+            timerDisplay.textContent = formatTimer(timerRemaining);
+            timerBtnText.textContent = 'Mulai Timer';
+            btnStartTimer.classList.remove('bg-rose-500', 'hover:bg-rose-600');
+            btnStartTimer.classList.add('bg-amber-500', 'hover:bg-amber-600');
+            timerCurrentStatus.textContent = 'Timer diatur ulang';
+        }
+
+        // Initialize simulation on load
+        window.onload = function() {
+            updateSimulation(0);
+        };
+    </script>
+</body>
+</html>
