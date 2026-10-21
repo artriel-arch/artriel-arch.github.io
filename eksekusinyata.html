@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seni Eksekusi: The Discipline of Getting Things Done | Oleh Ariel Usman</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Pelajari mengapa eksekusi jauh lebih penting daripada sekadar ide cemerlang. Terinspirasi dari buku legendaris Execution karya Larry Bossidy dan Ram Charan.">
+    <meta name="keywords" content="Execution, Larry Bossidy, Ram Charan, Visi, Strategi, Bisnis, Produktivitas, Kepemimpinan">
+    <meta name="author" content="Ariel Usman">
+
+    <!-- Open Graph / Social Media Preview -->
+    <meta property="og:title" content="Seni Eksekusi: The Discipline of Getting Things Done">
+    <meta property="og:description" content="Visi tanpa eksekusi adalah halusinasi. Temukan rahasia mendisiplinkan tindakan nyata dalam bisnis dan kehidupan.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop">
+    <meta property="og:url" content="https://arielusman.dev/execution">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4f46e5',
+                        secondary: '#06b6d4',
+                        accent: '#10b981',
+                        darkBg: '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .glass-hero {
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.95), rgba(6, 182, 212, 0.9));
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo / Project Name -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-cyan-500 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-bullseye text-lg"></i>
+                </div>
+                <div>
+                    <span class="text-lg font-bold bg-gradient-to-r from-indigo-600 to-cyan-600 bg-clip-text text-transparent">Execution Mastery</span>
+                    <span class="block text-xs text-slate-500 font-medium">By Larry Bossidy & Ram Charan</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center space-x-1 lg:space-x-6 text-sm font-medium text-slate-600">
+                <a href="#beranda" class="hover:text-indigo-600 transition-colors px-3 py-2 rounded-lg hover:bg-slate-100">Beranda</a>
+                <a href="#inti-konsep" class="hover:text-indigo-600 transition-colors px-3 py-2 rounded-lg hover:bg-slate-100">Inti Konsep</a>
+                <a href="#pilar-utama" class="hover:text-indigo-600 transition-colors px-3 py-2 rounded-lg hover:bg-slate-100">3 Proses Utama</a>
+                <a href="#simulator" class="hover:text-indigo-600 transition-colors px-3 py-2 rounded-lg hover:bg-slate-100">Simulasi Eksekusi</a>
+                <a href="#tentang-buku" class="hover:text-indigo-600 transition-colors px-3 py-2 rounded-lg hover:bg-slate-100">Tentang Buku</a>
+            </nav>
+
+            <!-- CTA Button & Mobile Menu Toggle -->
+            <div class="flex items-center gap-3">
+                <a href="#simulator" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-cyan-600 rounded-xl shadow-lg shadow-indigo-600/20 hover:opacity-95 transition-all">
+                    Cek Kesiapan <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                </a>
+                <button id="menu-btn" class="md:hidden p-2 rounded-xl text-slate-600 hover:bg-slate-100 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-2 shadow-xl">
+            <a href="#beranda" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-100">Beranda</a>
+            <a href="#inti-konsep" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-100">Inti Konsep</a>
+            <a href="#pilar-utama" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-100">3 Proses Utama</a>
+            <a href="#simulator" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-100">Simulasi Eksekusi</a>
+            <a href="#tentang-buku" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-100">Tentang Buku</a>
+        </div>
+    </header>
+
+    <!-- Hero Section (Glassmorphism) -->
+    <section id="beranda" class="relative overflow-hidden bg-slate-900 py-20 lg:py-32">
+        <!-- Background Glow Ornaments -->
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-indigo-500/30 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 -right-40 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Text Content -->
+                <div class="lg:col-span-7 text-left space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-xs font-semibold tracking-wide uppercase">
+                        <i class="fa-solid fa-fire text-amber-400"></i> The Discipline of Getting Things Done
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                        Visi Tanpa Eksekusi Adalah <span class="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">Halusinasi.</span>
+                    </h1>
+                    <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+                        Ide cemerlang dan strategi megah tidak ada artinya tanpa kedisiplinan eksekusi. Pelajari cara mengubah rencana besar menjadi hasil nyata yang berdampak luar biasa.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="#simulator" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-indigo-500 to-cyan-500 text-white font-semibold shadow-lg shadow-indigo-500/25 hover:scale-[1.02] transition-transform flex items-center gap-2">
+                            <i class="fa-solid fa-play"></i> Mulai Simulasi Eksekusi
+                        </a>
+                        <a href="#inti-konsep" class="px-6 py-3.5 rounded-xl bg-slate-800 border border-slate-700 text-slate-200 font-semibold hover:bg-slate-700 transition-colors flex items-center gap-2">
+                            Pelajari Konsep <i class="fa-solid fa-arrow-down text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Glass Card -->
+                <div class="lg:col-span-5">
+                    <div class="glass-card rounded-3xl p-6 sm:p-8 shadow-2xl relative border border-white/20">
+                        <div class="absolute -top-4 -right-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md">
+                            <i class="fa-solid fa-check-circle mr-1"></i> Teruji Waktu
+                        </div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 rounded-2xl bg-indigo-600 flex items-center justify-center text-white text-xl shadow-md">
+                                <i class="fa-solid fa-book-open"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900">Kutipan Utama Buku</h3>
+                                <p class="text-xs text-slate-500">Larry Bossidy & Ram Charan</p>
+                            </div>
+                        </div>
+                        <blockquote class="text-slate-700 italic text-base leading-relaxed mb-6 border-l-4 border-indigo-500 pl-4">
+                            "Eksekusi bukan sekadar taktik; eksekusi adalah disiplin utama yang menyatukan strategi, orang, dan operasi untuk menghasilkan kinerja nyata."
+                        </blockquote>
+                        <div class="grid grid-cols-3 gap-2 pt-4 border-t border-slate-200 text-center">
+                            <div>
+                                <span class="block text-xl font-extrabold text-indigo-600">100%</span>
+                                <span class="text-xs text-slate-500 font-medium">Fokus Tindakan</span>
+                            </div>
+                            <div>
+                                <span class="block text-xl font-extrabold text-cyan-600">3 Pilar</span>
+                                <span class="text-xs text-slate-500 font-medium">Utama Eksekusi</span>
+                            </div>
+                            <div>
+                                <span class="block text-xl font-extrabold text-emerald-600">Nol</span>
+                                <span class="text-xs text-slate-500 font-medium">Alasan Gagal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content & Sidebar Grid Layout -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+            <!-- Left/Main Body Section (8 Columns) -->
+            <div class="lg:col-span-8 space-y-16">
+
+                <!-- 1. Inti Konsep: Mengapa Eksekusi Sangat Penting -->
+                <section id="inti-konsep" class="scroll-mt-28 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-indigo-50 text-indigo-600 text-xs font-semibold">
+                        <i class="fa-solid fa-lightbulb"></i> Esensi Utama
+                    </div>
+                    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+                        Mengapa Eksekusi Adalah Penentu Utama Kesuksesan?
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        Banyak pemimpin perusahaan atau individu cerdas gagal bukan karena mereka kekurangan ide cemerlang atau strategi yang hebat. Mereka gagal karena terjebak dalam perencanaan tanpa akhir dan mengabaikan kedisiplinan dalam mengeksekusi rencana tersebut.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+                        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center font-bold mb-4">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">Ilusi Perencanaan</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Rencana setebal ratusan halaman tidak bernilai apa pun jika tim di lapangan bingung bagaimana cara memulainya hari ini.
+                            </p>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold mb-4">
+                                <i class="fa-solid fa-rocket"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">Kekuatan Momentum</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Eksekusi menciptakan umpan balik langsung, memperjelas hambatan nyata, dan membangun momentum pencapaian langkah demi langkah.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. 3 Pilar Utama Eksekusi -->
+                <section id="pilar-utama" class="scroll-mt-28 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-cyan-50 text-cyan-600 text-xs font-semibold">
+                        <i class="fa-solid fa-cubes"></i> 3 Proses Krusial
+                    </div>
+                    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+                        3 Pilar Utama dalam Buku "Execution"
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        Menurut Larry Bossidy dan Ram Charan, eksekusi bukanlah sekadar aktivitas acak. Eksekusi membutuhkan sistem yang melibatkan tiga proses inti berikut:
+                    </p>
+
+                    <div class="space-y-4">
+                        <!-- Pilar 1 -->
+                        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col sm:flex-row gap-6 items-start">
+                            <div class="w-14 h-14 rounded-2xl bg-indigo-600 text-white flex-shrink-0 flex items-center justify-center text-2xl font-bold shadow-md shadow-indigo-500/20">
+                                01
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 mb-2">Proses Orang (People Process)</h3>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    Mengenali dan menempatkan orang yang tepat pada posisi yang tepat. Tanpa orang yang kompeten dan bertanggung jawab, strategi terbaik sekalipun akan runtuh di tangan eksekutor yang salah.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Pilar 2 -->
+                        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col sm:flex-row gap-6 items-start">
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-600 text-white flex-shrink-0 flex items-center justify-center text-2xl font-bold shadow-md shadow-cyan-500/20">
+                                02
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 mb-2">Proses Strategi (Strategy Process)</h3>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    Menghubungkan rencana jangka panjang dengan realitas operasional hari ini. Strategi harus realistis, diuji terhadap kondisi pasar, dan diterjemahkan menjadi langkah-langkah konkret yang dapat dieksekusi.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Pilar 3 -->
+                        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col sm:flex-row gap-6 items-start">
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-600 text-white flex-shrink-0 flex items-center justify-center text-2xl font-bold shadow-md shadow-emerald-500/20">
+                                03
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 mb-2">Proses Operasional (Operations Process)</h3>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    Memecah sasaran besar menjadi target jangka pendek yang terukur. Proses ini mencakup evaluasi berkala, manajemen hambatan, dan penyesuaian cepat terhadap perubahan di lapangan.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. Fitur Interaktif: Simulator & Evaluator Kesenjangan Eksekusi -->
+                <section id="simulator" class="scroll-mt-28 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-indigo-50 text-indigo-600 text-xs font-semibold">
+                        <i class="fa-solid fa-calculator"></i> Fitur Interaktif
+                    </div>
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-xl space-y-6">
+                        <div>
+                            <h2 class="text-2xl font-extrabold text-slate-900 mb-2">Execution Gap Checker</h2>
+                            <p class="text-slate-600 text-sm">
+                                Jawab 4 pertanyaan singkat berikut untuk menguji apakah ide atau proyek Anda saat ini memiliki risiko kegagalan eksekusi yang tinggi.
+                            </p>
+                        </div>
+
+                        <!-- Form Evaluator -->
+                        <form id="execution-form" class="space-y-6">
+                            <!-- Pertanyaan 1 -->
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-slate-800">
+                                    1. Apakah target dan langkah pertama proyek Anda sudah didefinisikan secara spesifik untuk dikerjakan hari ini?
+                                </label>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50 transition-colors">
+                                        <input type="radio" name="q1" value="25" class="text-indigo-600 focus:ring-indigo-500">
+                                        <span class="text-sm font-medium text-slate-700">Ya, sangat jelas</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50 transition-colors">
+                                        <input type="radio" name="q1" value="0" class="text-indigo-600 focus:ring-indigo-500">
+                                        <span class="text-sm font-medium text-slate-700">Masih mengambang</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Pertanyaan 2 -->
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-slate-800">
+                                    2. Apakah sudah ditentukan dengan jelas siapa penanggung jawab utama (ownership) untuk setiap tugas?
+                                </label>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50 transition-colors">
+                                        <input type="radio" name="q2" value="25" class="text-indigo-600 focus:ring-indigo-500">
+                                        <span class="text-sm font-medium text-slate-700">Ada orang khusus</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50 transition-colors">
+                                        <input type="radio" name="q2" value="0" class="text-indigo-600 focus:ring-indigo-500">
+                                        <span class="text-sm font-medium text-slate-700">Dikerjakan bersama-sama</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Pertanyaan 3 -->
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-slate-800">
+                                    3. Apakah Anda memiliki mekanisme evaluasi atau pelacakan progres secara berkala (misal: mingguan)?
+                                </label>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50 transition-colors">
+                                        <input type="radio" name="q3" value="25" class="text-indigo-600 focus:ring-indigo-500">
+                                        <span class="text-sm font-medium text-slate-700">Rutin evaluasi</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50 transition-colors">
+                                        <input type="radio" name="q3" value="0" class="text-indigo-600 focus:ring-indigo-500">
+                                        <span class="text-sm font-medium text-slate-700">Jarang / kalau ingat</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Pertanyaan 4 -->
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-slate-800">
+                                    4. Apakah Anda siap menghadapi hambatan tak terduga dan langsung melakukan penyesuaian taktik?
+                                </label>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50 transition-colors">
+                                        <input type="radio" name="q4" value="25" class="text-indigo-600 focus:ring-indigo-500">
+                                        <span class="text-sm font-medium text-slate-700">Sangat siap & fleksibel</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50 transition-colors">
+                                        <input type="radio" name="q4" value="0" class="text-indigo-600 focus:ring-indigo-500">
+                                        <span class="text-sm font-medium text-slate-700">Mudah stres jika meleset</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button type="button" id="calc-btn" class="w-full py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 text-white font-bold shadow-lg shadow-indigo-500/20 hover:opacity-95 transition-all">
+                                Hitung Skor Kesiapan Eksekusi
+                            </button>
+                        </form>
+
+                        <!-- Hasil Evaluasi (Hidden by default) -->
+                        <div id="result-box" class="hidden mt-6 p-6 rounded-2xl bg-slate-900 text-white space-y-4 animate-fade-in">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-slate-400 uppercase font-semibold tracking-wider">Hasil Evaluasi Anda</span>
+                                <span id="score-badge" class="px-3 py-1 rounded-full text-xs font-bold"></span>
+                            </div>
+                            <div class="text-3xl font-extrabold" id="score-text">0%</div>
+                            <p class="text-slate-300 text-sm leading-relaxed" id="score-desc">
+                                Masukkan pilihan Anda di atas untuk melihat analisis kesiapan eksekusi.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. Tentang Buku & Penulis -->
+                <section id="tentang-buku" class="scroll-mt-28 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-50 text-emerald-600 text-xs font-semibold">
+                        <i class="fa-solid fa-book"></i> Referensi Klasik
+                    </div>
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+                        <h2 class="text-2xl font-extrabold text-slate-900">Tentang Buku "Execution"</h2>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Buku <strong>"Execution: The Discipline of Getting Things Done"</strong> ditulis oleh Larry Bossidy (mantan CEO Honeywell) dan Ram Charan (konsultan manajemen terkemuka). Buku ini mengubah cara pandang dunia bisnis dengan menyatakan bahwa tugas utama seorang pemimpin bukanlah sekadar merumuskan visi muluk, melainkan memastikan eksekusi berjalan konsisten di setiap level organisasi.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-slate-100">
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex-shrink-0 flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-user-tie"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-slate-900">Larry Bossidy</h4>
+                                    <p class="text-xs text-slate-500">Praktisi bisnis legendaris dengan rekam jejak eksekusi nyata di Honeywell.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-cyan-50 text-cyan-600 flex-shrink-0 flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-brain"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-slate-900">Ram Charan</h4>
+                                    <p class="text-xs text-slate-500">Pakar strategi bisnis global dan konsultan dewan direksi perusahaan Fortune 500.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Right/Sidebar Section (4 Columns) -->
+            <div class="lg:col-span-4 space-y-8">
+
+                <!-- Sidebar Widget 1: Quick Insights -->
+                <div class="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4 sticky top-28">
+                    <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+                        <h3 class="font-bold text-slate-900 flex items-center gap-2">
+                            <i class="fa-solid fa-bolt text-amber-500"></i> Quick Insights
+                        </h3>
+                        <span class="text-xs text-slate-400 font-medium">Poin Kilat</span>
+                    </div>
+
+                    <div class="space-y-4 text-sm text-slate-600">
+                        <div class="p-3 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+                            <h4 class="font-bold text-slate-800 text-xs uppercase tracking-wider text-indigo-600">Realita Lapangan</h4>
+                            <p class="text-xs">"Hambatan terbesar eksekusi bukanlah kurangnya bakat, melainkan kurangnya kejelasan tanggung jawab."</p>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+                            <h4 class="font-bold text-slate-800 text-xs uppercase tracking-wider text-cyan-600">Dialog Terbuka</h4>
+                            <p class="text-xs">"Budaya eksekusi dibangun di atas percakapan yang jujur, terbuka, dan berdasarkan fakta riil."</p>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+                            <h4 class="font-bold text-slate-800 text-xs uppercase tracking-wider text-emerald-600">Tindakan Harian</h4>
+                            <p class="text-xs">"Jangan tunda hasil esok hari jika Anda bisa mengeksekusi langkah kecil yang bermakna hari ini."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Widget 2: Quote of the Day -->
+                <div class="p-6 rounded-3xl bg-gradient-to-br from-indigo-900 to-slate-900 text-white shadow-xl space-y-4 relative overflow-hidden">
+                    <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-indigo-500/20 rounded-full blur-2xl pointer-events-none"></div>
+                    <div class="flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-quote-left"></i> Kutipan Inspiratif
+                    </div>
+                    <p class="text-sm italic leading-relaxed text-slate-200">
+                        "Pemimpin yang hebat tidak hanya duduk merumuskan strategi di menara gading. Mereka turun tangan memastikan setiap proses berjalan lancar sampai garis akhir."
+                    </p>
+                    <div class="pt-2 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+                        <span>The Execution Mindset</span>
+                        <i class="fa-solid fa-check text-cyan-400"></i>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white border-t border-slate-800 pt-16 pb-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-800">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-cyan-500 flex items-center justify-center text-white shadow-md">
+                        <i class="fa-solid fa-bullseye text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="text-lg font-bold text-white">Execution Mastery</span>
+                        <span class="block text-xs text-slate-400">Terinspirasi dari buku Larry Bossidy & Ram Charan</span>
+                    </div>
+                </div>
+                
+                <!-- Instagram Link with Icon -->
+                <div class="flex items-center gap-4">
+                    <span class="text-sm text-slate-400">Hubungi & Ikuti:</span>
+                    <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-pink-400 transition-colors text-sm font-semibold border border-slate-700">
+                        <i class="fa-brands fa-instagram text-lg"></i> @arielrcun
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>Oleh Ariel Usman Copyright 2026. Hak Cipta Dilindungi.</p>
+                <div class="flex space-x-6">
+                    <a href="#beranda" class="hover:text-slate-300 transition-colors">Kembali ke Atas</a>
+                    <a href="#simulator" class="hover:text-slate-300 transition-colors">Simulator</a>
+                    <a href="#tentang-buku" class="hover:text-slate-300 transition-colors">Tentang Buku</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Execution Gap Checker Simulator Logic
+        const calcBtn = document.getElementById('calc-btn');
+        const resultBox = document.getElementById('result-box');
+        const scoreBadge = document.getElementById('score-badge');
+        const scoreText = document.getElementById('score-text');
+        const scoreDesc = document.getElementById('score-desc');
+
+        calcBtn.addEventListener('click', () => {
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
+            const q3 = document.querySelector('input[name="q3"]:checked');
+            const q4 = document.querySelector('input[name="q4"]:checked');
+
+            if (!q1 || !q2 || !q3 || !q4) {
+                // Custom friendly alert message box instead of window.alert()
+                alertBoxCustom("Mohon lengkapi semua 4 pertanyaan di atas sebelum menghitung skor kesiapan eksekusi.");
+                return;
+            }
+
+            const totalScore = parseInt(q1.value) + parseInt(q2.value) + parseInt(q3.value) + parseInt(q4.value);
+
+            resultBox.classList.remove('hidden');
+            scoreText.textContent = totalScore + '%';
+
+            if (totalScore === 100) {
+                scoreBadge.className = 'px-3 py-1 rounded-full text-xs font-bold bg-emerald-500 text-white';
+                scoreBadge.textContent = 'SIAP EKSEKUSI SEMPURNA';
+                scoreDesc.textContent = 'Luar biasa! Ide atau proyek Anda memiliki landasan eksekusi yang sangat solid. Kejelasan tujuan, penanggung jawab, dan evaluasi sudah tertata dengan baik.';
+            } else if (totalScore >= 50) {
+                scoreBadge.className = 'px-3 py-1 rounded-full text-xs font-bold bg-amber-500 text-white';
+                scoreBadge.textContent = 'POTENSI KESENJANGAN SEDANG';
+                scoreDesc.textContent = 'Proyek Anda memiliki potensi bagus, namun masih ada beberapa celah dalam kejelasan tanggung jawab atau mekanisme evaluasi berkala. Perkuat aspek tersebut agar eksekusi lebih mulus.';
+            } else {
+                scoreBadge.className = 'px-3 py-1 rounded-full text-xs font-bold bg-rose-500 text-white';
+                scoreBadge.textContent = 'RISIKO KEGAGALAN TINGGI';
+                scoreDesc.textContent = 'Waspada! Rencana Anda berisiko tinggi menjadi sekadar "halusinasi" atau wacana tanpa tindakan nyata. Segera tentukan penanggung jawab utama dan buat langkah harian yang spesifik.';
+            }
+
+            // Smooth scroll to result
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+
+        // Helper custom alert box replacement
+        function alertBoxCustom(message) {
+            // Check if existing alert modal exists, if not create one
+            let modal = document.getElementById('custom-alert-modal');
+            if (!modal) {
+                modal = document.createElement('div');
+                modal.id = 'custom-alert-modal';
+                modal.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4';
+                modal.innerHTML = `
+                    <div class="bg-white rounded-2xl p-6 max-w-sm w-full shadow-2xl space-y-4 text-center">
+                        <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center mx-auto text-xl">
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Perhatian</h3>
+                        <p id="custom-alert-msg" class="text-sm text-slate-600 leading-relaxed"></p>
+                        <button id="custom-alert-close" class="w-full py-2.5 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition-colors">
+                            Mengerti
+                        </button>
+                    </div>
+                `;
+                document.body.appendChild(modal);
+
+                document.getElementById('custom-alert-close').addEventListener('click', () => {
+                    modal.classList.add('hidden');
+                });
+            }
+            document.getElementById('custom-alert-msg').textContent = message;
+            modal.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
