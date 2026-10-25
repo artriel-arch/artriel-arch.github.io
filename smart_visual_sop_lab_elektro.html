@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Visual SOP - Laboratorium Elektro Vokasi</title>
+    
+    <!-- Meta SEO & Social Sharing -->
+    <meta name="description" content="Aplikasi Web Smart Visual SOP Laboratorium Elektro Vokasi. Akses cepat via QR Code, checklist pra-pakai digital, ISO 3864-1, dan Green Technology Paperless.">
+    <meta name="keywords" content="Visual SOP, Laboratorium Elektro, Green Tech, ISO 3864-1, Checklist Digital, Vokasi, Ariel Usman">
+    <meta name="author" content="Ariel Usman">
+    <meta name="theme-color" content="#10B981">
+    
+    <!-- Open Graph / Facebook / WhatsApp Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://visualsop-labelektro.id/">
+    <meta property="og:title" content="Smart Visual SOP - Laboratorium Elektro Vokasi">
+    <meta property="og:description" content="Panduan visual interaktif, digital checklist pra-praktik, dan efisiensi energi green tech untuk laboratorium elektro.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Smart Visual SOP - Laboratorium Elektro Vokasi">
+    <meta name="twitter:description" content="Digitalisasi Prosedur Operasi Standar Laboratorium Elektro Vokasi.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                        },
+                        isoBlue: '#2563eb',   /* Kewajiban / APD */
+                        isoGreen: '#10b981',  /* Aman */
+                        isoYellow: '#f59e0b', /* Peringatan */
+                        isoRed: '#ef4444'     /* Larangan */
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Font & FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glassmorph {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .glassmorph-dark {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .pulse-emerald {
+            box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
+            animation: pulse-emerald 2s infinite;
+        }
+        @keyframes pulse-emerald {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+            70% { transform: scale(1.02); box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white">
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="sticky top-0 z-40 w-full glassmorph border-b border-slate-200/80 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                
+                <!-- Logo & Brand -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-teal-400 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
+                        <i class="fa-solid fa-microchip text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-lg sm:text-xl tracking-tight bg-gradient-to-r from-slate-900 via-brand-700 to-teal-600 bg-clip-text text-transparent">
+                            Smart Visual SOP
+                        </span>
+                        <span class="hidden sm:inline-block text-xs font-semibold px-2 py-0.5 rounded-full bg-brand-100 text-brand-700 ml-2">Lab Elektro</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu Nav -->
+                <div class="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-medium">
+                    <a href="#katalog-sop" class="px-3 py-2 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-emerald-50/80 transition">Katalog SOP</a>
+                    <a href="#sop-main" class="px-3 py-2 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-emerald-50/80 transition">Checklist Pra-Pakai</a>
+                    <a href="#alur-pembelajaran" class="px-3 py-2 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-emerald-50/80 transition">Alur 160m</a>
+                    <a href="#portofolio-evaluasi" class="px-3 py-2 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-emerald-50/80 transition">Portofolio & Evaluasi</a>
+                    <button onclick="openQrModal()" class="ml-2 px-4 py-2 rounded-lg bg-brand-600 hover:bg-brand-700 text-white font-semibold shadow-md shadow-brand-500/20 hover:shadow-lg transition flex items-center gap-2">
+                        <i class="fa-solid fa-qrcode"></i> Scan QR
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex md:hidden items-center gap-2">
+                    <button onclick="openQrModal()" class="p-2 rounded-lg bg-brand-600 text-white text-xs font-bold flex items-center gap-1">
+                        <i class="fa-solid fa-qrcode"></i> QR
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md px-4 pt-2 pb-4 space-y-2 shadow-lg">
+            <a href="#katalog-sop" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-brand-50 hover:text-brand-600 font-medium" onclick="toggleMobileMenu()">Katalog SOP</a>
+            <a href="#sop-main" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-brand-50 hover:text-brand-600 font-medium" onclick="toggleMobileMenu()">Checklist Pra-Pakai</a>
+            <a href="#alur-pembelajaran" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-brand-50 hover:text-brand-600 font-medium" onclick="toggleMobileMenu()">Alur Pembelajaran 160M</a>
+            <a href="#portofolio-evaluasi" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-brand-50 hover:text-brand-600 font-medium" onclick="toggleMobileMenu()">Portofolio & Evaluasi</a>
+        </div>
+    </nav>
+
+    <!-- ================= HERO SECTION (GLASSMORPHISM) ================= -->
+    <header class="relative overflow-hidden pt-8 pb-16 lg:pt-14 lg:pb-24 bg-gradient-to-br from-emerald-600 via-teal-700 to-slate-900 text-white">
+        <!-- Background Glowing Circles -->
+        <div class="absolute top-1/4 -left-20 w-72 h-72 bg-emerald-400 rounded-full blur-3xl opacity-30 pointer-events-none"></div>
+        <div class="absolute bottom-10 -right-20 w-96 h-96 bg-cyan-400 rounded-full blur-3xl opacity-20 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Hero Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-medium text-emerald-200">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        ISO 3864-1 Compliant & Green Tech Integrated
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+                        Standard Operating Procedure <br class="hidden sm:inline"/>
+                        <span class="bg-gradient-to-r from-emerald-200 via-teal-100 to-cyan-300 bg-clip-text text-transparent">
+                            Visual & Interaktif Laboratorium Elektro
+                        </span>
+                    </h1>
+
+                    <p class="text-slate-200 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Platform panduan praktikum digital responsif instan via QR Code. Dilengkapi checklist keselamatan pra-pakai, video tutorial interaktif, dan efisiensi energi terukur.
+                    </p>
+
+                    <!-- Hero Call to Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
+                        <a href="#sop-main" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-400 to-teal-500 text-slate-950 font-bold shadow-lg shadow-emerald-500/25 hover:opacity-95 hover:scale-105 transition text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-play-circle text-lg"></i> Mulai Praktik Alat
+                        </a>
+                        <button onclick="openQrModal()" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold backdrop-blur-md transition text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-qrcode text-lg"></i> Demo Scan QR Alat
+                        </button>
+                    </div>
+
+                    <!-- Key Spec Indicators -->
+                    <div class="grid grid-cols-3 gap-3 pt-6 border-t border-white/10 max-w-lg mx-auto lg:mx-0">
+                        <div class="text-center lg:text-left">
+                            <div class="text-xl sm:text-2xl font-bold text-emerald-300">&lt; 3 Detik</div>
+                            <div class="text-xs text-slate-300 font-light">Respon Loading 4G</div>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <div class="text-xl sm:text-2xl font-bold text-emerald-300">80%+</div>
+                            <div class="text-xs text-slate-300 font-light">Pengurangan Kertas</div>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <div class="text-xl sm:text-2xl font-bold text-emerald-300">100%</div>
+                            <div class="text-xs text-slate-300 font-light">Privasi Anonim</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Glassmorphic Visual Card -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="w-full max-w-md glassmorph rounded-2xl p-6 shadow-2xl text-slate-800 border border-white/40 relative">
+                        <!-- Top Card Header -->
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-200/60">
+                            <div class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded-full bg-red-400"></span>
+                                <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                                <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+                            </div>
+                            <span class="text-xs font-mono font-semibold bg-emerald-100 text-emerald-800 px-2 py-1 rounded">ENDPOINT: ACTIVE</span>
+                        </div>
+
+                        <!-- Card Content Live Status -->
+                        <div class="mt-4 space-y-4">
+                            <div class="p-3 bg-white/80 rounded-xl border border-slate-100 shadow-sm flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-lg">
+                                        <i class="fa-solid fa-wave-square"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-sm text-slate-800">Oscilloscope Digital</h4>
+                                        <p class="text-xs text-slate-500">Lab Bench #04</p>
+                                    </div>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-700">Pra-Pakai</span>
+                            </div>
+
+                            <!-- Live Compliance Metric Gauge -->
+                            <div class="p-4 bg-slate-900 text-white rounded-xl space-y-3">
+                                <div class="flex justify-between text-xs font-medium">
+                                    <span>Skor Usability (SUS Target ≥ 68)</span>
+                                    <span class="text-emerald-400 font-bold">84.5 (Unggul)</span>
+                                </div>
+                                <div class="w-full bg-slate-700 rounded-full h-2">
+                                    <div class="bg-emerald-400 h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+
+                                <div class="flex justify-between text-xs font-medium pt-1">
+                                    <span>Kepatuhan Prosedur Target</span>
+                                    <span class="text-emerald-400 font-bold">96.2%</span>
+                                </div>
+                                <div class="w-full bg-slate-700 rounded-full h-2">
+                                    <div class="bg-teal-400 h-2 rounded-full" style="width: 96%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Standar ISO Badge Row -->
+                            <div class="grid grid-cols-4 gap-1 text-center text-[10px] font-bold">
+                                <div class="p-1.5 bg-emerald-100 text-emerald-800 rounded border border-emerald-300">HIJAU: AMAN</div>
+                                <div class="p-1.5 bg-amber-100 text-amber-800 rounded border border-amber-300">KUNING: WASPADA</div>
+                                <div class="p-1.5 bg-red-100 text-red-800 rounded border border-red-300">MERAH: BAHAYA</div>
+                                <div class="p-1.5 bg-blue-100 text-blue-800 rounded border border-blue-300">BIRU: APD</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= METRICS & GREEN TECH BAR ================= -->
+    <section class="bg-white border-b border-slate-200 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="p-3 rounded-xl bg-slate-50 border border-slate-100">
+                    <i class="fa-solid fa-leaf text-emerald-600 text-xl mb-1"></i>
+                    <div class="text-lg sm:text-xl font-black text-slate-800" id="paper-saved-counter">1,420 Lembar</div>
+                    <div class="text-xs text-slate-500 font-medium">Estimasi Kertas Dihemat</div>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-50 border border-slate-100">
+                    <i class="fa-solid fa-bolt text-amber-500 text-xl mb-1"></i>
+                    <div class="text-lg sm:text-xl font-black text-slate-800">12.8 kWh</div>
+                    <div class="text-xs text-slate-500 font-medium">Efisiensi Daya Terjaga</div>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-50 border border-slate-100">
+                    <i class="fa-solid fa-user-shield text-blue-600 text-xl mb-1"></i>
+                    <div class="text-lg sm:text-xl font-black text-slate-800">0 Incident</div>
+                    <div class="text-xs text-slate-500 font-medium">Keselamatan Kerja Praktikum</div>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-50 border border-slate-100">
+                    <i class="fa-solid fa-square-poll-vertical text-teal-600 text-xl mb-1"></i>
+                    <div class="text-lg sm:text-xl font-black text-slate-800">V = 0.88</div>
+                    <div class="text-xs text-slate-500 font-medium">Validitas Ahli (Aiken's V)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= KATALOG ALAT (QUICK ACCESS) ================= -->
+    <section id="katalog-sop" class="py-10 bg-slate-100/70 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-6">
+                <div>
+                    <span class="text-xs font-bold text-brand-600 uppercase tracking-widest">Pilih Peralatan Elektro</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Katalog Visual SOP Laboratorium</h2>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-500 mt-2 md:mt-0">Klik pada alat untuk langsung memuat Prosedur & Checklist digital.</p>
+            </div>
+
+            <!-- Equipment Selector Cards -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4" id="equipment-selector-container">
+                <!-- Javascript will inject or bind clicks here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= MAIN WORKSPACE (SIDEBAR + CONTENT) ================= -->
+    <section id="sop-main" class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- SIDEBAR: PERALATAN & PANDUAN CEPAT -->
+            <aside class="lg:col-span-3 space-y-4 lg:sticky lg:top-20">
+                <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-4">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center justify-between">
+                        <span>Pilih Alat Elektro</span>
+                        <i class="fa-solid fa-sliders text-brand-600"></i>
+                    </h3>
+                    
+                    <div class="space-y-1.5" id="sidebar-tool-list">
+                        <!-- Dynamic Tool Nav List -->
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-100">
+                        <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-200 text-xs text-emerald-800 space-y-1">
+                            <div class="font-bold flex items-center gap-1.5">
+                                <i class="fa-solid fa-circle-check text-emerald-600"></i> Prinsip ISO 3864-1
+                            </div>
+                            <p class="text-[11px] text-emerald-700">1 Langkah = 1 Baris dengan Ikon Spesifik untuk mengurangi beban kognitif.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fast QR Modal Opener Box -->
+                <div class="bg-gradient-to-br from-slate-900 to-teal-950 rounded-2xl p-5 text-white shadow-md space-y-3">
+                    <div class="w-8 h-8 rounded-lg bg-brand-500 flex items-center justify-center text-slate-950 font-bold">
+                        <i class="fa-solid fa-qrcode"></i>
+                    </div>
+                    <h4 class="font-bold text-sm">Stiker QR Dinamis</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        URL Endpoint tetap. Konten SOP dapat diperbarui real-time tanpa mencetak ulang stiker di mesin/alat.
+                    </p>
+                    <button onclick="openQrModal()" class="w-full py-2 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition">
+                        Simulasi Scan QR Stiker
+                    </button>
+                </div>
+            </aside>
+
+            <!-- MAIN CONTENT AREA -->
+            <main class="lg:col-span-9 space-y-8">
+                
+                <!-- TOOL HEADER BANNER -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm relative overflow-hidden">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5">
+                        <div class="flex items-center gap-4">
+                            <div id="tool-icon-bg" class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl shadow-inner">
+                                <i id="tool-icon" class="fa-solid fa-wave-square"></i>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <span id="tool-code" class="text-xs font-mono px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200 font-semibold">ELK-001</span>
+                                    <span class="text-xs font-semibold px-2 py-0.5 rounded bg-blue-100 text-blue-700">Lab Utama</span>
+                                </div>
+                                <h2 id="tool-name" class="text-2xl font-black text-slate-900 mt-1">Oscilloscope Digital</h2>
+                            </div>
+                        </div>
+
+                        <!-- Safety Badge Indicator -->
+                        <div class="flex items-center gap-2 self-start sm:self-center">
+                            <span class="text-xs text-slate-500 font-medium">Status Alat:</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300 flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> SIAP DIGUNAKAN
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Progress Bar for Checklist Unlock -->
+                    <div class="mt-4">
+                        <div class="flex justify-between items-center text-xs font-bold text-slate-600 mb-1">
+                            <span>Status Otorisasi Pengoperasian (Daftar Periksa Pra-Pakai)</span>
+                            <span id="checklist-percentage" class="text-brand-600">0% Selesai</span>
+                        </div>
+                        <div class="w-full bg-slate-100 rounded-full h-3 overflow-hidden border border-slate-200">
+                            <div id="checklist-progress-bar" class="bg-gradient-to-r from-emerald-500 to-teal-400 h-full w-0 transition-all duration-500"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= SEGMENT 1: TAHAP PRA-PAKAI & KESELAMATAN ================= -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-6">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-xl bg-blue-600 text-white font-extrabold flex items-center justify-center text-sm">1</span>
+                            <h3 class="text-lg font-bold text-slate-900">Tahap Pra-Pakai & Keselamatan Kerja</h3>
+                        </div>
+                        <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-200">Wajib Diisi Peserta</span>
+                    </div>
+
+                    <!-- Potensi Bahaya & APD Wajib Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        
+                        <!-- ISO Yellow Hazard Warnings -->
+                        <div class="p-4 rounded-xl bg-amber-50/80 border border-amber-200 space-y-2">
+                            <div class="flex items-center gap-2 text-amber-800 font-bold text-sm">
+                                <i class="fa-solid fa-triangle-exclamation text-amber-600"></i>
+                                <span>Potensi Bahaya (ISO 3864-1 Kuning)</span>
+                            </div>
+                            <ul id="hazard-list" class="text-xs text-amber-900 space-y-1.5 list-disc pl-4 font-medium">
+                                <!-- Dynamic Hazards -->
+                            </ul>
+                        </div>
+
+                        <!-- ISO Blue APD Requirements -->
+                        <div class="p-4 rounded-xl bg-blue-50/80 border border-blue-200 space-y-2">
+                            <div class="flex items-center gap-2 text-blue-800 font-bold text-sm">
+                                <i class="fa-solid fa-shield-halved text-blue-600"></i>
+                                <span>APD & Kewajiban (ISO 3864-1 Biru)</span>
+                            </div>
+                            <div id="apd-badges" class="flex flex-wrap gap-2 pt-1">
+                                <!-- Dynamic APD Badges -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Pre-Practice Digital Checklist -->
+                    <div class="space-y-3 pt-2">
+                        <h4 class="text-sm font-bold text-slate-800 flex items-center gap-2">
+                            <i class="fa-solid fa-list-check text-brand-600"></i>
+                            Daftar Periksa Pra-Praktik Digital
+                        </h4>
+                        <p class="text-xs text-slate-500">Centang seluruh item di bawah ini untuk mengonfirmasi kelayakan alat & keamanan diri sebelum melangkah ke prosedur berikutnya.</p>
+                        
+                        <div id="checklist-items-container" class="space-y-2">
+                            <!-- Dynamic Checklists injected by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= SEGMENT 2: TAHAP PENGOPERASIAN ALAT ================= -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-6 relative">
+                    <!-- Lock Overlay if Checklist incomplete -->
+                    <div id="operation-lock-overlay" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm z-20 rounded-2xl flex flex-col items-center justify-center p-6 text-center text-white transition-all duration-300">
+                        <div class="w-16 h-16 rounded-full bg-amber-500/20 text-amber-400 border border-amber-400/40 flex items-center justify-center text-2xl mb-3 animate-bounce">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <h4 class="text-xl font-bold">Tahap Pengoperasian Terkunci</h4>
+                        <p class="text-sm text-slate-200 max-w-md mt-1 mb-4">
+                            Selesaikan seluruh <b>Daftar Periksa Pra-Pakai Digital</b> di Segmen 1 di atas untuk membuka panduan pengoperasian keselamatan.
+                        </p>
+                        <button onclick="scrollToChecklist()" class="px-5 py-2.5 bg-brand-500 text-slate-950 font-bold rounded-xl text-xs hover:bg-brand-400 transition shadow-lg">
+                            Isi Checklist Sekarang
+                        </button>
+                    </div>
+
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-xl bg-brand-600 text-white font-extrabold flex items-center justify-center text-sm">2</span>
+                            <h3 class="text-lg font-bold text-slate-900">Tahap Pengoperasian Alat (Prosedural)</h3>
+                        </div>
+                        <span class="text-xs font-semibold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-md border border-brand-200">Max 90s Video</span>
+                    </div>
+
+                    <!-- Step-by-step Infographic Procedure (ISO 1 step per line) -->
+                    <div class="space-y-4">
+                        <h4 class="text-sm font-bold text-slate-800">Langkah Kerja Berurutan (Prinsip Kedekatan Spasial)</h4>
+                        
+                        <div id="operation-steps-container" class="space-y-3">
+                            <!-- Dynamic Infographic Steps -->
+                        </div>
+                    </div>
+
+                    <!-- Embedded Short Procedure Video (<90 sec) -->
+                    <div class="pt-4 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <h4 class="text-sm font-bold text-slate-800 flex items-center gap-2">
+                                <i class="fa-solid fa-circle-play text-red-500"></i>
+                                Video Demonstrasi Prosedur Singkat (&le; 90 Detik)
+                            </h4>
+                            <span class="text-xs font-mono text-slate-500">Durasi: 01:15</span>
+                        </div>
+
+                        <div class="relative rounded-2xl overflow-hidden bg-slate-950 aspect-video border border-slate-800 shadow-inner group flex items-center justify-center">
+                            <!-- Video Placeholder Visual -->
+                            <img id="video-thumbnail" src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80" alt="Video SOP" class="w-full h-full object-cover opacity-60">
+                            
+                            <!-- Overlay Play Button -->
+                            <button onclick="playVideoModal()" class="absolute w-16 h-16 rounded-full bg-brand-500 text-slate-950 flex items-center justify-center text-2xl shadow-2xl hover:scale-110 transition pulse-emerald">
+                                <i class="fa-solid fa-play ml-1"></i>
+                            </button>
+
+                            <div class="absolute bottom-3 left-3 right-3 p-3 glassmorph-dark rounded-xl text-white text-xs flex justify-between items-center">
+                                <span class="font-medium truncate" id="video-caption-title">Demonstrasi Kalibrasi Probe 1kHz Oscilloscope</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-500/30 text-emerald-300 font-mono text-[10px]">HD 1080p</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= SEGMENT 3: TAHAP PENUTUPAN & GREEN TECH ================= -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-6">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-xl bg-teal-600 text-white font-extrabold flex items-center justify-center text-sm">3</span>
+                            <h3 class="text-lg font-bold text-slate-900">Tahap Penutupan & Efisiensi Energi (Green Tech)</h3>
+                        </div>
+                        <span class="text-xs font-semibold text-teal-700 bg-teal-50 px-2.5 py-1 rounded-md border border-teal-200">Zero-Waste Lab</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Power Off Checklist -->
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                            <h4 class="text-sm font-bold text-slate-800 flex items-center gap-2">
+                                <i class="fa-solid fa-power-off text-red-500"></i>
+                                Prosedur Pemadaman & Perapian
+                            </h4>
+                            <ul id="shutdown-steps" class="text-xs text-slate-600 space-y-2 list-none">
+                                <!-- Dynamic Shutdown Steps -->
+                            </ul>
+                        </div>
+
+                        <!-- Green Energy Saving Tip -->
+                        <div class="p-4 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 text-white space-y-3 shadow-md">
+                            <div class="flex items-center gap-2 text-emerald-200 font-bold text-sm">
+                                <i class="fa-solid fa-leaf text-emerald-200 text-base"></i>
+                                <span>Manfaat Green Technology</span>
+                            </div>
+                            <p class="text-xs text-slate-100 leading-relaxed">
+                                Mematikan sakelar utama dan melepas kabel beban menghemat hingga <b>15 Watt</b> daya 'standby vampire' per bench stasiun praktikum elektro.
+                            </p>
+                            <div class="pt-2 border-t border-white/20 flex justify-between items-center text-xs">
+                                <span>Target Efisiensi Lab:</span>
+                                <span class="font-bold text-emerald-200">Hemat ~2.5 kWh / Minggu</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </section>
+
+    <!-- ================= ALUR PEMBELAJARAN VOKASI (160 MENIT) ================= -->
+    <section id="alur-pembelajaran" class="py-12 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <span class="text-xs font-bold text-brand-600 uppercase tracking-widest">Integrasi Pembelajaran Vokasi</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Alur Sesi Praktikum (Total 160 Menit)</h2>
+                <p class="text-xs sm:text-sm text-slate-500">Struktur alur kolaboratif berbasis rotasi peran (Operator, Pengamat, Pencatat).</p>
+            </div>
+
+            <!-- Timeline Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                
+                <!-- Phase 1 -->
+                <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-500 transition relative space-y-3 group">
+                    <div class="flex items-center justify-between">
+                        <span class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center text-sm">20m</span>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 uppercase">Tahap 1</span>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base">Pra-Praktik Digital</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Scan QR alat, menyimak infografis/video visual SOP, dan melengkapi daftar periksa digital.</p>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-500 transition relative space-y-3 group">
+                    <div class="flex items-center justify-between">
+                        <span class="w-9 h-9 rounded-xl bg-blue-100 text-blue-700 font-bold flex items-center justify-center text-sm">25m</span>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800 uppercase">Tahap 2</span>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base">Demonstrasi Pengajar</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Instruktur/teknisi laboratorium memperagakan poin kritis keselamatan & trouble-shooting khas.</p>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-500 transition relative space-y-3 group">
+                    <div class="flex items-center justify-between">
+                        <span class="w-9 h-9 rounded-xl bg-purple-100 text-purple-700 font-bold flex items-center justify-center text-sm">90m</span>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-100 text-purple-800 uppercase">Tahap 3</span>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base">Praktik Terbimbing</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Praktik kelompok dengan rotasi peran periodik: Operator, Pengamat Keselamatan, & Pencatat Data.</p>
+                </div>
+
+                <!-- Phase 4 -->
+                <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-500 transition relative space-y-3 group">
+                    <div class="flex items-center justify-between">
+                        <span class="w-9 h-9 rounded-xl bg-amber-100 text-amber-700 font-bold flex items-center justify-center text-sm">25m</span>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-800 uppercase">Tahap 4</span>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base">Penutupan & Refleksi</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Perapian alat, pengembalian bahan, pemadaman daya, & pengisian jurnal refleksi digital.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PORTOFOLIO & EVALUASI SISTEM ================= -->
+    <section id="portofolio-evaluasi" class="py-12 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <div class="lg:col-span-5 space-y-4">
+                    <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest">Pengumpulan Bukti & Evaluasi</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Portofolio Ketercapaian Digital</h2>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                        Kirimkan laporan foto kondisi alat sebelum/sesudah beserta jurnal refleksi singkat. Data kepatuhan dicatat secara <b>anonim</b> untuk menjaga privasi peserta.
+                    </p>
+
+                    <!-- Evaluation Metrics Card -->
+                    <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700 space-y-3 text-xs">
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-400">Standard System Usability Scale (SUS):</span>
+                            <span class="text-emerald-400 font-bold">&ge; 68.0 (Terpenuhi)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-400">Aiken's V Expert Index:</span>
+                            <span class="text-emerald-400 font-bold">&ge; 0.80 (Valid)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-400">Tingkat Kepatuhan Prosedur:</span>
+                            <span class="text-emerald-400 font-bold">&ge; 90% (Patuh)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simulation Form Card -->
+                <div class="lg:col-span-7">
+                    <form onsubmit="handlePortfolioSubmit(event)" class="glassmorph-dark rounded-2xl p-6 border border-slate-700 space-y-4">
+                        <h3 class="text-base font-bold text-emerald-300 border-b border-slate-700 pb-2">Form Upload Portofolio Sesi Praktikum</h3>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                            <div>
+                                <label class="block text-slate-300 font-medium mb-1">Pilih Peralatan Elektro</label>
+                                <select id="form-tool-select" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-brand-500">
+                                    <option value="Oscilloscope Digital">Oscilloscope Digital</option>
+                                    <option value="Solder Station & Blower">Solder Station & Blower</option>
+                                    <option value="Power Supply DC Variable">Power Supply DC Variable</option>
+                                    <option value="Function Generator">Function Generator</option>
+                                    <option value="Multimeter Digital">Multimeter Digital</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-slate-300 font-medium mb-1">Peran Dalam Kelompok</label>
+                                <select class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-brand-500">
+                                    <option>Operator Alat Utama</option>
+                                    <option>Pengamat Keselamatan Kerja</option>
+                                    <option>Pencatat Data & Jurnal</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Simulated Photo Upload Field -->
+                        <div>
+                            <label class="block text-xs text-slate-300 font-medium mb-1">Simulasi Upload Foto Kondisi Alat (Sebelum / Sesudah)</label>
+                            <div class="border-2 border-dashed border-slate-700 rounded-xl p-4 text-center hover:border-brand-500 transition cursor-pointer bg-slate-800/40" onclick="triggerPhotoUploadSim()">
+                                <i class="fa-solid fa-cloud-arrow-up text-2xl text-slate-400 mb-1"></i>
+                                <p class="text-xs text-slate-300 font-medium" id="upload-status-text">Klik untuk ambil/unggah foto bukti praktikum</p>
+                                <p class="text-[10px] text-slate-500 mt-0.5">Format JPG/PNG max 5MB (Kompresi Otomatis)</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs text-slate-300 font-medium mb-1">Jurnal Refleksi Singkat</label>
+                            <textarea rows="2" placeholder="Tuliskan 1-2 poin pembelajaran atau kendala teknis yang dialami..." class="w-full bg-slate-800 border border-slate-700 rounded-lg p-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-500"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3 rounded-xl bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs transition shadow-lg shadow-brand-500/20 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Kirim Laporan Portofolio (Anonim)
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-slate-950 text-slate-400 text-xs border-t border-slate-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+                
+                <!-- Copyright Ariel Usman -->
+                <div>
+                    <div class="font-bold text-slate-200 text-sm">Smart Visual SOP Laboratorium Elektro</div>
+                    <p class="text-slate-500 mt-0.5">Oleh <b>Ariel Usman</b> &copy; Copyright 2026. All Rights Reserved.</p>
+                </div>
+
+                <!-- Instagram & Social Links -->
+                <div class="flex items-center space-x-4">
+                    <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-pink-500/50 hover:text-pink-400 transition">
+                        <i class="fa-brands fa-instagram text-base text-pink-500"></i>
+                        <span class="font-semibold text-slate-300">@arielrcun</span>
+                    </a>
+                    <a href="#" onclick="openQrModal(); return false;" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-emerald-500/50 hover:text-emerald-400 transition">
+                        <i class="fa-solid fa-qrcode text-emerald-500"></i> QR Stiker
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= MODAL 1: QR CODE DYNAMIC SIMULATOR ================= -->
+    <div id="qr-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-6 max-w-sm w-full space-y-5 text-slate-900 text-center relative shadow-2xl animate-fade-in">
+            <button onclick="closeQrModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="space-y-1">
+                <span class="text-xs font-bold text-brand-600 uppercase tracking-widest">Stiker QR Dinamis ISO</span>
+                <h3 class="text-xl font-extrabold text-slate-900">Scan Endpoint Alat</h3>
+                <p class="text-xs text-slate-500">Arahkan kamera HP/Tablet ke stiker alat elektro</p>
+            </div>
+
+            <!-- Generated QR SVG Card -->
+            <div class="p-4 bg-slate-50 border-2 border-dashed border-slate-200 rounded-2xl flex flex-col items-center justify-center space-y-3">
+                <div class="w-44 h-44 bg-white p-2 rounded-xl shadow-md border border-slate-100 flex items-center justify-center">
+                    <!-- SVG QR Code Placeholder -->
+                    <svg class="w-full h-full text-slate-800" viewBox="0 0 100 100" fill="currentColor">
+                        <path d="M0,0 h30 v30 h-30 z M5,5 v20 h20 v-20 z M10,10 h10 v10 h-10 z" />
+                        <path d="M70,0 h30 v30 h-30 z M75,5 v20 h20 v-20 z M80,10 h10 v10 h-10 z" />
+                        <path d="M0,70 h30 v30 h-30 z M5,75 v20 h20 v-20 z M10,80 h10 v10 h-10 z" />
+                        <rect x="35" y="5" width="10" height="10" />
+                        <rect x="50" y="15" width="15" height="10" />
+                        <rect x="35" y="35" width="30" height="30" />
+                        <rect x="75" y="45" width="20" height="10" />
+                        <rect x="45" y="75" width="10" height="20" />
+                        <rect x="70" y="70" width="25" height="25" />
+                    </svg>
+                </div>
+                <span class="text-[11px] font-mono text-slate-500 bg-white px-2 py-1 rounded border border-slate-200">https://visualsop-labelektro.id/qr/ELK-001</span>
+            </div>
+
+            <div class="text-xs text-slate-500 leading-relaxed">
+                URL tetap mengarah ke database. Perubahan SOP langsung ter-update tanpa mengganti stiker fisik.
+            </div>
+
+            <button onclick="closeQrModal()" class="w-full py-2.5 bg-slate-900 text-white font-bold rounded-xl text-xs hover:bg-slate-800 transition">
+                Tutup Simulasi
+            </button>
+        </div>
+    </div>
+
+    <!-- ================= MODAL 2: VIDEO TUTORIAL MODAL ================= -->
+    <div id="video-modal" class="fixed inset-0 bg-slate-950/90 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 rounded-3xl p-4 sm:p-6 max-w-2xl w-full space-y-4 text-white relative shadow-2xl">
+            <button onclick="closeVideoModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center z-10">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="space-y-1">
+                <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest">Video Singkat SOP Prosedur</span>
+                <h3 id="modal-video-title" class="text-lg font-bold">Demonstrasi Pengoperasian</h3>
+            </div>
+
+            <!-- Video Player Simulation Container -->
+            <div class="relative bg-black rounded-2xl overflow-hidden aspect-video border border-slate-800 flex items-center justify-center">
+                <div class="text-center p-6 space-y-3" id="video-sim-content">
+                    <i class="fa-solid fa-circle-play text-5xl text-brand-500 animate-pulse"></i>
+                    <p class="text-xs text-slate-300">Simulasi Pemutaran Video SOP Prosedur (&le; 90 Detik)</p>
+                    <div class="flex items-center justify-center gap-2 text-[11px] text-slate-400 font-mono">
+                        <span>00:15 / 01:15</span>
+                        <div class="w-32 bg-slate-800 h-1 rounded-full overflow-hidden">
+                            <div class="bg-brand-500 h-full w-1/4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-between items-center text-xs text-slate-400">
+                <span>Prinsip Koherensi: Bebas Dekorasi Tidak Relevan</span>
+                <button onclick="closeVideoModal()" class="px-4 py-1.5 rounded-lg bg-emerald-600 text-white font-bold hover:bg-emerald-500">Selesai Menonton</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= JAVASCRIPT LOGIC ================= -->
+    <script>
+        // Data Katalog Alat Elektro berdasarkan Rencana Implementasi Dokumen
+        const EQUIPMENT_DATABASE = [
+            {
+                id: 'elk-001',
+                code: 'ELK-001',
+                name: 'Oscilloscope Digital',
+                category: 'Pengukuran Gelombang',
+                icon: 'fa-wave-square',
+                hazards: [
+                    'Risiko sengatan listrik ringan saat menyentuh ground probe tidak terisolasi.',
+                    'Over-voltage input yang melebihi batas spek terminal probe.'
+                ],
+                apd: [
+                    { name: 'Kacamata Safety', icon: 'fa-glasses' },
+                    { name: 'Kasut Isolator Termal', icon: 'fa-shoe-prints' }
+                ],
+                checklists: [
+                    'Kabel daya terhubung ke stopkontak grounding yang aman.',
+                    'Probe oscilloscope dalam kondisi bersih dan kabel isolasi utuh.',
+                    'Tombol daya dalam posisi OFF sebelum memasang konektor BNC.'
+                ],
+                steps: [
+                    'Langkah 1: Pasang probe CH1 pada jack terminal BNC dan jepitkan probe ground ke ground sirkuit.',
+                    'Langkah 2: Tekan tombol POWER untuk menyalakan layar display oscilloscope.',
+                    'Langkah 3: Hubungkan probe ke pin Auto-Calibration 1kHz / 3V p-p.',
+                    'Langkah 4: Tekan tombol AUTOSET untuk menyesuaikan skala gelombang sinus/kotak secara otomatis.'
+                ],
+                shutdown: [
+                    'Lepaskan jepitan probe ground dan jack BNC dari papan praktikum.',
+                    'Tekan tombol POWER untuk mematikan perangkat.',
+                    'Gulung kabel probe dengan rapi tanpa ditekuk patah.'
+                ]
+            },
+            {
+                id: 'elk-002',
+                code: 'ELK-002',
+                name: 'Solder Station & Blower',
+                category: 'Penyolderan PCB',
+                icon: 'fa-fire-burner',
+                hazards: [
+                    'Suhu tinggi elemen pemanas solder (hingga 400°C) dapat menyebabkan luka bakar serius.',
+                    'Hirupan asap timah/rosin berbahaya bagi pernapasan.'
+                ],
+                apd: [
+                    { name: 'Kacamata Pelindung', icon: 'fa-glasses' },
+                    { name: 'Masker Respirator/Asap', icon: 'fa-mask-face' }
+                ],
+                checklists: [
+                    'Solder diletakkan di dudukan besi pemegang yang stabil.',
+                    'Spons pembersih tip solder dalam kondisi lembab.',
+                    'Exhaust fan / penyedot asap solder sudah dihidupkan.'
+                ],
+                steps: [
+                    'Langkah 1: Pasang elemen solder pada dudukan penyangga keselamatan.',
+                    'Langkah 2: Nyalakan Solder Station dan atur temperatur knob pada skala 320°C - 350°C.',
+                    'Langkah 3: Bersihkan ujung tip solder pada spons lembab sebelum menyentuh timah PCB.',
+                    'Langkah 4: Aplikasikan timah secukupnya pada kaki komponen elektronik.'
+                ],
+                shutdown: [
+                    'Kembalikan solder ke dalam dudukan besi pemegang.',
+                    'Putar knob temperatur ke minimum dan matikan sakelar daya.',
+                    'Cabut steker dari stopkontak setelah komponen dingin.'
+                ]
+            },
+            {
+                id: 'elk-003',
+                code: 'ELK-003',
+                name: 'Power Supply DC Variable',
+                category: 'Sumber Tegangan',
+                icon: 'fa-car-battery',
+                hazards: [
+                    'Korsleting (short circuit) antar terminal positif dan negatif yang berlebihan.',
+                    'Kerusakan komponen akibat arus berlebih (overcurrent).'
+                ],
+                apd: [
+                    { name: 'Sarung Tangan ESD', icon: 'fa-mitten' },
+                    { name: 'Kacamata Safety', icon: 'fa-glasses' }
+                ],
+                checklists: [
+                    'Knob pengatur Voltage dan Current berada pada posisi minimum (0V/0A).',
+                    'Kabel banana jack terisolasi penuh tanpa kawat terbuka.',
+                    'Beban praktikum tidak melebihi kapasitas suplai maksimum.'
+                ],
+                steps: [
+                    'Langkah 1: Matikan tombol output sebelum menghubungkan kabel ke beban.',
+                    'Langkah 2: Nyalakan power supply dan putar knob Voltage sesuai spesifikasi batas aman rangkaian.',
+                    'Langkah 3: Atur batas Current Limiter untuk perlindungan arus lebih.',
+                    'Langkah 4: Aktifkan tombol OUTPUT sakelar utama.'
+                ],
+                shutdown: [
+                    'Matikan tombol sakelar OUTPUT terlebih dahulu.',
+                    'Putar knob Voltage dan Current kembali ke nilai 0.',
+                    'Matikan sakelar utama daya dan lepaskan kabel jack banana.'
+                ]
+            },
+            {
+                id: 'elk-004',
+                code: 'ELK-004',
+                name: 'Function Generator',
+                category: 'Pembangkit Sinyal',
+                icon: 'fa-sliders',
+                hazards: [
+                    'Injeksi sinyal tegangan asing dari luar menuju terminal output generator.',
+                    'Kerusakan IC internal jika terkena tegangan balik.'
+                ],
+                apd: [
+                    { name: 'Kacamata Pelindung', icon: 'fa-glasses' }
+                ],
+                checklists: [
+                    'Kabel BNC to Alligator Clip terhubung dengan benar.',
+                    'Amplitudo awal diatur pada skala terendah.'
+                ],
+                steps: [
+                    'Langkah 1: Pilih bentuk gelombang (Sinus, Kotak, Segitiga) melalui tombol pemilih.',
+                    'Langkah 2: Atur frekuensi sinyal menggunakan knob pengatur coarse/fine.',
+                    'Langkah 3: Hubungkan penjejit ke titik input uji sirkuit.',
+                    'Langkah 4: Sesuaikan level Amplitudo dan Offset DC.'
+                ],
+                shutdown: [
+                    'Turunkan nilai amplitudo sinyal ke batas minimum.',
+                    'Matikan unit dengan menekan sakelar utama.',
+                    'Lepaskan kabel jepit dari papan uji.'
+                ]
+            },
+            {
+                id: 'elk-005',
+                code: 'ELK-005',
+                name: 'Multimeter Digital',
+                category: 'Alat Ukur Dasar',
+                icon: 'fa-gauge-high',
+                hazards: [
+                    'Kerusakan sekring/meter akibat salah posisi sakelar pemilih (misal: mengukur tegangan pada mode Ampertarget).',
+                    'Kejutan listrik pada pengukuran tegangan AC tinggi.'
+                ],
+                apd: [
+                    { name: 'Sarung Tangan Isolasi', icon: 'fa-mitten' }
+                ],
+                checklists: [
+                    'Kabel probe merah di terminal V/Ω dan probe hitam di terminal COM.',
+                    'Kondisi baterai internal multimeter cukup (tidak ada ikon low-battery).'
+                ],
+                steps: [
+                    'Langkah 1: Putar sakelar pemilih batas ukur (Range Selector) sesuai parameter yang diukur (V, A, atau Ω).',
+                    'Langkah 2: Pastikan posisi probe paralel untuk Tegangan dan seri untuk Arus.',
+                    'Langkah 3: Tempelkan tip probe pada titik ukur dan baca nilai angka digital pada display.',
+                    'Langkah 4: Gunakan fungsi HOLD jika ingin menyimpan pembacaan nilai.'
+                ],
+                shutdown: [
+                    'Putar sakelar pemilih ke posisi OFF untuk menghemat baterai.',
+                    'Lepaskan kedua probe dan rapikan kabel pembungkus.'
+                ]
+            }
+        ];
+
+        // Global State Variables
+        let activeToolIndex = 0;
+        let checkedState = {}; // Stores checklist progress per tool
+
+        // Initialize Web App
+        document.addEventListener('DOMContentLoaded', () => {
+            renderEquipmentSelectors();
+            renderSidebarList();
+            loadToolDetails(0);
+        });
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
+
+        // Render Equipment Selector Grid (Top Catalog Section)
+        function renderEquipmentSelectors() {
+            const container = document.getElementById('equipment-selector-container');
+            container.innerHTML = EQUIPMENT_DATABASE.map((tool, idx) => `
+                <div onclick="selectTool(${idx})" class="p-3 sm:p-4 rounded-xl bg-white border border-slate-200 hover:border-brand-500 hover:shadow-md transition cursor-pointer flex flex-col items-center text-center space-y-2 group">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 group-hover:bg-brand-500 group-hover:text-slate-950 transition flex items-center justify-center text-lg">
+                        <i class="fa-solid ${tool.icon}"></i>
+                    </div>
+                    <div>
+                        <div class="text-[10px] font-mono text-slate-400 font-semibold">${tool.code}</div>
+                        <h4 class="font-bold text-xs sm:text-sm text-slate-800 line-clamp-1">${tool.name}</h4>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Render Sidebar Nav List
+        function renderSidebarList() {
+            const container = document.getElementById('sidebar-tool-list');
+            container.innerHTML = EQUIPMENT_DATABASE.map((tool, idx) => `
+                <button onclick="selectTool(${idx})" class="sidebar-item w-full text-left px-3 py-2.5 rounded-xl text-xs font-semibold flex items-center gap-2.5 transition ${idx === activeToolIndex ? 'bg-brand-600 text-white shadow-md' : 'text-slate-600 hover:bg-slate-100'}">
+                    <i class="fa-solid ${tool.icon} text-sm"></i>
+                    <span class="truncate">${tool.name}</span>
+                </button>
+            `).join('');
+        }
+
+        // Select & Load Equipment Detail
+        function selectTool(idx) {
+            activeToolIndex = idx;
+            renderSidebarList();
+            loadToolDetails(idx);
+            
+            // Scroll smoothly to SOP Main workspace
+            document.getElementById('sop-main').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Load Content into SOP Main Sections
+        function loadToolDetails(idx) {
+            const tool = EQUIPMENT_DATABASE[idx];
+
+            // Header info
+            document.getElementById('tool-name').innerText = tool.name;
+            document.getElementById('tool-code').innerText = tool.code;
+            document.getElementById('tool-icon').className = `fa-solid ${tool.icon}`;
+            document.getElementById('form-tool-select').value = tool.name;
+
+            // Hazard list (ISO Yellow)
+            const hazardList = document.getElementById('hazard-list');
+            hazardList.innerHTML = tool.hazards.map(h => `<li>${h}</li>`).join('');
+
+            // APD Badges (ISO Blue)
+            const apdContainer = document.getElementById('apd-badges');
+            apdContainer.innerHTML = tool.apd.map(a => `
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-blue-100 text-blue-800 text-xs font-semibold">
+                    <i class="fa-solid ${a.icon}"></i> ${a.name}
+                </span>
+            `).join('');
+
+            // Digital Checklist Items
+            if (!checkedState[tool.id]) {
+                checkedState[tool.id] = new Array(tool.checklists.length).fill(false);
+            }
+
+            renderChecklistItems(tool);
+            
+            // Operation Steps (ISO 1 Step per Line)
+            const stepsContainer = document.getElementById('operation-steps-container');
+            stepsContainer.innerHTML = tool.steps.map(step => `
+                <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl flex items-start gap-3">
+                    <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                    <p class="text-xs text-slate-700 font-medium leading-relaxed">${step}</p>
+                </div>
+            `).join('');
+
+            // Shutdown Steps
+            const shutdownContainer = document.getElementById('shutdown-steps');
+            shutdownContainer.innerHTML = tool.shutdown.map(step => `
+                <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i>
+                    <span>${step}</span>
+                </li>
+            `).join('');
+
+            // Caption title
+            document.getElementById('video-caption-title').innerText = `Demonstrasi Prosedur ${tool.name}`;
+            document.getElementById('modal-video-title').innerText = `Video SOP: ${tool.name}`;
+
+            updateChecklistProgress();
+        }
+
+        // Render Checkboxes
+        function renderChecklistItems(tool) {
+            const container = document.getElementById('checklist-items-container');
+            const states = checkedState[tool.id];
+
+            container.innerHTML = tool.checklists.map((chk, i) => `
+                <label class="flex items-center gap-3 p-3 rounded-xl border ${states[i] ? 'bg-emerald-50/80 border-emerald-300' : 'bg-slate-50 border-slate-200'} cursor-pointer hover:bg-emerald-50/40 transition">
+                    <input type="checkbox" onchange="toggleChecklist(${i})" ${states[i] ? 'checked' : ''} class="w-4 h-4 text-emerald-600 rounded border-slate-300 focus:ring-emerald-500">
+                    <span class="text-xs ${states[i] ? 'text-emerald-900 font-bold line-through' : 'text-slate-700 font-medium'}">${chk}</span>
+                </label>
+            `).join('');
+        }
+
+        // Handle Checkbox Toggle
+        function toggleChecklist(itemIdx) {
+            const tool = EQUIPMENT_DATABASE[activeToolIndex];
+            checkedState[tool.id][itemIdx] = !checkedState[tool.id][itemIdx];
+            renderChecklistItems(tool);
+            updateChecklistProgress();
+        }
+
+        // Update Progress Bar & Lock State
+        function updateChecklistProgress() {
+            const tool = EQUIPMENT_DATABASE[activeToolIndex];
+            const states = checkedState[tool.id];
+            const total = states.length;
+            const checkedCount = states.filter(Boolean).length;
+            const percentage = Math.round((checkedCount / total) * 100);
+
+            document.getElementById('checklist-percentage').innerText = `${percentage}% Selesai`;
+            document.getElementById('checklist-progress-bar').style.width = `${percentage}%`;
+
+            const lockOverlay = document.getElementById('operation-lock-overlay');
+            if (percentage === 100) {
+                lockOverlay.classList.add('hidden');
+            } else {
+                lockOverlay.classList.remove('hidden');
+            }
+        }
+
+        function scrollToChecklist() {
+            document.getElementById('checklist-items-container').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Modal Controls
+        function openQrModal() {
+            document.getElementById('qr-modal').classList.remove('hidden');
+        }
+
+        function closeQrModal() {
+            document.getElementById('qr-modal').classList.add('hidden');
+        }
+
+        function playVideoModal() {
+            document.getElementById('video-modal').classList.remove('hidden');
+        }
+
+        function closeVideoModal() {
+            document.getElementById('video-modal').classList.add('hidden');
+        }
+
+        // Photo Upload Simulation
+        function triggerPhotoUploadSim() {
+            const statusText = document.getElementById('upload-status-text');
+            statusText.innerText = "Mengunggah foto bukti praktikum...";
+            setTimeout(() => {
+                statusText.innerText = "✅ Foto Alat Berhasil Diunggah (Bukti Terverifikasi)";
+                statusText.classList.add('text-emerald-400');
+            }, 1200);
+        }
+
+        // Form Submit Simulation
+        function handlePortfolioSubmit(e) {
+            e.preventDefault();
+            alert("Terima kasih! Laporan portofolio digital & data kepatuhan berhasil dikirimkan secara anonim ke database laboratorium.");
+        }
+    </script>
+</body>
+</html>
