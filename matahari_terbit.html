@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Bagaimana Matahari Bisa Terbit? | Edukasi Sains Astronomi & Rotasi Bumi</title>
+    <meta name="description" content="Pelajari fenomena sains bagaimana matahari terbit akibat rotasi Bumi dari barat ke timur. Dilengkapi simulasi interaktif 24 jam, kuis astronomi, dan infografis sains.">
+    <meta name="keywords" content="bagaimana matahari terbit, rotasi bumi, gerak semu harian matahari, astronomi indonesia, edukasi sains, kenapa matahari terbit di timur, sains anak, pembelajaran ipa">
+    <meta name="author" content="Ariel Usman">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://matahariterbit.id/">
+    <meta name="theme-color" content="#f59e0b">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://matahariterbit.id/">
+    <meta property="og:title" content="Bagaimana Matahari Bisa Terbit? - Edukasi Sains & Simulasi Interaktif">
+    <meta property="og:description" content="Simulasi interaktif dan penjelasan visual lengkap mengapa matahari terbit di timur dan tenggelam di barat akibat rotasi Bumi.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://matahariterbit.id/">
+    <meta name="twitter:title" content="Bagaimana Matahari Bisa Terbit?">
+    <meta name="twitter:description" content="Jelajahi fenomena terbitnya matahari secara interaktif dengan simulasi 24-jam & kuis edukatif.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Favicon Icon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☀️</text></svg>">
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalArticle",
+      "headline": "Bagaimana Matahari Bisa Terbit? Edukasi Sains Astronomi",
+      "description": "Panduan interaktif pembelajaran astronomi tentang proses terbitnya matahari akibat rotasi Bumi pada porosnya.",
+      "author": {
+        "@type": "Person",
+        "name": "Ariel Usman",
+        "url": "https://instagram.com/arielrcun"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "MatahariTerbit.id",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=100&auto=format&fit=crop"
+        }
+      },
+      "inLanguage": "id-ID",
+      "educationalLevel": "General Education / Elementary to High School"
+    }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sunGold: '#F59E0B',
+                        sunOrange: '#F97316',
+                        skyCyan: '#06B6D4',
+                        skyLight: '#E0F2FE',
+                        brightWarm: '#FFFBEB'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Canvas Confetti CDN (for quiz completion & guest download) -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        /* Glassmorphism Styles */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(253, 230, 138, 0.4);
+        }
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Dynamic Sky Gradients */
+        .sky-dawn { background: linear-gradient(to top, #fdba74, #f472b6, #38bdf8); }
+        .sky-day { background: linear-gradient(to top, #7dd3fc, #38bdf8, #0284c7); }
+        .sky-dusk { background: linear-gradient(to top, #fb923c, #c084fc, #1e1b4b); }
+        .sky-night { background: linear-gradient(to top, #0f172a, #0284c7, #030712); }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FEF3C7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #F59E0B;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-amber-50/50 text-slate-800 font-sans antialiased selection:bg-amber-300 selection:text-amber-900 min-h-screen flex flex-col justify-between">
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-40 w-full transition-all duration-300" id="navbar">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 my-2">
+            <div class="glass-panel rounded-2xl px-4 py-3 flex items-center justify-between shadow-lg shadow-amber-500/5">
+                <!-- Brand / Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-orange-400 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-sun text-2xl animate-spin-slow"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold bg-gradient-to-r from-amber-600 via-orange-500 to-amber-700 bg-clip-text text-transparent block leading-none">MatahariTerbit<span class="text-sky-500">.id</span></span>
+                        <span class="text-[10px] text-slate-500 font-semibold tracking-wider uppercase">Sains Astronomi Interaktif</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <div class="hidden md:flex items-center space-x-1 lg:space-x-2 font-medium text-sm text-slate-700">
+                    <a href="#beranda" class="px-3 py-2 rounded-xl hover:bg-amber-100/70 hover:text-amber-700 transition">Beranda</a>
+                    <a href="#penjelasan" class="px-3 py-2 rounded-xl hover:bg-amber-100/70 hover:text-amber-700 transition">Sains Rotasi</a>
+                    <a href="#simulasi" class="px-3 py-2 rounded-xl hover:bg-amber-100/70 hover:text-amber-700 transition">Simulasi 24 Jam</a>
+                    <a href="#fakta" class="px-3 py-2 rounded-xl hover:bg-amber-100/70 hover:text-amber-700 transition">Fakta Unik</a>
+                    <a href="#kuis" class="px-3 py-2 rounded-xl hover:bg-amber-100/70 hover:text-amber-700 transition">Kuis</a>
+                </div>
+
+                <!-- CTA & Mobile Toggle -->
+                <div class="flex items-center gap-2">
+                    <button onclick="openResourceModal()" class="hidden sm:flex items-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-4 py-2 rounded-xl font-semibold text-xs shadow-md shadow-amber-500/20 hover:shadow-lg hover:shadow-amber-500/30 transition active:scale-95">
+                        <i class="fa-solid fa-download"></i>
+                        <span>Unduh Kode Resource</span>
+                    </button>
+                    <!-- Mobile Hamburger Button -->
+                    <button id="menu-btn" class="md:hidden p-2 rounded-xl text-slate-700 hover:bg-amber-100/80 focus:outline-none" aria-label="Menu Mobile">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu" class="hidden md:hidden mt-2 glass-panel rounded-2xl p-4 shadow-xl flex flex-col space-y-2 font-medium text-slate-700">
+                <a href="#beranda" class="px-3 py-2 rounded-lg hover:bg-amber-100 hover:text-amber-700">Beranda</a>
+                <a href="#penjelasan" class="px-3 py-2 rounded-lg hover:bg-amber-100 hover:text-amber-700">Sains Rotasi</a>
+                <a href="#simulasi" class="px-3 py-2 rounded-lg hover:bg-amber-100 hover:text-amber-700">Simulasi 24 Jam</a>
+                <a href="#fakta" class="px-3 py-2 rounded-lg hover:bg-amber-100 hover:text-amber-700">Fakta Unik</a>
+                <a href="#kuis" class="px-3 py-2 rounded-lg hover:bg-amber-100 hover:text-amber-700">Kuis Astronomi</a>
+                <button onclick="openResourceModal()" class="w-full text-left bg-gradient-to-r from-amber-500 to-orange-500 text-white px-3 py-2.5 rounded-lg font-semibold text-sm shadow-md flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-download"></i>
+                    <span>Unduh Kode Resource</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="beranda" class="relative min-h-[85vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 overflow-hidden">
+        <!-- Glowing Background Orbs -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-gradient-to-tr from-amber-400/40 via-orange-300/30 to-sky-300/30 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 bg-amber-100/90 border border-amber-300/60 text-amber-900 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6 shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
+                <span>Edukasi Astronomi Dasar</span>
+            </div>
+
+            <!-- Glassmorphic Hero Card -->
+            <div class="glass-panel p-6 sm:p-12 rounded-3xl shadow-2xl border border-white/60 relative backdrop-blur-md">
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight mb-6">
+                    Mengapa & Bagaimana <br class="hidden sm:block">
+                    <span class="bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 bg-clip-text text-transparent">Matahari Terbit Di Timur?</span>
+                </h1>
+                
+                <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto mb-8 font-normal leading-relaxed">
+                    Tahukah kamu bahwa matahari sebenarnya <strong class="text-slate-800 font-semibold">tidak bergerak mengelilingi kita</strong>? Fenomena terbitnya matahari adalah ilusi visual indah yang tercipta akibat perputaran Bumi pada porosnya dari barat ke timur.
+                </p>
+
+                <!-- CTA Group -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#simulasi" class="w-full sm:w-auto bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold px-8 py-3.5 rounded-2xl shadow-lg shadow-amber-500/25 hover:shadow-xl hover:shadow-amber-500/40 transition text-sm flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-play"></i>
+                        <span>Coba Simulasi Interaktif</span>
+                    </a>
+                    <button onclick="openResourceModal()" class="w-full sm:w-auto bg-white/80 hover:bg-white text-slate-800 border border-amber-200 font-semibold px-8 py-3.5 rounded-2xl shadow-sm hover:shadow-md transition text-sm flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-code text-amber-500"></i>
+                        <span>Unduh Kode Resource</span>
+                    </button>
+                </div>
+
+                <!-- Stats / Key Metrics -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 pt-8 border-t border-amber-200/60">
+                    <div class="p-3 rounded-xl bg-amber-50/60">
+                        <div class="text-xl sm:text-2xl font-black text-amber-600">1.670 km/j</div>
+                        <div class="text-xs text-slate-500 font-medium">Kecepatan Rotasi Bumi</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-amber-50/60">
+                        <div class="text-xl sm:text-2xl font-black text-amber-600">23 Jam 56m</div>
+                        <div class="text-xs text-slate-500 font-medium">Satu Rotasi Penuh</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-amber-50/60">
+                        <div class="text-xl sm:text-2xl font-black text-amber-600">Barat &rarr; Timur</div>
+                        <div class="text-xs text-slate-500 font-medium">Arah Perputaran</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-amber-50/60">
+                        <div class="text-xl sm:text-2xl font-black text-amber-600">149,6 Juta km</div>
+                        <div class="text-xs text-slate-500 font-medium">Jarak ke Matahari</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN BODY CONTENT WITH SIDEBAR -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <!-- MAIN CONTENT (8 Columns) -->
+            <div class="lg:col-span-8 space-y-12">
+                
+                <!-- SECTION 1: KONSEP DASAR SAINS -->
+                <section id="penjelasan" class="glass-card rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-3 rounded-2xl bg-amber-100 text-amber-600">
+                            <i class="fa-solid fa-earth-americas text-2xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-amber-600 uppercase tracking-widest">Konsep Dasar Sains</span>
+                            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Mengapa Matahari "Tampak" Terbit?</h2>
+                        </div>
+                    </div>
+
+                    <div class="prose prose-amber max-w-none text-slate-600 space-y-4 leading-relaxed">
+                        <p>
+                            Saat pagi hari tiba, kita menyaksikan matahari perlahan muncul di ufuk timur. Banyak yang berasumsi bahwa matahari bergerak mendatangi kita. Namun dalam ilmu astronomi, fenomena ini dikenal sebagai <strong class="text-slate-800">Gerak Semu Harian Matahari</strong>.
+                        </p>
+
+                        <!-- Feature Grid Cards -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+                            <div class="p-4 rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200/80">
+                                <div class="font-bold text-amber-900 text-base mb-1 flex items-center gap-2">
+                                    <i class="fa-solid fa-arrows-spin text-amber-500"></i>
+                                    <span>Rotasi dari Barat ke Timur</span>
+                                </div>
+                                <p class="text-xs text-slate-600">
+                                    Bumi berputar pada sumbunya berlawanan arah jarum jam (jika dilihat dari Kutub Utara). Hal ini membuat benda-benda langit tampak bergerak dari arah berlawanan, yaitu timur ke barat.
+                                </p>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-gradient-to-br from-sky-50 to-cyan-50 border border-sky-200/80">
+                                <div class="font-bold text-sky-900 text-base mb-1 flex items-center gap-2">
+                                    <i class="fa-solid fa-eye text-sky-500"></i>
+                                    <span>Analog Kereta Api</span>
+                                </div>
+                                <p class="text-xs text-slate-600">
+                                    Sama seperti ketika kamu berada di dalam kereta api yang berjalan maju: pepohonan di luar tampak bergerak mundur, padahal kereta tempatmu beradalah yang sebenarnya maju!
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Educational Illustration Image -->
+                        <div class="relative rounded-2xl overflow-hidden shadow-md my-6 group">
+                            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1000&auto=format&fit=crop" alt="Ilustrasi Terbitnya Matahari di Ufuk" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/800x400/FBBF24/ffffff?text=Ilustrasi+Terbit+Matahari'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-4">
+                                <p class="text-white text-xs font-medium">Fajar memancarkan spektrum warna jingga karena pembiasan cahaya matahari di atmosfer Bumi.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 2: INTERACTIVE SIMULATION TOOL -->
+                <section id="simulasi" class="glass-card rounded-3xl p-6 sm:p-8 shadow-lg border border-amber-300/80">
+                    <div class="flex items-center justify-between flex-wrap gap-2 mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="p-3 rounded-2xl bg-orange-100 text-orange-600">
+                                <i class="fa-solid fa-sliders text-2xl"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-orange-600 uppercase tracking-widest">Alat Peraga Interaktif</span>
+                                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Simulasi 24 Jam Siklus Matahari</h2>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 bg-amber-100 text-amber-800 text-xs font-bold rounded-full">Interactive Canvas</span>
+                    </div>
+
+                    <!-- Canvas Stage for Dynamic Sky Simulation -->
+                    <div id="sky-canvas-box" class="relative rounded-2xl p-6 h-72 sm:h-80 sky-dawn transition-all duration-700 flex flex-col justify-between overflow-hidden shadow-inner">
+                        
+                        <!-- Sun / Moon Dynamic Graphic -->
+                        <div id="celestial-body" class="absolute w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-yellow-300 via-amber-400 to-orange-500 shadow-[0_0_50px_rgba(251,191,36,0.9)] transition-all duration-300 flex items-center justify-center border-2 border-white/50" style="left: 10%; top: 60%;">
+                            <i id="celestial-icon" class="fa-solid fa-sun text-white text-2xl sm:text-3xl animate-pulse"></i>
+                        </div>
+
+                        <!-- Horizon Line & Earth Surface -->
+                        <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-emerald-900 to-emerald-700 border-t-4 border-amber-400/40 flex items-center justify-between px-6">
+                            <div class="text-xs font-bold text-amber-200 tracking-wider flex items-center gap-1">
+                                <i class="fa-solid fa-compass"></i> TIMUR (Terbit)
+                            </div>
+                            <!-- Observer Silhouette -->
+                            <div class="text-amber-200/90 text-3xl">
+                                <i class="fa-solid fa-child-reaching"></i>
+                            </div>
+                            <div class="text-xs font-bold text-amber-200 tracking-wider flex items-center gap-1">
+                                BARAT (Tenggelam) <i class="fa-solid fa-compass"></i>
+                            </div>
+                        </div>
+
+                        <!-- Time & Phase Indicator Badge -->
+                        <div class="relative z-10 flex items-center justify-between">
+                            <div class="glass-dark px-4 py-2 rounded-xl text-white">
+                                <div class="text-[10px] text-slate-300 font-semibold uppercase">Waktu Lokal</div>
+                                <div id="time-display" class="text-xl font-black font-mono text-amber-300">06:00 WIB</div>
+                            </div>
+                            <div class="glass-dark px-4 py-2 rounded-xl text-white text-right">
+                                <div class="text-[10px] text-slate-300 font-semibold uppercase">Fase Langit</div>
+                                <div id="phase-display" class="text-sm font-bold text-amber-300">Fajar / Terbit</div>
+                            </div>
+                        </div>
+
+                        <!-- Rotation Degrees Badge -->
+                        <div class="relative z-10 self-center">
+                            <span id="deg-display" class="glass-dark text-slate-200 px-3 py-1 rounded-full text-xs font-medium">Sudut Rotasi: 90°</span>
+                        </div>
+                    </div>
+
+                    <!-- Simulation Controls -->
+                    <div class="mt-6 space-y-4">
+                        <div class="flex items-center justify-between gap-4">
+                            <span class="text-xs font-bold text-slate-500 uppercase">00:00 (Malam)</span>
+                            <span class="text-xs font-bold text-amber-600 uppercase">12:00 (Siang)</span>
+                            <span class="text-xs font-bold text-slate-500 uppercase">23:59 (Malam)</span>
+                        </div>
+
+                        <!-- Slider -->
+                        <input type="range" id="time-slider" min="0" max="1439" value="360" class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-amber-500 hover:accent-orange-500 focus:outline-none">
+
+                        <!-- Interactive Control Buttons -->
+                        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+                            <button id="btn-play" onclick="toggleSimulation()" class="bg-amber-500 hover:bg-amber-600 text-white px-5 py-2.5 rounded-xl font-bold text-xs flex items-center gap-2 shadow-md transition">
+                                <i class="fa-solid fa-play" id="play-icon"></i>
+                                <span id="play-text">Putar Otomatis</span>
+                            </button>
+                            <button onclick="setPresetTime(360)" class="bg-amber-100 hover:bg-amber-200 text-amber-800 px-3 py-2 rounded-xl font-semibold text-xs transition">
+                                🌅 06:00 (Terbit)
+                            </button>
+                            <button onclick="setPresetTime(720)" class="bg-amber-100 hover:bg-amber-200 text-amber-800 px-3 py-2 rounded-xl font-semibold text-xs transition">
+                                ☀️ 12:00 (Siang Puncak)
+                            </button>
+                            <button onclick="setPresetTime(1080)" class="bg-amber-100 hover:bg-amber-200 text-amber-800 px-3 py-2 rounded-xl font-semibold text-xs transition">
+                                🌇 18:00 (Tenggelam)
+                            </button>
+                            <button onclick="setPresetTime(0)" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-2 rounded-xl font-semibold text-xs transition">
+                                🌙 00:00 (Tengah Malam)
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 3: KUIS SAINS INTERAKTIF -->
+                <section id="kuis" class="glass-card rounded-3xl p-6 sm:p-8 shadow-sm">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-3 rounded-2xl bg-amber-100 text-amber-600">
+                            <i class="fa-solid fa-brain text-2xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-amber-600 uppercase tracking-widest">Uji Pemahaman</span>
+                            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Kuis Singkat Sains Astronomi</h2>
+                        </div>
+                    </div>
+
+                    <div id="quiz-container" class="space-y-6">
+                        <!-- Dynamic Quiz Content Inject -->
+                    </div>
+                </section>
+
+                <!-- SECTION 4: FAKTA UNIK & INFOGRAFIS -->
+                <section id="fakta" class="glass-card rounded-3xl p-6 sm:p-8 shadow-sm">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-3 rounded-2xl bg-cyan-100 text-cyan-600">
+                            <i class="fa-solid fa-lightbulb text-2xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-cyan-600 uppercase tracking-widest">Tahukah Kamu?</span>
+                            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Fakta Unik Terbitnya Matahari</h2>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-5 rounded-2xl bg-white border border-amber-100 shadow-sm hover:border-amber-300 transition">
+                            <div class="text-2xl mb-2">🌅</div>
+                            <h3 class="font-bold text-slate-800 text-base mb-1">Matahari Terbit Pertama di Indonesia</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Kota Merauke di Papua adalah wilayah Indonesia pertama yang menyaksikan terbitnya matahari karena posisinya yang paling timur.
+                            </p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white border border-amber-100 shadow-sm hover:border-amber-300 transition">
+                            <div class="text-2xl mb-2">🌈</div>
+                            <h3 class="font-bold text-slate-800 text-base mb-1">Mengapa Pagi Hari Berwarna Jingga?</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Hamburan Rayleigh membuat gelombang cahaya biru yang pendek tersebar ke mana-mana, sehingga cahaya gelombang panjang merah-jingga yang menembus atmosfer tebal sampai ke mata kita.
+                            </p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white border border-amber-100 shadow-sm hover:border-amber-300 transition">
+                            <div class="text-2xl mb-2">🪐</div>
+                            <h3 class="font-bold text-slate-800 text-base mb-1">Venus: Terbit di Barat!</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Di planet Venus, matahari justru terbit di barat dan tenggelam di timur karena Venus berotasi secara retrograde (berlawanan dari Bumi).
+                            </p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white border border-amber-100 shadow-sm hover:border-amber-300 transition">
+                            <div class="text-2xl mb-2">⏱️</div>
+                            <h3 class="font-bold text-slate-800 text-base mb-1">Pembiasan Atmosfer</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Saat kita melihat matahari tepat menyentuh ufuk pagi, secara geometris matahari sebenarnya masih berada di bawah horizon! Atmosfer membengkokkan cahayanya.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- SIDEBAR AREA (4 Columns Desktop / Stacked Mobile) -->
+            <aside class="lg:col-span-4 space-y-6">
+                
+                <!-- Quick Navigation & Related Topics Widget -->
+                <div class="glass-card rounded-3xl p-6 shadow-sm sticky top-24">
+                    <h3 class="text-lg font-bold text-slate-900 mb-4 pb-3 border-b border-amber-200/80 flex items-center gap-2">
+                        <i class="fa-solid fa-book-bookmark text-amber-500"></i>
+                        <span>Topik Terkait & Ringkasan</span>
+                    </h3>
+
+                    <div class="space-y-3">
+                        <a href="#penjelasan" onclick="showTopicDetail('timur')" class="group block p-3 rounded-2xl bg-white border border-amber-100 hover:bg-amber-50/80 hover:border-amber-300 transition">
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-xs text-slate-800 group-hover:text-amber-700">Mengapa Terbit di Timur?</span>
+                                <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                            <p class="text-[11px] text-slate-500 mt-1">Akibat arah rotasi Bumi berlawanan jarum jam.</p>
+                        </a>
+
+                        <a href="#penjelasan" onclick="showTopicDetail('revolusi')" class="group block p-3 rounded-2xl bg-white border border-amber-100 hover:bg-amber-50/80 hover:border-amber-300 transition">
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-xs text-slate-800 group-hover:text-amber-700">Rotasi vs Revolusi</span>
+                                <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                            <p class="text-[11px] text-slate-500 mt-1">Bedanya perputaran poros vs mengelilingi matahari.</p>
+                        </a>
+
+                        <a href="#penjelasan" onclick="showTopicDetail('kemiringan')" class="group block p-3 rounded-2xl bg-white border border-amber-100 hover:bg-amber-50/80 hover:border-amber-300 transition">
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-xs text-slate-800 group-hover:text-amber-700">Kemiringan Sumbu 23.5°</span>
+                                <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                            <p class="text-[11px] text-slate-500 mt-1">Penyebab perubahan musim dan posisi terbit matahari.</p>
+                        </a>
+
+                        <a href="#penjelasan" onclick="showTopicDetail('pembiasan')" class="group block p-3 rounded-2xl bg-white border border-amber-100 hover:bg-amber-50/80 hover:border-amber-300 transition">
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-xs text-slate-800 group-hover:text-amber-700">Efek Pembiasan Atmosfer</span>
+                                <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                            <p class="text-[11px] text-slate-500 mt-1">Lensa alami atmosfer membelokkan berkas sinar.</p>
+                        </a>
+                    </div>
+
+                    <!-- Topic Detail Box Dynamic Injection -->
+                    <div id="sidebar-detail-box" class="mt-4 p-4 rounded-2xl bg-amber-100/60 border border-amber-300/50 hidden">
+                        <div class="flex items-center justify-between mb-1">
+                            <h4 id="detail-title" class="font-bold text-amber-900 text-xs">Detail Topik</h4>
+                            <button onclick="closeSidebarDetail()" class="text-amber-700 hover:text-amber-900 text-xs font-bold">&times;</button>
+                        </div>
+                        <p id="detail-desc" class="text-xs text-slate-700 leading-relaxed">Pilih salah satu topik di atas untuk melihat ringkasan sains cepat.</p>
+                    </div>
+
+                    <!-- Resource Promo Banner Card -->
+                    <div class="mt-6 p-5 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-500 text-white shadow-md">
+                        <div class="flex items-center gap-2 text-xs font-bold tracking-wider uppercase mb-2">
+                            <i class="fa-solid fa-laptop-code"></i>
+                            <span>Developer Resource</span>
+                        </div>
+                        <h4 class="font-extrabold text-base mb-1">Dapatkan Source Code Web Ini</h4>
+                        <p class="text-xs text-amber-100 mb-4 leading-relaxed">
+                            Akses langsung kode HTML, CSS Tailwind, dan simulasi JavaScript interaktif untuk bahan belajar atau tugas sekolah.
+                        </p>
+                        <button onclick="openResourceModal()" class="w-full bg-white text-slate-900 font-bold py-2.5 px-4 rounded-xl text-xs hover:bg-amber-50 transition shadow">
+                            Unduh Kode Resource
+                        </button>
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="bg-slate-900 text-white mt-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 pb-8 border-b border-slate-800">
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-3">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center text-white">
+                            <i class="fa-solid fa-sun"></i>
+                        </div>
+                        <span class="text-xl font-extrabold text-amber-400">MatahariTerbit.id</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Platform edukasi astronomi interaktif sederhana yang dirancang untuk memudahkan siapapun memahami fenomena alam sains dan tata surya.
+                    </p>
+                </div>
+
+                <!-- Col 2: Navigation Links -->
+                <div>
+                    <h4 class="text-sm font-bold text-amber-400 uppercase tracking-wider mb-3">Navigasi Halaman</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><a href="#beranda" class="hover:text-amber-300 transition">Beranda Utama</a></li>
+                        <li><a href="#penjelasan" class="hover:text-amber-300 transition">Penjelasan Sains Rotasi Bumi</a></li>
+                        <li><a href="#simulasi" class="hover:text-amber-300 transition">Simulasi Waktu 24 Jam</a></li>
+                        <li><a href="#kuis" class="hover:text-amber-300 transition">Kuis & Uji Pemahaman</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Social & Creator -->
+                <div>
+                    <h4 class="text-sm font-bold text-amber-400 uppercase tracking-wider mb-3">Hubungi Pengembang</h4>
+                    <p class="text-xs text-slate-400 mb-3">Dibuat dengan semangat edukasi sains oleh Ariel Usman.</p>
+                    <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-semibold text-xs shadow transition">
+                        <i class="fa-brands fa-instagram text-base"></i>
+                        <span>@arielrcun</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Copyright Line -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <p>Oleh Ariel Usman Copyright 2026</p>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="hover:text-slate-400">Privasi & Syarat</a>
+                    <span>&bull;</span>
+                    <a href="https://instagram.com/arielrcun" target="_blank" class="hover:text-slate-400 flex items-center gap-1">
+                        <i class="fa-brands fa-instagram"></i> Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MONETISASI MODAL POP-UP -->
+    <div id="resource-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/70 backdrop-blur-sm hidden transition-opacity duration-300">
+        <div class="glass-card bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative border border-amber-200 transform scale-95 transition-transform duration-300" id="modal-content">
+            
+            <!-- Close Button -->
+            <button onclick="closeResourceModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center text-sm font-bold transition">
+                &times;
+            </button>
+
+            <!-- Modal Header -->
+            <div class="text-center mb-6">
+                <div class="w-14 h-14 bg-gradient-to-tr from-amber-400 to-orange-500 rounded-2xl mx-auto flex items-center justify-center text-white text-2xl shadow-lg mb-3">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-black text-slate-900">Unduh Kode Resource</h3>
+                <p class="text-xs text-slate-500 mt-1">Dukung pengembang atau unduh langsung secara gratis sebagai tamu.</p>
+            </div>
+
+            <!-- Payment Options -->
+            <div class="space-y-3 mb-6">
+                <!-- Option 1: Trakteer (Lokal QRIS / E-Wallet) -->
+                <a href="https://trakteer.id/arielrcu" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-4 rounded-2xl border-2 border-amber-400/80 bg-amber-50/50 hover:bg-amber-100/60 transition group">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-red-500 text-white flex items-center justify-center font-bold text-lg shadow">
+                            🇮🇩
+                        </div>
+                        <div class="text-left">
+                            <div class="text-xs font-extrabold text-slate-800 group-hover:text-amber-900">Trakteer (Lokal QRIS / E-Wallet)</div>
+                            <div class="text-[11px] text-slate-500">Gopay, OVO, Dana, ShopeePay, QRIS</div>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-amber-600 text-xs"></i>
+                </a>
+
+                <!-- Option 2: PayPal (Internasional) -->
+                <a href="https://paypal.me/arielrcu" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-4 rounded-2xl border-2 border-sky-200 bg-sky-50/50 hover:bg-sky-100/60 transition group">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-lg shadow">
+                            <i class="fa-brands fa-paypal"></i>
+                        </div>
+                        <div class="text-left">
+                            <div class="text-xs font-extrabold text-slate-800 group-hover:text-blue-900">PayPal (International)</div>
+                            <div class="text-[11px] text-slate-500">Credit Card / Debit / Global Payment</div>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-sky-600 text-xs"></i>
+                </a>
+            </div>
+
+            <div class="relative flex py-2 items-center mb-4">
+                <div class="flex-grow border-t border-slate-200"></div>
+                <span class="flex-shrink mx-4 text-[10px] text-slate-400 uppercase font-bold tracking-wider">Atau Akses Gratis</span>
+                <div class="flex-grow border-t border-slate-200"></div>
+            </div>
+
+            <!-- Free Guest Access Download Button -->
+            <button onclick="downloadAsGuest()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3 px-4 rounded-2xl text-xs transition flex items-center justify-center gap-2 border border-slate-200">
+                <i class="fa-solid fa-user-clock text-slate-500"></i>
+                <span>Download as Guest (Akses Gratis)</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        /* Mobile Menu Toggle Logic */
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        /* 24-HOUR SUN RISE SIMULATION LOGIC */
+        const slider = document.getElementById('time-slider');
+        const timeDisplay = document.getElementById('time-display');
+        const phaseDisplay = document.getElementById('phase-display');
+        const degDisplay = document.getElementById('deg-display');
+        const canvasBox = document.getElementById('sky-canvas-box');
+        const celestialBody = document.getElementById('celestial-body');
+        const celestialIcon = document.getElementById('celestial-icon');
+        const playBtnText = document.getElementById('play-text');
+        const playIcon = document.getElementById('play-icon');
+
+        let isPlaying = false;
+        let animationInterval = null;
+
+        function updateSimulation(minutes) {
+            // Minutes in a day: 0 to 1439
+            const hours = Math.floor(minutes / 60);
+            const mins = Math.floor(minutes % 60);
+            const timeString = `${String(hours).padStart(2, '0')}:${String(mins).padStart(2, '0')} WIB`;
+            timeDisplay.textContent = timeString;
+
+            // Calculate rotation degree (0° at 00:00, 180° at 12:00, 360° at 24:00)
+            const degrees = Math.round((minutes / 1440) * 360);
+            degDisplay.textContent = `Sudut Rotasi: ${degrees}°`;
+
+            // Calculate X & Y Position for Sun/Moon Arc
+            // X goes from 5% to 90% across the day
+            const xPercent = 5 + (minutes / 1440) * 85;
+            
+            // Y arc formula: Sun is high at midday (around 720 mins)
+            // Normalizing minutes to -1 to 1 range (midday = 0)
+            const norm = (minutes - 720) / 720; // -1 at midnight, 0 at noon, 1 at midnight
+            // Parabola Y position (high noon = top of box)
+            const yPercent = 15 + Math.pow(norm, 2) * 55;
+
+            celestialBody.style.left = `${xPercent}%`;
+            celestialBody.style.top = `${yPercent}%`;
+
+            // Dynamic Sky Phases & Background Colors
+            if (hours >= 5 && hours < 7) {
+                // Dawn / Fajar
+                canvasBox.className = "relative rounded-2xl p-6 h-72 sm:h-80 sky-dawn transition-all duration-700 flex flex-col justify-between overflow-hidden shadow-inner";
+                phaseDisplay.textContent = "Fajar / Terbit 🌅";
+                celestialIcon.className = "fa-solid fa-sun text-white text-2xl sm:text-3xl animate-pulse";
+                celestialBody.className = "absolute w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-yellow-300 via-amber-400 to-orange-500 shadow-[0_0_50px_rgba(251,191,36,0.9)] transition-all duration-300 flex items-center justify-center border-2 border-white/50";
+            } else if (hours >= 7 && hours < 17) {
+                // Daylight / Siang
+                canvasBox.className = "relative rounded-2xl p-6 h-72 sm:h-80 sky-day transition-all duration-700 flex flex-col justify-between overflow-hidden shadow-inner";
+                phaseDisplay.textContent = "Siang Cerah ☀️";
+                celestialIcon.className = "fa-solid fa-sun text-yellow-100 text-2xl sm:text-3xl animate-spin-slow";
+                celestialBody.className = "absolute w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-yellow-300 shadow-[0_0_60px_rgba(253,224,71,1)] transition-all duration-300 flex items-center justify-center border-2 border-white";
+            } else if (hours >= 17 && hours < 19) {
+                // Dusk / Senja
+                canvasBox.className = "relative rounded-2xl p-6 h-72 sm:h-80 sky-dusk transition-all duration-700 flex flex-col justify-between overflow-hidden shadow-inner";
+                phaseDisplay.textContent = "Senja / Tenggelam 🌇";
+                celestialIcon.className = "fa-solid fa-sun text-orange-200 text-2xl sm:text-3xl";
+                celestialBody.className = "absolute w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-orange-400 to-red-500 shadow-[0_0_50px_rgba(249,115,22,0.9)] transition-all duration-300 flex items-center justify-center border-2 border-white/50";
+            } else {
+                // Night / Malam
+                canvasBox.className = "relative rounded-2xl p-6 h-72 sm:h-80 sky-night transition-all duration-700 flex flex-col justify-between overflow-hidden shadow-inner";
+                phaseDisplay.textContent = "Malam Hari 🌙";
+                celestialIcon.className = "fa-solid fa-moon text-slate-100 text-2xl sm:text-3xl";
+                celestialBody.className = "absolute w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-slate-200 shadow-[0_0_30px_rgba(255,255,255,0.6)] transition-all duration-300 flex items-center justify-center border-2 border-slate-300";
+            }
+        }
+
+        // Slider Event
+        slider.addEventListener('input', (e) => {
+            updateSimulation(e.target.value);
+        });
+
+        function setPresetTime(val) {
+            slider.value = val;
+            updateSimulation(val);
+        }
+
+        function toggleSimulation() {
+            if (isPlaying) {
+                clearInterval(animationInterval);
+                isPlaying = false;
+                playBtnText.textContent = "Putar Otomatis";
+                playIcon.className = "fa-solid fa-play";
+            } else {
+                isPlaying = true;
+                playBtnText.textContent = "Jeda";
+                playIcon.className = "fa-solid fa-pause";
+                animationInterval = setInterval(() => {
+                    let currentVal = parseInt(slider.value);
+                    currentVal = (currentVal + 10) % 1440;
+                    slider.value = currentVal;
+                    updateSimulation(currentVal);
+                }, 100);
+            }
+        }
+
+        // Initialize simulation at 06:00
+        updateSimulation(360);
+
+        /* QUIZ MODULE LOGIC */
+        const quizData = [
+            {
+                question: "1. Apa penyebab utama matahari tampak terbit dari ufuk timur?",
+                options: [
+                    "Matahari berputar mengelilingi Bumi dari timur ke barat",
+                    "Bumi berrotasi pada porosnya dari barat ke timur",
+                    "Matahari membesar pada pagi hari",
+                    "Sumbu Bumi melengkung ke arah matahari"
+                ],
+                correct: 1,
+                explanation: "Rotasi Bumi dari barat ke timur menyebabkan ilusi semu seolah-olah matahari bergerak dari timur ke barat."
+            },
+            {
+                question: "2. Berapa lama waktu yang dibutuhkan Bumi untuk melakukan 1 kali rotasi penuh?",
+                options: [
+                    "12 Jam",
+                    "365 Hari",
+                    "23 Jam 56 Menit (24 Jam)",
+                    "30 Hari"
+                ],
+                correct: 2,
+                explanation: "Satu rotasi sidereal Bumi membutuhkan waktu sekitar 23 jam 56 menit 4 detik, yang dibulatkan menjadi 24 jam."
+            },
+            {
+                question: "3. Di manakah wilayah di Indonesia yang mengalami matahari terbit paling awal?",
+                options: [
+                    "DKI Jakarta",
+                    "Kota Merauke, Papua",
+                    "Sabang, Aceh",
+                    "Bali"
+                ],
+                correct: 1,
+                explanation: "Merauke terletak di paling timur Indonesia (WIT), sehingga menerima sinar matahari pagi pertama kali."
+            }
+        ];
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = quizData.map((q, idx) => `
+                <div class="p-5 rounded-2xl bg-white border border-amber-200/80 shadow-sm" id="question-${idx}">
+                    <p class="font-bold text-slate-900 text-sm mb-3">${q.question}</p>
+                    <div class="space-y-2">
+                        ${q.options.map((opt, optIdx) => `
+                            <button onclick="checkAnswer(${idx}, ${optIdx})" class="quiz-opt-${idx} w-full text-left p-3 rounded-xl border border-slate-200 text-xs font-medium hover:bg-amber-50 hover:border-amber-300 transition flex items-center justify-between">
+                                <span>${opt}</span>
+                                <i class="fa-regular fa-circle text-slate-300 text-sm"></i>
+                            </button>
+                        `).join('')}
+                    </div>
+                    <div id="feedback-${idx}" class="mt-3 text-xs font-semibold hidden p-3 rounded-xl"></div>
+                </div>
+            `).join('');
+        }
+
+        function checkAnswer(qIdx, selectedOpt) {
+            const q = quizData[qIdx];
+            const buttons = document.querySelectorAll(`.quiz-opt-${qIdx}`);
+            const feedback = document.getElementById(`feedback-${qIdx}`);
+
+            buttons.forEach((btn, idx) => {
+                btn.disabled = true;
+                if (idx === q.correct) {
+                    btn.className = "w-full text-left p-3 rounded-xl border-2 border-emerald-500 bg-emerald-50 text-emerald-900 text-xs font-bold flex items-center justify-between";
+                } else if (idx === selectedOpt) {
+                    btn.className = "w-full text-left p-3 rounded-xl border-2 border-rose-500 bg-rose-50 text-rose-900 text-xs font-medium flex items-center justify-between";
+                }
+            });
+
+            feedback.classList.remove('hidden');
+            if (selectedOpt === q.correct) {
+                feedback.className = "mt-3 text-xs font-semibold p-3 rounded-xl bg-emerald-100 text-emerald-900 border border-emerald-200";
+                feedback.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-600 mr-1"></i> Benar! ${q.explanation}`;
+                confetti({ particleCount: 30, spread: 60, origin: { y: 0.8 } });
+            } else {
+                feedback.className = "mt-3 text-xs font-semibold p-3 rounded-xl bg-rose-100 text-rose-900 border border-rose-200";
+                feedback.innerHTML = `<i class="fa-solid fa-circle-xmark text-rose-600 mr-1"></i> Kurang Tepat. ${q.explanation}`;
+            }
+        }
+
+        renderQuiz();
+
+        /* SIDEBAR TOPIC DETAILS DISCOVERY LOGIC */
+        const topicDetails = {
+            timur: {
+                title: "Mengapa Terbit di Timur?",
+                desc: "Arah putaran rotasi Bumi adalah searah jarum jam jika dilihat dari Kutub Selatan, atau berlawanan arah jarum jam dari Kutub Utara (dari Barat ke Timur). Arah putaran ini secara otomatis membuat latar belakang langit dan matahari tampak bergeser dari timur ke barat."
+            },
+            revolusi: {
+                title: "Rotasi vs Revolusi Bumi",
+                desc: "Rotasi adalah perputaran Bumi pada poros atau sumbunya sendiri (menyebabkan siang dan malam, durasi 24 jam). Sedangkan Revolusi adalah peredaran Bumi mengelilingi Matahari pada orbitnya (menyebabkan pergantian musim, durasi 365,25 hari)."
+            },
+            kemiringan: {
+                title: "Kemiringan Sumbu 23.5°",
+                desc: "Sumbu rotasi Bumi miring sebesar 23,5 derajat terhadap bidang ekliptika. Kemiringan ini menyebabkan posisi terbitnya matahari sedikit bergeser ke utara atau selatan sepanjang tahun."
+            },
+            pembiasan: {
+                title: "Efek Pembiasan Atmosfer",
+                desc: "Atmosfer bumi bertindak seperti lensa pembesar alami. Pembiasan cahaya membengkokkan sinar matahari saat terbit, membuat matahari tampak sudah berada di atas cakrawala beberapa menit sebelum fisik sebenarnya berada di atas ufuk."
+            }
+        };
+
+        function showTopicDetail(key) {
+            const box = document.getElementById('sidebar-detail-box');
+            const title = document.getElementById('detail-title');
+            const desc = document.getElementById('detail-desc');
+
+            if (topicDetails[key]) {
+                title.textContent = topicDetails[key].title;
+                desc.textContent = topicDetails[key].desc;
+                box.classList.remove('hidden');
+            }
+        }
+
+        function closeSidebarDetail() {
+            document.getElementById('sidebar-detail-box').classList.add('hidden');
+        }
+
+        /* MONETISATION POPUP MODAL LOGIC */
+        const modal = document.getElementById('resource-modal');
+
+        function openResourceModal() {
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                document.getElementById('modal-content').classList.remove('scale-95');
+                document.getElementById('modal-content').classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeResourceModal() {
+            document.getElementById('modal-content').classList.remove('scale-100');
+            document.getElementById('modal-content').classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 200);
+        }
+
+        // Close modal when clicking outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeResourceModal();
+            }
+        });
+
+        /* Guest Download Feature Simulation */
+        function downloadAsGuest() {
+            // Trigger celebration effect
+            confetti({
+                particleCount: 80,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+
+            // Simulate file download
+            const element = document.createElement("a");
+            const fileContent = `<!-- Source Code Resource: MatahariTerbit.id -->\n<!-- Dibuat oleh Ariel Usman 2026 -->\n<!-- Terimakasih telah belajar astronomi bersama kami! -->\n` + document.documentElement.outerHTML;
+            const file = new Blob([fileContent], { type: 'text/html' });
+            element.href = URL.createObjectURL(file);
+            element.download = "MatahariTerbit_SourceCode.html";
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+
+            closeResourceModal();
+        }
+    </script>
+</body>
+</html>
