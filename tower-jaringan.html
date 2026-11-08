@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bagaimana Menara Tower Internet Bekerja | Panduan Lengkap BTS & Sinyal Celular</title>
+    
+    <!-- Meta SEO & OpenGraph -->
+    <meta name="description" content="Pelajari cara kerja menara tower internet (BTS), bagaimana sinyal HP dikirim melalui gelombang radio, komponen-komponent BTS, frekuensi 4G/5G, hingga core network seluler secara interaktif.">
+    <meta name="keywords" content="cara kerja bts, menara tower internet, sinyal seluler, jaringan 5g, bbu, transceiver, gelombang radio, jaringan telekomunikasi">
+    <meta name="author" content="Ariel Usman">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://menaratower.id/">
+    <meta property="og:title" content="Bagaimana Menara Tower Internet (BTS) Bekerja? | Visual & Interaktif">
+    <meta property="og:description" content="Eksplorasi interaktif tentang transmisi sinyal seluler, komponen fisik menara BTS, simulator coverage 4G/5G, dan perjalanan data dari HP ke server.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Panduan Interaktif Cara Kerja Menara Tower Internet">
+    <meta name="twitter:description" content="Eksplorasi interaktif transmisi sinyal seluler, komponen BTS, simulator coverage 4G/5G, dan perjalanan data.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230284c7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2L2 22h20L12 2z'/><path d='M12 6v10'/><path d='M8 14h8'/><circle cx='12' cy='4' r='1' fill='%230284c7'/></svg>">
+
+    <!-- Structured Data JSON-LD for Google SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Bagaimana Menara Tower Internet Bekerja",
+      "description": "Penjelasan komprehensif interaktif mengenai mekanisme kerja Base Transceiver Station (BTS) dan jaringan seluler modern.",
+      "author": {
+        "@type": "Person",
+        "name": "Ariel Usman",
+        "url": "https://instagram.com/arielrcun"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "MenaraTower.id"
+      },
+      "inLanguage": "id",
+      "datePublished": "2026-01-01",
+      "dateModified": "2026-11-09"
+    }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#06b6d4',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            900: '#0c4a6e',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Font Inter & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        /* Glassmorphism styling */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 10px 30px -10px rgba(2, 132, 199, 0.1);
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Custom Wave animation */
+        @keyframes pulse-wave {
+            0% { transform: scale(0.95); opacity: 0.9; }
+            50% { transform: scale(1.05); opacity: 0.4; }
+            100% { transform: scale(0.95); opacity: 0.9; }
+        }
+
+        .animate-wave {
+            animation: pulse-wave 3s infinite ease-in-out;
+        }
+
+        @keyframes signal-flow {
+            0% { stroke-dashoffset: 100; }
+            100% { stroke-dashoffset: 0; }
+        }
+
+        .flow-line {
+            stroke-dasharray: 8;
+            animation: signal-flow 1.5s linear infinite;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-40 glass-nav border-b border-slate-200/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Brand / Logo Left -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                        <i class="fa-solid font-bold fa-tower-cell text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold bg-gradient-to-r from-blue-700 via-cyan-600 to-teal-500 bg-clip-text text-transparent">MenaraTower.id</span>
+                        <span class="hidden sm:inline-block text-[10px] font-bold uppercase tracking-wider bg-cyan-100 text-cyan-800 px-2 py-0.5 rounded-full ml-1">EduTech</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-600">
+                    <a href="#pengenalan" class="hover:text-blue-600 transition-colors">Pengenalan</a>
+                    <a href="#komponen" class="hover:text-blue-600 transition-colors">Komponen BTS</a>
+                    <a href="#cara-kerja" class="hover:text-blue-600 transition-colors">Alur Sinyal</a>
+                    <a href="#simulator" class="hover:text-blue-600 transition-colors">Simulator Sinyal</a>
+                    <a href="#frekuensi" class="hover:text-blue-600 transition-colors">Frekuensi 4G/5G</a>
+                    <a href="#faq" class="hover:text-blue-600 transition-colors">FAQ</a>
+                </nav>
+
+                <!-- Resource Button CTA -->
+                <div class="flex items-center gap-3">
+                    <button onclick="openModal()" class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-md hover:shadow-lg hover:brightness-110 active:scale-95 transition-all">
+                        <i class="fa-solid fa-cloud-arrow-down"></i>
+                        <span>Unduh Kode Resource</span>
+                    </button>
+                    <!-- Mobile Menu Button Toggle -->
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-slate-600 hover:text-slate-900 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-2">
+            <a href="#pengenalan" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Pengenalan</a>
+            <a href="#komponen" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Komponen BTS</a>
+            <a href="#cara-kerja" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Alur Sinyal Step-by-Step</a>
+            <a href="#simulator" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Simulator Coverage</a>
+            <a href="#frekuensi" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Spektrum & Frekuensi</a>
+            <a href="#faq" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Pertanyaan Umum (FAQ)</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (Glassmorphism & Interactive Visual Preview) -->
+    <section class="relative pt-8 pb-16 lg:pt-14 lg:pb-24 overflow-hidden bg-gradient-to-b from-cyan-500/10 via-blue-500/5 to-transparent">
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 -right-24 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Hero Text Left -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 text-blue-700 text-xs sm:text-sm font-semibold border border-blue-200">
+                        <i class="fa-solid fa-wifi text-cyan-600 animate-pulse"></i>
+                        <span>Edukasi Teknologi Telekomunikasi Seluler</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight">
+                        Bagaimana Sinyal Internet Sampai di <span class="bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-500 bg-clip-text text-transparent">Genggaman Anda?</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed mx-auto lg:mx-0">
+                        Menara seluler (BTS) mengonversi miliaran data biner setiap detik menjadi gelombang elektromagnetik tak kasat mata. Pelajari arsitektur fisik, konversi baseband, serat optik, hingga jaringan inti telekomunikasi secara interaktif.
+                    </p>
+
+                    <!-- Hero CTAs -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#komponen" class="inline-flex items-center gap-2 bg-slate-900 text-white font-semibold px-6 py-3.5 rounded-xl shadow-lg hover:bg-slate-800 active:scale-95 transition-all">
+                            <span>Mulai Jelajahi Diagram</span>
+                            <i class="fa-solid fa-arrow-down text-cyan-400"></i>
+                        </a>
+                        <button onclick="openModal()" class="inline-flex items-center gap-2 bg-white text-slate-700 border border-slate-300 font-semibold px-6 py-3.5 rounded-xl shadow-sm hover:bg-slate-50 hover:border-slate-400 active:scale-95 transition-all">
+                            <i class="fa-solid fa-code text-blue-600"></i>
+                            <span>Unduh Kode Resource</span>
+                        </button>
+                    </div>
+
+                    <!-- Hero Quick Stats Badge -->
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-200/80 max-w-md mx-auto lg:mx-0">
+                        <div>
+                            <p class="text-2xl font-extrabold text-blue-600">300K km/s</p>
+                            <p class="text-xs text-slate-500">Kecepatan Gelombang</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-extrabold text-cyan-600">4G / 5G</p>
+                            <p class="text-xs text-slate-500">Teknologi BTS</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-extrabold text-emerald-600">&lt; 15 ms</p>
+                            <p class="text-xs text-slate-500">Latensi Optik 5G</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Graphic Right (Glassmorphism Illustration Card) -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="w-full max-w-md glass-card rounded-3xl p-6 relative border border-white/80 shadow-2xl">
+                        <!-- Live Animated Signal Tower Representation -->
+                        <div class="relative w-full h-80 bg-slate-900 rounded-2xl overflow-hidden flex items-center justify-center border border-slate-800">
+                            <!-- Background Pulse Lines -->
+                            <div class="absolute w-64 h-64 border border-cyan-500/30 rounded-full animate-wave"></div>
+                            <div class="absolute w-44 h-44 border border-blue-500/40 rounded-full animate-wave" style="animation-delay: 0.8s;"></div>
+                            <div class="absolute w-24 h-24 border border-teal-500/50 rounded-full animate-wave" style="animation-delay: 1.6s;"></div>
+
+                            <!-- SVG Graphic Interactive Tower -->
+                            <svg class="w-48 h-64 z-10" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Tower Structure Steel Frame -->
+                                <line x1="100" y1="40" x2="40" y2="280" stroke="#0284c7" stroke-width="4"/>
+                                <line x1="100" y1="40" x2="160" y2="280" stroke="#0284c7" stroke-width="4"/>
+                                <line x1="60" y1="200" x2="140" y2="200" stroke="#38bdf8" stroke-width="3"/>
+                                <line x1="75" y1="130" x2="125" y2="130" stroke="#38bdf8" stroke-width="3"/>
+                                <line x1="88" y1="70" x2="112" y2="70" stroke="#38bdf8" stroke-width="3"/>
+                                <!-- Cross Bracing -->
+                                <line x1="40" y1="280" x2="140" y2="200" stroke="#0284c7" stroke-width="2" opacity="0.6"/>
+                                <line x1="160" y1="280" x2="60" y2="200" stroke="#0284c7" stroke-width="2" opacity="0.6"/>
+                                <line x1="60" y1="200" x2="125" y2="130" stroke="#0284c7" stroke-width="2" opacity="0.6"/>
+                                <line x1="140" y1="200" x2="75" y2="130" stroke="#0284c7" stroke-width="2" opacity="0.6"/>
+                                
+                                <!-- Antennas at Top -->
+                                <rect x="80" y="30" width="8" height="35" rx="3" fill="#38bdf8"/>
+                                <rect x="112" y="30" width="8" height="35" rx="3" fill="#38bdf8"/>
+                                <rect x="96" y="25" width="8" height="40" rx="3" fill="#06b6d4"/>
+                                
+                                <!-- Microwave Dish -->
+                                <ellipse cx="130" cy="90" rx="12" ry="16" fill="#e2e8f0" stroke="#0284c7" stroke-width="2"/>
+                                
+                                <!-- Red Beacon Light -->
+                                <circle cx="100" cy="18" r="5" fill="#ef4444" class="animate-ping"/>
+                                <circle cx="100" cy="18" r="5" fill="#ef4444"/>
+
+                                <!-- Signal Waves Emitters -->
+                                <path d="M 60 30 A 20 20 0 0 0 40 50" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+                                <path d="M 140 30 A 20 20 0 0 1 160 50" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+
+                            <!-- Floating Tech Tag -->
+                            <div class="absolute bottom-4 left-4 right-4 bg-slate-800/90 border border-slate-700 rounded-xl p-2.5 text-center backdrop-blur-sm">
+                                <span class="text-xs text-slate-300">Modulasi: <strong class="text-cyan-400">256-QAM</strong> &bull; Duplexing: <strong class="text-emerald-400">TDD/FDD</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN BODY CONTAINER WITH SIDEBAR GRID -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <!-- MAIN CONTENT AREA (8 Cols) -->
+            <div class="lg:col-span-8 space-y-16">
+
+                <!-- SECTION 1: PENGENALAN APABILA BTS & SELULAR -->
+                <section id="pengenalan" class="scroll-mt-24 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-sm">1</div>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Apa Itu Menara Internet (BTS)?</h2>
+                    </div>
+
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        Menara internet yang sering kita lihat di tepi jalan atau puncak gedung secara teknis disebut sebagai <strong class="text-slate-800">BTS (Base Transceiver Station)</strong>. BTS adalah elemen infrastruktur telekomunikasi yang menjembatani komunikasi nirkabel antara perangkat seluler seperti smartphone, laptop modem, atau perangkat IoT dengan jaringan inti operator seluler.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                        <div class="glass-card p-5 rounded-2xl border-l-4 border-l-blue-600">
+                            <h3 class="font-bold text-slate-800 text-base mb-1 flex items-center gap-2">
+                                <i class="fa-solid fa-shapes text-blue-600"></i> Sistem Konsep "Cell"
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-600">
+                                Area geografis dibagi menjadi zona-zona kecil berbentuk segienam (heksagonal) yang disebut <em>Cell</em>. Setiap menara BTS melayani 1 atau beberapa sel jaringan.
+                            </p>
+                        </div>
+                        <div class="glass-card p-5 rounded-2xl border-l-4 border-l-cyan-500">
+                            <h3 class="font-bold text-slate-800 text-base mb-1 flex items-center gap-2">
+                                <i class="fa-solid fa-arrows-spin text-cyan-600"></i> Fitur Seamless Handover
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-600">
+                                Saat Anda berpindah tempat menggunakan kendaraan, koneksi secara otomatis dialihkan (handover) dari satu BTS ke BTS berikutnya tanpa memutus telepon atau download.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 2: ANATOMI INTERAKTIF KOMPONEN MENARA BTS -->
+                <section id="komponen" class="scroll-mt-24 space-y-6">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-cyan-600 text-white flex items-center justify-center font-bold text-sm">2</div>
+                            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Anatomi & Komponen BTS</h2>
+                        </div>
+                        <span class="text-xs text-blue-600 font-semibold bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">Klik Hotspot Diagram</span>
+                    </div>
+
+                    <p class="text-slate-600 text-sm sm:text-base">
+                        Menara bukan sekadar rangka besi tinggi. Di balik fisiknya terdapat kombinasi perangkat pemancar tinggi, pengolah gelombang digital, hingga catu daya cadangan. Klik titik interaktif di bawah ini:
+                    </p>
+
+                    <!-- Interactive Component Explorer Diagram -->
+                    <div class="glass-card p-4 sm:p-6 rounded-3xl border border-slate-200/80 bg-white shadow-sm">
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                            
+                            <!-- Interactive Graphic Tower with Hotspots -->
+                            <div class="md:col-span-5 bg-slate-900 rounded-2xl p-4 relative flex justify-center items-center h-96 overflow-hidden">
+                                <!-- Tower Silhouette -->
+                                <svg class="h-full w-auto" viewBox="0 0 200 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="100" y1="30" x2="30" y2="330" stroke="#475569" stroke-width="4"/>
+                                    <line x1="100" y1="30" x2="170" y2="330" stroke="#475569" stroke-width="4"/>
+                                    <line x1="55" y1="230" x2="145" y2="230" stroke="#64748b" stroke-width="3"/>
+                                    <line x1="72" y1="150" x2="128" y2="150" stroke="#64748b" stroke-width="3"/>
+                                    <line x1="88" y1="75" x2="112" y2="75" stroke="#64748b" stroke-width="3"/>
+                                    
+                                    <!-- Antennas -->
+                                    <rect id="node-antenna" x="78" y="25" width="10" height="45" rx="3" fill="#38bdf8" class="cursor-pointer hover:opacity-80 transition"/>
+                                    <rect id="node-antenna-2" x="112" y="25" width="10" height="45" rx="3" fill="#38bdf8" class="cursor-pointer hover:opacity-80 transition"/>
+
+                                    <!-- Microwave Dish -->
+                                    <ellipse id="node-dish" cx="135" cy="100" rx="14" ry="18" fill="#cbd5e1" stroke="#0284c7" stroke-width="3" class="cursor-pointer hover:opacity-80 transition"/>
+
+                                    <!-- Feeder Cable Line -->
+                                    <path id="node-cable" d="M 90 70 L 90 280 L 140 280" stroke="#e2e8f0" stroke-width="4" stroke-dasharray="4 2" class="cursor-pointer"/>
+
+                                    <!-- Shelter / BBU Cabinet Box -->
+                                    <rect id="node-bbu" x="120" y="260" width="55" height="60" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="2" class="cursor-pointer hover:opacity-80 transition"/>
+
+                                    <!-- Generator Power -->
+                                    <rect id="node-power" x="25" y="280" width="45" height="40" rx="4" fill="#f59e0b" class="cursor-pointer hover:opacity-80 transition"/>
+                                </svg>
+
+                                <!-- Hotspot Buttons Floating over Image -->
+                                <button onclick="selectComponent('antenna')" class="absolute top-[12%] left-[48%] -translate-x-1/2 w-7 h-7 bg-cyan-500 text-white text-xs font-bold rounded-full animate-bounce shadow-lg flex items-center justify-center border-2 border-white hover:scale-125 transition">1</button>
+                                <button onclick="selectComponent('dish')" class="absolute top-[28%] right-[22%] w-7 h-7 bg-blue-600 text-white text-xs font-bold rounded-full shadow-lg flex items-center justify-center border-2 border-white hover:scale-125 transition">2</button>
+                                <button onclick="selectComponent('feeder')" class="absolute top-[50%] left-[45%] w-7 h-7 bg-emerald-500 text-white text-xs font-bold rounded-full shadow-lg flex items-center justify-center border-2 border-white hover:scale-125 transition">3</button>
+                                <button onclick="selectComponent('bbu')" class="absolute bottom-[16%] right-[18%] w-7 h-7 bg-purple-600 text-white text-xs font-bold rounded-full shadow-lg flex items-center justify-center border-2 border-white hover:scale-125 transition">4</button>
+                                <button onclick="selectComponent('power')" class="absolute bottom-[12%] left-[18%] w-7 h-7 bg-amber-500 text-white text-xs font-bold rounded-full shadow-lg flex items-center justify-center border-2 border-white hover:scale-125 transition">5</button>
+                            </div>
+
+                            <!-- Component Detail Panel Right -->
+                            <div class="md:col-span-7 space-y-4">
+                                <div id="comp-detail-box" class="p-5 rounded-2xl bg-slate-50 border border-slate-200 transition-all">
+                                    <span id="comp-badge" class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-cyan-100 text-cyan-800 mb-2">Komponen #1</span>
+                                    <h3 id="comp-title" class="text-xl font-bold text-slate-800 mb-2">Sektor Antena Sinyal (Antenna Array)</h3>
+                                    <p id="comp-desc" class="text-slate-600 text-sm leading-relaxed mb-4">
+                                        Perangkat berbentuk persegi panjang tegak lurus di bagian atas menara. Antena ini memancarkan dan menerima gelombang radio RF (Radio Frequency) secara sektoral (biasanya 120 derajat per arah) menuju ponsel pengguna.
+                                    </p>
+                                    <div class="bg-white p-3 rounded-xl border border-slate-200 text-xs text-slate-700">
+                                        <strong>Fungsi Utama:</strong> Konversi sinyal listrik dari BBU menjadi gelombang elektromagnetik di udara dan sebaliknya.
+                                    </div>
+                                </div>
+
+                                <!-- Quick Select Buttons -->
+                                <div class="grid grid-cols-5 gap-2 text-center text-xs font-semibold">
+                                    <button onclick="selectComponent('antenna')" class="p-2 rounded-lg bg-cyan-100 text-cyan-800 hover:bg-cyan-200 transition">1. Antena</button>
+                                    <button onclick="selectComponent('dish')" class="p-2 rounded-lg bg-blue-100 text-blue-800 hover:bg-blue-200 transition">2. Dish MW</button>
+                                    <button onclick="selectComponent('feeder')" class="p-2 rounded-lg bg-emerald-100 text-emerald-800 hover:bg-emerald-200 transition">3. Feeder</button>
+                                    <button onclick="selectComponent('bbu')" class="p-2 rounded-lg bg-purple-100 text-purple-800 hover:bg-purple-200 transition">4. BBU</button>
+                                    <button onclick="selectComponent('power')" class="p-2 rounded-lg bg-amber-100 text-amber-800 hover:bg-amber-200 transition">5. Power</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 3: STEP BY STEP ALUR SINYAL INTERAKTIF -->
+                <section id="cara-kerja" class="scroll-mt-24 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold text-sm">3</div>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Alur Perjalanan Sinyal (Step-by-Step)</h2>
+                    </div>
+
+                    <p class="text-slate-600 text-base">
+                        Saat Anda menekan tombol "Kirim Pesan" atau membuka video YouTube, perjalanan data terjadi dalam hitungan milidetik melalui 5 tahap utama:
+                    </p>
+
+                    <!-- Interactive Step Switcher -->
+                    <div class="glass-card p-6 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+                        
+                        <!-- Step Navigation Tabs -->
+                        <div class="flex overflow-x-auto space-x-2 pb-2 scrollbar-none">
+                            <button onclick="setFlowStep(1)" id="flow-tab-1" class="flex-shrink-0 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-blue-600 text-white transition-all">Tahap 1: Perangkat HP</button>
+                            <button onclick="setFlowStep(2)" id="flow-tab-2" class="flex-shrink-0 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">Tahap 2: Udara RF</button>
+                            <button onclick="setFlowStep(3)" id="flow-tab-3" class="flex-shrink-0 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">Tahap 3: Menara BTS</button>
+                            <button onclick="setFlowStep(4)" id="flow-tab-4" class="flex-shrink-0 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">Tahap 4: Serat Optik</button>
+                            <button onclick="setFlowStep(5)" id="flow-tab-5" class="flex-shrink-0 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">Tahap 5: Core Network</button>
+                        </div>
+
+                        <!-- Step Interactive Display Panel -->
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                            <div class="md:col-span-4 flex justify-center">
+                                <div id="flow-icon-box" class="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-blue-500/10 text-blue-600 flex items-center justify-center text-4xl sm:text-5xl border-2 border-blue-500/30">
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                </div>
+                            </div>
+                            <div class="md:col-span-8 space-y-3">
+                                <span id="flow-step-num" class="text-xs font-bold text-blue-600 uppercase tracking-wider">Langkah 1 Dari 5</span>
+                                <h3 id="flow-title" class="text-xl font-bold text-slate-800">1. Konversi Digital di Smartphone</h3>
+                                <p id="flow-desc" class="text-slate-600 text-sm leading-relaxed">
+                                    Aplikasi di ponsel Anda merubah suara, tulisan, atau gambar menjadi deretan bit angka biner (0 dan 1). Modem internal smartphone lalu mengodekannya menjadi sinyal frekuensi radio (RF).
+                                </p>
+                                <div class="p-3 bg-white rounded-xl border border-slate-200 text-xs text-slate-500">
+                                    <i class="fa-solid fa-circle-info text-blue-500 mr-1"></i> <span id="flow-tech">Teknologi: Modulation Modem (QPSK / QAM) & Chip Baseband.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Animated Pathway Map -->
+                        <div class="relative py-2">
+                            <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                                <div id="flow-progress" class="bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-500 h-full w-1/5 transition-all duration-500"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 4: SIMULATOR JANGKAUAN & KEKUATAN SINYAL (INTERACTIVE CALC) -->
+                <section id="simulator" class="scroll-mt-24 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-amber-600 text-white flex items-center justify-center font-bold text-sm">4</div>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Simulator Jangkauan Sinyal & Latensi</h2>
+                    </div>
+
+                    <p class="text-slate-600 text-sm sm:text-base">
+                        Uji coba bagaimana jarak dari menara mempengaruhi indikator RSSI/RSRP (dBm), estimasi kecepatan download, dan latensi jaringan:
+                    </p>
+
+                    <!-- Interactive Simulator Card -->
+                    <div class="glass-card p-6 rounded-3xl border border-slate-200 shadow-md space-y-6">
+                        
+                        <!-- Control Sliders -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Distance Slider -->
+                            <div class="space-y-2">
+                                <div class="flex justify-between text-sm font-semibold text-slate-700">
+                                    <label for="dist-range">Jarak HP ke Menara BTS:</label>
+                                    <span id="dist-val" class="text-blue-600 font-bold">1.5 km</span>
+                                </div>
+                                <input type="range" id="dist-range" min="0.1" max="10" step="0.1" value="1.5" oninput="updateSimulator()" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                                <div class="flex justify-between text-[10px] text-slate-400">
+                                    <span>0.1 km (Sangat Dekat)</span>
+                                    <span>5 km</span>
+                                    <span>10 km (Batas Jauh)</span>
+                                </div>
+                            </div>
+
+                            <!-- Generation Select -->
+                            <div class="space-y-2">
+                                <label class="text-sm font-semibold text-slate-700 block">Generasi Jaringan Menara:</label>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <button onclick="setGen('4g')" id="btn-gen-4g" class="py-2 px-4 rounded-xl border border-blue-600 bg-blue-600 text-white font-bold text-xs transition">4G LTE (1800 MHz)</button>
+                                    <button onclick="setGen('5g')" id="btn-gen-5g" class="py-2 px-4 rounded-xl border border-slate-300 bg-white text-slate-700 font-bold text-xs hover:border-slate-400 transition">5G NR (3500 MHz)</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Live Visual Signal Indicator Map -->
+                        <div class="bg-slate-900 rounded-2xl p-6 relative overflow-hidden text-white flex flex-col items-center justify-center min-h-[200px]">
+                            <!-- Visual Radar Circle -->
+                            <div id="sim-radar" class="w-48 h-48 rounded-full border-2 border-dashed border-cyan-400/40 flex items-center justify-center relative transition-all duration-300">
+                                <!-- Tower Icon at Center -->
+                                <i class="fa-solid fa-tower-cell text-cyan-400 text-3xl"></i>
+
+                                <!-- User Phone Position Indicator -->
+                                <div id="sim-user-dot" class="absolute w-6 h-6 bg-emerald-400 rounded-full border-2 border-white flex items-center justify-center text-[10px] text-slate-900 font-bold transition-all duration-300 shadow-lg" style="right: 15%; top: 30%;">
+                                    <i class="fa-solid fa-mobile-screen"></i>
+                                </div>
+                            </div>
+
+                            <span class="text-xs text-slate-400 mt-3">Visualisasi Radius Jangkauan Coverage</span>
+                        </div>
+
+                        <!-- Output Results Panel -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+                            <div class="bg-white p-3.5 rounded-2xl border border-slate-200">
+                                <span class="text-[11px] text-slate-500 font-semibold block uppercase">Kekuatan Sinyal</span>
+                                <span id="out-dbm" class="text-lg sm:text-xl font-extrabold text-blue-600">-85 dBm</span>
+                                <span id="out-quality" class="text-[10px] block font-bold text-emerald-600">Sangat Baik</span>
+                            </div>
+
+                            <div class="bg-white p-3.5 rounded-2xl border border-slate-200">
+                                <span class="text-[11px] text-slate-500 font-semibold block uppercase">Est. Speed</span>
+                                <span id="out-speed" class="text-lg sm:text-xl font-extrabold text-cyan-600">75 Mbps</span>
+                                <span class="text-[10px] block text-slate-400">Download Peak</span>
+                            </div>
+
+                            <div class="bg-white p-3.5 rounded-2xl border border-slate-200">
+                                <span class="text-[11px] text-slate-500 font-semibold block uppercase">Latensi (Ping)</span>
+                                <span id="out-ping" class="text-lg sm:text-xl font-extrabold text-emerald-600">22 ms</span>
+                                <span class="text-[10px] block text-slate-400">Response Time</span>
+                            </div>
+
+                            <div class="bg-white p-3.5 rounded-2xl border border-slate-200">
+                                <span class="text-[11px] text-slate-500 font-semibold block uppercase">Status Indikator</span>
+                                <div id="out-bars" class="text-lg sm:text-xl text-amber-500 space-x-0.5 mt-0.5">
+                                    <i class="fa-solid fa-signal"></i>
+                                </div>
+                                <span id="out-bar-text" class="text-[10px] block text-slate-500 font-medium">4 Bar</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 5: FREKUENSI & SPEKTRUM GELOMBANG -->
+                <section id="frekuensi" class="scroll-mt-24 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-purple-600 text-white flex items-center justify-center font-bold text-sm">5</div>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Komparasi Frekuensi Sinyal</h2>
+                    </div>
+
+                    <p class="text-slate-600 text-sm sm:text-base">
+                        Semakin tinggi frekuensi gelombang radio, semakin besar data yang bisa dibawa, tetapi jangkauannya semakin pendek dan mudah terhalang dinding/pohon:
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Low Band Card -->
+                        <div class="glass-card p-5 rounded-2xl border border-slate-200 flex flex-col justify-between hover:shadow-lg transition">
+                            <div>
+                                <span class="px-2.5 py-1 bg-emerald-100 text-emerald-800 font-bold text-xs rounded-full">Low-Band (&lt; 1 GHz)</span>
+                                <h3 class="text-lg font-bold text-slate-800 mt-3">700 - 900 MHz</h3>
+                                <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                                    Sangat baik menembus tembok tebal dan mencakup area pedesaan yang sangat luas (hingga 10-15 km). Namun kecepatan data terbatas.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-200 text-xs font-semibold text-slate-500">
+                                Speed: ~10-50 Mbps
+                            </div>
+                        </div>
+
+                        <!-- Mid Band Card -->
+                        <div class="glass-card p-5 rounded-2xl border-2 border-blue-500 flex flex-col justify-between shadow-md">
+                            <div>
+                                <span class="px-2.5 py-1 bg-blue-100 text-blue-800 font-bold text-xs rounded-full">Mid-Band (1.8 - 3.5 GHz)</span>
+                                <h3 class="text-lg font-bold text-slate-800 mt-3">1800 MHz - 3.5 GHz</h3>
+                                <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                                    Paling ideal untuk area perkotaan. Seimbang antara daya jangkau seluler (1-3 km) dan kapasitas kecepatan internet tinggi.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-200 text-xs font-bold text-blue-600">
+                                Speed: 100 - 500 Mbps (Standard 4G/5G)
+                            </div>
+                        </div>
+
+                        <!-- High Band Card -->
+                        <div class="glass-card p-5 rounded-2xl border border-slate-200 flex flex-col justify-between hover:shadow-lg transition">
+                            <div>
+                                <span class="px-2.5 py-1 bg-purple-100 text-purple-800 font-bold text-xs rounded-full">High-Band / mmWave (&gt; 24 GHz)</span>
+                                <h3 class="text-lg font-bold text-slate-800 mt-3">24 - 40 GHz</h3>
+                                <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                                    Kecepatan ultra-tinggi setara kabel fiber optik, tetapi jangkauannya sangat pendek (hanya 200-500 meter) dan terhalang dedaunan.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-200 text-xs font-semibold text-purple-700">
+                                Speed: 1 - 3+ Gbps (5G mmWave)
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 6: FAQ PERTANYAAN UMUM -->
+                <section id="faq" class="scroll-mt-24 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-teal-600 text-white flex items-center justify-center font-bold text-sm">6</div>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Pertanyaan Sering Diajukan (FAQ)</h2>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- FAQ Item 1 -->
+                        <details class="group glass-card p-5 rounded-2xl border border-slate-200 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+                            <summary class="flex justify-between items-center font-bold text-slate-800 text-sm sm:text-base">
+                                <span>Apakah Radiasi Sinyal Menara Internet BTS Berbahaya Bagi Kesehatan?</span>
+                                <span class="transition group-open:rotate-180">
+                                    <i class="fa-solid fa-chevron-down text-blue-600"></i>
+                                </span>
+                            </summary>
+                            <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Tidak. Sinyal menara seluler menggunakan radiasi **Non-Ionisasi** (non-ionizing radiation) pada frekuensi radio, mirip dengan sinyal radio FM atau Wi-Fi. Berdasarkan badan kesehatan dunia (WHO), radiasi BTS berada jauh di bawah ambang batas aman dan tidak merusak DNA atau sel manusia.
+                            </p>
+                        </details>
+
+                        <!-- FAQ Item 2 -->
+                        <details class="group glass-card p-5 rounded-2xl border border-slate-200 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+                            <summary class="flex justify-between items-center font-bold text-slate-800 text-sm sm:text-base">
+                                <span>Mengapa Saat Mati Listrik Sinyal HP Sering Hilang atau Lemah?</span>
+                                <span class="transition group-open:rotate-180">
+                                    <i class="fa-solid fa-chevron-down text-blue-600"></i>
+                                </span>
+                            </summary>
+                            <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Setiap BTS dilengkapi baterai cadangan (UPS) dan terkadang genset. Namun, saat pemadaman listrik berlangsung lama, baterai cadangan bisa habis. Selain itu, jika menara BTS tetangga mati, semua pengguna akan menumpuk di satu menara yang masih menyala (traffic congestion).
+                            </p>
+                        </details>
+
+                        <!-- FAQ Item 3 -->
+                        <details class="group glass-card p-5 rounded-2xl border border-slate-200 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+                            <summary class="flex justify-between items-center font-bold text-slate-800 text-sm sm:text-base">
+                                <span>Apa Bedanya Menara Macrocell dan Small Cell pada 5G?</span>
+                                <span class="transition group-open:rotate-180">
+                                    <i class="fa-solid fa-chevron-down text-blue-600"></i>
+                                </span>
+                            </summary>
+                            <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                **Macrocell** adalah menara besar tinggi (30-50 meter) dengan jangkauan beberapa kilometer. Sedangkan **Small Cell** adalah pemancar berukuran kecil seperti kotak Wi-Fi yang dipasang di tiang lampu jalan atau dinding gedung untuk menambah kapasitas 5G di area padat penduduk.
+                            </p>
+                        </details>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- SIDEBAR AREA (4 Cols Desktop / Sticky Drawer) -->
+            <aside class="lg:col-span-4 space-y-6">
+                
+                <!-- Quick Navigation Box -->
+                <div class="glass-card p-5 rounded-3xl border border-slate-200 sticky top-20 shadow-sm space-y-5">
+                    <h3 class="font-extrabold text-slate-800 text-base flex items-center gap-2">
+                        <i class="fa-solid fa-compass text-blue-600"></i> Navigasi Pintar
+                    </h3>
+                    
+                    <ul class="space-y-2 text-xs sm:text-sm font-medium text-slate-600">
+                        <li>
+                            <a href="#pengenalan" class="flex items-center gap-2 p-2 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition">
+                                <i class="fa-solid fa-angle-right text-xs"></i> 1. Pengenalan BTS
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#komponen" class="flex items-center gap-2 p-2 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition">
+                                <i class="fa-solid fa-angle-right text-xs"></i> 2. Komponen Fisik BTS
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#cara-kerja" class="flex items-center gap-2 p-2 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition">
+                                <i class="fa-solid fa-angle-right text-xs"></i> 3. Tahap Alur Sinyal
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#simulator" class="flex items-center gap-2 p-2 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition">
+                                <i class="fa-solid fa-angle-right text-xs"></i> 4. Simulator Coverage
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#frekuensi" class="flex items-center gap-2 p-2 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition">
+                                <i class="fa-solid fa-angle-right text-xs"></i> 5. Spektrum Frekuensi
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#faq" class="flex items-center gap-2 p-2 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition">
+                                <i class="fa-solid fa-angle-right text-xs"></i> 6. FAQ Radiasi & Listrik
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Quick Interactive Quiz Widget -->
+                    <div class="bg-gradient-to-br from-blue-600 to-cyan-600 text-white p-4 rounded-2xl space-y-3 shadow-md">
+                        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-cyan-200">
+                            <i class="fa-solid fa-brain"></i> Kuis Singkat Pemahaman
+                        </div>
+                        <p id="quiz-question" class="text-xs font-medium leading-snug">
+                            Komponen BTS manakah yang berfungsi menghubungkan sinyal antar menara secara nirkabel tanpa fiber optik?
+                        </p>
+                        
+                        <div id="quiz-options" class="space-y-1.5 text-xs text-slate-800">
+                            <button onclick="checkAnswer(false)" class="w-full text-left p-2 rounded-lg bg-white/90 hover:bg-white font-medium transition">A. Antena Sektoral</button>
+                            <button onclick="checkAnswer(true)" class="w-full text-left p-2 rounded-lg bg-white/90 hover:bg-white font-medium transition">B. Microwave Dish</button>
+                            <button onclick="checkAnswer(false)" class="w-full text-left p-2 rounded-lg bg-white/90 hover:bg-white font-medium transition">C. Generator Baterai</button>
+                        </div>
+                        <p id="quiz-result" class="text-xs font-bold text-center hidden"></p>
+                    </div>
+
+                    <!-- Tech Ticker Box -->
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-2">
+                        <h4 class="text-xs font-extrabold text-slate-700 uppercase tracking-wide flex items-center gap-1.5">
+                            <i class="fa-solid fa-bolt text-amber-500"></i> Fakta Ringkas
+                        </h4>
+                        <ul class="text-xs text-slate-600 space-y-2 list-disc list-inside leading-relaxed">
+                            <li>Gelombang radio berpindah pada kecepatan <strong class="text-slate-800">300.000 km per detik</strong> di udara.</li>
+                            <li>Kabel Fiber Optik BTS membawa data menggunakan pancaran sinar laser kaca tipis.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Monetization Banner Trigger -->
+                    <div class="border border-cyan-200 bg-cyan-50/50 p-4 rounded-2xl text-center space-y-3">
+                        <p class="text-xs text-slate-700 font-semibold">Ingin kode sumber visualisasi & artikel ini lengkap?</p>
+                        <button onclick="openModal()" class="w-full py-2.5 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold text-xs rounded-xl shadow hover:brightness-110 active:scale-95 transition">
+                            <i class="fa-solid fa-download mr-1"></i> Unduh Resource Code
+                        </button>
+                    </div>
+
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- MONETIZATION POP-UP MODAL -->
+    <div id="monetize-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm transition-opacity duration-300">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 space-y-6 shadow-2xl border border-slate-100 relative animate-in fade-in zoom-in duration-200">
+            
+            <!-- Close Button -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:text-slate-800 flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="text-center space-y-2">
+                <div class="w-14 h-14 rounded-2xl bg-cyan-100 text-cyan-600 flex items-center justify-center text-2xl mx-auto font-bold">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900">Unduh Kode Resource</h3>
+                <p class="text-xs sm:text-sm text-slate-600">
+                    Dukung pengembang untuk mendapatkan akses kode HTML, CSS, JS interaktif ini atau unduh secara gratis sebagai tamu.
+                </p>
+            </div>
+
+            <!-- Official Payment Buttons -->
+            <div class="space-y-3">
+                <span class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 block text-center">Tautan Pembayaran Resmi:</span>
+                
+                <!-- 1. International PayPal -->
+                <a href="https://paypal.me/arielrcu" target="_blank" rel="noopener" class="flex items-center justify-between p-3.5 rounded-2xl border border-slate-200 hover:border-blue-500 hover:bg-blue-50/50 transition group">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold">
+                            <i class="fa-brands fa-paypal text-lg"></i>
+                        </div>
+                        <div class="text-left">
+                            <div class="font-bold text-xs sm:text-sm text-slate-800 group-hover:text-blue-600">Internasional (PayPal)</div>
+                            <div class="text-[10px] text-slate-400">paypal.me/arielrcu</div>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-up-right-from-square text-xs text-slate-400 group-hover:text-blue-600"></i>
+                </a>
+
+                <!-- 2. Local Trakteer QRIS / E-Wallet -->
+                <a href="https://trakteer.id/arielrcu" target="_blank" rel="noopener" class="flex items-center justify-between p-3.5 rounded-2xl border border-slate-200 hover:border-red-500 hover:bg-red-50/50 transition group">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-red-500 text-white flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-qrcode text-lg"></i>
+                        </div>
+                        <div class="text-left">
+                            <div class="font-bold text-xs sm:text-sm text-slate-800 group-hover:text-red-600">Lokal (QRIS / E-Wallet / Trakteer)</div>
+                            <div class="text-[10px] text-slate-400">trakteer.id/arielrcu</div>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-up-right-from-square text-xs text-slate-400 group-hover:text-red-600"></i>
+                </a>
+            </div>
+
+            <!-- Guest Download Button -->
+            <div class="pt-2 border-t border-slate-100 text-center space-y-2">
+                <button onclick="downloadAsGuest()" class="w-full py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs sm:text-sm rounded-2xl transition active:scale-98 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-user-shield"></i>
+                    <span>Download as Guest (Akses Gratis)</span>
+                </button>
+                <p class="text-[10px] text-slate-400">Langsung mengunduh file paket HTML ini tanpa melakukan donasi.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-white border-t border-slate-800 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                
+                <!-- Footer Left Info -->
+                <div class="md:col-span-6 space-y-3 text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start gap-2">
+                        <i class="fa-solid fa-tower-cell text-cyan-400 text-xl"></i>
+                        <span class="text-lg font-extrabold text-white">MenaraTower.id</span>
+                    </div>
+                    <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
+                        Platform media edukasi visual interaktif mengenai teknologi infrastruktur jaringan seluler dan telekomunikasi modern.
+                    </p>
+                </div>
+
+                <!-- Footer Right Links & Social -->
+                <div class="md:col-span-6 flex flex-col items-center md:items-end space-y-4">
+                    <!-- Instagram Profile Link -->
+                    <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs font-bold shadow-lg hover:brightness-110 active:scale-95 transition">
+                        <i class="fa-brands fa-instagram text-lg"></i>
+                        <span>Ikuti Instagram @arielrcun</span>
+                    </a>
+
+                    <!-- Copyright Line -->
+                    <div class="text-xs text-slate-400 text-center md:text-right">
+                        <span>Oleh Ariel Usman Copyright 2026</span> &bull; <span>All Rights Reserved</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT INTERAKTIF LOGIC -->
+    <script>
+        // ----------------------------------------------------
+        // 1. MODAL MONETISASI CONTROL LOGIC
+        // ----------------------------------------------------
+        function openModal() {
+            const modal = document.getElementById('monetize-modal');
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('monetize-modal');
+            modal.classList.add('hidden');
+        }
+
+        // Close modal on click backdrop outside
+        window.addEventListener('click', function(e) {
+            const modal = document.getElementById('monetize-modal');
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Simulated Guest Download Action
+        function downloadAsGuest() {
+            // Generate source file data for direct download as guest
+            const htmlContent = document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Cara-Kerja-Menara-Internet-Resource.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            closeModal();
+        }
+
+        // ----------------------------------------------------
+        // 2. MOBILE MENU TOGGLE
+        // ----------------------------------------------------
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.className = 'fa-solid fa-bars text-xl';
+            } else {
+                icon.className = 'fa-solid fa-xmark text-xl';
+            }
+        }
+
+        // ----------------------------------------------------
+        // 3. KOMPONEN BTS INTERACTIVE DIAGRAM DATA & FUNCTION
+        // ----------------------------------------------------
+        const componentsData = {
+            antenna: {
+                badge: "Komponen #1",
+                title: "Sektor Antena Sinyal (Antenna Array)",
+                desc: "Perangkat persegi panjang vertikal di puncak menara. Antena ini bertugas mengubah sinyal listrik gelombang mikro dari BBU menjadi gelombang elektromagnetik radio ke udara bebas untuk diterima oleh ponsel pengguna.",
+                info: "Fungsi Utama: Konversi Sinyal Listrik ↔ Gelombang Radio Sektoral (120° per sektor)."
+            },
+            dish: {
+                badge: "Komponen #2",
+                title: "Microwave Dish (Antena Parabola)",
+                desc: "Antena piringan bundar yang mengarah secara presisi lurus ke menara BTS lain di sekitarnya. Digunakan sebagai koneksi backhaul nirkabel jika tidak ada jaringan serat optik fisik di lokasi menara.",
+                info: "Fungsi Utama: Menghubungkan transmisi data antar BTS (Point-to-Point) dengan frekuensi tinggi (7-38 GHz)."
+            },
+            feeder: {
+                badge: "Komponen #3",
+                title: "Kabel Feeder / Fiber Optik Tower",
+                desc: "Saluran kabel khusus berkualitas tinggi yang membentang dari kabinet BBU di tanah menuju ke atas antena sektor. Di era 4G/5G modern, menggunakan serat optik (CPRI interface) untuk mentransfer data tanpa rugi daya.",
+                info: "Fungsi Utama: Menyalurkan data digital kecepatan tinggi dari dasar menara ke unit pemancar atas (RRU)."
+            },
+            bbu: {
+                badge: "Komponen #4",
+                title: "Baseband Unit (BBU / Kabinet Shelter)",
+                desc: "Otak utama dari BTS yang ditempatkan di dalam ruangan/kabinet tahan cuaca di tanah. BBU memproses data biner, mengatur modulasi sinyal, enkripsi komunikasi, dan mengelola alokasi frekuensi pengguna.",
+                info: "Fungsi Utama: Pemrosesan Sinyal Digital, Modulasi Data Biner, dan Antarmuka ke Core Network Operator."
+            },
+            power: {
+                badge: "Komponen #5",
+                title: "Sistem Daya (Power Generator & Rectifier/UPS)",
+                desc: "Sumber catu daya utama listrik AC dari PLN yang diubah menjadi listrik DC untuk perangkat telekomunikasi. Dilengkapi bank baterai cadangan dan generator diesel otomatis agar BTS tetap menyala 24/7 meski mati listrik.",
+                info: "Fungsi Utama: Pasokan Daya Listrik Terus Menerus & Cadangan Energi Darurat."
+            }
+        };
+
+        function selectComponent(key) {
+            const data = componentsData[key];
+            if (!data) return;
+
+            document.getElementById('comp-badge').innerText = data.badge;
+            document.getElementById('comp-title').innerText = data.title;
+            document.getElementById('comp-desc').innerText = data.desc;
+            document.getElementById('comp-detail-box').querySelector('div strong').nextSibling.textContent = " " + data.info.replace("Fungsi Utama: ", "");
+        }
+
+        // ----------------------------------------------------
+        // 4. ALUR PERJALANAN SINYAL STEP SWITCHER
+        // ----------------------------------------------------
+        const flowStepsData = [
+            {
+                num: "Langkah 1 Dari 5",
+                title: "1. Konversi Digital di Smartphone",
+                desc: "Aplikasi di ponsel Anda merubah suara, tulisan, atau gambar menjadi deretan bit angka biner (0 dan 1). Modem internal smartphone lalu mengodekannya menjadi sinyal frekuensi radio (RF).",
+                tech: "Teknologi: Modulation Modem (QPSK / QAM) & Chip Baseband Mobile.",
+                icon: "fa-mobile-screen-button"
+            },
+            {
+                num: "Langkah 2 Dari 5",
+                title: "2. Radiasi Gelombang Elektromagnetik",
+                desc: "Sinyal radio dipancarkan melalui antena internal HP melintasi udara dalam bentuk gelombang elektromagnetik berkecepatan cahaya menuju menara BTS terdekat.",
+                tech: "Teknologi: Radiasi Non-Ionisasi, Frekuensi Radio (700MHz - 3.5GHz).",
+                icon: "fa-wifi"
+            },
+            {
+                num: "Langkah 3 Dari 5",
+                title: "3. Penerimaan & Modulasi BTS",
+                desc: "Antena Sektor BTS menangkap gelombang radio lemah tersebut, menyalurkannya ke Baseband Unit (BBU) di bawah menara untuk didekodifikasi kembali menjadi data digital.",
+                tech: "Teknologi: RRU (Remote Radio Unit), Duplexing TDD/FDD.",
+                icon: "fa-tower-cell"
+            },
+            {
+                num: "Langkah 4 Dari 5",
+                title: "4. Transmisi Serat Optik (Backhaul)",
+                desc: "Data biner dari BBU dikirimkan melalui kabel fiber optik bawah tanah yang sangat cepat hingga mencapai Mobile Switching Center (MSC) atau Core Network.",
+                tech: "Teknologi: Fiber Optik Subterranean, Sinar Laser Terpandu.",
+                icon: "fa-network-wired"
+            },
+            {
+                num: "Langkah 5 Dari 5",
+                title: "5. Rute Core Network ke Server Tujuan",
+                desc: "Jaringan inti operator memvalidasi keamanan SIM card Anda, lalu mengarahkan paket data ke server target (seperti Google, WhatsApp, YouTube) di seluruh dunia.",
+                tech: "Teknologi: IP Packet Routing, GGSN/PGW Core, Server Data Center.",
+                icon: "fa-server"
+            }
+        ];
+
+        function setFlowStep(stepIndex) {
+            const data = flowStepsData[stepIndex - 1];
+            if (!data) return;
+
+            document.getElementById('flow-step-num').innerText = data.num;
+            document.getElementById('flow-title').innerText = data.title;
+            document.getElementById('flow-desc').innerText = data.desc;
+            document.getElementById('flow-tech').innerText = data.tech;
+            
+            // Icon Change
+            const iconBox = document.getElementById('flow-icon-box');
+            iconBox.innerHTML = `<i class="fa-solid ${data.icon}"></i>`;
+
+            // Update Progress Bar Width
+            const progress = document.getElementById('flow-progress');
+            progress.style.width = (stepIndex * 20) + '%';
+
+            // Active Tab Styling
+            for (let i = 1; i <= 5; i++) {
+                const tab = document.getElementById(`flow-tab-${i}`);
+                if (i === stepIndex) {
+                    tab.className = "flex-shrink-0 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-blue-600 text-white transition-all shadow-md";
+                } else {
+                    tab.className = "flex-shrink-0 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all";
+                }
+            }
+        }
+
+        // ----------------------------------------------------
+        // 5. COVERAGE & SIGNAL STRENGTH SIMULATOR LOGIC
+        // ----------------------------------------------------
+        let currentGen = '4g';
+
+        function setGen(gen) {
+            currentGen = gen;
+            const btn4g = document.getElementById('btn-gen-4g');
+            const btn5g = document.getElementById('btn-gen-5g');
+
+            if (gen === '4g') {
+                btn4g.className = "py-2 px-4 rounded-xl border border-blue-600 bg-blue-600 text-white font-bold text-xs transition";
+                btn5g.className = "py-2 px-4 rounded-xl border border-slate-300 bg-white text-slate-700 font-bold text-xs hover:border-slate-400 transition";
+            } else {
+                btn5g.className = "py-2 px-4 rounded-xl border border-cyan-600 bg-cyan-600 text-white font-bold text-xs transition";
+                btn4g.className = "py-2 px-4 rounded-xl border border-slate-300 bg-white text-slate-700 font-bold text-xs hover:border-slate-400 transition";
+            }
+            updateSimulator();
+        }
+
+        function updateSimulator() {
+            const dist = parseFloat(document.getElementById('dist-range').value);
+            document.getElementById('dist-val').innerText = dist + " km";
+
+            let dbm = -50 - (dist * 12);
+            let speed = 0;
+            let ping = 0;
+            let quality = "";
+            let barsHtml = "";
+
+            if (currentGen === '4g') {
+                speed = Math.max(2, Math.round(120 / (1 + (dist * 0.8))));
+                ping = Math.round(15 + (dist * 4));
+            } else { // 5G
+                // 5G attenuates faster with distance
+                dbm -= 8;
+                speed = Math.max(5, Math.round(600 / (1 + (dist * 1.5))));
+                ping = Math.round(6 + (dist * 2));
+            }
+
+            // Cap minimum dBm
+            if (dbm < -120) dbm = -120;
+            dbm = Math.round(dbm);
+
+            // Signal bar assessment
+            if (dbm >= -80) {
+                quality = "Sangat Baik";
+                barsHtml = '<i class="fa-solid fa-signal text-emerald-500"></i>';
+                document.getElementById('out-bar-text').innerText = "5 Bar (Full)";
+            } else if (dbm >= -95) {
+                quality = "Cukup Baik";
+                barsHtml = '<i class="fa-solid fa-signal text-cyan-500"></i>';
+                document.getElementById('out-bar-text').innerText = "3-4 Bar";
+            } else if (dbm >= -108) {
+                quality = "Lemah";
+                barsHtml = '<i class="fa-solid fa-signal text-amber-500"></i>';
+                document.getElementById('out-bar-text').innerText = "1-2 Bar";
+            } else {
+                quality = "Sangat Buruk / No Service";
+                barsHtml = '<i class="fa-solid fa-signal text-red-500 opacity-50"></i>';
+                document.getElementById('out-bar-text').innerText = "0 Bar";
+            }
+
+            // UI Updates
+            document.getElementById('out-dbm').innerText = dbm + " dBm";
+            document.getElementById('out-quality').innerText = quality;
+            document.getElementById('out-speed').innerText = speed + " Mbps";
+            document.getElementById('out-ping').innerText = ping + " ms";
+            document.getElementById('out-bars').innerHTML = barsHtml;
+
+            // Update Radar UI Dot Position
+            const userDot = document.getElementById('sim-user-dot');
+            const percentage = Math.min(85, Math.max(15, (dist / 10) * 80));
+            userDot.style.right = (100 - percentage) + '%';
+        }
+
+        // Initialize simulator on load
+        updateSimulator();
+
+        // ----------------------------------------------------
+        // 6. SIDEBAR INTERACTIVE QUIZ LOGIC
+        // ----------------------------------------------------
+        function checkAnswer(isCorrect) {
+            const res = document.getElementById('quiz-result');
+            res.classList.remove('hidden');
+            if (isCorrect) {
+                res.className = "text-xs font-bold text-center p-2 rounded-lg bg-emerald-500 text-white animate-bounce";
+                res.innerText = "Jawaban Tepat! Microwave Dish digunakan untuk transmisi sinyal nirkabel antar menara.";
+            } else {
+                res.className = "text-xs font-bold text-center p-2 rounded-lg bg-red-500 text-white";
+                res.innerText = "Kurang Tepat. Coba lagi!";
+            }
+        }
+    </script>
+</body>
+</html>
