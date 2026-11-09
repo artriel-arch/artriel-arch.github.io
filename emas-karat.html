@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cara Ubah Emas Mentah Ke Emas Karat - Panduan Pemurnian & Kalkulator Karat</title>
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Cara Ubah Emas Mentah Ke Emas Karat - Panduan Pemurnian & Kalkulator Karat">
+    <meta name="description" content="Panduan teknis dan presisi pengolahan emas mentah (Dore/Batangan) menjadi Emas Karat standar (24K, 22K, 18K). Lengkap dengan Kalkulator Alloy Emas Interaktif.">
+    <meta name="keywords" content="emas mentah, emas karat, pemurnian emas, aqua regia, kalkulator emas, lebur emas, kadar emas 24k 18k, cara murnikan emas">
+    <meta name="author" content="Ariel Usman">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://emaskarat.id/">
+    <meta property="og:title" content="Panduan Lengkap: Cara Mengubah Emas Mentah Menjadi Emas Karat Standar">
+    <meta property="og:description" content="Pelajari teknik pemurnian emas mentah dengan Aqua Regia dan cara pencampuran (Alloying) untuk mencapai kadar Karat tepat (24K, 22K, 18K). Coba Kalkulator Gratis!">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://emaskarat.id/">
+    <meta property="twitter:title" content="Cara Ubah Emas Mentah Ke Emas Karat - Panduan & Kalkulator Interaktif">
+    <meta property="twitter:description" content="Tutorial lengkap pengolahan emas murni dan pencampuran perak/tembaga untuk perhiasan standar SNI.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://img.icons8.com/gold-bars/64/gold-ingots.png">
+
+    <!-- Structured Data (JSON-LD) for Google SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Cara Mengubah Emas Mentah Menjadi Emas Karat",
+      "description": "Langkah demi langkah mengolah emas mentah dari hasil tambang/peleburan awal menjadi emas karat murni (24K) dan emas campuran (22K, 18K) untuk perhiasan.",
+      "image": "https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=1200&q=80",
+      "author": {
+        "@type": "Person",
+        "name": "Ariel Usman"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Peleburan Awal (Smelting)",
+          "text": "Meleburkan emas mentah atau batangan Dore menggunakan kowi dan boraks untuk memisahkan terak awal."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Pemurnian Kimia (Aqua Regia)",
+          "text": "Melarutkan emas dalam campuran asam nitrat dan asam klorida, kemudian mengendapkan kembali emas murni 24K."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Perhitungan Kadar (Alloying)",
+          "text": "Menghitung rasio penambahan logam tembaga dan perak untuk membentuk emas 22K, 18K, atau 14K."
+        }
+      ]
+    }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                            glow: '#ffd700'
+                        },
+                        amberDark: '#1a160e'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #faf8f5;
+        }
+        /* Custom Glassmorphism */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+        .glass-nav {
+            background: rgba(255, 251, 235, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .gold-gradient-bg {
+            background: radial-gradient(circle at 10% 20%, rgba(254, 243, 199, 0.8) 0%, rgba(255, 255, 255, 1) 90%);
+        }
+        .gold-text-gradient {
+            background: linear-gradient(135deg, #b45309 0%, #f59e0b 50%, #78350f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-gold {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-gold:hover {
+            box-shadow: 0 10px 20px -5px rgba(217, 119, 6, 0.5);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased selection:bg-gold-200 selection:text-gold-900">
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-40 glass-nav border-b border-gold-200/50 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-gold-600 to-gold-300 flex items-center justify-center shadow-md shadow-gold-500/20 group-hover:scale-105 transition-transform">
+                        <i data-lucide="gem" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold tracking-tight text-slate-900 group-hover:text-gold-700 transition-colors">EmasKarat<span class="text-gold-600">.id</span></span>
+                        <span class="block text-[10px] font-semibold uppercase tracking-widest text-gold-700">Panduan & Presisi Smelting</span>
+                    </div>
+                </a>
+
+                <!-- Nav Menu Desktop -->
+                <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-700">
+                    <a href="#alur" class="hover:text-gold-600 transition-colors flex items-center gap-1.5"><i data-lucide="git-commit" class="w-4 h-4"></i> Alur Kerja</a>
+                    <a href="#kalkulator" class="hover:text-gold-600 transition-colors flex items-center gap-1.5"><i data-lucide="calculator" class="w-4 h-4"></i> Kalkulator Karat</a>
+                    <a href="#panduan" class="hover:text-gold-600 transition-colors flex items-center gap-1.5"><i data-lucide="book-open" class="w-4 h-4"></i> Panduan Kimia</a>
+                    <a href="#sidebar-info" class="hover:text-gold-600 transition-colors flex items-center gap-1.5"><i data-lucide="layers" class="w-4 h-4"></i> Standar SNI</a>
+                </nav>
+
+                <!-- Action & Resource Button -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <button onclick="openModal()" class="btn-gold text-white font-semibold text-sm px-5 py-2.5 rounded-xl flex items-center gap-2 shadow-md shadow-gold-500/10">
+                        <i data-lucide="download" class="w-4 h-4"></i>
+                        <span>Unduh Kode Resource</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="md:hidden flex items-center gap-2">
+                    <button onclick="openModal()" class="p-2 text-gold-700 bg-gold-100 rounded-lg">
+                        <i data-lucide="download" class="w-5 h-5"></i>
+                    </button>
+                    <button id="mobileMenuBtn" class="p-2 rounded-xl text-slate-700 hover:bg-gold-100 transition-colors focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden border-b border-gold-200 bg-amber-50/95 px-4 pt-2 pb-6 space-y-3 font-medium text-slate-700">
+            <a href="#alur" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded-lg hover:bg-gold-100 hover:text-gold-700 flex items-center gap-2"><i data-lucide="git-commit" class="w-4 h-4"></i> Alur Kerja</a>
+            <a href="#kalkulator" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded-lg hover:bg-gold-100 hover:text-gold-700 flex items-center gap-2"><i data-lucide="calculator" class="w-4 h-4"></i> Kalkulator Karat</a>
+            <a href="#panduan" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded-lg hover:bg-gold-100 hover:text-gold-700 flex items-center gap-2"><i data-lucide="book-open" class="w-4 h-4"></i> Panduan Kimia</a>
+            <a href="#sidebar-info" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded-lg hover:bg-gold-100 hover:text-gold-700 flex items-center gap-2"><i data-lucide="layers" class="w-4 h-4"></i> Standar SNI</a>
+            <button onclick="openModal(); toggleMobileMenu();" class="w-full btn-gold text-white font-semibold py-2.5 rounded-xl flex items-center justify-center gap-2 mt-2">
+                <i data-lucide="download" class="w-4 h-4"></i> Unduh Kode Resource
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO HEADER (Glassmorphism Modern) -->
+    <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden gold-gradient-bg">
+        <!-- Ambient Decorative Circles -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gold-300/30 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-10 right-10 w-72 h-72 bg-amber-200/40 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-100/90 border border-gold-300 text-gold-800 text-xs sm:text-sm font-semibold mb-6 shadow-sm animate-pulse">
+                    <i data-lucide="sparkles" class="w-4 h-4 text-gold-600"></i>
+                    <span>Panduan Metalurgi & Formulasi Presisi Emas 2026</span>
+                </div>
+
+                <!-- Main Glass Banner -->
+                <div class="glass-card rounded-3xl p-6 sm:p-10 shadow-xl shadow-gold-900/5 mb-8 border border-white/60">
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight mb-6">
+                        Cara Mengubah <span class="gold-text-gradient">Emas Mentah</span> Menjadi <span class="text-gold-600">Emas Karat Standard</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed mb-8">
+                        Panduan komprehensif dari ekstraksi batangan *Dore*, pemurnian kadar 99.9% (24K) menggunakan metode kimia *Aqua Regia*, hingga teknik racikan perpaduan perak & tembaga untuk perhiasan 22K & 18K.
+                    </p>
+
+                    <!-- Hero Call to Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="#kalkulator" class="w-full sm:w-auto btn-gold text-white font-bold px-8 py-4 rounded-xl shadow-lg flex items-center justify-center gap-3">
+                            <i data-lucide="calculator" class="w-5 h-5"></i>
+                            <span>Buka Kalkulator Karat</span>
+                        </a>
+                        <button onclick="openModal()" class="w-full sm:w-auto bg-white/90 hover:bg-white text-slate-800 font-bold px-8 py-4 rounded-xl border border-gold-300 hover:border-gold-400 shadow-sm transition-all flex items-center justify-center gap-3">
+                            <i data-lucide="download-cloud" class="w-5 h-5 text-gold-600"></i>
+                            <span>Unduh Kode Resource</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mini Key Metrics / Features -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
+                    <div class="bg-white/70 p-4 rounded-2xl border border-gold-200/60 shadow-sm flex items-center gap-3">
+                        <div class="p-3 bg-gold-100 rounded-xl text-gold-700">
+                            <i data-lucide="flame" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-500 font-medium">Titik Lebur</div>
+                            <div class="text-sm font-bold text-slate-900">1,064 °C</div>
+                        </div>
+                    </div>
+                    <div class="bg-white/70 p-4 rounded-2xl border border-gold-200/60 shadow-sm flex items-center gap-3">
+                        <div class="p-3 bg-amber-100 rounded-xl text-amber-700">
+                            <i data-lucide="flask-conical" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-500 font-medium">Metode Kimia</div>
+                            <div class="text-sm font-bold text-slate-900">Aqua Regia</div>
+                        </div>
+                    </div>
+                    <div class="bg-white/70 p-4 rounded-2xl border border-gold-200/60 shadow-sm flex items-center gap-3">
+                        <div class="p-3 bg-yellow-100 rounded-xl text-yellow-700">
+                            <i data-lucide="award" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-500 font-medium">Kemurnian 24K</div>
+                            <div class="text-sm font-bold text-slate-900">99.9% / 9999</div>
+                        </div>
+                    </div>
+                    <div class="bg-white/70 p-4 rounded-2xl border border-gold-200/60 shadow-sm flex items-center gap-3">
+                        <div class="p-3 bg-emerald-100 rounded-xl text-emerald-700">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-500 font-medium">Standar Pasar</div>
+                            <div class="text-sm font-bold text-slate-900">SNI & LBMA</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN BODY SECTION WITH SIDEBAR LAYOUT -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <!-- MAIN CONTENT AREA (8 COLS) -->
+            <main class="lg:col-span-8 space-y-12">
+
+                <!-- WORKFLOW OVERVIEW -->
+                <section id="alur" class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-3 bg-gold-100 rounded-2xl text-gold-700">
+                            <i data-lucide="workflow" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Alur Utama Pengolahan Emas</h2>
+                            <p class="text-xs sm:text-sm text-slate-500">Tahapan ringkas mengubah batangan Dore mentah menjadi perhiasan siap pakai.</p>
+                        </div>
+                    </div>
+
+                    <!-- Process Visual Steps Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 relative">
+                            <span class="absolute top-3 right-3 text-2xl font-black text-slate-300">01</span>
+                            <div class="text-gold-600 font-bold mb-1 flex items-center gap-2">
+                                <i data-lucide="hammer" class="w-4 h-4"></i> Peleburan Dore
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed">Emas mentah dilebur dengan Boraks & Nitrat untuk memisahkan pengotor fisik utama.</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-amber-50/70 border border-amber-200/80 relative">
+                            <span class="absolute top-3 right-3 text-2xl font-black text-amber-300">02</span>
+                            <div class="text-amber-700 font-bold mb-1 flex items-center gap-2">
+                                <i data-lucide="flask-round" class="w-4 h-4"></i> Pemurnian 24K
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed">Proses larutan Aqua Regia (3 HCl : 1 HNO3) dan pengendapan SMB untuk hasil 99.9%.</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-gold-50 border border-gold-200 relative">
+                            <span class="absolute top-3 right-3 text-2xl font-black text-gold-300">03</span>
+                            <div class="text-gold-800 font-bold mb-1 flex items-center gap-2">
+                                <i data-lucide="pie-chart" class="w-4 h-4"></i> Pencampuran Karat
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed">Emas 24K dicampur perak & tembaga presisi untuk membentuk 22K, 18K, atau 14K.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- DYNAMIC INTERACTIVE CALCULATOR TOOL -->
+                <section id="kalkulator" class="bg-gradient-to-br from-slate-900 to-amber-950 text-white rounded-3xl p-6 sm:p-8 shadow-xl relative overflow-hidden">
+                    <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-gold-500/10 rounded-full blur-3xl"></div>
+                    
+                    <div class="flex items-center gap-3 mb-6 relative z-10">
+                        <div class="p-3 bg-gold-500/20 text-gold-400 rounded-2xl border border-gold-500/30">
+                            <i data-lucide="calculator" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-xl sm:text-2xl font-bold text-white">Kalkulator Alloying & Karat Emas Interaktif</h2>
+                            <p class="text-xs sm:text-sm text-gold-200/70">Hitung kebutuhan perak & tembaga untuk mengubah Emas 24K ke Karat Target.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+                        <!-- Input Controls -->
+                        <div class="space-y-4 bg-slate-800/80 p-5 rounded-2xl border border-slate-700">
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-gold-300 mb-2">Berat Emas Murni (24K) (Gram)</label>
+                                <div class="relative">
+                                    <input type="number" id="goldWeight" value="10" min="0.1" step="0.1" class="w-full bg-slate-900 border border-slate-600 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-400 font-mono text-lg">
+                                    <span class="absolute right-4 top-3.5 text-slate-400 text-sm font-semibold">gram</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-gold-300 mb-2">Pilih Karat Target Tujuan</label>
+                                <select id="targetKarat" class="w-full bg-slate-900 border border-slate-600 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-400 font-semibold">
+                                    <option value="22">22 Karat ( Kadar ~ 91.6% ) - Perhiasan Tinggi</option>
+                                    <option value="20">20 Karat ( Kadar ~ 83.3% ) - Standard Lokal</option>
+                                    <option value="18" selected>18 Karat ( Kadar ~ 75.0% ) - Perhiasan Permata</option>
+                                    <option value="14">14 Karat ( Kadar ~ 58.5% ) - Karat Barat/AS</option>
+                                    <option value="9">9 Karat ( Kadar ~ 37.5% ) - Karat Rendah</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-gold-300 mb-2">Komposisi Logam Paduan (Alloy Ratio)</label>
+                                <div class="grid grid-cols-2 gap-3 text-xs">
+                                    <label class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-700 cursor-pointer">
+                                        <input type="radio" name="alloyRatio" value="yellow" checked class="text-gold-500 focus:ring-0">
+                                        <span>Emas Kuning Standard (50% Perak : 50% Tembaga)</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-700 cursor-pointer">
+                                        <input type="radio" name="alloyRatio" value="red" class="text-gold-500 focus:ring-0">
+                                        <span>Rose Gold (20% Perak : 80% Tembaga)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Output Calculation Results -->
+                        <div class="bg-slate-950/90 p-5 rounded-2xl border border-gold-500/30 flex flex-col justify-between">
+                            <div class="space-y-4">
+                                <h3 class="text-sm font-bold text-gold-400 border-b border-slate-800 pb-2 flex items-center justify-between">
+                                    <span>HASIL FORMULASI ALLOY</span>
+                                    <i data-lucide="scale" class="w-4 h-4"></i>
+                                </h3>
+
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center text-sm">
+                                        <span class="text-slate-400">Total Berat Akhir Hasil:</span>
+                                        <span id="resTotalWeight" class="font-bold text-xl text-gold-300 font-mono">13.33 g</span>
+                                    </div>
+                                    <div class="flex justify-between items-center text-sm">
+                                        <span class="text-slate-400">Total Logam Campuran Ditambah:</span>
+                                        <span id="resTotalAlloy" class="font-bold text-white font-mono">3.33 g</span>
+                                    </div>
+                                    <hr class="border-slate-800">
+                                    <div class="flex justify-between items-center text-xs text-slate-300">
+                                        <span class="flex items-center gap-1.5"><i data-lucide="circle-dot" class="w-3 h-3 text-slate-300"></i> Berat Perak Murni (Ag):</span>
+                                        <span id="resSilver" class="font-semibold text-slate-100 font-mono">1.67 g</span>
+                                    </div>
+                                    <div class="flex justify-between items-center text-xs text-slate-300">
+                                        <span class="flex items-center gap-1.5"><i data-lucide="circle-dot" class="w-3 h-3 text-amber-500"></i> Berat Tembaga (Cu):</span>
+                                        <span id="resCopper" class="font-semibold text-amber-400 font-mono">1.67 g</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 p-3 rounded-xl bg-gold-500/10 border border-gold-500/20 text-[11px] text-gold-200/90">
+                                <i data-lucide="info" class="w-3.5 h-3.5 inline mr-1 text-gold-400"></i>
+                                Rumus: <code class="text-white">Berat Campuran = (Berat Emas 24K / (Karat Target / 24)) - Berat Emas 24K</code>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- STEP BY STEP TECHNICAL REFINING GUIDE -->
+                <section id="panduan" class="space-y-8">
+                    <div class="border-b border-slate-200 pb-4">
+                        <h2 class="text-2xl font-extrabold text-slate-900">Panduan Teknis Langkah Demi Langkah</h2>
+                        <p class="text-slate-600 text-sm mt-1">Prosedur laboratorium standar untuk memurnikan emas mentah hingga menjadi perhiasan bermutu tinggi.</p>
+                    </div>
+
+                    <!-- Step 1 -->
+                    <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm flex flex-col md:flex-row gap-6 items-start">
+                        <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=600&q=80" alt="Peleburan Emas" class="w-full md:w-48 h-44 object-cover rounded-2xl border border-slate-100">
+                        <div class="space-y-3 flex-1">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 bg-gold-100 text-gold-800 text-xs font-bold rounded-full">Langkah 1</span>
+                                <span class="text-xs text-slate-400 font-mono">Temp: 1064°C - 1100°C</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Peleburan Awal Batangan Mentah (Dore Bar)</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Emas mentah hasil tambang rakyat biasanya mengandung perak, tembaga, besi, dan tanah. Taruh bahan mentah di mangkuk kowi (*crucible*), tambahkan **Boraks (Pijar)** dan **Sodium Nitrat** sebagai *flux* pembersih kotoran. Panaskan dengan *torch* oksigen-propana hingga mencair penuh lalu tuang ke cetakan.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm flex flex-col md:flex-row gap-6 items-start">
+                        <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&q=80" alt="Proses Kimia Pemurnian" class="w-full md:w-48 h-44 object-cover rounded-2xl border border-slate-100">
+                        <div class="space-y-3 flex-1">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 bg-amber-100 text-amber-800 text-xs font-bold rounded-full">Langkah 2</span>
+                                <span class="text-xs text-slate-400 font-mono">Metode Aqua Regia</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Pemurnian Kimia Ke Emas 24K (99.9%)</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Emas mentah pipih dilarutkan dalam larutan **Aqua Regia** (Campuran 3 bagian Asam Klorida HCl 32% dan 1 bagian Asam Nitrat HNO3 68%). Setelah emas larut sempurna menjadi cairan *Asam Kloroaurat*, tambahkan pengendap **SMB (Sodium MetaBisulfite)** untuk mengendapkan serbuk emas cokelat murni 24K.
+                            </p>
+                            <!-- Safety Warning -->
+                            <div class="p-3 bg-red-50 border border-red-200 rounded-xl text-xs text-red-700 flex items-center gap-2">
+                                <i data-lucide="alert-triangle" class="w-4 h-4 shrink-0 text-red-600"></i>
+                                <span><strong>Peringatan K3:</strong> Wajib gunakan lemari asam / *fume hood*, masker respirator gas asam, dan sarung tangan tahan kimia!</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm flex flex-col md:flex-row gap-6 items-start">
+                        <img src="https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=600&q=80" alt="Emas Batangan 24K dan Perhiasan" class="w-full md:w-48 h-44 object-cover rounded-2xl border border-slate-100">
+                        <div class="space-y-3 flex-1">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full">Langkah 3</span>
+                                <span class="text-xs text-slate-400 font-mono">Proses Alloying</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Pencampuran Logam Karat (Alloying)</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Emas 24K murni terlalu lunak untuk dijadikan perhiasan sehari-hari. Lebur kembali emas 24K bersama logam paduan perak (Ag) dan tembaga (Cu) sesuai persentase target karat menggunakan kalkulator di atas, lalu cetak menjadi perhiasan berkualitas tinggi.
+                            </p>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- TABEL ACUAN KADAR EMAS STANDAR SNI -->
+                <section class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <i data-lucide="table" class="w-5 h-5 text-gold-600"></i>
+                        <span>Tabel Standar Karat & Persentase Kadar Emas</span>
+                    </h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left text-slate-600">
+                            <thead class="text-xs uppercase bg-gold-50 text-gold-900 font-bold">
+                                <tr>
+                                    <th class="py-3 px-4 rounded-l-xl">Karat (K)</th>
+                                    <th class="py-3 px-4">Persentase Murni (%)</th>
+                                    <th class="py-3 px-4">Kadar Fineness ( 1000 )</th>
+                                    <th class="py-3 px-4 rounded-r-xl">Kegunaan Umum</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100 font-medium">
+                                <tr class="hover:bg-slate-50">
+                                    <td class="py-3 px-4 font-bold text-gold-700">24 Karat</td>
+                                    <td class="py-3 px-4">99.0% - 99.9%</td>
+                                    <td class="py-3 px-4 font-mono">999</td>
+                                    <td class="py-3 px-4">Emas Batangan Investasi (LM)</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="py-3 px-4 font-bold text-gold-700">22 Karat</td>
+                                    <td class="py-3 px-4">91.6% - 95.8%</td>
+                                    <td class="py-3 px-4 font-mono">916</td>
+                                    <td class="py-3 px-4">Perhiasan Mewah Asia / Timur Tengah</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="py-3 px-4 font-bold text-gold-700">20 Karat</td>
+                                    <td class="py-3 px-4">83.3% - 87.4%</td>
+                                    <td class="py-3 px-4 font-mono">833</td>
+                                    <td class="py-3 px-4">Emas Tua Indonesia</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="py-3 px-4 font-bold text-gold-700">18 Karat</td>
+                                    <td class="py-3 px-4">75.0% - 79.1%</td>
+                                    <td class="py-3 px-4 font-mono">750</td>
+                                    <td class="py-3 px-4">Perhiasan Berlian & Permata (Standard Int)</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="py-3 px-4 font-bold text-gold-700">14 Karat</td>
+                                    <td class="py-3 px-4">58.3% - 62.4%</td>
+                                    <td class="py-3 px-4 font-mono">585</td>
+                                    <td class="py-3 px-4">Perhiasan Pasar Amerika & Eropa</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- SIDEBAR AREA (4 COLS) -->
+            <aside id="sidebar-info" class="lg:col-span-4 space-y-6">
+                
+                <!-- Quick Search / Filter Box -->
+                <div class="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm">
+                    <h3 class="text-sm font-bold text-slate-900 mb-3 flex items-center gap-2">
+                        <i data-lucide="search" class="w-4 h-4 text-gold-600"></i> Cari Informasi Emas
+                    </h3>
+                    <div class="relative">
+                        <input type="text" id="sidebarSearch" placeholder="Cari misal: Uji Niter, White Gold..." class="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-3 py-2 text-xs text-slate-800 focus:outline-none focus:border-gold-400">
+                        <i data-lucide="search" class="w-3.5 h-3.5 text-slate-400 absolute left-3 top-3"></i>
+                    </div>
+                </div>
+
+                <!-- Related Articles Card 1 -->
+                <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+                    <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 bg-gold-100 text-gold-800 rounded-md">Artikel Terkait</span>
+                    <h4 class="text-base font-bold text-slate-900 hover:text-gold-600 transition-colors cursor-pointer">
+                        Cara Menguji Kadar Emas Secara Manual dengan Batu Uji & Asam Nitrat
+                    </h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Metode pengujian goresan tradisional yang cepat untuk menentukan karat emas sebelum proses peleburan awal.
+                    </p>
+                    <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+                        <span><i data-lucide="clock" class="w-3 h-3 inline"></i> 5 Menit Baca</span>
+                        <span class="text-gold-600 font-medium">Baca Selengkapnya &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Related Articles Card 2 -->
+                <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+                    <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 bg-amber-100 text-amber-800 rounded-md">Formulasi Warna</span>
+                    <h4 class="text-base font-bold text-slate-900 hover:text-gold-600 transition-colors cursor-pointer">
+                        Membuat White Gold (Emas Putih) dan Rose Gold 18K
+                    </h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Campuran nikel/palladium untuk menghasilkan kilau emas putih elegan serta kadar tembaga tinggi untuk warna rose gold.
+                    </p>
+                    <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+                        <span><i data-lucide="clock" class="w-3 h-3 inline"></i> 7 Menit Baca</span>
+                        <span class="text-gold-600 font-medium">Baca Selengkapnya &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Safety Checklist Box -->
+                <div class="bg-amber-50/80 p-6 rounded-3xl border border-amber-200/80 space-y-3">
+                    <h4 class="font-bold text-amber-900 text-sm flex items-center gap-2">
+                        <i data-lucide="shield-alert" class="w-4 h-4 text-amber-600"></i> Check-List Keselamatan Kerja
+                    </h4>
+                    <ul class="text-xs text-amber-800 space-y-2">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-amber-600 mt-0.5 shrink-0"></i>
+                            <span>Gunakan kacamata safety anti-radiasi lebur.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-amber-600 mt-0.5 shrink-0"></i>
+                            <span>Pastikan sirkulasi udara / blower aktif.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-amber-600 mt-0.5 shrink-0"></i>
+                            <span>Sediakan pemadam api ringan (APAR).</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Download Promo Widget -->
+                <div class="glass-card p-6 rounded-3xl text-center space-y-4 border border-gold-300">
+                    <div class="w-12 h-12 bg-gold-500 text-white rounded-2xl flex items-center justify-center mx-auto shadow-md">
+                        <i data-lucide="file-text" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-sm">Unduh File Cheat-Sheet Formulasi Emas lengkap</h4>
+                    <p class="text-xs text-slate-500">Dapatkan sheet rumus Excel & panduan PDF siap cetak.</p>
+                    <button onclick="openModal()" class="w-full btn-gold text-white font-bold py-2.5 rounded-xl text-xs shadow-sm">
+                        Unduh Sekarang
+                    </button>
+                </div>
+
+            </aside>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-white border-t border-slate-800 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                
+                <!-- Left Copyright -->
+                <div class="text-center md:text-left space-y-1">
+                    <div class="flex items-center justify-center md:justify-start gap-2">
+                        <i data-lucide="gem" class="w-5 h-5 text-gold-400"></i>
+                        <span class="text-lg font-bold text-white">EmasKarat.id</span>
+                    </div>
+                    <p class="text-xs text-slate-400">
+                        Oleh <span class="text-slate-200 font-semibold">Ariel Usman</span> &copy; 2026. All rights reserved.
+                    </p>
+                </div>
+
+                <!-- Social Link Instagram -->
+                <div class="flex items-center gap-4">
+                    <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-xl text-xs font-semibold text-gold-300 hover:text-gold-200 transition-colors">
+                        <i data-lucide="instagram" class="w-4 h-4 text-pink-500"></i>
+                        <span>@arielrcun</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- MODAL POP-UP MONETISASI & RESOURCE DOWNLOAD -->
+    <div id="resourceModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/70 backdrop-blur-md transition-opacity">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-gold-300 relative transform transition-all scale-100">
+            
+            <!-- Close Modal Button -->
+            <button onclick="closeModal()" class="absolute right-5 top-5 p-2 rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="text-center space-y-2 mb-6">
+                <div class="w-14 h-14 bg-gold-100 text-gold-700 rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-inner">
+                    <i data-lucide="folder-down" class="w-7 h-7"></i>
+                </div>
+                <h3 class="text-xl font-extrabold text-slate-900">Unduh Kode & Cheat-Sheet Resource</h3>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    Dapatkan berkas lengkap formula pencampuran karat, standar SNI emas, dan tabel takaran bahan kimia Aqua Regia murni.
+                </p>
+            </div>
+
+            <!-- Monetization / Support Options -->
+            <div class="space-y-3 mb-6">
+                <p class="text-xs font-bold uppercase tracking-wider text-slate-400 text-center">Dukung Pengembang (Opsional)</p>
+                
+                <!-- International Payment (PayPal) -->
+                <a href="https://paypal.me/arielrcu" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3.5 bg-blue-50 hover:bg-blue-100/80 border border-blue-200 rounded-2xl transition-colors group">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2 bg-blue-600 text-white rounded-xl">
+                            <i data-lucide="globe" class="w-5 h-5"></i>
+                        </div>
+                        <div class="text-left">
+                            <div class="text-xs font-bold text-blue-950">Pembayaran Internasional (PayPal)</div>
+                            <div class="text-[11px] text-blue-700">paypal.me/arielrcu</div>
+                        </div>
+                    </div>
+                    <i data-lucide="external-link" class="w-4 h-4 text-blue-500 group-hover:translate-x-0.5 transition-transform"></i>
+                </a>
+
+                <!-- Local Payment (Trakteer) -->
+                <a href="https://trakteer.id/arielrcu" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3.5 bg-red-50 hover:bg-red-100/80 border border-red-200 rounded-2xl transition-colors group">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2 bg-red-600 text-white rounded-xl">
+                            <i data-lucide="qr-code" class="w-5 h-5"></i>
+                        </div>
+                        <div class="text-left">
+                            <div class="text-xs font-bold text-red-950">Lokal / QRIS / E-Wallet (Trakteer)</div>
+                            <div class="text-[11px] text-red-700">trakteer.id/arielrcu</div>
+                        </div>
+                    </div>
+                    <i data-lucide="external-link" class="w-4 h-4 text-red-500 group-hover:translate-x-0.5 transition-transform"></i>
+                </a>
+            </div>
+
+            <!-- Divider -->
+            <div class="relative flex py-2 items-center mb-4">
+                <div class="flex-grow border-t border-slate-200"></div>
+                <span class="flex-shrink mx-4 text-[11px] font-semibold text-slate-400">Atau Akses Gratis</span>
+                <div class="flex-grow border-t border-slate-200"></div>
+            </div>
+
+            <!-- Download as Guest Button -->
+            <button onclick="downloadAsGuest()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3 rounded-2xl text-xs flex items-center justify-center gap-2 transition-colors">
+                <i data-lucide="user-check" class="w-4 h-4 text-slate-500"></i>
+                <span>Download as Guest (Akses Gratis Direct)</span>
+            </button>
+
+        </div>
+    </div>
+
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.add('hidden');
+        }
+
+        // Modal Monetisasi Control
+        const resourceModal = document.getElementById('resourceModal');
+
+        function openModal() {
+            resourceModal.classList.remove('hidden');
+            resourceModal.classList.add('flex');
+        }
+
+        function closeModal() {
+            resourceModal.classList.add('hidden');
+            resourceModal.classList.remove('flex');
+        }
+
+        // Close modal when clicking outside content card
+        resourceModal.addEventListener('click', (e) => {
+            if (e.target === resourceModal) {
+                closeModal();
+            }
+        });
+
+        // "Download as Guest" Action
+        function downloadAsGuest() {
+            closeModal();
+            
+            // Generate cheat-sheet text file content
+            const content = `=====================================================
+PANDUAN CHEAT-SHEET RUMUS ALLOY & METODE EMAS (2026)
+Oleh: Ariel Usman (https://instagram.com/arielrcun)
+=====================================================
+
+1. RUMUS RACIKAN EMAS KARAT (ALLOYING):
+   Total Berat Akhir = Berat Emas 24K / (Target Karat / 24)
+   Berat Logam Campuran Ditambah = Total Berat Akhir - Berat Emas 24K
+
+2. RACIKAN WARNA EMAS (STANDARD):
+   - Emas Kuning 18K (75% Emas 24K, 12.5% Perak Murni, 12.5% Tembaga)
+   - Rose Gold 18K (75% Emas 24K, 5% Perak Murni, 20% Tembaga)
+   - Emas Putih 18K (75% Emas 24K, 15% Nikel/Palladium, 10% Tembaga)
+
+3. RASIO LARUTAN AQUA REGIA PEMURNIAN KIMIA:
+   - 3 Bagian Asam Klorida (HCl 32%)
+   - 1 Bagian Asam Nitrat (HNO3 68%)
+
+Terima kasih telah mengunduh resource EmasKarat.id!
+=====================================================`;
+
+            const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'CheatSheet_Formulasi_Emas_ArielUsman.txt';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // KARAT CALCULATOR LOGIC
+        const goldWeightInput = document.getElementById('goldWeight');
+        const targetKaratSelect = document.getElementById('targetKarat');
+        const alloyRatioRadios = document.getElementsByName('alloyRatio');
+
+        const resTotalWeight = document.getElementById('resTotalWeight');
+        const resTotalAlloy = document.getElementById('resTotalAlloy');
+        const resSilver = document.getElementById('resSilver');
+        const resCopper = document.getElementById('resCopper');
+
+        function calculateAlloy() {
+            const pureGoldWeight = parseFloat(goldWeightInput.value) || 0;
+            const targetKarat = parseFloat(targetKaratSelect.value) || 18;
+
+            if (pureGoldWeight <= 0) {
+                resTotalWeight.innerText = "0.00 g";
+                resTotalAlloy.innerText = "0.00 g";
+                resSilver.innerText = "0.00 g";
+                resCopper.innerText = "0.00 g";
+                return;
+            }
+
+            // Calculation
+            const targetPurity = targetKarat / 24;
+            const totalFinalWeight = pureGoldWeight / targetPurity;
+            const requiredAlloyWeight = totalFinalWeight - pureGoldWeight;
+
+            // Ratio Check
+            let ratioType = 'yellow';
+            for (const radio of alloyRatioRadios) {
+                if (radio.checked) {
+                    ratioType = radio.value;
+                    break;
+                }
+            }
+
+            let silverWeight = 0;
+            let copperWeight = 0;
+
+            if (ratioType === 'yellow') {
+                // 50% Perak : 50% Tembaga
+                silverWeight = requiredAlloyWeight * 0.50;
+                copperWeight = requiredAlloyWeight * 0.50;
+            } else if (ratioType === 'red') {
+                // 20% Perak : 80% Tembaga (Rose Gold)
+                silverWeight = requiredAlloyWeight * 0.20;
+                copperWeight = requiredAlloyWeight * 0.80;
+            }
+
+            // Update DOM with formatted numbers
+            resTotalWeight.innerText = totalFinalWeight.toFixed(2) + " g";
+            resTotalAlloy.innerText = requiredAlloyWeight.toFixed(2) + " g";
+            resSilver.innerText = silverWeight.toFixed(2) + " g";
+            resCopper.innerText = copperWeight.toFixed(2) + " g";
+        }
+
+        // Attach Event Listeners for Live Calculation
+        goldWeightInput.addEventListener('input', calculateAlloy);
+        targetKaratSelect.addEventListener('change', calculateAlloy);
+        alloyRatioRadios.forEach(radio => radio.addEventListener('change', calculateAlloy));
+
+        // Initial Calc Run
+        calculateAlloy();
+    </script>
+</body>
+</html>
