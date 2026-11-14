@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Primary Meta Tags -->
+    <title>Cara Kerja Layar E-Book Reader (E-Ink): Penjelasan Mudah & Simulasi Interaktif</title>
+    <meta name="title" content="Cara Kerja Layar E-Book Reader (E-Ink): Penjelasan Mudah & Simulasi Interaktif">
+    <meta name="description" content="Pelajari cara kerja layar E-Ink (Electronic Ink) pada e-book reader seperti Kindle dan Kobo dengan bahasa sederhana. Dilengkapi simulasi mikrokapsul interaktif, alasan ramah mata, dan hemat baterai.">
+    <meta name="keywords" content="cara kerja layar e-ink, teknologi e-book reader, apa itu layar e-ink, perbedaan e-ink dan lcd, layar kindle ramah mata, mikrokapsul e-ink, elektrophoresis layar">
+    <meta name="author" content="Ariel Usman">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://contohdomain.id/cara-kerja-layar-e-ink-ebook-reader.html">
+
+    <!-- Open Graph / Facebook / WhatsApp Preview -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://contohdomain.id/cara-kerja-layar-e-ink-ebook-reader.html">
+    <meta property="og:title" content="Cara Kerja Layar E-Book Reader (E-Ink) — Panduan Visual & Interaktif">
+    <meta property="og:description" content="Bagaimana layar E-Ink bisa terlihat persis seperti kertas asli dan baterainya tahan berminggu-minggu? Simak penjelasan mudah dan coba langsung simulatornya di sini!">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:site_name" content="E-Ink Pedia Indonesia">
+    <meta property="og:locale" content="id_ID">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://contohdomain.id/cara-kerja-layar-e-ink-ebook-reader.html">
+    <meta name="twitter:title" content="Cara Kerja Layar E-Book Reader (E-Ink) — Panduan Visual">
+    <meta name="twitter:description" content="Kenapa layar E-Ink tidak bikin mata lelah dan hemat baterai? Pelajari teknologi mikrokapsulnya lewat simulasi interaktif.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Favicon Inline SVG (Aman & Cepat Dimuat) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230ea5e9'/%3E%3Crect x='14' y='10' width='36' height='44' rx='6' fill='%23ffffff'/%3E%3Ccircle cx='26' cy='26' r='5' fill='%231e293b'/%3E%3Ccircle cx='38' cy='26' r='5' fill='%23e2e8f0' stroke='%2394a3b8' stroke-width='2'/%3E%3Crect x='20' y='37' width='24' height='3' rx='1.5' fill='%2364748b'/%3E%3Crect x='20' y='43' width='16' height='3' rx='1.5' fill='%2394a3b8'/%3E%3C/svg%3E">
+
+    <!-- Structured Data JSON-LD Schema.org untuk Ranking Google Maksimal -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Cara Kerja Layar E-Book Reader (E-Ink): Penjelasan Mudah & Simulasi Interaktif",
+      "description": "Panduan edukatif lengkap dengan bahasa sederhana tentang teknologi layar Electronic Ink (E-Ink), prinsip elektrophoresis, mikrokapsul tinta digital, serta keunggulannya dibanding layar LCD dan OLED.",
+      "image": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=1200&q=80",
+      "author": {
+        "@type": "Person",
+        "name": "Ariel Usman",
+        "url": "https://instagram.com/arielrcun"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "E-Ink Pedia",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=200&q=80"
+        }
+      },
+      "datePublished": "2026-01-15",
+      "dateModified": "2026-11-15",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://contohdomain.id/cara-kerja-layar-e-ink-ebook-reader.html"
+      }
+    }
+    </script>
+
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        paper: '#FAF9F6',
+                        ink: '#1E293B',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gradient-to-br from-sky-50 via-amber-50/40 to-emerald-50/50 text-slate-800 antialiased selection:bg-sky-200 selection:text-sky-900">
+
+    <!-- ==================== NAVBAR STICKY ==================== -->
+    <header class="sticky top-0 z-40 w-full backdrop-blur-xl bg-white/80 border-b border-sky-100 shadow-sm transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Kiri: Nama Project & Logo -->
+                <a href="#" class="flex items-center gap-3 group focus:outline-none">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-teal-400 flex items-center justify-center text-white shadow-md shadow-sky-200 group-hover:scale-105 transition-transform">
+                        <i data-lucide="book-open-check" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="font-display font-extrabold text-lg sm:text-xl tracking-tight bg-gradient-to-r from-slate-900 to-sky-700 bg-clip-text text-transparent">
+                            E-Ink Pedia
+                        </span>
+                        <span class="hidden sm:block text-[11px] font-medium text-slate-500 -mt-1">
+                            Edukasi Teknologi Layar Kertas Digital
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Kanan: Menu Navigasi Berurut (Desktop) -->
+                <nav aria-label="Navigasi Utama" class="hidden md:flex items-center gap-1 lg:gap-2">
+                    <a href="#pengenalan" class="px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-sky-600 hover:bg-sky-50/80 transition-colors">
+                        1. Apa Itu E-Ink?
+                    </a>
+                    <a href="#cara-kerja" class="px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-sky-600 hover:bg-sky-50/80 transition-colors">
+                        2. Cara Kerja
+                    </a>
+                    <a href="#simulator" class="px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-sky-600 hover:bg-sky-50/80 transition-colors">
+                        3. Simulasi Interaktif
+                    </a>
+                    <a href="#perbandingan" class="px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-sky-600 hover:bg-sky-50/80 transition-colors">
+                        4. E-Ink vs HP
+                    </a>
+                    <button onclick="openDownloadModal()" class="ml-2 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-sky-500 to-teal-500 hover:from-sky-600 hover:to-teal-600 shadow-md shadow-sky-200/80 active:scale-95 transition-all cursor-pointer">
+                        <i data-lucide="download" class="w-4 h-4"></i>
+                        <span>Unduh Kode</span>
+                    </button>
+                </nav>
+
+                <!-- Tombol Menu Mobile (Android / iPad Portrait) -->
+                <div class="flex items-center gap-2 md:hidden">
+                    <button onclick="openDownloadModal()" class="p-2.5 rounded-xl bg-sky-500 text-white shadow-sm active:scale-95 transition-transform" aria-label="Unduh Kode Resource">
+                        <i data-lucide="download" class="w-5 h-5"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2.5 rounded-xl bg-slate-100 text-slate-700 hover:bg-sky-100 hover:text-sky-700 transition-colors" aria-label="Buka Menu Navigasi">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-xl border-b border-sky-100 px-4 pt-2 pb-5 space-y-1.5 shadow-lg">
+            <a href="#pengenalan" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-600">
+                1. Apa Itu Layar E-Ink?
+            </a>
+            <a href="#cara-kerja" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-600">
+                2. Cara Kerja Mikrokapsul
+            </a>
+            <a href="#simulator" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-600">
+                3. Simulasi Interaktif
+            </a>
+            <a href="#perbandingan" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-600">
+                4. Perbandingan E-Ink vs LCD
+            </a>
+            <button onclick="toggleSidebarMobile()" class="w-full text-left flex items-center justify-between px-4 py-3 rounded-xl text-base font-semibold text-teal-700 bg-teal-50/80">
+                <span>Buka Glosarium & Info Terkait</span>
+                <i data-lucide="panel-right-open" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION (GLASSMORPHISM) ==================== -->
+    <section class="relative overflow-hidden pt-8 pb-14 sm:pt-14 sm:pb-20">
+        <!-- Dekorasi Cahaya Latar Belakang (Cerah & Lembut) -->
+        <div aria-hidden="true" class="pointer-events-none absolute -top-24 left-1/4 w-80 h-80 bg-sky-300/35 rounded-full blur-3xl"></div>
+        <div aria-hidden="true" class="pointer-events-none absolute top-24 right-1/4 w-96 h-96 bg-amber-200/40 rounded-full blur-3xl"></div>
+        <div aria-hidden="true" class="pointer-events-none absolute -bottom-16 left-1/2 w-80 h-80 bg-teal-200/35 rounded-full blur-3xl"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Kartu Glassmorphism Utama -->
+            <div class="rounded-3xl bg-white/65 backdrop-blur-2xl border border-white/80 shadow-[0_20px_50px_rgba(14,165,233,0.10)] p-6 sm:p-10 lg:p-14">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                    
+                    <!-- Kolom Teks Hero -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-100/80 border border-sky-200 text-sky-800 text-xs sm:text-sm font-semibold">
+                            <span class="w-2 h-2 rounded-full bg-teal-500 animate-ping"></span>
+                            <span>Teknologi Layar Kertas Digital • Mudah Dipahami</span>
+                        </div>
+
+                        <h1 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-slate-900 leading-[1.18] tracking-tight">
+                            Bagaimana Cara Kerja <span class="bg-gradient-to-r from-sky-600 via-teal-500 to-emerald-500 bg-clip-text text-transparent">Layar E-Book Reader (E-Ink)?</span>
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+                            Pernah penasaran kenapa layar Kindle atau Kobo terlihat persis seperti <strong>kertas buku cetak asli</strong>, tidak menyilaukan mata di bawah terik matahari, dan baterainya awet berminggu-minggu? Yuk, bedah rahasianya dengan bahasa sederhana dan simulasi interaktif!
+                        </p>
+
+                        <!-- Tombol Aksi Utama (Termasuk Tombol Unduh Kode Resource) -->
+                        <div class="flex flex-wrap items-center gap-3 sm:gap-4 pt-2">
+                            <a href="#simulator" class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl font-semibold text-white bg-slate-900 hover:bg-slate-800 shadow-lg shadow-slate-900/15 active:scale-95 transition-all">
+                                <i data-lucide="play-circle" class="w-5 h-5 text-sky-400"></i>
+                                <span>Coba Simulasi E-Ink</span>
+                            </a>
+
+                            <button onclick="openDownloadModal()" class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl font-semibold text-sky-900 bg-gradient-to-r from-amber-200 via-yellow-200 to-amber-300 hover:from-amber-300 hover:to-yellow-300 border border-amber-300/80 shadow-md shadow-amber-200/50 active:scale-95 transition-all cursor-pointer">
+                                <i data-lucide="code-2" class="w-5 h-5 text-amber-800"></i>
+                                <span>Unduh Kode Resource</span>
+                            </button>
+                        </div>
+
+                        <!-- Highlight 3 Keunggulan Singkat -->
+                        <div class="grid grid-cols-3 gap-3 pt-4 border-t border-slate-200/70">
+                            <div class="flex items-center gap-2 text-xs sm:text-sm font-medium text-slate-700">
+                                <div class="p-1.5 rounded-lg bg-emerald-100 text-emerald-700 shrink-0">
+                                    <i data-lucide="eye" class="w-4 h-4"></i>
+                                </div>
+                                <span>Bebas Silau & Radiasi</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs sm:text-sm font-medium text-slate-700">
+                                <div class="p-1.5 rounded-lg bg-amber-100 text-amber-700 shrink-0">
+                                    <i data-lucide="battery-charging" class="w-4 h-4"></i>
+                                </div>
+                                <span>Baterai Awet 4 Minggu</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs sm:text-sm font-medium text-slate-700">
+                                <div class="p-1.5 rounded-lg bg-sky-100 text-sky-700 shrink-0">
+                                    <i data-lucide="sun" class="w-4 h-4"></i>
+                                </div>
+                                <span>Jelas di Bawah Matahari</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kolom Visual Ilustrasi Hero -->
+                    <div class="lg:col-span-5">
+                        <div class="relative mx-auto max-w-md">
+                            <!-- Kartu Ilustrasi Perangkat E-Reader -->
+                            <div class="rounded-3xl bg-gradient-to-b from-slate-100 to-slate-200 p-4 sm:p-5 shadow-2xl border border-white animate-float">
+                                <div class="rounded-2xl bg-[#F6F4EE] border-2 border-slate-300/80 p-5 sm:p-6 shadow-inner relative overflow-hidden">
+                                    <div class="flex items-center justify-between text-[11px] font-mono text-slate-500 border-b border-slate-300/70 pb-2 mb-4">
+                                        <span>BAB 1 • TINTA DIGITAL</span>
+                                        <span class="flex items-center gap-1 text-emerald-700 font-semibold">
+                                            <i data-lucide="battery-full" class="w-3.5 h-3.5"></i> 99% (0 mW)
+                                        </span>
+                                    </div>
+                                    <h2 class="font-serif font-bold text-lg sm:text-xl text-slate-900 mb-2">
+                                        Bukan Cahaya, Melainkan Tinta Asli!
+                                    </h2>
+                                    <p class="font-serif text-sm text-slate-700 leading-relaxed mb-4">
+                                        Di dalam layar tipis ini terdapat jutaan kapsul mikroskopis berisi partikel pigmen <strong>hitam</strong> dan <strong>putih</strong> yang bergerak menggunakan muatan listrik.
+                                    </p>
+                                    
+                                    <!-- Mini Visual Kapsul di Hero -->
+                                    <div class="rounded-xl bg-white/80 border border-slate-300/80 p-3 flex items-center justify-around">
+                                        <div class="text-center">
+                                            <div class="w-10 h-14 mx-auto rounded-full border-2 border-slate-400 bg-slate-100 flex flex-col justify-between p-1.5">
+                                                <span class="w-6 h-6 rounded-full bg-slate-900 block mx-auto"></span>
+                                                <span class="w-6 h-6 rounded-full bg-white border border-slate-300 block mx-auto"></span>
+                                            </div>
+                                            <span class="text-[11px] font-semibold text-slate-700 mt-1 block">Piksel Hitam</span>
+                                        </div>
+                                        <i data-lucide="arrow-left-right" class="w-5 h-5 text-sky-500"></i>
+                                        <div class="text-center">
+                                            <div class="w-10 h-14 mx-auto rounded-full border-2 border-slate-400 bg-slate-100 flex flex-col justify-between p-1.5">
+                                                <span class="w-6 h-6 rounded-full bg-white border border-slate-300 block mx-auto"></span>
+                                                <span class="w-6 h-6 rounded-full bg-slate-900 block mx-auto"></span>
+                                            </div>
+                                            <span class="text-[11px] font-semibold text-slate-700 mt-1 block">Piksel Putih</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-4 pt-2 border-t border-slate-300/70 flex justify-between text-[11px] font-mono text-slate-500">
+                                        <span>Hal. 1 dari 120</span>
+                                        <span>E-Ink Carta™</span>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-3 font-display font-bold text-xs tracking-widest uppercase text-slate-500">
+                                    E-BOOK READER DISPLAY
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MAIN CONTENT + COLLAPSIBLE SIDEBAR ==================== -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <!-- Kontrol Toggle Sidebar di Desktop/Tablet -->
+        <div class="flex items-center justify-between mb-6 bg-white/80 backdrop-blur-md px-4 py-3 rounded-2xl border border-sky-100 shadow-sm">
+            <div class="flex items-center gap-2 text-sm text-slate-600">
+                <i data-lucide="sparkles" class="w-4 h-4 text-amber-500"></i>
+                <span>Bacaan terstruktur untuk <strong>HP, iPad, & PC</strong></span>
+            </div>
+            <button id="toggle-sidebar-btn" onclick="toggleSidebar()" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-semibold bg-sky-50 text-sky-700 hover:bg-sky-100 border border-sky-200 transition-all cursor-pointer">
+                <i data-lucide="panel-right-close" id="sidebar-toggle-icon" class="w-4 h-4"></i>
+                <span id="sidebar-toggle-text">Sembunyikan Sidebar</span>
+            </button>
+        </div>
+
+        <div id="layout-grid" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- ==================== KOLOM KONTEN UTAMA (8 KOLOM) ==================== -->
+            <div id="main-article-col" class="lg:col-span-8 space-y-10 transition-all duration-300">
+                
+                <!-- BAGIAN 1: APA ITU LAYAR E-INK? -->
+                <article id="pengenalan" class="scroll-mt-24 rounded-3xl bg-white/90 backdrop-blur-md border border-slate-200/80 p-6 sm:p-8 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-9 h-9 rounded-xl bg-sky-100 text-sky-700 font-display font-bold flex items-center justify-center">1</span>
+                        <h2 class="font-display font-bold text-2xl sm:text-3xl text-slate-900">
+                            Apa Itu Layar E-Ink?
+                        </h2>
+                    </div>
+
+                    <p class="text-slate-600 leading-relaxed mb-5 text-base sm:text-lg">
+                        <strong>E-Ink</strong> adalah singkatan dari <em>Electronic Ink</em> (Tinta Elektronik). Berbeda dengan layar HP, tablet, atau laptop yang menggunakan lampu LED untuk menembakkan cahaya langsung ke mata kita, layar E-Ink menggunakan <strong>partikel tinta fisik sungguhan</strong> yang tersusun di dalam lapisan layar.
+                    </p>
+
+                    <!-- Gambar Ilustrasi dari Internet dengan Fallback -->
+                    <figure class="my-6 rounded-2xl overflow-hidden border border-slate-200 bg-slate-100">
+                        <img 
+                            src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=1000&q=80" 
+                            alt="Seseorang membaca buku digital menggunakan perangkat E-Book Reader dengan nyaman"
+                            onerror="this.onerror=null;this.src='https://placehold.co/1000x450/e0f2fe/0369a1?text=Ilustrasi+Membaca+Nyaman+dengan+Layar+E-Ink';"
+                            class="w-full h-56 sm:h-72 object-cover"
+                            loading="lazy"
+                        >
+                        <figcaption class="px-4 py-2.5 text-xs text-slate-500 bg-slate-50 border-t border-slate-200 flex items-center justify-between">
+                            <span>Layar E-Ink memantulkan cahaya ruangan atau matahari layaknya lembaran kertas buku cetak.</span>
+                            <span class="font-medium text-sky-600">Ramah Mata</span>
+                        </figcaption>
+                    </figure>
+
+                    <div class="rounded-2xl bg-amber-50/90 border border-amber-200/80 p-5 flex gap-4 items-start">
+                        <div class="p-2.5 rounded-xl bg-amber-200/70 text-amber-800 shrink-0 mt-0.5">
+                            <i data-lucide="lightbulb" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-base text-amber-950 mb-1">Analogi Sederhana: Mainan Papan Tulis Magnet!</h3>
+                            <p class="text-sm text-amber-900/90 leading-relaxed">
+                                Ingat mainan papan gambar magnetik anak-anak (<em>Magna Doodle</em>)? Saat pena magnet didekatkan, serbuk besi hitam naik ke permukaan membentuk gambar. Saat dihapus, serbuknya turun kembali. <strong>Layar E-Ink bekerja dengan prinsip serupa</strong>, bedanya ia memakai medan listrik mikroskopis!
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- BAGIAN 2: CARA KERJA MIKROKAPSUL & ELEKTROPHORESIS -->
+                <article id="cara-kerja" class="scroll-mt-24 rounded-3xl bg-white/90 backdrop-blur-md border border-slate-200/80 p-6 sm:p-8 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-9 h-9 rounded-xl bg-teal-100 text-teal-700 font-display font-bold flex items-center justify-center">2</span>
+                        <h2 class="font-display font-bold text-2xl sm:text-3xl text-slate-900">
+                            Bagaimana Cara Kerjanya di Dalam Layar?
+                        </h2>
+                    </div>
+
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Jika kita memperbesar layar E-Ink menggunakan mikroskop hingga ribuan kali, kita akan melihat jutaan bola transparan super kecil bernama <strong>Mikrokapsul</strong>. Ukuran satu mikrokapsul ini kira-kira setipis <strong>sehelai rambut manusia</strong>!
+                    </p>
+
+                    <!-- 3 Langkah Penjelasan Mudah -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                        <div class="rounded-2xl bg-sky-50/80 border border-sky-100 p-5">
+                            <div class="w-10 h-10 rounded-xl bg-sky-500 text-white flex items-center justify-center font-bold mb-3 shadow-sm">
+                                01
+                            </div>
+                            <h3 class="font-display font-bold text-slate-900 mb-2">Isi Mikrokapsul</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Di dalam cairan bening tiap mikrokapsul, melayang dua jenis partikel pigmen:
+                                <br>• <strong>Partikel Putih</strong> bermuatan listrik <strong>Positif (+)</strong>.
+                                <br>• <strong>Partikel Hitam</strong> bermuatan listrik <strong>Negatif (-)</strong>.
+                            </p>
+                        </div>
+
+                        <div class="rounded-2xl bg-teal-50/80 border border-teal-100 p-5">
+                            <div class="w-10 h-10 rounded-xl bg-teal-500 text-white flex items-center justify-center font-bold mb-3 shadow-sm">
+                                02
+                            </div>
+                            <h3 class="font-display font-bold text-slate-900 mb-2">Prinsip Tarik-Menarik</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Ingat hukum fisika dasar? <strong>Muatan berlawanan akan tarik-menarik</strong>. Saat elektroda atas diberi muatan <strong>Positif (+)</strong>, partikel <strong>Hitam (-)</strong> akan tertarik naik ke permukaan sehingga muncul warna hitam!
+                            </p>
+                        </div>
+
+                        <div class="rounded-2xl bg-emerald-50/80 border border-emerald-100 p-5">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-bold mb-3 shadow-sm">
+                                03
+                            </div>
+                            <h3 class="font-display font-bold text-slate-900 mb-2">Mengunci Tanpa Listrik</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Setelah partikel sampai di atas, aliran listrik langsung dimatikan! Partikel tetap diam di posisinya (<em>bistable</em>). Itulah sebabnya <strong>baterai hanya terpakai saat membalik halaman</strong> saja.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- BAGIAN 3: SIMULATOR INTERAKTIF E-INK -->
+                <section id="simulator" class="scroll-mt-24 rounded-3xl bg-gradient-to-br from-white via-sky-50/60 to-teal-50/60 border-2 border-sky-200/80 p-6 sm:p-8 shadow-lg shadow-sky-100/60">
+                    <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                        <div class="flex items-center gap-3">
+                            <span class="w-9 h-9 rounded-xl bg-amber-400 text-slate-900 font-display font-bold flex items-center justify-center shadow-sm">3</span>
+                            <div>
+                                <h2 class="font-display font-bold text-2xl sm:text-3xl text-slate-900">
+                                    Simulator Mikrokapsul E-Ink
+                                </h2>
+                                <p class="text-xs sm:text-sm text-slate-500">Klik tombol di bawah untuk melihat bagaimana listrik menggerakkan tinta!</p>
+                            </div>
+                        </div>
+                        <span id="power-badge" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">
+                            <i data-lucide="zap-off" class="w-3.5 h-3.5"></i>
+                            <span id="power-status-text">Daya Listrik: 0 mW (Diam / Hemat)</span>
+                        </span>
+                    </div>
+
+                    <!-- Kontrol Simulator -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+                        <button onclick="setEinkState('black')" id="btn-state-black" class="flex items-center justify-center gap-2 px-4 py-3.5 rounded-2xl font-semibold text-sm bg-slate-900 text-white shadow-md hover:bg-slate-800 active:scale-95 transition-all cursor-pointer ring-2 ring-offset-2 ring-slate-900">
+                            <span class="w-3.5 h-3.5 rounded-full bg-slate-950 border border-white"></span>
+                            <span>Tampilkan Tinta Hitam</span>
+                        </button>
+                        <button onclick="setEinkState('white')" id="btn-state-white" class="flex items-center justify-center gap-2 px-4 py-3.5 rounded-2xl font-semibold text-sm bg-white text-slate-800 border border-slate-300 shadow-sm hover:bg-slate-50 active:scale-95 transition-all cursor-pointer">
+                            <span class="w-3.5 h-3.5 rounded-full bg-white border border-slate-400"></span>
+                            <span>Bersihkan (Putih)</span>
+                        </button>
+                        <button onclick="setEinkState('gray')" id="btn-state-gray" class="flex items-center justify-center gap-2 px-4 py-3.5 rounded-2xl font-semibold text-sm bg-slate-200 text-slate-800 border border-slate-300 shadow-sm hover:bg-slate-300 active:scale-95 transition-all cursor-pointer">
+                            <span class="w-3.5 h-3.5 rounded-full bg-gradient-to-r from-slate-900 to-white border border-slate-400"></span>
+                            <span>Mode Abu-abu (Gambar)</span>
+                        </button>
+                    </div>
+
+                    <!-- Area Visual Mikrokapsul Interaktif -->
+                    <div class="rounded-2xl bg-white border border-slate-200 p-4 sm:p-6 shadow-inner">
+                        <!-- Lapisan Elektroda Atas (Transparan) -->
+                        <div id="top-electrode" class="rounded-xl py-2.5 px-4 text-center text-xs sm:text-sm font-bold transition-colors duration-500 bg-rose-100 text-rose-800 border border-rose-300 mb-3">
+                            Lapisan Atas (Dilihat Mata): <span id="top-charge-label">Muatan POSITIF (+) → Menarik Partikel Hitam (-)</span>
+                        </div>
+
+                        <!-- Kontainer 4 Mikrokapsul -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 py-4 px-2 bg-sky-50/60 rounded-2xl border border-dashed border-sky-200">
+                            <!-- Kapsul 1 -->
+                            <div class="flex flex-col items-center">
+                                <div class="w-20 h-36 sm:w-24 sm:h-40 rounded-full bg-gradient-to-b from-sky-100/80 to-white border-2 border-slate-400 relative overflow-hidden shadow-inner p-2">
+                                    <!-- Partikel Hitam (-) -->
+                                    <div class="particle-black absolute left-2 right-2 flex justify-around transition-all duration-700 ease-out" style="top: 10px;">
+                                        <span class="w-6 h-6 rounded-full bg-slate-900 text-white text-[10px] font-bold flex items-center justify-center shadow">-</span>
+                                        <span class="w-6 h-6 rounded-full bg-slate-900 text-white text-[10px] font-bold flex items-center justify-center shadow">-</span>
+                                    </div>
+                                    <!-- Partikel Putih (+) -->
+                                    <div class="particle-white absolute left-2 right-2 flex justify-around transition-all duration-700 ease-out" style="top: 105px;">
+                                        <span class="w-6 h-6 rounded-full bg-white text-slate-800 border border-slate-400 text-[10px] font-bold flex items-center justify-center shadow">+</span>
+                                        <span class="w-6 h-6 rounded-full bg-white text-slate-800 border border-slate-400 text-[10px] font-bold flex items-center justify-center shadow">+</span>
+                                    </div>
+                                </div>
+                                <span class="text-[11px] font-semibold text-slate-500 mt-2">Kapsul #1</span>
+                            </div>
+
+                            <!-- Kapsul 2 -->
+                            <div class="flex flex-col items-center">
+                                <div class="w-20 h-36 sm:w-24 sm:h-40 rounded-full bg-gradient-to-b from-sky-100/80 to-white border-2 border-slate-400 relative overflow-hidden shadow-inner p-2">
+                                    <div class="particle-black absolute left-2 right-2 flex justify-around transition-all duration-700 ease-out" style="top: 10px;">
+                                        <span class="w-6 h-6 rounded-full bg-slate-900 text-white text-[10px] font-bold flex items-center justify-center shadow">-</span>
+                                        <span class="w-6 h-6 rounded-full bg-slate-900 text-white text-[10px] font-bold flex items-center justify-center shadow">-</span>
+                                    </div>
+                                    <div class="particle-white absolute left-2 right-2 flex justify-around transition-all duration-700 ease-out" style="top: 105px;">
+                                        <span class="w-6 h-6 rounded-full bg-white text-slate-800 border border-slate-400 text-[10px] font-bold flex items-center justify-center shadow">+</span>
+                                        <span class="w-6 h-6 rounded-full bg-white text-slate-800 border border-slate-400 text-[10px] font-bold flex items-center justify-center shadow">+</span>
+                                    </div>
+                                </div>
+                                <span class="text-[11px] font-semibold text-slate-500 mt-2">Kapsul #2</span>
+                            </div>
+
+                            <!-- Kapsul 3 -->
+                            <div class="flex flex-col items-center">
+                                <div class="w-20 h-36 sm:w-24 sm:h-40 rounded-full bg-gradient-to-b from-sky-100/80 to-white border-2 border-slate-400 relative overflow-hidden shadow-inner p-2">
+                                    <div class="particle-black absolute left-2 right-2 flex justify-around transition-all duration-700 ease-out" style="top: 10px;">
+                                        <span class="w-6 h-6 rounded-full bg-slate-900 text-white text-[10px] font-bold flex items-center justify-center shadow">-</span>
+                                        <span class="w-6 h-6 rounded-full bg-slate-900 text-white text-[10px] font-bold flex items-center justify-center shadow">-</span>
+                                    </div>
+                                    <div class="particle-white absolute left-2 right-2 flex justify-around transition-all duration-700 ease-out" style="top: 105px;">
+                                        <span class="w-6 h-6 rounded-full bg-white text-slate-800 border border-slate-400 text-[10px] font-bold flex items-center justify-center shadow">+</span>
+                                        <span class="w-6 h-6 rounded-full bg-white text-slate-800 border border-slate-400 text-[10px] font-bold flex items-center justify-center shadow">+</span>
+                                    </div>
+                                </div>
+                                <span class="text-[11px] font-semibold text-slate-500 mt-2">Kapsul #3</span>
+                            </div>
+
+                            <!-- Kapsul 4 -->
+                            <div class="flex flex-col items-center">
+                                <div class="w-20 h-36 sm:w-24 sm:h-40 rounded-full bg-gradient-to-b from-sky-100/80 to-white border-2 border-slate-400 relative overflow-hidden shadow-inner p-2">
+                                    <div class="particle-black absolute left-2 right-2 flex justify-around transition-all duration-700 ease-out" style="top: 10px;">
+                                        <span class="w-6 h-6 rounded-full bg-slate-900 text-white text-[10px] font-bold flex items-center justify-center shadow">-</span>
+                                        <span class="w-6 h-6 rounded-full bg-slate-900 text-white text-[10px] font-bold flex items-center justify-center shadow">-</span>
+                                    </div>
+                                    <div class="particle-white absolute left-2 right-2 flex justify-around transition-all duration-700 ease-out" style="top: 105px;">
+                                        <span class="w-6 h-6 rounded-full bg-white text-slate-800 border border-slate-400 text-[10px] font-bold flex items-center justify-center shadow">+</span>
+                                        <span class="w-6 h-6 rounded-full bg-white text-slate-800 border border-slate-400 text-[10px] font-bold flex items-center justify-center shadow">+</span>
+                                    </div>
+                                </div>
+                                <span class="text-[11px] font-semibold text-slate-500 mt-2">Kapsul #4</span>
+                            </div>
+                        </div>
+
+                        <!-- Lapisan Elektroda Bawah -->
+                        <div id="bottom-electrode" class="rounded-xl py-2.5 px-4 text-center text-xs sm:text-sm font-bold transition-colors duration-500 bg-sky-100 text-sky-800 border border-sky-300 mt-3">
+                            Lapisan Bawah: <span id="bottom-charge-label">Muatan NEGATIF (-) → Menarik Partikel Putih (+)</span>
+                        </div>
+
+                        <!-- Hasil Tampilan di Mata Pembaca -->
+                        <div class="mt-5 p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Hasil yang Terlihat di Layar:</span>
+                                <p id="sim-explanation" class="text-sm sm:text-base font-medium text-slate-800 mt-0.5">
+                                    Partikel <strong>Hitam (-)</strong> berada di puncak kapsul. Mata pembaca melihat huruf/tinta berwarna <strong>hitam pekat</strong>!
+                                </p>
+                            </div>
+                            <div id="preview-swatch" class="w-full sm:w-36 h-12 rounded-xl bg-slate-900 text-white font-serif font-bold flex items-center justify-center shadow-sm transition-colors duration-500 shrink-0">
+                                Teks Hitam
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mini Simulator Tambahan: Cahaya Matahari vs Lampu -->
+                    <div class="mt-6 pt-6 border-t border-sky-200/80">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                            <div>
+                                <h3 class="font-display font-bold text-lg text-slate-900 flex items-center gap-2">
+                                    <i data-lucide="sun-medium" class="w-5 h-5 text-amber-500"></i>
+                                    <span>Uji Keterbacaan di Bawah Terik Matahari</span>
+                                </h3>
+                                <p class="text-xs sm:text-sm text-slate-600">Geser tingkat cahaya matahari untuk membandingkan layar E-Ink vs Layar HP Biasa.</p>
+                            </div>
+                            <span id="sunlight-label" class="px-3 py-1 rounded-lg bg-amber-100 text-amber-900 text-xs font-bold self-start">
+                                Cahaya Matahari: 80% (Terik Siang Hari)
+                            </span>
+                        </div>
+
+                        <input type="range" id="sunlight-slider" min="10" max="100" value="80" class="w-full h-2.5 bg-amber-200 rounded-lg appearance-none cursor-pointer accent-amber-500 mb-4">
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <!-- Layar E-Ink -->
+                            <div class="rounded-2xl border-2 border-emerald-300 bg-[#F7F5EE] p-4 relative overflow-hidden">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-xs font-bold px-2.5 py-0.5 rounded-md bg-emerald-100 text-emerald-800">Layar E-Ink (Reflektif)</span>
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>
+                                </div>
+                                <p id="eink-sun-text" class="font-serif text-sm sm:text-base text-slate-900 leading-relaxed transition-all">
+                                    "Semakin terang sinar matahari, tulisan di layar E-Ink justru semakin jelas dan tajam dibaca, persis seperti membaca koran di taman!"
+                                </p>
+                            </div>
+
+                            <!-- Layar HP LCD/OLED -->
+                            <div class="rounded-2xl border-2 border-rose-200 bg-slate-900 p-4 relative overflow-hidden">
+                                <div id="lcd-glare-overlay" class="pointer-events-none absolute inset-0 bg-gradient-to-tr from-white/70 via-sky-100/60 to-white/80 transition-opacity duration-200" style="opacity: 0.72;"></div>
+                                <div class="relative z-10 flex items-center justify-between mb-2">
+                                    <span class="text-xs font-bold px-2.5 py-0.5 rounded-md bg-rose-500/90 text-white">Layar HP Biasa (Emisif)</span>
+                                    <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-300"></i>
+                                </div>
+                                <p class="relative z-10 text-sm sm:text-base text-slate-200 leading-relaxed">
+                                    "Cahaya matahari memantul keras di kaca layar dan mengalahkan lampu latar HP, membuat tulisan silau dan sulit terbaca."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- BAGIAN 4: TABEL PERBANDINGAN E-INK VS LCD/OLED -->
+                <article id="perbandingan" class="scroll-mt-24 rounded-3xl bg-white/90 backdrop-blur-md border border-slate-200/80 p-6 sm:p-8 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-9 h-9 rounded-xl bg-indigo-100 text-indigo-700 font-display font-bold flex items-center justify-center">4</span>
+                        <h2 class="font-display font-bold text-2xl sm:text-3xl text-slate-900">
+                            Layar E-Ink vs Layar HP Biasa (LCD / OLED)
+                        </h2>
+                    </div>
+                    <p class="text-slate-600 mb-6">
+                        Masih bingung kapan harus memakai E-Book Reader dan kapan memakai HP atau tablet biasa? Berikut ringkasan perbedaannya:
+                    </p>
+
+                    <div class="overflow-x-auto rounded-2xl border border-slate-200">
+                        <table class="w-full text-left border-collapse text-sm">
+                            <thead>
+                                <tr class="bg-slate-100/90 text-slate-800 border-b border-slate-200">
+                                    <th class="py-3.5 px-4 font-display font-bold">Aspek</th>
+                                    <th class="py-3.5 px-4 font-display font-bold text-teal-800 bg-teal-50/70">Layar E-Ink (E-Reader)</th>
+                                    <th class="py-3.5 px-4 font-display font-bold text-sky-800 bg-sky-50/70">Layar LCD / OLED (HP & Tablet)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200">
+                                <tr>
+                                    <td class="py-3.5 px-4 font-semibold text-slate-800">Sumber Cahaya</td>
+                                    <td class="py-3.5 px-4 bg-teal-50/30 text-slate-700">Memantulkan cahaya sekitar (<em>Reflective</em>), mirip kertas.</td>
+                                    <td class="py-3.5 px-4 bg-sky-50/30 text-slate-700">Memancarkan cahaya langsung ke mata (<em>Backlight/Self-lit</em>).</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3.5 px-4 font-semibold text-slate-800">Kenyamanan Mata</td>
+                                    <td class="py-3.5 px-4 bg-teal-50/30 text-emerald-700 font-medium">Sangat nyaman, bebas kedipan (<em>flicker-free</em>), minim cahaya biru.</td>
+                                    <td class="py-3.5 px-4 bg-sky-50/30 text-slate-700">Mata cepat kering & lelah jika membaca berjam-jam.</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3.5 px-4 font-semibold text-slate-800">Daya Tahan Baterai</td>
+                                    <td class="py-3.5 px-4 bg-teal-50/30 text-emerald-700 font-medium">2 hingga 6 minggu sekali cas!</td>
+                                    <td class="py-3.5 px-4 bg-sky-50/30 text-slate-700">1 hingga 2 hari saja.</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3.5 px-4 font-semibold text-slate-800">Kecepatan Layar (Refresh)</td>
+                                    <td class="py-3.5 px-4 bg-teal-50/30 text-slate-700">Lambat (khusus membaca teks, komik, & mencatat).</td>
+                                    <td class="py-3.5 px-4 bg-sky-50/30 text-slate-700">Sangat cepat (60Hz–120Hz), cocok untuk video & game.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+
+                <!-- CTA PENUTUP & DOWNLOAD RESOURCE -->
+                <div class="rounded-3xl bg-gradient-to-r from-sky-600 via-teal-600 to-emerald-600 p-6 sm:p-8 text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
+                    <div class="space-y-2 text-center sm:text-left">
+                        <h3 class="font-display font-bold text-xl sm:text-2xl">
+                            Ingin Mempelajari atau Memodifikasi Kode Web Ini?
+                        </h3>
+                        <p class="text-sky-100 text-sm sm:text-base max-w-xl">
+                            Kamu bisa mendapatkan file kode sumber lengkap (HTML + Tailwind + JS) halaman edukasi ini untuk bahan belajar maupun proyek pribadi.
+                        </p>
+                    </div>
+                    <button onclick="openDownloadModal()" class="shrink-0 inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl font-bold text-slate-900 bg-amber-300 hover:bg-amber-200 shadow-lg active:scale-95 transition-all cursor-pointer">
+                        <i data-lucide="download-cloud" class="w-5 h-5"></i>
+                        <span>Unduh Kode Resource</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ==================== SIDEBAR INTERAKTIF (4 KOLOM) ==================== -->
+            <aside id="sidebar-col" class="lg:col-span-4 space-y-6 lg:sticky lg:top-24 transition-all duration-300">
+                
+                <!-- Kartu 1: Glosarium Istilah Teknis (Accordion Bisa Dibuka/Tutup) -->
+                <div class="rounded-3xl bg-white/90 backdrop-blur-md border border-sky-100 p-5 sm:p-6 shadow-sm">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-display font-bold text-lg text-slate-900 flex items-center gap-2">
+                            <i data-lucide="book-marked" class="w-5 h-5 text-sky-500"></i>
+                            <span>Kamus Istilah E-Ink</span>
+                        </h3>
+                        <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-sky-50 text-sky-700">Klik untuk buka</span>
+                    </div>
+
+                    <div class="space-y-2.5" id="glossary-accordion">
+                        <!-- Item 1 -->
+                        <div class="rounded-2xl border border-slate-200/90 overflow-hidden">
+                            <button type="button" onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-3.5 text-left font-semibold text-sm text-slate-800 bg-slate-50/70 hover:bg-sky-50/70 transition-colors cursor-pointer">
+                                <span>Apa itu Elektrophoresis?</span>
+                                <i data-lucide="chevron-down" class="w-4 h-4 text-slate-500 transition-transform duration-200 rotate-180"></i>
+                            </button>
+                            <div class="p-3.5 text-xs sm:text-sm text-slate-600 bg-white border-t border-slate-100 leading-relaxed">
+                                Gerakan partikel bermuatan listrik (hitam & putih) di dalam cairan akibat pengaruh medan listrik. Teknologi layar E-Ink sering disebut <em>Electrophoretic Display (EPD)</em>.
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="rounded-2xl border border-slate-200/90 overflow-hidden">
+                            <button type="button" onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-3.5 text-left font-semibold text-sm text-slate-800 bg-slate-50/70 hover:bg-sky-50/70 transition-colors cursor-pointer">
+                                <span>Apa itu Frontlight vs Backlight?</span>
+                                <i data-lucide="chevron-down" class="w-4 h-4 text-slate-500 transition-transform duration-200"></i>
+                            </button>
+                            <div class="hidden p-3.5 text-xs sm:text-sm text-slate-600 bg-white border-t border-slate-100 leading-relaxed">
+                                E-Reader modern punya lampu baca malam bernama <strong>Frontlight</strong>. Lampu LED kecil di pinggir layar menyinari permukaan E-Ink dari samping/atas (bukan menembak langsung ke mata seperti <em>Backlight</em> HP).
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="rounded-2xl border border-slate-200/90 overflow-hidden">
+                            <button type="button" onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-3.5 text-left font-semibold text-sm text-slate-800 bg-slate-50/70 hover:bg-sky-50/70 transition-colors cursor-pointer">
+                                <span>Kenapa Layar Kedip Hitam Saat Ganti Halaman?</span>
+                                <i data-lucide="chevron-down" class="w-4 h-4 text-slate-500 transition-transform duration-200"></i>
+                            </button>
+                            <div class="hidden p-3.5 text-xs sm:text-sm text-slate-600 bg-white border-t border-slate-100 leading-relaxed">
+                                Proses <em>full refresh</em>! Layar mengocok ulang seluruh partikel hitam dan putih agar tidak ada bayangan teks halaman sebelumnya (<em>ghosting</em>) yang tertinggal.
+                            </div>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="rounded-2xl border border-slate-200/90 overflow-hidden">
+                            <button type="button" onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-3.5 text-left font-semibold text-sm text-slate-800 bg-slate-50/70 hover:bg-sky-50/70 transition-colors cursor-pointer">
+                                <span>Apakah Ada Layar E-Ink Berwarna?</span>
+                                <i data-lucide="chevron-down" class="w-4 h-4 text-slate-500 transition-transform duration-200"></i>
+                            </button>
+                            <div class="hidden p-3.5 text-xs sm:text-sm text-slate-600 bg-white border-t border-slate-100 leading-relaxed">
+                                Ada! Teknologi seperti <strong>E-Ink Kaleido</strong> menambahkan filter warna RGB di atas kapsul tinta, sedangkan <strong>E-Ink Gallery</strong> memakai 4 partikel warna berbeda (Cyan, Magenta, Kuning, Putih).
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kartu 2: Hal Terkait / Perangkat Populer -->
+                <div class="rounded-3xl bg-gradient-to-br from-amber-50 to-orange-50/60 border border-amber-200/80 p-5 sm:p-6 shadow-sm">
+                    <h3 class="font-display font-bold text-lg text-slate-900 flex items-center gap-2 mb-3">
+                        <i data-lucide="tablet" class="w-5 h-5 text-amber-600"></i>
+                        <span>Perangkat yang Memakai E-Ink</span>
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-700">
+                        <li class="flex items-start gap-2.5 bg-white/80 p-3 rounded-xl border border-amber-100">
+                            <span class="w-2 h-2 rounded-full bg-sky-500 mt-1.5 shrink-0"></span>
+                            <div>
+                                <strong class="text-slate-900">Amazon Kindle & Rakuten Kobo:</strong> E-Book reader paling populer untuk membaca novel dan buku non-fiksi.
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-2.5 bg-white/80 p-3 rounded-xl border border-amber-100">
+                            <span class="w-2 h-2 rounded-full bg-teal-500 mt-1.5 shrink-0"></span>
+                            <div>
+                                <strong class="text-slate-900">reMarkable & Onyx Boox:</strong> Tablet catatan digital (<em>E-Note</em>) yang sensasi menulisnya persis memakai pensil di atas kertas.
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-2.5 bg-white/80 p-3 rounded-xl border border-amber-100">
+                            <span class="w-2 h-2 rounded-full bg-amber-500 mt-1.5 shrink-0"></span>
+                            <div>
+                                <strong class="text-slate-900">Label Harga Supermarket (ESL):</strong> Label harga elektronik di rak toko modern yang baterainya tahan hingga 5 tahun!
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-white/90 border-t border-slate-200/80 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-sky-500 text-white flex items-center justify-center">
+                    <i data-lucide="book-open-check" class="w-4 h-4"></i>
+                </div>
+                <p class="text-sm font-semibold text-slate-800">
+                    Oleh Ariel Usman Copyright 2026
+                </p>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-pink-50 to-orange-50 hover:from-pink-100 hover:to-orange-100 border border-pink-200/80 text-sm font-semibold text-slate-800 transition-all group">
+                    <i data-lucide="instagram" class="w-4 h-4 text-pink-600 group-hover:scale-110 transition-transform"></i>
+                    <span>@arielrcun</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== MODAL POP-UP MONETISASI & DOWNLOAD RESOURCE ==================== -->
+    <div id="download-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm transition-opacity" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="relative w-full max-w-md rounded-3xl bg-white border border-slate-100 shadow-2xl p-6 sm:p-8 transform transition-all">
+            <!-- Tombol Tutup Modal -->
+            <button onclick="closeDownloadModal()" class="absolute top-4 right-4 p-2 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer" aria-label="Tutup Pop-up">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <!-- Ikon & Judul Modal -->
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-sky-500 to-teal-400 text-white flex items-center justify-center shadow-lg shadow-sky-200 mb-4">
+                <i data-lucide="file-code-2" class="w-7 h-7"></i>
+            </div>
+
+            <h3 id="modal-title" class="font-display font-extrabold text-xl sm:text-2xl text-slate-900 mb-2">
+                Unduh Kode Resource Web
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                Dukung kreator agar terus berkarya membuat konten edukasi teknologi yang bermanfaat, atau langsung unduh file kode sumbernya secara gratis sebagai tamu.
+            </p>
+
+            <!-- Tautan Pembayaran Resmi -->
+            <div class="space-y-3 mb-6">
+                <span class="block text-xs font-bold uppercase tracking-wider text-slate-400">
+                    Dukung Kreator (Opsional)
+                </span>
+
+                <!-- 1. Internasional: PayPal -->
+                <a href="https://paypal.me/arielrcu" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between w-full p-3.5 rounded-2xl bg-[#0070BA]/10 hover:bg-[#0070BA]/15 border border-[#0070BA]/30 text-slate-900 transition-all group">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-[#0070BA] text-white flex items-center justify-center font-bold shadow-sm">
+                            <i data-lucide="globe" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold text-sm text-slate-900">Internasional: PayPal</div>
+                            <div class="text-xs text-slate-500">paypal.me/arielrcu</div>
+                        </div>
+                    </div>
+                    <i data-lucide="external-link" class="w-4 h-4 text-[#0070BA] group-hover:translate-x-0.5 transition-transform"></i>
+                </a>
+
+                <!-- 2. Lokal (QRIS/E-Wallet): Trakteer -->
+                <a href="https://trakteer.id/arielrcu" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between w-full p-3.5 rounded-2xl bg-rose-500/10 hover:bg-rose-500/15 border border-rose-500/30 text-slate-900 transition-all group">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-rose-600 text-white flex items-center justify-center font-bold shadow-sm">
+                            <i data-lucide="coffee" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold text-sm text-slate-900">Lokal (QRIS / E-Wallet): Trakteer</div>
+                            <div class="text-xs text-slate-500">trakteer.id/arielrcu</div>
+                        </div>
+                    </div>
+                    <i data-lucide="external-link" class="w-4 h-4 text-rose-600 group-hover:translate-x-0.5 transition-transform"></i>
+                </a>
+            </div>
+
+            <!-- Pemisah -->
+            <div class="relative flex py-2 items-center mb-4">
+                <div class="flex-grow border-t border-slate-200"></div>
+                <span class="flex-shrink mx-3 text-xs text-slate-400 font-medium">Akses Gratis Langsung</span>
+                <div class="flex-grow border-t border-slate-200"></div>
+            </div>
+
+            <!-- Tombol Download as Guest -->
+            <button onclick="downloadSourceAsGuest()" class="w-full flex items-center justify-center gap-2 py-3.5 px-5 rounded-2xl font-bold text-sm text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-300/80 active:scale-95 transition-all cursor-pointer">
+                <i data-lucide="download" class="w-4 h-4 text-slate-700"></i>
+                <span>Download as Guest (Gratis .HTML)</span>
+            </button>
+
+            <!-- Notifikasi Toast Sukses Download -->
+            <div id="download-toast" class="hidden mt-3 p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold text-center">
+                File <strong>cara-kerja-layar-e-ink-ebook-reader.html</strong> berhasil diunduh!
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== JAVASCRIPT INTERAKTIF ==================== -->
+    <script>
+        // Inisialisasi Lucide Icons
+        lucide.createIcons();
+
+        // 1. Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 2. Toggle Sidebar (Bisa Dibuka/Tutup di Desktop & Scroll ke Sidebar di Mobile)
+        let sidebarVisible = true;
+        function toggleSidebar() {
+            const sidebarCol = document.getElementById('sidebar-col');
+            const mainCol = document.getElementById('main-article-col');
+            const toggleText = document.getElementById('sidebar-toggle-text');
+            const toggleIcon = document.getElementById('sidebar-toggle-icon');
+
+            sidebarVisible = !sidebarVisible;
+            if (sidebarVisible) {
+                sidebarCol.classList.remove('hidden');
+                mainCol.classList.remove('lg:col-span-12');
+                mainCol.classList.add('lg:col-span-8');
+                toggleText.textContent = 'Sembunyikan Sidebar';
+                toggleIcon.setAttribute('data-lucide', 'panel-right-close');
+            } else {
+                sidebarCol.classList.add('hidden');
+                mainCol.classList.remove('lg:col-span-8');
+                mainCol.classList.add('lg:col-span-12');
+                toggleText.textContent = 'Buka Sidebar Terkait';
+                toggleIcon.setAttribute('data-lucide', 'panel-right-open');
+            }
+            lucide.createIcons();
+        }
+
+        function toggleSidebarMobile() {
+            mobileMenu.classList.add('hidden');
+            const sidebarCol = document.getElementById('sidebar-col');
+            sidebarCol.classList.remove('hidden');
+            sidebarCol.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // 3. Accordion Glosarium di Sidebar
+        function toggleAccordion(btn) {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('svg');
+            content.classList.toggle('hidden');
+            if (icon) {
+                icon.classList.toggle('rotate-180');
+            }
+        }
+
+        // 4. Simulator Mikrokapsul E-Ink Interaktif
+        function setEinkState(mode) {
+            const blackParticles = document.querySelectorAll('.particle-black');
+            const whiteParticles = document.querySelectorAll('.particle-white');
+            const topElectrode = document.getElementById('top-electrode');
+            const bottomElectrode = document.getElementById('bottom-electrode');
+            const topLabel = document.getElementById('top-charge-label');
+            const bottomLabel = document.getElementById('bottom-charge-label');
+            const explanation = document.getElementById('sim-explanation');
+            const previewSwatch = document.getElementById('preview-swatch');
+            const powerBadge = document.getElementById('power-badge');
+            const powerText = document.getElementById('power-status-text');
+
+            // Reset ring aktif tombol
+            ['btn-state-black', 'btn-state-white', 'btn-state-gray'].forEach(id => {
+                document.getElementById(id).classList.remove('ring-2', 'ring-offset-2', 'ring-slate-900');
+            });
+
+            // Simulasi lonjakan daya sesaat saat partikel bergerak (lalu kembali ke 0 mW)
+            powerBadge.className = 'inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-300 transition-all';
+            powerText.textContent = 'Daya Listrik: Mengalir Sesaat...';
+
+            setTimeout(() => {
+                powerBadge.className = 'inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-200 transition-all';
+                powerText.textContent = 'Daya Listrik: 0 mW (Terkunci / Hemat)';
+            }, 850);
+
+            if (mode === 'black') {
+                document.getElementById('btn-state-black').classList.add('ring-2', 'ring-offset-2', 'ring-slate-900');
+                blackParticles.forEach(el => el.style.top = '10px');
+                whiteParticles.forEach(el => el.style.top = '105px');
+
+                topElectrode.className = 'rounded-xl py-2.5 px-4 text-center text-xs sm:text-sm font-bold transition-colors duration-500 bg-rose-100 text-rose-800 border border-rose-300 mb-3';
+                topLabel.textContent = 'Muatan POSITIF (+) → Menarik Partikel Hitam (-)';
+
+                bottomElectrode.className = 'rounded-xl py-2.5 px-4 text-center text-xs sm:text-sm font-bold transition-colors duration-500 bg-sky-100 text-sky-800 border border-sky-300 mt-3';
+                bottomLabel.textContent = 'Muatan NEGATIF (-) → Menarik Partikel Putih (+)';
+
+                explanation.innerHTML = 'Partikel <strong>Hitam (-)</strong> naik ke puncak kapsul. Mata pembaca melihat huruf/tinta berwarna <strong>hitam pekat</strong>!';
+                previewSwatch.className = 'w-full sm:w-36 h-12 rounded-xl bg-slate-900 text-white font-serif font-bold flex items-center justify-center shadow-sm transition-colors duration-500 shrink-0';
+                previewSwatch.textContent = 'Teks Hitam';
+
+            } else if (mode === 'white') {
+                document.getElementById('btn-state-white').classList.add('ring-2', 'ring-offset-2', 'ring-slate-900');
+                whiteParticles.forEach(el => el.style.top = '10px');
+                blackParticles.forEach(el => el.style.top = '105px');
+
+                topElectrode.className = 'rounded-xl py-2.5 px-4 text-center text-xs sm:text-sm font-bold transition-colors duration-500 bg-sky-100 text-sky-800 border border-sky-300 mb-3';
+                topLabel.textContent = 'Muatan NEGATIF (-) → Menarik Partikel Putih (+)';
+
+                bottomElectrode.className = 'rounded-xl py-2.5 px-4 text-center text-xs sm:text-sm font-bold transition-colors duration-500 bg-rose-100 text-rose-800 border border-rose-300 mt-3';
+                bottomLabel.textContent = 'Muatan POSITIF (+) → Menarik Partikel Hitam (-)';
+
+                explanation.innerHTML = 'Partikel <strong>Putih (+)</strong> naik ke permukaan kapsul. Layar terlihat bersih seperti <strong>lembaran kertas putih</strong>!';
+                previewSwatch.className = 'w-full sm:w-36 h-12 rounded-xl bg-[#FAF9F6] text-slate-800 border border-slate-300 font-serif font-bold flex items-center justify-center shadow-sm transition-colors duration-500 shrink-0';
+                previewSwatch.textContent = 'Kertas Putih';
+
+            } else if (mode === 'gray') {
+                document.getElementById('btn-state-gray').classList.add('ring-2', 'ring-offset-2', 'ring-slate-900');
+                blackParticles.forEach(el => el.style.top = '45px');
+                whiteParticles.forEach(el => el.style.top = '68px');
+
+                topElectrode.className = 'rounded-xl py-2.5 px-4 text-center text-xs sm:text-sm font-bold transition-colors duration-500 bg-amber-100 text-amber-900 border border-amber-300 mb-3';
+                topLabel.textContent = 'Pulsa Listrik Pendek → Posisi Partikel Seimbang di Tengah';
+
+                bottomElectrode.className = 'rounded-xl py-2.5 px-4 text-center text-xs sm:text-sm font-bold transition-colors duration-500 bg-amber-100 text-amber-900 border border-amber-300 mt-3';
+                bottomLabel.textContent = 'Gradasi 16 Tingkat Abu-abu (Grayscale)';
+
+                explanation.innerHTML = 'Campuran partikel <strong>Hitam & Putih</strong> di bagian atas menghasilkan gradasi <strong>abu-abu halus</strong> untuk ilustrasi & komik!';
+                previewSwatch.className = 'w-full sm:w-36 h-12 rounded-xl bg-slate-500 text-white font-serif font-bold flex items-center justify-center shadow-sm transition-colors duration-500 shrink-0';
+                previewSwatch.textContent = 'Abu-abu (Gray)';
+            }
+        }
+
+        // 5. Slider Uji Cahaya Matahari
+        const sunlightSlider = document.getElementById('sunlight-slider');
+        const sunlightLabel = document.getElementById('sunlight-label');
+        const lcdGlareOverlay = document.getElementById('lcd-glare-overlay');
+
+        sunlightSlider.addEventListener('input', (e) => {
+            const val = e.target.value;
+            let suasana = 'Ruangan Redup';
+            if (val > 70) suasana = 'Terik Siang Hari';
+            else if (val > 35) suasana = 'Teras / Luar Ruangan';
+
+            sunlightLabel.textContent = `Cahaya Matahari: ${val}% (${suasana})`;
+            // Semakin terang matahari, layar HP biasa makin silau
+            lcdGlareOverlay.style.opacity = (val / 110).toFixed(2);
+        });
+
+        // 6. Modal Pop-up Monetisasi & Download as Guest
+        const downloadModal = document.getElementById('download-modal');
+        const downloadToast = document.getElementById('download-toast');
+
+        function openDownloadModal() {
+            downloadModal.classList.remove('hidden');
+            downloadModal.classList.add('flex');
+            downloadToast.classList.add('hidden');
+        }
+
+        function closeDownloadModal() {
+            downloadModal.classList.add('hidden');
+            downloadModal.classList.remove('flex');
+        }
+
+        // Tutup modal jika klik di area luar kartu modal
+        downloadModal.addEventListener('click', (e) => {
+            if (e.target === downloadModal) {
+                closeDownloadModal();
+            }
+        });
+
+        // Tutup modal dengan tombol ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !downloadModal.classList.contains('hidden')) {
+                closeDownloadModal();
+            }
+        });
+
+        // Fungsi Download as Guest (Mengunduh file HTML utuh secara langsung)
+        function downloadSourceAsGuest() {
+            try {
+                const htmlContent = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+                const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'cara-kerja-layar-e-ink-ebook-reader.html';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+
+                downloadToast.classList.remove('hidden');
+            } catch (err) {
+                console.error('Gagal mengunduh file:', err);
+            }
+        }
+    </script>
+</body>
+</html>
