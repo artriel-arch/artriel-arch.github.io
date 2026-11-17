@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- SEO Utama & Meta Tags -->
+  <title>Cara Proyektor Bekerja: Simulasi Optik, Teknologi DLP & LCD Interaktif | ProyektorLab</title>
+  <meta name="description" content="Pelajari cara proyektor bekerja secara mendalam dan interaktif. Eksplorasi simulasi cahaya RGB, fokus lensa, jarak lempar (throw distance), serta perbandingan teknologi LCD, DLP, dan Laser." />
+  <meta name="keywords" content="cara proyektor bekerja, prinsip kerja proyektor, simulasi proyektor, proyektor DLP vs LCD, optik proyektor, lensa proyektor, throw ratio, lumen proyektor, Ariel Usman" />
+  <meta name="author" content="Ariel Usman" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://proyektorlab.id/cara-kerja-proyektor-interaktif.html" />
+
+  <!-- Open Graph / Facebook / WhatsApp Preview -->
+  <meta property="og:locale" content="id_ID" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Cara Proyektor Bekerja: Simulasi Optik & Teknologi Visual Interaktif" />
+  <meta property="og:description" content="Pahami bagaimana cahaya putih berubah menjadi gambar tajam di layar besar melalui simulasi lensa fokus, jarak proyeksi, dan filter warna RGB." />
+  <meta property="og:url" content="https://proyektorlab.id/cara-kerja-proyektor-interaktif.html" />
+  <meta property="og:site_name" content="ProyektorLab" />
+  <meta property="og:image" content="https://placehold.co/1200x630/0284c7/ffffff?text=Cara+Proyektor+Bekerja+-+Simulasi+Interaktif" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cara Proyektor Bekerja: Simulasi Interaktif | ProyektorLab" />
+  <meta name="twitter:description" content="Eksplorasi simulasi cahaya, lensa fokus, dan perbandingan teknologi proyektor DLP, LCD, dan Laser secara interaktif." />
+  <meta name="twitter:image" content="https://placehold.co/1200x630/0284c7/ffffff?text=Cara+Proyektor+Bekerja+-+Simulasi+Interaktif" />
+
+  <!-- Favicon SVG Tajam -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%230ea5e9'/%3E%3Cstop offset='100%25' stop-color='%236366f1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ccircle cx='32' cy='32' r='16' fill='%23ffffff' fill-opacity='0.25'/%3E%3Ccircle cx='32' cy='32' r='10' fill='%23ffffff'/%3E%3Ccircle cx='35' cy='29' r='3' fill='%230ea5e9'/%3E%3C/svg%3E" />
+
+  <!-- JSON-LD Structured Data untuk Google Rich Results (TechArticle & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "headline": "Cara Proyektor Bekerja: Prinsip Optik, Sistem Warna RGB, dan Teknologi DLP vs LCD",
+        "description": "Panduan interaktif lengkap mengenai cara proyektor mengubah sinyal digital dan berkas cahaya menjadi gambar besar yang tajam di layar.",
+        "author": {
+          "@type": "Person",
+          "name": "Ariel Usman",
+          "url": "https://instagram.com/arielrcun"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "ProyektorLab"
+        },
+        "datePublished": "2026-01-15",
+        "dateModified": "2026-11-18",
+        "inLanguage": "id-ID",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://proyektorlab.id/cara-kerja-proyektor-interaktif.html"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Bagaimana cara proyektor menghasilkan gambar berwarna dari cahaya putih?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Proyektor memecah cahaya putih dari lampu atau laser menjadi tiga warna dasar (Merah, Hijau, Biru) menggunakan prisma dichroic atau color wheel, lalu memodulasinya melalui panel LCD atau chip mikro-cermin DMD sebelum digabungkan kembali melalui lensa."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Apa perbedaan utama antara proyektor LCD dan DLP?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Proyektor LCD melewatkan cahaya melalui tiga panel kristal cair transparan (3LCD) sehingga warna sangat cerah dan bebas efek pelangi, sedangkan DLP memantulkan cahaya menggunakan jutaan cermin mikroskopis (DMD) yang menghasilkan kontras tinggi dan desain lebih ringkas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Mengapa gambar proyektor bisa buram dan bagaimana lensa memperbaikinya?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Gambar menjadi buram ketika titik fokus berkas cahaya tidak jatuh tepat pada permukaan layar. Memutar cincin fokus akan menggeser posisi elemen lensa cembung di dalam barel optik sehingga sinar cahaya bertemu tepat di bidang layar."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+            }
+          },
+          boxShadow: {
+            'glass': '0 8px 32px 0 rgba(14, 165, 233, 0.12)',
+            'beam': '0 0 40px rgba(56, 189, 248, 0.35)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      background-color: #f8fafc;
+      color: #0f172a;
+      overflow-x: hidden;
+    }
+
+    /* Efek Glassmorphism Modern */
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 12px 36px -6px rgba(14, 165, 233, 0.14), 0 4px 12px -2px rgba(99, 102, 241, 0.06);
+    }
+
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    }
+
+    /* Animasi Berkas Cahaya Hero */
+    @keyframes pulseBeam {
+      0%, 100% { opacity: 0.65; transform: scale(1); }
+      50% { opacity: 0.95; transform: scale(1.03); }
+    }
+    .animate-beam {
+      animation: pulseBeam 5s ease-in-out infinite;
+    }
+
+    /* Custom Range Slider untuk Simulasi */
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 8px;
+      border-radius: 999px;
+      background: #e2e8f0;
+      outline: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #0284c7;
+      cursor: pointer;
+      border: 3px solid #ffffff;
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.4);
+      transition: transform 0.15s ease;
+    }
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-sky-200 selection:text-sky-900">
+
+  <!-- Toast Notification Container (Pengganti alert) -->
+  <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- NAVBAR -->
+  <nav class="glass-nav sticky top-0 z-40 w-full transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16 sm:h-20">
+        <!-- Kiri: Nama Project -->
+        <a href="#" class="flex items-center gap-3 group focus:outline-none">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-600 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+            <i data-lucide="projector" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <span class="font-display font-extrabold text-xl tracking-tight bg-gradient-to-r from-sky-600 to-indigo-600 bg-clip-text text-transparent">
+              ProyektorLab
+            </span>
+            <span class="hidden sm:block text-[11px] font-medium text-slate-500 -mt-1">Sains Optik & Visual</span>
+          </div>
+        </a>
+
+        <!-- Kanan: Menu Desktop Berurut -->
+        <div class="hidden md:flex items-center gap-1 lg:gap-2">
+          <a href="#cara-kerja" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-colors">Cara Kerja</a>
+          <a href="#simulasi" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-colors">Simulasi Interaktif</a>
+          <a href="#teknologi" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-colors">Jenis Teknologi</a>
+          <a href="#komponen" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-colors">Komponen</a>
+          <a href="#faq" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-colors">FAQ</a>
+        </div>
+
+        <!-- Tombol Menu Mobile -->
+        <div class="flex items-center gap-2 md:hidden">
+          <button id="mobileMenuBtn" aria-label="Buka Menu Navigasi" class="p-2.5 rounded-xl bg-slate-100 text-slate-700 hover:bg-sky-100 hover:text-sky-700 transition-colors">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white/95 backdrop-blur-lg border-b border-slate-200 px-4 pt-2 pb-5 space-y-1.5 shadow-lg">
+      <a href="#cara-kerja" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-sky-50 hover:text-sky-600">1. Cara Kerja</a>
+      <a href="#simulasi" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-sky-50 hover:text-sky-600">2. Simulasi Interaktif</a>
+      <a href="#teknologi" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-sky-50 hover:text-sky-600">3. Jenis Teknologi</a>
+      <a href="#komponen" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-sky-50 hover:text-sky-600">4. Komponen Utama</a>
+      <a href="#faq" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-sky-50 hover:text-sky-600">5. Tanya Jawab (FAQ)</a>
+    </div>
+  </nav>
+
+  <!-- HEADER / HERO SECTION DENGAN GLASSMORPHISM -->
+  <header class="relative overflow-hidden pt-8 pb-14 sm:pt-14 sm:pb-20 lg:pt-16 lg:pb-24 bg-gradient-to-br from-sky-100 via-indigo-50 to-amber-50">
+    <!-- Dekorasi Cahaya & Prisma Latar Belakang -->
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 overflow-hidden">
+      <div class="animate-beam absolute -top-24 -left-24 w-96 h-96 rounded-full bg-sky-300/40 blur-3xl"></div>
+      <div class="animate-beam absolute top-12 right-0 w-[28rem] h-[28rem] rounded-full bg-amber-200/45 blur-3xl" style="animation-delay: 1.5s;"></div>
+      <div class="absolute -bottom-24 left-1/3 w-96 h-96 rounded-full bg-indigo-300/35 blur-3xl"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Kartu Utama Hero Glassmorphism -->
+      <div class="glass-panel rounded-3xl p-6 sm:p-10 lg:p-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          <!-- Kolom Teks & Aksi -->
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 border border-sky-200 text-sky-700 text-xs sm:text-sm font-semibold shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+              <span>Ensiklopedia Visual Interaktif</span>
+            </div>
+
+            <h1 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-slate-900 leading-tight tracking-tight">
+              Bagaimana <span class="bg-gradient-to-r from-sky-600 via-indigo-600 to-amber-500 bg-clip-text text-transparent">Proyektor Bekerja</span> Mengubah Cahaya Menjadi Gambar?
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
+              Dari sumber lampu berintensitas tinggi hingga pembiasan lensa presisi—jelajahi bagaimana jutaan piksel cahaya merah, hijau, dan biru diproyeksikan menjadi layar sinema raksasa di dinding Anda.
+            </p>
+
+            <!-- Tombol Aksi Utama & Tombol Monetisasi -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
+              <a href="#simulasi" class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-sky-600 to-indigo-600 hover:from-sky-500 hover:to-indigo-500 text-white font-semibold text-sm sm:text-base shadow-lg shadow-sky-500/25 transition-all hover:-translate-y-0.5">
+                <i data-lucide="play-circle" class="w-5 h-5"></i>
+                <span>Coba Simulasi Optik</span>
+              </a>
+
+              <!-- Tombol Wajib: Unduh Kode Resource -->
+              <button id="openDownloadModalBtn" type="button" class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold text-sm sm:text-base shadow-lg shadow-amber-400/30 border border-amber-300 transition-all hover:-translate-y-0.5 cursor-pointer">
+                <i data-lucide="download-cloud" class="w-5 h-5 text-slate-900"></i>
+                <span>Unduh Kode Resource</span>
+              </button>
+            </div>
+
+            <!-- Statistik Singkat -->
+            <div class="grid grid-cols-3 gap-3 pt-4 border-t border-slate-200/70">
+              <div>
+                <p class="font-display font-bold text-lg sm:text-2xl text-sky-700">16.7 Juta</p>
+                <p class="text-xs sm:text-sm text-slate-500">Kombinasi Warna RGB</p>
+              </div>
+              <div>
+                <p class="font-display font-bold text-lg sm:text-2xl text-indigo-700">2.07 Juta</p>
+                <p class="text-xs sm:text-sm text-slate-500">Cermin Mikro Full HD</p>
+              </div>
+              <div>
+                <p class="font-display font-bold text-lg sm:text-2xl text-amber-600">3.000+</p>
+                <p class="text-xs sm:text-sm text-slate-500">Rata-rata ANSI Lumens</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kolom Ilustrasi Diagram Optik Hero -->
+          <div class="lg:col-span-5">
+            <div class="relative rounded-2xl bg-gradient-to-b from-slate-900 to-slate-800 p-5 sm:p-6 text-white shadow-xl border border-slate-700/80">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-semibold uppercase tracking-wider text-sky-300 flex items-center gap-1.5">
+                  <i data-lucide="sparkles" class="w-4 h-4"></i> Skema Berkas Cahaya
+                </span>
+                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                  Optik Aktif
+                </span>
+              </div>
+
+              <!-- SVG Diagram Skema Proyektor -->
+              <svg viewBox="0 0 420 230" class="w-full h-auto rounded-xl bg-slate-950/70 p-2" role="img" aria-label="Diagram alur cahaya proyektor dari lampu ke prisma RGB dan lensa ke layar">
+                <defs>
+                  <linearGradient id="whiteBeam" x1="0%" y1="50%" x2="100%" y2="50%">
+                    <stop offset="0%" stop-color="#fde047" stop-opacity="0.95" />
+                    <stop offset="100%" stop-color="#ffffff" stop-opacity="0.75" />
+                  </linearGradient>
+                  <linearGradient id="projCone" x1="0%" y1="50%" x2="100%" y2="50%">
+                    <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.7" />
+                    <stop offset="50%" stop-color="#818cf8" stop-opacity="0.35" />
+                    <stop offset="100%" stop-color="#f472b6" stop-opacity="0.15" />
+                  </linearGradient>
+                </defs>
+
+                <!-- Lampu Sumber -->
+                <circle cx="48" cy="115" r="22" fill="#facc15" opacity="0.25" />
+                <circle cx="48" cy="115" r="13" fill="#fef08a" stroke="#eab308" stroke-width="2" />
+                <text x="48" y="155" fill="#cbd5e1" font-size="10" text-anchor="middle" font-family="Inter">Lampu UHP</text>
+
+                <!-- Sinar Putih ke Prisma -->
+                <polygon points="61,108 135,92 135,138 61,122" fill="url(#whiteBeam)" />
+
+                <!-- Pemecah Warna RGB (Dichroic / Panel) -->
+                <rect x="135" y="75" width="54" height="80" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" />
+                <line x1="145" y1="95" x2="179" y2="95" stroke="#ef4444" stroke-width="4" stroke-linecap="round" />
+                <line x1="145" y1="115" x2="179" y2="115" stroke="#22c55e" stroke-width="4" stroke-linecap="round" />
+                <line x1="145" y1="135" x2="179" y2="135" stroke="#3b82f6" stroke-width="4" stroke-linecap="round" />
+                <text x="162" y="172" fill="#cbd5e1" font-size="10" text-anchor="middle" font-family="Inter">Panel RGB</text>
+
+                <!-- Sinar ke Lensa -->
+                <polygon points="189,90 245,98 245,132 189,140" fill="#a5b4fc" opacity="0.55" />
+
+                <!-- Lensa Cembung -->
+                <ellipse cx="255" cy="115" rx="10" ry="30" fill="#38bdf8" fill-opacity="0.45" stroke="#7dd3fc" stroke-width="2" />
+                <text x="255" y="162" fill="#cbd5e1" font-size="10" text-anchor="middle" font-family="Inter">Lensa</text>
+
+                <!-- Kerucut Proyeksi ke Layar -->
+                <polygon points="265,98 385,35 385,195 265,132" fill="url(#projCone)" />
+
+                <!-- Layar Proyeksi -->
+                <rect x="385" y="28" width="10" height="174" rx="3" fill="#f8fafc" stroke="#38bdf8" stroke-width="1.5" />
+                <text x="378" y="216" fill="#38bdf8" font-size="10" text-anchor="middle" font-weight="bold" font-family="Inter">Layar</text>
+              </svg>
+
+              <p class="mt-3 text-xs text-slate-300 leading-relaxed">
+                Cahaya putih dipecah menjadi spektrum <span class="text-rose-400 font-semibold">R</span>-<span class="text-emerald-400 font-semibold">G</span>-<span class="text-sky-400 font-semibold">B</span>, dimodulasi jutaan piksel, lalu dibiaskan terbalik oleh lensa cembung agar tampil tegak dan besar di layar.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT + SIDEBAR LAYOUT -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+
+      <!-- KOLOM KONTEN UTAMA (8 Kolom di Desktop) -->
+      <div class="lg:col-span-8 space-y-12 sm:space-y-16">
+
+        <!-- BAGIAN 1: ALUR CARA KERJA STEP-BY-STEP -->
+        <section id="cara-kerja" class="scroll-mt-24 space-y-6">
+          <div class="space-y-2">
+            <span class="inline-block px-3 py-1 rounded-lg bg-sky-100 text-sky-700 text-xs font-bold uppercase tracking-wider">Tahapan Proses</span>
+            <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-slate-900">4 Langkah Utama Cara Proyektor Bekerja</h2>
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+              Meskipun terlihat seperti menembakkan gambar langsung ke dinding, di dalam bodi proyektor terjadi proses optik dan pemrosesan sinyal digital berkecepatan tinggi dalam hitungan milidetik.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+            <!-- Step 1 -->
+            <article class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+              <div class="w-11 h-11 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center font-display font-extrabold text-lg mb-4">
+                1
+              </div>
+              <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Pembangkitan Sumber Cahaya</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Lampu UHP (Ultra-High Performance), LED, atau dioda Laser menghasilkan berkas cahaya putih yang sangat terang. Reflektor parabolik mengumpulkan cahaya tersebut agar terarah lurus menuju inti optik.
+              </p>
+            </article>
+
+            <!-- Step 2 -->
+            <article class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+              <div class="w-11 h-11 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center font-display font-extrabold text-lg mb-4">
+                2
+              </div>
+              <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Pemisahan Spektrum Warna (RGB)</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Cahaya putih melewati cermin khusus (<em>dichroic mirrors</em>) atau roda warna berputar (<em>color wheel</em>) yang memisahkannya menjadi tiga warna primer: Merah, Hijau, dan Biru.
+              </p>
+            </article>
+
+            <!-- Step 3 -->
+            <article class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+              <div class="w-11 h-11 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center font-display font-extrabold text-lg mb-4">
+                3
+              </div>
+              <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Modulasi Piksel Gambar</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Sinyal video HDMI diterjemahkan menjadi jutaan piksel. Pada sistem LCD, kristal cair membuka/menutup cahaya; pada sistem DLP, jutaan cermin mikro memiringkan cahaya ribuan kali per detik.
+              </p>
+            </article>
+
+            <!-- Step 4 -->
+            <article class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+              <div class="w-11 h-11 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-display font-extrabold text-lg mb-4">
+                4
+              </div>
+              <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Pembiasan & Pembesaran Lensa</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Ketiga warna digabung kembali melalui prisma dan diteruskan ke susunan lensa kaca. Lensa ini membalikkan dan memperbesar gambar agar fokus tajam pada permukaan layar.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- BAGIAN 2: SIMULASI INTERAKTIF OPTIK & RGB -->
+        <section id="simulasi" class="scroll-mt-24 space-y-6">
+          <div class="space-y-2">
+            <span class="inline-block px-3 py-1 rounded-lg bg-indigo-100 text-indigo-700 text-xs font-bold uppercase tracking-wider">Laboratorium Virtual</span>
+            <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-slate-900">Simulasi Interaktif Optik Proyektor</h2>
+            <p class="text-slate-600 text-sm sm:text-base">
+              Ubah parameter di bawah ini untuk melihat langsung pengaruh <strong>Fokus Lensa</strong>, <strong>Jarak Lempar (Throw Distance)</strong>, dan <strong>Saluran Warna RGB</strong> terhadap hasil proyeksi di layar.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-3xl border border-slate-200 shadow-md overflow-hidden">
+            <!-- Header Kontrol Power -->
+            <div class="px-5 py-4 bg-slate-50 border-b border-slate-200 flex flex-wrap items-center justify-between gap-3">
+              <div class="flex items-center gap-2.5">
+                <span id="powerIndicator" class="w-3 h-3 rounded-full bg-emerald-500 shadow-[0_0_8px_#10b981]"></span>
+                <span id="powerStatusText" class="text-sm font-bold text-slate-800">Status Proyektor: MENYALA (3.200 Lumens)</span>
+              </div>
+              <button id="togglePowerBtn" type="button" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-900 text-white hover:bg-slate-800 transition-colors cursor-pointer">
+                <i data-lucide="power" class="w-4 h-4"></i>
+                <span id="togglePowerLabel">Matikan Lampu</span>
+              </button>
+            </div>
+
+            <!-- Area Visual Simulasi (Canvas/SVG + Layar Hasil) -->
+            <div class="p-5 sm:p-6 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-white">
+              <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                <!-- Sisi Kiri: Jalur Sinar Optik -->
+                <div class="md:col-span-7">
+                  <p class="text-xs font-medium text-slate-400 mb-2">Tampak Samping Jalur Cahaya Optik:</p>
+                  <div class="relative w-full h-56 sm:h-64 rounded-2xl bg-slate-950 border border-slate-800 overflow-hidden flex items-center">
+                    <svg id="opticsSimSvg" viewBox="0 0 500 240" class="w-full h-full">
+                      <!-- Grid Garis Ukur -->
+                      <line x1="120" y1="215" x2="470" y2="215" stroke="#334155" stroke-width="1.5" stroke-dasharray="4 4" />
+                      <text id="distanceSvgLabel" x="295" y="232" fill="#94a3b8" font-size="11" text-anchor="middle" font-family="Inter">Jarak Lempar: 2.5 Meter</text>
+
+                      <!-- Bodi Proyektor -->
+                      <rect x="20" y="85" width="95" height="70" rx="12" fill="#1e293b" stroke="#475569" stroke-width="2" />
+                      <circle cx="48" cy="120" r="14" id="simLampGlow" fill="#facc15" />
+                      <!-- Lensa yang bisa bergeser sesuai fokus -->
+                      <rect id="simLensBarrel" x="112" y="98" width="16" height="44" rx="4" fill="#38bdf8" />
+
+                      <!-- Berkas Cahaya Proyeksi (Dinamis) -->
+                      <polygon id="simLightCone" points="128,102 380,45 380,195 128,138" fill="#38bdf8" fill-opacity="0.32" />
+
+                      <!-- Layar Proyeksi (Bergerak sesuai jarak) -->
+                      <rect id="simScreenWall" x="380" y="30" width="8" height="180" rx="4" fill="#f8fafc" />
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- Sisi Kanan: Pratinjau Gambar pada Layar Proyeksi -->
+                <div class="md:col-span-5">
+                  <div class="flex items-center justify-between mb-2">
+                    <p class="text-xs font-medium text-slate-400">Hasil Gambar di Layar:</p>
+                    <span id="screenSizeBadge" class="text-xs font-bold text-sky-400">Ukuran: 100 Inci</span>
+                  </div>
+                  <div class="w-full h-56 sm:h-64 rounded-2xl bg-slate-950 border border-slate-800 flex items-center justify-center p-4 overflow-hidden">
+                    <!-- Layar Virtual -->
+                    <div id="projectedScreenBox" class="relative w-44 h-28 bg-white rounded-lg shadow-[0_0_30px_rgba(56,189,248,0.3)] flex flex-col items-center justify-center overflow-hidden transition-all duration-200">
+                      <!-- Lapisan Konten Gambar Uji -->
+                      <div id="projectedImageContent" class="w-full h-full flex flex-col items-center justify-center p-2 text-center select-none transition-all duration-150">
+                        <div class="flex items-center gap-1.5 mb-1">
+                          <span id="dotR" class="w-4 h-4 rounded-full bg-red-500 inline-block mix-blend-multiply"></span>
+                          <span id="dotG" class="w-4 h-4 rounded-full bg-green-500 inline-block mix-blend-multiply"></span>
+                          <span id="dotB" class="w-4 h-4 rounded-full bg-blue-500 inline-block mix-blend-multiply"></span>
+                        </div>
+                        <p class="font-display font-extrabold text-xs sm:text-sm text-slate-900 tracking-tight">FULL HD 1080P</p>
+                        <p class="text-[10px] font-semibold text-slate-600">Kalibrasi Optik RGB</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel Kontrol Interaktif -->
+            <div class="p-5 sm:p-6 bg-white space-y-6">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <!-- Kontrol Fokus Lensa -->
+                <div class="space-y-2">
+                  <div class="flex justify-between items-center">
+                    <label for="focusSlider" class="text-sm font-bold text-slate-800 flex items-center gap-1.5">
+                      <i data-lucide="aperture" class="w-4 h-4 text-sky-600"></i> Cincin Fokus Lensa
+                    </label>
+                    <span id="focusValueText" class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-700">Tajam (100%)</span>
+                  </div>
+                  <input id="focusSlider" type="range" min="-50" max="50" value="0" class="w-full" />
+                  <div class="flex justify-between text-[11px] text-slate-400">
+                    <span>Terlalu Dekat</span>
+                    <span>Titik Fokus Ideal</span>
+                    <span>Terlalu Jauh</span>
+                  </div>
+                </div>
+
+                <!-- Kontrol Jarak Lempar (Throw Distance) -->
+                <div class="space-y-2">
+                  <div class="flex justify-between items-center">
+                    <label for="distanceSlider" class="text-sm font-bold text-slate-800 flex items-center gap-1.5">
+                      <i data-lucide="move-horizontal" class="w-4 h-4 text-indigo-600"></i> Jarak ke Layar
+                    </label>
+                    <span id="distanceValueText" class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-indigo-100 text-indigo-700">2.5 Meter (100")</span>
+                  </div>
+                  <input id="distanceSlider" type="range" min="15" max="45" value="25" class="w-full" />
+                  <div class="flex justify-between text-[11px] text-slate-400">
+                    <span>1.5 m (60")</span>
+                    <span>2.5 m (100")</span>
+                    <span>4.5 m (180")</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sakelar Filter Warna RGB -->
+              <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                  <p class="text-sm font-bold text-slate-800">Uji Saluran Warna Primer (RGB Additive):</p>
+                  <p class="text-xs text-slate-500">Aktifkan atau matikan komponen warna untuk melihat pembentukan warna putih dan spektrum penuh.</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-2">
+                  <button type="button" data-channel="r" class="rgb-toggle px-3.5 py-2 rounded-xl text-xs font-bold bg-rose-500 text-white shadow-sm transition-all cursor-pointer">
+                    Merah (R) : ON
+                  </button>
+                  <button type="button" data-channel="g" class="rgb-toggle px-3.5 py-2 rounded-xl text-xs font-bold bg-emerald-500 text-white shadow-sm transition-all cursor-pointer">
+                    Hijau (G) : ON
+                  </button>
+                  <button type="button" data-channel="b" class="rgb-toggle px-3.5 py-2 rounded-xl text-xs font-bold bg-sky-500 text-white shadow-sm transition-all cursor-pointer">
+                    Biru (B) : ON
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- BAGIAN 3: PERBANDINGAN TEKNOLOGI PROYEKTOR -->
+        <section id="teknologi" class="scroll-mt-24 space-y-6">
+          <div class="space-y-2">
+            <span class="inline-block px-3 py-1 rounded-lg bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider">Arsitektur Tampilan</span>
+            <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-slate-900">Perbandingan Teknologi Proyektor</h2>
+            <p class="text-slate-600 text-sm sm:text-base">
+              Pilih jenis mesin optik di bawah ini untuk membandingkan cara kerja internal, keunggulan, serta penggunaan idealnya.
+            </p>
+          </div>
+
+          <!-- Tab Selector -->
+          <div class="bg-white rounded-3xl border border-slate-200 p-5 sm:p-6 shadow-sm">
+            <div class="flex flex-wrap gap-2 pb-5 border-b border-slate-100" role="tablist">
+              <button type="button" data-tech="lcd" class="tech-tab px-4 py-2.5 rounded-xl text-sm font-bold bg-sky-600 text-white shadow-sm transition-all cursor-pointer">
+                3LCD (Liquid Crystal Display)
+              </button>
+              <button type="button" data-tech="dlp" class="tech-tab px-4 py-2.5 rounded-xl text-sm font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all cursor-pointer">
+                DLP (Digital Light Processing)
+              </button>
+              <button type="button" data-tech="laser" class="tech-tab px-4 py-2.5 rounded-xl text-sm font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all cursor-pointer">
+                Laser Phosphor / RGB Laser
+              </button>
+            </div>
+
+            <!-- Konten Tab Dinamis -->
+            <div id="techContentPanel" class="pt-5 space-y-4">
+              <!-- Diisi otomatis via JS -->
+            </div>
+          </div>
+        </section>
+
+        <!-- BAGIAN 4: ANATOMI KOMPONEN UTAMA -->
+        <section id="komponen" class="scroll-mt-24 space-y-6">
+          <div class="space-y-2">
+            <span class="inline-block px-3 py-1 rounded-lg bg-emerald-100 text-emerald-700 text-xs font-bold uppercase tracking-wider">Anatomi Perangkat</span>
+            <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-slate-900">Komponen Vital di Dalam Proyektor</h2>
+            <p class="text-slate-600 text-sm sm:text-base">
+              Setiap bagian bekerja dalam toleransi suhu dan presisi milimeter agar proyeksi tetap stabil selama ribuan jam pemakaian.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-sky-300 transition-colors">
+              <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-3">
+                <i data-lucide="sun" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-display font-bold text-base text-slate-900 mb-1.5">Lampu UHP / Modul Laser</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Sumber foton utama. Lampu UHP menggunakan uap merkuri bertekanan tinggi untuk menghasilkan cahaya spektrum penuh yang sangat terang.
+              </p>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-sky-300 transition-colors">
+              <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center mb-3">
+                <i data-lucide="layers" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-display font-bold text-base text-slate-900 mb-1.5">Prisma & Cermin Dichroic</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Kaca berlapis film tipis optik yang memantulkan panjang gelombang warna tertentu dan meneruskan warna lainnya tanpa menyerap panas berlebih.
+              </p>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-sky-300 transition-colors">
+              <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-3">
+                <i data-lucide="cpu" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-display font-bold text-base text-slate-900 mb-1.5">Chip DMD / Panel 3LCD</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Otak pembentuk piksel gambar. Chip DMD berisi jutaan cermin aluminium mikroskopis yang berayun hingga 10.000 kali per detik.
+              </p>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-sky-300 transition-colors">
+              <div class="w-10 h-10 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center mb-3">
+                <i data-lucide="focus" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-display font-bold text-base text-slate-900 mb-1.5">Barel Lensa Zoom & Fokus</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Susunan beberapa elemen lensa cembung dan cekung berlapis anti-refleksi untuk mencegah aberasi kromatik dan menjaga ketajaman sudut layar.
+              </p>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-sky-300 transition-colors">
+              <div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center mb-3">
+                <i data-lucide="fan" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-display font-bold text-base text-slate-900 mb-1.5">Sistem Pendingin & Filter</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Kipas sentrifugal senyap dan heatsink tembaga yang membuang panas ekstrem lampu agar panel LCD atau chip DMD tidak mengalami kerusakan termal.
+              </p>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-sky-300 transition-colors">
+              <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-3">
+                <i data-lucide="sliders" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-display font-bold text-base text-slate-900 mb-1.5">Koreksi Keystone Digital/Optik</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Menyesuaikan geometri trapesium menjadi persegi panjang simetris ketika posisi proyektor diletakkan agak miring terhadap layar.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- BAGIAN 5: FAQ (PERTANYAAN UMUM) -->
+        <section id="faq" class="scroll-mt-24 space-y-5">
+          <div class="space-y-2">
+            <span class="inline-block px-3 py-1 rounded-lg bg-sky-100 text-sky-700 text-xs font-bold uppercase tracking-wider">Tanya Jawab</span>
+            <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-slate-900">Pertanyaan yang Sering Diajukan</h2>
+          </div>
+
+          <div class="space-y-3" id="faqAccordion">
+            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+              <button type="button" class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-display font-bold text-sm sm:text-base text-slate-900 hover:bg-slate-50 transition-colors cursor-pointer">
+                <span>Mengapa ruangan harus redup agar gambar proyektor terlihat jelas?</span>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+              </button>
+              <div class="faq-answer hidden px-5 pb-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                Proyektor tidak memancarkan "warna hitam"—warna hitam pada layar sebenarnya adalah permukaan layar yang tidak terkena cahaya proyektor. Jika cahaya ruangan terlalu terang, cahaya sekitar akan menerangi bagian gelap layar dan menurunkan rasio kontras secara drastis.
+              </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+              <button type="button" class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-display font-bold text-sm sm:text-base text-slate-900 hover:bg-slate-50 transition-colors cursor-pointer">
+                <span>Apa itu efek pelangi (Rainbow Effect) pada proyektor DLP?</span>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+              </button>
+              <div class="faq-answer hidden px-5 pb-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                Pada proyektor DLP satu chip dengan roda warna (<em>color wheel</em>), warna merah, hijau, dan biru diproyeksikan secara bergantian sangat cepat. Sebagian mata yang sensitif dapat melihat kilatan bayangan merah-hijau-biru sesaat saat menggerakkan pandangan cepat melintasi layar.
+              </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+              <button type="button" class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-display font-bold text-sm sm:text-base text-slate-900 hover:bg-slate-50 transition-colors cursor-pointer">
+                <span>Mengapa kipas proyektor tetap berputar beberapa detik setelah dimatikan?</span>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+              </button>
+              <div class="faq-answer hidden px-5 pb-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                Suhu lampu proyektor dapat mencapai ratusan derajat Celcius. Fase pendinginan (<em>cool-down</em>) menjaga aliran udara tetap berjalan agar kaca lampu dan panel optik turun suhunya secara bertahap dan tidak retak akibat kejutan termal.
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- SIDEBAR KANAN: HAL TERKAIT YANG BISA DIBUKA (4 Kolom di Desktop) -->
+      <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
+        <!-- Kartu Sidebar Topik Terkait -->
+        <div class="bg-white rounded-3xl border border-slate-200/90 p-5 sm:p-6 shadow-sm">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center">
+                <i data-lucide="book-open" class="w-4 h-4"></i>
+              </div>
+              <h2 class="font-display font-extrabold text-lg text-slate-900">Topik Terkait</h2>
+            </div>
+            <span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-sky-50 text-sky-700">Klik untuk buka</span>
+          </div>
+
+          <p class="text-xs text-slate-500 mb-4">
+            Pilih artikel pendalaman di bawah ini untuk membuka ringkasan teknis secara instan:
+          </p>
+
+          <!-- Daftar Artikel Sidebar yang Bisa Dibuka -->
+          <div id="relatedTopicsList" class="space-y-2.5">
+            <button type="button" data-topic="lumens" class="topic-card w-full text-left p-3.5 rounded-2xl border border-slate-200/80 hover:border-sky-400 hover:bg-sky-50/50 transition-all group cursor-pointer">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <span class="text-[11px] font-bold text-sky-600 uppercase">Kecerahan</span>
+                  <h3 class="font-display font-bold text-sm text-slate-800 group-hover:text-sky-700 mt-0.5">
+                    Perbedaan ANSI Lumens vs LED Lumens
+                  </h3>
+                </div>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-sky-600 shrink-0 mt-1"></i>
+              </div>
+            </button>
+
+            <button type="button" data-topic="throwratio" class="topic-card w-full text-left p-3.5 rounded-2xl border border-slate-200/80 hover:border-sky-400 hover:bg-sky-50/50 transition-all group cursor-pointer">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <span class="text-[11px] font-bold text-indigo-600 uppercase">Geometri Optik</span>
+                  <h3 class="font-display font-bold text-sm text-slate-800 group-hover:text-sky-700 mt-0.5">
+                    Memahami Throw Ratio & Short-Throw
+                  </h3>
+                </div>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-sky-600 shrink-0 mt-1"></i>
+              </div>
+            </button>
+
+            <button type="button" data-topic="perawatan" class="topic-card w-full text-left p-3.5 rounded-2xl border border-slate-200/80 hover:border-sky-400 hover:bg-sky-50/50 transition-all group cursor-pointer">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <span class="text-[11px] font-bold text-emerald-600 uppercase">Panduan Praktis</span>
+                  <h3 class="font-display font-bold text-sm text-slate-800 group-hover:text-sky-700 mt-0.5">
+                    Cara Membersihkan Lensa & Filter Debu
+                  </h3>
+                </div>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-sky-600 shrink-0 mt-1"></i>
+              </div>
+            </button>
+
+            <button type="button" data-topic="sejarah" class="topic-card w-full text-left p-3.5 rounded-2xl border border-slate-200/80 hover:border-sky-400 hover:bg-sky-50/50 transition-all group cursor-pointer">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <span class="text-[11px] font-bold text-amber-600 uppercase">Sejarah Optik</span>
+                  <h3 class="font-display font-bold text-sm text-slate-800 group-hover:text-sky-700 mt-0.5">
+                    Dari Magic Lantern hingga Proyektor 4K
+                  </h3>
+                </div>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-sky-600 shrink-0 mt-1"></i>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Kartu Kalkulator Cepat Throw Distance di Sidebar -->
+        <div class="bg-gradient-to-br from-sky-600 to-indigo-700 rounded-3xl p-5 sm:p-6 text-white shadow-lg">
+          <div class="flex items-center gap-2 mb-2">
+            <i data-lucide="calculator" class="w-5 h-5 text-amber-300"></i>
+            <h3 class="font-display font-bold text-base">Kalkulator Lebar Layar</h3>
+          </div>
+          <p class="text-xs text-sky-100 mb-4">
+            Hitung perkiraan lebar gambar berdasarkan jarak proyektor (asumsi Throw Ratio standar 1.2:1).
+          </p>
+          <div class="space-y-3">
+            <div>
+              <label for="calcDistInput" class="block text-xs font-semibold text-sky-100 mb-1">Jarak Proyektor ke Dinding (meter):</label>
+              <input id="calcDistInput" type="number" step="0.1" min="0.5" max="15" value="2.4" class="w-full px-3.5 py-2 rounded-xl bg-white/15 border border-white/25 text-white placeholder-sky-200 text-sm font-bold focus:outline-none focus:ring-2 focus:ring-amber-300" />
+            </div>
+            <div class="p-3 rounded-xl bg-slate-950/30 border border-white/10 flex justify-between items-center">
+              <span class="text-xs text-sky-100">Lebar Gambar:</span>
+              <span id="calcResultText" class="font-display font-extrabold text-base text-amber-300">2.00 Meter (~90")</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kartu Ajakan Unduh Kode Resource di Sidebar -->
+        <div class="bg-amber-50 border border-amber-200 rounded-3xl p-5 text-center space-y-3">
+          <p class="font-display font-bold text-sm text-slate-900">Ingin Mempelajari Kode Sumber Web Ini?</p>
+          <p class="text-xs text-slate-600">Dapatkan file HTML, Tailwind, & simulasi JS lengkap untuk bahan belajar Anda.</p>
+          <button type="button" onclick="openDownloadModal()" class="w-full py-2.5 px-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold text-xs sm:text-sm shadow-sm transition-colors cursor-pointer inline-flex items-center justify-center gap-2">
+            <i data-lucide="download" class="w-4 h-4"></i>
+            <span>Unduh Kode Resource</span>
+          </button>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-slate-200 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-lg bg-sky-600 text-white flex items-center justify-center">
+          <i data-lucide="projector" class="w-4 h-4"></i>
+        </div>
+        <p class="text-sm font-semibold text-slate-700">
+          Oleh Ariel Usman Copyright 2026
+        </p>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-pink-50 to-amber-50 hover:from-pink-100 hover:to-amber-100 border border-pink-200/70 text-slate-800 text-sm font-semibold transition-all">
+          <i data-lucide="instagram" class="w-4 h-4 text-pink-600"></i>
+          <span>@arielrcun</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL BACA TOPIK TERKAIT (SIDEBAR READER MODAL) -->
+  <div id="topicReaderModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-7 shadow-2xl border border-slate-100 space-y-4 transform transition-all">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <span id="readerBadge" class="inline-block px-2.5 py-0.5 rounded-md bg-sky-100 text-sky-700 text-xs font-bold uppercase">Topik</span>
+          <h3 id="readerTitle" class="font-display font-extrabold text-xl text-slate-900 mt-1">Judul Topik</h3>
+        </div>
+        <button id="closeReaderBtn" type="button" aria-label="Tutup Panel" class="p-2 rounded-xl bg-slate-100 text-slate-500 hover:bg-slate-200 hover:text-slate-800 transition-colors cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div id="readerBody" class="text-sm text-slate-600 leading-relaxed space-y-3 border-t border-slate-100 pt-4">
+        <!-- Konten topik terkait dimuat via JS -->
+      </div>
+      <div class="pt-2 flex justify-end">
+        <button type="button" onclick="closeTopicReader()" class="px-5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-sm font-semibold transition-colors cursor-pointer">
+          Selesai Membaca
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL MONETISASI & UNDUH KODE RESOURCE -->
+  <div id="downloadModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/65 backdrop-blur-sm">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl border border-slate-100 space-y-5 relative animate-fadeIn">
+      <!-- Tombol Tutup -->
+      <button id="closeDownloadModalBtn" type="button" aria-label="Tutup Modal Unduhan" class="absolute top-5 right-5 p-2 rounded-xl bg-slate-100 text-slate-500 hover:bg-slate-200 hover:text-slate-800 transition-colors cursor-pointer">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Header Modal -->
+      <div class="space-y-2 pr-8">
+        <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center mb-2">
+          <i data-lucide="code-2" class="w-6 h-6"></i>
+        </div>
+        <h3 class="font-display font-extrabold text-xl sm:text-2xl text-slate-900">Unduh Kode Resource</h3>
+        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          Dukung pengembangan konten edukasi interaktif oleh <strong>Ariel Usman</strong> melalui tautan resmi di bawah ini, atau lanjutkan mengunduh secara gratis sebagai tamu.
+        </p>
+      </div>
+
+      <!-- Pilihan Tautan Pembayaran / Dukungan Resmi -->
+      <div class="space-y-3">
+        <!-- 1. Internasional: PayPal -->
+        <a href="https://paypal.me/arielrcu" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-4 rounded-2xl border-2 border-sky-100 bg-sky-50/60 hover:bg-sky-100/80 hover:border-sky-300 transition-all group">
+          <div class="flex items-center gap-3.5">
+            <div class="w-10 h-10 rounded-xl bg-sky-600 text-white flex items-center justify-center shrink-0 shadow-sm">
+              <i data-lucide="globe" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <p class="font-display font-bold text-sm text-slate-900 group-hover:text-sky-700">1. Internasional: PayPal</p>
+              <p class="text-xs text-slate-500">paypal.me/arielrcu</p>
+            </div>
+          </div>
+          <i data-lucide="external-link" class="w-4 h-4 text-sky-600"></i>
+        </a>
+
+        <!-- 2. Lokal (QRIS/E-Wallet): Trakteer -->
+        <a href="https://trakteer.id/arielrcu" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-4 rounded-2xl border-2 border-rose-100 bg-rose-50/60 hover:bg-rose-100/80 hover:border-rose-300 transition-all group">
+          <div class="flex items-center gap-3.5">
+            <div class="w-10 h-10 rounded-xl bg-rose-600 text-white flex items-center justify-center shrink-0 shadow-sm">
+              <i data-lucide="qr-code" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <p class="font-display font-bold text-sm text-slate-900 group-hover:text-rose-700">2. Lokal (QRIS / E-Wallet): Trakteer</p>
+              <p class="text-xs text-slate-500">trakteer.id/arielrcu</p>
+            </div>
+          </div>
+          <i data-lucide="external-link" class="w-4 h-4 text-rose-600"></i>
+        </a>
+      </div>
+
+      <!-- Pembatas -->
+      <div class="relative flex py-1 items-center">
+        <div class="flex-grow border-t border-slate-200"></div>
+        <span class="flex-shrink mx-3 text-[11px] font-semibold uppercase tracking-wider text-slate-400">Akses Langsung</span>
+        <div class="flex-grow border-t border-slate-200"></div>
+      </div>
+
+      <!-- Tombol Wajib: Download as Guest -->
+      <button id="downloadGuestBtn" type="button" class="w-full py-3.5 px-5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer">
+        <i data-lucide="file-down" class="w-4 h-4 text-amber-400"></i>
+        <span>Download as Guest</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT INTERAKTIF -->
+  <script>
+    // Inisialisasi Lucide Icons
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+      initSimulation();
+      initTechTabs();
+      initSidebarTopics();
+      initFaqAccordion();
+      initModals();
+      initMobileMenu();
+      initThrowCalculator();
+    });
+
+    // 1. Fungsi Notifikasi Toast Halus (Tanpa alert)
+    function showToast(message, type = 'success') {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      const bgClass = type === 'success' ? 'bg-slate-900 text-white border-emerald-500' : 'bg-sky-700 text-white border-sky-400';
+
+      toast.className = `pointer-events-auto flex items-center gap-2.5 px-4 py-3 rounded-2xl shadow-xl border-l-4 ${bgClass} text-xs sm:text-sm font-medium transition-all duration-300 translate-y-2 opacity-0`;
+      toast.innerHTML = `<span>${message}</span>`;
+      container.appendChild(toast);
+
+      requestAnimationFrame(() => {
+        toast.classList.remove('translate-y-2', 'opacity-0');
+      });
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-2', 'opacity-0');
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    }
+
+    // 2. Navigasi Mobile Drawer
+    function initMobileMenu() {
+      const btn = document.getElementById('mobileMenuBtn');
+      const menu = document.getElementById('mobileMenu');
+      const links = document.querySelectorAll('.mobile-nav-link');
+
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          menu.classList.add('hidden');
+        });
+      });
+    }
+
+    // 3. Simulasi Interaktif Proyektor (Fokus, Jarak, Power, & RGB)
+    function initSimulation() {
+      let isPowerOn = true;
+      const rgbState = { r: true, g: true, b: true };
+
+      const togglePowerBtn = document.getElementById('togglePowerBtn');
+      const togglePowerLabel = document.getElementById('togglePowerLabel');
+      const powerIndicator = document.getElementById('powerIndicator');
+      const powerStatusText = document.getElementById('powerStatusText');
+
+      const focusSlider = document.getElementById('focusSlider');
+      const focusValueText = document.getElementById('focusValueText');
+      const distanceSlider = document.getElementById('distanceSlider');
+      const distanceValueText = document.getElementById('distanceValueText');
+
+      const simLampGlow = document.getElementById('simLampGlow');
+      const simLensBarrel = document.getElementById('simLensBarrel');
+      const simLightCone = document.getElementById('simLightCone');
+      const simScreenWall = document.getElementById('simScreenWall');
+      const distanceSvgLabel = document.getElementById('distanceSvgLabel');
+
+      const projectedScreenBox = document.getElementById('projectedScreenBox');
+      const projectedImageContent = document.getElementById('projectedImageContent');
+      const screenSizeBadge = document.getElementById('screenSizeBadge');
+
+      const dotR = document.getElementById('dotR');
+      const dotG = document.getElementById('dotG');
+      const dotB = document.getElementById('dotB');
+
+      function getMixedBeamColor() {
+        const r = rgbState.r ? 255 : 0;
+        const g = rgbState.g ? 255 : 0;
+        const b = rgbState.b ? 255 : 0;
+        if (r === 255 && g === 255 && b === 255) return '#38bdf8'; // cahaya putih kebiruan cerah
+        if (r === 0 && g === 0 && b === 0) return '#1e293b';
+        return `rgb(${r}, ${g}, ${b})`;
+      }
+
+      function getScreenTintColor() {
+        const r = rgbState.r ? 255 : 30;
+        const g = rgbState.g ? 255 : 30;
+        const b = rgbState.b ? 255 : 30;
+        return `rgb(${r}, ${g}, ${b})`;
+      }
+
+      function updateSimulation() {
+        const focusVal = parseInt(focusSlider.value, 10); // -50 sampai 50
+        const distVal = parseInt(distanceSlider.value, 10); // 15 sampai 45 (dalam desimeter -> 1.5m - 4.5m)
+        const meters = (distVal / 10).toFixed(1);
+        const inches = Math.round(distVal * 4);
+
+        // Update teks jarak & ukuran
+        distanceValueText.textContent = `${meters} Meter (${inches}")`;
+        distanceSvgLabel.textContent = `Jarak Lempar: ${meters} Meter`;
+        screenSizeBadge.textContent = `Ukuran: ${inches} Inci`;
+
+        // Posisi layar pada SVG (rentang x: 240 sampai 475)
+        const wallX = 180 + (distVal - 15) * 9.5;
+        const spreadY = 30 + (distVal - 15) * 1.4;
+        const topY = Math.max(20, 102 - spreadY);
+        const botY = Math.min(220, 138 + spreadY);
+
+        simScreenWall.setAttribute('x', wallX);
+        simLightCone.setAttribute('points', `128,102 ${wallX},${topY} ${wallX},${botY} 128,138`);
+
+        // Pergeseran barrel lensa sesuai cincin fokus
+        const lensOffsetX = 112 + (focusVal * 0.12);
+        simLensBarrel.setAttribute('x', lensOffsetX);
+
+        // Tingkat blur & sharpness
+        const absBlur = Math.abs(focusVal);
+        const blurPx = (absBlur / 7).toFixed(1);
+        const sharpnessPct = Math.max(0, 100 - absBlur * 2);
+
+        if (absBlur <= 4) {
+          focusValueText.textContent = `Tajam (${sharpnessPct}%)`;
+          focusValueText.className = 'text-xs font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-700';
+        } else {
+          focusValueText.textContent = `Buram (${sharpnessPct}%)`;
+          focusValueText.className = 'text-xs font-bold px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800';
+        }
+
+        // Skala layar pratinjau kanan
+        const scaleFactor = 0.72 + ((distVal - 15) / 30) * 0.45;
+        projectedScreenBox.style.transform = `scale(${scaleFactor.toFixed(2)})`;
+
+        if (!isPowerOn) {
+          simLampGlow.setAttribute('fill', '#334155');
+          simLightCone.setAttribute('fill-opacity', '0');
+          projectedScreenBox.style.backgroundColor = '#0f172a';
+          projectedScreenBox.style.boxShadow = 'none';
+          projectedImageContent.style.opacity = '0.06';
+          projectedImageContent.style.filter = `blur(${blurPx}px)`;
+          return;
+        }
+
+        // Saat proyektor menyala
+        simLampGlow.setAttribute('fill', '#facc15');
+        const beamColor = getMixedBeamColor();
+        simLightCone.setAttribute('fill', beamColor);
+        simLightCone.setAttribute('fill-opacity', (rgbState.r || rgbState.g || rgbState.b) ? '0.36' : '0.05');
+
+        projectedScreenBox.style.backgroundColor = getScreenTintColor();
+        projectedScreenBox.style.boxShadow = `0 0 28px ${beamColor}55`;
+        projectedImageContent.style.opacity = (rgbState.r || rgbState.g || rgbState.b) ? '1' : '0.12';
+        projectedImageContent.style.filter = `blur(${blurPx}px)`;
+
+        dotR.style.opacity = rgbState.r ? '1' : '0.15';
+        dotG.style.opacity = rgbState.g ? '1' : '0.15';
+        dotB.style.opacity = rgbState.b ? '1' : '0.15';
+      }
+
+      // Event Power Button
+      togglePowerBtn.addEventListener('click', () => {
+        isPowerOn = !isPowerOn;
+        if (isPowerOn) {
+          powerIndicator.className = 'w-3 h-3 rounded-full bg-emerald-500 shadow-[0_0_8px_#10b981]';
+          powerStatusText.textContent = 'Status Proyektor: MENYALA (3.200 Lumens)';
+          togglePowerLabel.textContent = 'Matikan Lampu';
+        } else {
+          powerIndicator.className = 'w-3 h-3 rounded-full bg-slate-400';
+          powerStatusText.textContent = 'Status Proyektor: SIAGA / MATI';
+          togglePowerLabel.textContent = 'Nyalakan Lampu';
+        }
+        updateSimulation();
+      });
+
+      // Event Sliders
+      focusSlider.addEventListener('input', updateSimulation);
+      distanceSlider.addEventListener('input', updateSimulation);
+
+      // Event RGB Channel Toggles
+      document.querySelectorAll('.rgb-toggle').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const ch = btn.dataset.channel;
+          rgbState[ch] = !rgbState[ch];
+
+          const labels = { r: 'Merah (R)', g: 'Hijau (G)', b: 'Biru (B)' };
+          const activeColors = {
+            r: 'bg-rose-500 text-white',
+            g: 'bg-emerald-500 text-white',
+            b: 'bg-sky-500 text-white'
+          };
+
+          if (rgbState[ch]) {
+            btn.className = `rgb-toggle px-3.5 py-2 rounded-xl text-xs font-bold shadow-sm transition-all cursor-pointer ${activeColors[ch]}`;
+            btn.textContent = `${labels[ch]} : ON`;
+          } else {
+            btn.className = 'rgb-toggle px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-200 text-slate-600 transition-all cursor-pointer';
+            btn.textContent = `${labels[ch]} : OFF`;
+          }
+          updateSimulation();
+        });
+      });
+
+      updateSimulation();
+    }
+
+    // 4. Tab Perbandingan Teknologi Proyektor
+    function initTechTabs() {
+      const techData = {
+        lcd: {
+          title: 'Teknologi 3LCD (3-Chip Liquid Crystal Display)',
+          badge: 'Warna Cerah & Akurat',
+          summary: 'Menggunakan tiga panel kristal cair terpisah untuk warna Merah, Hijau, dan Biru secara bersamaan. Cahaya putih dipecah oleh cermin dichroic, melewati ketiga panel LCD, lalu digabung kembali dalam prisma dichroic sebelum keluar melalui lensa.',
+          pros: [
+            'Kecerahan warna (Color Brightness) setara dengan kecerahan putihnya.',
+            'Sama sekali tidak memiliki efek pelangi (rainbow effect).',
+            'Sangat ideal untuk ruang kelas, kantor terang, dan presentasi grafik.'
+          ],
+          cons: [
+            'Ukuran bodi cenderung sedikit lebih besar karena susunan tiga panel optik.',
+            'Memiliki filter udara yang perlu dibersihkan secara berkala.'
+          ]
+        },
+        dlp: {
+          title: 'Teknologi DLP (Digital Light Processing)',
+          badge: 'Kontras Tinggi & Ringkas',
+          summary: 'Dikembangkan oleh Texas Instruments, DLP menggunakan chip DMD (Digital Micromirror Device) yang berisi jutaan cermin mikroskopis. Setiap cermin mewakili satu piksel dan miring ke arah lensa (ON) atau penyerap cahaya (OFF) ribuan kali per detik.',
+          pros: [
+            'Rasio kontras tinggi dengan warna hitam lebih pekat untuk menonton film.',
+            'Sistem optik tertutup (sealed optics) sehingga tahan debu dan bebas perawatan filter.',
+            'Ukuran proyektor bisa dibuat sangat portabel dan ringan.'
+          ],
+          cons: [
+            'Model single-chip dengan roda warna berpotensi memunculkan efek pelangi bagi mata sensitif.'
+          ]
+        },
+        laser: {
+          title: 'Teknologi Proyektor Laser (Laser Phosphor & RGB Laser)',
+          badge: 'Umur Panjang 20.000+ Jam',
+          summary: 'Menggantikan lampu merkuri konvensional dengan deretan dioda laser biru atau laser RGB murni. Cahaya laser menstimulasi roda fosfor atau langsung memodulasi panel optik untuk menghasilkan intensitas cahaya tinggi secara instan.',
+          pros: [
+            'Menyala dan mati secara instan tanpa waktu pemanasan atau pendinginan lama.',
+            'Umur pakai mencapai 20.000 hingga 30.000 jam tanpa perlu ganti lampu.',
+            'Stabilitas warna dan kecerahan jauh lebih konsisten sepanjang usia pakai.'
+          ],
+          cons: [
+            'Harga perangkat awal lebih tinggi dibandingkan proyektor lampu UHP standar.'
+          ]
+        }
+      };
+
+      const panel = document.getElementById('techContentPanel');
+      const tabs = document.querySelectorAll('.tech-tab');
+
+      function renderTech(key) {
+        const item = techData[key];
+        panel.innerHTML = `
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h3 class="font-display font-extrabold text-lg sm:text-xl text-slate-900">${item.title}</h3>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-sky-100 text-sky-700">${item.badge}</span>
+          </div>
+          <p class="text-sm text-slate-600 leading-relaxed">${item.summary}</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200/80">
+              <p class="font-display font-bold text-xs uppercase tracking-wider text-emerald-800 mb-2">Kelebihan Utama</p>
+              <ul class="space-y-1.5 text-xs sm:text-sm text-slate-700 list-disc pl-4">
+                ${item.pros.map(p => `<li>${p}</li>`).join('')}
+              </ul>
+            </div>
+            <div class="p-4 rounded-2xl bg-amber-50/70 border border-amber-200/80">
+              <p class="font-display font-bold text-xs uppercase tracking-wider text-amber-800 mb-2">Hal yang Perlu Diperhatikan</p>
+              <ul class="space-y-1.5 text-xs sm:text-sm text-slate-700 list-disc pl-4">
+                ${item.cons.map(c => `<li>${c}</li>`).join('')}
+              </ul>
+            </div>
+          </div>
+        `;
+      }
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => {
+            t.className = 'tech-tab px-4 py-2.5 rounded-xl text-sm font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all cursor-pointer';
+          });
+          tab.className = 'tech-tab px-4 py-2.5 rounded-xl text-sm font-bold bg-sky-600 text-white shadow-sm transition-all cursor-pointer';
+          renderTech(tab.dataset.tech);
+        });
+      });
+
+      renderTech('lcd');
+    }
+
+    // 5. Sidebar Topik Terkait yang Bisa Dibuka (Modal Reader)
+    const topicsDatabase = {
+      lumens: {
+        badge: 'Kecerahan Cahaya',
+        title: 'Perbedaan ANSI Lumens vs LED Lumens',
+        paragraphs: [
+          '<strong>ANSI Lumens</strong> adalah standar pengukuran internasional resmi (American National Standards Institute) yang mengukur kecerahan proyektor di sembilan titik berbeda pada layar putih untuk mendapatkan nilai rata-rata yang akurat dan objektif.',
+          '<strong>LED Lumens</strong> sering digunakan produsen proyektor mini untuk menggambarkan persepsi kecerahan mata manusia (efek Helmholtz-Kohlrausch) terhadap saturasi warna LED yang pekat. Sebagai patokan, 1.000 LED Lumens biasanya setara dengan sekitar 400–500 ANSI Lumens.'
+        ]
+      },
+      throwratio: {
+        badge: 'Geometri Optik',
+        title: 'Memahami Throw Ratio & Short-Throw',
+        paragraphs: [
+          '<strong>Throw Ratio</strong> adalah perbandingan antara jarak proyektor ke layar (<em>Throw Distance</em>) dibagi dengan lebar gambar yang dihasilkan (<em>Image Width</em>). Contohnya, Throw Ratio 1.5:1 berarti untuk mendapatkan layar selebar 2 meter, proyektor harus diletakkan sejauh 3 meter.',
+          'Proyektor <strong>Ultra Short-Throw (UST)</strong> memiliki rasio di bawah 0.4:1 dan menggunakan cermin cekung khusus sehingga mampu menembakkan gambar 100 inci hanya dari jarak 20–30 cm di depan dinding.'
+        ]
+      },
+      perawatan: {
+        badge: 'Panduan Praktis',
+        title: 'Cara Membersihkan Lensa & Filter Debu',
+        paragraphs: [
+          'Gunakan <strong>blower udara karet</strong> terlebih dahulu untuk meniup butiran debu kasar dari permukaan kaca lensa sebelum menyentuhnya. Mengelap debu kering secara langsung dapat menggores lapisan anti-refleksi (<em>lens coating</em>).',
+          'Selanjutnya, usap perlahan secara melingkar dari tengah ke tepi menggunakan kain mikrofiber khusus kacamata/kamera. Bersihkan pula filter udara di samping bodi setiap 1–2 bulan agar aliran pendingin tetap lancar.'
+        ]
+      },
+      sejarah: {
+        badge: 'Sejarah Optik',
+        title: 'Dari Magic Lantern hingga Proyektor 4K',
+        paragraphs: [
+          'Cikal bakal proyektor modern dimulai pada abad ke-17 melalui perangkat bernama <strong>Magic Lantern</strong> yang menggunakan lampu minyak, cermin cekung, dan pelat kaca lukis untuk memproyeksikan bayangan ke dinding.',
+          'Pada abad ke-20 berkembang proyektor film seluloid 35mm dan OHP (Overhead Projector), hingga akhirnya penemuan chip DMD dan panel LCD mikro pada akhir 1980-an melahirkan proyektor digital beresolusi tinggi yang kita gunakan saat ini.'
+        ]
+      }
+    };
+
+    function closeTopicReader() {
+      const modal = document.getElementById('topicReaderModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function initSidebarTopics() {
+      const modal = document.getElementById('topicReaderModal');
+      const badgeEl = document.getElementById('readerBadge');
+      const titleEl = document.getElementById('readerTitle');
+      const bodyEl = document.getElementById('readerBody');
+      const closeBtn = document.getElementById('closeReaderBtn');
+
+      document.querySelectorAll('.topic-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const data = topicsDatabase[card.dataset.topic];
+          if (!data) return;
+
+          badgeEl.textContent = data.badge;
+          titleEl.textContent = data.title;
+          bodyEl.innerHTML = data.paragraphs.map(p => `<p>${p}</p>`).join('');
+
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+        });
+      });
+
+      closeBtn.addEventListener('click', closeTopicReader);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeTopicReader();
+      });
+    }
+
+    // 6. Kalkulator Lebar Layar di Sidebar
+    function initThrowCalculator() {
+      const input = document.getElementById('calcDistInput');
+      const output = document.getElementById('calcResultText');
+
+      function calculate() {
+        const dist = parseFloat(input.value);
+        if (isNaN(dist) || dist <= 0) {
+          output.textContent = '0.00 Meter';
+          return;
+        }
+        // Throw Ratio standar 1.2 : 1 -> Lebar = Jarak / 1.2
+        const widthMeters = dist / 1.2;
+        // Diagonal 16:9 dalam inci (1 meter lebar ~ 45.1 inci diagonal 16:9)
+        const diagonalInches = Math.round(widthMeters * 45.1);
+        output.textContent = `${widthMeters.toFixed(2)} Meter (~${diagonalInches}")`;
+      }
+
+      input.addEventListener('input', calculate);
+      calculate();
+    }
+
+    // 7. Accordion FAQ
+    function initFaqAccordion() {
+      document.querySelectorAll('.faq-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const answer = btn.nextElementSibling;
+          const icon = btn.querySelector('svg');
+          const isOpen = !answer.classList.contains('hidden');
+
+          // Tutup semua item lain agar rapi
+          document.querySelectorAll('.faq-answer').forEach(el => el.classList.add('hidden'));
+          document.querySelectorAll('.faq-btn svg').forEach(ic => ic.classList.remove('rotate-180'));
+
+          if (!isOpen) {
+            answer.classList.remove('hidden');
+            if (icon) icon.classList.add('rotate-180');
+          }
+        });
+      });
+    }
+
+    // 8. Modal Monetisasi & Unduh Kode Resource (Download as Guest)
+    function openDownloadModal() {
+      const modal = document.getElementById('downloadModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeDownloadModal() {
+      const modal = document.getElementById('downloadModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function initModals() {
+      const openBtn = document.getElementById('openDownloadModalBtn');
+      const closeBtn = document.getElementById('closeDownloadModalBtn');
+      const modal = document.getElementById('downloadModal');
+      const guestBtn = document.getElementById('downloadGuestBtn');
+
+      openBtn.addEventListener('click', openDownloadModal);
+      closeBtn.addEventListener('click', closeDownloadModal);
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeDownloadModal();
+      });
+
+      // Fitur Download as Guest -> Mengunduh file kode sumber HTML lengkap
+      guestBtn.addEventListener('click', () => {
+        try {
+          const fullHtmlSource = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+          const blob = new Blob([fullHtmlSource], { type: 'text/html;charset=utf-8' });
+          const downloadUrl = URL.createObjectURL(blob);
+
+          const tempLink = document.createElement('a');
+          tempLink.href = downloadUrl;
+          tempLink.download = 'cara-kerja-proyektor-interaktif.html';
+          document.body.appendChild(tempLink);
+          tempLink.click();
+          document.body.removeChild(tempLink);
+          URL.revokeObjectURL(downloadUrl);
+
+          closeDownloadModal();
+          showToast('Berhasil! File cara-kerja-proyektor-interaktif.html sedang diunduh.');
+        } catch (err) {
+          showToast('Terjadi kendala saat menyiapkan unduhan file.', 'info');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
