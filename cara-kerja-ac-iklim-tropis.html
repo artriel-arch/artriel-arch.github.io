@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- =====================================================================
+       SEO METADATA SUPER OPTIMAL (GOOGLE SEARCH, OPEN GRAPH & TWITTER CARD)
+       ===================================================================== -->
+  <title>Cara Kerja AC Pendingin di Iklim Tropis: Siklus Refrigerasi & Simulator Interaktif | AeroTropis</title>
+  <meta name="description" content="Pelajari secara visual dan interaktif cara kerja AC pendingin ruangan di iklim tropis yang panas dan lembap. Dilengkapi simulator beban termal, dehumidifikasi, perbandingan Inverter vs Non-Inverter, dan kalkulator PK AC." />
+  <meta name="keywords" content="cara kerja AC di iklim tropis, siklus refrigerasi AC, kompresor kondensor evaporator, AC inverter hemat listrik, kelembapan udara tropis, dehumidifikasi AC, kalkulator PK AC, teknik pendingin tata udara" />
+  <meta name="author" content="Ariel Usman" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="theme-color" content="#0284c7" />
+  <link rel="canonical" href="https://aerotropis.edukasi.id/cara-kerja-ac-iklim-tropis.html" />
+
+  <!-- Open Graph / Facebook / WhatsApp Preview -->
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="id_ID" />
+  <meta property="og:site_name" content="AeroTropis Edukasi HVAC" />
+  <meta property="og:title" content="Cara Kerja AC Pendingin di Iklim Tropis — Panduan Visual & Simulator Interaktif" />
+  <meta property="og:description" content="Pahami bagaimana AC menaklukkan panas 35°C dan kelembapan tinggi 85% di wilayah tropis. Coba simulator konsumsi daya & kondensasi AC secara langsung!" />
+  <meta property="og:url" content="https://aerotropis.edukasi.id/cara-kerja-ac-iklim-tropis.html" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1631545806609-35d4ae440431?auto=format&fit=crop&w=1200&q=80" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Ilustrasi sistem pendingin udara modern di ruang tropis yang sejuk" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cara Kerja AC Pendingin di Iklim Tropis | AeroTropis" />
+  <meta name="twitter:description" content="Eksplorasi interaktif siklus termodinamika AC, proses dehumidifikasi udara lembap, dan simulator beban kerja AC di iklim tropis." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1631545806609-35d4ae440431?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Favicon SVG Inline (Kepingan Salju & Sirkulasi Udara Biru Cerah) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%230ea5e9'/%3E%3Cstop offset='100%25' stop-color='%2310b981'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Cpath d='M32 12v40M14.7 22l34.6 20M49.3 22L14.7 42' stroke='white' stroke-width='4.5' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='32' r='6' fill='white'/%3E%3C/svg%3E" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter untuk Keterbacaan Tinggi -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            }
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'dash': 'dash 18s linear infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            dash: {
+              'to': { strokeDashoffset: '-360' }
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- JSON-LD Structured Data (TechArticle & FAQPage untuk Rich Results Google) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "headline": "Cara Kerja AC Pendingin di Iklim Tropis: Siklus Refrigerasi, Dehumidifikasi & Efisiensi Energi",
+        "description": "Panduan teknis interaktif mengenai cara kerja sistem Air Conditioner (AC) dalam menyerap panas sensibel dan panas laten di wilayah beriklim tropis yang panas dan lembap.",
+        "image": "https://images.unsplash.com/photo-1631545806609-35d4ae440431?auto=format&fit=crop&w=1200&q=80",
+        "author": {
+          "@type": "Person",
+          "name": "Ariel Usman",
+          "url": "https://instagram.com/arielrcun"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "AeroTropis Edukasi",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://images.unsplash.com/photo-1631545806609-35d4ae440431?auto=format&fit=crop&w=400&q=80"
+          }
+        },
+        "datePublished": "2026-01-15",
+        "dateModified": "2026-11-22",
+        "inLanguage": "id-ID",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://aerotropis.edukasi.id/cara-kerja-ac-iklim-tropis.html"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Mengapa AC bekerja lebih berat di iklim tropis dibandingkan daerah kering?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Di iklim tropis, udara memiliki suhu tinggi sekaligus kelembapan relatif tinggi (70%-90%). AC tidak hanya menurunkan suhu udara (panas sensibel), tetapi juga harus mengembunkan uap air berlebih di udara (panas laten/dehumidifikasi) yang menyumbang hingga 40% dari total beban kerja kompresor."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Berapa suhu AC paling ideal dan hemat listrik untuk iklim tropis seperti Indonesia?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Suhu ideal AC di iklim tropis adalah 24°C hingga 25°C dengan kelembapan ruangan terjaga di 50%-60%. Setiap penurunan 1°C di bawah 24°C dapat meningkatkan konsumsi listrik kompresor sekitar 6% hingga 10%."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Mengapa unit indoor AC di negara tropis sering mengeluarkan banyak air melalui pipa pembuangan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Air tersebut merupakan hasil kondensasi uap air lembap di dalam ruangan yang menyentuh sirip-sirip evaporator dingin (bersuhu sekitar 5°C–8°C). Semakin tinggi kelembapan udara tropis, semakin banyak tetesan air kondensat yang dihasilkan."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* Kustomisasi Scrollbar Lembut & Utilitas Glassmorphism */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f0f9ff;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #7dd3fc;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #0284c7;
+    }
+
+    /* Range Slider Cerah Kustom */
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
+      cursor: pointer;
+    }
+    input[type="range"]::-webkit-slider-runnable-track {
+      height: 8px;
+      border-radius: 9999px;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 22px;
+      width: 22px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 3px solid #0284c7;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.35);
+      margin-top: -7px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.12);
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.5);
+    }
+    input[type="range"]::-moz-range-thumb {
+      height: 22px;
+      width: 22px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 3px solid #0284c7;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.35);
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-sky-50 via-white to-emerald-50/60 text-slate-800 antialiased selection:bg-sky-200 selection:text-sky-900 overflow-x-hidden">
+
+  <!-- =====================================================================
+       NAVBAR RESPONSIF (Kiri: Nama Project, Kanan: Menu + Toggle Sidebar)
+       ===================================================================== -->
+  <header class="sticky top-0 z-40 w-full backdrop-blur-xl bg-white/80 border-b border-sky-100/80 shadow-sm transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20 gap-3">
+        
+        <!-- Kiri: Logo & Nama Project -->
+        <a href="#" class="flex items-center gap-3 group focus:outline-none">
+          <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-sky-500 via-cyan-500 to-emerald-400 flex items-center justify-center text-white shadow-md shadow-sky-200 group-hover:scale-105 transition-transform">
+            <i data-lucide="wind" class="w-6 h-6"></i>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-display font-extrabold text-lg sm:text-xl tracking-tight bg-gradient-to-r from-sky-700 via-cyan-600 to-emerald-600 bg-clip-text text-transparent">
+              AeroTropis
+            </span>
+            <span class="text-[11px] sm:text-xs font-medium text-slate-500 hidden xs:block">
+              Cara Kerja AC di Iklim Tropis
+            </span>
+          </div>
+        </a>
+
+        <!-- Kanan: Menu Navigasi Urut + Tombol Sidebar & Unduh -->
+        <nav aria-label="Navigasi Utama" class="flex items-center gap-1 sm:gap-2 lg:gap-5">
+          <!-- Menu Desktop & Tablet -->
+          <div class="hidden lg:flex items-center gap-6 text-sm font-semibold text-slate-600">
+            <a href="#siklus-refrigerasi" class="hover:text-sky-600 transition-colors py-2">Siklus Refrigerasi</a>
+            <a href="#simulator-tropis" class="hover:text-sky-600 transition-colors py-2">Simulator Tropis</a>
+            <a href="#komponen-utama" class="hover:text-sky-600 transition-colors py-2">Komponen Utama</a>
+            <a href="#tips-hemat" class="hover:text-sky-600 transition-colors py-2">Tips Hemat Energi</a>
+          </div>
+
+          <!-- Tombol Buka Sidebar Topik Terkait (Selalu Mudah Dijangkau di HP/iPad/PC) -->
+          <button
+            type="button"
+            onclick="toggleSidebar(true)"
+            aria-label="Buka Panel Topik Terkait"
+            class="inline-flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-sky-50 hover:bg-sky-100 text-sky-700 border border-sky-200/80 text-xs sm:text-sm font-semibold transition-all active:scale-95"
+          >
+            <i data-lucide="panel-right-open" class="w-4 h-4 text-sky-600"></i>
+            <span>Topik Terkait</span>
+            <span class="hidden sm:inline-flex items-center justify-center px-1.5 py-0.5 text-[10px] font-bold bg-emerald-500 text-white rounded-full">4</span>
+          </button>
+
+          <!-- Tombol Unduh Kode Resource (Compact di Navbar) -->
+          <button
+            type="button"
+            onclick="openDownloadModal()"
+            class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-sky-600 to-cyan-500 hover:from-sky-700 hover:to-cyan-600 text-white text-sm font-semibold shadow-md shadow-sky-200 transition-all active:scale-95"
+          >
+            <i data-lucide="download" class="w-4 h-4"></i>
+            <span>Unduh Kode</span>
+          </button>
+
+          <!-- Tombol Menu Mobile (Android / Portrait Tablet) -->
+          <button
+            type="button"
+            id="mobileMenuBtn"
+            onclick="toggleMobileNav()"
+            aria-label="Menu Navigasi Mobile"
+            class="lg:hidden p-2.5 rounded-xl text-slate-600 hover:bg-sky-50 hover:text-sky-600 border border-slate-200/70 transition-colors"
+          >
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Dropdown Navigasi Mobile/Tablet -->
+    <div id="mobileNavDrawer" class="hidden lg:hidden bg-white/95 backdrop-blur-xl border-b border-sky-100 px-4 pt-2 pb-5 space-y-2 shadow-lg">
+      <a href="#siklus-refrigerasi" onclick="toggleMobileNav()" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 hover:bg-sky-50 hover:text-sky-700">
+        <i data-lucide="refresh-cw" class="w-4 h-4 text-sky-500"></i> Siklus Refrigerasi
+      </a>
+      <a href="#simulator-tropis" onclick="toggleMobileNav()" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 hover:bg-sky-50 hover:text-sky-700">
+        <i data-lucide="sliders" class="w-4 h-4 text-cyan-500"></i> Simulator Tropis
+      </a>
+      <a href="#komponen-utama" onclick="toggleMobileNav()" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 hover:bg-sky-50 hover:text-sky-700">
+        <i data-lucide="cpu" class="w-4 h-4 text-emerald-500"></i> Komponen Utama
+      </a>
+      <a href="#tips-hemat" onclick="toggleMobileNav()" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 hover:bg-sky-50 hover:text-sky-700">
+        <i data-lucide="leaf" class="w-4 h-4 text-teal-500"></i> Tips Hemat Energi
+      </a>
+      <div class="pt-2">
+        <button
+          type="button"
+          onclick="toggleMobileNav(); openDownloadModal();"
+          class="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-sky-600 to-emerald-500 text-white text-sm font-bold shadow-md"
+        >
+          <i data-lucide="code-2" class="w-4 h-4"></i> Unduh Kode Resource
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       HERO SECTION MODERN (GLASSMORPHISM CERAH & SEJUK)
+       ===================================================================== -->
+  <section class="relative overflow-hidden pt-8 pb-16 sm:pt-14 sm:pb-24 lg:pt-16 lg:pb-28">
+    <!-- Elemen Dekoratif Blob Cerah di Latar Belakang -->
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 overflow-hidden">
+      <div class="absolute -top-24 -left-20 w-80 h-80 sm:w-[30rem] sm:h-[30rem] rounded-full bg-gradient-to-br from-sky-300/45 to-cyan-200/40 blur-3xl animate-pulse-slow"></div>
+      <div class="absolute top-28 -right-24 w-72 h-72 sm:w-[28rem] sm:h-[28rem] rounded-full bg-gradient-to-tr from-emerald-300/40 to-teal-200/35 blur-3xl animate-float"></div>
+      <div class="absolute bottom-0 left-1/3 w-96 h-64 rounded-full bg-amber-200/30 blur-3xl"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Kartu Utama Glassmorphism -->
+      <div class="backdrop-blur-lg bg-white/75 border border-white/80 rounded-3xl shadow-2xl shadow-sky-900/5 p-6 sm:p-10 lg:p-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          <!-- Kolom Kiri: Teks Utama & CTA -->
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-sky-100 to-emerald-100 border border-sky-200/70 text-sky-800 text-xs sm:text-sm font-semibold">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+              <span>Edukasi Termodinamika & Tata Udara Tropis</span>
+            </div>
+
+            <h1 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-slate-900 leading-[1.15] tracking-tight">
+              Bagaimana <span class="bg-gradient-to-r from-sky-600 via-cyan-500 to-emerald-500 bg-clip-text text-transparent">AC Pendingin</span> Menaklukkan Panas & Lembap Iklim Tropis?
+            </h1>
+
+            <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl">
+              Di negara tropis seperti Indonesia, suhu udara mencapai <strong>32°C–36°C</strong> dengan kelembapan relatif di atas <strong>80%</strong>. Pelajari bagaimana sistem Air Conditioner memindahkan panas ruangan sekaligus memeras uap air berlebih melalui siklus refrigerasi modern.
+            </p>
+
+            <!-- Statistik Singkat Iklim Tropis -->
+            <div class="grid grid-cols-3 gap-3 sm:gap-4 pt-1">
+              <div class="p-3 sm:p-4 rounded-2xl bg-sky-50/90 border border-sky-100">
+                <div class="text-xs font-medium text-slate-500">Suhu Luar Tropis</div>
+                <div class="font-display font-extrabold text-lg sm:text-2xl text-amber-600 mt-0.5">32°–36°C</div>
+              </div>
+              <div class="p-3 sm:p-4 rounded-2xl bg-cyan-50/90 border border-cyan-100">
+                <div class="text-xs font-medium text-slate-500">Kelembapan (RH)</div>
+                <div class="font-display font-extrabold text-lg sm:text-2xl text-sky-600 mt-0.5">75%–90%</div>
+              </div>
+              <div class="p-3 sm:p-4 rounded-2xl bg-emerald-50/90 border border-emerald-100">
+                <div class="text-xs font-medium text-slate-500">Target Nyaman</div>
+                <div class="font-display font-extrabold text-lg sm:text-2xl text-emerald-600 mt-0.5">24°–25°C</div>
+              </div>
+            </div>
+
+            <!-- Dua Tombol CTA Utama -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
+              <a
+                href="#simulator-tropis"
+                class="inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-gradient-to-r from-sky-600 via-cyan-500 to-emerald-500 hover:from-sky-700 hover:via-cyan-600 hover:to-emerald-600 text-white font-bold text-sm sm:text-base shadow-lg shadow-sky-300/50 transition-all hover:-translate-y-0.5 active:scale-95"
+              >
+                <i data-lucide="gauge" class="w-5 h-5"></i>
+                <span>Coba Simulator Beban AC</span>
+              </a>
+
+              <button
+                type="button"
+                onclick="openDownloadModal()"
+                class="inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-white hover:bg-sky-50 text-slate-800 border-2 border-sky-200 hover:border-sky-400 font-bold text-sm sm:text-base shadow-md transition-all hover:-translate-y-0.5 active:scale-95"
+              >
+                <i data-lucide="download-cloud" class="w-5 h-5 text-sky-600"></i>
+                <span>Unduh Kode Resource</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Kolom Kanan: Kartu Visualisasi Sirkulasi Udara & Gambar Referensi -->
+          <div class="lg:col-span-5">
+            <div class="relative rounded-3xl bg-gradient-to-b from-sky-100/80 via-white/90 to-emerald-100/70 border border-white p-5 sm:p-6 shadow-xl">
+              <!-- Gambar Unit AC Modern (Unsplash dengan Fallback) -->
+              <div class="relative rounded-2xl overflow-hidden aspect-[16/10] mb-5 shadow-md bg-sky-100">
+                <img
+                  src="https://images.unsplash.com/photo-1631545806609-35d4ae440431?auto=format&fit=crop&w=900&q=80"
+                  alt="Unit AC Split Modern di Ruangan Tropis Sejuk"
+                  onerror="this.onerror=null;this.src='https://placehold.co/800x500/e0f2fe/0284c7?text=Sistem+Pendingin+AC+Tropis';"
+                  class="w-full h-full object-cover"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+                <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white">
+                  <span class="inline-flex items-center gap-1.5 text-xs font-semibold bg-white/20 backdrop-blur-md px-3 py-1 rounded-full border border-white/30">
+                    <i data-lucide="droplets" class="w-3.5 h-3.5 text-cyan-300"></i> Dehumidifikasi Aktif
+                  </span>
+                  <span class="text-xs font-bold bg-emerald-500/90 px-2.5 py-1 rounded-full">
+                    R32 Eco Refrigerant
+                  </span>
+                </div>
+              </div>
+
+              <!-- Skema Mini Pertukaran Panas Indoor <-> Outdoor -->
+              <div class="space-y-3">
+                <div class="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-slate-500">
+                  <span>Prinsip Pemindahan Panas</span>
+                  <span class="text-sky-600">Hukum Termodinamika II</span>
+                </div>
+
+                <div class="grid grid-cols-11 items-center gap-2 bg-white/90 rounded-2xl p-3.5 border border-sky-100 shadow-sm">
+                  <!-- Indoor -->
+                  <div class="col-span-4 text-center p-2 rounded-xl bg-sky-50">
+                    <i data-lucide="snowflake" class="w-6 h-6 text-sky-500 mx-auto mb-1"></i>
+                    <div class="text-xs font-bold text-slate-800">Indoor</div>
+                    <div class="text-[11px] text-sky-700 font-semibold">Serap Panas + Uap Air</div>
+                  </div>
+
+                  <!-- Pipa Refrigeran Animasi -->
+                  <div class="col-span-3 flex flex-col items-center justify-center">
+                    <span class="text-[10px] font-bold text-emerald-600 mb-1">Pipa Tembaga</span>
+                    <div class="w-full h-2 rounded-full bg-gradient-to-r from-sky-400 via-cyan-400 to-amber-400 relative overflow-hidden">
+                      <div class="absolute inset-0 bg-white/40 animate-pulse"></div>
+                    </div>
+                    <span class="text-[10px] text-slate-400 mt-1">Freon R32</span>
+                  </div>
+
+                  <!-- Outdoor -->
+                  <div class="col-span-4 text-center p-2 rounded-xl bg-amber-50">
+                    <i data-lucide="sun" class="w-6 h-6 text-amber-500 mx-auto mb-1"></i>
+                    <div class="text-xs font-bold text-slate-800">Outdoor</div>
+                    <div class="text-[11px] text-amber-700 font-semibold">Buang Kalor ke Luar</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       BAGIAN 1: 4 TAHAP SIKLUS KOMPRESI UAP INTERAKTIF
+       ===================================================================== -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 sm:space-y-28 pb-20">
+    
+    <section id="siklus-refrigerasi" class="scroll-mt-24">
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14 space-y-3">
+        <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-sky-100 text-sky-700 text-xs font-bold uppercase tracking-wider">
+          <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i> Siklus Termodinamika Tertutup
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-slate-900">
+          4 Tahap Utama Cara Kerja Mesin AC
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base">
+          AC tidak menciptakan udara dingin dari ketiadaan, melainkan <strong>memindahkan energi panas</strong> dari dalam ruangan ke luar menggunakan fluida refrigeran. Klik setiap tahap di bawah untuk melihat perubahan fase & suhunya.
+        </p>
+      </div>
+
+      <!-- Grid Selector 4 Tahap + Panel Detail Interaktif -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+        
+        <!-- 4 Kartu Tahapan (Kiri/Atas) -->
+        <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <!-- Tahap 1 -->
+          <button
+            type="button"
+            onclick="selectCycleStage(0)"
+            id="stage-btn-0"
+            class="stage-card text-left p-5 rounded-3xl border-2 border-sky-500 bg-white shadow-lg shadow-sky-100 transition-all hover:-translate-y-0.5 focus:outline-none"
+          >
+            <div class="flex items-center justify-between mb-3">
+              <span class="w-9 h-9 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center font-display font-extrabold">1</span>
+              <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200">Outdoor Unit</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-slate-900">Kompresor</h3>
+            <p class="text-xs sm:text-sm text-slate-500 mt-1">Memompa & memampatkan gas refrigeran hingga bersuhu dan bertekanan tinggi.</p>
+            <div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-amber-600">
+              <span>Gas Panas ~75°C</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </div>
+          </button>
+
+          <!-- Tahap 2 -->
+          <button
+            type="button"
+            onclick="selectCycleStage(1)"
+            id="stage-btn-1"
+            class="stage-card text-left p-5 rounded-3xl border-2 border-slate-200/80 bg-white/80 hover:bg-white shadow-sm transition-all hover:-translate-y-0.5 focus:outline-none"
+          >
+            <div class="flex items-center justify-between mb-3">
+              <span class="w-9 h-9 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center font-display font-extrabold">2</span>
+              <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-orange-50 text-orange-700 border border-orange-200">Outdoor Unit</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-slate-900">Kondensor</h3>
+            <p class="text-xs sm:text-sm text-slate-500 mt-1">Melepas panas ke udara luar dengan kipas sehingga gas mengembun menjadi cairan.</p>
+            <div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-orange-600">
+              <span>Cair Hangat ~45°C</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </div>
+          </button>
+
+          <!-- Tahap 3 -->
+          <button
+            type="button"
+            onclick="selectCycleStage(2)"
+            id="stage-btn-2"
+            class="stage-card text-left p-5 rounded-3xl border-2 border-slate-200/80 bg-white/80 hover:bg-white shadow-sm transition-all hover:-translate-y-0.5 focus:outline-none"
+          >
+            <div class="flex items-center justify-between mb-3">
+              <span class="w-9 h-9 rounded-xl bg-cyan-100 text-cyan-600 flex items-center justify-center font-display font-extrabold">3</span>
+              <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-cyan-50 text-cyan-700 border border-cyan-200">Pipa Kapiler / EEV</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-slate-900">Katup Ekspansi</h3>
+            <p class="text-xs sm:text-sm text-slate-500 mt-1">Menurunkan tekanan refrigeran cair secara drastis hingga suhunya anjlok membeku.</p>
+            <div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-cyan-600">
+              <span>Kabut Dingin ~5°C</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </div>
+          </button>
+
+          <!-- Tahap 4 -->
+          <button
+            type="button"
+            onclick="selectCycleStage(3)"
+            id="stage-btn-3"
+            class="stage-card text-left p-5 rounded-3xl border-2 border-slate-200/80 bg-white/80 hover:bg-white shadow-sm transition-all hover:-translate-y-0.5 focus:outline-none"
+          >
+            <div class="flex items-center justify-between mb-3">
+              <span class="w-9 h-9 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center font-display font-extrabold">4</span>
+              <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-sky-50 text-sky-700 border border-sky-200">Indoor Unit</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-slate-900">Evaporator</h3>
+            <p class="text-xs sm:text-sm text-slate-500 mt-1">Menyerap panas ruangan & mengembunkan uap air tropis menjadi tetesan air.</p>
+            <div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-sky-600">
+              <span>Udara Sejuk 16°–24°C</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </div>
+          </button>
+        </div>
+
+        <!-- Panel Detail Dinamis Tahapan yang Dipilih (Kanan/Bawah) -->
+        <div class="lg:col-span-6 bg-white rounded-3xl border border-sky-100 shadow-xl shadow-sky-900/5 p-6 sm:p-8">
+          <div id="stageDetailContent" class="space-y-5">
+            <!-- Diisi otomatis oleh JavaScript saat load & klik -->
+          </div>
+
+          <!-- Navigasi Cepat Antar Tahap -->
+          <div class="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between">
+            <button
+              type="button"
+              onclick="stepCycleStage(-1)"
+              class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-semibold transition-colors"
+            >
+              <i data-lucide="chevron-left" class="w-4 h-4"></i> Sebelumnya
+            </button>
+            <span id="stageIndicatorText" class="text-xs font-bold text-slate-400">Tahap 1 dari 4</span>
+            <button
+              type="button"
+              onclick="stepCycleStage(1)"
+              class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-sky-600 hover:bg-sky-700 text-white text-xs sm:text-sm font-semibold transition-colors"
+            >
+              Selanjutnya <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         BAGIAN 2: SIMULATOR INTERAKTIF BEBAN KERJA AC IKLIM TROPIS
+         ===================================================================== -->
+    <section id="simulator-tropis" class="scroll-mt-24">
+      <div class="rounded-3xl bg-gradient-to-br from-sky-600 via-cyan-600 to-emerald-600 p-1 shadow-2xl shadow-sky-200">
+        <div class="bg-white/95 backdrop-blur-xl rounded-[22px] p-6 sm:p-10 lg:p-12">
+          
+          <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 pb-8 border-b border-slate-100">
+            <div class="space-y-2">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider">
+                <i data-lucide="activity" class="w-3.5 h-3.5"></i> Laboratorium Interaktif Real-Time
+              </span>
+              <h2 class="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl text-slate-900">
+                Simulator Beban Kerja AC Iklim Tropis
+              </h2>
+              <p class="text-slate-600 text-sm sm:text-base max-w-2xl">
+                Ubah parameter cuaca luar ruangan tropis dan pengaturan remote AC untuk melihat dampaknya terhadap kerja kompresor, pembuangan air kondensasi, dan tagihan listrik.
+              </p>
+            </div>
+
+            <!-- Pilihan Teknologi Kompresor -->
+            <div class="inline-flex p-1.5 rounded-2xl bg-slate-100 border border-slate-200 self-start">
+              <button
+                type="button"
+                id="btnModeInverter"
+                onclick="setAcTechnology('inverter')"
+                class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-white text-sky-700 shadow-sm transition-all"
+              >
+                AC Inverter (Variabel)
+              </button>
+              <button
+                type="button"
+                id="btnModeStandard"
+                onclick="setAcTechnology('standard')"
+                class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-slate-600 hover:text-slate-900 transition-all"
+              >
+                AC Standar (On/Off)
+              </button>
+            </div>
+          </div>
+
+          <!-- Grid Kontrol Slider & Output Visual -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-8">
+            
+            <!-- Kolom Kontrol (Kiri - 5 Kolom) -->
+            <div class="lg:col-span-5 space-y-6 bg-sky-50/70 p-6 rounded-3xl border border-sky-100">
+              
+              <!-- Slider 1: Suhu Luar Ruangan -->
+              <div class="space-y-2">
+                <div class="flex justify-between items-center">
+                  <label for="outdoorTempSlider" class="text-sm font-bold text-slate-800 flex items-center gap-2">
+                    <i data-lucide="sun" class="w-4 h-4 text-amber-500"></i> Suhu Udara Luar (Tropis)
+                  </label>
+                  <span id="outdoorTempVal" class="px-3 py-1 rounded-lg bg-amber-100 text-amber-800 font-display font-extrabold text-sm">34°C</span>
+                </div>
+                <input
+                  id="outdoorTempSlider"
+                  type="range"
+                  min="28"
+                  max="39"
+                  value="34"
+                  oninput="updateSimulator()"
+                  class="w-full accent-amber-500 bg-gradient-to-r from-amber-200 to-orange-400 rounded-full"
+                />
+                <div class="flex justify-between text-[11px] text-slate-500 font-medium">
+                  <span>28°C (Mendung)</span>
+                  <span>34°C (Siang Tropis)</span>
+                  <span>39°C (Terik Ekstrem)</span>
+                </div>
+              </div>
+
+              <!-- Slider 2: Kelembapan Relatif (RH) -->
+              <div class="space-y-2">
+                <div class="flex justify-between items-center">
+                  <label for="humiditySlider" class="text-sm font-bold text-slate-800 flex items-center gap-2">
+                    <i data-lucide="droplets" class="w-4 h-4 text-cyan-600"></i> Kelembapan Udara (RH)
+                  </label>
+                  <span id="humidityVal" class="px-3 py-1 rounded-lg bg-cyan-100 text-cyan-800 font-display font-extrabold text-sm">82%</span>
+                </div>
+                <input
+                  id="humiditySlider"
+                  type="range"
+                  min="55"
+                  max="95"
+                  value="82"
+                  oninput="updateSimulator()"
+                  class="w-full bg-gradient-to-r from-sky-200 to-cyan-500 rounded-full"
+                />
+                <div class="flex justify-between text-[11px] text-slate-500 font-medium">
+                  <span>55% (Cukup Kering)</span>
+                  <span>80% (Tropis Lembap)</span>
+                  <span>95% (Habis Hujan)</span>
+                </div>
+              </div>
+
+              <!-- Slider 3: Target Suhu Remote AC -->
+              <div class="space-y-2">
+                <div class="flex justify-between items-center">
+                  <label for="targetTempSlider" class="text-sm font-bold text-slate-800 flex items-center gap-2">
+                    <i data-lucide="thermometer-snowflake" class="w-4 h-4 text-sky-600"></i> Target Suhu Remote AC
+                  </label>
+                  <span id="targetTempVal" class="px-3 py-1 rounded-lg bg-sky-100 text-sky-800 font-display font-extrabold text-sm">24°C</span>
+                </div>
+                <input
+                  id="targetTempSlider"
+                  type="range"
+                  min="18"
+                  max="27"
+                  value="24"
+                  oninput="updateSimulator()"
+                  class="w-full bg-gradient-to-r from-sky-500 to-emerald-400 rounded-full"
+                />
+                <div class="flex justify-between text-[11px] text-slate-500 font-medium">
+                  <span>18°C (Sangat Dingin)</span>
+                  <span>24°C (Ideal Tropis)</span>
+                  <span>27°C (Hemat Eco)</span>
+                </div>
+              </div>
+
+              <!-- Tombol Preset Cepat -->
+              <div class="pt-2">
+                <span class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Skenario Cepat:</span>
+                <div class="grid grid-cols-2 gap-2">
+                  <button
+                    type="button"
+                    onclick="applyPreset(35, 85, 18)"
+                    class="px-3 py-2 rounded-xl bg-white hover:bg-amber-50 border border-slate-200 text-xs font-semibold text-slate-700 transition-colors"
+                  >
+                    Siang Terik + Set 18°C
+                  </button>
+                  <button
+                    type="button"
+                    onclick="applyPreset(32, 78, 25)"
+                    class="px-3 py-2 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 text-xs font-semibold text-emerald-700 transition-colors"
+                  >
+                    Mode Nyaman Hemat 25°C
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Kolom Hasil Metrik & Visualisasi (Kanan - 7 Kolom) -->
+            <div class="lg:col-span-7 flex flex-col justify-between space-y-6">
+              
+              <!-- 4 Kartu Metrik Hasil Simulasi -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Metrik 1: Selisih Suhu Delta T -->
+                <div class="p-5 rounded-2xl bg-gradient-to-br from-sky-50 to-white border border-sky-100 shadow-sm">
+                  <div class="flex items-center justify-between text-xs font-semibold text-slate-500">
+                    <span>Selisih Termal (ΔT)</span>
+                    <i data-lucide="arrow-left-right" class="w-4 h-4 text-sky-500"></i>
+                  </div>
+                  <div id="metricDeltaT" class="font-display font-extrabold text-2xl sm:text-3xl text-slate-900 mt-2">10°C</div>
+                  <p id="metricDeltaDesc" class="text-xs text-slate-500 mt-1">Beban pembuangan panas sedang</p>
+                </div>
+
+                <!-- Metrik 2: Laju Kondensasi Air (Dehumidifikasi) -->
+                <div class="p-5 rounded-2xl bg-gradient-to-br from-cyan-50 to-white border border-cyan-100 shadow-sm">
+                  <div class="flex items-center justify-between text-xs font-semibold text-slate-500">
+                    <span>Air Kondensasi (Tetesan)</span>
+                    <i data-lucide="droplet" class="w-4 h-4 text-cyan-500"></i>
+                  </div>
+                  <div id="metricCondensation" class="font-display font-extrabold text-2xl sm:text-3xl text-cyan-700 mt-2">1.45 L/jam</div>
+                  <p id="metricCondDesc" class="text-xs text-slate-500 mt-1">Panas laten uap air diserap evaporator</p>
+                </div>
+
+                <!-- Metrik 3: Estimasi Daya Listrik (Kapasitas 1 PK) -->
+                <div class="p-5 rounded-2xl bg-gradient-to-br from-emerald-50 to-white border border-emerald-100 shadow-sm">
+                  <div class="flex items-center justify-between text-xs font-semibold text-slate-500">
+                    <span>Estimasi Daya (AC 1 PK)</span>
+                    <i data-lucide="zap" class="w-4 h-4 text-emerald-500"></i>
+                  </div>
+                  <div id="metricWattage" class="font-display font-extrabold text-2xl sm:text-3xl text-emerald-700 mt-2">540 Watt</div>
+                  <p id="metricWattDesc" class="text-xs text-slate-500 mt-1">Frekuensi kompresor menyesuaikan suhu</p>
+                </div>
+
+                <!-- Metrik 4: Beban Kerja Kompresor -->
+                <div class="p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-white border border-amber-100 shadow-sm">
+                  <div class="flex items-center justify-between text-xs font-semibold text-slate-500">
+                    <span>Beban Kerja Kompresor</span>
+                    <i data-lucide="gauge" class="w-4 h-4 text-amber-500"></i>
+                  </div>
+                  <div id="metricLoadPercent" class="font-display font-extrabold text-2xl sm:text-3xl text-amber-600 mt-2">68%</div>
+                  <div class="w-full h-2.5 bg-slate-200 rounded-full mt-2 overflow-hidden">
+                    <div id="metricLoadBar" class="h-full bg-gradient-to-r from-emerald-500 via-sky-500 to-amber-500 rounded-full transition-all duration-300" style="width: 68%"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Kotak Rekomendasi & Analisis Cerdas Iklim Tropis -->
+              <div id="simulatorAdviceBox" class="p-5 rounded-2xl bg-emerald-50/90 border border-emerald-200 flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center shrink-0 mt-0.5">
+                  <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                </div>
+                <div class="space-y-1">
+                  <h4 id="adviceTitle" class="font-display font-bold text-sm sm:text-base text-emerald-900">
+                    Pengaturan Optimal untuk Iklim Tropis!
+                  </h4>
+                  <p id="adviceBody" class="text-xs sm:text-sm text-emerald-800 leading-relaxed">
+                    Pada suhu luar 34°C dan kelembapan 82%, menyetel AC di 24°C memberikan keseimbangan terbaik antara kenyamanan termal, pengurangan rasa lengket akibat kelembapan, dan efisiensi daya listrik.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         BAGIAN 3: FENOMENA KHUSUS & KOMPONEN UTAMA AC DI IKLIM TROPIS
+         ===================================================================== -->
+    <section id="komponen-utama" class="scroll-mt-24 space-y-10">
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-cyan-100 text-cyan-800 text-xs font-bold uppercase tracking-wider">
+          <i data-lucide="layers" class="w-3.5 h-3.5"></i> Karakteristik Udara Tropis
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-slate-900">
+          3 Tantangan Utama AC di Negara Tropis
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base">
+          Mengapa spesifikasi dan cara kerja AC di Indonesia berbeda dengan AC di wilayah gurun atau subtropis? Berikut faktor rekayasa termalnya.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Kartu 1 -->
+        <article class="bg-white rounded-3xl p-6 sm:p-7 border border-sky-100 shadow-lg shadow-sky-900/5 hover:-translate-y-1 transition-transform flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-400 to-sky-600 text-white flex items-center justify-center shadow-md shadow-sky-200">
+              <i data-lucide="droplets" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display font-bold text-xl text-slate-900">
+              Beban Panas Laten (Kelembapan Tinggi)
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Udara tropis mengandung uap air yang sangat jenuh. Sebelum suhu udara bisa turun terasa sejuk, kumparan evaporator harus mengembunkan uap air tersebut menjadi tetesan air. Proses perubahan fase gas ke cair ini menyerap hingga <strong>35%–45% kapasitas pendinginan AC</strong>.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-sky-600">
+            <span>Hasil: Air menetes dari pipa drain</span>
+            <button type="button" onclick="openSidebarTopic('kondensasi')" class="underline hover:text-sky-800">Baca Detail →</button>
+          </div>
+        </article>
+
+        <!-- Kartu 2 -->
+        <article class="bg-white rounded-3xl p-6 sm:p-7 border border-sky-100 shadow-lg shadow-sky-900/5 hover:-translate-y-1 transition-transform flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-500 text-white flex items-center justify-center shadow-md shadow-amber-200">
+              <i data-lucide="shield-check" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display font-bold text-xl text-slate-900">
+              Kondensor Tahan Korosi & Suhu Tinggi (T3)
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Unit outdoor di wilayah kepulauan tropis terpapar terik matahari, hujan asam, dan uap garam pesisir. Sirip kondensor modern dilapisi <em>Blue Fin</em> atau <em>Gold Fin</em> hidrofilik serta menggunakan kompresor kelas iklim tropis agar tetap mampu membuang kalor saat suhu luar mencapai 43°C.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-amber-600">
+            <span>Material: Tembaga & Blue Fin</span>
+            <button type="button" onclick="openSidebarTopic('refrigeran')" class="underline hover:text-amber-800">Info R32 →</button>
+          </div>
+        </article>
+
+        <!-- Kartu 3 -->
+        <article class="bg-white rounded-3xl p-6 sm:p-7 border border-sky-100 shadow-lg shadow-sky-900/5 hover:-translate-y-1 transition-transform flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-600 text-white flex items-center justify-center shadow-md shadow-emerald-200">
+              <i data-lucide="cpu" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display font-bold text-xl text-slate-900">
+              Modulasi Inverter & Mode Dry
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Berbeda dengan AC standar yang mematikan kompresor saat suhu tercapai (membuat ruangan kembali lembap & pengap), AC Inverter menurunkan putaran kompresor secara halus sehingga kelembapan tetap terkendali di kisaran ideal <strong>50%–60% RH</strong> tanpa lonjakan listrik.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-emerald-600">
+            <span>Hemat Energi hingga 40%</span>
+            <button type="button" onclick="openSidebarTopic('modedry')" class="underline hover:text-emerald-800">Cool vs Dry →</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         BAGIAN 4: TIPS HEMAT ENERGI & PERAWATAN AC IKLIM TROPIS
+         ===================================================================== -->
+    <section id="tips-hemat" class="scroll-mt-24">
+      <div class="bg-white rounded-3xl border border-sky-100 shadow-xl shadow-sky-900/5 p-6 sm:p-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-5 space-y-4">
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold uppercase tracking-wider">
+              <i data-lucide="leaf" class="w-3.5 h-3.5"></i> Panduan Praktis
+            </span>
+            <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-slate-900">
+              Cara Merawat & Menghemat Listrik AC di Daerah Tropis
+            </h2>
+            <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+              Lingkungan tropis yang lembap mempercepat pertumbuhan jamur dan lumut di dalam saluran pembuangan serta filter indoor. Terapkan 4 kebiasaan berikut agar AC awet dan tetap dingin maksimal.
+            </p>
+            <div class="pt-2 flex flex-wrap gap-3">
+              <button
+                type="button"
+                onclick="openSidebarTopic('kalkulator')"
+                class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-sky-600 hover:bg-sky-700 text-white text-sm font-bold shadow-md shadow-sky-200 transition-all"
+              >
+                <i data-lucide="calculator" class="w-4 h-4"></i>
+                <span>Hitung Kebutuhan PK Ruangan</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="p-5 rounded-2xl bg-sky-50/80 border border-sky-100 space-y-2">
+              <div class="flex items-center gap-2.5 font-display font-bold text-slate-900">
+                <span class="w-7 h-7 rounded-lg bg-sky-600 text-white text-xs flex items-center justify-center">01</span>
+                <span>Setel Suhu 24°C – 25°C</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-600">
+                Menyetel 16°C tidak membuat ruangan lebih cepat dingin, melainkan memaksa kompresor bekerja terus-menerus pada beban puncak.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-cyan-50/80 border border-cyan-100 space-y-2">
+              <div class="flex items-center gap-2.5 font-display font-bold text-slate-900">
+                <span class="w-7 h-7 rounded-lg bg-cyan-600 text-white text-xs flex items-center justify-center">02</span>
+                <span>Cuci Filter Tiap 2 Minggu</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-600">
+                Debu yang bercampur kelembapan tropis membentuk lapisan lendir yang menghambat aliran udara evaporator dan memboroskan daya hingga 15%.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-emerald-50/80 border border-emerald-100 space-y-2">
+              <div class="flex items-center gap-2.5 font-display font-bold text-slate-900">
+                <span class="w-7 h-7 rounded-lg bg-emerald-600 text-white text-xs flex items-center justify-center">03</span>
+                <span>Beri Naungan Unit Outdoor</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-600">
+                Lindungi unit outdoor dari paparan sinar matahari langsung tanpa menghalangi sirkulasi kipas pembuangan panasnya.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-teal-50/80 border border-teal-100 space-y-2">
+              <div class="flex items-center gap-2.5 font-display font-bold text-slate-900">
+                <span class="w-7 h-7 rounded-lg bg-teal-600 text-white text-xs flex items-center justify-center">04</span>
+                <span>Gunakan Mode Dry Saat Hujan</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-600">
+                Saat cuaca mendung atau hujan di daerah tropis, suhu udara tidak terlalu panas namun kelembapan melonjak. Mode Dry efektif menghilangkan rasa gerah.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================================
+       SIDEBAR INTERAKTIF (COLLAPSIBLE DRAWER HAL TERKAIT & KALKULATOR PK)
+       ===================================================================== -->
+  <div id="sidebarOverlay" onclick="toggleSidebar(false)" class="fixed inset-0 bg-slate-900/40 backdrop-blur-xs z-50 hidden transition-opacity"></div>
+
+  <aside
+    id="relatedSidebar"
+    aria-label="Sidebar Hal Terkait"
+    class="fixed top-0 right-0 h-full w-full max-w-md bg-white/95 backdrop-blur-xl border-l border-sky-100 shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-out flex flex-col"
+  >
+    <!-- Header Sidebar -->
+    <div class="p-5 border-b border-sky-100 flex items-center justify-between bg-gradient-to-r from-sky-50 to-emerald-50">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-xl bg-sky-600 text-white flex items-center justify-center">
+          <i data-lucide="book-open" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h3 class="font-display font-bold text-base text-slate-900">Hal Terkait & Alat Bantu</h3>
+          <p class="text-xs text-slate-500">Klik topik di bawah untuk membuka detail</p>
+        </div>
+      </div>
+      <button
+        type="button"
+        onclick="toggleSidebar(false)"
+        aria-label="Tutup Sidebar"
+        class="p-2 rounded-xl bg-white hover:bg-rose-50 text-slate-500 hover:text-rose-600 border border-slate-200 transition-colors"
+      >
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <!-- Konten Accordion & Kalkulator Mini di Sidebar -->
+    <div class="flex-1 overflow-y-auto p-5 space-y-4">
+      
+      <!-- Topik 1: Kenapa AC Meneteskan Air -->
+      <div class="rounded-2xl border border-sky-100 bg-white overflow-hidden shadow-xs">
+        <button
+          type="button"
+          onclick="toggleAccordion('kondensasi')"
+          class="w-full flex items-center justify-between p-4 text-left font-display font-bold text-sm text-slate-800 hover:bg-sky-50/70 transition-colors"
+        >
+          <span class="flex items-center gap-2.5">
+            <i data-lucide="droplets" class="w-4 h-4 text-cyan-600"></i>
+            Kenapa AC Meneteskan Banyak Air?
+          </span>
+          <i data-lucide="chevron-down" id="icon-kondensasi" class="w-4 h-4 text-slate-400 transition-transform"></i>
+        </button>
+        <div id="content-kondensasi" class="hidden px-4 pb-4 text-xs sm:text-sm text-slate-600 space-y-2 border-t border-slate-50 pt-3">
+          <p>
+            Udara tropis mengandung uap air tak kasat mata dalam jumlah besar. Ketika udara hangat ruangan melewati sirip <strong>evaporator</strong> yang bersuhu sekitar 5°C–8°C, uap air mencapai titik embun (<em>dew point</em>) dan berubah menjadi titik-titik air.
+          </p>
+          <p class="p-2.5 rounded-xl bg-cyan-50 text-cyan-900 font-medium">
+            Fakta: Di Jakarta, Makassar, atau Surabaya, AC 1 PK dapat menghasilkan 1 hingga 2 liter air kondensasi setiap jam!
+          </p>
+        </div>
+      </div>
+
+      <!-- Topik 2: Perbedaan Mode Cool vs Dry -->
+      <div class="rounded-2xl border border-sky-100 bg-white overflow-hidden shadow-xs">
+        <button
+          type="button"
+          onclick="toggleAccordion('modedry')"
+          class="w-full flex items-center justify-between p-4 text-left font-display font-bold text-sm text-slate-800 hover:bg-sky-50/70 transition-colors"
+        >
+          <span class="flex items-center gap-2.5">
+            <i data-lucide="cloud-rain" class="w-4 h-4 text-sky-600"></i>
+            Perbedaan Mode Cool vs Mode Dry
+          </span>
+          <i data-lucide="chevron-down" id="icon-modedry" class="w-4 h-4 text-slate-400 transition-transform"></i>
+        </button>
+        <div id="content-modedry" class="hidden px-4 pb-4 text-xs sm:text-sm text-slate-600 space-y-2 border-t border-slate-50 pt-3">
+          <ul class="space-y-2">
+            <li><strong>Mode Cool:</strong> Kompresor dan kipas indoor bekerja penuh menurunkan suhu ruangan hingga mencapai target remote. Cocok saat siang hari yang panas terik.</li>
+            <li><strong>Mode Dry (Dehumidify):</strong> Kipas indoor berputar sangat lambat sementara kompresor menyala berkala untuk memaksimalkan pengembunan uap air tanpa membuat ruangan terlalu dingin. Ideal saat musim hujan tropis.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Topik 3: Mengenal Refrigeran R32 -->
+      <div class="rounded-2xl border border-sky-100 bg-white overflow-hidden shadow-xs">
+        <button
+          type="button"
+          onclick="toggleAccordion('refrigeran')"
+          class="w-full flex items-center justify-between p-4 text-left font-display font-bold text-sm text-slate-800 hover:bg-sky-50/70 transition-colors"
+        >
+          <span class="flex items-center gap-2.5">
+            <i data-lucide="flame-kindling" class="w-4 h-4 text-emerald-600"></i>
+            Keunggulan Refrigeran R32 di Iklim Tropis
+          </span>
+          <i data-lucide="chevron-down" id="icon-refrigeran" class="w-4 h-4 text-slate-400 transition-transform"></i>
+        </button>
+        <div id="content-refrigeran" class="hidden px-4 pb-4 text-xs sm:text-sm text-slate-600 space-y-2 border-t border-slate-50 pt-3">
+          <p>
+            Refrigeran <strong>R32 (Difluorometana)</strong> menjadi standar AC modern di Indonesia karena memiliki indeks perpindahan panas lebih tinggi dibanding R22 maupun R410A, sehingga pendinginan ruangan tropis jauh lebih cepat.
+          </p>
+          <p>
+            Selain itu, R32 memiliki nilai <em>Ozone Depletion Potential (ODP) = 0</em> (tidak merusak ozon) dan potensi pemanasan global (GWP) 67% lebih rendah dari R410A.
+          </p>
+        </div>
+      </div>
+
+      <!-- Topik 4: Kalkulator PK AC Ruangan Tropis (Interaktif) -->
+      <div class="rounded-2xl border-2 border-sky-200 bg-gradient-to-b from-sky-50/80 to-white overflow-hidden shadow-sm">
+        <button
+          type="button"
+          onclick="toggleAccordion('kalkulator')"
+          class="w-full flex items-center justify-between p-4 text-left font-display font-bold text-sm text-sky-900 hover:bg-sky-100/50 transition-colors"
+        >
+          <span class="flex items-center gap-2.5">
+            <i data-lucide="calculator" class="w-4 h-4 text-sky-600"></i>
+            Kalkulator Kebutuhan PK AC Tropis
+          </span>
+          <i data-lucide="chevron-down" id="icon-kalkulator" class="w-4 h-4 text-sky-600 transition-transform rotate-180"></i>
+        </button>
+        <div id="content-kalkulator" class="px-4 pb-5 text-xs sm:text-sm text-slate-700 space-y-3 border-t border-sky-100 pt-3">
+          <p class="text-xs text-slate-500">Hitung kapasitas BTU/h & PK yang tepat agar kompresor tidak bekerja terlalu berat di iklim tropis:</p>
+          
+          <div class="grid grid-cols-2 gap-2.5">
+            <div>
+              <label for="roomLength" class="block text-[11px] font-bold text-slate-600 mb-1">Panjang (meter)</label>
+              <input id="roomLength" type="number" min="1" max="30" step="0.5" value="4" oninput="calculatePK()" class="w-full px-3 py-2 rounded-xl border border-sky-200 bg-white font-semibold text-slate-800 focus:outline-none focus:border-sky-500" />
+            </div>
+            <div>
+              <label for="roomWidth" class="block text-[11px] font-bold text-slate-600 mb-1">Lebar (meter)</label>
+              <input id="roomWidth" type="number" min="1" max="30" step="0.5" value="3" oninput="calculatePK()" class="w-full px-3 py-2 rounded-xl border border-sky-200 bg-white font-semibold text-slate-800 focus:outline-none focus:border-sky-500" />
+            </div>
+          </div>
+
+          <div>
+            <label for="sunExposure" class="block text-[11px] font-bold text-slate-600 mb-1">Paparan Matahari / Penghuni</label>
+            <select id="sunExposure" onchange="calculatePK()" class="w-full px-3 py-2 rounded-xl border border-sky-200 bg-white font-semibold text-slate-800 focus:outline-none focus:border-sky-500">
+              <option value="540">Standar (Teduh, 1-2 Orang)</option>
+              <option value="600" selected>Tropis Hangat (Kena Matahari Sore / 2-3 Orang)</option>
+              <option value="680">Atap Dak / Banyak Kaca & Elektronik</option>
+            </select>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-sky-600 text-white space-y-1">
+            <div class="flex justify-between text-xs opacity-90">
+              <span>Kebutuhan Termal:</span>
+              <span id="pkBtuResult" class="font-bold">7.200 BTU/h</span>
+            </div>
+            <div class="flex justify-between items-center pt-1">
+              <span class="text-xs font-medium">Rekomendasi Kapasitas:</span>
+              <span id="pkSizeResult" class="font-display font-extrabold text-base bg-white text-sky-700 px-2.5 py-0.5 rounded-lg">3/4 PK</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer Sidebar -->
+    <div class="p-4 border-t border-sky-100 bg-sky-50/60">
+      <button
+        type="button"
+        onclick="toggleSidebar(false); openDownloadModal();"
+        class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-sky-600 to-emerald-500 text-white text-xs sm:text-sm font-bold shadow-md hover:opacity-95 transition-opacity"
+      >
+        <i data-lucide="download" class="w-4 h-4"></i>
+        <span>Unduh Kode Resource Web Ini</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- =====================================================================
+       MODAL MONETISASI & UNDUH KODE RESOURCE (PAYPAL, TRAKTEER & GUEST)
+       ===================================================================== -->
+  <div
+    id="downloadModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+    class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 bg-slate-900/60 backdrop-blur-md"
+  >
+    <div class="relative w-full max-w-lg rounded-3xl bg-white border border-sky-100 shadow-2xl overflow-hidden animate-[fadeIn_0.2s_ease-out]">
+      
+      <!-- Header Gradasi Cerah Modal -->
+      <div class="bg-gradient-to-r from-sky-600 via-cyan-500 to-emerald-500 p-6 text-white relative">
+        <button
+          type="button"
+          onclick="closeDownloadModal()"
+          aria-label="Tutup Modal"
+          class="absolute top-4 right-4 w-9 h-9 rounded-xl bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors"
+        >
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-xs font-bold mb-3">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Open Source Edukasi
+        </div>
+        <h3 id="modalTitle" class="font-display font-extrabold text-xl sm:text-2xl">
+          Unduh Kode Resource Aplikasi
+        </h3>
+        <p class="text-sky-50 text-xs sm:text-sm mt-1">
+          Dapatkan file lengkap <strong>cara-kerja-ac-iklim-tropis.html</strong> beserta simulator & struktur SEO siap pakai.
+        </p>
+      </div>
+
+      <!-- Body Modal: Opsi Dukungan Kreator & Akses Guest -->
+      <div class="p-6 space-y-5">
+        <div class="text-center space-y-1">
+          <p class="text-sm font-semibold text-slate-800">
+            Dukung pengembangan konten edukasi teknologi & rekayasa berikutnya:
+          </p>
+          <p class="text-xs text-slate-500">
+            Apresiasi Anda sangat berarti untuk menjaga proyek edukasi tetap terus diperbarui.
+          </p>
+        </div>
+
+        <!-- 2 Tautan Pembayaran Resmi -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <!-- 1. Internasional: PayPal -->
+          <a
+            href="https://paypal.me/arielrcu"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex flex-col justify-between p-4 rounded-2xl border-2 border-sky-100 hover:border-sky-500 bg-sky-50/50 hover:bg-sky-50 transition-all"
+          >
+            <div class="flex items-center justify-between mb-2">
+              <span class="px-2.5 py-0.5 rounded-full bg-sky-600 text-white text-[10px] font-bold uppercase">Internasional</span>
+              <i data-lucide="external-link" class="w-4 h-4 text-sky-600 group-hover:translate-x-0.5 transition-transform"></i>
+            </div>
+            <div>
+              <div class="font-display font-extrabold text-base text-slate-900">PayPal</div>
+              <div class="text-xs text-slate-500 mt-0.5">paypal.me/arielrcu</div>
+            </div>
+          </a>
+
+          <!-- 2. Lokal (QRIS / E-Wallet): Trakteer -->
+          <a
+            href="https://trakteer.id/arielrcu"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex flex-col justify-between p-4 rounded-2xl border-2 border-rose-100 hover:border-rose-500 bg-rose-50/40 hover:bg-rose-50/80 transition-all"
+          >
+            <div class="flex items-center justify-between mb-2">
+              <span class="px-2.5 py-0.5 rounded-full bg-rose-600 text-white text-[10px] font-bold uppercase">Lokal • QRIS / E-Wallet</span>
+              <i data-lucide="external-link" class="w-4 h-4 text-rose-600 group-hover:translate-x-0.5 transition-transform"></i>
+            </div>
+            <div>
+              <div class="font-display font-extrabold text-base text-slate-900">Trakteer</div>
+              <div class="text-xs text-slate-500 mt-0.5">trakteer.id/arielrcu</div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Pembatas -->
+        <div class="relative flex py-1 items-center">
+          <div class="flex-grow border-t border-slate-200"></div>
+          <span class="flex-shrink mx-3 text-xs font-medium text-slate-400">atau unduh langsung secara gratis</span>
+          <div class="flex-grow border-t border-slate-200"></div>
+        </div>
+
+        <!-- Tombol Wajib: Download as Guest -->
+        <div class="space-y-2.5">
+          <button
+            type="button"
+            onclick="downloadAsGuest()"
+            class="w-full flex items-center justify-center gap-2.5 py-3.5 px-5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm shadow-lg transition-all active:scale-98"
+          >
+            <i data-lucide="file-code-2" class="w-5 h-5 text-emerald-400"></i>
+            <span>Download as Guest</span>
+          </button>
+          <p id="downloadFeedback" class="hidden text-center text-xs font-semibold text-emerald-600">
+            Berhasil! File cara-kerja-ac-iklim-tropis.html sedang diunduh ke perangkat Anda.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       FOOTER WAJIB: Oleh Ariel Usman Copyright 2026 & Insta: @arielrcun
+       ===================================================================== -->
+  <footer class="border-t border-sky-100 bg-white/90 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-sky-500 to-emerald-400 flex items-center justify-center text-white shadow-sm">
+            <i data-lucide="wind" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <p class="font-display font-bold text-sm sm:text-base text-slate-900">
+              Oleh Ariel Usman Copyright 2026
+            </p>
+            <p class="text-xs text-slate-500">
+              Platform Edukasi Interaktif Sistem Pendingin & Tata Udara Tropis
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <a
+            href="https://instagram.com/arielrcun"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram @arielrcun"
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-gradient-to-r from-pink-50 via-rose-50 to-amber-50 hover:from-pink-100 hover:to-amber-100 border border-rose-200/70 text-slate-800 text-xs sm:text-sm font-bold shadow-xs transition-all hover:-translate-y-0.5"
+          >
+            <i data-lucide="instagram" class="w-4 h-4 text-rose-600"></i>
+            <span>@arielrcun</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       JAVASCRIPT INTERAKTIF (SIKLUS AC, SIMULATOR TROPIS, SIDEBAR & DOWNLOAD)
+       ===================================================================== -->
+  <script>
+    // 1. DATA 4 TAHAP SIKLUS REFRIGERASI AC DI IKLIM TROPIS
+    const cycleStages = [
+      {
+        step: 1,
+        name: "Kompresor (Jantung Sirkulasi)",
+        location: "Unit Outdoor",
+        phase: "Gas Tekanan Rendah → Gas Tekanan Tinggi",
+        tempRange: "12°C masuk → 75°C–85°C keluar",
+        badgeColor: "bg-amber-100 text-amber-800",
+        icon: "cpu",
+        summary: "Kompresor menghisap uap refrigeran dingin bertekanan rendah dari evaporator dan memampatkannya sehingga tekanan serta suhunya melonjak tinggi.",
+        tropicalContext: "Di iklim tropis yang panas (34°C+), suhu luar yang tinggi menuntut kompresor menghasilkan tekanan pelepasan (discharge pressure) lebih tinggi agar panas tetap bisa mengalir keluar ke lingkungan.",
+        tip: "Teknologi Inverter mengatur kecepatan putaran motor kompresor secara halus agar tidak boros listrik saat suhu ruangan sudah stabil."
+      },
+      {
+        step: 2,
+        name: "Kondensor (Pelepas Kalor)",
+        location: "Unit Outdoor",
+        phase: "Gas Panas → Cairan Bertekanan Tinggi",
+        tempRange: "75°C turun menjadi ~42°C–48°C",
+        badgeColor: "bg-orange-100 text-orange-800",
+        icon: "fan",
+        summary: "Gas refrigeran panas mengalir melewati pipa-pipa bersirip kondensor. Kipas outdoor meniupkan udara luar melintasi sirip ini untuk membuang panas hingga refrigeran mengembun menjadi cair.",
+        tropicalContext: "Karena udara luar di negara tropis sudah hangat dan lembap, sirip kondensor harus bersih dari debu dan dilapisi anti-korosi (Blue/Gold Fin) agar pelepasan panas tidak terhambat.",
+        tip: "Pastikan jarak unit outdoor ke tembok minimal 30–50 cm agar udara panas tidak memantul kembali."
+      },
+      {
+        step: 3,
+        name: "Katup Ekspansi / Pipa Kapiler",
+        location: "Antara Outdoor & Indoor",
+        phase: "Cair Tekanan Tinggi → Kabut Dingin Tekanan Rendah",
+        tempRange: "45°C anjlok drastis ke 4°C–7°C",
+        badgeColor: "bg-cyan-100 text-cyan-800",
+        icon: "git-commit-horizontal",
+        summary: "Refrigeran cair bertekanan tinggi melewati celah sempit pipa kapiler atau Electronic Expansion Valve (EEV). Penurunan tekanan mendadak membuat sebagian cairan menguap seketika dan suhunya turun membeku.",
+        tropicalContext: "Pada AC Inverter modern, EEV membuka dan menutup katup secara presisi untuk menyesuaikan laju aliran refrigeran sesuai tingkat kelembapan ruangan.",
+        tip: "Pipa tembaga dari katup ekspansi menuju indoor wajib dibalut isolasi busa tebal agar tidak mengembun dan menetes di plafon."
+      },
+      {
+        step: 4,
+        name: "Evaporator (Penyerap Panas & Uap Air)",
+        location: "Unit Indoor",
+        phase: "Campuran Dingin → Gas Bertekanan Rendah",
+        tempRange: "5°C menyerap kalor → keluar ~12°C",
+        badgeColor: "bg-sky-100 text-sky-800",
+        icon: "snowflake",
+        summary: "Blower indoor meniupkan udara kamar yang hangat melewati kisi-kisi evaporator dingin. Refrigeran mendidih menyerap panas ruangan, sementara udara dingin segar dihembuskan kembali ke kamar.",
+        tropicalContext: "Inilah tahap terpenting di iklim tropis: saat udara lembap menyentuh sirip evaporator bersuhu 5°C, uap air mengembun menjadi air (dehumidifikasi) dan mengalir keluar melalui selang pembuangan.",
+        tip: "Udara yang kering (RH 55%) pada suhu 24°C terasa jauh lebih sejuk di kulit dibanding udara lembap (RH 85%) pada suhu yang sama."
+      }
+    ];
+
+    let currentStageIndex = 0;
+
+    function selectCycleStage(index) {
+      currentStageIndex = index;
+      const data = cycleStages[index];
+
+      // Perbarui gaya kartu aktif
+      document.querySelectorAll('.stage-card').forEach((card, idx) => {
+        if (idx === index) {
+          card.classList.remove('border-slate-200/80', 'bg-white/80', 'shadow-sm');
+          card.classList.add('border-sky-500', 'bg-white', 'shadow-lg', 'shadow-sky-100');
+        } else {
+          card.classList.remove('border-sky-500', 'bg-white', 'shadow-lg', 'shadow-sky-100');
+          card.classList.add('border-slate-200/80', 'bg-white/80', 'shadow-sm');
+        }
+      });
+
+      // Render konten detail
+      const detailContainer = document.getElementById('stageDetailContent');
+      detailContainer.innerHTML = `
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span class="px-3 py-1 rounded-full text-xs font-extrabold ${data.badgeColor}">
+            Tahap ${data.step} • ${data.location}
+          </span>
+          <span class="text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">
+            ${data.tempRange}
+          </span>
+        </div>
+
+        <div>
+          <h3 class="font-display font-extrabold text-xl sm:text-2xl text-slate-900">${data.name}</h3>
+          <p class="text-xs sm:text-sm font-semibold text-sky-600 mt-1">Perubahan Fase: ${data.phase}</p>
+        </div>
+
+        <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+          ${data.summary}
+        </p>
+
+        <div class="p-4 rounded-2xl bg-sky-50/90 border border-sky-100 space-y-1.5">
+          <div class="text-xs font-extrabold uppercase tracking-wider text-sky-800 flex items-center gap-1.5">
+            <i data-lucide="sun-medium" class="w-4 h-4 text-amber-500"></i> Peran Khusus di Iklim Tropis
+          </div>
+          <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+            ${data.tropicalContext}
+          </p>
+        </div>
+
+        <div class="flex items-start gap-2.5 text-xs text-emerald-800 bg-emerald-50/80 p-3.5 rounded-xl border border-emerald-100">
+          <i data-lucide="lightbulb" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+          <span><strong>Catatan Teknis:</strong> ${data.tip}</span>
+        </div>
+      `;
+
+      document.getElementById('stageIndicatorText').textContent = `Tahap ${data.step} dari 4`;
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function stepCycleStage(delta) {
+      const nextIndex = (currentStageIndex + delta + cycleStages.length) % cycleStages.length;
+      selectCycleStage(nextIndex);
+    }
+
+    // 2. SIMULATOR BEBAN KERJA AC IKLIM TROPIS
+    let acTechnology = 'inverter';
+
+    function setAcTechnology(tech) {
+      acTechnology = tech;
+      const btnInv = document.getElementById('btnModeInverter');
+      const btnStd = document.getElementById('btnModeStandard');
+
+      if (tech === 'inverter') {
+        btnInv.className = 'px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-white text-sky-700 shadow-sm transition-all';
+        btnStd.className = 'px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-slate-600 hover:text-slate-900 transition-all';
+      } else {
+        btnStd.className = 'px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-white text-amber-700 shadow-sm transition-all';
+        btnInv.className = 'px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-slate-600 hover:text-slate-900 transition-all';
+      }
+      updateSimulator();
+    }
+
+    function applyPreset(outTemp, rh, targetTemp) {
+      document.getElementById('outdoorTempSlider').value = outTemp;
+      document.getElementById('humiditySlider').value = rh;
+      document.getElementById('targetTempSlider').value = targetTemp;
+      updateSimulator();
+    }
+
+    function updateSimulator() {
+      const outdoorTemp = parseInt(document.getElementById('outdoorTempSlider').value, 10);
+      const humidity = parseInt(document.getElementById('humiditySlider').value, 10);
+      const targetTemp = parseInt(document.getElementById('targetTempSlider').value, 10);
+
+      // Update label nilai slider
+      document.getElementById('outdoorTempVal').textContent = `${outdoorTemp}°C`;
+      document.getElementById('humidityVal').textContent = `${humidity}%`;
+      document.getElementById('targetTempVal').textContent = `${targetTemp}°C`;
+
+      // Perhitungan termodinamika edukatif
+      const deltaT = Math.max(1, outdoorTemp - targetTemp);
+      
+      // Estimasi laju kondensasi (liter/jam) berdasarkan kelembapan & dinginnya evaporator
+      const coldFactor = (28 - targetTemp) * 0.08;
+      const humidityFactor = Math.max(0, (humidity - 50) / 45);
+      const condensationRate = (0.35 + (humidityFactor * 1.45) + coldFactor).toFixed(2);
+
+      // Beban kerja kompresor (%)
+      let rawLoad = (deltaT * 4.6) + ((humidity - 55) * 0.65);
+      if (acTechnology === 'inverter') {
+        rawLoad = rawLoad * 0.86; // Inverter memodulasi putaran secara efisien
+      }
+      const loadPercent = Math.min(100, Math.max(25, Math.round(rawLoad)));
+
+      // Estimasi konsumsi daya AC 1 PK (9000 BTU)
+      let wattage;
+      if (acTechnology === 'inverter') {
+        // Inverter berkisar antara 260W hingga 920W tergantung beban
+        wattage = Math.round(240 + (loadPercent / 100) * 680);
+      } else {
+        // AC standar bekerja penuh ~820W-940W saat kompresor ON
+        wattage = Math.round(780 + (deltaT * 9));
+      }
+
+      // Update DOM Metrik
+      document.getElementById('metricDeltaT').textContent = `${deltaT}°C`;
+      document.getElementById('metricDeltaDesc').textContent =
+        deltaT >= 13 ? 'Beban termal tinggi (kerja ekstra)' :
+        deltaT >= 8 ? 'Beban pembuangan panas moderat' : 'Beban pembuangan panas ringan';
+
+      document.getElementById('metricCondensation').textContent = `${condensationRate} L/jam`;
+      document.getElementById('metricCondDesc').textContent =
+        humidity >= 80 ? 'Kelembapan tinggi: pembuangan air deras' : 'Dehumidifikasi berjalan stabil';
+
+      document.getElementById('metricWattage').textContent = `${wattage} Watt`;
+      document.getElementById('metricWattDesc').textContent =
+        acTechnology === 'inverter'
+          ? 'Frekuensi kompresor menyesuaikan beban termal'
+          : 'Kompresor bekerja pada kecepatan tetap (On/Off)';
+
+      document.getElementById('metricLoadPercent').textContent = `${loadPercent}%`;
+      document.getElementById('metricLoadBar').style.width = `${loadPercent}%`;
+
+      // Update Kotak Rekomendasi
+      const adviceBox = document.getElementById('simulatorAdviceBox');
+      const adviceTitle = document.getElementById('adviceTitle');
+      const adviceBody = document.getElementById('adviceBody');
+
+      if (targetTemp <= 20) {
+        adviceBox.className = 'p-5 rounded-2xl bg-amber-50/90 border border-amber-200 flex items-start gap-4';
+        adviceTitle.className = 'font-display font-bold text-sm sm:text-base text-amber-900';
+        adviceBody.className = 'text-xs sm:text-sm text-amber-800 leading-relaxed';
+        adviceTitle.textContent = 'Peringatan Beban Puncak Kompresor!';
+        adviceBody.textContent = `Menyetel target ${targetTemp}°C saat suhu luar ${outdoorTemp}°C & RH ${humidity}% memaksa kompresor bekerja ${loadPercent}% terus-menerus. Naikkan ke 24°C untuk menghemat listrik hingga 25–35% tanpa mengurangi rasa nyaman.`;
+      } else if (targetTemp >= 24 && targetTemp <= 25) {
+        adviceBox.className = 'p-5 rounded-2xl bg-emerald-50/90 border border-emerald-200 flex items-start gap-4';
+        adviceTitle.className = 'font-display font-bold text-sm sm:text-base text-emerald-900';
+        adviceBody.className = 'text-xs sm:text-sm text-emerald-800 leading-relaxed';
+        adviceTitle.textContent = 'Pengaturan Optimal untuk Iklim Tropis!';
+        adviceBody.textContent = `Pada suhu luar ${outdoorTemp}°C dan kelembapan ${humidity}%, target ${targetTemp}°C menjaga kelembapan ruang ideal sekaligus mengendalikan daya ${acTechnology === 'inverter' ? 'Inverter' : 'AC'} tetap hemat di kisaran ${wattage} Watt.`;
+      } else {
+        adviceBox.className = 'p-5 rounded-2xl bg-sky-50/90 border border-sky-200 flex items-start gap-4';
+        adviceTitle.className = 'font-display font-bold text-sm sm:text-base text-sky-900';
+        adviceBody.className = 'text-xs sm:text-sm text-sky-800 leading-relaxed';
+        adviceTitle.textContent = 'Mode Hemat Energi & Sejuk Ringan';
+        adviceBody.textContent = `Target suhu ${targetTemp}°C sangat ramah lingkungan dengan beban kompresor hanya ${loadPercent}%. Kombinasikan dengan kipas angin sirkulasi rendah agar udara sejuk merata ke seluruh sudut ruangan.`;
+      }
+    }
+
+    // 3. NAVIGASI MOBILE & SIDEBAR INTERAKTIF
+    function toggleMobileNav() {
+      const drawer = document.getElementById('mobileNavDrawer');
+      drawer.classList.toggle('hidden');
+    }
+
+    function toggleSidebar(open) {
+      const sidebar = document.getElementById('relatedSidebar');
+      const overlay = document.getElementById('sidebarOverlay');
+      if (open) {
+        overlay.classList.remove('hidden');
+        sidebar.classList.remove('translate-x-full');
+      } else {
+        sidebar.classList.add('translate-x-full');
+        overlay.classList.add('hidden');
+      }
+    }
+
+    function toggleAccordion(topicKey) {
+      const content = document.getElementById(`content-${topicKey}`);
+      const icon = document.getElementById(`icon-${topicKey}`);
+      if (!content) return;
+      const isHidden = content.classList.contains('hidden');
+      content.classList.toggle('hidden');
+      if (icon) {
+        icon.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+      }
+    }
+
+    function openSidebarTopic(topicKey) {
+      toggleSidebar(true);
+      const content = document.getElementById(`content-${topicKey}`);
+      const icon = document.getElementById(`icon-${topicKey}`);
+      if (content && content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        if (icon) icon.style.transform = 'rotate(180deg)';
+      }
+    }
+
+    // 4. KALKULATOR PK AC DI SIDEBAR
+    function calculatePK() {
+      const length = Math.max(1, parseFloat(document.getElementById('roomLength').value) || 3);
+      const width = Math.max(1, parseFloat(document.getElementById('roomWidth').value) || 3);
+      const factor = parseInt(document.getElementById('sunExposure').value, 10) || 600;
+
+      const btu = Math.round(length * width * factor);
+      document.getElementById('pkBtuResult').textContent = `${btu.toLocaleString('id-ID')} BTU/h`;
+
+      let pkLabel = '1/2 PK (5.000 BTU)';
+      if (btu > 18000) pkLabel = '2.5 PK (24.000 BTU)';
+      else if (btu > 12500) pkLabel = '2 PK (18.000 BTU)';
+      else if (btu > 9500) pkLabel = '1.5 PK (12.000 BTU)';
+      else if (btu > 7200) pkLabel = '1 PK (9.000 BTU)';
+      else if (btu > 5200) pkLabel = '3/4 PK (7.000 BTU)';
+
+      document.getElementById('pkSizeResult').textContent = pkLabel;
+    }
+
+    // 5. MODAL MONETISASI & DOWNLOAD AS GUEST (UNDUH FILE HTML LENGKAP)
+    function openDownloadModal() {
+      const modal = document.getElementById('downloadModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.getElementById('downloadFeedback').classList.add('hidden');
+    }
+
+    function closeDownloadModal() {
+      const modal = document.getElementById('downloadModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function downloadAsGuest() {
+      try {
+        // Mengambil seluruh kode sumber HTML dokumen ini secara utuh
+        const fullHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+        const blob = new Blob([fullHtml], { type: 'text/html;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+
+        const tempLink = document.createElement('a');
+        tempLink.href = url;
+        tempLink.download = 'cara-kerja-ac-iklim-tropis.html';
+        document.body.appendChild(tempLink);
+        tempLink.click();
+        document.body.removeChild(tempLink);
+
+        setTimeout(() => URL.revokeObjectURL(url), 1500);
+
+        const feedback = document.getElementById('downloadFeedback');
+        feedback.classList.remove('hidden');
+      } catch (err) {
+        console.error('Gagal mengunduh file:', err);
+      }
+    }
+
+    // Tutup modal atau sidebar dengan tombol Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeDownloadModal();
+        toggleSidebar(false);
+      }
+    });
+
+    // Inisialisasi saat halaman dimuat
+    window.addEventListener('DOMContentLoaded', () => {
+      selectCycleStage(0);
+      updateSimulator();
+      calculatePK();
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>
