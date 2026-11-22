@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>Panduan Lengkap Defisit Kalori & Planning Intermittent Fasting (Kalkulator & Jadwal)</title>
+    <meta name="title" content="Panduan Lengkap Defisit Kalori & Planning Intermittent Fasting (Kalkulator & Jadwal)">
+    <meta name="description" content="Pelajari cara defisit kalori yang aman dan atur jadwal Intermittent Fasting (16:8, 18:6, 20:4) secara otomatis. Lengkap dengan kalkulator BMR/TDEE, makronutrisi, dan timer puasa harian.">
+    <meta name="keywords" content="cara defisit kalori, intermittent fasting pemula, kalkulator defisit kalori, jadwal intermittent fasting 16 8, cara menghitung TDEE, diet sehat tanpa menyiksa, planning diet harian">
+    <meta name="author" content="Ariel Usman">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://arielrifkycahyadi.github.io/panduan-defisit-kalori-intermittent-fasting.html">
+
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2310b981'/><text x='50' y='68' font-size='55' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>K</text></svg>">
+    <link rel="apple-touch-icon" href="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=180&q=80">
+
+    <!-- Open Graph / Facebook / WhatsApp Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arielrifkycahyadi.github.io/panduan-defisit-kalori-intermittent-fasting.html">
+    <meta property="og:title" content="KaloriFlow — Panduan Defisit Kalori & Planner Intermittent Fasting">
+    <meta property="og:description" content="Hitung defisit kalori harianmu dan rancang jam puasa Intermittent Fasting (16:8, 18:6) secara praktis dalam satu aplikasi interaktif.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:locale" content="id_ID">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="KaloriFlow — Panduan Defisit Kalori & Planner Intermittent Fasting">
+    <meta name="twitter:description" content="Kalkulator BMR/TDEE dan perencana jadwal puasa Intermittent Fasting interaktif.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Schema.org JSON-LD for Rich Snippets on Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "KaloriFlow: Kalkulator Defisit Kalori & IF Planner",
+          "description": "Aplikasi web edukasi dan kalkulator interaktif untuk menghitung kebutuhan defisit kalori harian dan menjadwalkan Intermittent Fasting.",
+          "applicationCategory": "HealthApplication",
+          "operatingSystem": "Android, iOS, Windows, Linux",
+          "author": {
+            "@type": "Person",
+            "name": "Ariel Usman"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "IDR"
+          }
+        },
+        {
+          "@type": "HowTo",
+          "name": "Cara Melakukan Defisit Kalori dan Intermittent Fasting yang Benar",
+          "description": "Langkah sistematis mengatur asupan energi harian dan jendela makan untuk penurunan berat badan yang sehat.",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "name": "Hitung BMR dan TDEE",
+              "text": "Ketahui energi dasar tubuh (BMR) dan total pengeluaran energi harian (TDEE) berdasarkan tingkat aktivitas fisik."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Tentukan Target Defisit Aman",
+              "text": "Kurangi 300 hingga 500 kkal dari TDEE harian agar lemak berkurang tanpa mengorbankan massa otot."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Pilih Jendela Waktu Intermittent Fasting",
+              "text": "Atur jadwal puasa dan makan seperti metode 16:8 (16 jam puasa, 8 jam jendela makan) sesuai ritme harian."
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        emeraldBright: '#10b981',
+                        tealFresh: '#06b6d4',
+                        amberWarm: '#f59e0b',
+                        coralSoft: '#fb7185',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfeff 45%, #fffbeb 100%);
+            min-height: 100vh;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.72);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.85);
+            box-shadow: 0 10px 30px -5px rgba(16, 185, 129, 0.08), 0 4px 12px -2px rgba(6, 182, 212, 0.05);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .blob-bg {
+            position: absolute;
+            filter: blur(60px);
+            z-index: -1;
+            opacity: 0.55;
+            border-radius: 9999px;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #10b981;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased selection:bg-emerald-200 selection:text-emerald-900 relative overflow-x-hidden">
+
+    <!-- Ambient Bright Decorative Blobs -->
+    <div class="blob-bg bg-emerald-300 w-72 h-72 top-10 -left-16"></div>
+    <div class="blob-bg bg-cyan-300 w-80 h-80 top-40 right-0"></div>
+    <div class="blob-bg bg-amber-200 w-96 h-96 bottom-20 left-1/3"></div>
+
+    <!-- NAVBAR -->
+    <nav class="glass-nav sticky top-0 z-40 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Left: Project Name -->
+                <a href="#" class="flex items-center gap-2.5 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-cyan-500 flex items-center justify-center text-white shadow-md shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+                        <i data-lucide="flame" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-lg tracking-tight bg-gradient-to-r from-emerald-600 to-cyan-600 bg-clip-text text-transparent">KaloriFlow</span>
+                        <span class="hidden sm:inline-block text-xs font-medium text-slate-500 ml-1.5 px-2 py-0.5 bg-emerald-100/80 text-emerald-700 rounded-full">Defisit & IF Guide</span>
+                    </div>
+                </a>
+
+                <!-- Right: Sequential Menu Items -->
+                <div class="flex items-center gap-2 sm:gap-5">
+                    <div class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600">
+                        <a href="#konsep-defisit" class="hover:text-emerald-600 transition-colors">1. Konsep Dasar</a>
+                        <a href="#kalkulator-kalori" class="hover:text-emerald-600 transition-colors">2. Kalkulator Kalori</a>
+                        <a href="#planner-if" class="hover:text-emerald-600 transition-colors">3. Planner IF</a>
+                        <a href="#panduan-menu" class="hover:text-emerald-600 transition-colors">4. Pola Makan</a>
+                    </div>
+
+                    <!-- Sidebar Trigger Button -->
+                    <button onclick="toggleSidebar()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-semibold bg-amber-100 hover:bg-amber-200 text-amber-800 border border-amber-200/80 transition-all shadow-sm">
+                        <i data-lucide="book-open" class="w-4 h-4"></i>
+                        <span>Referensi & Tips</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (Glassmorphism Modern) -->
+    <header class="relative pt-8 pb-12 sm:pt-12 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="glass-card rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Hero Left Content -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 border border-emerald-200 text-emerald-700 text-xs sm:text-sm font-bold shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                        Panduan Sains Nutrisi & Manajemen Waktu Makan
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight">
+                        Kuasai <span class="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 bg-clip-text text-transparent">Defisit Kalori</span> & Atur Jadwal <span class="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">Intermittent Fasting</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
+                        Kombinasikan prinsip keseimbangan energi (<strong>Calories In vs Calories Out</strong>) dengan pengaturan jendela makan (<strong>Time-Restricted Eating</strong>) untuk menurunkan lemak tubuh secara konsisten tanpa merasa kelaparan ekstrem.
+                    </p>
+
+                    <!-- Primary Action & Monetization Trigger -->
+                    <div class="flex flex-wrap items-center gap-3.5 pt-2">
+                        <a href="#kalkulator-kalori" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-bold text-sm sm:text-base shadow-lg shadow-emerald-500/25 transition-all hover:-translate-y-0.5">
+                            <i data-lucide="calculator" class="w-5 h-5"></i>
+                            Mulai Hitung Kalori
+                        </a>
+
+                        <a href="#planner-if" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 font-bold text-sm sm:text-base shadow-sm transition-all">
+                            <i data-lucide="clock" class="w-5 h-5 text-amber-500"></i>
+                            Atur Jadwal IF
+                        </a>
+
+                        <!-- Monetization Modal Button -->
+                        <button onclick="openDownloadModal()" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl bg-gradient-to-r from-amber-400 to-orange-400 hover:from-amber-500 hover:to-orange-500 text-slate-950 font-extrabold text-sm sm:text-base shadow-lg shadow-amber-500/20 transition-all hover:-translate-y-0.5">
+                            <i data-lucide="download" class="w-5 h-5"></i>
+                            Unduh Kode Resource
+                        </button>
+                    </div>
+
+                    <!-- Quick Key Metrics -->
+                    <div class="grid grid-cols-3 gap-3 sm:gap-6 pt-4 border-t border-slate-200/70">
+                        <div>
+                            <p class="text-xs font-semibold text-slate-500 uppercase">Defisit Ideal</p>
+                            <p class="text-lg sm:text-xl font-extrabold text-emerald-600">300–500 kkal</p>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold text-slate-500 uppercase">Metode Populer</p>
+                            <p class="text-lg sm:text-xl font-extrabold text-cyan-600">16:8 & 18:6</p>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold text-slate-500 uppercase">Target Sehat</p>
+                            <p class="text-lg sm:text-xl font-extrabold text-amber-600">0.5–1 kg/mgg</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Visual Card -->
+                <div class="lg:col-span-5">
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white/80 group">
+                        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=900&q=85" 
+                             alt="Makanan sehat tinggi protein untuk defisit kalori dan intermittent fasting" 
+                             class="w-full h-72 sm:h-80 lg:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
+                             loading="eager">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/75 via-slate-900/20 to-transparent flex flex-col justify-end p-5 text-white">
+                            <span class="text-xs font-bold uppercase tracking-wider bg-emerald-500/90 px-2.5 py-1 rounded-lg w-fit mb-2">Sinergi Nutrisi</span>
+                            <p class="font-bold text-base sm:text-lg leading-snug">Defisit Kalori menentukan <em>berapa banyak</em> energi masuk; Intermittent Fasting mengatur <em>kapan</em> tubuh membakar cadangan lemak.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14 pb-20">
+
+        <!-- SECTION 1: BENTO GRID KONSEP DASAR -->
+        <section id="konsep-defisit" class="scroll-mt-24 space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+                <div>
+                    <span class="text-xs font-extrabold uppercase tracking-wider text-emerald-600">Fondasi Ilmiah</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Bagaimana Keduanya Bekerja Bersama?</h2>
+                </div>
+                <p class="text-sm text-slate-600 max-w-md">Memahami mekanisme metabolisme agar program berjalan berkelanjutan.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <article class="glass-card rounded-3xl p-6 hover:border-emerald-300 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4">
+                        <i data-lucide="scale" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-extrabold text-slate-900 mb-2">1. Prinsip Defisit Kalori</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                        Terjadi ketika kalori yang dikonsumsi lebih rendah daripada <strong>TDEE (Total Daily Energy Expenditure)</strong>. Tubuh akan memecah cadangan glikogen dan trigliserida (lemak) untuk menutupi selisih energi tersebut.
+                    </p>
+                    <div class="p-3 rounded-xl bg-emerald-50/90 border border-emerald-100 text-xs font-semibold text-emerald-800">
+                        Rumus Dasar: Target Kalori = TDEE − (300 s/d 500 kkal)
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="glass-card rounded-3xl p-6 hover:border-cyan-300 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-cyan-100 text-cyan-600 flex items-center justify-center mb-4">
+                        <i data-lucide="timer" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-extrabold text-slate-900 mb-2">2. Mekanisme Intermittent Fasting</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                        Setelah 12–16 jam tanpa asupan kalori, kadar hormon <strong>insulin</strong> menurun drastis. Kondisi ini mempermudah akses pembakaran lemak (lipolisis) serta memicu pembersihan sel alami (<em>autophagy</em>).
+                    </p>
+                    <div class="p-3 rounded-xl bg-cyan-50/90 border border-cyan-100 text-xs font-semibold text-cyan-800">
+                        Kunci IF: Membatasi jam makan secara otomatis menekan peluang ngemil berlebih.
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="glass-card rounded-3xl p-6 hover:border-amber-300 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center mb-4">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-extrabold text-slate-900 mb-2">3. Menjaga Massa Otot</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                        Defisit terlalu ekstrem memicu kelelahan dan penyusutan otot. Pastikan asupan protein mencukupi (<strong>1.4–2.0 gram per kg berat badan</strong>) dan imbangi dengan latihan beban ringan.
+                    </p>
+                    <div class="p-3 rounded-xl bg-amber-50/90 border border-amber-100 text-xs font-semibold text-amber-800">
+                        Hindari makan di bawah nilai BMR (Basal Metabolic Rate) harian Anda.
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECTION 2: INTERACTIVE CALORIE DEFICIT CALCULATOR -->
+        <section id="kalkulator-kalori" class="scroll-mt-24">
+            <div class="glass-card rounded-3xl p-6 sm:p-8 lg:p-10">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-200/80">
+                    <div>
+                        <span class="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-teal-600">
+                            <i data-lucide="sparkles" class="w-4 h-4"></i> Alat Hitung Otomatis (Mifflin-St Jeor)
+                        </span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Kalkulator Defisit Kalori & Makronutrisi</h2>
+                    </div>
+                    <span class="text-xs font-medium bg-white px-3 py-1.5 rounded-full border border-slate-200 text-slate-600 w-fit">
+                        Hasil menyesuaikan secara langsung
+                    </span>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-6">
+                    <!-- Form Input -->
+                    <div class="lg:col-span-6 space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Jenis Kelamin</label>
+                                <select id="gender" onchange="calculateCalories()" class="w-full rounded-xl border border-slate-200 bg-white/90 px-3.5 py-2.5 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                                    <option value="male">Laki-laki</option>
+                                    <option value="female">Perempuan</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Usia (Tahun)</label>
+                                <input type="number" id="age" value="24" min="15" max="80" oninput="calculateCalories()" class="w-full rounded-xl border border-slate-200 bg-white/90 px-3.5 py-2.5 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Berat Badan (kg)</label>
+                                <input type="number" id="weight" value="72" min="35" max="200" oninput="calculateCalories()" class="w-full rounded-xl border border-slate-200 bg-white/90 px-3.5 py-2.5 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Tinggi Badan (cm)</label>
+                                <input type="number" id="height" value="170" min="130" max="220" oninput="calculateCalories()" class="w-full rounded-xl border border-slate-200 bg-white/90 px-3.5 py-2.5 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Tingkat Aktivitas Harian</label>
+                            <select id="activity" onchange="calculateCalories()" class="w-full rounded-xl border border-slate-200 bg-white/90 px-3.5 py-2.5 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                                <option value="1.2">Jarang Olahraga (Kerja duduk / rebahan)</option>
+                                <option value="1.375" selected>Aktivitas Ringan (Jalan kaki / olahraga 1–3x seminggu)</option>
+                                <option value="1.55">Aktivitas Sedang (Olahraga rutin 3–5x seminggu)</option>
+                                <option value="1.725">Aktivitas Berat (Latihan fisik intens 6–7x seminggu)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Level Defisit Kalori</label>
+                            <div class="grid grid-cols-3 gap-2.5">
+                                <button type="button" onclick="setDeficit(300, this)" class="deficit-btn py-2.5 px-3 rounded-xl text-xs font-bold border border-slate-200 bg-white text-slate-700 hover:bg-emerald-50 transition-all">
+                                    Ringan (-300)
+                                </button>
+                                <button type="button" onclick="setDeficit(500, this)" class="deficit-btn py-2.5 px-3 rounded-xl text-xs font-bold border-2 border-emerald-500 bg-emerald-50 text-emerald-800 transition-all">
+                                    Ideal (-500)
+                                </button>
+                                <button type="button" onclick="setDeficit(700, this)" class="deficit-btn py-2.5 px-3 rounded-xl text-xs font-bold border border-slate-200 bg-white text-slate-700 hover:bg-emerald-50 transition-all">
+                                    Cepat (-700)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Output Dashboard -->
+                    <div class="lg:col-span-6 bg-white/85 rounded-2xl p-6 border border-emerald-100 flex flex-col justify-between space-y-6">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                                <p class="text-xs font-bold text-slate-500">BMR (Energi Dasar)</p>
+                                <p class="text-2xl font-extrabold text-slate-800 mt-1"><span id="bmr-val">1,680</span> <span class="text-xs font-semibold text-slate-500">kkal</span></p>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-cyan-50/70 border border-cyan-100">
+                                <p class="text-xs font-bold text-cyan-700">TDEE (Maintenance)</p>
+                                <p class="text-2xl font-extrabold text-cyan-900 mt-1"><span id="tdee-val">2,310</span> <span class="text-xs font-semibold text-cyan-700">kkal</span></p>
+                            </div>
+                        </div>
+
+                        <!-- Highlight Target -->
+                        <div class="p-5 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg shadow-emerald-500/20">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-xs font-bold uppercase tracking-wider text-emerald-100">Target Kalori Defisit Harian</p>
+                                    <p class="text-3xl sm:text-4xl font-extrabold mt-1"><span id="target-cal">1,810</span> <span class="text-base font-semibold">kkal/hari</span></p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="inline-block px-2.5 py-1 rounded-lg bg-white/20 text-xs font-bold">Estimasi Turun</span>
+                                    <p class="text-sm font-extrabold mt-1" id="weekly-loss">~0.45 kg / minggu</p>
+                                </div>
+                            </div>
+                            <p id="safety-note" class="text-xs text-emerald-50 mt-3 pt-2.5 border-t border-white/20 flex items-center gap-1.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 shrink-0"></i>
+                                <span>Target aman berada di atas nilai BMR harian Anda.</span>
+                            </p>
+                        </div>
+
+                        <!-- Macro Split -->
+                        <div>
+                            <p class="text-xs font-extrabold uppercase tracking-wider text-slate-500 mb-3">Rekomendasi Pembagian Makronutrisi Harian</p>
+                            <div class="grid grid-cols-3 gap-3 text-center">
+                                <div class="p-3 rounded-xl bg-rose-50 border border-rose-100">
+                                    <p class="text-xs font-bold text-rose-600">Protein (30%)</p>
+                                    <p class="text-lg font-extrabold text-slate-900 mt-0.5"><span id="macro-protein">136</span>g</p>
+                                    <p class="text-[11px] text-slate-500">Jaga massa otot</p>
+                                </div>
+                                <div class="p-3 rounded-xl bg-amber-50 border border-amber-100">
+                                    <p class="text-xs font-bold text-amber-600">Karbohidrat (45%)</p>
+                                    <p class="text-lg font-extrabold text-slate-900 mt-0.5"><span id="macro-carbs">204</span>g</p>
+                                    <p class="text-[11px] text-slate-500">Energi aktivitas</p>
+                                </div>
+                                <div class="p-3 rounded-xl bg-sky-50 border border-sky-100">
+                                    <p class="text-xs font-bold text-sky-600">Lemak Sehat (25%)</p>
+                                    <p class="text-lg font-extrabold text-slate-900 mt-0.5"><span id="macro-fat">50</span>g</p>
+                                    <p class="text-[11px] text-slate-500">Keseimbangan hormon</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: INTERMITTENT FASTING PLANNER & LIVE TIMELINE -->
+        <section id="planner-if" class="scroll-mt-24">
+            <div class="glass-card rounded-3xl p-6 sm:p-8 lg:p-10">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-200/80">
+                    <div>
+                        <span class="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-amber-600">
+                            <i data-lucide="clock" class="w-4 h-4"></i> Manajemen Jendela Makan
+                        </span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Planning Jadwal Intermittent Fasting</h2>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs font-bold text-slate-600 bg-amber-50 px-3.5 py-2 rounded-xl border border-amber-200/70">
+                        <i data-lucide="alarm-clock" class="w-4 h-4 text-amber-600"></i>
+                        <span>Waktu Lokal Anda: <span id="live-clock" class="text-slate-900 font-extrabold">--:--:--</span></span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-6">
+                    <!-- Left Controls -->
+                    <div class="lg:col-span-5 space-y-5">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">1. Pilih Protokol Puasa</label>
+                            <div class="grid grid-cols-2 gap-2.5">
+                                <button type="button" onclick="selectIFProtocol(14, 10, this)" class="if-proto-btn p-3 rounded-2xl border border-slate-200 bg-white text-left hover:border-amber-400 transition-all">
+                                    <span class="block font-extrabold text-base text-slate-900">14 : 10</span>
+                                    <span class="text-xs text-slate-500">Pemula (14j puasa)</span>
+                                </button>
+                                <button type="button" onclick="selectIFProtocol(16, 8, this)" class="if-proto-btn p-3 rounded-2xl border-2 border-amber-500 bg-amber-50/90 text-left transition-all">
+                                    <span class="block font-extrabold text-base text-amber-900">16 : 8 ⭐</span>
+                                    <span class="text-xs text-amber-700 font-semibold">Paling Ideal (16j puasa)</span>
+                                </button>
+                                <button type="button" onclick="selectIFProtocol(18, 6, this)" class="if-proto-btn p-3 rounded-2xl border border-slate-200 bg-white text-left hover:border-amber-400 transition-all">
+                                    <span class="block font-extrabold text-base text-slate-900">18 : 6</span>
+                                    <span class="text-xs text-slate-500">Menengah (18j puasa)</span>
+                                </button>
+                                <button type="button" onclick="selectIFProtocol(20, 4, this)" class="if-proto-btn p-3 rounded-2xl border border-slate-200 bg-white text-left hover:border-amber-400 transition-all">
+                                    <span class="block font-extrabold text-base text-slate-900">20 : 4</span>
+                                    <span class="text-xs text-slate-500">Warrior (20j puasa)</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="first-meal-time" class="block text-xs font-bold text-slate-700 uppercase mb-2">2. Jam Makan Pertama (Buka Puasa)</label>
+                            <input type="time" id="first-meal-time" value="12:00" onchange="updateIFSchedule()" class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-base font-bold text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            <p class="text-xs text-slate-500 mt-1.5">Contoh: Jika mulai makan pukul 12:00 siang dengan metode 16:8, maka makan terakhir adalah pukul 20:00 malam.</p>
+                        </div>
+
+                        <!-- Meal Distribution Tip -->
+                        <div class="p-4 rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200/80">
+                            <h4 class="text-xs font-extrabold uppercase text-amber-800 flex items-center gap-1.5 mb-2">
+                                <i data-lucide="utensils" class="w-4 h-4"></i> Pembagian Porsi di Jendela Makan
+                            </h4>
+                            <ul class="text-xs text-slate-700 space-y-1.5">
+                                <li>• <strong>Makan ke-1 (<span id="meal1-time">12:00</span>):</strong> 45% kalori (<span id="meal1-cal">815</span> kkal) — Tinggi protein & serat.</li>
+                                <li>• <strong>Camilan Sehat (<span id="snack-time">16:00</span>):</strong> 15% kalori (<span id="snack-cal">270</span> kkal) — Buah / yogurt / kacang.</li>
+                                <li>• <strong>Makan Terakhir (<span id="meal2-time">19:30</span>):</strong> 40% kalori (<span id="meal2-cal">725</span> kkal) — Protein & karbohidrat kompleks.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual Schedule & Phase Tracker -->
+                    <div class="lg:col-span-7 bg-white/85 rounded-2xl p-6 border border-amber-100 flex flex-col justify-between space-y-6">
+                        <!-- Status Banner -->
+                        <div id="if-status-box" class="p-5 rounded-2xl bg-slate-900 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div>
+                                <span id="if-current-phase" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-500 text-white">
+                                    Status Saat Ini
+                                </span>
+                                <h3 id="if-status-title" class="text-xl sm:text-2xl font-extrabold mt-2">Jendela Makan Aktif</h3>
+                                <p id="if-status-desc" class="text-xs text-slate-300 mt-1">Penuhi target nutrisi harian Anda dengan makanan utuh.</p>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-md px-4 py-3 rounded-xl text-center shrink-0">
+                                <p class="text-[11px] uppercase tracking-wider text-slate-300 font-semibold">Sisa Waktu Fase Ini</p>
+                                <p id="if-countdown" class="text-2xl font-extrabold text-amber-400 font-mono mt-0.5">00:00:00</p>
+                            </div>
+                        </div>
+
+                        <!-- 24-Hour Visual Bar -->
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-xs font-bold">
+                                <span class="text-emerald-600 flex items-center gap-1"><i data-lucide="utensils-crossed" class="w-3.5 h-3.5"></i> Jendela Makan (<span id="eat-hours-label">8</span> Jam)</span>
+                                <span class="text-amber-600 flex items-center gap-1"><i data-lucide="moon" class="w-3.5 h-3.5"></i> Jendela Puasa (<span id="fast-hours-label">16</span> Jam)</span>
+                            </div>
+                            <div class="w-full h-5 rounded-full bg-slate-200 overflow-hidden flex p-0.5">
+                                <div id="eat-bar" class="h-full bg-gradient-to-r from-emerald-400 to-teal-500 rounded-l-full transition-all duration-500" style="width: 33.33%"></div>
+                                <div id="fast-bar" class="h-full bg-gradient-to-r from-amber-400 to-orange-500 rounded-r-full transition-all duration-500" style="width: 66.67%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Key Timestamps -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="p-4 rounded-2xl bg-emerald-50/80 border border-emerald-200/80 flex items-center gap-3.5">
+                                <div class="w-11 h-11 rounded-xl bg-emerald-500 text-white flex items-center justify-center shrink-0">
+                                    <i data-lucide="sunrise" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-emerald-700">Mulai Jendela Makan</p>
+                                    <p id="display-start-eat" class="text-xl font-extrabold text-slate-900">12:00</p>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-amber-50/80 border border-amber-200/80 flex items-center gap-3.5">
+                                <div class="w-11 h-11 rounded-xl bg-amber-500 text-white flex items-center justify-center shrink-0">
+                                    <i data-lucide="sunset" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-amber-700">Mulai Puasa (Stop Kalori)</p>
+                                    <p id="display-start-fast" class="text-xl font-extrabold text-slate-900">20:00</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Physiological Timeline -->
+                        <div class="grid grid-cols-3 gap-2 pt-2 border-t border-slate-200/70 text-center">
+                            <div class="p-2 rounded-xl bg-slate-50">
+                                <p class="text-[11px] font-bold text-slate-500">Jam ke-4 s/d 8</p>
+                                <p class="text-xs font-extrabold text-slate-800 mt-0.5">Gula Darah Stabil</p>
+                            </div>
+                            <div class="p-2 rounded-xl bg-slate-50">
+                                <p class="text-[11px] font-bold text-slate-500">Jam ke-12+</p>
+                                <p class="text-xs font-extrabold text-emerald-700 mt-0.5">Pembakaran Lemak</p>
+                            </div>
+                            <div class="p-2 rounded-xl bg-slate-50">
+                                <p class="text-[11px] font-bold text-slate-500">Jam ke-16+</p>
+                                <p class="text-xs font-extrabold text-amber-700 mt-0.5">Autophagy Ringan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: PANDUAN POLA MAKAN & VISUAL -->
+        <section id="panduan-menu" class="scroll-mt-24 space-y-6">
+            <div>
+                <span class="text-xs font-extrabold uppercase tracking-wider text-cyan-600">Strategi Praktis</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Aturan Emas Saat Jendela Makan & Puasa</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Card Do's -->
+                <div class="glass-card rounded-3xl p-6 sm:p-8 border-l-4 border-l-emerald-500">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=200&q=80" alt="Salad sayur dan protein sehat" class="w-14 h-14 rounded-2xl object-cover shadow-sm">
+                        <div>
+                            <h3 class="text-lg font-extrabold text-slate-900">Prioritaskan Volume & Protein</h3>
+                            <p class="text-xs text-slate-500">Kenyang lebih lama dengan kalori terkendali</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-2.5 text-sm text-slate-700">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-emerald-600 mt-1 shrink-0"></i>
+                            <span><strong>Metode Piring T:</strong> 1/2 piring sayuran berserat, 1/4 protein tanpa lemak (dada ayam, ikan, telur, tempe), 1/4 karbohidrat kompleks (nasi merah, kentang, ubi).</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-emerald-600 mt-1 shrink-0"></i>
+                            <span><strong>Minuman 0 Kalori Saat Puasa:</strong> Air mineral, kopi hitam tanpa gula/krimer, serta teh tawar hijau atau hitam diperbolehkan dan membantu menekan rasa lapar.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-emerald-600 mt-1 shrink-0"></i>
+                            <span><strong>Hidrasi & Elektrolit:</strong> Minum minimal 2–2.5 liter air per hari untuk mencegah sakit kepala ringan saat adaptasi puasa.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card Don'ts -->
+                <div class="glass-card rounded-3xl p-6 sm:p-8 border-l-4 border-l-rose-500">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=200&q=80" alt="Makanan tinggi gula dan kalori" class="w-14 h-14 rounded-2xl object-cover shadow-sm">
+                        <div>
+                            <h3 class="text-lg font-extrabold text-slate-900">Jebakan yang Menggagalkan Defisit</h3>
+                            <p class="text-xs text-slate-500">Sering tidak disadari saat berpuasa</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-2.5 text-sm text-slate-700">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="x" class="w-4 h-4 text-rose-500 mt-1 shrink-0"></i>
+                            <span><strong>Balas Dendam Saat Buka:</strong> Makan berlebihan (<em>binge eating</em>) melebihi TDEE saat jam buka tetap membuat berat badan naik meski berpuasa 16 jam.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="x" class="w-4 h-4 text-rose-500 mt-1 shrink-0"></i>
+                            <span><strong>Kalori Cair Tersembunyi:</strong> Minuman manis kemasan, kopi susu gula aren, dan jus bergula menyumbang 250–500 kkal tanpa memberi rasa kenyang.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="x" class="w-4 h-4 text-rose-500 mt-1 shrink-0"></i>
+                            <span><strong>Kurang Tidur:</strong> Tidur di bawah 6 jam meningkatkan hormon lapar (<em>ghrelin</em>) dan menurunkan sensitivitas insulin.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="glass-nav border-t border-slate-200/80 py-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2 text-sm font-bold text-slate-700">
+                <span>Oleh Ariel Usman Copyright 2026</span>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="https://instagram.com/arielrcun" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 text-white text-xs sm:text-sm font-bold shadow-sm hover:opacity-95 transition-opacity">
+                    <i data-lucide="instagram" class="w-4 h-4"></i>
+                    <span>@arielrcun</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SLIDE-OVER SIDEBAR (Hal Terkait Yang Bisa Dibuka) -->
+    <div id="sidebar-overlay" onclick="toggleSidebar()" class="fixed inset-0 bg-slate-900/40 backdrop-blur-xs z-50 hidden transition-opacity"></div>
+    <aside id="right-sidebar" class="fixed top-0 right-0 h-full w-full max-w-md bg-white/95 backdrop-blur-xl shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col border-l border-slate-200">
+        <div class="p-5 border-b border-slate-200 flex items-center justify-between bg-gradient-to-r from-emerald-50 to-cyan-50">
+            <div class="flex items-center gap-2">
+                <i data-lucide="book-marked" class="w-5 h-5 text-emerald-600"></i>
+                <h3 class="font-extrabold text-slate-900">Referensi & Panduan Terkait</h3>
+            </div>
+            <button onclick="toggleSidebar()" class="p-2 rounded-xl hover:bg-white text-slate-600 transition-colors" aria-label="Tutup Sidebar">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+        </div>
+
+        <div class="p-5 overflow-y-auto space-y-4 flex-1">
+            <p class="text-xs text-slate-500 font-medium">Klik topik di bawah ini untuk membuka detail referensi cepat:</p>
+
+            <!-- Accordion Item 1 -->
+            <details class="group rounded-2xl border border-slate-200 bg-slate-50/70 p-4 open:bg-white open:shadow-sm transition-all" open>
+                <summary class="font-bold text-sm text-slate-900 cursor-pointer flex items-center justify-between list-none">
+                    <span>Daftar Makanan Rendah Kalori Tinggi Kenyang</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 text-slate-500 group-open:rotate-180 transition-transform"></i>
+                </summary>
+                <div class="mt-3 pt-3 border-t border-slate-200/70 text-xs text-slate-600 space-y-2">
+                    <p>• <strong>Dada Ayam Rebus/Panggang (100g):</strong> ±165 kkal, 31g protein.</p>
+                    <p>• <strong>Telur Ayam Rebus (1 butir):</strong> ±70 kkal, 6g protein.</p>
+                    <p>• <strong>Tempe Kukus/Air Fryer (100g):</strong> ±190 kkal, 19g protein.</p>
+                    <p>• <strong>Kentang Rebus (150g):</strong> ±130 kkal (indeks kenyang tertinggi).</p>
+                    <p>• <strong>Timun, Selada, Brokoli (100g):</strong> ±15–35 kkal.</p>
+                </div>
+            </details>
+
+            <!-- Accordion Item 2 -->
+            <details class="group rounded-2xl border border-slate-200 bg-slate-50/70 p-4 open:bg-white open:shadow-sm transition-all">
+                <summary class="font-bold text-sm text-slate-900 cursor-pointer flex items-center justify-between list-none">
+                    <span>Apa yang Membatalkan Puasa IF?</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 text-slate-500 group-open:rotate-180 transition-transform"></i>
+                </summary>
+                <div class="mt-3 pt-3 border-t border-slate-200/70 text-xs text-slate-600 space-y-2">
+                    <p class="text-emerald-700 font-bold">AMAN (Tidak Membatalkan):</p>
+                    <p>Air putih, air mineral dingin/hangat, kopi hitam murni tanpa gula/susu, teh hijau/hitam tawar.</p>
+                    <p class="text-rose-600 font-bold pt-1">MEMBATALKAN PUASA:</p>
+                    <p>Gula pasir, madu, susu, krimer, kaldu tulang berkalori, permen manis, serta buah-buahan.</p>
+                </div>
+            </details>
+
+            <!-- Accordion Item 3 -->
+            <details class="group rounded-2xl border border-slate-200 bg-slate-50/70 p-4 open:bg-white open:shadow-sm transition-all">
+                <summary class="font-bold text-sm text-slate-900 cursor-pointer flex items-center justify-between list-none">
+                    <span>Siapa yang Perlu Konsultasi Medis Dulu?</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 text-slate-500 group-open:rotate-180 transition-transform"></i>
+                </summary>
+                <div class="mt-3 pt-3 border-t border-slate-200/70 text-xs text-slate-600 leading-relaxed">
+                    Intermittent Fasting tidak disarankan tanpa pengawasan dokter bagi ibu hamil/menyusui, individu dengan riwayat gangguan makan (eating disorder), penderita diabetes tipe 1, atau kondisi maag akut yang belum terkontrol.
+                </div>
+            </details>
+
+            <!-- Accordion Item 4 -->
+            <details class="group rounded-2xl border border-slate-200 bg-slate-50/70 p-4 open:bg-white open:shadow-sm transition-all">
+                <summary class="font-bold text-sm text-slate-900 cursor-pointer flex items-center justify-between list-none">
+                    <span>Tips Mengatasi Rasa Lapar di Jam Ke-14</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 text-slate-500 group-open:rotate-180 transition-transform"></i>
+                </summary>
+                <div class="mt-3 pt-3 border-t border-slate-200/70 text-xs text-slate-600 space-y-1.5">
+                    <p>1. Minum 1–2 gelas besar air putih (sering kali otak salah mengartikan haus sebagai lapar).</p>
+                    <p>2. Seduh kopi hitam atau teh hangat tanpa gula.</p>
+                    <p>3. Alihkan fokus dengan aktivitas kerja atau jalan santai 10 menit (gelombang hormon ghrelin biasanya mereda dalam 20 menit).</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="p-4 border-t border-slate-200 bg-slate-50">
+            <button onclick="toggleSidebar(); openDownloadModal();" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md">
+                <i data-lucide="download" class="w-4 h-4"></i>
+                <span>Unduh Source Code Halaman Ini</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- MONETIZATION POP-UP MODAL -->
+    <div id="download-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-slate-100 relative animate-[fadeIn_0.2s_ease-out]">
+            <button onclick="closeDownloadModal()" class="absolute top-4 right-4 p-2 rounded-full hover:bg-slate-100 text-slate-500 transition-colors" aria-label="Tutup Modal">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center mb-4">
+                <i data-lucide="code-2" class="w-6 h-6"></i>
+            </div>
+
+            <h3 class="text-xl font-extrabold text-slate-900">Unduh Kode Resource Web</h3>
+            <p class="text-sm text-slate-600 mt-1.5 leading-relaxed">
+                Dukung pengembangan aplikasi edukasi gratis ini dengan memberikan apresiasi sukarela melalui jalur resmi di bawah, atau lanjutkan mengunduh secara gratis.
+            </p>
+
+            <!-- Payment Links -->
+            <div class="space-y-3 mt-5">
+                <!-- 1. International: PayPal -->
+                <a href="https://paypal.me/arielrcu" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3.5 rounded-2xl border-2 border-blue-100 bg-blue-50/60 hover:bg-blue-100/70 transition-all group">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-extrabold text-sm">
+                            PP
+                        </div>
+                        <div>
+                            <p class="text-sm font-extrabold text-slate-900">Internasional: PayPal</p>
+                            <p class="text-xs text-slate-500">paypal.me/arielrcu</p>
+                        </div>
+                    </div>
+                    <i data-lucide="external-link" class="w-4 h-4 text-blue-600 group-hover:translate-x-0.5 transition-transform"></i>
+                </a>
+
+                <!-- 2. Lokal (QRIS/E-Wallet): Trakteer -->
+                <a href="https://trakteer.id/arielrcu" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3.5 rounded-2xl border-2 border-rose-100 bg-rose-50/60 hover:bg-rose-100/70 transition-all group">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-rose-600 text-white flex items-center justify-center font-extrabold text-sm">
+                            TR
+                        </div>
+                        <div>
+                            <p class="text-sm font-extrabold text-slate-900">Lokal (QRIS / E-Wallet): Trakteer</p>
+                            <p class="text-xs text-slate-500">trakteer.id/arielrcu</p>
+                        </div>
+                    </div>
+                    <i data-lucide="external-link" class="w-4 h-4 text-rose-600 group-hover:translate-x-0.5 transition-transform"></i>
+                </a>
+            </div>
+
+            <!-- Divider -->
+            <div class="relative my-5">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-slate-200"></div>
+                </div>
+                <div class="relative flex justify-center text-xs uppercase">
+                    <span class="bg-white px-2 text-slate-400 font-semibold">Atau Akses Langsung</span>
+                </div>
+            </div>
+
+            <!-- Download as Guest Button -->
+            <button onclick="downloadAsGuest()" class="w-full py-3.5 px-4 rounded-2xl bg-slate-900 hover:bg-emerald-600 text-white font-bold text-sm flex items-center justify-center gap-2 transition-colors shadow-md">
+                <i data-lucide="file-code" class="w-4 h-4"></i>
+                <span>Download as Guest (Gratis .HTML)</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // State Variables
+        let currentDeficit = 500;
+        let currentTargetCalories = 1810;
+        let fastHours = 16;
+        let eatHours = 8;
+
+        // 1. Calorie Deficit Calculator (Mifflin-St Jeor)
+        function setDeficit(amount, btnElement) {
+            currentDeficit = amount;
+            document.querySelectorAll('.deficit-btn').forEach(btn => {
+                btn.classList.remove('border-2', 'border-emerald-500', 'bg-emerald-50', 'text-emerald-800');
+                btn.classList.add('border', 'border-slate-200', 'bg-white', 'text-slate-700');
+            });
+            btnElement.classList.remove('border', 'border-slate-200', 'bg-white', 'text-slate-700');
+            btnElement.classList.add('border-2', 'border-emerald-500', 'bg-emerald-50', 'text-emerald-800');
+            calculateCalories();
+        }
+
+        function calculateCalories() {
+            const gender = document.getElementById('gender').value;
+            const age = parseFloat(document.getElementById('age').value) || 24;
+            const weight = parseFloat(document.getElementById('weight').value) || 70;
+            const height = parseFloat(document.getElementById('height').value) || 170;
+            const activity = parseFloat(document.getElementById('activity').value) || 1.375;
+
+            // BMR Calculation
+            let bmr = (10 * weight) + (6.25 * height) - (5 * age);
+            bmr += (gender === 'male') ? 5 : -161;
+            bmr = Math.round(bmr);
+
+            // TDEE Calculation
+            const tdee = Math.round(bmr * activity);
+
+            // Target Deficit Calories
+            const target = Math.max(1200, tdee - currentDeficit);
+            currentTargetCalories = target;
+
+            // Weekly fat loss estimation (7700 kcal ≈ 1 kg fat)
+            const actualDeficit = tdee - target;
+            const weeklyLoss = ((actualDeficit * 7) / 7700).toFixed(2);
+
+            // Macros (30% Protein, 45% Carbs, 25% Fat)
+            const proteinGrams = Math.round((target * 0.30) / 4);
+            const carbsGrams = Math.round((target * 0.45) / 4);
+            const fatGrams = Math.round((target * 0.25) / 9);
+
+            // Update DOM
+            document.getElementById('bmr-val').innerText = bmr.toLocaleString('id-ID');
+            document.getElementById('tdee-val').innerText = tdee.toLocaleString('id-ID');
+            document.getElementById('target-cal').innerText = target.toLocaleString('id-ID');
+            document.getElementById('weekly-loss').innerText = `~${weeklyLoss} kg / minggu`;
+
+            document.getElementById('macro-protein').innerText = proteinGrams;
+            document.getElementById('macro-carbs').innerText = carbsGrams;
+            document.getElementById('macro-fat').innerText = fatGrams;
+
+            // Safety warning check
+            const safetyNote = document.getElementById('safety-note');
+            if (target < bmr) {
+                safetyNote.innerHTML = `<i data-lucide="alert-triangle" class="w-4 h-4 text-amber-200 shrink-0"></i><span>Catatan: Target di bawah BMR (${bmr} kkal). Pertimbangkan defisit ringan (-300 kkal) agar metabolisme tetap optimal.</span>`;
+            } else {
+                safetyNote.innerHTML = `<i data-lucide="check-circle-2" class="w-4 h-4 shrink-0"></i><span>Target aman berada di atas nilai BMR harian Anda.</span>`;
+            }
+            lucide.createIcons();
+            updateIFSchedule();
+        }
+
+        // 2. Intermittent Fasting Planner & Real-Time Tracker
+        function selectIFProtocol(fast, eat, btnElement) {
+            fastHours = fast;
+            eatHours = eat;
+
+            document.querySelectorAll('.if-proto-btn').forEach(btn => {
+                btn.classList.remove('border-2', 'border-amber-500', 'bg-amber-50/90');
+                btn.classList.add('border', 'border-slate-200', 'bg-white');
+            });
+            btnElement.classList.remove('border', 'border-slate-200', 'bg-white');
+            btnElement.classList.add('border-2', 'border-amber-500', 'bg-amber-50/90');
+
+            updateIFSchedule();
+        }
+
+        function formatTime(totalMinutes) {
+            let mins = ((totalMinutes % 1440) + 1440) % 1440;
+            let h = Math.floor(mins / 60);
+            let m = mins % 60;
+            return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
+        }
+
+        function updateIFSchedule() {
+            const startInput = document.getElementById('first-meal-time').value || '12:00';
+            const [startH, startM] = startInput.split(':').map(Number);
+            const startTotalMins = startH * 60 + startM;
+            const endTotalMins = startTotalMins + (eatHours * 60);
+
+            const startStr = formatTime(startTotalMins);
+            const endStr = formatTime(endTotalMins);
+
+            document.getElementById('display-start-eat').innerText = startStr;
+            document.getElementById('display-start-fast').innerText = endStr;
+            document.getElementById('eat-hours-label').innerText = eatHours;
+            document.getElementById('fast-hours-label').innerText = fastHours;
+
+            // Progress Bar Widths
+            const eatPercent = (eatHours / 24) * 100;
+            const fastPercent = (fastHours / 24) * 100;
+            document.getElementById('eat-bar').style.width = `${eatPercent}%`;
+            document.getElementById('fast-bar').style.width = `${fastPercent}%`;
+
+            // Meal Distribution Times & Calories
+            const midEatMins = startTotalMins + Math.floor((eatHours * 60) / 2);
+            const lastMealMins = endTotalMins - 30;
+
+            document.getElementById('meal1-time').innerText = startStr;
+            document.getElementById('snack-time').innerText = formatTime(midEatMins);
+            document.getElementById('meal2-time').innerText = formatTime(lastMealMins);
+
+            document.getElementById('meal1-cal').innerText = Math.round(currentTargetCalories * 0.45);
+            document.getElementById('snack-cal').innerText = Math.round(currentTargetCalories * 0.15);
+            document.getElementById('meal2-cal').innerText = Math.round(currentTargetCalories * 0.40);
+        }
+
+        function updateLiveClockAndIFStatus() {
+            const now = new Date();
+            const h = now.getHours();
+            const m = now.getMinutes();
+            const s = now.getSeconds();
+
+            document.getElementById('live-clock').innerText = 
+                `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+
+            const startInput = document.getElementById('first-meal-time').value || '12:00';
+            const [startH, startM] = startInput.split(':').map(Number);
+
+            const nowSeconds = h * 3600 + m * 60 + s;
+            const startSeconds = startH * 3600 + startM * 60;
+            const eatDurationSeconds = eatHours * 3600;
+            const endSeconds = (startSeconds + eatDurationSeconds) % 86400;
+
+            let isEatingWindow = false;
+            let remainingSeconds = 0;
+
+            if (startSeconds < endSeconds) {
+                if (nowSeconds >= startSeconds && nowSeconds < endSeconds) {
+                    isEatingWindow = true;
+                    remainingSeconds = endSeconds - nowSeconds;
+                } else {
+                    isEatingWindow = false;
+                    remainingSeconds = (nowSeconds < startSeconds) 
+                        ? (startSeconds - nowSeconds) 
+                        : (86400 - nowSeconds + startSeconds);
+                }
+            } else {
+                // Crosses midnight
+                if (nowSeconds >= startSeconds || nowSeconds < endSeconds) {
+                    isEatingWindow = true;
+                    remainingSeconds = (nowSeconds >= startSeconds)
+                        ? (86400 - nowSeconds + endSeconds)
+                        : (endSeconds - nowSeconds);
+                } else {
+                    isEatingWindow = false;
+                    remainingSeconds = startSeconds - nowSeconds;
+                }
+            }
+
+            const remH = Math.floor(remainingSeconds / 3600);
+            const remM = Math.floor((remainingSeconds % 3600) / 60);
+            const remS = remainingSeconds % 60;
+            document.getElementById('if-countdown').innerText = 
+                `${String(remH).padStart(2, '0')}:${String(remM).padStart(2, '0')}:${String(remS).padStart(2, '0')}`;
+
+            const phaseBadge = document.getElementById('if-current-phase');
+            const statusTitle = document.getElementById('if-status-title');
+            const statusDesc = document.getElementById('if-status-desc');
+
+            if (isEatingWindow) {
+                phaseBadge.className = "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-500 text-white";
+                phaseBadge.innerText = "Fase Jendela Makan";
+                statusTitle.innerText = "Waktunya Penuhi Nutrisi";
+                statusDesc.innerText = `Fokus pada protein dan serat dalam batas ${currentTargetCalories.toLocaleString('id-ID')} kkal.`;
+            } else {
+                phaseBadge.className = "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-amber-500 text-slate-950";
+                phaseBadge.innerText = "Fase Puasa Aktif";
+                statusTitle.innerText = "Tubuh Membakar Cadangan Energi";
+                statusDesc.innerText = "Konsumsi air putih, teh tawar, atau kopi hitam tanpa gula.";
+            }
+        }
+
+        // 3. Sidebar Toggle
+        function toggleSidebar() {
+            const sidebar = document.getElementById('right-sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const isClosed = sidebar.classList.contains('translate-x-full');
+
+            if (isClosed) {
+                sidebar.classList.remove('translate-x-full');
+                overlay.classList.remove('hidden');
+            } else {
+                sidebar.classList.add('translate-x-full');
+                overlay.classList.add('hidden');
+            }
+        }
+
+        // 4. Monetization Modal & Direct Guest Download
+        function openDownloadModal() {
+            const modal = document.getElementById('download-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeDownloadModal() {
+            const modal = document.getElementById('download-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function downloadAsGuest() {
+            const htmlContent = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], { type: "text/html;charset=utf-8" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "panduan-defisit-kalori-intermittent-fasting.html";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            closeDownloadModal();
+        }
+
+        // Initialize Calculations & Clock
+        calculateCalories();
+        updateIFSchedule();
+        updateLiveClockAndIFStatus();
+        setInterval(updateLiveClockAndIFStatus, 1000);
+    </script>
+</body>
+</html>
