@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- SEO Utama & Meta Tags Optimal untuk Google -->
+  <title>Cara Kerja Roller Coaster: Fisika, Energi, G-Force & Simulasi Interaktif | CoasterLab</title>
+  <meta name="description" content="Pelajari cara kerja roller coaster secara lengkap dan interaktif! Pahami hukum kekekalan energi potensial dan kinetik, gaya sentripetal pada clothoid loop, sistem roda 3-arah, hingga simulasi fisika real-time." />
+  <meta name="keywords" content="cara kerja roller coaster, fisika roller coaster, energi potensial dan kinetik, clothoid loop, g-force roller coaster, simulasi fisika interaktif, sistem keamanan roller coaster, CoasterLab, Ariel Usman" />
+  <meta name="author" content="Ariel Usman" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://coasterlab.edu/cara-kerja-roller-coaster.html" />
+  <meta name="theme-color" content="#0ea5e9" />
+
+  <!-- Open Graph / Facebook / WhatsApp Preview -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="CoasterLab Edukasi Interaktif" />
+  <meta property="og:title" content="Cara Kerja Roller Coaster: Rahasia Fisika & Simulasi Real-Time" />
+  <meta property="og:description" content="Bagaimana kereta roller coaster melaju kencang tanpa mesin dan tidak jatuh saat terbalik 360 derajat? Uji langsung lewat simulasi interaktif CoasterLab!" />
+  <meta property="og:url" content="https://coasterlab.edu/cara-kerja-roller-coaster.html" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1513889961551-628c1e5e2ee9?auto=format&fit=crop&w=1200&q=80" />
+  <meta property="og:image:alt" content="Lintasan Roller Coaster Melingkar di Bawah Langit Cerah" />
+  <meta property="og:locale" content="id_ID" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cara Kerja Roller Coaster: Fisika, Energi & Simulasi Interaktif" />
+  <meta name="twitter:description" content="Eksplorasi mekanika energi potensial, gaya sentripetal, G-Force, dan rem magnetik roller coaster dengan simulasi real-time." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1513889961551-628c1e5e2ee9?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Favicon SVG Data URI -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%230ea5e9'/%3E%3Cstop offset='100%25' stop-color='%23f97316'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Cpath d='M10 46 Q 22 14, 34 34 T 54 18' fill='none' stroke='%23ffffff' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='34' cy='34' r='5' fill='%23facc15'/%3E%3C/svg%3E" />
+
+  <!-- Schema.org JSON-LD Structured Data untuk Google Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Cara Kerja Roller Coaster: Fisika, Konversi Energi, G-Force & Simulasi Interaktif",
+    "alternativeHeadline": "Panduan Visual & Simulasi Mekanika Roller Coaster Modern",
+    "description": "Penjelasan komprehensif mengenai cara kerja roller coaster mulai dari lift hill, hukum kekekalan energi mekanik, gaya sentripetal pada clothoid loop, roda 3-arah, hingga sistem rem magnetik.",
+    "image": "https://images.unsplash.com/photo-1513889961551-628c1e5e2ee9?auto=format&fit=crop&w=1200&q=80",
+    "author": {
+      "@type": "Person",
+      "name": "Ariel Usman",
+      "sameAs": "https://instagram.com/arielrcun"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CoasterLab",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://images.unsplash.com/photo-1513889961551-628c1e5e2ee9?auto=format&fit=crop&w=200&q=80"
+      }
+    },
+    "datePublished": "2026-01-15",
+    "dateModified": "2026-11-24",
+    "inLanguage": "id-ID",
+    "educationalUse": "Interactive Simulation & Physics Education",
+    "keywords": "cara kerja roller coaster, fisika, energi potensial, energi kinetik, g-force, simulasi"
+  }
+  </script>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome 6 CDN (Ikon Aman & Lengkap) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            skybright: '#0ea5e9',
+            coralvibrant: '#ff5e3a',
+            sunnyyellow: '#facc15',
+          },
+          animation: {
+            'float-slow': 'float 6s ease-in-out infinite',
+            'pulse-soft': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Kustomisasi Scrollbar & Utilitas Glassmorphism Cerah */
+    body {
+      background: linear-gradient(135deg, #e0f2fe 0%, #fef9c3 45%, #ffedd5 100%);
+      background-attachment: fixed;
+      color: #0f172a;
+      overflow-x: hidden;
+    }
+
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 12px 32px -8px rgba(14, 165, 233, 0.14), 0 4px 12px -2px rgba(249, 115, 22, 0.08);
+    }
+
+    .glass-hero {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.82) 0%, rgba(224, 242, 254, 0.75) 55%, rgba(254, 240, 138, 0.65) 100%);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      border: 1.5px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 20px 50px -12px rgba(14, 165, 233, 0.22);
+    }
+
+    .glass-modal {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1.5px solid rgba(255, 255, 255, 1);
+    }
+
+    /* Animasi SVG Kereta di Hero */
+    @keyframes coasterHeroMove {
+      0% { offset-distance: 0%; }
+      100% { offset-distance: 100%; }
+    }
+
+    .hero-coaster-car {
+      offset-path: path("M 20 140 Q 95 25, 165 115 C 215 175, 275 45, 235 45 C 195 45, 255 175, 315 115 Q 375 55, 440 125");
+      animation: coasterHeroMove 5.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+    }
+
+    /* Custom Range Slider untuk Touch & Desktop */
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(14, 165, 233, 0.22);
+      outline: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0ea5e9, #f97316);
+      cursor: pointer;
+      border: 3px solid #ffffff;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      transition: transform 0.15s ease;
+    }
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-sky-500 selection:text-white">
+
+  <!-- Dekorasi Cahaya Latar Belakang Cerah -->
+  <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-sky-400/30 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/3 -right-24 w-96 h-96 bg-orange-400/25 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-1/3 w-96 h-96 bg-yellow-300/30 rounded-full blur-3xl"></div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- 1. NAVBAR RESPONSIF (Kiri: Nama Project, Kanan: Menu Berurut + Sidebar) -->
+  <!-- ===================================================================== -->
+  <nav class="sticky top-0 z-40 glass-nav transition-all duration-300" aria-label="Navigasi Utama">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        <!-- Kiri: Nama Project & Logo -->
+        <a href="#" class="flex items-center gap-3 group focus:outline-none">
+          <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-br from-sky-500 via-orange-500 to-yellow-400 flex items-center justify-center text-white shadow-lg shadow-sky-500/25 group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-roller-coaster text-lg sm:text-xl"></i>
+          </div>
+          <div>
+            <span class="font-display font-extrabold text-xl sm:text-2xl tracking-tight bg-gradient-to-r from-sky-600 via-orange-600 to-amber-500 bg-clip-text text-transparent">
+              CoasterLab
+            </span>
+            <span class="hidden sm:block text-[11px] font-semibold text-slate-500 -mt-1 tracking-wide">
+              Edukasi Fisika Interaktif
+            </span>
+          </div>
+        </a>
+
+        <!-- Kanan: Menu Berurut (Desktop & Tablet) -->
+        <div class="hidden md:flex items-center gap-1 lg:gap-2">
+          <a href="#cara-kerja" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-sky-600 hover:bg-white/70 transition">
+            Cara Kerja
+          </a>
+          <a href="#simulasi-fisika" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-orange-600 hover:bg-white/70 transition">
+            Simulasi Fisika
+          </a>
+          <a href="#sistem-keamanan" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-sky-600 hover:bg-white/70 transition">
+            Sistem Keamanan
+          </a>
+          <a href="#kuis" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-amber-600 hover:bg-white/70 transition">
+            Kuis
+          </a>
+
+          <!-- Tombol Buka Sidebar (Fakta & Topik Terkait) -->
+          <button
+            type="button"
+            onclick="toggleSidebar(true)"
+            class="ml-2 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-600 hover:to-cyan-600 text-white text-sm font-bold shadow-md shadow-sky-500/25 transition active:scale-95"
+            aria-label="Buka Sidebar Topik Terkait"
+          >
+            <i class="fa-solid fa-book-open-reader"></i>
+            <span>Topik Terkait</span>
+          </button>
+        </div>
+
+        <!-- Tombol Aksi Mobile (Android / Layar Kecil) -->
+        <div class="flex items-center gap-2 md:hidden">
+          <button
+            type="button"
+            onclick="toggleSidebar(true)"
+            class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-sky-500 text-white text-xs font-bold shadow-sm active:scale-95"
+            aria-label="Buka Sidebar Topik Terkait"
+          >
+            <i class="fa-solid fa-layer-group"></i>
+            <span>Topik</span>
+          </button>
+          <button
+            type="button"
+            id="mobileMenuBtn"
+            onclick="toggleMobileMenu()"
+            class="p-2.5 rounded-xl bg-white/80 text-slate-700 hover:bg-white border border-slate-200/80 shadow-sm"
+            aria-label="Buka Menu Navigasi"
+          >
+            <i class="fa-solid fa-bars text-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dropdown Menu Mobile -->
+    <div id="mobileMenu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-1.5 bg-white/95 backdrop-blur-xl border-b border-slate-200/80">
+      <a href="#cara-kerja" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-sky-50 hover:text-sky-600">
+        <i class="fa-solid fa-bolt w-5 text-sky-500"></i> Cara Kerja
+      </a>
+      <a href="#simulasi-fisika" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-orange-50 hover:text-orange-600">
+        <i class="fa-solid fa-gauge-high w-5 text-orange-500"></i> Simulasi Fisika
+      </a>
+      <a href="#sistem-keamanan" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-sky-50 hover:text-sky-600">
+        <i class="fa-solid fa-shield-halved w-5 text-emerald-500"></i> Sistem Keamanan
+      </a>
+      <a href="#kuis" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-amber-50 hover:text-amber-600">
+        <i class="fa-solid fa-circle-question w-5 text-amber-500"></i> Kuis Interaktif
+      </a>
+    </div>
+  </nav>
+
+  <!-- ===================================================================== -->
+  <!-- 2. HEADER / HERO SECTION (Glassmorphism Cerah + CTA Unduh Kode)        -->
+  <!-- ===================================================================== -->
+  <header class="pt-6 pb-12 sm:pt-10 sm:pb-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="glass-hero rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden">
+        <!-- Badge Pill -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 border border-sky-200 text-sky-700 text-xs sm:text-sm font-bold shadow-sm mb-6">
+          <span class="w-2.5 h-2.5 rounded-full bg-orange-500 animate-ping"></span>
+          <span>Sains & Rekayasa Wahana Ekstrem</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          <!-- Kolom Kiri: Teks & Tombol Utama -->
+          <div class="lg:col-span-7 space-y-6">
+            <h1 class="font-display font-extrabold text-3xl sm:text-5xl lg:text-[3.25rem] text-slate-900 leading-[1.15] tracking-tight">
+              Bagaimana <span class="bg-gradient-to-r from-sky-600 via-orange-500 to-amber-500 bg-clip-text text-transparent">Roller Coaster</span> Bekerja Tanpa Mesin?
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-700 leading-relaxed max-w-2xl">
+              Kereta roller coaster tidak memiliki mesin penggerak di dalam gerbongnya! Temukan bagaimana <strong>gravitasi, energi potensial, gaya sentripetal, dan rem magnetik</strong> bekerja harmonis melesatkan kereta hingga lebih dari 120 km/jam dan menjaga penumpang tetap aman saat terbalik 360°.
+            </p>
+
+            <!-- Tombol CTA Utama: Unduh Kode Resource (Monetisasi) & Mulai Simulasi -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
+              <button
+                type="button"
+                onclick="openDownloadModal()"
+                class="inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-gradient-to-r from-orange-500 via-coralvibrant to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-display font-bold text-base shadow-xl shadow-orange-500/30 transition transform hover:-translate-y-0.5 active:scale-95 cursor-pointer"
+              >
+                <i class="fa-solid fa-cloud-arrow-down text-lg"></i>
+                <span>Unduh Kode Resource</span>
+              </button>
+
+              <a
+                href="#simulasi-fisika"
+                class="inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-white/90 hover:bg-white text-sky-700 border border-sky-200 font-display font-bold text-base shadow-md transition transform hover:-translate-y-0.5 active:scale-95"
+              >
+                <i class="fa-solid fa-play text-sky-500"></i>
+                <span>Mulai Simulasi Fisika</span>
+              </a>
+            </div>
+
+            <!-- Statistik Ringkas -->
+            <div class="grid grid-cols-3 gap-3 sm:gap-6 pt-4 border-t border-white/70">
+              <div>
+                <p class="font-display font-extrabold text-xl sm:text-2xl text-sky-600">0 Mesin</p>
+                <p class="text-xs sm:text-sm text-slate-600 font-medium">Di Dalam Gerbong</p>
+              </div>
+              <div>
+                <p class="font-display font-extrabold text-xl sm:text-2xl text-orange-600">3 - 5 G</p>
+                <p class="text-xs sm:text-sm text-slate-600 font-medium">Gaya Gravitasi Maks</p>
+              </div>
+              <div>
+                <p class="font-display font-extrabold text-xl sm:text-2xl text-amber-600">3 Roda</p>
+                <p class="text-xs sm:text-sm text-slate-600 font-medium">Sistem Pengunci Rel</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kolom Kanan: Ilustrasi SVG Interaktif & Animasi Lintasan Roller Coaster -->
+          <div class="lg:col-span-5">
+            <div class="bg-white/80 backdrop-blur-md rounded-3xl p-5 border border-white shadow-xl animate-float-slow">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-bold uppercase tracking-wider text-sky-600 bg-sky-50 px-3 py-1 rounded-full">
+                  <i class="fa-solid fa-wave-square mr-1"></i> Visualisasi Lintasan
+                </span>
+                <span class="text-xs font-semibold text-slate-500">Energi Mekanik Konstan</span>
+              </div>
+
+              <!-- SVG Animasi Lintasan dengan Loop -->
+              <svg viewBox="0 0 460 190" class="w-full h-auto rounded-2xl bg-gradient-to-b from-sky-100 via-sky-50 to-amber-50 border border-sky-100" role="img" aria-label="Animasi kereta roller coaster melintasi bukit dan loop">
+                <defs>
+                  <linearGradient id="trackGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#0ea5e9" />
+                    <stop offset="50%" stop-color="#f97316" />
+                    <stop offset="100%" stop-color="#eab308" />
+                  </linearGradient>
+                </defs>
+
+                <!-- Awan Dekoratif -->
+                <circle cx="70" cy="35" r="14" fill="#ffffff" opacity="0.85" />
+                <circle cx="84" cy="35" r="18" fill="#ffffff" opacity="0.85" />
+                <circle cx="98" cy="38" r="12" fill="#ffffff" opacity="0.85" />
+
+                <circle cx="365" cy="30" r="12" fill="#ffffff" opacity="0.85" />
+                <circle cx="380" cy="28" r="16" fill="#ffffff" opacity="0.85" />
+                <circle cx="395" cy="32" r="11" fill="#ffffff" opacity="0.85" />
+
+                <!-- Tiang Penyangga Lintasan -->
+                <g stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="4 3" opacity="0.6">
+                  <line x1="95" y1="68" x2="95" y2="175" />
+                  <line x1="165" y1="115" x2="165" y2="175" />
+                  <line x1="235" y1="130" x2="235" y2="175" />
+                  <line x1="315" y1="115" x2="315" y2="175" />
+                  <line x1="378" y1="84" x2="378" y2="175" />
+                </g>
+
+                <!-- Tanah / Horizon -->
+                <rect x="0" y="172" width="460" height="18" fill="#bae6fd" opacity="0.6" />
+
+                <!-- Rel Roller Coaster Utama -->
+                <path
+                  d="M 20 140 Q 95 25, 165 115 C 215 175, 275 45, 235 45 C 195 45, 255 175, 315 115 Q 375 55, 440 125"
+                  fill="none"
+                  stroke="url(#trackGrad)"
+                  stroke-width="6"
+                  stroke-linecap="round"
+                />
+
+                <!-- Label Fisika di SVG -->
+                <text x="58" y="22" font-size="10" font-weight="700" fill="#0284c7">Ep Maksimum</text>
+                <text x="142" y="158" font-size="10" font-weight="700" fill="#ea580c">Ek Maksimum</text>
+                <text x="206" y="34" font-size="10" font-weight="700" fill="#d97706">Gaya Sentripetal</text>
+
+                <!-- Kereta Roller Coaster Bergerak -->
+                <g class="hero-coaster-car">
+                  <rect x="-14" y="-9" width="28" height="12" rx="5" fill="#ff5e3a" stroke="#ffffff" stroke-width="2" />
+                  <circle cx="-8" cy="4" r="3" fill="#0f172a" />
+                  <circle cx="8" cy="4" r="3" fill="#0f172a" />
+                </g>
+              </svg>
+
+              <div class="mt-3 flex items-center justify-between text-xs text-slate-600 font-medium">
+                <span><i class="fa-solid fa-arrow-up text-sky-500 mr-1"></i> Lift Hill: Tarikan Rantai</span>
+                <span><i class="fa-solid fa-bolt text-orange-500 mr-1"></i> Meluncur Bebas: Gravitasi</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- 3. MAIN CONTENT (Penjelasan Bertahap + Simulasi + Keamanan + Kuis)    -->
+  <!-- ===================================================================== -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 pb-20">
+
+    <!-- BAGIAN A: 4 TAHAP CARA KERJA ROLLER COASTER -->
+    <section id="cara-kerja" class="scroll-mt-24">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-sky-100 text-sky-700 font-bold text-xs uppercase tracking-wider mb-3">
+          Prinsip Dasar Mekanika
+        </span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-slate-900">
+          4 Tahap Rahasia di Balik Laju Roller Coaster
+        </h2>
+        <p class="mt-3 text-slate-600 text-sm sm:text-base">
+          Dari tanjakan pertama yang mendebarkan hingga putaran terbalik, setiap detik perjalanan diatur oleh hukum kekekalan energi.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Kartu 1: Lift Hill & Energi Potensial -->
+        <article class="glass-card rounded-3xl p-6 sm:p-8 hover:shadow-xl transition duration-300 border-t-4 border-t-sky-500">
+          <div class="flex items-start justify-between gap-4 mb-4">
+            <div class="w-12 h-12 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center text-xl font-bold shrink-0">
+              <i class="fa-solid fa-arrow-trend-up"></i>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-sky-50 text-sky-700 font-mono text-xs font-bold border border-sky-200">
+              Ep = m · g · h
+            </span>
+          </div>
+          <h3 class="font-display font-bold text-xl text-slate-900 mb-2">
+            1. Lift Hill & Energi Potensial Gravitasi
+          </h3>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            Perjalanan dimulai ketika motor rantai (<em>chain lift</em>) atau peluncur magnetik menarik kereta ke puncak bukit tertinggi pertama. Semakin tinggi bukit (<em>h</em>), semakin besar <strong>Energi Potensial Gravitasi</strong> yang ditabung kereta sebelum dilepaskan.
+          </p>
+          <div class="mt-4 p-3 rounded-2xl bg-sky-50/80 text-xs text-sky-800 font-medium">
+            <i class="fa-solid fa-lightbulb text-amber-500 mr-1.5"></i>
+            Bukit pertama selalu paling tinggi karena energi akan berkurang perlahan akibat gesekan udara dan rel.
+          </div>
+        </article>
+
+        <!-- Kartu 2: Turunan Pertama & Energi Kinetik -->
+        <article class="glass-card rounded-3xl p-6 sm:p-8 hover:shadow-xl transition duration-300 border-t-4 border-t-orange-500">
+          <div class="flex items-start justify-between gap-4 mb-4">
+            <div class="w-12 h-12 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center text-xl font-bold shrink-0">
+              <i class="fa-solid fa-gauge-high"></i>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-orange-50 text-orange-700 font-mono text-xs font-bold border border-orange-200">
+              Ek = ½ · m · v²
+            </span>
+          </div>
+          <h3 class="font-display font-bold text-xl text-slate-900 mb-2">
+            2. Turunan Curam & Konversi Energi Kinetik
+          </h3>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            Begitu kereta melewati puncak, gravitasi menariknya turun dengan cepat. Energi Potensial berubah drastis menjadi <strong>Energi Kinetik</strong> (energi gerak). Di dasar lembah pertama, kecepatan kereta mencapai titik tertingginya!
+          </p>
+          <div class="mt-4 p-3 rounded-2xl bg-orange-50/80 text-xs text-orange-800 font-medium">
+            <i class="fa-solid fa-fire text-orange-500 mr-1.5"></i>
+            Sensasi "perut melayang" (<em>airtime</em>) muncul saat percepatan turun mendekati gravitasi bumi (0 G).
+          </div>
+        </article>
+
+        <!-- Kartu 3: Loop-the-Loop & Gaya Sentripetal -->
+        <article class="glass-card rounded-3xl p-6 sm:p-8 hover:shadow-xl transition duration-300 border-t-4 border-t-amber-400">
+          <div class="flex items-start justify-between gap-4 mb-4">
+            <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl font-bold shrink-0">
+              <i class="fa-solid fa-rotate"></i>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-amber-50 text-amber-700 font-mono text-xs font-bold border border-amber-200">
+              Fs = m · v² / r
+            </span>
+          </div>
+          <h3 class="font-display font-bold text-xl text-slate-900 mb-2">
+            3. Loop-the-Loop, Gaya Sentripetal & G-Force
+          </h3>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            Mengapa penumpang tidak jatuh saat berada di puncak lingkaran terbalik? Karena <strong>inersia</strong> mendorong tubuh lurus ke luar lintasan sementara rel melengkung membelokkan kereta ke dalam (<strong>gaya sentripetal</strong>), menekan tubuh ke kursi.
+          </p>
+          <div class="mt-4 p-3 rounded-2xl bg-amber-50/80 text-xs text-amber-800 font-medium">
+            <i class="fa-solid fa-circle-info text-amber-600 mr-1.5"></i>
+            Loop modern berbentuk tetesan air mata (<strong>Clothoid</strong>) agar G-Force tetap aman (sekitar 3.5G - 4.5G).
+          </div>
+        </article>
+
+        <!-- Kartu 4: Rem Magnetik & Konservasi Energi -->
+        <article class="glass-card rounded-3xl p-6 sm:p-8 hover:shadow-xl transition duration-300 border-t-4 border-t-emerald-500">
+          <div class="flex items-start justify-between gap-4 mb-4">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl font-bold shrink-0">
+              <i class="fa-solid fa-magnet"></i>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 font-mono text-xs font-bold border border-emerald-200">
+              Eddy Current
+            </span>
+          </div>
+          <h3 class="font-display font-bold text-xl text-slate-900 mb-2">
+            4. Pengereman Magnetik Tanpa Sentuhan
+          </h3>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            Di akhir lintasan, sirip tembaga di bawah kereta melewati deretan magnet permanen di rel. Medan magnet menciptakan <strong>arus eddy</strong> yang menghasilkan gaya tolak berlawanan arah, memperlambat kereta secara halus tanpa gesekan fisik!
+          </p>
+          <div class="mt-4 p-3 rounded-2xl bg-emerald-50/80 text-xs text-emerald-800 font-medium">
+            <i class="fa-solid fa-check-circle text-emerald-600 mr-1.5"></i>
+            Tetap berfungsi 100% meski listrik padam karena memakai magnet permanen neodymium.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- BAGIAN B: SIMULASI FISIKA ROLLER COASTER INTERAKTIF (REAL-TIME CANVAS) -->
+    <!-- ===================================================================== -->
+    <section id="simulasi-fisika" class="scroll-mt-24">
+      <div class="glass-card rounded-3xl p-6 sm:p-8 lg:p-10 border border-white">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+          <div>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-100 text-orange-700 font-bold text-xs uppercase tracking-wider mb-2">
+              <i class="fa-solid fa-flask"></i> Laboratorium Virtual
+            </span>
+            <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-slate-900">
+              Simulasi Fisika Roller Coaster Real-Time
+            </h2>
+            <p class="text-sm text-slate-600 mt-1">
+              Ubah ketinggian bukit pertama, massa kereta, dan gesekan lintasan untuk melihat apakah kereta berhasil melewati loop!
+            </p>
+          </div>
+
+          <!-- Tombol Kontrol Simulasi -->
+          <div class="flex flex-wrap items-center gap-2.5">
+            <button
+              type="button"
+              id="btnPlaySim"
+              onclick="startSimulation()"
+              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm shadow-md shadow-emerald-500/20 transition active:scale-95 cursor-pointer"
+            >
+              <i class="fa-solid fa-play"></i> Play
+            </button>
+            <button
+              type="button"
+              id="btnPauseSim"
+              onclick="pauseSimulation()"
+              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm shadow-md shadow-amber-500/20 transition active:scale-95 cursor-pointer"
+            >
+              <i class="fa-solid fa-pause"></i> Pause
+            </button>
+            <button
+              type="button"
+              onclick="resetSimulation()"
+              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-700 hover:bg-slate-800 text-white font-bold text-sm shadow-md transition active:scale-95 cursor-pointer"
+            >
+              <i class="fa-solid fa-rotate-left"></i> Reset
+            </button>
+          </div>
+        </div>
+
+        <!-- Status Alert Box dalam Simulasi (Misal: Kereta Kurang Tinggi / Berhasil Loop) -->
+        <div id="simStatusBanner" class="mb-4 px-4 py-3 rounded-2xl bg-sky-50 border border-sky-200 text-sky-800 text-xs sm:text-sm font-semibold flex items-center justify-between">
+          <span><i class="fa-solid fa-circle-info text-sky-500 mr-2"></i><span id="simStatusText">Siap meluncur! Atur parameter di bawah atau tekan Play.</span></span>
+          <span class="hidden sm:inline font-mono text-xs bg-white px-2.5 py-1 rounded-lg border border-sky-100">g = 9.8 m/s²</span>
+        </div>
+
+        <!-- Area Canvas Simulasi -->
+        <div class="relative w-full rounded-2xl overflow-hidden border-2 border-sky-200/80 bg-gradient-to-b from-sky-200 via-sky-50 to-amber-50 shadow-inner">
+          <canvas id="coasterCanvas" class="w-full block h-[280px] sm:h-[360px]"></canvas>
+        </div>
+
+        <!-- Panel Telemetri Real-Time (4 Kartu Indikator) -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mt-6">
+          <!-- Kecepatan -->
+          <div class="bg-white/90 rounded-2xl p-4 border border-sky-100 shadow-sm">
+            <div class="flex items-center justify-between text-xs font-bold text-slate-500 mb-1">
+              <span>KECEPATAN</span>
+              <i class="fa-solid fa-gauge text-orange-500"></i>
+            </div>
+            <div class="font-display font-extrabold text-2xl sm:text-3xl text-slate-900">
+              <span id="teleSpeed">0.0</span> <span class="text-sm font-semibold text-slate-500">km/j</span>
+            </div>
+          </div>
+
+          <!-- Ketinggian -->
+          <div class="bg-white/90 rounded-2xl p-4 border border-sky-100 shadow-sm">
+            <div class="flex items-center justify-between text-xs font-bold text-slate-500 mb-1">
+              <span>KETINGGIAN</span>
+              <i class="fa-solid fa-arrows-up-down text-sky-500"></i>
+            </div>
+            <div class="font-display font-extrabold text-2xl sm:text-3xl text-slate-900">
+              <span id="teleHeight">65.0</span> <span class="text-sm font-semibold text-slate-500">m</span>
+            </div>
+          </div>
+
+          <!-- G-Force -->
+          <div class="bg-white/90 rounded-2xl p-4 border border-sky-100 shadow-sm">
+            <div class="flex items-center justify-between text-xs font-bold text-slate-500 mb-1">
+              <span>G-FORCE</span>
+              <i class="fa-solid fa-person-falling text-amber-500"></i>
+            </div>
+            <div class="font-display font-extrabold text-2xl sm:text-3xl text-slate-900">
+              <span id="teleGForce">1.0</span> <span class="text-sm font-semibold text-slate-500">G</span>
+            </div>
+          </div>
+
+          <!-- Bar Konversi Energi Ep vs Ek -->
+          <div class="bg-white/90 rounded-2xl p-4 border border-sky-100 shadow-sm flex flex-col justify-between">
+            <div class="flex items-center justify-between text-xs font-bold text-slate-500 mb-1.5">
+              <span>ENERGI (Ep vs Ek)</span>
+              <i class="fa-solid fa-bolt text-yellow-500"></i>
+            </div>
+            <div class="w-full h-4 bg-slate-200 rounded-full overflow-hidden flex">
+              <div id="barEp" class="bg-sky-500 h-full transition-all duration-75" style="width: 100%" title="Energi Potensial"></div>
+              <div id="barEk" class="bg-orange-500 h-full transition-all duration-75" style="width: 0%" title="Energi Kinetik"></div>
+            </div>
+            <div class="flex justify-between text-[11px] font-bold mt-1.5">
+              <span class="text-sky-600">Ep: <span id="pctEp">100</span>%</span>
+              <span class="text-orange-600">Ek: <span id="pctEk">0</span>%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel Kontrol Slider Parameter -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-6 bg-white/75 p-5 rounded-2xl border border-white">
+          <!-- Slider 1: Tinggi Bukit Pertama -->
+          <div>
+            <div class="flex justify-between text-sm font-bold text-slate-700 mb-2">
+              <label for="sliderHeight"><i class="fa-solid fa-mountain text-sky-500 mr-1.5"></i>Tinggi Bukit Awal</label>
+              <span class="text-sky-600 bg-sky-50 px-2.5 py-0.5 rounded-lg"><span id="valHeight">65</span> m</span>
+            </div>
+            <input type="range" id="sliderHeight" min="25" max="100" value="65" class="w-full" oninput="updateSimParams()" />
+            <div class="flex justify-between text-[11px] text-slate-400 mt-1">
+              <span>25m (Rendah)</span>
+              <span>100m (Hypercoaster)</span>
+            </div>
+          </div>
+
+          <!-- Slider 2: Massa Kereta -->
+          <div>
+            <div class="flex justify-between text-sm font-bold text-slate-700 mb-2">
+              <label for="sliderMass"><i class="fa-solid fa-weight-hanging text-orange-500 mr-1.5"></i>Massa Kereta</label>
+              <span class="text-orange-600 bg-orange-50 px-2.5 py-0.5 rounded-lg"><span id="valMass">800</span> kg</span>
+            </div>
+            <input type="range" id="sliderMass" min="400" max="2000" step="50" value="800" class="w-full" oninput="updateSimParams()" />
+            <div class="flex justify-between text-[11px] text-slate-400 mt-1">
+              <span>400 kg</span>
+              <span>2000 kg</span>
+            </div>
+          </div>
+
+          <!-- Slider 3: Gesekan Lintasan -->
+          <div>
+            <div class="flex justify-between text-sm font-bold text-slate-700 mb-2">
+              <label for="sliderFriction"><i class="fa-solid fa-wind text-emerald-500 mr-1.5"></i>Gesekan Rel & Udara</label>
+              <span class="text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-lg"><span id="valFriction">0.015</span></span>
+            </div>
+            <input type="range" id="sliderFriction" min="0" max="0.06" step="0.005" value="0.015" class="w-full" oninput="updateSimParams()" />
+            <div class="flex justify-between text-[11px] text-slate-400 mt-1">
+              <span>0 (Ideal)</span>
+              <span>0.06 (Kasar)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- BAGIAN C: SISTEM KEAMANAN RODA 3-ARAH & PENGUNCI                      -->
+    <!-- ===================================================================== -->
+    <section id="sistem-keamanan" class="scroll-mt-24">
+      <div class="glass-card rounded-3xl p-6 sm:p-8 lg:p-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-6 space-y-5">
+            <span class="inline-block px-3.5 py-1 rounded-full bg-emerald-100 text-emerald-700 font-bold text-xs uppercase tracking-wider">
+              Rekayasa Keselamatan
+            </span>
+            <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-slate-900">
+              Mengapa Kereta Tidak Pernah Terlepas dari Rel?
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+              Setiap gerbong roller coaster modern dilengkapi dengan <strong>rakitan roda 3-arah (3-Way Wheel Assembly)</strong> yang menjepit rel pipa baja dari tiga sisi sekaligus, ditambah sistem pengunci hidrolik ganda pada kursi penumpang.
+            </p>
+
+            <div class="space-y-3">
+              <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white/85 border border-sky-100">
+                <div class="w-9 h-9 rounded-xl bg-sky-500 text-white flex items-center justify-center font-bold shrink-0">1</div>
+                <div>
+                  <h4 class="font-bold text-slate-900 text-sm sm:text-base">Road Wheels (Roda Utama Atas)</h4>
+                  <p class="text-xs sm:text-sm text-slate-600">Menopang berat kereta di atas rel dan meluncur mulus dengan lapisan poliuretan peredam getaran.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white/85 border border-orange-100">
+                <div class="w-9 h-9 rounded-xl bg-orange-500 text-white flex items-center justify-center font-bold shrink-0">2</div>
+                <div>
+                  <h4 class="font-bold text-slate-900 text-sm sm:text-base">Side Friction Wheels (Roda Pemandu Samping)</h4>
+                  <p class="text-xs sm:text-sm text-slate-600">Menjaga kereta tetap berada di jalur tengah saat menikung tajam dalam kecepatan tinggi.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white/85 border border-amber-100">
+                <div class="w-9 h-9 rounded-xl bg-amber-500 text-white flex items-center justify-center font-bold shrink-0">3</div>
+                <div>
+                  <h4 class="font-bold text-slate-900 text-sm sm:text-base">Up-Stop Wheels (Roda Pengunci Bawah)</h4>
+                  <p class="text-xs sm:text-sm text-slate-600">Berada di bawah pipa rel untuk mencegah gerbong terangkat saat melewati bukit <em>airtime</em> atau posisi terbalik.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Diagram Visual Roda 3-Arah SVG -->
+          <div class="lg:col-span-6">
+            <div class="bg-white/90 rounded-3xl p-6 border border-white shadow-lg">
+              <h3 class="font-display font-bold text-center text-slate-800 mb-4 text-sm sm:text-base">
+                Diagram Penampang Roda 3-Arah pada Rel Baja
+              </h3>
+              <svg viewBox="0 0 400 250" class="w-full h-auto rounded-2xl bg-gradient-to-br from-slate-50 to-sky-50 border border-slate-200/70" role="img" aria-label="Diagram penampang roda 3 arah roller coaster">
+                <!-- Pipa Rel Tengah -->
+                <circle cx="200" cy="125" r="34" fill="#334155" stroke="#0f172a" stroke-width="4" />
+                <circle cx="200" cy="125" r="22" fill="#64748b" />
+                <text x="200" y="129" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="700">REL BAJA</text>
+
+                <!-- Rangka Bogie Penghubung -->
+                <path d="M 135 125 L 135 65 L 265 65 L 265 185 L 155 185" fill="none" stroke="#94a3b8" stroke-width="8" stroke-linejoin="round" />
+
+                <!-- 1. Road Wheel (Atas) -->
+                <rect x="172" y="68" width="56" height="22" rx="6" fill="#0ea5e9" stroke="#0369a1" stroke-width="2" />
+                <line x1="200" y1="68" x2="200" y2="35" stroke="#0ea5e9" stroke-width="2" stroke-dasharray="3 2" />
+                <text x="200" y="27" text-anchor="middle" fill="#0369a1" font-size="12" font-weight="800">1. Road Wheel (Atas)</text>
+
+                <!-- 2. Side Friction Wheel (Kiri) -->
+                <rect x="142" y="98" width="22" height="54" rx="6" fill="#f97316" stroke="#c2410c" stroke-width="2" />
+                <line x1="142" y1="125" x2="95" y2="125" stroke="#f97316" stroke-width="2" stroke-dasharray="3 2" />
+                <text x="52" y="121" text-anchor="middle" fill="#c2410c" font-size="11" font-weight="800">2. Side Friction</text>
+                <text x="52" y="135" text-anchor="middle" fill="#c2410c" font-size="10" font-weight="600">(Samping)</text>
+
+                <!-- 3. Up-Stop Wheel (Bawah) -->
+                <rect x="174" y="160" width="52" height="20" rx="6" fill="#eab308" stroke="#a16207" stroke-width="2" />
+                <line x1="200" y1="180" x2="200" y2="215" stroke="#eab308" stroke-width="2" stroke-dasharray="3 2" />
+                <text x="200" y="232" text-anchor="middle" fill="#a16207" font-size="12" font-weight="800">3. Up-Stop Wheel (Pengunci Bawah)</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- BAGIAN D: KUIS MINI INTERAKTIF 3 SOAL                                 -->
+    <!-- ===================================================================== -->
+    <section id="kuis" class="scroll-mt-24">
+      <div class="glass-card rounded-3xl p-6 sm:p-8 lg:p-10 border border-white">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+          <div>
+            <span class="inline-block px-3.5 py-1 rounded-full bg-amber-100 text-amber-800 font-bold text-xs uppercase tracking-wider mb-2">
+              Uji Pemahamanmu
+            </span>
+            <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-slate-900">
+              Kuis Mini Fisika Roller Coaster
+            </h2>
+          </div>
+          <div id="quizScoreBadge" class="px-4 py-2 rounded-2xl bg-white border border-amber-200 text-sm font-extrabold text-slate-800 shadow-sm">
+            Skor Kamu: <span id="quizScore" class="text-orange-600">0</span> / 3
+          </div>
+        </div>
+
+        <div id="quizContainer" class="space-y-6">
+          <!-- Soal 1 -->
+          <div class="bg-white/85 rounded-2xl p-5 border border-slate-100 shadow-sm" data-question="0">
+            <p class="font-bold text-slate-900 text-base mb-3">
+              1. Mengapa bukit pertama (Lift Hill) pada roller coaster konvensional selalu dibuat paling tinggi dibandingkan bukit-bukit berikutnya?
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <button type="button" onclick="answerQuiz(0, 0, true)" class="quiz-opt text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-sky-400 bg-white text-sm font-medium transition cursor-pointer">
+                A. Agar tabungan energi potensial cukup mengatasi gesekan sepanjang lintasan
+              </button>
+              <button type="button" onclick="answerQuiz(0, 1, false)" class="quiz-opt text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-sky-400 bg-white text-sm font-medium transition cursor-pointer">
+                B. Supaya mesin di dalam gerbong bisa mengisi ulang baterai saat turun
+              </button>
+            </div>
+            <p id="quizFeedback0" class="hidden mt-3 text-xs sm:text-sm font-semibold p-3 rounded-xl"></p>
+          </div>
+
+          <!-- Soal 2 -->
+          <div class="bg-white/85 rounded-2xl p-5 border border-slate-100 shadow-sm" data-question="1">
+            <p class="font-bold text-slate-900 text-base mb-3">
+              2. Mengapa loop vertikal pada roller coaster modern berbentuk lonjong seperti tetesan air mata (Clothoid) daripada lingkaran bulat sempurna?
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <button type="button" onclick="answerQuiz(1, 0, false)" class="quiz-opt text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-sky-400 bg-white text-sm font-medium transition cursor-pointer">
+                A. Untuk menghemat penggunaan besi baja saat konstruksi
+              </button>
+              <button type="button" onclick="answerQuiz(1, 1, true)" class="quiz-opt text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-sky-400 bg-white text-sm font-medium transition cursor-pointer">
+                B. Mengurangi G-Force ekstrem di dasar loop agar aman bagi tubuh manusia
+              </button>
+            </div>
+            <p id="quizFeedback1" class="hidden mt-3 text-xs sm:text-sm font-semibold p-3 rounded-xl"></p>
+          </div>
+
+          <!-- Soal 3 -->
+          <div class="bg-white/85 rounded-2xl p-5 border border-slate-100 shadow-sm" data-question="2">
+            <p class="font-bold text-slate-900 text-base mb-3">
+              3. Komponen roda manakah yang bertugas menahan kereta agar tidak terlepas ke atas saat kereta dalam posisi terbalik di puncak loop?
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <button type="button" onclick="answerQuiz(2, 0, true)" class="quiz-opt text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-sky-400 bg-white text-sm font-medium transition cursor-pointer">
+                A. Up-Stop Wheels (Roda pengunci di bagian bawah pipa rel)
+              </button>
+              <button type="button" onclick="answerQuiz(2, 1, false)" class="quiz-opt text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-sky-400 bg-white text-sm font-medium transition cursor-pointer">
+                B. Side Friction Wheels (Roda pemandu sisi samping)
+              </button>
+            </div>
+            <p id="quizFeedback2" class="hidden mt-3 text-xs sm:text-sm font-semibold p-3 rounded-xl"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- 4. SIDEBAR INTERAKTIF (Drawer Samping Berisi Topik Terkait Bisa Dibuka) -->
+  <!-- ===================================================================== -->
+  <div id="sidebarOverlay" onclick="toggleSidebar(false)" class="fixed inset-0 bg-slate-900/40 backdrop-blur-xs z-50 hidden transition-opacity"></div>
+
+  <aside
+    id="relatedSidebar"
+    class="fixed top-0 right-0 h-full w-full max-w-md bg-white/95 backdrop-blur-2xl shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-out flex flex-col border-l border-white"
+    aria-label="Sidebar Topik Terkait"
+  >
+    <!-- Header Sidebar -->
+    <div class="p-5 sm:p-6 bg-gradient-to-r from-sky-500 to-orange-500 text-white flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+          <i class="fa-solid fa-book-open text-lg"></i>
+        </div>
+        <div>
+          <h3 class="font-display font-extrabold text-lg">Topik & Fakta Terkait</h3>
+          <p class="text-xs text-white/90">Klik kartu di bawah untuk membuka detail</p>
+        </div>
+      </div>
+      <button
+        type="button"
+        onclick="toggleSidebar(false)"
+        class="w-9 h-9 rounded-xl bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition cursor-pointer"
+        aria-label="Tutup Sidebar"
+      >
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+    </div>
+
+    <!-- Konten Accordion Sidebar yang Bisa Dibuka -->
+    <div class="p-5 overflow-y-auto space-y-3.5 flex-1">
+      <!-- Item 1 -->
+      <div class="rounded-2xl border border-sky-100 bg-sky-50/50 overflow-hidden">
+        <button
+          type="button"
+          onclick="toggleAccordion('acc1')"
+          class="w-full p-4 text-left flex items-center justify-between gap-3 font-bold text-slate-900 text-sm hover:bg-sky-100/50 transition cursor-pointer"
+        >
+          <span class="flex items-center gap-2.5">
+            <span class="w-7 h-7 rounded-lg bg-sky-500 text-white flex items-center justify-center text-xs shrink-0">1</span>
+            Mengapa Loop Tidak Berbentuk Lingkaran Sempurna?
+          </span>
+          <i id="icon-acc1" class="fa-solid fa-chevron-down text-sky-600 transition-transform"></i>
+        </button>
+        <div id="acc1" class="hidden px-4 pb-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-sky-100/80 pt-3">
+          Pada lingkaran sempurna, kecepatan tinggi di bagian bawah akan menghasilkan gaya sentripetal ekstrem hingga <strong>6G - 8G</strong> yang dapat menyebabkan penumpang pingsan (<em>blackout</em>). Dengan bentuk <strong>Clothoid</strong> (radius melengkung tajam di puncak dan melebar di bawah), G-Force terdistribusi merata di kisaran aman 3.5G hingga 4.5G.
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="rounded-2xl border border-orange-100 bg-orange-50/50 overflow-hidden">
+        <button
+          type="button"
+          onclick="toggleAccordion('acc2')"
+          class="w-full p-4 text-left flex items-center justify-between gap-3 font-bold text-slate-900 text-sm hover:bg-orange-100/50 transition cursor-pointer"
+        >
+          <span class="flex items-center gap-2.5">
+            <span class="w-7 h-7 rounded-lg bg-orange-500 text-white flex items-center justify-center text-xs shrink-0">2</span>
+            Perbedaan Roller Coaster Kayu vs Baja
+          </span>
+          <i id="icon-acc2" class="fa-solid fa-chevron-down text-orange-600 transition-transform"></i>
+        </button>
+        <div id="acc2" class="hidden px-4 pb-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-orange-100/80 pt-3">
+          <strong>Roller Coaster Kayu (Wooden):</strong> Menggunakan ratusan batang kayu berlapis dan pelat baja tipis di permukaan rel. Strukturnya sedikit bergoyang sehingga memberi sensasi klasik dan getaran alami, namun jarang memiliki loop terbalik.<br/><br/>
+          <strong>Roller Coaster Baja (Steel):</strong> Menggunakan pipa baja tubular presisi tinggi yang memungkinkan lintasan terbalik (inversi), tikungan tajam, dan ketinggian di atas 100 meter.
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="rounded-2xl border border-amber-100 bg-amber-50/50 overflow-hidden">
+        <button
+          type="button"
+          onclick="toggleAccordion('acc3')"
+          class="w-full p-4 text-left flex items-center justify-between gap-3 font-bold text-slate-900 text-sm hover:bg-amber-100/50 transition cursor-pointer"
+        >
+          <span class="flex items-center gap-2.5">
+            <span class="w-7 h-7 rounded-lg bg-amber-500 text-white flex items-center justify-center text-xs shrink-0">3</span>
+            Bagaimana Rem Magnetik Bekerja Tanpa Listrik?
+          </span>
+          <i id="icon-acc3" class="fa-solid fa-chevron-down text-amber-600 transition-transform"></i>
+        </button>
+        <div id="acc3" class="hidden px-4 pb-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-amber-100/80 pt-3">
+          Berdasarkan <strong>Hukum Lenz & Induksi Faraday</strong>, ketika konduktor non-magnetik (sirip tembaga di bawah gerbong) memotong medan magnet kuat dari magnet permanen di rel, muncul arus listrik melingkar (<em>Eddy Current</em>) yang menciptakan medan magnet berlawanan. Semakin cepat kereta melaju, semakin kuat daya pengeremannya!
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="rounded-2xl border border-emerald-100 bg-emerald-50/50 overflow-hidden">
+        <button
+          type="button"
+          onclick="toggleAccordion('acc4')"
+          class="w-full p-4 text-left flex items-center justify-between gap-3 font-bold text-slate-900 text-sm hover:bg-emerald-100/50 transition cursor-pointer"
+        >
+          <span class="flex items-center gap-2.5">
+            <span class="w-7 h-7 rounded-lg bg-emerald-500 text-white flex items-center justify-center text-xs shrink-0">4</span>
+            Rekor Roller Coaster Tercepat & Tertinggi
+          </span>
+          <i id="icon-acc4" class="fa-solid fa-chevron-down text-emerald-600 transition-transform"></i>
+        </button>
+        <div id="acc4" class="hidden px-4 pb-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-emerald-100/80 pt-3">
+          • <strong>Formula Rossa (Abu Dhabi):</strong> Tercepat dengan kecepatan puncak <strong>240 km/jam</strong> menggunakan peluncur hidrolik.<br/>
+          • <strong>Kingda Ka (Amerika Serikat):</strong> Salah satu tertinggi dengan puncak <strong>139 meter</strong> (setara gedung 45 lantai).<br/>
+          • <strong>Falcons Flight (Arab Saudi):</strong> Generasi terbaru yang dirancang melampaui tinggi 195 meter dan kecepatan 250 km/jam.
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Sidebar -->
+    <div class="p-4 border-t border-slate-100 bg-slate-50/80 text-center">
+      <button
+        type="button"
+        onclick="toggleSidebar(false); openDownloadModal();"
+        class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold text-sm shadow-md hover:opacity-95 transition cursor-pointer"
+      >
+        <i class="fa-solid fa-download mr-1.5"></i> Unduh Kode Resource Halaman Ini
+      </button>
+    </div>
+  </aside>
+
+  <!-- ===================================================================== -->
+  <!-- 5. MODAL POP-UP MONETISASI ("UNDUH KODE RESOURCE" + DOWNLOAD AS GUEST)  -->
+  <!-- ===================================================================== -->
+  <div
+    id="downloadModal"
+    class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+  >
+    <div class="glass-modal rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative animate-[fadeIn_0.2s_ease-out]">
+      <!-- Tombol Tutup Modal -->
+      <button
+        type="button"
+        onclick="closeDownloadModal()"
+        class="absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition cursor-pointer"
+        aria-label="Tutup Modal"
+      >
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+
+      <!-- Header Modal -->
+      <div class="text-center mb-6">
+        <div class="w-14 h-14 mx-auto rounded-2xl bg-gradient-to-br from-sky-500 via-orange-500 to-amber-400 text-white flex items-center justify-center text-2xl shadow-lg shadow-orange-500/25 mb-3">
+          <i class="fa-solid fa-file-code"></i>
+        </div>
+        <h3 id="modalTitle" class="font-display font-extrabold text-xl sm:text-2xl text-slate-900">
+          Unduh Kode Resource CoasterLab
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-600 mt-1.5">
+          Dukung pengembangan project edukasi interaktif ini melalui donasi sukarela, atau lanjutkan unduh gratis sebagai tamu.
+        </p>
+      </div>
+
+      <!-- Pilihan Dukungan Resmi -->
+      <div class="space-y-3 mb-6">
+        <!-- 1. Internasional: PayPal -->
+        <a
+          href="https://paypal.me/arielrcu"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-sky-50 to-blue-50 hover:from-sky-100 hover:to-blue-100 border border-sky-200 transition group"
+        >
+          <div class="flex items-center gap-3.5">
+            <div class="w-11 h-11 rounded-xl bg-[#003087] text-white flex items-center justify-center text-xl shadow-sm">
+              <i class="fa-brands fa-paypal"></i>
+            </div>
+            <div>
+              <span class="block text-[11px] font-bold uppercase tracking-wider text-sky-600">Internasional</span>
+              <span class="font-display font-bold text-slate-900 text-base">Dukung via PayPal</span>
+            </div>
+          </div>
+          <span class="px-3 py-1.5 rounded-xl bg-white text-sky-700 text-xs font-bold shadow-xs group-hover:translate-x-0.5 transition">
+            paypal.me/arielrcu <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+          </span>
+        </a>
+
+        <!-- 2. Lokal (QRIS / E-Wallet): Trakteer -->
+        <a
+          href="https://trakteer.id/arielrcu"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-rose-50 to-orange-50 hover:from-rose-100 hover:to-orange-100 border border-orange-200 transition group"
+        >
+          <div class="flex items-center gap-3.5">
+            <div class="w-11 h-11 rounded-xl bg-[#be1e2d] text-white flex items-center justify-center text-xl shadow-sm">
+              <i class="fa-solid fa-mug-hot"></i>
+            </div>
+            <div>
+              <span class="block text-[11px] font-bold uppercase tracking-wider text-orange-600">Lokal (QRIS / E-Wallet)</span>
+              <span class="font-display font-bold text-slate-900 text-base">Dukung via Trakteer</span>
+            </div>
+          </div>
+          <span class="px-3 py-1.5 rounded-xl bg-white text-rose-700 text-xs font-bold shadow-xs group-hover:translate-x-0.5 transition">
+            trakteer.id/arielrcu <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+          </span>
+        </a>
+      </div>
+
+      <!-- Pembatas -->
+      <div class="relative flex py-2 items-center mb-4">
+        <div class="flex-grow border-t border-slate-200"></div>
+        <span class="flex-shrink mx-3 text-xs font-semibold text-slate-400 uppercase">Atau Akses Gratis</span>
+        <div class="flex-grow border-t border-slate-200"></div>
+      </div>
+
+      <!-- Tombol Download as Guest (Akses Gratis Langsung) -->
+      <button
+        type="button"
+        onclick="downloadSourceAsGuest()"
+        class="w-full py-3.5 px-5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-display font-bold text-sm sm:text-base shadow-lg transition flex items-center justify-center gap-2.5 active:scale-98 cursor-pointer"
+      >
+        <i class="fa-solid fa-download text-amber-400"></i>
+        <span>Download as Guest</span>
+      </button>
+
+      <!-- Notifikasi Sukses Unduhan -->
+      <p id="downloadToast" class="hidden mt-3 text-center text-xs font-bold text-emerald-600 bg-emerald-50 py-2 px-3 rounded-xl border border-emerald-200">
+        <i class="fa-solid fa-circle-check mr-1"></i> File <code>cara-kerja-roller-coaster.html</code> berhasil diunduh!
+      </p>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- 6. FOOTER (Oleh Ariel Usman Copyright 2026 + Instagram @arielrcun)    -->
+  <!-- ===================================================================== -->
+  <footer class="glass-nav border-t border-white/80 py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-sky-500 to-orange-500 text-white flex items-center justify-center text-sm">
+          <i class="fa-solid fa-roller-coaster"></i>
+        </div>
+        <p class="font-display font-bold text-sm sm:text-base text-slate-800">
+          Oleh Ariel Usman Copyright 2026
+        </p>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a
+          href="https://instagram.com/arielrcun"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 text-white text-sm font-bold shadow-md shadow-pink-500/20 hover:opacity-95 transition transform hover:-translate-y-0.5"
+          aria-label="Instagram Ariel Usman @arielrcun"
+        >
+          <i class="fa-brands fa-instagram text-lg"></i>
+          <span>@arielrcun</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================== -->
+  <!-- 7. JAVASCRIPT INTERAKTIF (Simulasi Fisika, Sidebar, Modal, Kuis)      -->
+  <!-- ===================================================================== -->
+  <script>
+    // =========================================================================
+    // A. NAVIGASI MOBILE, SIDEBAR & ACCORDION
+    // =========================================================================
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    function toggleSidebar(open) {
+      const sidebar = document.getElementById('relatedSidebar');
+      const overlay = document.getElementById('sidebarOverlay');
+      if (open) {
+        sidebar.classList.remove('translate-x-full');
+        overlay.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      } else {
+        sidebar.classList.add('translate-x-full');
+        overlay.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function toggleAccordion(id) {
+      const content = document.getElementById(id);
+      const icon = document.getElementById('icon-' + id);
+      const isHidden = content.classList.contains('hidden');
+      content.classList.toggle('hidden');
+      if (icon) {
+        icon.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+      }
+    }
+
+    // =========================================================================
+    // B. MODAL MONETISASI & DOWNLOAD AS GUEST (UNDUH FILE HTML LANGSUNG)
+    // =========================================================================
+    function openDownloadModal() {
+      const modal = document.getElementById('downloadModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDownloadModal() {
+      const modal = document.getElementById('downloadModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    // Menutup modal atau sidebar saat tombol Escape ditekan
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeDownloadModal();
+        toggleSidebar(false);
+      }
+    });
+
+    function downloadSourceAsGuest() {
+      try {
+        const doctype = '<!DOCTYPE html>\n';
+        const htmlContent = doctype + document.documentElement.outerHTML;
+        const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'cara-kerja-roller-coaster.html';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        setTimeout(() => URL.revokeObjectURL(url), 1500);
+
+        const toast = document.getElementById('downloadToast');
+        toast.classList.remove('hidden');
+      } catch (err) {
+        console.error('Gagal mengunduh file:', err);
+      }
+    }
+
+    // =========================================================================
+    // C. KUIS MINI INTERAKTIF
+    // =========================================================================
+    const answeredQuestions = new Set();
+    let score = 0;
+
+    function answerQuiz(qIndex, optIndex, isCorrect) {
+      const card = document.querySelector(`[data-question="${qIndex}"]`);
+      const buttons = card.querySelectorAll('.quiz-opt');
+      const feedback = document.getElementById(`quizFeedback${qIndex}`);
+
+      if (!answeredQuestions.has(qIndex)) {
+        answeredQuestions.add(qIndex);
+        if (isCorrect) {
+          score++;
+          document.getElementById('quizScore').textContent = score;
+        }
+      }
+
+      buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        btn.classList.remove('hover:border-sky-400', 'bg-white');
+        if (idx === optIndex) {
+          if (isCorrect) {
+            btn.classList.add('bg-emerald-50', 'border-emerald-500', 'text-emerald-900', 'font-bold');
+          } else {
+            btn.classList.add('bg-rose-50', 'border-rose-500', 'text-rose-900');
+          }
+        } else {
+          btn.classList.add('opacity-60', 'bg-slate-50');
+        }
+      });
+
+      feedback.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'bg-rose-50', 'text-rose-800');
+      if (isCorrect) {
+        feedback.classList.add('bg-emerald-50', 'text-emerald-800');
+        feedback.innerHTML = '<i class="fa-solid fa-circle-check mr-1.5"></i> Tepat sekali! Pemahaman fisikamu luar biasa.';
+      } else {
+        feedback.classList.add('bg-rose-50', 'text-rose-800');
+        feedback.innerHTML = '<i class="fa-solid fa-circle-xmark mr-1.5"></i> Kurang tepat. Coba baca kembali bagian penjelasan di atas ya!';
+      }
+    }
+
+    // =========================================================================
+    // D. SIMULASI FISIKA ROLLER COASTER REAL-TIME (HTML5 CANVAS)
+    // =========================================================================
+    const canvas = document.getElementById('coasterCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Parameter Fisika
+    let initialHeight = 65; // meter (25 - 100)
+    let cartMass = 800;     // kg
+    let frictionCoeff = 0.015;
+    const gravity = 9.8;    // m/s^2
+
+    // State Simulasi
+    let isRunning = false;
+    let progress = 0;       // 0.0 sampai 1.0 sepanjang lintasan
+    let distanceTraveled = 0;
+    let direction = 1;      // 1 = maju, -1 = mundur jika gagal nanjak
+    let trackPoints = [];
+    let animFrameId = null;
+    let lastTimestamp = null;
+
+    // Resize Canvas Responsif (DPR Aware)
+    function resizeCanvas() {
+      const rect = canvas.parentElement.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      buildTrackPoints();
+      drawScene();
+    }
+
+    // Membangun Titik Lintasan Berdasarkan Tinggi Bukit Awal (0 - 100m skala)
+    function buildTrackPoints() {
+      const w = canvas.clientWidth;
+      const h = canvas.clientHeight;
+      const groundY = h - 28;
+      const maxMeters = 110;
+      const scaleY = (groundY - 26) / maxMeters;
+
+      trackPoints = [];
+      const totalSamples = 400;
+
+      // Tinggi puncak loop tetap pada 38 meter agar terlihat efek gagal jika bukit awal terlalu rendah!
+      const loopHeightMeters = 38;
+      const secondHillMeters = 28;
+
+      for (let i = 0; i <= totalSamples; i++) {
+        const t = i / totalSamples;
+        let x = 28 + t * (w - 56);
+        let heightMeters = 0;
+
+        if (t < 0.28) {
+          // Segmen 1: Turun curam dari bukit pertama ke lembah (2m)
+          const u = t / 0.28;
+          const ease = 0.5 - 0.5 * Math.cos(Math.PI * u);
+          heightMeters = initialHeight * (1 - ease) + 2 * ease;
+        } else if (t < 0.62) {
+          // Segmen 2: Clothoid Loop 360 derajat (t dari 0.28 ke 0.62)
+          const u = (t - 0.28) / 0.34;
+          const angle = u * Math.PI * 2;
+          const loopCenterX = 28 + 0.45 * (w - 56);
+          const loopRadiusX = Math.min(w * 0.11, 58);
+          const loopCenterHeight = 2 + loopHeightMeters / 2;
+
+          // Bentuk clothoid: lebih sempit di atas
+          const squash = 1 - 0.22 * Math.sin(angle / 2);
+          x = loopCenterX + Math.sin(angle) * loopRadiusX * squash;
+          heightMeters = loopCenterHeight - Math.cos(angle) * (loopHeightMeters / 2);
+        } else if (t < 0.84) {
+          // Segmen 3: Naik ke bukit kedua (Airtime hill)
+          const u = (t - 0.62) / 0.22;
+          heightMeters = 2 + Math.sin(u * Math.PI) * secondHillMeters;
+        } else {
+          // Segmen 4: Lintasan datar pengereman menuju stasiun akhir
+          const u = (t - 0.84) / 0.16;
+          heightMeters = 2 + (1 - u) * 1.5;
+        }
+
+        const y = groundY - heightMeters * scaleY;
+        trackPoints.push({ x, y, heightMeters, t });
+      }
+    }
+
+    function updateSimParams() {
+      initialHeight = parseFloat(document.getElementById('sliderHeight').value);
+      cartMass = parseFloat(document.getElementById('sliderMass').value);
+      frictionCoeff = parseFloat(document.getElementById('sliderFriction').value);
+
+      document.getElementById('valHeight').textContent = initialHeight;
+      document.getElementById('valMass').textContent = cartMass;
+      document.getElementById('valFriction').textContent = frictionCoeff.toFixed(3);
+
+      if (!isRunning) {
+        progress = 0;
+        distanceTraveled = 0;
+        direction = 1;
+        buildTrackPoints();
+        updateTelemetry(initialHeight, 0, 1.0);
+        drawScene();
+      } else {
+        buildTrackPoints();
+      }
+    }
+
+    function startSimulation() {
+      if (progress >= 0.995) {
+        resetSimulation();
+      }
+      if (!isRunning) {
+        isRunning = true;
+        lastTimestamp = performance.now();
+        setStatusBanner('Kereta meluncur! Mengubah Energi Potensial menjadi Energi Kinetik...', 'sky');
+        animFrameId = requestAnimationFrame(loopSimulation);
+      }
+    }
+
+    function pauseSimulation() {
+      isRunning = false;
+      if (animFrameId) cancelAnimationFrame(animFrameId);
+      setStatusBanner('Simulasi dijeda. Tekan Play untuk melanjutkan.', 'amber');
+    }
+
+    function resetSimulation() {
+      isRunning = false;
+      if (animFrameId) cancelAnimationFrame(animFrameId);
+      progress = 0;
+      distanceTraveled = 0;
+      direction = 1;
+      buildTrackPoints();
+      updateTelemetry(initialHeight, 0, 1.0);
+      setStatusBanner('Siap meluncur! Atur parameter di bawah atau tekan Play.', 'sky');
+      drawScene();
+    }
+
+    function setStatusBanner(msg, color) {
+      const banner = document.getElementById('simStatusBanner');
+      const text = document.getElementById('simStatusText');
+      banner.className = `mb-4 px-4 py-3 rounded-2xl border text-xs sm:text-sm font-semibold flex items-center justify-between bg-${color}-50 border-${color}-200 text-${color}-800`;
+      text.textContent = msg;
+    }
+
+    function loopSimulation(timestamp) {
+      if (!isRunning) return;
+      const dt = Math.min((timestamp - lastTimestamp) / 1000, 0.05);
+      lastTimestamp = timestamp;
+
+      const idx = Math.min(Math.floor(progress * (trackPoints.length - 1)), trackPoints.length - 1);
+      const currentPt = trackPoints[idx];
+      const h = currentPt.heightMeters;
+
+      // Hukum Kekekalan Energi Mekanik dengan rugi gesekan:
+      // E_total_awal = m * g * initialHeight
+      // E_loss = frictionCoeff * m * g * distanceTraveled
+      // v = sqrt(2 * g * (initialHeight - h - frictionCoeff * distanceTraveled))
+      const effectiveEnergyHeight = initialHeight - h - frictionCoeff * distanceTraveled * 0.65;
+
+      if (effectiveEnergyHeight <= 0.15 && progress > 0.03 && progress < 0.85) {
+        // Energi tidak cukup untuk menanjak! Kereta berbalik arah (rollback)
+        direction *= -1;
+        setStatusBanner('Energi kinetik habis sebelum puncak! Naikkan Tinggi Bukit Awal atau kurangi Gesekan.', 'rose');
+      }
+
+      const speedMs = Math.max(2.2, Math.sqrt(Math.max(0.2, 2 * gravity * effectiveEnergyHeight)));
+
+      // Pengereman magnetik otomatis di segmen akhir (t > 0.86)
+      let brakeFactor = 1;
+      if (progress > 0.86) {
+        brakeFactor = Math.max(0.15, 1 - (progress - 0.86) / 0.14);
+      }
+
+      const actualSpeedMs = speedMs * brakeFactor;
+      const step = (actualSpeedMs * dt * 0.0042) * direction;
+      progress = Math.max(0, Math.min(1, progress + step));
+      distanceTraveled += Math.abs(actualSpeedMs * dt);
+
+      // Hitung G-Force perkiraan berdasarkan kelengkungan & posisi loop
+      let gForce = 1.0;
+      if (progress >= 0.28 && progress <= 0.62) {
+        const u = (progress - 0.28) / 0.34;
+        const angle = u * Math.PI * 2;
+        const radius = 19; // meter
+        const centripetalG = (actualSpeedMs * actualSpeedMs) / (radius * gravity);
+        gForce = centripetalG + Math.cos(angle);
+      } else if (progress < 0.28) {
+        gForce = 0.6 + (progress / 0.28) * 1.4;
+      } else {
+        gForce = 0.4 + Math.abs(Math.sin(progress * 10)) * 0.8;
+      }
+
+      updateTelemetry(h, actualSpeedMs * 3.6, gForce);
+      drawScene();
+
+      if (progress >= 0.995) {
+        isRunning = false;
+        setStatusBanner('Perjalanan selesai! Rem magnetik menghentikan kereta dengan mulus di stasiun.', 'emerald');
+        return;
+      }
+
+      animFrameId = requestAnimationFrame(loopSimulation);
+    }
+
+    function updateTelemetry(heightM, speedKmh, gForce) {
+      document.getElementById('teleHeight').textContent = heightM.toFixed(1);
+      document.getElementById('teleSpeed').textContent = speedKmh.toFixed(1);
+      document.getElementById('teleGForce').textContent = gForce.toFixed(1);
+
+      const totalRef = Math.max(initialHeight, heightM);
+      const epRatio = Math.max(0, Math.min(100, Math.round((heightM / totalRef) * 100)));
+      const ekRatio = 100 - epRatio;
+
+      document.getElementById('barEp').style.width = epRatio + '%';
+      document.getElementById('barEk').style.width = ekRatio + '%';
+      document.getElementById('pctEp').textContent = epRatio;
+      document.getElementById('pctEk').textContent = ekRatio;
+    }
+
+    function drawScene() {
+      const w = canvas.clientWidth;
+      const h = canvas.clientHeight;
+      const groundY = h - 28;
+
+      ctx.clearRect(0, 0, w, h);
+
+      // 1. Garis Ketinggian Referensi (Grid Halus)
+      ctx.strokeStyle = 'rgba(14, 165, 233, 0.15)';
+      ctx.lineWidth = 1;
+      for (let i = 1; i <= 4; i++) {
+        const gy = groundY - ((groundY - 26) / 4) * i;
+        ctx.beginPath();
+        ctx.moveTo(0, gy);
+        ctx.lineTo(w, gy);
+        ctx.stroke();
+      }
+
+      // 2. Tiang Penyangga Lintasan
+      ctx.strokeStyle = 'rgba(100, 116, 139, 0.35)';
+      ctx.lineWidth = 2;
+      for (let i = 0; i < trackPoints.length; i += 24) {
+        const pt = trackPoints[i];
+        ctx.beginPath();
+        ctx.moveTo(pt.x, pt.y);
+        ctx.lineTo(pt.x, groundY);
+        ctx.stroke();
+      }
+
+      // 3. Tanah / Platform
+      ctx.fillStyle = '#bae6fd';
+      ctx.fillRect(0, groundY, w, 28);
+      ctx.fillStyle = '#0284c7';
+      ctx.fillRect(0, groundY, w, 3);
+
+      // 4. Rel Utama Roller Coaster
+      if (trackPoints.length > 1) {
+        const grad = ctx.createLinearGradient(0, 0, w, 0);
+        grad.addColorStop(0, '#0ea5e9');
+        grad.addColorStop(0.5, '#f97316');
+        grad.addColorStop(1, '#10b981');
+
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = 6;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+
+        ctx.beginPath();
+        ctx.moveTo(trackPoints[0].x, trackPoints[0].y);
+        for (let i = 1; i < trackPoints.length; i++) {
+          ctx.lineTo(trackPoints[i].x, trackPoints[i].y);
+        }
+        ctx.stroke();
+
+        // Zona Rem Magnetik di akhir lintasan
+        const brakeStart = Math.floor(trackPoints.length * 0.86);
+        ctx.strokeStyle = '#ef4444';
+        ctx.lineWidth = 8;
+        ctx.beginPath();
+        ctx.moveTo(trackPoints[brakeStart].x, trackPoints[brakeStart].y + 4);
+        ctx.lineTo(trackPoints[trackPoints.length - 1].x, trackPoints[trackPoints.length - 1].y + 4);
+        ctx.stroke();
+      }
+
+      // 5. Gambar Gerbong Kereta Roller Coaster pada Posisi Saat Ini
+      const idx = Math.min(Math.floor(progress * (trackPoints.length - 1)), trackPoints.length - 1);
+      const nextIdx = Math.min(idx + 1, trackPoints.length - 1);
+      const pt = trackPoints[idx];
+      const nextPt = trackPoints[nextIdx];
+
+      if (pt) {
+        const angle = Math.atan2(nextPt.y - pt.y, nextPt.x - pt.x);
+        ctx.save();
+        ctx.translate(pt.x, pt.y);
+        ctx.rotate(angle);
+
+        // Badan Gerbong
+        ctx.fillStyle = '#ff5e3a';
+        ctx.strokeStyle = '#ffffff';
+        ctx.lineWidth = 2.5;
+        ctx.beginPath();
+        ctx.roundRect(-18, -14, 36, 14, 6);
+        ctx.fill();
+        ctx.stroke();
+
+        // Helm Penumpang Mini
+        ctx.fillStyle = '#facc15';
+        ctx.beginPath();
+        ctx.arc(-6, -16, 4.5, 0, Math.PI * 2);
+        ctx.arc(6, -16, 4.5, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Roda
+        ctx.fillStyle = '#0f172a';
+        ctx.beginPath();
+        ctx.arc(-10, 2, 4, 0, Math.PI * 2);
+        ctx.arc(10, 2, 4, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.restore();
+      }
+    }
+
+    // Inisialisasi saat halaman dimuat
+    window.addEventListener('load', () => {
+      resizeCanvas();
+      updateTelemetry(initialHeight, 0, 1.0);
+    });
+    window.addEventListener('resize', resizeCanvas);
+  </script>
+</body>
+</html>
